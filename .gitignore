@@ -1,0 +1,21 @@
+# Browser
+browser/node_modules/
+browser/dist/
+browser/src/data/generated/
+
+# Ruby
+*.gem
+.bundle/
+vendor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+*.swp
+*.swo
+*~
+
+# Archives
+*.zip
