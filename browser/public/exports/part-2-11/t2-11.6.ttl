@@ -1,0 +1,16 @@
+isoiec80000:term-t2-11.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of combinations without repetition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"C\"_n^k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.6-0 ;
+  skos:definition """number of combinations without repetition"""@en ;
+  skos:note """stem:[\"C\"_n^k = ((n),(k)) = (n!)/(k!(n-k)!)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .

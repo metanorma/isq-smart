@@ -1,0 +1,16 @@
+isoiec80000:term-t3-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithmic decrement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-25" ;
+  skosxl:prefLabel isoiec80000:term-t3-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-25-0 ;
+  skos:definition """product of damping coefficient (<<t3-24>>) and period duration (<<t3-14>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

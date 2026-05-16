@@ -1,0 +1,22 @@
+isoiec80000:term-t4-23.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling resistance factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"rr\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.3-0 ;
+  skos:definition """proportionality factor between the magnitude of the tangential component
+stem:[F] and the magnitude of the normal component stem:[N] of the force
+applied to a body rolling on a surface at constant speed:
+
+stem:[F = C_\"rr\"N]
+"""@en ;
+  skos:note """Also known as rolling resistance coefficient, ((RRC))."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

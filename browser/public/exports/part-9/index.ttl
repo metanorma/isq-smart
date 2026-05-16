@@ -1,0 +1,1839 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-9 a smart:PublicationDocument ;
+  dcterms:title "Physical Chemistry"@en ;
+  dcterms:identifier "ISO 80000-9" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-mol a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "mole"@en ;
+  skos:notation "mol" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-g/mol a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "gram per mole"@en ;
+  skos:notation "g/mol" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per mole"@en ;
+  skos:notation "kg*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre per mole"@en ;
+  skos:notation "m^3*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/mol a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per mole"@en ;
+  skos:notation "J/mol" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared mole"@en ;
+  skos:notation "kg*m^2*s^(-2)*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/(mol*K) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per mole kelvin"@en ;
+  skos:notation "J/(mol*K)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2)*K^(-1)*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared kelvin mole"@en ;
+  skos:notation "kg*m^2*s^(-2)*K^(-1)*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per cubic metre"@en ;
+  skos:notation "m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-g/l a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "gram per litre"@en ;
+  skos:notation "g/l" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per cubic metre"@en ;
+  skos:notation "kg*m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-mol/l a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "mole per litre"@en ;
+  skos:notation "mol/l" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-mol*m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "mole per cubic metre"@en ;
+  skos:notation "mol*m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-ml/l a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "millilitre per litre"@en ;
+  skos:notation "ml/l" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-mol/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "mole per kilogram"@en ;
+  skos:notation "mol/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared"@en ;
+  skos:notation "kg*m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Pa a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "pascal"@en ;
+  skos:notation "Pa" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-1)*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per metre second squared"@en ;
+  skos:notation "kg*m^(-1)*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["unitsml(Pa)"^(sum nu_"B")] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "pascal to the power of sum of stoichiometric numbers"@en ;
+  skos:notation "stem:["unitsml(Pa)"^(sum nu_"B")]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:[("unitsml(kg*m^(-1)*s^(-2))")^(sum nu_"B")] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second squared to the power of sum of stoichiometric numbers"@en ;
+  skos:notation "stem:[("unitsml(kg*m^(-1)*s^(-2))")^(sum nu_"B")]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:[("unitsml(mol/m^3)")^(sum nu_"B")] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "mole per cubic metre to the power of sum of stoichiometric numbers"@en ;
+  skos:notation "stem:[("unitsml(mol/m^3)")^(sum nu_"B")]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/(kg*K) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per kilogram kelvin"@en ;
+  skos:notation "J/(kg*K)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-2)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second squared kelvin"@en ;
+  skos:notation "m^2*s^(-2)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre"@en ;
+  skos:notation "m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second"@en ;
+  skos:notation "m^2*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-mol*kg^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "mole per kilogram"@en ;
+  skos:notation "mol*kg^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-S/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "siemens per metre"@en ;
+  skos:notation "S/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-3)*s^3*A^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second cubed ampere squared per kilogram cubic metre"@en ;
+  skos:notation "kg^(-1)*m^(-3)*s^3*A^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-S*m^2/mol a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "siemens square metre per mole"@en ;
+  skos:notation "S*m^2/mol" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*s^3*A^2*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second cubed ampere squared per kilogram mole"@en ;
+  skos:notation "kg^(-1)*s^3*A^2*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian"@en ;
+  skos:notation "rad" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad*m^2/mol a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian square metre per mole"@en ;
+  skos:notation "rad*m^2/mol" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per mole"@en ;
+  skos:notation "m^2*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad*m^2/kg^1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian square metre per kilogram"@en ;
+  skos:notation "rad*m^2/kg^1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per kilogram"@en ;
+  skos:notation "kg^(-1)*m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t9-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of entities"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N(X)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-1" ;
+  skosxl:prefLabel isoiec80000:term-t9-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-1-1 ;
+  skos:definition """number of elementary entities of kind stem:[\"X\"] in a system"""@en ;
+  skos:note """The elementary entities must be specified and can be atoms, molecules, ions, electrons, other particle, or a specified group of such particles. It is important to always give a precise specification of the entity involved; this should preferably be done by the empirical chemical formula of the material involved."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "amount of substance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: number of moles"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n(X)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-2" ;
+  skosxl:prefLabel isoiec80000:term-t9-2-0 ;
+  skosxl:altLabel isoiec80000:term-t9-2-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-2-0 ;
+  skos:definition """quotient of number stem:[N] of specified elementary entities of kind stem:[\"X\"] (<<t9-1>>) in a sample, and the Avogadro constant stem:[N_\"A\"] (<<iso80000-1>>):
+
+[stem%unnumbered]
+++++
+n(\"X\") = (N(\"X\"))/N_\"A\"
+++++
+"""@en ;
+  skos:note """Amount of substance is one of the seven base quantities in the International System of Quantities, ISQ (see <<iso80000-1>>).
+
+Elementary entities, such as molecules, atoms, ions, electrons, holes and other quasi-particles, double bonds can be used. It is necessary to specify precisely the entity involved, e.g. atoms of hydrogen stem:[\"H\"] vs. molecules of hydrogen stem:[\"H\"_2], preferably by giving the molecular chemical formula of the material involved.
+
+In the name \"amount of substance\", the words \"of substance\" could be replaced by words specifying the substance concerned, e.g. \"amount of hydrogen chloride, stem:[\"HCl\"]\", or \"amount of benzene, stem:[\"C\"_6\"H\"_6]\".
+
+The name \"number of moles\" is often used for \"amount of substance\", but this is deprecated because the name of a quantity should be distinguished from the name of the unit.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative atomic mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A_\"r\"(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-3" ;
+  skosxl:prefLabel isoiec80000:term-t9-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-3-0 ;
+  skos:definition """quotient of the average mass (<<iso80000-4>>) of atom stem:[\"X\"] and the unified atomic mass (<<iso80000-10>>)"""@en ;
+  skos:note """A similar quantity \"relative molecular mass\" can be defined for molecules.
+
+[example]
+====
+stem:[A_\"r\"(\"Cl\") ~~ 35.453],
+
+stem:[A_\"r\"(\"CO\"_2) ~~ 44].
+====
+
+The relative atomic or relative molecular mass depends on the nuclidic composition.
+
+The International Union of Pure and Applied Chemistry (IUPAC) accepts the use of the special names \"atomic weight\" and \"molecular weight\" for the quantities \"relative atomic mass\" and \"relative molecular mass\", respectively. The use of these traditional names is deprecated.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-4" ;
+  skosxl:prefLabel isoiec80000:term-t9-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-4-0 ;
+  skos:definition """for a pure substance stem:[\"X\"], quotient of mass stem:[m(\"X\")] (<<iso80000-4>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+M = m//n
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-g/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-5" ;
+  skosxl:prefLabel isoiec80000:term-t9-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-5-0 ;
+  skos:definition """for a pure substance, quotient of its volume stem:[V] (<<iso80000-3>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+V_\"m\" = V//n
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar internal energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-6.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-6.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-6.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-6.1-0 ;
+  skos:definition """quotient of internal energy stem:[U] (<<iso80000-5>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+U_\"m\" = U//n
+++++
+"""@en ;
+  skos:note """Molar quantities are normally only used with reference to pure substances."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar enthalpy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-6.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-6.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-6.2-0 ;
+  skos:definition """quotient of enthalpy stem:[H] (<<iso80000-5>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+H_\"m\" = H//n
+++++
+"""@en ;
+  skos:note """Molar quantities are normally only used with reference to pure substances."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar Helmholtz energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-6.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-6.3" ;
+  skosxl:prefLabel isoiec80000:term-t9-6.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-6.3-0 ;
+  skos:definition """quotient of the Helmholtz energy stem:[F] (<<iso80000-5>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+F_\"m\" = F//n
+++++
+"""@en ;
+  skos:note """Molar quantities are normally only used with reference to pure substances."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar Gibbs energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-6.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-6.4" ;
+  skosxl:prefLabel isoiec80000:term-t9-6.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-6.4-0 ;
+  skos:definition """quotient of the Gibbs energy stem:[G] (<<iso80000-5>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+G_\"m\" = G//n
+++++
+"""@en ;
+  skos:note """Molar quantities are normally only used with reference to pure substances."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar heat capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-7" ;
+  skosxl:prefLabel isoiec80000:term-t9-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-7-0 ;
+  skos:definition """quotient of heat capacity stem:[C] (<<iso80000-5>>) and amount of substance stem:[n] (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+C_\"m\" = C//n
+++++
+"""@en ;
+  skos:note """Conditions (constant pressure or volume etc.) must be specified."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(mol*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-8" ;
+  skosxl:prefLabel isoiec80000:term-t9-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-8-0 ;
+  skos:definition """quotient of entropy stem:[S] (<<iso80000-5>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+S_\"m\" = S//n
+++++
+"""@en ;
+  skos:note """Conditions (constant pressure or volume etc.) must be specified."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(mol*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-9.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(C)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-9.1-1 ;
+  skos:definition """quotient of number stem:[N] of particles (<<t9-1>>) and volume stem:[V] (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+n=N//V
+++++
+"""@en ;
+  skos:note """The term \"number density\" is also used."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molecular concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-9.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-9.2-1 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of number stem:[N_\"X\"] of molecules of substance stem:[\"X\"] and volume stem:[V] (<<iso80000-3>>) of the mixture:
+
+[stem%unnumbered]
+++++
+C_\"X\" = N_\"X\"//V
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-10-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(rho_\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-10" ;
+  skosxl:prefLabel isoiec80000:term-t9-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-10-1 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of mass stem:[m_\"X\"] (<<iso80000-4>>) of substance stem:[\"X\"] and volume stem:[V] (<<iso80000-3>>) of the mixture:
+
+[stem%unnumbered]
+++++
+gamma_\"X\" = m_\"X\"//V
+++++
+"""@en ;
+  skos:note """Decided by the 16^th^ CGPM (1979), both \"l\" and \"L\" are allowed for the symbols for the litre."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-g/l ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-11" ;
+  skosxl:prefLabel isoiec80000:term-t9-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-11-0 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of mass stem:[m_\"X\"] (<<iso80000-4>>) of substance stem:[\"X\"] and total mass stem:[m] of the mixture:
+
+[stem%unnumbered]
+++++
+w_\"X\" = m_\"X\"//m
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "amount-of-substance concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-12.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-12.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-12.1-0 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of amount stem:[n_\"X\"] of substance (<<t9-2>>) of stem:[\"X\"] and volume stem:[V] (<<iso80000-3>>) of the mixture
+
+[stem%unnumbered]
+++++
+c_\"X\" = n_\"X\"//V
+++++
+"""@en ;
+  skos:note """In chemistry, the name \"amount-of-substance concentration\" is generally abbreviated to the single word \"concentration\", it being assumed that the adjective \"amount-of-substance\" is intended. For this reason, however, the word \"mass\" should never be omitted from the name \"mass concentration\" in <<t9-10>>.
+
+Decided by the 16^th^ CGPM (1979), both \"l\" and \"L\" are allowed for the symbols for the litre.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol/l ;
+  isoiec80000:hasUnit isoiec80000:unit-mol*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard amount-of-substance concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c^(&#8854;)(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-12.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-12.2-0 ;
+  skos:definition """for substance stem:[X], one mole per litre"""@en ;
+  skos:note """Decided by the 16^th^ CGPM (1979), both \"l\" and \"L\" are allowed for the symbols for the litre."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol/l ;
+  isoiec80000:hasUnit isoiec80000:unit-mol*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "amount-of-substance fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mole fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "y_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-13" ;
+  skosxl:prefLabel isoiec80000:term-t9-13-0 ;
+  skosxl:altLabel isoiec80000:term-t9-13-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-13-1 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of amount of substance stem:[n_\"X\"] (<<t9-2>>) of stem:[\"X\"] and total amount stem:[n] of substance (<<t9-2>>) in the mixture:
+
+[stem%unnumbered]
+++++
+x_\"X\" = n_\"X\"//n
+++++
+"""@en ;
+  skos:note """For condensed phases, stem:[x_\"X\"] is used, and for gaseous mixtures stem:[y_\"X\"] may be used.
+
+The unsystematic name \"mole fraction\" is still used. However, the use of this name is deprecated.
+
+For this quantity, the entity used to define the amount of substance should always be a single molecule for every species in the mixture.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volume fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-14" ;
+  skosxl:prefLabel isoiec80000:term-t9-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-14-0 ;
+  skos:definition """for substance stem:[\"X\"], quotient of product of amount of substance fraction stem:[x_\"X\"] (<<t9-13>>) of stem:[\"X\"] and molar volume stem:[V_\"m,X\"] (<<t9-5>>) of the pure substance stem:[\"X\"] at the same temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>), and sum over all substances stem:[i] of products of amount-of-substance fractions stem:[x_i] (<<t9-13>>) of substance stem:[i] and their molar volumes stem:[V_\"m,i\"] (<<t9-5>>):
+
+[stem%unnumbered]
+++++
+varphi_\"X\" = (x_\"X\"V_\"m,X\")/(sum_i x_i V_(\"m\",i))
+++++
+"""@en ;
+  skos:note """Generally, the volume fraction is temperature dependent.
+
+Decided by the 16^th^ CGPM (1979), both \"l\" and \"L\" are allowed for the symbols for the litre.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-ml/l ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molality"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-15" ;
+  skosxl:prefLabel isoiec80000:term-t9-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-15-1 ;
+  skos:definition """quotient of amount of substance (<<t9-2>>) of solute stem:[\"B\"] and mass stem:[m_\"A\"] (<<iso80000-4>>) of the solvent substance stem:[\"A\"]
+
+[stem%unnumbered]
+++++
+b_\"B\" = n_\"B\"//m_\"A\"
+++++
+"""@en ;
+  skos:note """The alternative symbol stem:[m_\"B\"] should be avoided in situations where it might be mistaken for the mass of substance stem:[\"B\"]. However, the symbol stem:[m_\"B\"] is much more commonly used than the symbol stem:[b_\"B\"] for molality, despite the possible confusion with mass."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol/kg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "latent heat of phase transition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "enthalpy of phase transition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"pt\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-16" ;
+  skosxl:prefLabel isoiec80000:term-t9-16-0 ;
+  skosxl:altLabel isoiec80000:term-t9-16-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-16-0 ;
+  skos:definition """energy (<<iso80000-5>>) necessary to be added or subtracted isothermally and isobarically to a system to completely undergo the phase transition"""@en ;
+  skos:note """Mostly, molar or specific quantity is used and phase transition is expressed explicitly, e.g. molar latent heat of evaporation.
+
+The subscript \"pt\" is the qualifier for the phase transition, which may be changed to e.g. \"l-g\".
+
+The term \"enthalpy of phase transition\" is mainly used in theory.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chemical potential <chemistry>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-17" ;
+  skosxl:prefLabel isoiec80000:term-t9-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-17-0 ;
+  skos:definition """partial derivative of the Gibbs energy (<<iso80000-5>>) with respect to amount stem:[n_\"X\"] of substance stem:[\"X\"] (<<t9-2>>) at constant temperature stem:[T] (<<iso80000-5>>) and pressure stem:[p] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+mu_\"X\" = (del G//del n_\"X\")_(T,p)
+++++
+"""@en ;
+  skos:note """For a pure substance, where stem:[G_\"m\"] is the molar Gibbs energy. In a mixture, stem:[mu_\"B\"] is the partial molar Gibbs energy.
+
+In condensed matter physics, the chemical potential of electrons is energy.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absolute activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-18" ;
+  skosxl:prefLabel isoiec80000:term-t9-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-18-0 ;
+  skos:definition """for substance stem:[\"X\"], exponential of quotient of chemical potential stem:[mu_\"X\"] of substance stem:[\"B\"] (<<t9-17>>), and product of molar gas constant stem:[R] (<<t9-37.1>>) and thermodynamic temperature stem:[T] (<<iso80000-5>>):
+
+[stem%unnumbered]
+++++
+lambda_\"X\" = \"exp\"(mu_\"X\"/(RT))
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "partial pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-19" ;
+  skosxl:prefLabel isoiec80000:term-t9-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-19-0 ;
+  skos:definition """for substance stem:[X] in a gaseous mixture, product of amount-of-substance fraction stem:[y_\"X\"] of substance stem:[\"X\"] (<<t9-13>>) and total pressure stem:[p] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+p_\"X\" = y_\"X\"p
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fugacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tilde p_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-20" ;
+  skosxl:prefLabel isoiec80000:term-t9-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-20-0 ;
+  skos:definition """for substance stem:[\"X\"], quantity proportional to the absolute activity, stem:[lambda_\"X\"] (<<t9-18>>), the proportionality factor, which is a function of temperature (<<iso80000-5>>) only, being determined by the condition that, at constant temperature and composition, stem:[p_\"X\"//tilde p_\"X\"] tends to 1 for an indefinitely dilute gas"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+tilde p_\"X\" = lambda_\"X\" * lim_(p -> 0)(p_\"X\"//lambda_\"X\")
+++++
+
+where stem:[p] is total pressure (<<iso80000-4>>).
+
+The IUPAC preferred symbol for fugacity is stem:[f].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard chemical potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"B\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-21-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-21" ;
+  skosxl:prefLabel isoiec80000:term-t9-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-21-1 ;
+  skos:definition """for substance stem:[\"B\"], value of the chemical potential (<<t9-17>>) at specified standard conditions"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+mu_\"B\"^(&#8854;) = RT \"ln\" lambda^(&#8854;)
+++++
+
+where stem:[mu_\"B\"^(&#8854;)] is a function of temperature stem:[T] at the standard pressure stem:[p=p^(&#8854;)].
+
+The standard chemical potential depends on the choice of standard state, which must be specified.
+
+In a liquid or solid solution, the standard state is referenced to the ideal dilute behaviour of the solute (substance stem:[\"B\"]).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-22" ;
+  skosxl:prefLabel isoiec80000:term-t9-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-22-0 ;
+  skos:definition """for substance stem:[\"X\"] in a liquid or a solid mixture, quotient of absolute activity stem:[lambda_\"X\"] (<<t9-18>>) of substance stem:[\"X\"] and the product of absolute activity stem:[lambda_\"X\"^(**)] of the pure substance stem:[\"X\"] at the same temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>) and amount-of-substance fraction stem:[x_\"X\"] of substance stem:[\"X\"] (<<t9-13>>):
+
+[stem%unnumbered]
+++++
+f_\"X\" = lambda_\"X\" // (lambda_\"X\"^(**) x_\"X\")
+++++
+"""@en ;
+  skos:note """The systematic name is \"activity factor\", but the name \"activity coefficient\" is also commonly used (see <<t9-25>>).
+
+Activity factors can also be obtained applying Raoult's law or Henry's law.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard absolute activity <in a mixture>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"X\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-23" ;
+  skosxl:prefLabel isoiec80000:term-t9-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-23-0 ;
+  skos:definition """for substance stem:[X] in a liquid or a solid mixture, absolute activity stem:[lambda_\"X\"^(**)] (<<t9-18>>) of the pure substance stem:[X] at the same temperature (<<iso80000-5>>) but at standard pressure (<<iso80000-4>>) stem:[10^5 \"unitsml(Pa)\"]:
+
+[stem%unnumbered]
+++++
+lambda_\"X\"^(&#8854;) = lambda_\"X\"^(**) (p^(&#8854;))
+++++
+"""@en ;
+  skos:note """This quantity is a function of temperature only."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity of solute"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative activity of solute"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"m,X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-24" ;
+  skosxl:prefLabel isoiec80000:term-t9-24-0 ;
+  skosxl:altLabel isoiec80000:term-t9-24-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-24-1 ;
+  skos:definition """for a solute stem:[\"X\"] in a solution, quantity proportional to the absolute activity, stem:[lambda_\"X\"] (<<t9-18>>), the proportionality factor, which is a function of temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>) only, being determined by the condition that, at constant temperature and pressure, aX divided by the molality (<<t9-15>>) ratio, stem:[b_\"X\"//b^(&#8854;)] tends to 1 at infinite dilution; stem:[b_\"X\"] is the molality of solute stem:[\"X\"] (<<t9-15>>), and stem:[b^(&#8854;)] is standard molality:
+
+[stem%unnumbered]
+++++
+a_\"X\" = lambda_\"X\" * \"lim\"_(sum b_\"x\" -> 0) (b_\"X\"//b^(&#8854;))/(lambda_\"X\")
+++++
+"""@en ;
+  skos:note """The quantity stem:[a_\"c,X\"], similarly defined in terms of the concentration ratio stem:[c_\"X\"//c^(&#8854;)], is also called the activity or relative activity of solute stem:[\"X\"]; stem:[c^(&#8854;)] is a standard amount-of-substance concentration (<<t9-12.2>>):
+
+[stem%unnumbered]
+++++
+a_\"c,X\" = lambda_\"X\" \"lim\"_(sum c_\"x\" -> 0) (c_\"x\"//c^(&#8854;))/(lambda_\"X\")
+++++
+
+where stem:[sum] denotes summation over all the solute substances. This especially applies to a dilute liquid solution.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-25" ;
+  skosxl:prefLabel isoiec80000:term-t9-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-25-0 ;
+  skos:definition """for a solute stem:[\"B\"] in a solution, quotient of activity stem:[a_\"B\"] of solute stem:[\"B\"] (<<t9-24>>), and quotient of the molality (<<t9-15>>) stem:[b_\"B\"] of substance stem:[\"B\"] and standard molality stem:[b^(&#8854;)]:
+
+[stem%unnumbered]
+++++
+gamma_\"B\" = (a_\"B\")/(b_\"B\"//b^(&#8854;))
+++++
+"""@en ;
+  skos:note """The name \"activity coefficient of solute stem:[\"B\"]\" is also used for the quantity stem:[gamma_\"B\"] defined as:
+
+[stem%unnumbered]
+++++
+gamma_\"B\" = (a_(c,\"B\"))/(c_\"B\"//c^(&#8854;))
+++++
+
+See <<t9-22>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard absolute activity <in a solution>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"B\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-26" ;
+  skosxl:prefLabel isoiec80000:term-t9-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-26-0 ;
+  skos:definition """for a solute stem:[\"B\"] in a solution:
+
+[stem%unnumbered]
+++++
+lambda_\"B\"^(&#8854;) = \"lim\"_(sum b_\"B\" -> 0) [lambda_\"B\" ((p^(&#8854;))b^(&#8854;))/b_\"B\"]
+++++
+
+where stem:[sum] denotes summation over all solutes, stem:[p^(&#8854;)] is a standard pressure (<<iso80000-4>>), stem:[b^(&#8854;)] is standard molality, and stem:[b_\"B\"] is the molality of substance stem:[\"B\"] (<<t9-15>>)
+"""@en ;
+  skos:note """This quantity is a function of temperature only. It especially applies to a dilute liquid solution. The standard pressure is stem:[10^5 \"unitsml(Pa)\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-27.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity of solvent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-27.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative activity of solvent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-27.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"A\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-27.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-27.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-27.1-0 ;
+  skosxl:altLabel isoiec80000:term-t9-27.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-27.1-0 ;
+  skos:definition """for the solvent stem:[\"A\"] in a solution, quotient of the absolute activity of substance stem:[\"A\"], stem:[lambda_\"A\"] (<<t9-18>>), and that, stem:[lambda_\"A\"^(**)], of the pure solvent at the same temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+a_\"A\" = lambda_\"A\"//lambda_\"A\"^(**)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "osmotic factor of solvent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-27.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "osmotic coefficient of solvent stem:[\"A\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-27.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-27.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-27.2-0 ;
+  skosxl:altLabel isoiec80000:term-t9-27.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-27.2-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+varphi = -(M_\"A\" sum b_\"B\")^(-1) \"ln\" a_\"A\"
+++++
+
+where stem:[M_\"A\"] is the molar mass (<<t9-4>>) of the solvent stem:[A], stem:[sum] denotes summation over all the solutes, stem:[b_\"B\"] is the molality of solute stem:[\"B\"] (<<t9-15>>), and stem:[a_\"A\"] is the activity of solvent stem:[\"A\"] (<<t9-27.1>>)
+"""@en ;
+  skos:note """The name \"osmotic coefficient\" is generally used, although the name \"osmotic factor\" is more systematic.
+
+This concept especially applies to a dilute liquid solution.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-27.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard absolute activity of solvent <in a dilute solution>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-27.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"A\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-27.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-27.3" ;
+  skosxl:prefLabel isoiec80000:term-t9-27.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-27.3-0 ;
+  skos:definition """for solvent stem:[\"A\"], standard absolute activity (<<t9-23>>) of the pure substance stem:[\"A\"] at the same temperature (<<iso80000-5>>) and at a standard pressure stem:[p^(&#8854;)] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+lambda_\"A\"^(&#8854;) = lambda_\"A\"^(**) p^(&#8854;)
+++++
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "osmotic pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Pi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-28" ;
+  skosxl:prefLabel isoiec80000:term-t9-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-28-0 ;
+  skos:definition """excess pressure (<<iso80000-4>>) required to maintain osmotic equilibrium between a solution and the pure solvent separated by a membrane permeable to the solvent only"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stoichiometric number of substance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-29" ;
+  skosxl:prefLabel isoiec80000:term-t9-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-29-0 ;
+  skos:definition """for substance stem:[\"B\"], an integer number or a simple fraction, being negative for a reactant and positive for a product, occurring in the expression for a chemical reaction:
+
+[stem%unnumbered]
+++++
+0 = sum nu_\"B\"
+++++
+
+where the symbol stem:[B] denotes the reactants and products involved in the reaction
+"""@en ;
+  skos:note """[example]
+====
+stem:[(1//2)\"N\"_2 + (3//2)\"H\"_2 = \"NH\"_3]
+
+stem:[nu (\"N\"_2) = -1//2], stem:[nu (\"H\"_2) = -3//2], stem:[nu (\"NH\"_3) = +1].
+====
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "affinity of a chemical reaction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-30" ;
+  skosxl:prefLabel isoiec80000:term-t9-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-30-0 ;
+  skos:definition """negative of the sum over all substances stem:[\"B\"] of products of stoichiometric number stem:[nu_\"B\"] of substance stem:[\"B\"] (<<t9-29>>) and chemical potential stem:[mu_\"B\"] of substance stem:[\"B\"] (<<t9-17>>):
+
+[stem%unnumbered]
+++++
+A = - sum nu_\"B\" mu_\"B\"
+++++
+"""@en ;
+  skos:note """The affinity of a reaction is a measure of the \"driving force\" of the reaction. When it is positive, the reaction goes spontaneously from reactants to products, and when it is negative, the reaction goes in the opposite direction. Another way to write the definition is:
+
+[stem%unnumbered]
+++++
+A = (del G// del xi)_(p,T)
+++++
+
+where stem:[G] is Gibbs energy (<<iso80000-5>>) and stem:[xi] is the extent of the reaction (<<t9-31>>).
+
+Note that stem:[nu_\"B\"] is negative for reactants and positive for products.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "extent of reaction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "xi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-31" ;
+  skosxl:prefLabel isoiec80000:term-t9-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-31-0 ;
+  skos:definition """difference of initial amount stem:[n_\"B in\"] of substance stem:[\"B\"] (<<t9-2>>) and equilibrium amount stem:[n_\"B eq\"] of substance stem:[\"B\"] (<<t9-2>>) divided by stoichiometric number stem:[nu_\"B\"] of substance stem:[\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+xi = (n_\"B eq\" - n_\"B in\")/(nu_\"B\")
+++++
+"""@en ;
+  skos:note """See remark to <<t9-30>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard equilibrium constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-32-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic equilibrium constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-32" ;
+  skosxl:prefLabel isoiec80000:term-t9-32-0 ;
+  skosxl:altLabel isoiec80000:term-t9-32-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-32-0 ;
+  skos:definition """for a chemical reaction, product for all substances stem:[\"B\"] of standard absolute activity stem:[lambda_\"B\"^(&#8854;)] of substance stem:[\"B\"] (<<t9-26>>) in power of minus stoichiometric number stem:[nu_\"B\"] of substance stem:[\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+K^(&#8854;) = Pi_\"B\" (lambda_\"B\"^(&#8854;))^(-nu_\"B\")
+++++
+"""@en ;
+  skos:note """This quantity is a function of temperature only. Others depend on temperature, pressure, and composition.
+
+One can define in an analogous way an equilibrium constant in terms of fugacity, stem:[K_\"f\"], molality, stem:[K_\"m\"], etc.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equilibrium constant <pressure basis>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-33" ;
+  skosxl:prefLabel isoiec80000:term-t9-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-33-0 ;
+  skos:definition """for gases, product for all substances stem:[\"B\"] of partial pressure stem:[p_\"B\"] of substance stem:[\"B\"] (<<t9-19>>) in power of its stoichiometric number stem:[nu_\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+K_p = Pi_\"B\"(p_\"B\")^(nu_\"B\")
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["unitsml(Pa)"^(sum nu_"B")] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:[("unitsml(kg*m^(-1)*s^(-2))")^(sum nu_"B")] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equilibrium constant <concentration basis>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-34" ;
+  skosxl:prefLabel isoiec80000:term-t9-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-34-0 ;
+  skos:definition """for solutions, product for all substances stem:[\"B\"] of concentration stem:[c_\"B\"] of substance stem:[\"B\"] (<<t9-9.1>>) in power of its stoichiometric number stem:[nu_\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+K_c = Pi_\"B\" (c_\"B\")^(nu_\"B\")
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:[("unitsml(mol/m^3)")^(sum nu_"B")] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "microcanonical partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Omega)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-35.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-35.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-35.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-35.1-0 ;
+  skos:definition """number of all quantum states stem:[r] consistent with given energy stem:[E] (<<iso80000-4>>), volume (<<iso80000-3>>), and external fields:
+
+[stem%unnumbered]
+++++
+ii(Omega) = sum_r 1
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+S = k\"ln\" ii(Omega)
+++++
+
+where stem:[S] is entropy (<<iso80000-5>>) and stem:[k] is the Boltzmann constant (<<iso80000-1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "canonical partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-35.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-35.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-35.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-35.2-0 ;
+  skos:definition """sum over quantum states of energy stem:[E_r] (<<iso80000-4>>), expressed by:
+
+[stem%unnumbered]
+++++
+Z = sum_r \"exp\" ((-E_r)/(kT))
+++++
+
+where stem:[k] is the Boltzmann constant (<<iso80000-1>>), and stem:[T] is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+A = -kT \"ln\" Z
+++++
+
+where stem:[A] is Helmholtz energy (<<iso80000-5>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-35.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "grand-canonical partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-35.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "grand partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-35.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Xi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-35.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-35.3" ;
+  skosxl:prefLabel isoiec80000:term-t9-35.3-0 ;
+  skosxl:altLabel isoiec80000:term-t9-35.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-35.3-0 ;
+  skos:definition """sum of canonical partition function stem:[Z (N_\"A\",N_\"B\",...)] for the given number of particles stem:[\"A\", \"B\"] multiplied by absolute activities (<<t9-18>>) stem:[lambda_\"A\", lambda_\"B\", ...] of particles stem:[\"A\", \"B\"]:
+
+[stem%unnumbered]
+++++
+ii(Xi) = sum_(N_\"A\",N_\"B\",...) Z(N_\"A\", N_\"B\",...) * lambda_\"A\"^(N_\"A\")*lambda_\"B\"^(N_\"B\")*...
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+A - sum mu_\"B\" n_\"B\" = - kT \"ln\" ii(Xi)
+++++
+
+where stem:[A] is Helmholtz energy (<<iso80000-5>>), stem:[mu_\"B\"] is the chemical potential of substance stem:[\"B\"], and stem:[n_\"B\"] is the amount of substance stem:[\"B\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-35.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molecular partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-35.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "partition function of a molecule"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-35.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-35.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-35.4" ;
+  skosxl:prefLabel isoiec80000:term-t9-35.4-0 ;
+  skosxl:altLabel isoiec80000:term-t9-35.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-35.4-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+q = sum_r \"exp\" ((-epsilon_r)/(kT))
+++++
+
+where stem:[epsilon_r] is the energy (<<iso80000-5>>) of the stem:[r]-th level of the molecule consistent with given volume (<<iso80000-3>>) and external fields, stem:[k] is the Boltzmann constant (<<iso80000-1>>), and stem:[T] is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-36.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "statistical weight of subsystem"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-36.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-36.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-36.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-36.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-36.1-0 ;
+  skos:definition """number of different microstates in a subsystem"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-36.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "degeneracy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-36.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "multiplicity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-36.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-36.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-36.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-36.2-0 ;
+  skosxl:altLabel isoiec80000:term-t9-36.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-36.2-0 ;
+  skos:definition """for quantum level, statistical weight of that level"""@en ;
+  skos:note """If stem:[g = 1], the level is called non-degenerate."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar gas constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-37.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-37.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-37.1-0 ;
+  skos:definition """product of the Boltzmann constant (<<iso80000-1>>) and the Avogadro constant (<<iso80000-1>>)"""@en ;
+  skos:note """For an ideal gas,
+
+[stem%unnumbered]
+++++
+rho V_\"m\" = RT
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(mol*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific gas constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-37.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-37.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-37.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-37.2-0 ;
+  skos:definition """quotient of molar gas constant stem:[R] (<<t9-37.1>>) and molar mass (<<t9-4>>) stem:[M], i.e. stem:[R_\"s\" = R//M]"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean free path <chemistry>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-38-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-38" ;
+  skosxl:prefLabel isoiec80000:term-t9-38-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-38-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-38-1 ;
+  skos:definition """for a particle, the average distance stem:[d] (<<iso80000-3>>) between two successive collisions with other particles"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient <chemistry>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-39" ;
+  skosxl:prefLabel isoiec80000:term-t9-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-39-0 ;
+  skos:definition """proportionality coefficient of local molecular concentration stem:[C_\"B\"] (<<t9-9.2>>) of substance stem:[\"B\"] in the mixture multiplied by the local average velocity (<<iso80000-3>>) stem:[v_\"B\"] of the molecules of stem:[\"B\"], and minus the gradient of the local molecular concentration stem:[C_\"B\"] (<<t9-9.2>>) of substance stem:[\"B\"] in the mixture, expressed by:
+
+[stem%unnumbered]
+++++
+C_\"B\" << v_\"B\" >> = -D bb(\"grad\") C_\"B\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-40.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusion ratio"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-40.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k_T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-40.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-40.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-40.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-40.1-0 ;
+  skos:definition """in a steady-state of a binary mixture in which thermal diffusion occurs, proportionality factor between gradient of the amount-of-substance fraction stem:[x_\"B\"] (<<t9-13>>) of the heavier substance stem:[\"B\"], and negative gradient of the local thermodynamic temperature stem:[T] (<<iso80000-5>>) divided by that temperature (<<iso80000-5>>):
+
+[stem%unnumbered]
+++++
+bb(\"grad\") x_\"B\" = -(k_T//T) bb(\"grad\") T
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-40.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusion factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-40.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-40.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-40.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-40.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-40.2-0 ;
+  skos:definition """quotient of the thermal diffusion ratio stem:[k_T] (<<t9-40.1>>), and the product of the local amount-of-substance fractions stem:[x_\"A\"], stem:[x_\"B\"] (<<t9-13>>) of two substances stem:[\"A\"] and stem:[\"B\"]:
+
+[stem%unnumbered]
+++++
+alpha_T = k_T//(x_\"A\" x_\"B\")
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_\"T\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-41" ;
+  skosxl:prefLabel isoiec80000:term-t9-41-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-41-0 ;
+  skos:definition """product of the thermal diffusion ratio stem:[k_\"T\"] (<<t9-40.1>>) and the diffusion coefficient stem:[D] (<<t9-39>>):
+
+[stem%unnumbered]
+++++
+D_\"T\" = k_\"T\"*D
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ionic strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-42 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-42" ;
+  skosxl:prefLabel isoiec80000:term-t9-42-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-42-0 ;
+  skos:definition """in a sample, one half of the sum of square of the charge number stem:[z_i] (<<iso80000-10>>) of stem:[i]-th ion multiplied by its molality stem:[b_i] (<<t9-15>>) over any involved ion:
+
+[stem%unnumbered]
+++++
+I = 1/2 sum z_i^2 b_i
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol*kg^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "degree of dissociation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-43-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dissociation fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-43 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-43" ;
+  skosxl:prefLabel isoiec80000:term-t9-43-0 ;
+  skosxl:altLabel isoiec80000:term-t9-43-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-43-0 ;
+  skos:definition """in a sample, quotient of the number stem:[n_\"d\"] of dissociated molecules and the total number stem:[n] of molecules:
+
+[stem%unnumbered]
+++++
+alpha = n_\"d\"//n
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electrolytic conductivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-44 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-44" ;
+  skosxl:prefLabel isoiec80000:term-t9-44-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-44-0 ;
+  skos:definition """quotient of the magnitude of electric current density stem:[J] (<<iec80000-6>>) and the magnitude electric field strength stem:[E] (<<iec80000-6>>) in an electrolyte:
+
+[stem%unnumbered]
+++++
+kappa = J//E
+++++
+"""@en ;
+  skos:note """For anisotropic media, stem:[kappa] is a tensor. In <<iec80000-6>> the symbols stem:[sigma], stem:[gamma] are used."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar conductivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Lambda)_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-45 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-45" ;
+  skosxl:prefLabel isoiec80000:term-t9-45-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-45-0 ;
+  skos:definition """in an electrolyte, quotient of electrolytic conductivity stem:[kappa] (<<t9-44>>) and amount-of-substance concentration stem:[c_\"B\"] (<<t9-12.1>>):
+
+[stem%unnumbered]
+++++
+ii(Lambda)_\"m\" = kappa//c_\"B\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S*m^2/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^3*A^2*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transport number of the ion stem:[\"B\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-46-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "current fraction of the ion stem:[\"B\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "t_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-46 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-46" ;
+  skosxl:prefLabel isoiec80000:term-t9-46-0 ;
+  skosxl:altLabel isoiec80000:term-t9-46-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-46-0 ;
+  skos:definition """for the ion stem:[\"B\"], quotient of electric current stem:[i_\"B\"] (<<iec80000-6>>) carried by the ion stem:[\"B\"] and total electric current stem:[i] (<<iec80000-6>>) in an electrolyte:
+
+[stem%unnumbered]
+++++
+t_\"B\" = i_\"B\"//i
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angle of optical rotation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-47 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-47" ;
+  skosxl:prefLabel isoiec80000:term-t9-47-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-47-0 ;
+  skos:definition """angle through which plane-polarized light is rotated clockwise, as seen when facing the light source, in passing through an optically active medium"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar optical rotatory power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-48 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-48" ;
+  skosxl:prefLabel isoiec80000:term-t9-48-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-48-0 ;
+  skos:definition """angle stem:[alpha] of optical rotation (<<t9-47>>), multiplied by the quotient of cross-sectional area stem:[A] (<<iso80000-3>>) of a linearly polarized light beam and the amount of substance stem:[n] (<<t9-2>>) of the optically active component in the path of the beam:
+
+[stem%unnumbered]
+++++
+alpha_n = alpha A//n
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*m^2/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
+
+isoiec80000:term-t9-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific optical rotatory power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-49 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-49" ;
+  skosxl:prefLabel isoiec80000:term-t9-49-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-49-0 ;
+  skos:definition """angle stem:[alpha] of optical rotation (<<t9-47>>), multiplied by the quotient of cross-sectional area stem:[A] (<<iso80000-3>>) of a linearly polarized light beam and the mass stem:[m] (<<iso80000-4>>) of the optically active component in the path of the beam:
+
+[stem%unnumbered]
+++++
+alpha_m = alpha A//m
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*m^2/kg^1 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

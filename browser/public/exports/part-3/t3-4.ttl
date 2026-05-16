@@ -1,0 +1,32 @@
+isoiec80000:term-t3-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(S)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-4" ;
+  skosxl:prefLabel isoiec80000:term-t3-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-4-1 ;
+  skos:definition """extent of a three-dimensional geometrical shape"""@en ;
+  skos:note """The volume element in Euclidean space is given by:
+
+[stem%unnumbered]
+++++
+\"d\"V = \"d\"x\" d\"y\" d\"z
+++++
+
+where stem:[\"d\"x], stem:[\"d\"y], and stem:[\"d\"z] denote the differentials of the Cartesian coordinates (<<iso80000-2>>).
+
+The symbol stem:[\"d\"tau] is also used for the volume element.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

@@ -1,0 +1,41 @@
+isoiec80000:term-t6-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic field strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetizing field"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(H))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-25" ;
+  skosxl:prefLabel isoiec80000:term-t6-25-0 ;
+  skosxl:altLabel isoiec80000:term-t6-25-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-25-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+bb(ii(H)) = bb(ii(B))/mu_0 - bb(ii(M))
+++++
+
+where stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>), stem:[mu_0] is the magnetic constant (<<t6-26.1>>), and stem:[bb(ii(M))] is the magnetization (<<t6-24>>)
+"""@en ;
+  skos:note """The magnetic field strength is related to the total current density stem:[bb(ii(J))_\"tot\"] (<<t6-20>>) via
+
+[stem%unnumbered]
+++++
+bb(rot) bb(ii(H)) = bb(ii(J))_\"tot\"
+++++
+
+The magnetic field strength, the magnetic flux density, and the magnetization depend on the position.
+
+See <<iec60050-121,locality:item=\"121-11-56\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

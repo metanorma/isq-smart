@@ -1,0 +1,24 @@
+isoiec80000:term-t2-20.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fresnel integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"S\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"C\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.8-1 ;
+  skos:definition """Fresnel integrals"""@en ;
+  skos:note """stem:[\"S\"(z) = int_0^z \"sin\"(pi/2 t^2)\"d\"t]
+
+stem:[\"C\"(z) = int_0^z \"cos\"(pi/2 t^2)\"d\"t]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

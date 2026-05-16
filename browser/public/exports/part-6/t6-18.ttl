@@ -1,0 +1,26 @@
+isoiec80000:term-t6-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "displacement current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-18" ;
+  skosxl:prefLabel isoiec80000:term-t6-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-18-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+bb(ii(J))_\"D\" = (del bb(ii(D)))/(del t)
+++++
+
+where stem:[bb(ii(D))] is electric flux density (<<t6-12>>) and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-42\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

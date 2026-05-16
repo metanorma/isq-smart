@@ -1,0 +1,23 @@
+isoiec80000:term-t6-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coercivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-31-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coercive field strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-31" ;
+  skosxl:prefLabel isoiec80000:term-t6-31-0 ;
+  skosxl:altLabel isoiec80000:term-t6-31-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-31-0 ;
+  skos:definition """scalar quantity giving the magnetic field strength (<<t6-25>>) to be applied to bring the magnetic flux density (<<t6-21>>) in a substance from its remanent magnetic flux density to zero"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-12-69\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-1*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

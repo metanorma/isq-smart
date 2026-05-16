@@ -1,0 +1,28 @@
+isoiec80000:term-t6-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total current"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-19.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"t\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-19.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-19.2-1 ;
+  skos:definition """scalar quantity given by the sum of electric current stem:[I] (<<t6-1>>) and displacement current stem:[I_\"D\"] (<<t6-19.1>>);
+
+[stem%unnumbered]
+++++
+I_\"tot\" = I + I_\"D\"
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-45\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

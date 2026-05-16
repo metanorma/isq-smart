@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-17.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cartesian coordinate",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-17.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "x, y, z",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-17.1",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-17.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-17.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-17.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "stem:[bb(ii(r)) = xbb(ii(e))_x + ybb(ii(e))_y + zbb(ii(e))_z] +\nstem:[\"d\"bb(ii(r)) = \"d\"x\" \"bb(ii(e))_x + \"d\"y\" \"bb(ii(e))_y + \"d\"z\" \"bb(ii(e))_z]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The base vectors stem:[bb(ii(e))_x, bb(ii(e))_y, bb(ii(e))_z] form an orthonormal system (i.e. the vectors are unit vectors and orthogonal) which is right-handed, see <<fig1;and!fig4>>.\n\nstem:[bb(ii(e))_1, bb(ii(e))_2, bb(ii(e))_3] or stem:[bb(ii(i)), bb(ii(j)), bb(ii(k))] are also used for the base vectors and stem:[x_1, x_2, x_3] or stem:[i, j, k] for the coordinates.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-17"
+      }
+    }
+  ]
+}

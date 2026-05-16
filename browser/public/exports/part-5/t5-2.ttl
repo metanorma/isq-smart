@@ -1,0 +1,37 @@
+isoiec80000:term-t5-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Celsius temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "t"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-2" ;
+  skosxl:prefLabel isoiec80000:term-t5-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-2-1 ;
+  skos:definition """temperature difference from the thermodynamic temperature of the ice point is called the Celsius temperature stem:[t], which is defined by the quantity equation:
+
+[stem%unnumbered]
+++++
+t = T - T_\"0\"
+++++
+
+where stem:[T] is thermodynamic temperature (<<t5-1>>) and stem:[T_\"0\" = 273.15 \"unitsml(K)\"]
+"""@en ;
+  skos:note """The unit degree Celsius is a special name for the kelvin for use in stating values of Celsius temperature. The unit degree Celsius is by definition equal in magnitude to the kelvin. A difference or interval of temperature may be expressed in kelvin or in degrees Celsius.
+
+The thermodynamic temperature stem:[T_\"0\"] is stem:[0.01 \"unitsml(K)\"] below the thermodynamic temperature of the triple point of water.
+
+The symbol stem:[\"unitsml(degC)\"] for the degree Celsius shall be preceded by a space (see <<iso80000-1>>).
+
+Prefixes are not allowed in combination with the unit stem:[\"unitsml(degC)\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-degC ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

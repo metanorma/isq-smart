@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-5.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Nusselt number <heat transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-5.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "N u",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-5.5",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-5.5",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-5.5-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-5.5-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between the internal thermal resistance of a body and its surface thermal resistance in a body transferring heat from a surface into its interior or vice versa, expressed by\n\nstem:[N]stem:[u = Kl // lambda = Kl // (alpha rho c_p)] where\n\nstem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,\nstem:[l]:: is length (<<iso80000-3>>) of the body in direction of heat flow,\nstem:[lambda]:: is thermal conductivity (<<iso80000-5>>) of the surface,\nstem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The body under consideration can be a solid body, a fluid, or their combination, and additional heat transfer due to convective motion can occur.\n\nIn case of merely conductive heat transfer especially in a solid body, the \"Biot number for heat transfer\" (<<t11-5.6>>) is used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-5"
+      }
+    }
+  ]
+}

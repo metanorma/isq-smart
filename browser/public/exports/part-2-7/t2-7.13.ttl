@@ -1,0 +1,19 @@
+isoiec80000:term-t2-7.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "closed unbounded interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "[a, +oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.13-0 ;
+  skos:definition """closed unbounded interval onward from stem:[a] included"""@en ;
+  skos:note """stem:[[a, +oo) = {x in bb(sf(R)) &#x2223; a <= x}]
+
+The notations stem:[[a, oo), [a, +oo[] and stem:[[a, oo[] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

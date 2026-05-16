@@ -1,0 +1,21 @@
+isoiec80000:term-t6-52.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "apparent admittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.5" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.5-0 ;
+  skos:definition """quotient of RMS electric current (<<t6-1>>) and RMS voltage (<<t6-11.3>>)"""@en ;
+  skos:note """Under sinusoidal conditions, the apparent admittance is the modulus of the admittance.(((admittance,modulus of)))
+
+See <<iec60050-131,locality:item=\"131-12-52\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

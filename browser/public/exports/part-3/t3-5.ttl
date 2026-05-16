@@ -1,0 +1,38 @@
+isoiec80000:term-t3-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular measure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-5-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-5" ;
+  skosxl:prefLabel isoiec80000:term-t3-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-5-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-5-2 ;
+  skos:definition """measure of a geometric figure, called plane angle, formed by two rays, called the sides of the plane angle, emanating from a common point, called the vertex of the plane angle"""@en ;
+  skos:note """The angular measure is given by:
+
+[stem%unnumbered]
+++++
+alpha = s/r
+++++
+
+where stem:[s] denotes the arc length (<<t3-1.7>>) of the included arc of a circle, centred at the vertex of the plane angle, and stem:[r] the radius (<<t3-1.6>>) of that circle.
+
+Other symbols are also used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

@@ -1,0 +1,30 @@
+isoiec80000:term-t5-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface coefficient of heat transfer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-10.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(alpha)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-10.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-10.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-10.2-1 ;
+  skos:definition """quotient of density of heat flow rate and the difference of the temperature at the surface and a reference temperature:
+
+[stem%unnumbered]
+++++
+h = q/((T_\"s\"-T_\"r\"))
+++++
+
+where stem:[q] is density of heat flow rate (<<t5-8>>), stem:[T_\"s\"] is the thermodynamic temperature (<<t5-1>>) at the surface, and stem:[T_\"r\"] is a reference thermodynamic temperature characterizing the adjacent surroundings
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/(m^2*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

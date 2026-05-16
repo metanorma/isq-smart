@@ -1,0 +1,18 @@
+isoiec80000:term-t4-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.6" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.6-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion of a body in a fluid"""@en ;
+  skos:note """For the drag coefficient, see <<t4-23.4>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

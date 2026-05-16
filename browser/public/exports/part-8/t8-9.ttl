@@ -1,0 +1,30 @@
+isoiec80000:term-t8-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sound power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t8-9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-9" ;
+  skosxl:prefLabel isoiec80000:term-t8-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-9-1 ;
+  skos:definition """integral over a surface of the product of sound pressure, stem:[p] (<<t8-2.2>>), and the component stem:[u_\"n\"] of the particle velocity (<<t8-4>>) in the direction normal to the surface, at a point on the surface"""@en ;
+  skos:note """This definition holds for waves in the volume of homogenous fluids or gases.
+
+This definition can become inapplicable in situations with a high mean fluid flow.
+
+Sound power is for example used to indicate the rate at which energy is radiated by a sound source.
+
+Sound power is an oscillatory quantity that can be positive or negative. A positive sound power indicates that the sound power is radiated out of the surface. A negative sound power indicates that the sound power is absorbed into the surface.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

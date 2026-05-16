@@ -1,0 +1,40 @@
+isoiec80000:term-t7-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "photon flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Phi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-20" ;
+  skosxl:prefLabel isoiec80000:term-t7-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-20-1 ;
+  skos:definition """rate of photon number per time interval, expressed by
+
+[stem%unnumbered]
+++++
+Phi_\"p\" = (\"d\"N_\"p\")/(\"d\"t)
+++++
+
+where stem:[N_\"p\"] is photon number (e.g. given by <<t7-19.1>>), transmitted or received, and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """Photon flux stem:[Phi_\"p\"] is related to radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], of monochromatic radiation, by
+
+[stem%unnumbered]
+++++
+Phi_\"p\" = (Phi_\"e\")/(h nu)
+++++
+
+where stem:[h] is the Planck constant (<<iso80000-1>>), and stem:[nu] is the frequency (<<iso80000-3>>) of the corresponding electromagnetic wave.
+
+The corresponding radiometric quantity is \"radiant flux\" (<<t7-4.1>>). The corresponding photometric quantity is \"luminous flux\" (<<t7-13>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

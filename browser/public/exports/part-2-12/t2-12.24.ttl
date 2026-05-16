@@ -1,0 +1,15 @@
+isoiec80000:term-t2-12.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "indefinite integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "int f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.24 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.24" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.24-0 ;
+  skos:definition """indefinite integral of stem:[f]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

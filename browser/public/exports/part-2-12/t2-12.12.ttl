@@ -1,0 +1,25 @@
+isoiec80000:term-t2-12.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maps onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x overset(f)(->) y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f : x &#8614; y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.12-1 ;
+  skos:definition """stem:[f(x) = y], +
+stem:[f] maps stem:[x] onto stem:[y]
+"""@en ;
+  skos:note """[example]
+stem:[pi overset(\"cos\")(->) -1]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

@@ -1,0 +1,33 @@
+isoiec80000:term-t10-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-29-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-29-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"A\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-29" ;
+  skosxl:prefLabel isoiec80000:term-t10-29-0 ;
+  skosxl:altLabel isoiec80000:term-t10-29-1 ;
+  skosxl:altLabel isoiec80000:term-t10-29-2 ;
+  skosxl:altLabel isoiec80000:sym-t10-29-0 ;
+  skos:definition """quotient of the activity stem:[A] (<<t10-27>>) of a sample and the volume stem:[V] (<<iso80000-3>>) of that sample:
+
+[stem%unnumbered]
+++++
+c_\"A\" = A//V
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,18 @@
+isoiec80000:term-t8-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-2.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-2.1" ;
+  skosxl:prefLabel isoiec80000:term-t8-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-2.1-0 ;
+  skos:definition """pressure (<<iso80000-4>>) in a medium when no sound wave is present"""@en ;
+  skos:note """This definition applies to a medium with zero flow."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t10-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface-activity density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"S\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-30" ;
+  skosxl:prefLabel isoiec80000:term-t10-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-30-0 ;
+  skos:definition """quotient of the activity stem:[A] (<<t10-27>>) of a sample and the total area stem:[S] (<<iso80000-3>>) of the surface of that sample:
+
+[stem%unnumbered]
+++++
+a_\"S\" = A//S
+++++
+"""@en ;
+  skos:note """This value is usually defined for flat sources, where stem:[S] corresponds to the total area of surface of one side of the source."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

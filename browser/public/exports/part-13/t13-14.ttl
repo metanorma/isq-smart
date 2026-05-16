@@ -1,0 +1,20 @@
+isoiec80000:term-t13-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period of binary digits, period duration of binary digits, bit period"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_{\"bit\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-14" ;
+  skosxl:prefLabel isoiec80000:term-t13-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-14-0 ;
+  skos:definition """stem:[T_{\"bit\"} = 1 // r_{\"bit\"}] where stem:[r_{\"bit\"}] is the binary digit
+rate (<<t13-13,item 13-13>>) when the binary digits are
+transmitted in series
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-06-06\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

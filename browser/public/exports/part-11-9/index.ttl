@@ -1,0 +1,56 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-11-9 a smart:PublicationDocument ;
+  dcterms:title "Part 11-9"@en ;
+  dcterms:identifier "ISO 80000-11-9" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t11-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Arrhenius number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-9.1-0 ;
+  skos:definition """quotient of chemical activation energy and thermal energy; in a chemical reaction it is the exponential factor of the reaction rate constant, stem:[k], expressed by
+
+stem:[k ~ \"exp \"(alpha)], with stem:[alpha = E_0 // (RT)]; where
+
+stem:[E_0]:: is activation energy (<<iso80000-5>>),
+stem:[R]:: is molar gas constant (<<iso80000-9>>), and
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-9 .
+
+isoiec80000:term-t11-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Landau-Ginzburg number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-9.2-0 ;
+  skos:definition """quotient of penetration depth of a magnetic field into a superconductor and the coherence length of thermodynamic fluctuations within a superconducting phase in a material at zero thermodynamic temperature, expressed by
+
+stem:[kappa = lambda_\"L\" // (xi sqrt(2))]; where
+
+stem:[lambda_\"L\"]:: is London penetration depth (<<iso80000-12>>), and +
+stem:[xi]:: is coherence length (<<iso80000-12>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-9 .

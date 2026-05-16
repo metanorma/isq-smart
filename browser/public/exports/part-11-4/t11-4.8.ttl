@@ -1,0 +1,33 @@
+isoiec80000:term-t11-4.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Strouhal number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Thomson number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sh"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.8-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.8-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.8-1 ;
+  skos:definition """relation between a characteristic frequency and a characteristic speed for unsteady flow with periodic behaviour, expressed by
+
+stem:[Sr = fl // v]; where
+
+stem:[f]:: is frequency (<<iso80000-3>>) of vortex shedding,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[v]:: is speed (<<iso80000-3>>) of flow
+"""@en ;
+  skos:note """The characteristic length, stem:[l], can be the diameter of an obstacle in the flow which can cause vortex shedding, or the length of it."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

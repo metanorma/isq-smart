@@ -1,0 +1,26 @@
+isoiec80000:term-t5-20.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "internal energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-20.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.2-0 ;
+  skosxl:altLabel isoiec80000:term-t5-20.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.2-0 ;
+  skos:definition """energy of a system whose change is given by the amount of the heat (<<t5-6.1>>) transferred to the system and the work (<<iso80000-4>>) done on the system, provided that the system is closed and no chemical reactions occur"""@en ;
+  skos:note """In thermodynamic text books, usually the formula
+
+stem:[Delta U = Q + W] is used. Note that the zero of the energy is undefined.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

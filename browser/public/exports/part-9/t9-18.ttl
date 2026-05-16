@@ -1,0 +1,22 @@
+isoiec80000:term-t9-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absolute activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-18" ;
+  skosxl:prefLabel isoiec80000:term-t9-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-18-0 ;
+  skos:definition """for substance stem:[\"X\"], exponential of quotient of chemical potential stem:[mu_\"X\"] of substance stem:[\"B\"] (<<t9-17>>), and product of molar gas constant stem:[R] (<<t9-37.1>>) and thermodynamic temperature stem:[T] (<<iso80000-5>>):
+
+[stem%unnumbered]
+++++
+lambda_\"X\" = \"exp\"(mu_\"X\"/(RT))
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t11-4.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bagnold number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.10-0 ;
+  skos:definition """quotient of drag force and gravitational force for a body moving in a fluid, expressed by
+
+stem:[Bg = (c_\"D\"rho v^2)/(l g rho_\"b\")]; where
+
+stem:[c_\"D\"]:: is drag coefficient (<<t11-4.9>>) of the body,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is speed (<<iso80000-3>>) of the body,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>), and
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body
+"""@en ;
+  skos:note """The characteristic length, stem:[l], is the body's volume divided by its cross-sectional area."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

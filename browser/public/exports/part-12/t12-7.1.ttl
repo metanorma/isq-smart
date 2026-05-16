@@ -1,0 +1,22 @@
+isoiec80000:term-t12-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle position vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(r))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-7.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(R))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-7.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-7.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.1-1 ;
+  skos:definition """position vector (<<iso80000-3>>) of a particle"""@en ;
+  skos:note """Often, stem:[bb(ii(r))] is used for electrons and stem:[bb(ii(R))] is used for atoms and other heavier particles."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

@@ -1,0 +1,42 @@
+isoiec80000:term-t10-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rest mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proper mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-2" ;
+  skosxl:prefLabel isoiec80000:term-t10-2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-2-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-2-1 ;
+  skos:definition """for particle stem:[\"X\"], mass (<<iso80000-4>>) of that particle at rest in an inertial frame"""@en ;
+  skos:note """[example]
+====
+stem:[m(\"H\"_2\"O\")] for a water molecule, stem:[m_\"e\"] for an electron.
+
+Rest mass is often denoted stem:[m_0].
+
+stem:[1 \"unitsml(u)\"] is equal to stem:[1//12] times the mass of a free carbon 12 atom, at rest and in its ground state.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Da)\" = 1 \"unitsml(u)\"
+++++
+====
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

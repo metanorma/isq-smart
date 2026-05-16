@@ -1,0 +1,37 @@
+isoiec80000:term-t10-89-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exposure rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-89-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot X"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-89 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-89" ;
+  skosxl:prefLabel isoiec80000:term-t10-89-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-89-0 ;
+  skos:definition """differential quotient of the exposure stem:[X] (<<t10-88>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+dot X = (\"d\"X)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(C/(kg*s))\" = 1 \"unitsml(A/kg)\"
+++++
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The exposure rate, stem:[dot X], is the quotient of stem:[\"d\"X] by stem:[\"d\"t], where stem:[\"d\"X] is the increment of exposure in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+dot X = (\"d\"X)/(\"d\"t).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/(kg*s) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

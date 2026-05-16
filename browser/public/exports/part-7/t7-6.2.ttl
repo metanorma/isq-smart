@@ -1,0 +1,53 @@
+isoiec80000:term-t7-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spectral radiance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_(\"e\",lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-6.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(L_lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-6.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-6.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-6.2-1 ;
+  skos:definition """density of radiance with respect to wavelength, expressed by
+
+[stem%unnumbered]
+++++
+L_(\"e\",lambda) = (\"d\"L_\"e\")/(\"d\"lambda)
+++++
+
+where stem:[L_\"e\"] is radiance (<<t7-6.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)
+"""@en ;
+  skos:note """For Planckian radiation,
+
+[stem%unnumbered]
+++++
+L_(\"e\",lambda)(lambda) = (c(lambda))/(4pi) omega_lambda (lambda) = hc_0^2*f(lambda,T)
+++++
+
+where stem:[c(lambda)] is phase speed (<<iso80000-3>>) of electromagnetic radiation of a wavelength (<<iso80000-3>>) stem:[lambda] in a given medium, stem:[omega_lambda(lambda)] is spectral radiant energy density in terms of wavelength, stem:[c_0] is speed of light in vacuum (<<iso80000-1>>), stem:[h] is the Planck constant (<<iso80000-1>>), and
+
+[stem%unnumbered]
+++++
+f(lambda,T) = (lambda^(-5))/(\"exp\"(c_2 lambda^(-1)T^(-1))-1)
+++++
+
+where the radiation constant stem:[c_2 = hc//k].
+
+The integral of (total) radiance is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:
+
+[stem%unnumbered]
+++++
+L_\"e\" = int_(lambda_1)^(lambda_2)L_(\"e\",lambda)(lambda)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/(sr*m^2*nm) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-3)*sr^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

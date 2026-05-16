@@ -1,0 +1,21 @@
+isoiec80000:term-t2-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cylindrical coordinate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho, varphi, z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-17.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-17.2-0 ;
+  skos:definition """stem:[bb(ii(r)) = rho\" \"bb(ii(e))_rho + z\" \"bb(ii(e))_z] +
+stem:[\"d\"bb(ii(r)) = \"d\"rho\" \"bb(e)_rho + rho\" d\"varphi\" \"e_varphi + \"d\"z\" \"e_z]
+"""@en ;
+  skos:note """stem:[bb(ii(e))_rho (varphi), bb(ii(e))_varphi(varphi), bb(ii(e))_z] form an orthonormal right-handed system. See <<fig2>>.
+
+If stem:[z = 0], then stem:[rho] and stem:[varphi] are polar coordinates in the plane.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-17 .

@@ -1,0 +1,19 @@
+isoiec80000:term-t2-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "real part"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Re \"z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-15.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-15.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-15.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-15.2-0 ;
+  skos:definition """real part of stem:[z]"""@en ;
+  skos:note """If stem:[z = x + \"i \"y], where stem:[x] and stem:[y] are real numbers, then
+
+stem:[x = \"Re \"z] and stem:[y = \"Im \"z].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-15 .

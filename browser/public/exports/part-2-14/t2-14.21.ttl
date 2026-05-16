@@ -1,0 +1,23 @@
+isoiec80000:term-t2-14.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic cosine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcosh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.21-0 ;
+  skos:definition """inverse hyperbolic cosine of stem:[x], +
+area hyperbolic cosine of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arcosh \"x <=> x = \"cosh \"y] (for stem:[y >= 0])
+
+The function stem:[\"arcosh\"] is the inverse of the function stem:[\"cosh\"] with the restriction mentioned above.
+
+stem:[\"arch \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

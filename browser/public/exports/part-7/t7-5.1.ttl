@@ -1,0 +1,41 @@
+isoiec80000:term-t7-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-5.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(I)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-5.1-1 ;
+  skos:definition """density of radiant flux with respect to solid angle in a specified direction, expressed by
+
+[stem%unnumbered]
+++++
+I_\"e\" = (\"d\"Phi_\"e\")/(\"d\"Omega)
+++++
+
+where stem:[Phi_\"e\"] is the radiant flux (<<t7-4.1>>) emitted in a specified direction, and stem:[Omega] is the solid angle (<<iso80000-3>>) containing that direction
+"""@en ;
+  skos:note """The definition holds strictly only for a point source.
+
+The distribution of the radiant intensities as a function of the direction of emission, e.g. given by the polar angles stem:[(vartheta,varphi)], is used to determine the radiant flux (<<t7-4.1>>) within a certain solid angle (<<iso80000-3>>), stem:[Omega], of a source:
+
+[stem%unnumbered]
+++++
+Phi_\"e\" = &#8748;_Omega I_\"e\" (vartheta,varphi) \"sin\" vartheta \"d\" varphi \"d\" vartheta
+++++
+
+The corresponding photometric quantity is \"luminous intensity\" (<<t7-14>>). The corresponding quantity for photons is \"photon intensity\" (<<t7-21>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/sr ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*sr^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t10-74.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "neutron yield per fission"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-74.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-74.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-74.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-74.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-74.1-0 ;
+  skos:definition """average number of fission neutrons, both prompt and delayed, emitted per fission event"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

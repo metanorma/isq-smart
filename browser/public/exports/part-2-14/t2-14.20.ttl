@@ -1,0 +1,23 @@
+isoiec80000:term-t2-14.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arsinh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.20-0 ;
+  skos:definition """inverse hyperbolic sine of stem:[x], +
+area hyperbolic sine of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arsinh \"x <=> x = \"sinh \"y]
+
+The function stem:[\"arsinh\"] is the inverse of the function stem:[\"sinh\"].
+
+stem:[\"arsh \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

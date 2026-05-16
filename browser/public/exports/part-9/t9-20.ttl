@@ -1,0 +1,26 @@
+isoiec80000:term-t9-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fugacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tilde p_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-20" ;
+  skosxl:prefLabel isoiec80000:term-t9-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-20-0 ;
+  skos:definition """for substance stem:[\"X\"], quantity proportional to the absolute activity, stem:[lambda_\"X\"] (<<t9-18>>), the proportionality factor, which is a function of temperature (<<iso80000-5>>) only, being determined by the condition that, at constant temperature and composition, stem:[p_\"X\"//tilde p_\"X\"] tends to 1 for an indefinitely dilute gas"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+tilde p_\"X\" = lambda_\"X\" * lim_(p -> 0)(p_\"X\"//lambda_\"X\")
+++++
+
+where stem:[p] is total pressure (<<iso80000-4>>).
+
+The IUPAC preferred symbol for fugacity is stem:[f].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

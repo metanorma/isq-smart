@@ -1,0 +1,37 @@
+isoiec80000:term-t11-4.40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Taylor number <momentum transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.40" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.40-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.40-0 ;
+  skos:definition """relation between centrifugal force and viscous force of a rotating shaft, expressed by
+
+stem:[Ta = 4 omega^2 l^4 // sf(ii(v))^2]; where
+
+stem:[omega]:: is angular velocity (<<iso80000-3>>) of rotation,
+stem:[l]:: is length (<<iso80000-3>>) perpendicular to the rotation axis, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """Sometimes the square root of this quantity is wrongly used.
+
+The Taylor number for a rotating shaft relative to an annulus is given by
+
+stem:[Ta_\"a\" = (omega//sf(ii(v)))^2 ra^3]; where
+
+stem:[omega]:: is angular velocity (<<iso80000-3>>) of the shaft,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),
+stem:[r = (r_2+r_1)//2]:: is mean radius (<<iso80000-3>>) of the annulus, and
+stem:[a = (r_2-r_1)]:: is width of the annulus, where
+stem:[r_1]::: is inner radius of the annulus, and
+stem:[r_2]::: is outer radius of the annulus.
+
+Sometimes the square root of this quantity is used; this use is deprecated.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

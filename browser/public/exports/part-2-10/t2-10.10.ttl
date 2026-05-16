@@ -1,0 +1,28 @@
+isoiec80000:term-t2-10.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "square root"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^(1//2)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-10.10-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sqrt(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.10-1 ;
+  skos:definition """stem:[a] a to the power stem:[1//2], +
+square root of stem:[a]
+"""@en ;
+  skos:note """If stem:[a >= 0], then stem:[sqrt(a) >= 0].
+
+The symbol stem:[sqrt(a)] should be avoided.
+
+See remark to <<t2-10.11>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

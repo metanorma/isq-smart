@@ -1,0 +1,31 @@
+isoiec80000:term-t7-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "refractive index"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-1.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-1.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-1.2-0 ;
+  skos:definition """quotient of speed of light in vacuum (<<iso80000-1>>) and speed of light in a medium (<<t7-1.1>>)"""@en ;
+  skos:note """The value of the refractive index can depend on the frequency, polarization, and direction.
+
+The refractive index is expressed by stem:[n = c_0//c], where stem:[c_0] is the speed of light in vacuum and stem:[c] is the speed of light in the medium.
+
+For a medium with absorption, the complex refractive index stem:[n] is defined by
+
+[stem%unnumbered]
+++++
+n = n + \"i\"k
+++++
+
+where stem:[k] is spectral absorption index (<<iec60050-845>>) and stem:[\"i\"] is imaginary unit.
+
+The refractivity is expressed by stem:[n-1], where stem:[n] is refractive index.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

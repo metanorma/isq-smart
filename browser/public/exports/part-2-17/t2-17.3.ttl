@@ -1,0 +1,21 @@
+isoiec80000:term-t2-17.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical coordinate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-17.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r, vartheta, varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-17.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-17.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-17.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-17.3-0 ;
+  skos:definition """stem:[bb(ii(r)) = r\" \"bb(ii(e))_r] +
+stem:[\"d\"bb(ii(r)) = \"d\"r bb(ii(e))_r + r \"d\"vartheta bb(ii(e))_vartheta + r\" sin \"vartheta\" d\"varphi\" \"bb(ii(e))_varphi]
+"""@en ;
+  skos:note """stem:[bb(ii(e))_r(vartheta,varphi), bb(ii(e))_vartheta(vartheta, varphi), bb(ii(e))_varphi(varphi)] form an orthonormal right-handed system.
+
+See <<fig3>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-17 .

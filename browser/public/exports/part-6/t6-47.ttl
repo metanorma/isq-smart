@@ -1,0 +1,27 @@
+isoiec80000:term-t6-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-47 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-47" ;
+  skosxl:prefLabel isoiec80000:term-t6-47-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-47-0 ;
+  skos:definition """property of a resistive element, equal to the scalar quantity given by the inverse of its resistance stem:[R] (<<t6-46>>)
+
+[stem%unnumbered]
+++++
+G=1/R
+++++
+"""@en ;
+  skos:note """For alternating current, see <<t6-52.3>>.
+
+See <<iec60050-131,locality:item=\"131-12-06\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

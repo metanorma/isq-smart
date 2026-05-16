@@ -1,0 +1,118 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-9 a smart:PublicationDocument ;
+  dcterms:title "Part 2-9"@en ;
+  dcterms:identifier "ISO 80000-2-9" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "straight line"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"AB\" &#8741; \"CD\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.1-0 ;
+  skos:definition """the straight line stem:[\"AB\"] is parallel to the straight line stem:[\"CD\"]"""@en ;
+  skos:note """It is written stem:[\"g\" &#8741; \"h\"] if stem:[\"g\"] and stem:[\"h\"] are the straight lines determined by the points stem:[\"A\"] and stem:[\"B\"], and the points stem:[\"C\"] and stem:[\"D\"], respectively."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .
+
+isoiec80000:term-t2-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "perpendicular to the straight line"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"AB\" &#8869; \"CD\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.2-0 ;
+  skos:definition """the straight line stem:[\"AB\"] is perpendicular to the straight line stem:[\"CD\"]"""@en ;
+  skos:note """It is written stem:[\"g\" &#8869; \"h\"] if stem:[\"g\"] and stem:[\"h\"] are the straight lines determined by the points stem:[\"A\"] and stem:[\"B\"], and the points stem:[\"C\"] and stem:[\"D\"], respectively. In a plane, the straight lines intersect."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .
+
+isoiec80000:term-t2-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angle at triangle vertex"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x2222; \"ABC\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.3-0 ;
+  skos:definition """angle at vertex stem:[\"B\"] in the triangle stem:[\"ABC\"]"""@en ;
+  skos:note """The angle is not oriented, it holds that stem:[&#x2222; \"ABC\" = &#x2222; \"CBA\"] and
+
+stem:[0 <= &#x2222; \"ABC\" <= pi \"unitsml(rad)\"].
+
+For a more general definition including rotation angles see <<iso80000-3>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .
+
+isoiec80000:term-t2-9.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "line segment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar(\"AB\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.4-0 ;
+  skos:definition """line segment from stem:[\"A\"] to stem:[\"B\"]"""@en ;
+  skos:note """The line segment is the set of points between stem:[\"A\"] and stem:[\"B\"] on the straight line stem:[\"AB\"] including the end points stem:[\"A\"] and stem:[\"B\"]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .
+
+isoiec80000:term-t2-9.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vector from point A to B"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vec(\"AB\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.5-0 ;
+  skos:definition """vector from stem:[\"A\"] to stem:[\"B\"]"""@en ;
+  skos:note """If stem:[vec(\"AB\")=vec(\"CD\")] then stem:[\"B\"], seen from stem:[\"A\"], is in the same direction and distance as stem:[\"D\"] is, seen from stem:[\"C\"]. It does not follow that stem:[A = C] and stem:[B = D]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .
+
+isoiec80000:term-t2-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "distance between points A and B"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d(\"A\", \"B\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.6-0 ;
+  skos:definition """distance between points stem:[\"A\"] and stem:[\"B\"]"""@en ;
+  skos:note """The distance is the length of the line segment stem:[bar(\"AB\")] and also the magnitude of the vector stem:[vec(\"AB\")]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .

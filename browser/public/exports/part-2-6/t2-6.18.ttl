@@ -1,0 +1,18 @@
+isoiec80000:term-t2-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "identity relation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"id\"_A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.18-0 ;
+  skos:definition """identity relation on set stem:[A], +
+diagonal of stem:[A xx A]
+"""@en ;
+  skos:note """stem:[\"id\"_A] is the set of all pairs stem:[(x, x)] where stem:[x in A]. If the set stem:[A] is clear from the context, the subscript stem:[A] can be omitted."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

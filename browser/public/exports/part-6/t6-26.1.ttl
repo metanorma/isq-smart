@@ -1,0 +1,30 @@
+isoiec80000:term-t6-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-26.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permeability of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-26.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-26.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-26.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-26.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-26.1-0 ;
+  skos:definition """scalar quantity given by
+stem:[mu_0 ~~ 4pi xx 10^(-7) \"unitsml(H/m)\"] with a relative standard uncertainty of stem:[2.3 xx 10^(-10)]
+"""@en ;
+  skos:note """This quantity is considered to be constant in time.
+
+The numerical value of the magnetic constant was originally exactly stem:[4pi xx 10^(-7)]. It must be determined experimentally; see <<bipm-si>>.
+
+See <<bipm-si>> and <<iec60050-121,locality:item=\"121-11-14\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

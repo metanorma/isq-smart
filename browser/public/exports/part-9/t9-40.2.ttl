@@ -1,0 +1,22 @@
+isoiec80000:term-t9-40.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusion factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-40.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-40.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-40.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-40.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-40.2-0 ;
+  skos:definition """quotient of the thermal diffusion ratio stem:[k_T] (<<t9-40.1>>), and the product of the local amount-of-substance fractions stem:[x_\"A\"], stem:[x_\"B\"] (<<t9-13>>) of two substances stem:[\"A\"] and stem:[\"B\"]:
+
+[stem%unnumbered]
+++++
+alpha_T = k_T//(x_\"A\" x_\"B\")
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

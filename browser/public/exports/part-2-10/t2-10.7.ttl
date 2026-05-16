@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum of"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum_(i=1)^n a_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.7-0 ;
+  skos:definition """sum of stem:[a_1, a_2, ..., a_n]"""@en ;
+  skos:note """The notations stem:[sum_(i=1)^n], stem:[sum_i a_i], stem:[sum_i a_i] and stem:[sum a_i] are also used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

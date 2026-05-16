@@ -1,0 +1,729 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-20 a smart:PublicationDocument ;
+  dcterms:title "Part 2-20"@en ;
+  dcterms:identifier "ISO 80000-2-20" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-20.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Euler-Mascheroni constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(gamma)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(C)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.1-1 ;
+  skos:definition """Euler-Mascheroni constant"""@en ;
+  skos:note """stem:[rm(gamma) = lim_(n -> oo) (sum_(k=1)^n 1/k - \"ln\" n) = 0.5772156...]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gamma(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.2-0 ;
+  skos:definition """gamma function"""@en ;
+  skos:note """stem:[Gamma(z)] is a meromorphic function with poles at stem:[0, -1, -2, -3, ...]
+
+stem:[Gamma(z) = int_0^(oo) t^(z-1) e^(-t) \"d\"t] (for stem:[\"Re \"z>0])
+
+stem:[Gamma(n+1) = n!] (for stem:[n in bb(sf(N))])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Riemann zeta function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(zeta)(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.3-0 ;
+  skos:definition """Riemann zeta function"""@en ;
+  skos:note """stem:[rm(zeta)(z)] is a meromorphic function with one pole at stem:[z=1].
+
+stem:[rm(zeta)(z) = sum_(n=1)^(oo) 1/(n^2)] (for stem:[\"Re \"z > 1])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"B\"(z,w)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.4-0 ;
+  skos:definition """beta function"""@en ;
+  skos:note """stem:[\"B\"(z,w) = int_0^1 t^(z-1)(1-t)^(w-1) \"d\"t]
+
+(for stem:[\"Re \"z > 0], stem:[\"Re \"w > 0])
+
+stem:[rm(B)(z,w) = Gamma(z) Gamma(w) // Gamma(z+w)]
+
+stem:[1/((n+1)rm(B)(k+1,n-k+1))= ((n),(k))] (for stem:[k <= n])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exponential integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Ei \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.5-0 ;
+  skos:definition """exponential integral"""@en ;
+  skos:note """stem:[\"Ei \"x =] stem:[&#x2A0D;_{-oo}^x bb(e)^t/t \"d\"t]
+
+For stem:[&#x2A0D;], see <<t2-12.26>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithmic integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"li \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.6-0 ;
+  skos:definition """logarithmic integral"""@en ;
+  skos:note """stem:[\"li \"x = int_0^x 1/(\"ln\"t)\"d\"t] (for stem:[0<x<1])
+
+stem:[\"li \"x =] stem:[&#x2A0D;_0^x 1/(\"ln\"t)\"d\"t] (for stem:[x>1])
+
+For stem:[&#x2A0D;], see <<t2-12.26>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sine integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Si \"z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.7-0 ;
+  skos:definition """sine integral"""@en ;
+  skos:note """stem:[\"Si \"z= int_0^z (\"sin \"t)/t \"d\"t]
+
+stem:[\"si \"z = - pi/2 + \"Si \"z]
+
+is called the complementary sine integral.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fresnel integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"S\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"C\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.8-1 ;
+  skos:definition """Fresnel integrals"""@en ;
+  skos:note """stem:[\"S\"(z) = int_0^z \"sin\"(pi/2 t^2)\"d\"t]
+
+stem:[\"C\"(z) = int_0^z \"cos\"(pi/2 t^2)\"d\"t]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "error function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"erf \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.9-0 ;
+  skos:definition """error function"""@en ;
+  skos:note """stem:[\"erf \"x = 2/(sqrt pi) int_0^x e^(-t^2) \"d\"t]
+
+stem:[\"erfc \" x = 1 - \"erf \"x] is called the complementary error function.
+
+In statistics, the distribution function
+
+stem:[rm(Phi)(x) = 1/(sqrt(2pi)) int_(-oo)^x e^(-t^2//2)\"d\"t]
+
+is used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "incomplete elliptic integral of the first kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"F\"(varphi,k)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.10-0 ;
+  skos:definition """incomplete elliptic integral of the first kind"""@en ;
+  skos:note """stem:[\"F\"(varphi,k) = int_0^varphi (\"d\"sigma)/(sqrt(1-k^2\"sin\"^2 sigma))]
+
+stem:[k in bb(sf(R))], stem:[0<k<1]
+
+stem:[\"K\"(k) = F(pi/2,k)], is the complete elliptic integral of the first kind.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "incomplete elliptic integral of the second kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"E\"(varphi,k)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.11-0 ;
+  skos:definition """incomplete elliptic integral of the second kind"""@en ;
+  skos:note """stem:[E(varphi,k) = int_0^varphi sqrt(1-k^2 \"sin\"^2 sigma)\"d\"sigma]
+
+stem:[k in bb(sf(R))], stem:[0<k<1]
+
+stem:[\"E\"(k) = \"E\"(pi/2,k)], is the complete elliptic integral of the second kind.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "incomplete elliptic integral of the third kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pi(n,varphi,k)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.12-0 ;
+  skos:definition """incomplete elliptic integral of the third kind"""@en ;
+  skos:note """stem:[Pi(n,varphi,k) = int_0^varphi (\"d\" vartheta)/((1-n \"sin\"^2 vartheta)sqrt(1-k^2 \"sin\"^2 vartheta))]
+
+stem:[n,k in bb(sf(R))], stem:[0<k<1].
+
+stem:[Pi(n,k) = Pi(n, pi/2, k)] is the complete elliptic integral of the third kind. (Sometimes the elliptic integral of the third kind is defined with an inverse sign for the _characteristic_ stem:[n].)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hypergeometric function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"F\"(a,b,c;z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.13-0 ;
+  skos:definition """hypergeometric function"""@en ;
+  skos:note """stem:[F(a,b,c;z) = sum_(n=0)^(oo) ((a)_n (b)_n z^n)/((c)_n n!)]
+
+(for stem:[-c !in bb(sf(N))])
+
+For stem:[(a)_n], stem:[(b)_n] and stem:[(c)_n], see <<t2-11.3>>.
+
+Solution of
+
+stem:[z(1-z)y'' + [c-(a+b+1)z\\]y' - aby = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "confluent hypergeometric function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F(a;c;z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.14-0 ;
+  skos:definition """confluent hypergeometric function"""@en ;
+  skos:note """stem:[F(a;c;z) = sum_(n=0)^(oo) ((a)_n)/((c)_n n!) z^n]
+
+(for stem:[-c !in bb(sf(N))])
+
+For stem:[(a)_n] and stem:[(c)_n], see <<t2-11.3>>.
+
+Solution of stem:[zy'' + (c-z)y' - ay = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Legendre polynomial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"P\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.15-0 ;
+  skos:definition """Legendre polynomial"""@en ;
+  skos:note """stem:[\"P\"_n(z) = 1/(2^n n!) (\"d\"^n)/(\"d\"z^n) (z^2-1)^n]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of
+
+stem:[(1-z^2)y'' - 2zy' + n(n+1)y = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "associated Legendre function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"P\"_n^m(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.16-0 ;
+  skos:definition """associated Legendre function"""@en ;
+  skos:note """stem:[\"P\"_n^m(z) = (-1)^m (1-z^2)^(m//2) (\"d\"^m)/(\"d\"z^m) \"P\"_n(z)]
+
+(for stem:[m, n in bb(sf(N))], stem:[m <= n])
+
+Solution of
+
+stem:[(1-z^2)y'' - 2zy' + [n(n+1) - (m^2)/(1-z^2)\\] y=0]
+
+The factor stem:[(-1)^m] follows from the general theory of spherical functions.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical harmonic"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Y\"_l^m(vartheta,varphi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.17-0 ;
+  skos:definition """spherical harmonic"""@en ;
+  skos:note """stem:[\"Y\"_l^m(vartheta, varphi) = [((2l+1)/(4pi)) ((l-abs m)!)/((l+ abs m)!)\\]^(1//2) P_l^(abs m) (\"cos\" vartheta)\"e\"^(\"i\" m varphi)]
+
+(for stem:[l, abs(m) in bb(sf(N)); abs(m) <= l])
+
+Solution of
+
+stem:[1/(\"sin \"vartheta) del/(del vartheta) (sin vartheta (del y)/(del vartheta)) + 1/(\"sin\"^2 vartheta) (del^2y)/(del varphi^2) + l(l+1)y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hermite polynomial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"H\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.18-0 ;
+  skos:definition """Hermite polynomial"""@en ;
+  skos:note """stem:[\"H\"_n(z) = (-1)^n \"e\"^(z^2) (\"d\"^n)/(\"d\"z^n) \"e\"^(-z^2)]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of stem:[y'' - 2zy' + 2ny =0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laguerre polynomial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"L\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.19-0 ;
+  skos:definition """Laguerre polynomial"""@en ;
+  skos:note """stem:[\"L\"_n(z) = (e^z)/(n!) (\"d\"^n)/(\"d\"z^n) (z^n\"e\"^(-z))]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of stem:[zy'' + (1-z)y' + ny = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "associated Laguerre polynomial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"L\"_n^m(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.20-0 ;
+  skos:definition """associated Laguerre polynomial"""@en ;
+  skos:note """stem:[\"L\"_n^m(z) = (-1)^m (\"d\"^m)/(\"d\"z^m) \"L\"_n (z)]
+
+(for stem:[m in bb(sf(N))], stem:[m <= n])
+
+Solution of
+
+stem:[zy'' + (m+1-z)y' + (n-m)y =0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Chebyshev polynomial of the first kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"T\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.21-0 ;
+  skos:definition """Chebyshev polynomial of the first kind"""@en ;
+  skos:note """stem:[\"T\"_n(z) = \"cos\"(n \" arccos \" z)]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of stem:[(1-z^2)y'' - zy' + n^2y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Chebyshev polynomial of the second kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"U\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.22-0 ;
+  skos:definition """Chebyshev polynomial of the second kind"""@en ;
+  skos:note """stem:[\"U\"_n(z) = (\"sin\"[(n+1)\"arccos\"z\\])/(\"sin\"(\"arccos\"z))]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of
+
+stem:[(1-z^2)y'' - 3zy' + n(n+2)y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bessel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"J\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.23 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.23" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.23-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.23-0 ;
+  skos:definition """Bessel function, +
+cylinder function of the first kind
+"""@en ;
+  skos:note """stem:[\"J\"_nu(z) = sum_(k=0)^(oo) ((-1)^k(z//2)^(nu+2k))/(k!Gamma(nu+k+1))]
+
+(for stem:[nu in bb(sf(C))])
+
+Solution of
+
+stem:[z^2y'' + zy' + (z^2 - nu^2)y = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Neumann function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"N\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.24 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.24" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.24-0 ;
+  skos:definition """Neumann function, +
+cylinder Bessel function of the second kind
+"""@en ;
+  skos:note """stem:[\"N\"_nu(z) = (\"J\"_nu (z)\"cos\"(nu pi)-\"J\"_(-nu)(z))/(\"sin\"(nu pi))]
+
+(for stem:[nu in bb(sf(C))])
+
+The right-hand side of this equation is replaced by its limiting value if stem:[nu in bb(sf(Z))].
+
+stem:[\"Y\"_nu(z)] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hankel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"H\"_nu^((1))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"H\"_nu^((2))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.25-1 ;
+  skos:definition """Hankel function, +
+cylinder Bessel function of the third kind
+"""@en ;
+  skos:note """stem:[\"H\"_nu^((1))(z) = \"J\"_nu (z) + \"iN\"_nu(z)]
+
+stem:[\"H\"_nu^((2))(z) = \"J\"_nu (z) + \"iN\"_nu(z)]
+
+(for stem:[nu in bb(sf(C))])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modified Bessel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"I\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"K\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.26 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.26" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.26-1 ;
+  skos:definition """modified Bessel function"""@en ;
+  skos:note """stem:[\"I\"_nu (z) = \"e\"^(-1//2 \"i\"nu pi)\"J\"_nu (\"e\"^(1//2 \"i\"pi_Z))]
+
+stem:[\"K\"_nu (z) = (\"i\"pi)/2 \"e\"^(1//2 nu pi) \"H\"_nu^((1)) (\"e\"^(1//2 \"i\"pi_Z))]
+
+(for stem:[nu in bb(sf(C))])
+
+Solution of stem:[z^2 y'' + zy' - (z^2+nu^2)y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical Bessel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"j\"_l(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.27 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.27" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.27-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.27-0 ;
+  skos:definition """spherical Bessel function"""@en ;
+  skos:note """stem:[\"j\"_l(z) = (pi/(2z))^(1/2) \"J\"_(l+1//2)(z)]
+
+(for stem:[l in bb(sf(N))])
+
+Solution of
+
+stem:[z^2y'' + 2zy' + [z^2-l(l+1)\\]y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical Neumann function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"n\"_l(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.28 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.28" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.28-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.28-0 ;
+  skos:definition """spherical Neumann function"""@en ;
+  skos:note """stem:[\"n\"_l(z) = (pi/(2z))^(1/2) \"N\"_(l+1//2)(z)]
+
+(for stem:[l in bb(sf(N))])
+
+stem:[y_l(z)] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical Hankel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"h\"_l^((1))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.29-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"h\"_l^((2))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.29 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.29" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.29-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.29-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.29-1 ;
+  skos:definition """spherical Hankel function"""@en ;
+  skos:note """stem:[\"h\"_l^((1))(z) = \"j\"_l(z) + i\"n\"_l (z) = (pi/(2z))^(1/2) \"H\"_(l+1/2)^((1))(z)]
+
+stem:[\"h\"_l^((2))(z) = \"j\"_l(z) + i\"n\"_l (z) = (pi/(2z))^(1/2) \"H\"_(l+1/2)^((2))(z)]
+
+Modified spherical Bessel function (analogous to <<t2-20.26>>) can be defined and are denoted by stem:[\"i\"_l(z)] and stem:[\"k\"_l(z)] respectively.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .
+
+isoiec80000:term-t2-20.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Airy function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Ai\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.30-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Bi\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.30 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.30" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.30-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.30-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.30-1 ;
+  skos:definition """Airy function"""@en ;
+  skos:note """stem:[\"Ai\"(z) = 1/3 sqrt(z) [\"I\"_(-1/3)(w) - \"I\"_(1/3)(w)\\]]
+
+stem:[\"Bi\"(z) = sqrt(z/3) [\"I\"_(-1/3)(w) + \"I\"_(1/3)(w)\\]]
+
+where stem:[w=2/3 z^(3//2)].
+
+Entire solution of stem:[y'' - zy=0]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

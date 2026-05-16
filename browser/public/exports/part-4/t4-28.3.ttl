@@ -1,0 +1,31 @@
+isoiec80000:term-t4-28.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mechanical energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-28.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-28.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-28.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-28.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-28.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.3-1 ;
+  skos:definition """sum of kinetic energy stem:[T] (<<t4-28.2>>) and potential energy stem:[V]
+(<<t4-28.1>>):
+
+stem:[E = T + V]
+"""@en ;
+  skos:note """The symbols stem:[E] and stem:[W] are also used for other kinds of energy.
+
+This definition is understood in a classical way and it does not include
+thermal motion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

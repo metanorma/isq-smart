@@ -1,0 +1,46 @@
+isoiec80000:term-t10-87-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass energy-transfer coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-87-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"tr\"//rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-87 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-87" ;
+  skosxl:prefLabel isoiec80000:term-t10-87-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-87-0 ;
+  skos:definition """for ionizing uncharged particles of a given type and energy, the differential quotient of stem:[R_\"tr\"] with respect to stem:[l]:
+
+[stem%unnumbered]
+++++
+(mu_\"tr\")/rho = 1/rho 1/R (\"d\"R_\"tr\")/(\"d\"l)
+++++
+
+where stem:[R_\"tr\"] is the mean energy (<<iso80000-5>>) that is transferred to kinetic energy (<<iso80000-4>>) of charged particles by interactions of the uncharged particles of incident radiant energy stem:[R] (<<t10-45>>) in traversing a distance (<<iso80000-3>>) stem:[l] in the material of density (<<iso80000-4>>) stem:[rho], divided by stem:[rho] and stem:[R]
+"""@en ;
+  skos:note """stem:[mu_\"tr\"//rho = dot K//ii(Psi)], where stem:[dot K] is kerma rate (<<t10-86.2>>) and stem:[ii(Psi)] is energy fluence rate (<<t10-47>>).
+
+The quantity:
+
+[stem%unnumbered]
+++++
+mu_\"en\"//rho = (mu_\"tr\"//rho)(1-g)
+++++
+
+where stem:[g] is mean fraction of the kinetic energy of the liberated charged particles that is lost in radiative processes in the material, is called mass energy-absorption coefficient.
+
+The mass energy-absorption coefficient of a compound material depends on the stopping power of the material. Thus, its evaluation cannot, in principle, be reduced to a simple summation of the mass energy-absorption coefficient of the atomic constituents. Such a summation can provide an adequate approximation when the value of stem:[g] is sufficiently small.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The mass energy-transfer coefficient, stem:[mu_\"tr\"//rho], of a material, for uncharged particles of a given type and energy, is the quotient of stem:[\"d\"R_\"tr\"//R] by stem:[rho \"d\"l], where stem:[\"d\"R_\"tr\"] is the mean energy that is transferred to kinetic energy of charged particles by interactions of the uncharged particles of incident radiant energy stem:[R] in traversing a distance stem:[\"d\"l] in the material of density stem:[rho]:
+
+[stem%unnumbered]
+++++
+(mu_\"tr\")/rho = 1/(rho \"d\"l) (\"d\"R_\"tr\")/R.
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

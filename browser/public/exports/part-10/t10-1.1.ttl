@@ -1,0 +1,29 @@
+isoiec80000:term-t10-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-1.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proton number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-1.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-1.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-1.1-0 ;
+  skosxl:altLabel isoiec80000:term-t10-1.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-1.1-0 ;
+  skos:definition """number of protons in an atomic nucleus"""@en ;
+  skos:note """A nuclide is a species of atom with specified numbers of protons and neutrons.
+
+Nuclides with the same value of stem:[Z] but different values of stem:[N] are called isotopes of an element.
+
+The ordinal number of an element in the periodic table is equal to the atomic number.
+
+The atomic number equals the quotient of the charge (<<iec80000-6>>) of the nucleus and the elementary charge (<<iso80000-1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

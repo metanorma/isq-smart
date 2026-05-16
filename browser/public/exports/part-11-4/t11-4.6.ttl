@@ -1,0 +1,27 @@
+isoiec80000:term-t11-4.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mach number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.6-0 ;
+  skos:definition """quotient of the speed of flow and the speed of sound, expressed by
+
+stem:[Ma = v//c]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the body, and
+stem:[c]:: is speed of sound (<<iso80000-8>>) in the fluid
+"""@en ;
+  skos:note """The Mach number represents the relationship of inertial forces compared to compression forces.
+
+For an ideal gas
+
+stem:[c = sqrt(gamma p/rho) = sqrt(gamma (RT)/M) = sqrt(gamma (kT)/m)]; where stem:[gamma] is ratio of the specific heat capacity (<<iso80000-5>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

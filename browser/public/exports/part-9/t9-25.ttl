@@ -1,0 +1,31 @@
+isoiec80000:term-t9-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-25" ;
+  skosxl:prefLabel isoiec80000:term-t9-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-25-0 ;
+  skos:definition """for a solute stem:[\"B\"] in a solution, quotient of activity stem:[a_\"B\"] of solute stem:[\"B\"] (<<t9-24>>), and quotient of the molality (<<t9-15>>) stem:[b_\"B\"] of substance stem:[\"B\"] and standard molality stem:[b^(&#8854;)]:
+
+[stem%unnumbered]
+++++
+gamma_\"B\" = (a_\"B\")/(b_\"B\"//b^(&#8854;))
+++++
+"""@en ;
+  skos:note """The name \"activity coefficient of solute stem:[\"B\"]\" is also used for the quantity stem:[gamma_\"B\"] defined as:
+
+[stem%unnumbered]
+++++
+gamma_\"B\" = (a_(c,\"B\"))/(c_\"B\"//c^(&#8854;))
+++++
+
+See <<t9-22>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

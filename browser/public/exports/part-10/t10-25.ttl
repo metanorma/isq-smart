@@ -1,0 +1,28 @@
+isoiec80000:term-t10-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean duration of life"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean life time <atomic and nuclear physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-25" ;
+  skosxl:prefLabel isoiec80000:term-t10-25-0 ;
+  skosxl:altLabel isoiec80000:term-t10-25-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-25-0 ;
+  skos:definition """reciprocal of the decay constant stem:[lambda] (<<t10-24>>):
+
+[stem%unnumbered]
+++++
+tau = 1/lambda
+++++
+"""@en ;
+  skos:note """Mean duration of life is the expected value of the duration of life of an unstable particle or an excited state of a particle when the number of decay events in a short time interval follows a Poisson distribution."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

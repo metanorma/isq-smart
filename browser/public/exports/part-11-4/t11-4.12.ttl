@@ -1,0 +1,30 @@
+isoiec80000:term-t11-4.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lift coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"l\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"A\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.12-1 ;
+  skos:definition """quotient of the lift force available from a wing at a given angle and the inertial force for a wing shaped body moving in a fluid, expressed by
+
+stem:[c_\"l\" = (2F_\"l\")/(rho v^2 S) = F_\"l\"/(qS)]; where
+
+stem:[F_\"l\"]:: is lift force (<<iso80000-4>>) on the wing,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is speed (<<iso80000-3>>) of the body,
+stem:[S = A\" cos \"alpha]:: is effective area (<<iso80000-3>>) when stem:[alpha] is the angle of attack and stem:[A] is area of the wing, and
+stem:[q=rho v^2//2]:: is dynamic pressure.
+"""@en ;
+  skos:note """The lift coefficient is dependant on the shape of the wing."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

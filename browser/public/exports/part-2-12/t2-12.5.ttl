@@ -1,0 +1,19 @@
+isoiec80000:term-t2-12.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maps into"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f: A -> B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.5-0 ;
+  skos:definition """stem:[f] maps stem:[A] into stem:[B]"""@en ;
+  skos:note """stem:[\"dom \"f = A] and stem:[\"ran \"f sube B]
+
+It is not necessary that all elements of stem:[B] are values of the function stem:[f].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

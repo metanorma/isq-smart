@@ -1,0 +1,18 @@
+isoiec80000:term-t5-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "latent heat"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-6.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-6.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-6.2-0 ;
+  skos:definition """energy released or absorbed by a system during a constant-temperature process"""@en ;
+  skos:note """Examples of latent heat are latent heat of fusion (melting) and latent heat of vaporization (boiling)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

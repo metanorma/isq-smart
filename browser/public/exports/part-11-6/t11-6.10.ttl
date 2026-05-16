@@ -1,0 +1,34 @@
+isoiec80000:term-t11-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Morton number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.10-0 ;
+  skos:definition """quotient of gravitational forces and viscous forces for gas bubbles in a liquid, or liquid drops in a gas, expressed by
+
+stem:[Mo = (g eta^4)/(rho gamma^3) (rho_\"b\"/rho -1)]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the surrounding fluid,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the surrounding fluid,
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface, and
+stem:[rho_b]:: is mass density (<<iso80000-4>>) of the bubble or drop
+"""@en ;
+  skos:note """The Morton number is used to determine the shape of bubbles or drops.
+
+The Morton number is also given by
+
+stem:[Mo = We^3 Fr^(-2)Re^(-4)]; where
+
+stem:[We]:: is the Weber number (<<t11-4.5>>),
+stem:[Fr]:: is the Froude number (<<t11-4.3>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

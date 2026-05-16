@@ -1,0 +1,27 @@
+isoiec80000:term-t6-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permeability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-26.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-26.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-26.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-26.2-0 ;
+  skos:definition """for linear media, proportionality constant between magnetic flux density stem:[bb(ii(B))] (<<t6-21>>) and magnetic field strength stem:[bb(ii(H))] (<<t6-25>>)
+
+[stem%unnumbered]
+++++
+bb(ii(B)) = mu bb(ii(H))
+++++
+"""@en ;
+  skos:note """Permeability stem:[mu] is a property of a medium. For an inhomogeneous medium, permeability stem:[mu] depends on position. For an isotropic medium, stem:[mu] is a scalar quantity; for an anisotropic medium, stem:[mu] is a second order tensor.
+
+See <<iec60050-121,locality:item=\"121-12-28\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

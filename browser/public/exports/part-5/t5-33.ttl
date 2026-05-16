@@ -1,0 +1,25 @@
+isoiec80000:term-t5-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative humidity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-33" ;
+  skosxl:prefLabel isoiec80000:term-t5-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-33-0 ;
+  skos:definition """quotient of partial pressure of water vapour and partial pressure at its saturation:
+
+[stem%unnumbered]
+++++
+varphi = p/p_\"sat\"
+++++
+
+where stem:[p] is partial pressure (<<iso80000-4>>) of vapour and stem:[p_\"sat\"] is its partial pressure at saturation at the same temperature
+"""@en ;
+  skos:note """Relative humidity is often referred to as RH and expressed in percent. See also remark in <<t5-35>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

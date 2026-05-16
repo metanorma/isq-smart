@@ -1,0 +1,41 @@
+isoiec80000:term-t10-64-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-64-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient for particle number density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-64-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-64-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-64 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-64" ;
+  skosxl:prefLabel isoiec80000:term-t10-64-0 ;
+  skosxl:altLabel isoiec80000:term-t10-64-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-64-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-64-1 ;
+  skos:definition """proportionality constant between the particle current density stem:[bb(ii(J))] (<<t10-48>>) and the gradient of the particle number density stem:[n] (<<t10-62.1>>):
+
+[stem%unnumbered]
+++++
+bb(ii(J)) = -D * nabla n
+++++
+"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example _neutron_ number density.
+
+For a particle of a given speed stem:[nu]:
+
+[stem%unnumbered]
+++++
+D_n(nu) = -(J_(nu,x))/(del n_nu//del x)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

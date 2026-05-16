@@ -1,0 +1,28 @@
+isoiec80000:term-t10-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bohr magneton"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-9.2-0 ;
+  skos:definition """magnitude of the magnetic moment of an electron in a state with orbital angular momentum quantum number stem:[l=1] (<<t10-13.3>>) due to its orbital motion:
+
+[stem%unnumbered]
+++++
+mu_\"B\" = (e &#8463;)/(2m_\"e\")
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and
+stem:[m_\"e\"]:: is the rest mass (<<t10-2>>) of electron
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

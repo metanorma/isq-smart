@@ -1,0 +1,26 @@
+isoiec80000:term-t2-10.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "floor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "floor(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.17-0 ;
+  skos:definition """floor stem:[a], +
+the greatest integer less than or equal to the real number stem:[a]
+"""@en ;
+  skos:note """The notation stem:[\"ent \"a] is also used.
+
+[example]
+====
+stem:[floor(2,4) = 2]
+
+stem:[floor(-2,4) = -3]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

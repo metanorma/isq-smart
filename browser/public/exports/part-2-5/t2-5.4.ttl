@@ -1,0 +1,21 @@
+isoiec80000:term-t2-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "implication"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p => q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.4-0 ;
+  skos:definition """stem:[p] implies stem:[q], if stem:[p], then stem:[q]"""@en ;
+  skos:note """stem:[q lArr p] has the same meaning as stem:[p => q].
+
+stem:[=>] is the implication symbol.
+
+stem:[->] is also used as implication symbol.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .

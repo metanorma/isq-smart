@@ -1,0 +1,24 @@
+isoiec80000:term-t5-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-14" ;
+  skosxl:prefLabel isoiec80000:term-t5-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-14-0 ;
+  skos:definition """quotient of thermal conductivity and the product of mass density and specific heat capacity:
+
+[stem%unnumbered]
+++++
+a = lambda/(rho c_p)
+++++
+
+where stem:[lambda] is thermal conductivity (<<t5-9>>), stem:[rho] is mass density (<<iso80000-4>>), and stem:[c_p] is specific heat capacity at constant pressure (<<t5-16.2>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

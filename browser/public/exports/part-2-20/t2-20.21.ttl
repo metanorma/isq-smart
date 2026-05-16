@@ -1,0 +1,21 @@
+isoiec80000:term-t2-20.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Chebyshev polynomial of the first kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"T\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.21-0 ;
+  skos:definition """Chebyshev polynomial of the first kind"""@en ;
+  skos:note """stem:[\"T\"_n(z) = \"cos\"(n \" arccos \" z)]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of stem:[(1-z^2)y'' - zy' + n^2y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

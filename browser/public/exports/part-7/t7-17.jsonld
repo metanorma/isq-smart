@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous exitance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "M_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(M)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-17",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-17",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-17-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of exiting luminous flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nM_\"v\" = (\"d\"Phi_\"v\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[A] is the area (<<iso80000-3>>) from which the luminous flux leaves\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous exitance can be derived from the spectral radiant exitance distribution by\n\n[stem%unnumbered]\n++++\nM_\"v\" = K_\"m\" int_0^(oo) M_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[M_(\"e\",lambda)(lambda)] is the spectral radiant exitance (<<t7-8.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.\n\nThe corresponding radiometric quantity is \"radiant exitance\" (<<t7-8.1>>). The corresponding quantity for photons is \"photon exitance\" (<<t7-24>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*m^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

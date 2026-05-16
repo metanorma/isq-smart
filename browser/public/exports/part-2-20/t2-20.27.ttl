@@ -1,0 +1,23 @@
+isoiec80000:term-t2-20.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical Bessel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"j\"_l(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.27 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.27" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.27-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.27-0 ;
+  skos:definition """spherical Bessel function"""@en ;
+  skos:note """stem:[\"j\"_l(z) = (pi/(2z))^(1/2) \"J\"_(l+1//2)(z)]
+
+(for stem:[l in bb(sf(N))])
+
+Solution of
+
+stem:[z^2y'' + 2zy' + [z^2-l(l+1)\\]y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

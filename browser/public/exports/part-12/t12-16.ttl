@@ -1,0 +1,35 @@
+isoiec80000:term-t12-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy density of states"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"E\"(E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho(E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-16" ;
+  skosxl:prefLabel isoiec80000:term-t12-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-16-1 ;
+  skos:definition """quantity given by the differential quotient with respect to energy:
+
+[stem%unnumbered]
+++++
+n_\"E\"(E) = (\"d\"n(E))/(\"d\"E)
+++++
+
+where stem:[n_\"E\"(E)] is the total number of one-electron states per volume (<<iso80000-3>>) with energy less than stem:[E] (<<iso80000-5>>)
+"""@en ;
+  skos:note """Density of states refers to electrons or other entities, e.g. phonons. It may be normalized in other ways instead of with respect to volume, e.g. with respect to amount of substance.
+
+See also <<t12-12>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J^(-1)*m^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-eV^(-1)*m^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-5)*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t12-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Peltier coefficient (for substances stem:[\"a\"] and stem:[\"b\"])"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Pi)_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-22" ;
+  skosxl:prefLabel isoiec80000:term-t12-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-22-0 ;
+  skos:definition """quotient of Peltier heat power (<<iso80000-5>>) developed at a junction, and the electric current (<<iec80000-6>>) flowing from substance stem:[\"a\"] to substance stem:[\"b\"]"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+ii(Pi)_\"ab\" = ii(Pi)_\"a\" - ii(Pi)_\"b\"
+++++
+
+where stem:[ii(Pi)_\"a\"] and stem:[ii(Pi)_\"b\"] are the Peltier coefficients of substances stem:[\"a\"] and stem:[\"b\"], respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

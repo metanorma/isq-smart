@@ -1,0 +1,18 @@
+isoiec80000:term-t5-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific heat capacity at constant volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-16.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-16.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-16.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-16.3-0 ;
+  skos:definition """specific heat capacity (<<t5-16.1>>) at constant volume (<<iso80000-3>>)"""@en ;
+  skos:note """Also called specific isochoric heat capacity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

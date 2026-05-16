@@ -1,0 +1,25 @@
+isoiec80000:term-t12-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "effective mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-30" ;
+  skosxl:prefLabel isoiec80000:term-t12-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-30-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+m** = &#8463;^2k // (\"d\"epsilon//\"d\"k)
+++++
+
+where stem:[k] is wavenumber (<<iso80000-3>>), stem:[epsilon] is the energy (<<iso80000-5>>) of an electron in the interior of a substance, and stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>)
+"""@en ;
+  skos:note """When stem:[k] refers to a state where stem:[epsilon] has an extremum, stem:[m** = &#8463;^2 // (\"d\"^2 epsilon // \"d\"k^2)]. The effective mass can be generalized to refer to an anisotropic system with stem:[epsilon=epsilon(bb(ii(k)))]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

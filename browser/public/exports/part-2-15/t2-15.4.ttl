@@ -1,0 +1,21 @@
+isoiec80000:term-t2-15.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-15.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-15.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-15.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-15.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-15.4-0 ;
+  skos:definition """modulus of stem:[z]"""@en ;
+  skos:note """stem:[abs(z) = sqrt(x^2 +y^2)]
+
+where stem:[x = \"Re \"z] and stem:[y = \"Im \"z].
+
+The symbol stem:[abs] is also used for cardinality of a set (see <<t2-6.5>>), absolute value of a real number (see <<t2-10.16>>), and magnitude of a vector (see <<t2-18.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-15 .

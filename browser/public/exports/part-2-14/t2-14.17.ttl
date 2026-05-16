@@ -1,0 +1,16 @@
+isoiec80000:term-t2-14.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic cotangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"coth \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.17-0 ;
+  skos:definition """hyperbolic cotangent of stem:[x]"""@en ;
+  skos:note """stem:[\"coth \"x = 1//\"tanh \"x]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

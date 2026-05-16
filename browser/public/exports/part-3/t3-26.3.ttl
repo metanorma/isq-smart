@@ -1,0 +1,25 @@
+isoiec80000:term-t3-26.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "propagation coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-26.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-26.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-26.3" ;
+  skosxl:prefLabel isoiec80000:term-t3-26.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-26.3-0 ;
+  skos:definition """measure of the change of amplitude and phase angle (<<t3-7>>) of a plane wave propagating in a given direction"""@en ;
+  skos:note """The propagation coefficient is given by:
+
+[stem%unnumbered]
+++++
+gamma = alpha + \"i\" beta
+++++
+
+where stem:[alpha] denotes attenuation (<<t3-26.1>>) and stem:[beta] the phase coefficient (<<t3-26.2>>) of a plane wave.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

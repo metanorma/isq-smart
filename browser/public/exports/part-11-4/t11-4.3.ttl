@@ -1,0 +1,26 @@
+isoiec80000:term-t11-4.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Froude number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.3-0 ;
+  skos:definition """quotient of a body's inertial forces and its gravitational forces for flow of fluids, expressed by
+
+stem:[Fr = v/(sqrt(lg))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of flow,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Froude number can be modified by buoyancy.
+
+Sometimes the square and sometimes the inverse of the Froude number as defined here is wrongly used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

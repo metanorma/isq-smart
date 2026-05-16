@@ -1,0 +1,26 @@
+isoiec80000:term-t12-36.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic critical magnetic flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-36.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-36.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-36.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-36.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-36.1-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+B_\"c\" = sqrt((2mu_0(G_\"n\"-G_\"s\"))/V)
+++++
+
+where stem:[G_\"n\"] and stem:[G_\"s\"] are the Gibbs energies (<<iso80000-5>>) at zero magnetic flux density (<<iec80000-6>>) in a normal conductor and superconductor, respectively, stem:[mu_0] is the magnetic constant (<<iec80000-6>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """In type I superconductors, stem:[B_\"c\"] is the critical magnetic flux density for disappearance of superconductivity. The symbol stem:[B_\"c3\"] is used for the critical magnetic flux density for disappearance of surface superconductivity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

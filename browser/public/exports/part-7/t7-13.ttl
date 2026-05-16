@@ -1,0 +1,43 @@
+isoiec80000:term-t7-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminous flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Phi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-13" ;
+  skosxl:prefLabel isoiec80000:term-t7-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-13-1 ;
+  skos:definition """change in luminous energy with time, expressed by
+
+[stem%unnumbered]
+++++
+Phi_\"v\" = (\"d\"Q_\"v\")/(\"d\"t)
+++++
+
+where stem:[Q_\"v\"] is the luminous energy (<<t7-12>>) emitted, transferred or received and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """Luminous flux is a quantity derived from the radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], by evaluating the radiation according to its action upon the CIE standard photometric observer. (See <<cie017,locality:term=17-738>>.)
+
+Luminous flux can be derived from the spectral radiant flux distribution by
+
+[stem%unnumbered]
+++++
+Phi_\"v\" = K_\"m\" int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda) \"d\"lambda
+++++
+
+where stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[Phi_(\"e\",lambda)(lambda)] is spectral radiant flux (<<t7-4.2>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>) and stem:[lambda] is wavelength (<<iso80000-3>>).
+
+The corresponding radiometric quantity is \"radiant flux\" (<<t7-4.1>>). The corresponding quantity for photons is \"photon flux\" (<<t7-20>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-lm ;
+  isoiec80000:hasUnit isoiec80000:unit-cd*sr ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

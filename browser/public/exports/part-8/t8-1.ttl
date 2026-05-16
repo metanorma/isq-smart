@@ -1,0 +1,31 @@
+isoiec80000:term-t8-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithmic frequency range"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-1" ;
+  skosxl:prefLabel isoiec80000:term-t8-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-1-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+G = \"lb\"(f_2/f_1) \" oct\" = \"lg\" (f_2/f_1) \" dec\"
+++++
+
+where stem:[f_1] and stem:[f_2] are two frequencies (<<iso80000-3>>)
+"""@en ;
+  skos:note """One octave (stem:[\"oct\"]) is the logarithmic frequency range between stem:[f_1] and stem:[f_2] when stem:[f_2/f_1 = 2]. Similarly, one decade (stem:[\"dec\"]) is the logarithmic frequency range between stem:[f_1] and stem:[f_2] when stem:[f_2/f_1 = 10]; thus stem:[1 \" dec\" = (\"lb\" 10) \" oct\" ~~ 3.322 \" oct\"].
+
+<<iso266>> specifies preferred frequencies for acoustics separated by logarithmic frequency ranges equal to one tenth of a decade (stem:[0.1 \" dec\"]). Each stem:[0.1 \" dec\"] logarithmic frequency range is referred to in <<iso266>> as a \"one-third-octave interval\" because stem:[0.1 \" dec\"] is approximately equal to stem:[1//3 \" oct\"]. Similarly, a logarithmic frequency range of stem:[0.3 \" dec\"] is referred to as a \"one-octave interval\" because stem:[0.3 \" dec\"] is approximately equal to stem:[1 \" oct\"].
+
+A logarithmic frequency range equal to one tenth of a decade can be referred to as a decidecade.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["oct"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["dec"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

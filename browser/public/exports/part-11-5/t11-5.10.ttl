@@ -1,0 +1,21 @@
+isoiec80000:term-t11-5.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number <entropy>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be_S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.10-0 ;
+  skos:definition """efficiency of heat transfer by a fluid, expressed by
+
+stem:[Be_S = (S(Delta T))/(S(Delta T) + S(Delta p))]; where
+
+stem:[S(Delta T)]:: is entropy generation contributed by heat transfer, and
+stem:[S(Delta p)]:: is entropy generation contributed by fluid friction
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

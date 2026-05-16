@@ -1,0 +1,1254 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-3 a smart:PublicationDocument ;
+  dcterms:title "Space and Time"@en ;
+  dcterms:identifier "ISO 80000-3" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre"@en ;
+  skos:notation "m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per metre"@en ;
+  skos:notation "m^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre"@en ;
+  skos:notation "m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre"@en ;
+  skos:notation "m^3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian"@en ;
+  skos:notation "rad" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-sr a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "steradian"@en ;
+  skos:notation "sr" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second"@en ;
+  skos:notation "s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m*s^-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre per second"@en ;
+  skos:notation "m*s^-1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m*s^-2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre per second squared"@en ;
+  skos:notation "m*s^-2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian per second"@en ;
+  skos:notation "rad*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per second"@en ;
+  skos:notation "s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian per second squared"@en ;
+  skos:notation "rad*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per second squared"@en ;
+  skos:notation "s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Hz a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "hertz"@en ;
+  skos:notation "Hz" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per second"@en ;
+  skos:notation "s^-1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad*m^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian per metre"@en ;
+  skos:notation "rad*m^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t3-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.1-1 ;
+  skos:definition """linear extent in space between any two points"""@en ;
+  skos:note """Length does not need to be measured along a straight line.
+
+Length is one of the seven base quantities in the International System of Units (<<iso80000-1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "width"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-1.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "breadth"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.2-0 ;
+  skosxl:altLabel isoiec80000:term-t3-1.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.2-1 ;
+  skos:definition """minimum length of a straight line segment between two parallel straight lines (in two dimensions) or planes (in three dimensions) that enclose a given geometrical shape"""@en ;
+  skos:note """This quantity is non-negative."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "height"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-1.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "depth"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-1.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "altitude"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.3" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.3-0 ;
+  skosxl:altLabel isoiec80000:term-t3-1.3-1 ;
+  skosxl:altLabel isoiec80000:term-t3-1.3-2 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.3-1 ;
+  skos:definition """minimum length of a straight line segment between a point and a reference line or reference surface"""@en ;
+  skos:note """This quantity is usually signed. The sign expresses the position of the particular point with respect to the reference line or surface and is chosen by convention.
+
+The symbol stem:[H] is often used to denote altitude, i.e. height above sea level.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thickness"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.4" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.4-1 ;
+  skos:definition """width (<<t3-1.2>>)"""@en ;
+  skos:note """This quantity is non-negative."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.5" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.5-1 ;
+  skos:definition """width (<<t3-1.2>>) of a circle, cylinder or sphere"""@en ;
+  skos:note """This quantity is non-negative."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.6" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.6-1 ;
+  skos:definition """half of a diameter (<<t3-1.5>>)"""@en ;
+  skos:note """This quantity is non-negative."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "path length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-1.7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "s"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.7" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.7-0 ;
+  skosxl:altLabel isoiec80000:term-t3-1.7-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.7-0 ;
+  skos:definition """length of a rectifiable curve between two of its points"""@en ;
+  skos:note """The differential path length at a given point of a curve is:
+
+[stem%unnumbered]
+++++
+\"d\"x = sqrt((\"d\"x)^2 + (\"d\"y)^2 + (\"d\"z)^2)
+++++
+
+where stem:[x], stem:[y], and stem:[z] denote the Cartesian coordinates (<<iso80000-2>>) of the particular point.
+
+There are curves which are not rectifiable, for example fractal curves.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.8" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.8-1 ;
+  skos:definition """shortest path length (<<t3-1.7>>) between two points in a metric space"""@en ;
+  skos:note """A metric space might be curved. An example of a curved metric space is the surface of the Earth.
+
+In this case, distances are measured along great circles.
+
+A metric is not necessarily Euclidean.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radial distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.9" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.9-1 ;
+  skos:definition """distance (<<t3-1.8>>), where one point is located on an axis or within a closed non self-intersecting curve or surface"""@en ;
+  skos:note """The subscript stem:[Q] denotes the point from which the radial distance is measured.
+
+Examples of closed non self-intersecting curves are circles or ellipses.
+
+Examples of closed non self-intersecting surfaces are surfaces of spheres or egg-shaped objects.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "position vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.10" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.10-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity from the origin of a coordinate system to a point in space"""@en ;
+  skos:note """Position vectors are so-called bounded vectors, i.e. their magnitude (<<iso80000-2>>) and direction depend on the particular coordinate system used."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "displacement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Delta r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.11" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.11-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity between any two points in space"""@en ;
+  skos:note """Displacement vectors are so-called free vectors, i.e. their magnitude (<<iso80000-2>>) and direction do not depend on a particular coordinate system.
+
+The magnitude of this vector is also called displacement.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-1.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radius of curvature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.12" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.12-0 ;
+  skos:definition """radius (<<t3-1.6>>) of the osculating circle of a planar curve at a particular point of the curve"""@en ;
+  skos:note """The radius of curvature is only defined for curves which are at least twice continuously differentiable."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "curvature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-2" ;
+  skosxl:prefLabel isoiec80000:term-t3-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-2-0 ;
+  skos:definition """inverse of the radius of curvature (<<t3-1.12>>)"""@en ;
+  skos:note """The curvature is given by:
+
+[stem%unnumbered]
+++++
+kappa = 1/rho
+++++
+
+where stem:[rho] denotes the radius of curvature (<<t3-1.12>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-3" ;
+  skosxl:prefLabel isoiec80000:term-t3-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-3-1 ;
+  skos:definition """extent of a two-dimensional geometrical shape"""@en ;
+  skos:note """The surface element at a given point of a surface is given by:
+
+[stem%unnumbered]
+++++
+\"d\"A = g\" d\"u\" d\"v
+++++
+
+where stem:[u] and stem:[v] denote the Gaussian surface coordinates and g denotes the determinant of the metric tensor (<<iso80000-2>>) at the particular point.
+
+The symbol stem:[\"d\"sigma] is also used for the surface element.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(S)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-4" ;
+  skosxl:prefLabel isoiec80000:term-t3-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-4-1 ;
+  skos:definition """extent of a three-dimensional geometrical shape"""@en ;
+  skos:note """The volume element in Euclidean space is given by:
+
+[stem%unnumbered]
+++++
+\"d\"V = \"d\"x\" d\"y\" d\"z
+++++
+
+where stem:[\"d\"x], stem:[\"d\"y], and stem:[\"d\"z] denote the differentials of the Cartesian coordinates (<<iso80000-2>>).
+
+The symbol stem:[\"d\"tau] is also used for the volume element.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular measure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-5-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-5" ;
+  skosxl:prefLabel isoiec80000:term-t3-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-5-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-5-2 ;
+  skos:definition """measure of a geometric figure, called plane angle, formed by two rays, called the sides of the plane angle, emanating from a common point, called the vertex of the plane angle"""@en ;
+  skos:note """The angular measure is given by:
+
+[stem%unnumbered]
+++++
+alpha = s/r
+++++
+
+where stem:[s] denotes the arc length (<<t3-1.7>>) of the included arc of a circle, centred at the vertex of the plane angle, and stem:[r] the radius (<<t3-1.6>>) of that circle.
+
+Other symbols are also used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotational displacement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular displacement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-6" ;
+  skosxl:prefLabel isoiec80000:term-t3-6-0 ;
+  skosxl:altLabel isoiec80000:term-t3-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-6-1 ;
+  skos:definition """quotient of the traversed circular path length (<<t3-1.7>>) of a point in space during a rotation and its distance (<<t3-1.8>>) from the axis or centre of rotation"""@en ;
+  skos:note """The rotational displacement is given by:
+
+[stem%unnumbered]
+++++
+phi=s/r
+++++
+
+where stem:[s] denotes the traversed path length (<<t3-1.7>>) along the periphery of a circle, centred at the vertex of the plane angle, and stem:[r] the radius (<<t3-1.6>>) of that circle.
+
+The rotational displacement is signed. The sign denotes the direction of rotation and is chosen by convention.
+
+Other symbols are also used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase angle"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-7" ;
+  skosxl:prefLabel isoiec80000:term-t3-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-7-1 ;
+  skos:definition """angular measure (<<t3-5>>) between the positive real axis and the radius of the polar representation of the complex number in the complex plane"""@en ;
+  skos:note """The phase angle (often imprecisely referred to as the \"phase\") is the argument of a complex number.
+
+Other symbols are also used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "solid angular measure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Omega)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-8" ;
+  skosxl:prefLabel isoiec80000:term-t3-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-8-0 ;
+  skos:definition """measure of a conical geometric figure, called solid angle, formed by all rays, originating from a common point, called the vertex of the solid angle, and passing through the points of a closed, non-self-intersecting curve in space considered as the border of a surface"""@en ;
+  skos:note """The differential solid angular measure expressed in spherical coordinates (<<iso80000-2>>) is given by:
+
+[stem%unnumbered]
+++++
+\"d\"ii(Omega) = A/(r^2)\"sin\"theta \" d\"theta \" d\"varphi
+++++
+
+where stem:[A] is area, stem:[r] is radius, stem:[theta] and stem:[varphi] are spherical coordinates.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-sr ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "duration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "t"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-9" ;
+  skosxl:prefLabel isoiec80000:term-t3-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-9-0 ;
+  skos:definition """measure of the time difference between two events"""@en ;
+  skos:note """Duration is often just called time.
+
+Time is one of the seven base quantities in the International System of Quantities, ISQ (see <<iso80000-1>>).
+
+Duration is a measure of a time interval.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(bb(sf(v)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(sf(u,v,w))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.1-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(u,v,w)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-10.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-10.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-3 ;
+  skos:definition """vector (<<iso80000-2>>) quantity giving the rate of change of a position vector (<<t3-1.10>>)"""@en ;
+  skos:note """The velocity vector is given by:
+
+[stem%unnumbered]
+++++
+ii(bb(sf(v))) = (\"d\"ii(sf(r)))/(\"d\"t)
+++++
+
+where stem:[ii(sf(r))] denotes the position vector (<<t3-1.10>>) and stem:[t] the duration (<<t3-9>>).
+
+When the general symbol stem:[ii(bb(sf(v)))] is not used for the velocity, the symbols stem:[ii(sf(u))], stem:[ii(sf(v))], stem:[ii(sf(w))] may be used for the components (<<iso80000-2>>) of the velocity.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(sf(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-10.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-10.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.2-1 ;
+  skos:definition """magnitude (<<iso80000-2>>) of the velocity (<<t3-10.1>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "acceleration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(bb(sf(a)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-11" ;
+  skosxl:prefLabel isoiec80000:term-t3-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-11-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity giving the rate of change of velocity (<<t3-10.1>>)"""@en ;
+  skos:note """The acceleration vector is given by:
+
+[stem%unnumbered]
+++++
+ii(bb(sf(a))) = (\"d\"ii(bb(sf(v))))/(\"d\"t)
+++++
+
+where stem:[ii(bb(sf(v)))] denotes the velocity (<<t3-10.1>>) and stem:[t] the duration (<<t3-9>>).
+
+The magnitude (<<iso80000-2>>) of the acceleration of free fall is usually denoted by stem:[g].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(omega)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-12" ;
+  skosxl:prefLabel isoiec80000:term-t3-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-12-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity giving the rate of change of the rotational displacement (<<t3-6>>) as its magnitude (<<iso80000-2>>) and with a direction equal to the direction of the axis of rotation"""@en ;
+  skos:note """The angular velocity vector is given by:
+
+[stem%unnumbered]
+++++
+bb(omega)=(\"d\"varphi)/(\"d\"t)bb(ii(u))
+++++
+
+where stem:[varphi] denotes the angular displacement (<<t3-6>>), stem:[t] the duration (<<t3-9>>), and stem:[bb(ii(u))] the unit vector (<<iso80000-2>>) along the axis of rotation in the direction for which the rotation corresponds to a right-hand spiral.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular acceleration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(alpha)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-13" ;
+  skosxl:prefLabel isoiec80000:term-t3-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-13-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity giving the rate of change of angular velocity (<<t3-12>>)"""@en ;
+  skos:note """The angular acceleration vector is given by:
+
+[stem%unnumbered]
+++++
+bb(alpha) = (\"d\"bb(omega))/(\"d\"t)
+++++
+
+Where stem:[bb(omega)] denotes the angular velocity (<<t3-12>>) and stem:[t] the duration (<<t3-9>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period duration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-14" ;
+  skosxl:prefLabel isoiec80000:term-t3-14-0 ;
+  skosxl:altLabel isoiec80000:term-t3-14-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-14-0 ;
+  skos:definition """duration (<<t3-9>>) of one cycle of a periodic event"""@en ;
+  skos:note """A periodic event is an event that occurs regularly with a fixed time interval."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "time constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-15" ;
+  skosxl:prefLabel isoiec80000:term-t3-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-15-1 ;
+  skos:definition """parameter characterizing the response to a step input of a first-order, linear time-invariant system"""@en ;
+  skos:note """If a quantity is a function of the duration (<<t3-9>>) expressed by:
+
+[stem%unnumbered]
+++++
+F(t) prop \"e\"^(-t//tau)
+++++
+
+where stem:[t] denotes the duration (<<t3-9>>), then stem:[tau] denotes the time constant. Here the time constant stem:[tau] applies to an exponentially decaying quantity.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-16" ;
+  skosxl:prefLabel isoiec80000:term-t3-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-16-0 ;
+  skos:definition """number of revolutions"""@en ;
+  skos:note """stem:[N] is the number (not necessarily an integer) of revolutions, for example, of a rotating body about a given axis. Its value is given by:
+
+[stem%unnumbered]
+++++
+N = varphi/(2pi)
+++++
+
+where stem:[varphi] denotes the measure of rotational displacement (<<t3-6>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-17.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-17.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-17.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-17.1-1 ;
+  skos:definition """inverse of period duration (<<t3-14>>)"""@en ;
+  skos:note """The frequency is given by:
+
+[stem%unnumbered]
+++++
+f=1/T
+++++
+
+where stem:[T] denotes the period duration (<<t3-14>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Hz ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotational frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-17.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-17.2-0 ;
+  skos:definition """rate of change of rotation (<<t3-16>>)"""@en ;
+  skos:note """The rotational frequency is given by:
+
+[stem%unnumbered]
+++++
+n=(\"d\"N)/(\"d\"t)
+++++
+
+where stem:[N] denotes the rotation (<<t3-16>>) and stem:[t] is the duration (<<t3-9>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-18" ;
+  skosxl:prefLabel isoiec80000:term-t3-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-18-0 ;
+  skos:definition """rate of change of the phase angle (<<t3-7>>)"""@en ;
+  skos:note """The angular frequency is given by:
+
+[stem%unnumbered]
+++++
+omega = 2 pi f
+++++
+
+where stem:[f] denotes the frequency (<<t3-17.1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wavelength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-19" ;
+  skosxl:prefLabel isoiec80000:term-t3-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-19-0 ;
+  skos:definition """length (<<t3-1.1>>) of the repetition interval of a wave"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "repetency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tilde ii(sf(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-20" ;
+  skosxl:prefLabel isoiec80000:term-t3-20-0 ;
+  skosxl:altLabel isoiec80000:term-t3-20-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-20-1 ;
+  skos:definition """inverse of the wavelength (<<t3-19>>)"""@en ;
+  skos:note """The repetency is given by:
+
+[stem%unnumbered]
+++++
+sigma = 1/lambda
+++++
+
+where stem:[lambda] denotes the wavelength (<<t3-19>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wave vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(k))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-21" ;
+  skosxl:prefLabel isoiec80000:term-t3-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-21-0 ;
+  skos:definition """vector normal to the surfaces of constant phase angle (<<t3-7>>) of a wave, with the magnitude (<<iso80000-2>>) of repetency (<<t3-20>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular repetency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-22-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-22" ;
+  skosxl:prefLabel isoiec80000:term-t3-22-0 ;
+  skosxl:altLabel isoiec80000:term-t3-22-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-22-0 ;
+  skos:definition """magnitude (<<iso80000-2>>) of the wave vector (<<t3-21>>)"""@en ;
+  skos:note """The angular repetency is given by:
+
+[stem%unnumbered]
+++++
+k = (2pi)/lambda
+++++
+
+where stem:[lambda] denotes the wavelength (<<t3-19>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c, ii(sf(v)), (v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_varphi, ii(sf(v))_varphi, (v_varphi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-23.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-23.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-23.1-0 ;
+  skosxl:altLabel isoiec80000:term-t3-23.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-23.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-23.1-1 ;
+  skos:definition """speed with which the phase angle (<<t3-7>>) of a wave propagates in space"""@en ;
+  skos:note """The phase velocity is given by:
+
+[stem%unnumbered]
+++++
+c = omega/k
+++++
+
+where stem:[omega] denotes the angular frequency (<<t3-18>>) and stem:[k] the angular repetency (<<t3-22>>).
+
+If phase velocities of electromagnetic waves and other phase velocities are both involved, then stem:[c] should be used for the former and stem:[v] for the latter.
+
+Phase velocity can also be written as stem:[c = lambda f].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "group velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-23.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "group speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"g\", ii(sf(v))_\"g\", (v_\"g\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-23.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-23.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-23.2-0 ;
+  skosxl:altLabel isoiec80000:term-t3-23.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-23.2-0 ;
+  skos:definition """speed with which the envelope of a wave propagates in space"""@en ;
+  skos:note """The group velocity is given by:
+
+[stem%unnumbered]
+++++
+c_\"g\" = (\"d\"omega)/(\"d\"k)
+++++
+
+where stem:[omega] denotes the angular frequency (<<t3-18>>) and stem:[k] the angular repetency (<<t3-22>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "damping coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-24" ;
+  skosxl:prefLabel isoiec80000:term-t3-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-24-0 ;
+  skos:definition """inverse of the time constant (<<t3-15>>) of an exponentially varying quantity"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithmic decrement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-25" ;
+  skosxl:prefLabel isoiec80000:term-t3-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-25-0 ;
+  skos:definition """product of damping coefficient (<<t3-24>>) and period duration (<<t3-14>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "attenuation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-26.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "extinction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-26.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-26.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-26.1-0 ;
+  skosxl:altLabel isoiec80000:term-t3-26.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-26.1-0 ;
+  skos:definition """gradual decrease in magnitude (<<iso80000-2>>) of any kind of flux through a medium"""@en ;
+  skos:note """If a quantity is a function of distance (<<t3-1.8>>) expressed by:
+
+[stem%unnumbered]
+++++
+f(x) prop e^(-alpha x)
+++++
+
+where stem:[x] denotes distance (<<t3-1.8>>), then stem:[alpha] denotes attenuation.
+
+The inverse of attenuation is called attenuation length.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-26.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-26.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-26.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-26.2-0 ;
+  skos:definition """change of phase angle (<<t3-7>>) with the length (<<t3-1.1>>) along the path travelled by a plane wave"""@en ;
+  skos:note """If a quantity is a function of distance expressed by:
+
+[stem%unnumbered]
+++++
+f(x) prop \"cos \"beta (x-x_0)
+++++
+
+where stem:[x] denotes distance (<<t3-1.8>>), then stem:[beta] denotes the phase coefficient.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*m^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .
+
+isoiec80000:term-t3-26.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "propagation coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-26.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-26.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-26.3" ;
+  skosxl:prefLabel isoiec80000:term-t3-26.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-26.3-0 ;
+  skos:definition """measure of the change of amplitude and phase angle (<<t3-7>>) of a plane wave propagating in a given direction"""@en ;
+  skos:note """The propagation coefficient is given by:
+
+[stem%unnumbered]
+++++
+gamma = alpha + \"i\" beta
+++++
+
+where stem:[alpha] denotes attenuation (<<t3-26.1>>) and stem:[beta] the phase coefficient (<<t3-26.2>>) of a plane wave.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

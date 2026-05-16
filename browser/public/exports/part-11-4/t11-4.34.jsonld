@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stokes number <rotameter>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.34-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "power coefficient <rotameter>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-4.34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stk_2",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-4.34",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-4.34",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.34-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.34-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-4.34-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "Stokes number for calibration of rotameters metering vertical flows of fluids by means of a floating body, expressed by\n\nstem:[Stk_2 = {r^3 g m rho}/{eta^2} {(rho_{\"b\"} - rho)}/{rho_{\"b\"}} = {r^3 g m}/{v^2} (1/{rho} - 1/{rho_{\"b\"}})]; where\n\nstem:[r]:: is ratio of pipe and float radii,\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>),\nstem:[m]:: is mass (<<iso80000-4>>) of the body,\nstem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid,\nstem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body, and\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "In general use, this value is multiplied by stem:[1.042].\n\nSee also the Archimedes number (<<t11-6.12>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-4"
+      }
+    }
+  ]
+}

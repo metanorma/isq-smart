@@ -1,0 +1,25 @@
+isoiec80000:term-t5-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Joule-Thomson coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"JT\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-24" ;
+  skosxl:prefLabel isoiec80000:term-t5-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-24-0 ;
+  skos:definition """change of thermodynamic temperature with respect to pressure in a Joule-Thomson process at constant enthalpy:
+
+[stem%unnumbered]
+++++
+mu_\"JT\" = ((del T)/(del p))_H
+++++
+
+where stem:[T] is thermodynamic temperature (<<t5-1>>), stem:[p] is pressure (<<iso80000-4>>) and stem:[H] is enthalpy (<<t5-20.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K/Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m*s^2*K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

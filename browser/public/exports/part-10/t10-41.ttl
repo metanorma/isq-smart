@@ -1,0 +1,23 @@
+isoiec80000:term-t10-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "direction and energy distribution of cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_(ii(Omega),E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-41" ;
+  skosxl:prefLabel isoiec80000:term-t10-41-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-41-0 ;
+  skos:definition """partial differential quotient of stem:[sigma] with respect to solid angle and energy, where stem:[sigma] is the cross section (<<t10-38.1>>) for ejecting or scattering a particle into a solid angle stem:[\"d\"ii(Omega)] around a specified direction and with an energy between stem:[E] and stem:[E+\"d\"E]:
+
+[stem%unnumbered]
+++++
+sigma_(ii(Omega),E) = (del^2 sigma)/(del ii(Omega) del E)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2/(J*sr) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

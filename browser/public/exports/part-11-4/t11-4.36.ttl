@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <drag>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_4"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.36" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.36-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.36-0 ;
+  skos:definition """quotient of drag force and internal friction forces for particles dragged in a fluid
+
+stem:[Stk_4=F_\"D\"//(eta v l)]; where
+
+stem:[F_\"D\"]:: is drag force (<<iso80000-4>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

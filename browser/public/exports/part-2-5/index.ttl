@@ -1,0 +1,155 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-5 a smart:PublicationDocument ;
+  dcterms:title "Part 2-5"@en ;
+  dcterms:identifier "ISO 80000-2-5" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conjunction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p ^^ q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.1-0 ;
+  skos:definition """conjunction of stem:[p] and stem:[q], stem:[p]
+and stem:[q]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .
+
+isoiec80000:term-t2-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "disjunction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p vv q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.2-0 ;
+  skos:definition """disjunction of stem:[p] and stem:[q], stem:[p] or stem:[q]"""@en ;
+  skos:note """This \"or\" is inclusive, i.e. stem:[p vv q] is
+true, if either stem:[p] or stem:[q], or both
+are true.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .
+
+isoiec80000:term-t2-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "negation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "not p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.3-0 ;
+  skos:definition """negation of stem:[p], not stem:[p]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .
+
+isoiec80000:term-t2-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "implication"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p => q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.4-0 ;
+  skos:definition """stem:[p] implies stem:[q], if stem:[p], then stem:[q]"""@en ;
+  skos:note """stem:[q lArr p] has the same meaning as stem:[p => q].
+
+stem:[=>] is the implication symbol.
+
+stem:[->] is also used as implication symbol.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .
+
+isoiec80000:term-t2-5.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p <=> q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.5-0 ;
+  skos:definition """stem:[p] is equivalent to stem:[q]"""@en ;
+  skos:note """stem:[(p => q) ^^ (q => p)] has the same meaning as stem:[p <=> q].
+
+stem:[<=>] is the equivalence symbol.
+
+stem:[harr] is also used as equivalence symbol.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .
+
+isoiec80000:term-t2-5.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "belonging to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "AA x in A p(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.6-0 ;
+  skos:definition """for every stem:[x] belonging to stem:[A], the proposition stem:[p(x)] is true"""@en ;
+  skos:note """If it is clear from the context which set stem:[A] is considered, the notation stem:[AA x p(x)] can be used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .
+
+isoiec80000:term-t2-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exists"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "EE x in A p(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.7-0 ;
+  skos:definition """there exists an stem:[x] belonging to stem:[A] for which
+stem:[p(x)] is true
+"""@en ;
+  skos:note """If it is clear from the context which set stem:[A] is
+considered, the notation stem:[EE x p(x)] can be used.
+
+stem:[EE] is the existential quantifier.
+
+For stem:[x in A], see <<t2-6.1>>.
+
+stem:[EE^1x p(x)] is used to indicate that there is exactly one element for which stem:[p(x)] is true.
+
+stem:[EE!] is also used for stem:[EE^1].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .

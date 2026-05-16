@@ -1,0 +1,28 @@
+isoiec80000:term-t11-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reynolds number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Re"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.1-0 ;
+  skos:definition """quotient of inertial forces and viscous forces in a fluid flow, expressed by
+
+stem:[Re = (rho v l)/eta = (v l)/sf(ii(v))]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The value of the Reynolds number gives an estimate on the flow state: laminar flow or turbulent flow.
+
+In rotating movement, the speed stem:[v= omega l], where stem:[l] is the distance from the rotation axis and stem:[omega] is the angular velocity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

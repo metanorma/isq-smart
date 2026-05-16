@@ -1,0 +1,26 @@
+isoiec80000:term-t11-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fourier number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.1-0 ;
+  skos:definition """relation between heat conduction rate and the rate of thermal energy storage in a body for conductive heat transfer into a body, expressed by
+
+stem:[Fo = (alpha t)/l^2]; where
+
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),
+stem:[t]:: is time (<<iso80000-3>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  skos:note """The characteristic length stem:[l] of the body is often defined as the quotient of the body's volume and its heated surface.
+
+Sometimes the reciprocal of this number is wrongly used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

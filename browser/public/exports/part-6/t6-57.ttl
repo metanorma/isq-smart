@@ -1,0 +1,32 @@
+isoiec80000:term-t6-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "apparent power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-57-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs (ul S)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-57 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-57" ;
+  skosxl:prefLabel isoiec80000:term-t6-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-57-1 ;
+  skos:definition """scalar quantity given by the product of RMS value of voltage stem:[U] (<<t6-11.3>>) and RMS value of electric current stem:[I] (<<t6-1>>);
+
+[stem%unnumbered]
+++++
+S = U I
+++++
+"""@en ;
+  skos:note """For RMS values see <<cls-0.4.4>>.
+
+See <<iec60050-131,locality:item=\"131-11-41\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t2-9.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "line segment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar(\"AB\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.4-0 ;
+  skos:definition """line segment from stem:[\"A\"] to stem:[\"B\"]"""@en ;
+  skos:note """The line segment is the set of points between stem:[\"A\"] and stem:[\"B\"] on the straight line stem:[\"AB\"] including the end points stem:[\"A\"] and stem:[\"B\"]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .

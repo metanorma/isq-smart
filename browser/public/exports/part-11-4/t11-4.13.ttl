@@ -1,0 +1,24 @@
+isoiec80000:term-t11-4.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thrust coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"t\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.13-0 ;
+  skos:definition """quotient of the effective thrust force available from a propeller and the inertial force in a fluid, expressed by
+
+stem:[c_\"t\" = F_\"T\" // (rho n^2 d^4)]; where
+
+stem:[F_\"T\"]:: is thrust force (<<iso80000-4>>) of the propeller,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[n]:: is rotational frequency (<<iso80000-3>>), and
+stem:[d]:: is tip diameter (<<iso80000-3>>) of the propeller
+"""@en ;
+  skos:note """The thrust coefficient is dependant on the shape of the propeller."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

@@ -1,0 +1,60 @@
+isoiec80000:term-t13-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "storage capacity, storage size"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-9" ;
+  skosxl:prefLabel isoiec80000:term-t13-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-9-0 ;
+  skos:definition """amount of data that can be contained in a storage device, expressed as a number of specified data elements"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+The specified data elements depend on the
+organization of the storage device, for example,
+binary elements (also called \"bits\"), octets (also
+called \"bytes\"), words of a given number of bits,
+blocks. A subscript referring to a specified data
+element can be added to the symbol.
+
+[example]
+storage capacity for bits, stem:[M_{\"bit\"}] +
+storage capacity for octets, stem:[M_o] or stem:[M_B].
+
+For registers, the term \"register length\" is used with
+the same meaning.
+
+Although in this context the designation \"bit\", symbol
+bit, is not really a unit, it is often used like a unit, e.g.
+stem:[M_{\"bit\"} = 32000], where the unit one is implicit, is often
+written as stem:[M = 32000 \"unitsml(bit)\"]. Similarly, although the
+designation octet or byte, symbols o and B,
+respectively, are not units, they are often used like
+units, e.g., stem:[M_o = 4000] or stem:[M_B = 4000], where the unit
+one is implicit, are often written stem:[M = 4000] o or
+stem:[M = 4000 \" B\"].
+
+When used to express a storage capacity or an
+equivalent binary storage capacity, the bit and the
+octet (or byte) may be combined with SI prefixes or
+prefixes for binary multiples.
+
+In English, the name \"byte\", symbol B, is used as a
+synonym for \"octet\". Here, \"byte\" means an eight-bit
+byte. However, \"byte\" has been used for numbers of
+bits other than eight. To avoid the risk of confusion, it
+is strongly recommended that the name \"byte\" and
+the symbol B be used only for eight-bit bytes.
+
+The symbol B for byte is not international and is not
+to be confused with the symbol B for bel.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit ;
+  isoiec80000:hasUnit isoiec80000:unit-o ;
+  isoiec80000:hasUnit isoiec80000:unit-B ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t6-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "source voltage"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-36-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "source tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-36" ;
+  skosxl:prefLabel isoiec80000:term-t6-36-0 ;
+  skosxl:altLabel isoiec80000:term-t6-36-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-36-0 ;
+  skos:definition """voltage (<<t6-11.3>>) between the two terminals of an electric source when there is no electric current (<<t6-1>>) through the source"""@en ;
+  skos:note """The name \"electromotive force\" with the abbreviated term EMF, and the symbol stem:[E] are deprecated.
+See <<iec60050-131,locality:item=\"131-12-22\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

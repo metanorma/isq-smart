@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous transmittance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tau_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.6",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.6",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.6-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.6-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of transmitted luminous flux and incident luminous flux, expressed by\n\n[stem%unnumbered]\n++++\ntau_\"v\" = (Phi_\"v,t\")/(Phi_\"v,m\")\n++++\n\nwhere stem:[Phi_\"v,t\"] is transmitted luminous flux (<<t7-13>>) and stem:[Phi_\"v,m\"] is luminous flux of the incident radiation\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "From the spectral transmittance stem:[tau(lambda)], luminous transmittance can be calculated by\n\n[stem%unnumbered]\n++++\ntau_\"v\" = (int_0^(oo) tau(lambda) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)\n++++\n\nwhere stem:[Phi_(\"e\",lambda)(lambda)] is the spectral radiant flux (or relative spectral distribution) of the source, and stem:[V(lambda)] is the spectral luminous efficiency (<<t7-10.2>>).\n\nSee also <<t7-31.5>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

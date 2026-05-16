@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-60-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "average energy loss per elementary charge produced",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-60-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "W_\"i\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-60",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-60",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-60-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-60-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the initial kinetic energy stem:[E_\"k\"] (<<iso80000-4>>) of an ionizing charged particle and the total ionization stem:[N_\"i\"] (<<t10-59>>) produced by that particle:\n\n[stem%unnumbered]\n++++\nW_\"i\" = E_\"k\"//N_\"i\"\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The name \"average energy loss per ion pair formed\" is usually used, although it is ambiguous.\n\nIn the practical dosimetry of ionizing radiation the term stem:[W//e], the quotient of stem:[W], the average energy deposited in dry air per ion pair formed, and stem:[e], the elementary charge, is used as the factor which, when multiplied with the electric charge of one sign carried by all ion pairs formed in dry air of given mass, gives the energy deposited in this amount of dry air in the form of excitations and ionizations.\n\nIn ICRU Report 85a, the mean energy expended in a gas per ion pair formed, stem:[W], is the quotient of stem:[E] by stem:[N], where stem:[N] is the mean total liberated charge of either sign, divided by the elementary charge when the initial kinetic energy stem:[E] of a charged particle introduced into the gas is completely dissipated in the gas. Thus, stem:[W = E//N]. It follows from the definition of stem:[W] that the ions produced by bremsstrahlung or other secondary radiation emitted by the initial and secondary charged particles are included in stem:[N].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-eV"
+        },
+        {
+          "@id": "isoiec80000:unit-J"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

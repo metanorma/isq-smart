@@ -1,0 +1,31 @@
+isoiec80000:term-t6-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic vector potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-32" ;
+  skosxl:prefLabel isoiec80000:term-t6-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-32-0 ;
+  skos:definition """vector quantity expressed by
+
+[stem%unnumbered]
+++++
+bb(ii(B)) = bb(rot) bb(ii(A))
+++++
+
+where stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>)
+"""@en ;
+  skos:note """The magnetic vector potential is not unique since any irrotational vector field can be added to it without changing its rotation.
+
+The magnetic vector potential and the magnetic flux density depend on position.
+
+See <<iec60050-121,locality:item=\"121-11-23\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(A*m) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

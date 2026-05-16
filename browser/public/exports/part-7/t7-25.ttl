@@ -1,0 +1,30 @@
+isoiec80000:term-t7-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "photon exposure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(H)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-25" ;
+  skosxl:prefLabel isoiec80000:term-t7-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-25-1 ;
+  skos:definition """density of incident photon number with respect to area at a point on a real or imaginary surface, expressed by
+
+[stem%unnumbered]
+++++
+H_\"p\" = (\"d\"N_\"p\")/(\"d\"A)
+++++
+
+where stem:[N_\"p\"] is photon number (<<t7-19.1>>) and stem:[A] is the area (<<iso80000-3>>) on which the photons are incident
+"""@en ;
+  skos:note """The corresponding radiometric quantity is \"radiant exposure\" (<<t7-9.1>>). The corresponding photometric quantity is \"luminous exposure\" (<<t7-18>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

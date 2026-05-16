@@ -1,0 +1,21 @@
+isoiec80000:term-t2-10.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "root(n)(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.11-0 ;
+  skos:definition """stem:[n]^th^ root of stem:[a]"""@en ;
+  skos:note """If stem:[a >= 0], then stem:[root(n)(a) >= 0].
+
+The symbol without the upper line stem:[root(n)(a)] should be avoided.
+
+If however the symbol stem:[root(n)(\" \")] or stem:[sqrt] is used acting on a composite expression, parentheses shall be used to avoid ambiguity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t13-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average transinformation rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T^{**}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-40" ;
+  skosxl:prefLabel isoiec80000:term-t13-40-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-40-0 ;
+  skos:definition """stem:[T^{**} = (T')/(sum_(i=1)^n sum_(j=1)^m p(x_i,y_j)t(x_i,y_j))]
+
+where stem:[T'] is character mean transinformation content (<<t13-39,item 13-39>>) and stem:[t(x_i, y_j)] is the mean duration of the pair of characters stem:[(x_i, y_j)] with joint probability stem:[p(x_i, y_j)]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-31\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh/s ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart/s ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

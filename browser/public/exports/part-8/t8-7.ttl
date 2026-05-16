@@ -1,0 +1,26 @@
+isoiec80000:term-t8-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sound energy density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-7" ;
+  skosxl:prefLabel isoiec80000:term-t8-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-7-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+w = 1/2 rho_\"m\" u^2 + 1/2 p^2/(rho_\"m\" c^2)
+++++
+
+where stem:[rho_\"m\"] is mean density (<<iso80000-4>>), stem:[u] is the magnitude of the sound particle velocity (<<t8-4>>), stem:[p] is sound pressure (<<t8-2.2>>), and stem:[c] is the phase speed (<<iso80000-3>>) of sound
+"""@en ;
+  skos:note """This definition can become inapplicable in situations with a high mean fluid flow."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

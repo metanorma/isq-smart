@@ -1,0 +1,25 @@
+isoiec80000:term-t3-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotational frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-17.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-17.2-0 ;
+  skos:definition """rate of change of rotation (<<t3-16>>)"""@en ;
+  skos:note """The rotational frequency is given by:
+
+[stem%unnumbered]
+++++
+n=(\"d\"N)/(\"d\"t)
+++++
+
+where stem:[N] denotes the rotation (<<t3-16>>) and stem:[t] is the duration (<<t3-9>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

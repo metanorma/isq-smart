@@ -1,0 +1,23 @@
+isoiec80000:term-t2-20.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical harmonic"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Y\"_l^m(vartheta,varphi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.17-0 ;
+  skos:definition """spherical harmonic"""@en ;
+  skos:note """stem:[\"Y\"_l^m(vartheta, varphi) = [((2l+1)/(4pi)) ((l-abs m)!)/((l+ abs m)!)\\]^(1//2) P_l^(abs m) (\"cos\" vartheta)\"e\"^(\"i\" m varphi)]
+
+(for stem:[l, abs(m) in bb(sf(N)); abs(m) <= l])
+
+Solution of
+
+stem:[1/(\"sin \"vartheta) del/(del vartheta) (sin vartheta (del y)/(del vartheta)) + 1/(\"sin\"^2 vartheta) (del^2y)/(del varphi^2) + l(l+1)y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

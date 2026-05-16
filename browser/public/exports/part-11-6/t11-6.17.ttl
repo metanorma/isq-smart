@@ -1,0 +1,29 @@
+isoiec80000:term-t11-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cavitation number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.17-1 ;
+  skos:definition """quotient of the excess of local static head over vapour pressure head and velocity head for fast flow in liquids, expressed by
+
+stem:[Ca = (p-p_\"v\")/(rho v^2//2)]; where
+
+stem:[p]:: is local static pressure (<<iso80000-4>>),
+stem:[p_\"v\"]:: is vapour pressure (<<iso80000-4>>) of the fluid,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the flow
+"""@en ;
+  skos:note """The cavitation number represents the ratio of the excess of local static head over vapour pressure head to velocity head."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

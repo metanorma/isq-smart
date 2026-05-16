@@ -1,0 +1,25 @@
+isoiec80000:term-t2-12.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f^(-1)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.10-0 ;
+  skos:definition """inverse function of stem:[f]"""@en ;
+  skos:note """The inverse function stem:[f^(-1)] of a function stem:[f] is only defined if stem:[f] is injective.
+
+If stem:[f] is injective then
+
+stem:[\"dom\"(f^(-1)) = \"ran\"(f), \"ran\"(f^(-1)) = \"dom\"(f)], and
+
+stem:[f^(-1)(f(x)) = x] for stem:[x in \"dom \"f].
+
+The inverse function stem:[f^(-1)] should not be confused with the pointwise reciprocal function stem:[x &#8614; f(x)^(-1)].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t2-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "belongs to set"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x in A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.1-0 ;
+  skos:definition """stem:[x] belongs to stem:[A], stem:[x] is an element of the set stem:[A]"""@en ;
+  skos:note """stem:[A\" \"&#8715;\" \"x] has the same meaning as stem:[x in A]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

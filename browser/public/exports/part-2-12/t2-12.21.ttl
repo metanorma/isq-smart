@@ -1,0 +1,40 @@
+isoiec80000:term-t2-12.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "partial derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(del f)/(del x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.21-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "del f//del x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.21-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "del_x f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.21-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.21-2 ;
+  skos:definition """partial derivative of stem:[f] with respect to stem:[x]"""@en ;
+  skos:note """Only to be used for functions of several variables.
+
+stem:[(del f(x,y,...))/(del x)], stem:[del f(x,y,...)//del x], stem:[del_x f(x,y,...)]
+and stem:[\"D\"_x f(x,y,...)] are also used.
+
+The other independent variables may be shown as subscripts, e.g. stem:[((del f)/(del x))_(y...)].
+
+This partial derivative notation is extended to derivatives of higher order, e.g.
+
+stem:[(del^2f)/(del x^2) = del/(del x) ((del f)/(del x))]
+
+stem:[(del^2f)/(delx dely) = del/(delx) ((del f)/(del y))]
+
+Other notations, e.g. stem:[f_(xy) = del/(del x)((del f)/(del y))], are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

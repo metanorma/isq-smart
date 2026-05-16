@@ -1,0 +1,35 @@
+isoiec80000:term-t6-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic susceptibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-28-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chi_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-28" ;
+  skosxl:prefLabel isoiec80000:term-t6-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-28-1 ;
+  skos:definition """for linear media, proportionality constant between magnetization stem:[M] (<<t6-24>>) and magnetic field strength stem:[H] (<<t6-25>>)
+
+[stem%unnumbered]
+++++
+M = kappa H
+++++
+"""@en ;
+  skos:note """stem:[kappa = mu_\"r\" - 1] where stem:[mu_r] is relative permeability (<<t6-27>>).
+
+This definition applies to an isotropic medium. For an anisotropic medium, magnetic susceptibility is a second order tensor.
+
+The magnetization and the magnetic field strength depend on position.
+
+See <<iec60050-121,locality:item=\"121-12-37\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t3-1.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.6" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.6-1 ;
+  skos:definition """half of a diameter (<<t3-1.5>>)"""@en ;
+  skos:note """This quantity is non-negative."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t10-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "internal conversion factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-35" ;
+  skosxl:prefLabel isoiec80000:term-t10-35-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-35-0 ;
+  skos:definition """quotient of the number of internal conversion electrons and the number of gamma quanta emitted by the radioactive atom in a given transition, where a conversion electron represents an orbital electron emitted through the radioactive decay"""@en ;
+  skos:note """The quantity stem:[alpha//(alpha+1)] is also used and called the internal-conversion fraction.
+
+Partial conversion fractions referring to the various electron shells stem:[\"K\", \"L\", ...] are indicated by stem:[alpha_\"K\", alpha_\"L\", ...].
+
+stem:[alpha_\"K\"//alpha_\"L\"] is called the stem:[\"K\"]-to-stem:[\"L\"] internal conversion ratio.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

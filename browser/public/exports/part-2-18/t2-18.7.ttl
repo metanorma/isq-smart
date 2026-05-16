@@ -1,0 +1,21 @@
+isoiec80000:term-t2-18.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "unit vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(e)_x, bb(e)_y, bb(e)_z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(e)_1, bb(e)_2, bb(e)_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.7-1 ;
+  skos:definition """unit vectors in the directions of the Cartesian coordinate axes"""@en ;
+  skos:note """stem:[bb(i), bb(j), bb(k)] are also used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

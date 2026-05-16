@@ -1,0 +1,24 @@
+isoiec80000:term-t11-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lockhart-Martinelli parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lp"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.15-0 ;
+  skos:definition """quotient of mass flow rates multiplied by the square root of density in a two-phase flow, expressed by
+
+stem:[Lp = (dot m_\"1\")/(dot m_\"g\") sqrt(rho_\"g\"/rho_\"l\")]; where
+
+stem:[dot m_\"l\" = q_\"m\"]:: is liquid phase mass flow rate (<<iso80000-4>>),
+stem:[dot m_\"g\"]:: is gas phase mass flow rate,
+stem:[rho_\"g\"]:: is gas density (<<iso80000-4>>), and
+stem:[rho_\"l\"]:: is liquid density
+"""@en ;
+  skos:note """The Lockhart-Martinelli parameter is used, for example, in boiling or condensing."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

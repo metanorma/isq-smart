@@ -1,0 +1,19 @@
+isoiec80000:term-t2-11.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of variations without repetition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"V\"_n^k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.8-0 ;
+  skos:definition """number of variations without repetition"""@en ;
+  skos:note """stem:[\"V\"_n^k = n^(ul k) = (n!)/((n-k)!)]
+
+The term \"permutation\" is used when stem:[n = k].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .

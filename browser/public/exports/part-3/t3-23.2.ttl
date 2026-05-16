@@ -1,0 +1,30 @@
+isoiec80000:term-t3-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "group velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-23.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "group speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"g\", ii(sf(v))_\"g\", (v_\"g\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-23.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-23.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-23.2-0 ;
+  skosxl:altLabel isoiec80000:term-t3-23.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-23.2-0 ;
+  skos:definition """speed with which the envelope of a wave propagates in space"""@en ;
+  skos:note """The group velocity is given by:
+
+[stem%unnumbered]
+++++
+c_\"g\" = (\"d\"omega)/(\"d\"k)
+++++
+
+where stem:[omega] denotes the angular frequency (<<t3-18>>) and stem:[k] the angular repetency (<<t3-22>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

@@ -1,0 +1,21 @@
+isoiec80000:term-t2-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angle at triangle vertex"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x2222; \"ABC\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.3-0 ;
+  skos:definition """angle at vertex stem:[\"B\"] in the triangle stem:[\"ABC\"]"""@en ;
+  skos:note """The angle is not oriented, it holds that stem:[&#x2222; \"ABC\" = &#x2222; \"CBA\"] and
+
+stem:[0 <= &#x2222; \"ABC\" <= pi \"unitsml(rad)\"].
+
+For a more general definition including rotation angles see <<iso80000-3>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .

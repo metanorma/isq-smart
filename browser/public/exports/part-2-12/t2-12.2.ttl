@@ -1,0 +1,21 @@
+isoiec80000:term-t2-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "value of function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x_1, ..., x_n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.2-1 ;
+  skos:definition """value of function stem:[f] for argument stem:[x] or for argument stem:[(x_1, ..., x_n)], respectively"""@en ;
+  skos:note """A function having a set of stem:[n]-tuples as its domain is an stem:[n]-place function."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

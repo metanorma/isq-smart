@@ -1,0 +1,19 @@
+isoiec80000:term-t13-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "completed call intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-8" ;
+  skosxl:prefLabel isoiec80000:term-t13-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-8-0 ;
+  skos:definition """call intensity (<<t13-7,item 13-7>>) for the call attempts that result in the transmission of an answer signal"""@en ;
+  skos:note """For a definition of the complete call attempt,
+see <<iec60050-715,droploc%locality:item=\"715-03-11\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

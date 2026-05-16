@@ -1,0 +1,18 @@
+isoiec80000:term-t6-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of turns in a winding"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-38" ;
+  skosxl:prefLabel isoiec80000:term-t6-38-0 ;
+  skosxl:altLabel isoiec80000:term-t6-38-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-38-0 ;
+  skos:definition """<in winding> number of turns"""@en ;
+  skos:note """stem:[N] may be a non-integer number, see <<iso80000-3>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

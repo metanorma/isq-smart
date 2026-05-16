@@ -1,0 +1,43 @@
+isoiec80000:term-t11-4.37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laplace number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.37-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Suratman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "La"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.37-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Su"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.37 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.37" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.37-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.37-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.37-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.37-1 ;
+  skos:definition """relation between capillary forces and viscous forces when characterizing free surface flow, expressed by
+
+stem:[La = Su = gamma p l // eta^2]; where
+
+stem:[gamma]:: is surface tension (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """The Laplace number is also the ratio of surface tension to momentum transfer, especially dissipation, inside a fluid.
+
+The Laplace number is also given by
+
+stem:[La = Su = 1//Oh^2 = Re^2//We]; where
+
+stem:[Oh]:: is the Ohnesorge number (<<t11-7.4>>),
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[We]:: is the Weber number (<<t11-4.5>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

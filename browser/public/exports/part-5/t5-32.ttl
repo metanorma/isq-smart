@@ -1,0 +1,24 @@
+isoiec80000:term-t5-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass fraction of dry matter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_\"d\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-32" ;
+  skosxl:prefLabel isoiec80000:term-t5-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-32-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+w_\"d\" = 1 - w_(\"H\"_2\"O\")
+++++
+
+where stem:[w_(\"H\"_2\"O\")] is mass fraction of water (<<t5-31>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

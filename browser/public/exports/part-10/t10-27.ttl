@@ -1,0 +1,36 @@
+isoiec80000:term-t10-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-27" ;
+  skosxl:prefLabel isoiec80000:term-t10-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-27-0 ;
+  skos:definition """differential quotient of stem:[N] with respect to time, where stem:[N] is the mean change in the number of nuclei in a particular energy state due to spontaneous nuclear transformations in a time interval of duration (<<iso80000-3>>) stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+A = -(\"d\"N)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """For exponential decay, stem:[A = lambda N], where stem:[lambda] is the decay constant (<<t10-24>>).
+
+The becquerel (stem:[\"unitsml(Bq)\"]) is a special name for second to the power minus one, to be used as the coherent SI unit of activity.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as: The activity, stem:[A], of an amount of a radionuclide in a particular energy state at a given time is the quotient of stem:[-\"d\"N] by stem:[\"d\"t], where stem:[\"d\"N] is the mean change in the number of nuclei in that energy state due to spontaneous nuclear transformations in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+A = -(\"d\"N)/(\"d\"t)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous flux",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Phi_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Phi)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-13",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-13",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-13-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "change in luminous energy with time, expressed by\n\n[stem%unnumbered]\n++++\nPhi_\"v\" = (\"d\"Q_\"v\")/(\"d\"t)\n++++\n\nwhere stem:[Q_\"v\"] is the luminous energy (<<t7-12>>) emitted, transferred or received and stem:[t] is time (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous flux is a quantity derived from the radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], by evaluating the radiation according to its action upon the CIE standard photometric observer. (See <<cie017,locality:term=17-738>>.)\n\nLuminous flux can be derived from the spectral radiant flux distribution by\n\n[stem%unnumbered]\n++++\nPhi_\"v\" = K_\"m\" int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda) \"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[Phi_(\"e\",lambda)(lambda)] is spectral radiant flux (<<t7-4.2>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>) and stem:[lambda] is wavelength (<<iso80000-3>>).\n\nThe corresponding radiometric quantity is \"radiant flux\" (<<t7-4.1>>). The corresponding quantity for photons is \"photon flux\" (<<t7-20>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

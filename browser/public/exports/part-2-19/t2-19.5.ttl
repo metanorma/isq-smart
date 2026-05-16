@@ -1,0 +1,29 @@
+isoiec80000:term-t2-19.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dirac delta distribution"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.5-0 ;
+  skos:definition """Dirac delta distribution, +
+Dirac delta function
+"""@en ;
+  skos:note """The Dirac delta distribution is defined by
+
+stem:[int_(-oo)^(+oo) varphi(t) delta(t-x) \"d\"t = varphi(x)]
+
+The Dirac delta distribution can be interpreted as derivative of the Heaviside function.
+The name \"unit pulse\" is also used.
+
+[example]
+stem:[&#x1D4DB; delta = 1]
+
+See also item <<t2-19.6>> and <<iec60027-6,clause=2.01>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .

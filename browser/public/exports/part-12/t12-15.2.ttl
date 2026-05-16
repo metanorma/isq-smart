@@ -1,0 +1,16 @@
+isoiec80000:term-t12-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean free path of electrons"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-15.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-15.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-15.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-15.2-0 ;
+  skos:definition """average distance (<<iso80000-3>>) that electrons travel between two successive interactions"""@en ;
+  skos:note """"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

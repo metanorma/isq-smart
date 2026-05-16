@@ -1,0 +1,22 @@
+isoiec80000:term-t9-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of entities"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N(X)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-1" ;
+  skosxl:prefLabel isoiec80000:term-t9-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-1-1 ;
+  skos:definition """number of elementary entities of kind stem:[\"X\"] in a system"""@en ;
+  skos:note """The elementary entities must be specified and can be atoms, molecules, ions, electrons, other particle, or a specified group of such particles. It is important to always give a precise specification of the entity involved; this should preferably be done by the empirical chemical formula of the material involved."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

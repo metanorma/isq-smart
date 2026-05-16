@@ -1,0 +1,43 @@
+isoiec80000:term-t13-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transfer rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-11" ;
+  skosxl:prefLabel isoiec80000:term-t13-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-11-1 ;
+  skos:definition """quotient of the number of specified data elements transferred in a time interval by the duration of this interval"""@en ;
+  skos:note """The symbol stem:[nu] is the Greek letter nu.
+
+A subscript referring to a specified data element can
+be added to the symbol.
+
+[example]
+digit rate, stem:[r_d] or stem:[nu_d] (see <<iec60050-702,droploc%locality:item=\"702-05-23\">> and
+<<iec60050-704,droploc%locality:item=\"704-16-06\">>); +
+transfer rate for octets (or bytes), stem:[r_o, r_B, nu_o] or stem:[nu_B];
+binary digit rate or bit rate (<<t13-13,item 13-13>>).
+
+In English, the name \"byte\", symbol B, is used as a
+synonym for \"octet\". Here \"byte\" means an eight-bit
+byte. See remarks in <<t13-9,item 13-9>>.
+
+The octet per second (or byte per second) may be
+combined with prefixes, for example kilooctet per
+second, symbol ko/s (or kilobyte per second, symbol
+kB/s).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-o/s ;
+  isoiec80000:hasUnit isoiec80000:unit-B/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

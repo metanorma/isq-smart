@@ -1,0 +1,30 @@
+isoiec80000:term-t11-4.39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sommerfeld number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "So"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.39-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sm"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.39" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.39-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.39-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.39-1 ;
+  skos:definition """relation between viscous force and load force in a lubrication boundary, expressed by
+
+stem:[So = (eta n)/p (r/c)^2]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the lubricant,
+stem:[n]:: is rotational frequency (<<iso80000-3>>),
+stem:[p]:: is mean bearing pressure (<<iso80000-4>>),
+stem:[r]:: is radius (<<iso80000-3>>) of the shaft, and
+stem:[c]:: is radial distance (<<iso80000-3>>) between rotating shaft and annulus
+"""@en ;
+  skos:note """Sometimes the inverse of this number is wrongly used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

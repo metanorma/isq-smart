@@ -1,0 +1,35 @@
+isoiec80000:term-t7-33.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminance factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-33.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-33.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(beta)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-33.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-33.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-33.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-33.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-33.2-1 ;
+  skos:definition """quotient of the luminance of a surface element in a specified direction and the luminance of the perfect reflecting diffuser or perfect transmitting diffuser identically illuminated and viewed, expressed by
+
+[stem%unnumbered]
+++++
+beta_\"v\" = (L_\"v,n\")/(L_\"v,d\")
+++++
+
+where stem:[L_\"v,n\"] is the luminance (<<t7-15>>) of a surface element in a given direction and stem:[L_\"v,d\"] is the luminance of the perfect reflecting or transmitting diffuser identically illuminated and viewed
+"""@en ;
+  skos:note """The definition holds for a surface element of a non-luminous medium, in a given direction and under specified conditions of irradiation.
+
+This quantity is also defined spectrally and is called \"spectral luminance factor\".
+
+For the analogous radiant quantity \"radiance factor\", see <<t7-33.1>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

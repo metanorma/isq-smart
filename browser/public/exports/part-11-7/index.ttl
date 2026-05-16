@@ -1,0 +1,288 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-11-7 a smart:PublicationDocument ;
+  dcterms:title "Part 11-7"@en ;
+  dcterms:identifier "ISO 80000-11-7" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t11-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Prandtl number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.1-0 ;
+  skos:definition """quotient of kinematic viscosity and thermal diffusivity for a fluid, expressed by
+
+stem:[Pr = sf(ii(v))//a]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[a]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The Prandtl number also represents the quotient of heat produced by viscosity and heat transferred by thermal diffusivity.
+
+The mass transfer analogue of the Prandtl number is the Schmidt number (<<t11-7.2>>).
+
+The Prandtl number is also given by
+
+stem:[Pr = Pe//Re]; where
+
+stem:[Pe]:: is the Péclet number (<<t11-5.2>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Schmidt number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-7.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: Colburn number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sc"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.2-0 ;
+  skosxl:altLabel isoiec80000:term-t11-7.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.2-0 ;
+  skos:definition """quotient of kinematic viscosity and diffusion coefficient for a fluid, expressed by
+
+stem:[Sc = sf(ii(v))//D]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The heat transfer analogue of the Schmidt number is the Prandtl number (<<t11-7.1>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lewis number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Le"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.3-0 ;
+  skos:definition """quotient of thermal diffusivity and diffusion coefficient for heat transfer in a fluid, expressed by
+
+stem:[Le = a//D]; where
+
+stem:[a]:: is thermal diffusivity (<<iso80000-5>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The Lewis number is also given by
+
+stem:[Le = Sc//Pr]; where
+
+stem:[Sc]:: is the Schmidt number (<<t11-7.2>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+
+Compare with <<t11-5.2>>.
+
+The Lewis number is sometimes defined as reciprocal of this quantity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ohnesorge number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Oh"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.4-0 ;
+  skos:definition """relation between viscous force and the square root of the product of inertia force and capillary force for atomization of liquids, expressed by
+
+stem:[Oh = eta/(sqrt(gamma rho l))]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[gamma]:: is surface tension (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Ohnesorge number is also given by
+
+stem:[Oh = sqrt(We)//Re]; where
+
+stem:[We]:: is the Weber number (<<t11-4.5>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+
+See also Laplace number (<<t11-4.37>>).
+
+The characteristic length typically is the drop diameter.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cauchy number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-7.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "aeroelasticity parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cy"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.5-0 ;
+  skosxl:altLabel isoiec80000:term-t11-7.5-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.5-0 ;
+  skos:definition """relation between inertia forces and compression forces in compressible fluids, expressed by
+
+stem:[Cy = rho v^2//K]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[K]:: is modulus of compression, bulk modulus (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hooke number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ho_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.6-0 ;
+  skos:definition """relation between inertia forces and linear stress forces in elastic fluids, expressed by
+
+stem:[Ho_2 = rho v^2 // E]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[E]:: is modulus of elasticity (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Weissenberg number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Wi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.7-0 ;
+  skos:definition """product of time derivative of shear rate and relaxation time in viscoelastic flows, expressed by
+
+stem:[Wi = dot gamma t_\"r\"]; where
+
+stem:[dot gamma]:: is time derivative of shear strain (<<iso80000-4>>), and
+stem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>)
+"""@en ;
+  skos:note """The Weissenberg number represents the relative importance of viscous forces when compared to elastic forces.
+
+The time derivative of shear strain is sometimes called the shear rate.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Deborah number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "De"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.8-0 ;
+  skos:definition """quotient of relaxation time of viscoelastic fluids and observation duration in rheology of viscoelastic fluids, expressed by
+
+stem:[De = t_\"c\"//t_\"p\"]; where
+
+stem:[t_\"c\"]:: is stress relaxation time, and
+stem:[t_\"p\"]:: is observation duration (<<iso80000-3>>)
+"""@en ;
+  skos:note """The stress relaxation time is sometimes called the Maxwell relaxation time."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lorentz number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.9-0 ;
+  skos:definition """quotient of electrical conductivity and thermal conductivity, expressed by
+
+stem:[Lo = (sigma (Delta U)^2)/(lambda Delta T)]; where
+
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[Delta U]:: is difference of voltage stem:[U] (<<iec80000-6>>) between two reference points,
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T]:: is difference in thermodynamic temperature stem:[T] (<<iso80000-5>>) between the reference points
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .
+
+isoiec80000:term-t11-7.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "compressibility number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.10-0 ;
+  skos:definition """quotient of isothermal compressibility (<<iso80000-5>>) of a gas and that of an ideal gas, expressed by
+
+stem:[Z=p/(rho R_\"s\"T)]; where
+
+stem:[p]:: is pressure (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[R_\"s\"]:: is specific gas constant (<<iso80000-5>>), and
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

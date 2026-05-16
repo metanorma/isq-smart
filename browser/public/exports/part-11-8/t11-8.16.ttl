@@ -1,0 +1,41 @@
+isoiec80000:term-t11-8.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lundquist number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.16-0 ;
+  skos:definition """quotient of Alfvén speed and magneto-dynamic speed in a plasma, expressed by
+
+stem:[Lu = Bl sigma sqrt(mu/rho)]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>)
+"""@en ;
+  skos:note """The quantity stem:[v_\"A\" = B//sqrt(phi mu)] is called Alfvén wave speed. See <<t11-8.4>>.
+
+The quantity stem:[v_\"m\" = 1//(l sigma mu)] is called magneto dynamic speed; where
+
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>).
+
+The Lundquist number is also given by
+
+stem:[Lu = Rm//Al]; where
+
+stem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and
+stem:[Al]:: is the Alfvén number (<<t11-8.4>>).
+
+See also Hartmann number (<<t11-8.5>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

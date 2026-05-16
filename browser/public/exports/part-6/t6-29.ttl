@@ -1,0 +1,25 @@
+isoiec80000:term-t6-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic polarization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-29" ;
+  skosxl:prefLabel isoiec80000:term-t6-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-29-0 ;
+  skos:definition """vector quantity given by the product of the magnetic constant stem:[mu_0] (<<t6-26.1>>) and magnetization stem:[M] (<<t6-24>>)
+
+[stem%unnumbered]
+++++
+J_\"m\" = mu_0 M
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-54\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

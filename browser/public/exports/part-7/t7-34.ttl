@@ -1,0 +1,32 @@
+isoiec80000:term-t7-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reflectance factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-34" ;
+  skosxl:prefLabel isoiec80000:term-t7-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-34-0 ;
+  skos:definition """quotient of the flux reflected in the directions delimited by a given cone with apex at a surface element and the flux reflected in the same directions by a perfect reflecting diffuser identically irradiated or illuminated, expressed by
+
+[stem%unnumbered]
+++++
+R=Phi_\"n\"/Phi_\"d\"
+++++
+
+where stem:[Phi_\"n\"] is the flux reflected in the directions delimited by a given cone and stem:[Phi_\"d\"] is the flux reflected in the same directions by an identically irradiated diffuser of reflectance (<<t7-31.3>>) equal to 1
+"""@en ;
+  skos:note """The flux can be a radiant flux (<<t7-4.1>>) or a luminous flux (<<t7-13>>).
+
+The definition holds for a surface element, for the part of the reflected radiation contained in a given cone with apex at the surface element, and for incident radiation of given spectral composition, polarization and geometric distribution.
+
+Reflectance factor is equivalent to radiance factor (<<t7-33.1>>) or luminance factor (<<t7-33.2>>) when the cone angle is infinitely small, and is equivalent to reflectance (<<t7-31.3>>) when the cone angle is stem:[2pi \"unitsml(sr)\"]. These quantities are also defined spectrally and called spectral radiance factor stem:[beta(lambda)] and spectral reflectance factor stem:[R(lambda)].
+
+The ideal isotropic (Lambertian) diffuser with reflectance (<<t7-31.3>>) or transmittance (<<t7-31.5>>) equal to 1 is called a perfect diffuser.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

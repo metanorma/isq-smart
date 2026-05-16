@@ -1,0 +1,31 @@
+isoiec80000:term-t6-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(M))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(H_\"i\"))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-24" ;
+  skosxl:prefLabel isoiec80000:term-t6-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-24-1 ;
+  skos:definition """vector quantity representing the spatial distribution of the magnetic moment,
+
+[stem%unnumbered]
+++++
+bb(ii(M))(bb(ii(r))) = (\"d\"m)/(\"d\"V)
+++++
+
+where stem:[\"d\"m] is quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) magnetic moment (<<t6-23>>) of a substance contained in a 3D domain located at position stem:[bb(ii(r))], and stem:[\"d\"V] is volume (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-52\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

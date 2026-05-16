@@ -1,0 +1,25 @@
+isoiec80000:term-t12-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "short-range order parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-5.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.1-1 ;
+  skos:definition """fraction of nearest-neighbour atom pairs in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction"""@en ;
+  skos:note """Similar definitions apply to other order-disorder phenomena.
+
+Other symbols are frequently used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

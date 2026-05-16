@@ -1,0 +1,22 @@
+isoiec80000:term-t10-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spin quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "s"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.5" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.5-0 ;
+  skos:definition """characteristic quantum number stem:[s] of a particle, related to its spin (<<t10-10>>), stem:[bb(ii(s))]:
+
+stem:[bb(ii(s))^2 = &#8463;^2 s(s+1)]
+
+where stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>)
+"""@en ;
+  skos:note """Spin quantum numbers of fermions are odd multiples of stem:[1//2], and those of bosons are integers."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

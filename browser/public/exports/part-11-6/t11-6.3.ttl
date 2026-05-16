@@ -1,0 +1,30 @@
+isoiec80000:term-t11-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grashof number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gr**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.3-0 ;
+  skos:definition """relation between buoyancy forces and viscous forces in natural convection of fluids, expressed by
+
+stem:[Gr** = l^3 g beta Delta x // sf(ii(v))^2]; where
+
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>)
+stem:[beta = -(1//rho)(del rho // del x)_(T,p)], where::
+stem:[rho]::: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[x]::: is amount-of-substance fraction (<<iso80000-9>>),
+stem:[Delta x]:: is difference of amount-of-substance fraction (<<iso80000-9>>) along length stem:[l], and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """Instead of \"amount-of-substance fraction\" the \"amount-of-substance concentration\" (<<iso80000-9>>) is used also.
+
+Compare with <<t11-4.4>>, the Grashof number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

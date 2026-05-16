@@ -1,0 +1,24 @@
+isoiec80000:term-t12-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Richardson constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-26" ;
+  skosxl:prefLabel isoiec80000:term-t12-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-26-0 ;
+  skos:definition """parameter in the expression for the thermionic emission current density stem:[J] (<<iec80000-6>>) for a metal in terms of the thermodynamic temperature stem:[T] (<<iso80000-5>>) and work function stem:[phi], (<<t12-24.1>>):
+
+[stem%unnumbered]
+++++
+J = AT^2 \"exp\" (phi/(kT))
+++++
+
+where stem:[k] is the Boltzmann constant (<<iso80000-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^(-2)*K^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

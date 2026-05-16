@@ -1,0 +1,25 @@
+isoiec80000:term-t11-8.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Batchelor number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bt"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.2-0 ;
+  skos:definition """relation between inertia and magneto-dynamic diffusion in an electrically conducting liquid, expressed by
+
+stem:[Bt = v l sigma mu // (epsilon_\"r\" mu_\"r\")]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[epsilon_\"r\"]:: is relative permittivity (<<iec80000-6>>), and
+stem:[mu_\"r\"]:: is relative permeability (<<iec80000-6>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

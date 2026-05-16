@@ -1,0 +1,51 @@
+isoiec80000:term-t7-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "irradiance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-7.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-7.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-7.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-7.1-1 ;
+  skos:definition """density of incident radiant flux with respect to area at a point on a real or imaginary surface, expressed by
+
+[stem%unnumbered]
+++++
+E_\"e\" = (\"d\"Phi_\"e\")/(\"d\"A)
+++++
+
+where stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>) and stem:[A] is the area (<<iso80000-3>>) on which the radiant flux is incident
+"""@en ;
+  skos:note """The corresponding photometric quantity is \"illuminance\" (<<t7-16>>). The corresponding quantity for photons is \"photon irradiance\" (<<t7-23>>).
+
+The quantity \"spherical irradiance\" is defined by the mean value of irradiance on the outer curved surface of a very small (real or imaginary) sphere at a point in space.
+
+It can be expressed by
+
+[stem%unnumbered]
+++++
+E_(\"e\",0) = int_(4pi)L_\"e\" \"d\"Omega
+++++
+
+where stem:[Omega] is solid angle (<<iso80000-3>>) and stem:[L_\"e\"] is radiance (<<t7-6.1>>).
+
+(See <<cie017,locality:term=\"17-21-054\">>.)
+
+It can be expressed by the quotient of the radiant flux (<<t7-4.1>>) of all the radiation incident on the outer surface of an infinitely small sphere centred at the specified point and the area (<<iso80000-3>>) of the diametrical cross-section of that sphere.
+
+Spherical irradiance is also called \"fluence rate\" or \"radiant fluence rate\".
+
+The corresponding photometric quantity to spherical irradiance is called \"spherical illuminance\".
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

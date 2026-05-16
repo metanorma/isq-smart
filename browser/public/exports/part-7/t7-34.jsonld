@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "reflectance factor",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "R",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-34",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-34",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-34-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-34-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the flux reflected in the directions delimited by a given cone with apex at a surface element and the flux reflected in the same directions by a perfect reflecting diffuser identically irradiated or illuminated, expressed by\n\n[stem%unnumbered]\n++++\nR=Phi_\"n\"/Phi_\"d\"\n++++\n\nwhere stem:[Phi_\"n\"] is the flux reflected in the directions delimited by a given cone and stem:[Phi_\"d\"] is the flux reflected in the same directions by an identically irradiated diffuser of reflectance (<<t7-31.3>>) equal to 1\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The flux can be a radiant flux (<<t7-4.1>>) or a luminous flux (<<t7-13>>).\n\nThe definition holds for a surface element, for the part of the reflected radiation contained in a given cone with apex at the surface element, and for incident radiation of given spectral composition, polarization and geometric distribution.\n\nReflectance factor is equivalent to radiance factor (<<t7-33.1>>) or luminance factor (<<t7-33.2>>) when the cone angle is infinitely small, and is equivalent to reflectance (<<t7-31.3>>) when the cone angle is stem:[2pi \"unitsml(sr)\"]. These quantities are also defined spectrally and called spectral radiance factor stem:[beta(lambda)] and spectral reflectance factor stem:[R(lambda)].\n\nThe ideal isotropic (Lambertian) diffuser with reflectance (<<t7-31.3>>) or transmittance (<<t7-31.5>>) equal to 1 is called a perfect diffuser.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

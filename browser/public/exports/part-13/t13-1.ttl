@@ -1,0 +1,26 @@
+isoiec80000:term-t13-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-1" ;
+  skosxl:prefLabel isoiec80000:term-t13-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-1-0 ;
+  skos:definition """number of simultaneously busy resources in a particular pool of resources"""@en ;
+  skos:note """stem:[1 \" E\"] corresponds to the occupancy of one resource.
+
+The name \"erlang\" was given to the traffic intensity
+unit in 1946 by the International Telephone
+Consultative Committee (CCIF), in honour of the
+Danish mathematician, A. K. Erlang (1878-1929), who
+was the founder of traffic theory in telephony.
+
+See <<iec60050-715,droploc%locality:item=\"715-05-02\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-E ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

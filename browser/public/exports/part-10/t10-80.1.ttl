@@ -1,0 +1,43 @@
+isoiec80000:term-t10-80.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy imparted"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-80.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-80.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-80.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-80.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-80.1-0 ;
+  skos:definition """sum of all energy deposits in a given volume:
+
+[stem%unnumbered]
+++++
+epsilon = sum_i epsilon_i
+++++
+
+where the summation is performed over all energy (<<iso80000-5>>) deposits stem:[epsilon_i] of interaction stem:[i] in that volume
+"""@en ;
+  skos:note """Energy imparted is a stochastic quantity.
+
+stem:[epsilon_i] is given by:
+
+[stem%unnumbered]
+++++
+epsilon_i = epsilon_\"in\" - epsilon_\"out\" + Q
+++++
+
+where stem:[epsilon_\"in\"] is the energy (<<iso80000-5>>) of the incident ionizing particle, excluding rest energy (<<t10-3>>), stem:[epsilon_\"out\"] is the sum of the energies (<<iso80000-5>>) of all ionizing particles leaving the interaction, excluding rest energy (<<t10-3>>), and stem:[Q] is the change in the rest energies (<<t10-3>>) of the nucleus and of all particles involved in the interaction.
+
+stem:[Q > 0] means decrease of rest energy;
+
+stem:[Q < 0] means increase of rest energy.
+
+Stochastic quantities such as the energy imparted and the specific energy imparted (<<t10-81.2>>) and their probability distributions have been introduced as they describe the discontinuous nature of the ionizing radiations as a determinant of radiochemical and radiobiological effects. In radiation applications involving large numbers of ionizing particles, e.g. in medicine, radiation protection and materials testing and processing, these fluctuations are adequately represented by the expectation values of the probability distributions. Non-stochastic quantities such as particle fluence (<<t10-43>>), absorbed dose (<<t10-81.1>>) and kerma (<<t10-86.1>>) are based on these expectation values.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

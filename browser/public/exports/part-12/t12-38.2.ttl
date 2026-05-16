@@ -1,0 +1,16 @@
+isoiec80000:term-t12-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coherence length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "xi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-38.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-38.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-38.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-38.2-0 ;
+  skos:definition """distance (<<iso80000-3>>) in a superconductor over which the effect of a perturbation is appreciable at zero thermodynamic temperature (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

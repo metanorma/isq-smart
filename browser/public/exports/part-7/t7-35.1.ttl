@@ -1,0 +1,37 @@
+isoiec80000:term-t7-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear attenuation coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t7-35.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear extinction coefficient <radiometry>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-35.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"l\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-35.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-35.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-35.1-0 ;
+  skosxl:altLabel isoiec80000:term-t7-35.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t7-35.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-35.1-1 ;
+  skos:definition """relative decrease in radiant flux caused by absorption and scattering"""@en ;
+  skos:note """This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before this quantity name.
+
+The spectral linear attenuation coefficient can be expressed by the relative decrease in the spectral radiant flux, stem:[Phi_(\"e\",lambda)(lambda)], with respect to propagation length, stem:[l], of a collimated beam at a point in an absorbing and scattering medium
+
+[stem%unnumbered]
+++++
+mu(lambda) = 1/(Phi_(\"e\",lambda)(lambda)) (\"d\"Phi_(\"e\",lambda)(lambda))/(\"d\"l)
+++++
+
+Similarly, luminous and photon quantities can be defined.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

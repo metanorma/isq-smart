@@ -1,0 +1,44 @@
+isoiec80000:term-t10-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Landé factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-14.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[g] factor of atom"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-14.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-14.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-14.1-0 ;
+  skosxl:altLabel isoiec80000:term-t10-14.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-14.1-0 ;
+  skos:definition """quotient of the magnetic dipole moment of an atom, and the product of the total angular momentum quantum number and the Bohr magneton:
+
+[stem%unnumbered]
+++++
+g = mu/(J * mu_\"B\")
+++++
+
+where
+
+stem:[mu]:: is magnitude of magnetic dipole moment (<<t10-9.1>>),
+stem:[J]:: is total angular momentum quantum number (<<t10-13.6>>), and
+stem:[mu_\"B\"]:: is the Bohr magneton (<<t10-9.2>>)
+"""@en ;
+  skos:note """These quantities are also called stem:[g] values.
+
+The Landé factor can be calculated from the expression:
+
+[stem%unnumbered]
+++++
+g(L,S,J) = 1 + (g_\"e\"-1) xx (J(J+1) + S(S+1) - L(L+1))/(2J(J+1))
+++++
+
+where stem:[g_\"e\"] is the stem:[g] factor of the electron.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

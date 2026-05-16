@@ -1,0 +1,34 @@
+isoiec80000:term-t10-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass excess"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Delta)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-21.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-21.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-21.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-21.1-0 ;
+  skos:definition """difference between the mass of an atom, and the product of its mass number and the unified mass constant:
+
+[stem%unnumbered]
+++++
+ii(Delta) = m_\"a\" - A * m_\"u\"
+++++
+
+where
+
+stem:[m_\"a\"]:: is the rest mass (<<t10-2>>) of the atom,
+stem:[A]:: is its nucleon number (<<t10-1.3>>), and
+stem:[m_\"u\"]:: is the unified atomic mass constant (<<t10-4.3>>)
+"""@en ;
+  skos:note """The mass excess is usually expressed in daltons, stem:[1 \"unitsml(Da)\" = 1 \"unitsml(u)\"].
+
+See <<t10-2>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

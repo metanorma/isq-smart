@@ -1,0 +1,25 @@
+isoiec80000:term-t2-20.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Neumann function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"N\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.24 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.24" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.24-0 ;
+  skos:definition """Neumann function, +
+cylinder Bessel function of the second kind
+"""@en ;
+  skos:note """stem:[\"N\"_nu(z) = (\"J\"_nu (z)\"cos\"(nu pi)-\"J\"_(-nu)(z))/(\"sin\"(nu pi))]
+
+(for stem:[nu in bb(sf(C))])
+
+The right-hand side of this equation is replaced by its limiting value if stem:[nu in bb(sf(Z))].
+
+stem:[\"Y\"_nu(z)] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.9-0 ;
+  skos:definition """stem:[a] to the power stem:[p]"""@en ;
+  skos:note """The verbal equivalent of stem:[a^2] is a squared; the verbal equivalent of stem:[a^3] is a cubed."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

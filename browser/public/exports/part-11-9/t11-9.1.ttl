@@ -1,0 +1,22 @@
+isoiec80000:term-t11-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Arrhenius number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-9.1-0 ;
+  skos:definition """quotient of chemical activation energy and thermal energy; in a chemical reaction it is the exponential factor of the reaction rate constant, stem:[k], expressed by
+
+stem:[k ~ \"exp \"(alpha)], with stem:[alpha = E_0 // (RT)]; where
+
+stem:[E_0]:: is activation energy (<<iso80000-5>>),
+stem:[R]:: is molar gas constant (<<iso80000-9>>), and
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-9 .

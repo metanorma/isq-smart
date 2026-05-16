@@ -1,0 +1,29 @@
+isoiec80000:term-t4-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-5" ;
+  skosxl:prefLabel isoiec80000:term-t4-5-0 ;
+  skosxl:altLabel isoiec80000:term-t4-5-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-5-0 ;
+  skos:definition """quantity representing the areal distribution of mass of a continuous
+material:
+
+stem:[rho_A(r) = (\"d\"m)/(\"d\"A)]
+
+where stem:[m] is the mass of the material at position stem:[r] and stem:[A]
+is area
+"""@en ;
+  skos:note """The name \"grammage\" should not be used for this quantity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

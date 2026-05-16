@@ -1,0 +1,24 @@
+isoiec80000:term-t12-27.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fermi energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-27.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"F\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-27.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-27.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-27.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-27.1-0 ;
+  skos:definition """in a metal, highest occupied energy level at zero thermodynamic temperature (<<iso80000-5>>), where energy level means the energy (<<iso80000-5>>) of an electron in the interior of a substance"""@en ;
+  skos:note """The term \"energy level\" is often used for the state of the electron, not only for its energy.
+
+At stem:[T = 0 \"unitsml(K)\"], stem:[E_\"F\"] is equal to the chemical potential per electron.
+
+In condensed matter physics, the reference level for the energy is sometimes chosen so that, for instance, stem:[E_\"F\" = 0].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

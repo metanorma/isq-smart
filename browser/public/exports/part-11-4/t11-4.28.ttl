@@ -1,0 +1,28 @@
+isoiec80000:term-t11-4.28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poiseuille number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.28" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.28-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.28-0 ;
+  skos:definition """quotient of propulsive force by pressure and viscous force for a flow of fluids in a pipe, expressed by
+
+stem:[Poi = (Delta p)/l d^2/(eta v)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along the pipe,
+stem:[l]:: is length (<<iso80000-3>>) of the pipe,
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid
+"""@en ;
+  skos:note """The Poiseuille number is stem:[Poi=32] for laminar flow in a round pipe.
+
+See also the Hagen number (<<t11-4.26>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

@@ -1,0 +1,31 @@
+isoiec80000:term-t11-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hall number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-8.15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.15-1 ;
+  skos:definition """quotient of gyro frequency and collision frequency in a plasma, expressed by
+
+stem:[H_\"c\" = (omega_\"c\")/(2pi) lambda/v]; where
+
+stem:[omega_\"c\"]:: is cyclotron angular frequency (<<iso80000-10>>),
+stem:[lambda]:: is mean free path (<<iso80000-9>>), and
+stem:[v]:: is average speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """Sometimes the inverse of this number is wrongly used.
+
+stem:[2pi] times this quantity is called the Hall parameter.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

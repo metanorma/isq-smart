@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-27-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "activity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-27-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "A",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-27",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-27",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-27-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-27-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "differential quotient of stem:[N] with respect to time, where stem:[N] is the mean change in the number of nuclei in a particular energy state due to spontaneous nuclear transformations in a time interval of duration (<<iso80000-3>>) stem:[\"d\"t]:\n\n[stem%unnumbered]\n++++\nA = -(\"d\"N)/(\"d\"t)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For exponential decay, stem:[A = lambda N], where stem:[lambda] is the decay constant (<<t10-24>>).\n\nThe becquerel (stem:[\"unitsml(Bq)\"]) is a special name for second to the power minus one, to be used as the coherent SI unit of activity.\n\nIn report 85a of the ICRU a definition with an equivalent meaning is given as: The activity, stem:[A], of an amount of a radionuclide in a particular energy state at a given time is the quotient of stem:[-\"d\"N] by stem:[\"d\"t], where stem:[\"d\"N] is the mean change in the number of nuclei in that energy state due to spontaneous nuclear transformations in the time interval stem:[\"d\"t]:\n\n[stem%unnumbered]\n++++\nA = -(\"d\"N)/(\"d\"t)\n++++\n\nSee also <<cls-0.3>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-Bq"
+        },
+        {
+          "@id": "isoiec80000:unit-s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

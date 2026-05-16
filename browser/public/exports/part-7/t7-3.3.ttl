@@ -1,0 +1,30 @@
+isoiec80000:term-t7-3.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spectral radiant energy density in terms of wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-3.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_(tilde nu)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-3.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_(tilde nu)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-3.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-3.3" ;
+  skosxl:prefLabel isoiec80000:term-t7-3.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-3.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-3.3-1 ;
+  skos:definition """change of radiant energy density with wavenumber, expressed by
+
+[stem%unnumbered]
+++++
+w_(tilde nu) = (\"d\"w)/(\"d\"tilde nu)
+++++
+
+where stem:[w] is radiant energy density (<<t7-3.1>>) as a function of wavenumber stem:[tilde nu] (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

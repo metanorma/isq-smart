@@ -1,0 +1,21 @@
+isoiec80000:term-t2-12.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "composite function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g @ f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.11-0 ;
+  skos:definition """composite function of stem:[f] and stem:[g], +
+stem:[g] circle stem:[f]
+"""@en ;
+  skos:note """(g @ f)(x) = g(f(x))
+
+In the composite stem:[g @ f], the function stem:[g] is applied after function stem:[f] has been applied.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

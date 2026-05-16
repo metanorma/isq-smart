@@ -1,0 +1,16 @@
+isoiec80000:term-t12-29.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "donor density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"d\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.4" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.4-0 ;
+  skos:definition """quotient of number of donor levels and volume (<<iso80000-3>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

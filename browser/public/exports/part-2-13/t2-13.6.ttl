@@ -1,0 +1,21 @@
+isoiec80000:term-t2-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decimal logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"lg \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.6-0 ;
+  skos:definition """decimal logarithm of stem:[x], +
+common logarithm of stem:[x]
+"""@en ;
+  skos:note """stem:[\"lg \"x = \"log\"_(10) x]
+
+See remark to <<t2-13.5>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .

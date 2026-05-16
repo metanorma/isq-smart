@@ -1,0 +1,25 @@
+isoiec80000:term-t5-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass ratio of vapour"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "psi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-35" ;
+  skosxl:prefLabel isoiec80000:term-t5-35-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-35-0 ;
+  skos:definition """quotient of mass ratio of water vapour to dry gas and mass ratio of water vapour to dry gas at saturation:
+
+[stem%unnumbered]
+++++
+psi = r/r_\"sat\"
+++++
+
+where stem:[r] is mass ratio of water vapour to dry gas (<<t5-30>>) and stem:[r_\"sat\"] is its mass ratio of water vapour to dry gas at saturation of the same temperature
+"""@en ;
+  skos:note """This quantity is also used as an approximation of relative humidity (<<t5-33>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

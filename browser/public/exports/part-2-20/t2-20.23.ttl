@@ -1,0 +1,25 @@
+isoiec80000:term-t2-20.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bessel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"J\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.23 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.23" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.23-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.23-0 ;
+  skos:definition """Bessel function, +
+cylinder function of the first kind
+"""@en ;
+  skos:note """stem:[\"J\"_nu(z) = sum_(k=0)^(oo) ((-1)^k(z//2)^(nu+2k))/(k!Gamma(nu+k+1))]
+
+(for stem:[nu in bb(sf(C))])
+
+Solution of
+
+stem:[z^2y'' + zy' + (z^2 - nu^2)y = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

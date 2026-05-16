@@ -1,0 +1,21 @@
+isoiec80000:term-t4-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stress"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-15" ;
+  skosxl:prefLabel isoiec80000:term-t4-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-15-0 ;
+  skos:definition """tensor (<<iso80000-2>>) quantity representing state of tension of matter"""@en ;
+  skos:note """Stress tensor is symmetric and has three normal-stress and three
+shear-stress (Cartesian) components.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

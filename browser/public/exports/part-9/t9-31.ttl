@@ -1,0 +1,23 @@
+isoiec80000:term-t9-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "extent of reaction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "xi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-31" ;
+  skosxl:prefLabel isoiec80000:term-t9-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-31-0 ;
+  skos:definition """difference of initial amount stem:[n_\"B in\"] of substance stem:[\"B\"] (<<t9-2>>) and equilibrium amount stem:[n_\"B eq\"] of substance stem:[\"B\"] (<<t9-2>>) divided by stoichiometric number stem:[nu_\"B\"] of substance stem:[\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+xi = (n_\"B eq\" - n_\"B in\")/(nu_\"B\")
+++++
+"""@en ;
+  skos:note """See remark to <<t9-30>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

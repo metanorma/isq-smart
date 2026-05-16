@@ -1,0 +1,36 @@
+isoiec80000:term-t2-18.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian coordinates of tensor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_(x x), T_(xy), ..., T_(zz)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_(11), T_(12), ..., T_(33)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.20-1 ;
+  skos:definition """Cartesian coordinates of tensor stem:[sf(bb(ii(T)))], +
+Cartesian components of tensor stem:[sf(bb(ii(T)))]
+"""@en ;
+  skos:note """The scalars stem:[T_(x x), T_(xy), ..., T_(zz)] in the representation
+
+stem:[sf(bb(ii(T))) = T_(x x) e_x e_x + T_(xy) e_x e_y + ... + T_(zz) e_z e_z]
+
+of the tensor stem:[bb(ii(T))] by the base tensors
+
+stem:[e_x e_x, e_x e_y, ..., e_z e_z].
+
+stem:[T_(x x) e_x e_x, T_(xy) e_x e_y, ..., T_(zz) e_z e_z], are the component tensors.
+
+If it is clear from the context which are the base vectors, the tensor can be written
+
+stem:[sf(bb(ii(T))) = ([T_(x x), T_(xy), T_(xz)\\],[T_(yx), T_(yy), T_(yz)\\],[T_(zx), T_(zy), T_(zz)\\]) ].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

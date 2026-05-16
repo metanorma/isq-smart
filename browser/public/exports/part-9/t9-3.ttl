@@ -1,0 +1,29 @@
+isoiec80000:term-t9-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative atomic mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A_\"r\"(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-3" ;
+  skosxl:prefLabel isoiec80000:term-t9-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-3-0 ;
+  skos:definition """quotient of the average mass (<<iso80000-4>>) of atom stem:[\"X\"] and the unified atomic mass (<<iso80000-10>>)"""@en ;
+  skos:note """A similar quantity \"relative molecular mass\" can be defined for molecules.
+
+[example]
+====
+stem:[A_\"r\"(\"Cl\") ~~ 35.453],
+
+stem:[A_\"r\"(\"CO\"_2) ~~ 44].
+====
+
+The relative atomic or relative molecular mass depends on the nuclidic composition.
+
+The International Union of Pure and Applied Chemistry (IUPAC) accepts the use of the special names \"atomic weight\" and \"molecular weight\" for the quantities \"relative atomic mass\" and \"relative molecular mass\", respectively. The use of these traditional names is deprecated.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

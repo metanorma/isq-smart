@@ -1,0 +1,27 @@
+isoiec80000:term-t9-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chemical potential <chemistry>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-17" ;
+  skosxl:prefLabel isoiec80000:term-t9-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-17-0 ;
+  skos:definition """partial derivative of the Gibbs energy (<<iso80000-5>>) with respect to amount stem:[n_\"X\"] of substance stem:[\"X\"] (<<t9-2>>) at constant temperature stem:[T] (<<iso80000-5>>) and pressure stem:[p] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+mu_\"X\" = (del G//del n_\"X\")_(T,p)
+++++
+"""@en ;
+  skos:note """For a pure substance, where stem:[G_\"m\"] is the molar Gibbs energy. In a mixture, stem:[mu_\"B\"] is the partial molar Gibbs energy.
+
+In condensed matter physics, the chemical potential of electrons is energy.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

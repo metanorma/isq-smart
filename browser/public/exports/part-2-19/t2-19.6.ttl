@@ -1,0 +1,16 @@
+isoiec80000:term-t2-19.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "convolution"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f ** g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.6-0 ;
+  skos:definition """convolution of stem:[f] and stem:[g]"""@en ;
+  skos:note """stem:[f ** g(x) = int_(-oo)^(+oo) f(y) g(x-y) \"d\"y]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .

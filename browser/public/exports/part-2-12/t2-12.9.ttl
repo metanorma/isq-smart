@@ -1,0 +1,26 @@
+isoiec80000:term-t2-12.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "function mapping onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x \\|-> T(x), \" \" x in A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.9-0 ;
+  skos:definition """function that maps any stem:[x in A] onto stem:[T(x)]"""@en ;
+  skos:note """stem:[T(x)] is a defining term denoting the values of some function for the arguments stem:[x in A].
+
+If this function is called stem:[f], then it holds stem:[f(x) = T(x)] for any stem:[x in A]. Therefore the defining term stem:[T(x)] is often used to denote the function stem:[f].
+
+[example]
+stem:[x &#8614; 3x^2y], stem:[x in [0, 2\\]]
+
+This is the quadratic function (of stem:[x] depending on the parameter stem:[y]) defined on the stated interval by the term stem:[3x^2y].
+
+If no function symbol is introduced, the term stem:[3x^2y] is used to denote this function.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

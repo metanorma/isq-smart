@@ -1,0 +1,29 @@
+isoiec80000:term-t11-6.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.16-1 ;
+  skos:definition """quotient of mechanical work and frictional and diffusion energy loss in viscous flow of fluids in pipes, expressed by
+
+stem:[Be** = (Delta pl^2)/(eta D)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along a pipe or channel,
+stem:[l]:: is length (<<iso80000-3>>) of channel,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>), mass diffusivity
+"""@en ;
+  skos:note """A similar quantity exists for heat transfer (<<t11-5.9>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

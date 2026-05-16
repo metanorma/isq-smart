@@ -1,0 +1,31 @@
+isoiec80000:term-t11-4.41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Galilei number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ga"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.41" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.41-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.41-0 ;
+  skos:definition """relation between gravitational force and viscous force in fluid films flowing over walls, expressed by
+
+stem:[Ga = gl^3 // sf(ii(v))^2]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """The Galilei number is also given by
+
+stem:[Ga = Re^2 * Ri] or +
+stem:[Ga = Re^2 // Fr^2]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>),
+stem:[Ri]:: is the Richardson number (<<t11-4.30>>), and
+stem:[Fr]:: is the Froude number (<<t11-4.3>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

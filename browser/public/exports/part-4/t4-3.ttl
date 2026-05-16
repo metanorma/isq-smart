@@ -1,0 +1,19 @@
+isoiec80000:term-t4-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(ii(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-3" ;
+  skosxl:prefLabel isoiec80000:term-t4-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-3-0 ;
+  skos:definition """reciprocal of mass density stem:[rho] (<<t4-2>>):
+
+stem:[sf(ii(v)) = 1/rho]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

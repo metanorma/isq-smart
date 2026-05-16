@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-6.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "L_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(L_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-6.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-6.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-6.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiance with respect to wavelength, expressed by\n\n[stem%unnumbered]\n++++\nL_(\"e\",lambda) = (\"d\"L_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[L_\"e\"] is radiance (<<t7-6.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For Planckian radiation,\n\n[stem%unnumbered]\n++++\nL_(\"e\",lambda)(lambda) = (c(lambda))/(4pi) omega_lambda (lambda) = hc_0^2*f(lambda,T)\n++++\n\nwhere stem:[c(lambda)] is phase speed (<<iso80000-3>>) of electromagnetic radiation of a wavelength (<<iso80000-3>>) stem:[lambda] in a given medium, stem:[omega_lambda(lambda)] is spectral radiant energy density in terms of wavelength, stem:[c_0] is speed of light in vacuum (<<iso80000-1>>), stem:[h] is the Planck constant (<<iso80000-1>>), and\n\n[stem%unnumbered]\n++++\nf(lambda,T) = (lambda^(-5))/(\"exp\"(c_2 lambda^(-1)T^(-1))-1)\n++++\n\nwhere the radiation constant stem:[c_2 = hc//k].\n\nThe integral of (total) radiance is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nL_\"e\" = int_(lambda_1)^(lambda_2)L_(\"e\",lambda)(lambda)\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/(sr*m^2*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-3)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

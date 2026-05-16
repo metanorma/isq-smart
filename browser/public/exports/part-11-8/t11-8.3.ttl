@@ -1,0 +1,27 @@
+isoiec80000:term-t11-8.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Nusselt electric number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ne"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.3-0 ;
+  skos:definition """relation between convective current and diffusive current of ions in electrochemistry, expressed by
+
+stem:[Ne = vl//D**]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[D** = (D^+ + D^-)//2]; where::
+stem:[D^+], stem:[D^-]::: are diffusion coefficients (<<iso80000-9>>) of positive or negative ions respectively
+"""@en ;
+  skos:note """This number is also called electric Nusselt number.
+
+Sometimes this quantity is called the Reynolds electric number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

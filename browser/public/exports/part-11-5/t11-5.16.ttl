@@ -1,0 +1,23 @@
+isoiec80000:term-t11-5.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Graetz number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gz"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.16-0 ;
+  skos:definition """relation between heat transferred by convection and heat transferred by conduction in a laminar flow in a pipe, expressed by
+
+stem:[Gz = (vd^2)/(alpha l)]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid, +
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe, +
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>) of the fluid, and +
+stem:[l]:: is length (<<iso80000-3>>) of the pipe
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

@@ -1,0 +1,36 @@
+isoiec80000:term-t10-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hartree energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"h\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-8" ;
+  skosxl:prefLabel isoiec80000:term-t10-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-8-1 ;
+  skos:definition """energy (<<iso80000-5>>) of the electron in a hydrogen atom in its ground state:
+
+[stem%unnumbered]
+++++
+E_\"H\" = (e^2)/(4pi epsilon_0 a_0)
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>), and
+stem:[a_0]:: is the Bohr radius (<<t10-6>>)
+"""@en ;
+  skos:note """The energy of the electron in an stem:[\"H\"] atom in its ground state is stem:[E_\"H\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

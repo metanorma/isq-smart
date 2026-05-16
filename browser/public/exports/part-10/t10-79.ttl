@@ -1,0 +1,17 @@
+isoiec80000:term-t10-79-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reactor time constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-79-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-79 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-79" ;
+  skosxl:prefLabel isoiec80000:term-t10-79-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-79-0 ;
+  skos:definition """duration (<<iso80000-3>>) required for the neutron fluence rate (<<t10-44>>) in a reactor to change by the factor stem:[\"e\"] when the fluence rate is rising or falling exponentially"""@en ;
+  skos:note """Also called reactor period."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

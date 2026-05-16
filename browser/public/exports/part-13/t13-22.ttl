@@ -1,0 +1,17 @@
+isoiec80000:term-t13-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "clock frequency, clock rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_{\"cl\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-22" ;
+  skosxl:prefLabel isoiec80000:term-t13-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-22-0 ;
+  skos:definition """frequency at which a clock oscillates"""@en ;
+  skos:note """For the unit hertz, see <<iec60050-103,droploc%locality:item=\"103-06-18\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Hz ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

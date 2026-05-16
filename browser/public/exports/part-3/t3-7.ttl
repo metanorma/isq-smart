@@ -1,0 +1,26 @@
+isoiec80000:term-t3-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase angle"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-7" ;
+  skosxl:prefLabel isoiec80000:term-t3-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-7-1 ;
+  skos:definition """angular measure (<<t3-5>>) between the positive real axis and the radius of the polar representation of the complex number in the complex plane"""@en ;
+  skos:note """The phase angle (often imprecisely referred to as the \"phase\") is the argument of a complex number.
+
+Other symbols are also used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

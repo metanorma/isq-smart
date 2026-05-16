@@ -1,0 +1,27 @@
+isoiec80000:term-t12-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fermi temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_\"F\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-28" ;
+  skosxl:prefLabel isoiec80000:term-t12-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-28-0 ;
+  skos:definition """in the free electron model, the Fermi energy (<<t12-27.1>>) divided by the Boltzmann constant (<<iso80000-1>>)"""@en ;
+  skos:note """The Fermi temperature is expressed by:
+
+[stem%unnumbered]
+++++
+T_\"F\" = (E_\"F\")/k
+++++
+
+where stem:[E_\"F\"] is Fermi energy (<<t12-27.1>>) and stem:[k] is the Boltzmann constant (<<iso80000-1>>).
+
+stem:[E_\"F\"] is relative to the lowest occupied state.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

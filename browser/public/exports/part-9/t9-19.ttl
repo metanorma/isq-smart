@@ -1,0 +1,23 @@
+isoiec80000:term-t9-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "partial pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-19" ;
+  skosxl:prefLabel isoiec80000:term-t9-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-19-0 ;
+  skos:definition """for substance stem:[X] in a gaseous mixture, product of amount-of-substance fraction stem:[y_\"X\"] of substance stem:[\"X\"] (<<t9-13>>) and total pressure stem:[p] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+p_\"X\" = y_\"X\"p
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

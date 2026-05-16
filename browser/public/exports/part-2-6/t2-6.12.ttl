@@ -1,0 +1,24 @@
+isoiec80000:term-t2-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "intersection of sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nnn_(i=1)^n A_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.12-0 ;
+  skos:definition """intersection of the sets +
+stem:[A_1, A_2,..., A_n] +
+stem:[nnn_(i=1)^n A_i = A_1 nn ... nn A_n]
+"""@en ;
+  skos:note """The set of elements belonging to all sets stem:[A_1, A_2, ..., A_n]
+
+stem:[nnn_(i=1)^n], stem:[nnn_(i in I)] and stem:[nnn_(i in I)] are also used,
+
+where stem:[I] denotes a set of subscripts.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

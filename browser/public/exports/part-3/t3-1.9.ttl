@@ -1,0 +1,27 @@
+isoiec80000:term-t3-1.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radial distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.9" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.9-1 ;
+  skos:definition """distance (<<t3-1.8>>), where one point is located on an axis or within a closed non self-intersecting curve or surface"""@en ;
+  skos:note """The subscript stem:[Q] denotes the point from which the radial distance is measured.
+
+Examples of closed non self-intersecting curves are circles or ellipses.
+
+Examples of closed non self-intersecting surfaces are surfaces of spheres or egg-shaped objects.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

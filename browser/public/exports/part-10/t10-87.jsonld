@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-87-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mass energy-transfer coefficient",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-87-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu_\"tr\"//rho",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-87",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-87",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-87-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-87-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for ionizing uncharged particles of a given type and energy, the differential quotient of stem:[R_\"tr\"] with respect to stem:[l]:\n\n[stem%unnumbered]\n++++\n(mu_\"tr\")/rho = 1/rho 1/R (\"d\"R_\"tr\")/(\"d\"l)\n++++\n\nwhere stem:[R_\"tr\"] is the mean energy (<<iso80000-5>>) that is transferred to kinetic energy (<<iso80000-4>>) of charged particles by interactions of the uncharged particles of incident radiant energy stem:[R] (<<t10-45>>) in traversing a distance (<<iso80000-3>>) stem:[l] in the material of density (<<iso80000-4>>) stem:[rho], divided by stem:[rho] and stem:[R]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[mu_\"tr\"//rho = dot K//ii(Psi)], where stem:[dot K] is kerma rate (<<t10-86.2>>) and stem:[ii(Psi)] is energy fluence rate (<<t10-47>>).\n\nThe quantity:\n\n[stem%unnumbered]\n++++\nmu_\"en\"//rho = (mu_\"tr\"//rho)(1-g)\n++++\n\nwhere stem:[g] is mean fraction of the kinetic energy of the liberated charged particles that is lost in radiative processes in the material, is called mass energy-absorption coefficient.\n\nThe mass energy-absorption coefficient of a compound material depends on the stopping power of the material. Thus, its evaluation cannot, in principle, be reduced to a simple summation of the mass energy-absorption coefficient of the atomic constituents. Such a summation can provide an adequate approximation when the value of stem:[g] is sufficiently small.\n\nIn report 85a of the ICRU a definition with an equivalent meaning is given as:\n\nThe mass energy-transfer coefficient, stem:[mu_\"tr\"//rho], of a material, for uncharged particles of a given type and energy, is the quotient of stem:[\"d\"R_\"tr\"//R] by stem:[rho \"d\"l], where stem:[\"d\"R_\"tr\"] is the mean energy that is transferred to kinetic energy of charged particles by interactions of the uncharged particles of incident radiant energy stem:[R] in traversing a distance stem:[\"d\"l] in the material of density stem:[rho]:\n\n[stem%unnumbered]\n++++\n(mu_\"tr\")/rho = 1/(rho \"d\"l) (\"d\"R_\"tr\")/R.\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-kg^(-1)*m^2"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

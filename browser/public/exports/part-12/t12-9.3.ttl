@@ -1,0 +1,25 @@
+isoiec80000:term-t12-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye angular wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t12-9.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye angular repetency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-9.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-9.3-0 ;
+  skosxl:altLabel isoiec80000:term-t12-9.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.3-0 ;
+  skos:definition """cut-off angular wavenumber (<<t12-9.1>>) in the Debye model of the vibrational spectrum of a solid"""@en ;
+  skos:note """The method of cut-off must be specified.
+
+In condensed matter physics, angular wavenumber is often called wavenumber.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

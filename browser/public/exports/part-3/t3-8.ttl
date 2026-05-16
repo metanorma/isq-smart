@@ -1,0 +1,26 @@
+isoiec80000:term-t3-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "solid angular measure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Omega)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-8" ;
+  skosxl:prefLabel isoiec80000:term-t3-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-8-0 ;
+  skos:definition """measure of a conical geometric figure, called solid angle, formed by all rays, originating from a common point, called the vertex of the solid angle, and passing through the points of a closed, non-self-intersecting curve in space considered as the border of a surface"""@en ;
+  skos:note """The differential solid angular measure expressed in spherical coordinates (<<iso80000-2>>) is given by:
+
+[stem%unnumbered]
+++++
+\"d\"ii(Omega) = A/(r^2)\"sin\"theta \" d\"theta \" d\"varphi
+++++
+
+where stem:[A] is area, stem:[r] is radius, stem:[theta] and stem:[varphi] are spherical coordinates.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-sr ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

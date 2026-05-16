@@ -1,0 +1,21 @@
+isoiec80000:term-t2-20.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Euler-Mascheroni constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(gamma)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(C)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.1-1 ;
+  skos:definition """Euler-Mascheroni constant"""@en ;
+  skos:note """stem:[rm(gamma) = lim_(n -> oo) (sum_(k=1)^n 1/k - \"ln\" n) = 0.5772156...]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

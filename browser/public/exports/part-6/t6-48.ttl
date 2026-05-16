@@ -1,0 +1,28 @@
+isoiec80000:term-t6-48-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase difference"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-48 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-48" ;
+  skosxl:prefLabel isoiec80000:term-t6-48-0 ;
+  skosxl:altLabel isoiec80000:term-t6-48-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-48-0 ;
+  skos:definition """scalar quantity given by the difference between the phase angle stem:[varphi_\"u\"] (<<iso80000-3>>) of the voltage (<<t6-11.3>>) and the phase angle stem:[varphi_\"i\"] of electric current (<<t6-1>>):
+
+[stem%unnumbered]
+++++
+varphi = varphi_\"u\" - varphi_\"i\"
+++++
+"""@en ;
+  skos:note """This concept can be generalized for any couple of periodic quantities.
+
+See <<iec60050-103,locality:item=\"103-07-06\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

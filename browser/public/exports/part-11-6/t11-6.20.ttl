@@ -1,0 +1,28 @@
+isoiec80000:term-t11-6.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic capillary number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.20-1 ;
+  skos:definition """quotient of viscous force and capillary force acting across an interface between a liquid and a gas, or between two immiscible liquids for a flow of fluid influenced by interfacial tension, expressed by
+
+stem:[Ca** = eta v//gamma]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid,
+stem:[v]:: is characteristic speed (<<iso80000-3>>), and
+stem:[gamma]:: is surface or interfacial tension (<<iso80000-4>>)
+"""@en ;
+  skos:note """The dynamic capillary number is also given by the quotient of the Weber number and the Reynolds number."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

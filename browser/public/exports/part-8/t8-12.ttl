@@ -1,0 +1,23 @@
+isoiec80000:term-t8-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "characteristic impedance of a medium for longitudinal waves"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-12" ;
+  skosxl:prefLabel isoiec80000:term-t8-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-12-0 ;
+  skos:definition """quotient of sound pressure (<<t8-2.2>>) and the component of the sound particle velocity (<<t8-4>>) in the direction of the wave propagation"""@en ;
+  skos:note """The definition is limited to a progressive plane wave in a non-dissipative homogenous gas or fluid.
+
+Characteristic impedance is a property of the medium and is equal to stem:[rho c] where stem:[rho] is the time-averaged density (<<iso80000-4>>) of the medium and stem:[c] the phase speed of sound (<<iso80000-3>>).
+
+Longitudinal waves are waves in which the displacement of the medium is in the same direction as, or the opposite direction to, the direction of propagation of the wave.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa*s/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

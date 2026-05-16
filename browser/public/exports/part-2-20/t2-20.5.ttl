@@ -1,0 +1,19 @@
+isoiec80000:term-t2-20.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exponential integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Ei \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.5-0 ;
+  skos:definition """exponential integral"""@en ;
+  skos:note """stem:[\"Ei \"x =] stem:[&#x2A0D;_{-oo}^x bb(e)^t/t \"d\"t]
+
+For stem:[&#x2A0D;], see <<t2-12.26>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

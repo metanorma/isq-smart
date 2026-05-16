@@ -1,0 +1,23 @@
+isoiec80000:term-t2-11.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bernoulli numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"B\"_n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.5-0 ;
+  skos:definition """Bernoulli numbers"""@en ;
+  skos:note """stem:[\"B\"_n = -1/(n+1) sum_(k=0)^(n-1) ((n+1),(k)) \"B\"_k]
+
+(for stem:[n > 0])
+
+stem:[\"B\"_0 = 1]
+
+stem:[\"B\"_1 = -1//2], stem:[\"B\"_(2n+3)= 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .

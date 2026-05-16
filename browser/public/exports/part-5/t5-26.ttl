@@ -1,0 +1,17 @@
+isoiec80000:term-t5-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific gas constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-26" ;
+  skosxl:prefLabel isoiec80000:term-t5-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-26-0 ;
+  skos:definition """quotient of the Boltzmann constant stem:[k] (<<iso80000-1>>) and the mass stem:[m] (<<iso80000-4>>) of the gas particle"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t13-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average information rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H^{**}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-38" ;
+  skosxl:prefLabel isoiec80000:term-t13-38-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-38-0 ;
+  skos:definition """stem:[H^{**} = H' // t(X)]
+
+where stem:[H'] is character mean entropy (<<t13-37,item 13-37>>) and stem:[t(X)] is the mean value of the duration of a character in the set stem:[X]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-29\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh/s ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart/s ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

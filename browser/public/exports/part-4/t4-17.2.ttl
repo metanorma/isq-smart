@@ -1,0 +1,25 @@
+isoiec80000:term-t4-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative linear strain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-17.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(e)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-17.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.2-1 ;
+  skos:definition """quotient of change in length stem:[Delta l] (<<iso80000-3>>) of an object
+and its length stem:[l] (<<iso80000-3>>):
+
+stem:[epsilon=(Delta l)/l]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

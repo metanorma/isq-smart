@@ -1,0 +1,410 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-6 a smart:PublicationDocument ;
+  dcterms:title "Part 2-6"@en ;
+  dcterms:identifier "ISO 80000-2-6" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "belongs to set"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x in A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.1-0 ;
+  skos:definition """stem:[x] belongs to stem:[A], stem:[x] is an element of the set stem:[A]"""@en ;
+  skos:note """stem:[A\" \"&#8715;\" \"x] has the same meaning as stem:[x in A]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "not belong to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "y !in A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.2-0 ;
+  skos:definition """stem:[y] does not belong to stem:[A], stem:[y] is not an element of the set stem:[A]"""@en ;
+  skos:note """stem:[A\" \"&#x220C;\" \"y] has the same meaning as latexmath:[y \\notin A].
+
+The negating stroke may also be vertical.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set with elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{x_1, x_2, ..., x_n}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.3-0 ;
+  skos:definition """set with elements stem:[x_1, x_2, ..., x_n]"""@en ;
+  skos:note """Also stem:[{x_i &#x2223; i in I}], where stem:[I] denotes a set of subscripts."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{x in A &#x2223; p(x)}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.4-0 ;
+  skos:definition """set of those elements of stem:[A] for which the proposition stem:[p(x)] is true"""@en ;
+  skos:note """[example]
+====
+[stem]
+++++
+{x in bb(sf(R)) &#x2223; x >= 5}
+++++
+
+If it is clear from the context which set stem:[A] is considered, the notation stem:[{x &#x2223; p(x)}] can be used (for example stem:[{x &#x2223; x >= 5}], if it is clear that real numbers are considered).
+
+Instead of the vertical line often a colon is used as separator:
+
+stem:[{x in A : p(x)}].
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "text(card) \" \" A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-6.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs(A)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.5-1 ;
+  skos:definition """number of elements in stem:[A], cardinality of stem:[A]"""@en ;
+  skos:note """The cardinality can be a transfinite number.
+
+The symbol stem:[abs] is also used for absolute value of a real number (see <<t2-10.16>>), modulus of a complex number (see <<t2-15.4>>) and magnitude of a vector (see <<t2-18.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "empty set"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "O/"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-6.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.6-1 ;
+  skos:definition """the empty set"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "included in"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B sube A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.7-0 ;
+  skos:definition """stem:[B] is included in stem:[A],
+
+stem:[B] is a subset of stem:[A]
+"""@en ;
+  skos:note """Every element of stem:[B] belongs to stem:[A].
+
+stem:[sub] is also used, but see remark to <<t2-6.8>>.
+
+stem:[A supe B] has the same meaning as stem:[B sube A].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proper subset"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B sub A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.8-0 ;
+  skos:definition """stem:[B] is properly included in stem:[A],
+
+stem:[B] is a proper subset of stem:[A]
+"""@en ;
+  skos:note """Every element of stem:[B] belongs to stem:[A], but at least one element of stem:[A] does not belong to stem:[B].
+
+If stem:[sub] is used for <<t2-6.7>>, then &#x228A; shall be used for <<t2-6.8>>.
+
+stem:[A sup B] has the same meaning as stem:[B sub A].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "union"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A uu B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.9-0 ;
+  skos:definition """union of stem:[A] and stem:[B]"""@en ;
+  skos:note """The set of elements which belong to at least one of the sets stem:[A] and stem:[B].
+
+stem:[A uu B = {x &#x2223; x in A vv x in B}]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "intersection"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A nn B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.10-0 ;
+  skos:definition """intersection of stem:[A] and stem:[B]"""@en ;
+  skos:note """The set of elements which belong to both sets stem:[A] and stem:[B].
+
+stem:[A nn B = {x &#x2223; x in A ^^ x in B}]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "union of sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "uuu_(i=1)^n A_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.11-0 ;
+  skos:definition """union of the sets stem:[A_1, A_2, ..., A_n]
+
+stem:[uuu_(i=1)^n A_i = A_1 uu ... uu A_n]
+"""@en ;
+  skos:note """The set of elements belonging to at least one of the sets stem:[A_1, A_2, ..., A_n]
+
+stem:[uuu_(i=1)^n], stem:[uuu_(i in I)] and stem:[uuu_(i in I)] are also used,
+
+where stem:[I] denotes a set of subscripts.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "intersection of sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nnn_(i=1)^n A_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.12-0 ;
+  skos:definition """intersection of the sets +
+stem:[A_1, A_2,..., A_n] +
+stem:[nnn_(i=1)^n A_i = A_1 nn ... nn A_n]
+"""@en ;
+  skos:note """The set of elements belonging to all sets stem:[A_1, A_2, ..., A_n]
+
+stem:[nnn_(i=1)^n], stem:[nnn_(i in I)] and stem:[nnn_(i in I)] are also used,
+
+where stem:[I] denotes a set of subscripts.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "difference of sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A \\\\ B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.13-0 ;
+  skos:definition """difference of stem:[A] and stem:[B], +
+stem:[A] minus stem:[B]
+"""@en ;
+  skos:note """The set of elements which belong to stem:[A] but not to stem:[B].
+
+stem:[A \\\\ B = {x &#x2223; x in A ^^ x !in B}]
+
+The notation stem:[A - B] should not be used.
+
+stem:[C_A B] is also used. stem:[C_A B] is mainly used when stem:[B] is a subset of stem:[A], and the symbol stem:[A] may be omitted if it is clear from the context which set stem:[A] is considered.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ordered pair"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.14-0 ;
+  skos:definition """ordered pair stem:[a, b], +
+couple stem:[a, b]
+"""@en ;
+  skos:note """stem:[(a, b) = (c, d)] if and only if stem:[a = c] and stem:[b = d].
+
+If the comma can be mistaken as the decimal sign, then the semicolon (;) or a stroke (&#x2223;) may be used as separator.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ordered stem:[n]-tuple"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a_1, a_2, ..., a_n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.15-0 ;
+  skos:definition """ordered stem:[n]-tuple"""@en ;
+  skos:note """See remark to <<t2-6.14>>."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian product of two sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A xx B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.16-0 ;
+  skos:definition """Cartesian product of the sets stem:[A] and stem:[B]"""@en ;
+  skos:note """The set of ordered pairs stem:[(a, b)] such that stem:[a in A] and stem:[b in B].
+
+stem:[A xx B = {(x, y) &#x2223; x in A ^^ y in B}]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian product of several sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "prod_(i=1)^n A_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.17-0 ;
+  skos:definition """Cartesian product of the sets
+
+stem:[A_1, A_2, ..., A_n]
+
+stem:[prod_(i=1)^n A_i = A_1 xx ... xx A_n]
+"""@en ;
+  skos:note """The set of ordered stem:[n]-tuples stem:[(x_1, x_2, ..., x_n)] such that stem:[x_1 in A_1, x_2 in A_2, ..., x_n in A_n].
+
+stem:[A xx A xx ... xx A] is denoted by stem:[A^n], where stem:[n] is the number of factors in the product.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .
+
+isoiec80000:term-t2-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "identity relation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"id\"_A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.18-0 ;
+  skos:definition """identity relation on set stem:[A], +
+diagonal of stem:[A xx A]
+"""@en ;
+  skos:note """stem:[\"id\"_A] is the set of all pairs stem:[(x, x)] where stem:[x in A]. If the set stem:[A] is clear from the context, the subscript stem:[A] can be omitted."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t13-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean queue length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Omega)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-4" ;
+  skosxl:prefLabel isoiec80000:term-t13-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-4-1 ;
+  skos:definition """time average of queue length"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+See <<iec60050-171,droploc%locality:item=\"171-02-34\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

@@ -1,0 +1,23 @@
+isoiec80000:term-t2-20.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Chebyshev polynomial of the second kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"U\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.22-0 ;
+  skos:definition """Chebyshev polynomial of the second kind"""@en ;
+  skos:note """stem:[\"U\"_n(z) = (\"sin\"[(n+1)\"arccos\"z\\])/(\"sin\"(\"arccos\"z))]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of
+
+stem:[(1-z^2)y'' - 3zy' + n(n+2)y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t6-42.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coupling factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-42.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-42.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-42.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-42.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-42.1-0 ;
+  skos:definition """for inductive coupling between two inductive elements (numbered stem:[\"m\"], stem:[\"n\"]), scalar quantity given by
+
+[stem%unnumbered]
+++++
+k = (abs(L_(\"mn\")))/(sqrt(L_\"m\"L_\"n\"))
+++++
+
+where stem:[L_\"m\"] and stem:[L_\"n\"] are their self-inductances (<<t6-41.1>>), and stem:[L_\"mn\"] is their mutual inductance (<<t6-41.2>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-41\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

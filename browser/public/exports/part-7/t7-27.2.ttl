@@ -1,0 +1,17 @@
+isoiec80000:term-t7-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "CIE colour-matching functions for the CIE 1964 standard colorimetric observer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar x_(10)(lambda), bar y_(10)(lambda), bar z_(10)(lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-27.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-27.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-27.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-27.2-0 ;
+  skos:definition """functions stem:[bar x_(10)(lambda)], stem:[bar y_(10)(lambda)], stem:[bar z_(10)(lambda)] in the CIE 1964 standard colorimetric system"""@en ;
+  skos:note """Values of stem:[bar x_(10)(lambda)], stem:[bar y_(10)(lambda)] and stem:[bar z_(10)(lambda)] are defined in the CIE 1964 standard colorimetric system (10&deg; observer) -- applicable to fields of observation with angles greater than 4&deg;."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

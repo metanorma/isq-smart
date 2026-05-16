@@ -1,0 +1,17 @@
+isoiec80000:term-t10-75-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fast fission factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-75-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-75 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-75" ;
+  skosxl:prefLabel isoiec80000:term-t10-75-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-75-0 ;
+  skos:definition """in an infinite medium, the quotient of the mean number of neutrons produced by fission due to neutrons of all energies (<<iso80000-5>>) and the mean number of neutrons produced by fissions due to thermal neutrons only"""@en ;
+  skos:note """The class of neutrons must be specified, e.g. thermal."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

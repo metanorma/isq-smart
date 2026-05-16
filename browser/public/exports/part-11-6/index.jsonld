@@ -1,0 +1,1325 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Fourier number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Fo**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between diffusive mass transfer within a given duration and mass storage rate in transient mass transfer, expressed by\n\nstem:[Fo** = (Dt)/l^2]; where\n\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>),\nstem:[t]:: is duration (<<iso80000-3>>) of observation, and\nstem:[l]:: is length (<<iso80000-3>>) of transfer\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Fourier number for mass transfer is also given by\n\nstem:[Fo** = Fo//Le]; where\n\nstem:[Fo]:: is the Fourier number for heat transfer (<<t11-5.1>>), and\nstem:[Le]:: is the Lewis number (<<t11-7.3>>).\n\nSee also the Fourier number for heat transfer (<<t11-5.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Péclet number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bodenstein number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Pe**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bd",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.2-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bod",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.2-2"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between advective mass transfer rate and longitudinal diffusive mass transfer rate for mass transfer in reactors, expressed by\n\nstem:[Pe** = vl//D]; where\n\nstem:[v]:: is speed (<<iso80000-3>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>), and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Péclet number for mass transfer is also given by\n\nstem:[Pe** = Pe * Le = Re * Sc]; where\n\nstem:[Pe]:: is the Péclet number for heat transfer,\nstem:[Le]:: is the Lewis number (<<t11-7.3>>),\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>), and\nstem:[Sc]:: is the Schmidt number (<<t11-7.2>>).\n\nCompare with <<t11-5.2>>, the Péclet number for heat transfer.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Grashof number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Gr**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between buoyancy forces and viscous forces in natural convection of fluids, expressed by\n\nstem:[Gr** = l^3 g beta Delta x // sf(ii(v))^2]; where\n\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>)\nstem:[beta = -(1//rho)(del rho // del x)_(T,p)], where::\nstem:[rho]::: is mass density (<<iso80000-4>>) of the fluid, and\nstem:[x]::: is amount-of-substance fraction (<<iso80000-9>>),\nstem:[Delta x]:: is difference of amount-of-substance fraction (<<iso80000-9>>) along length stem:[l], and\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Instead of \"amount-of-substance fraction\" the \"amount-of-substance concentration\" (<<iso80000-9>>) is used also.\n\nCompare with <<t11-4.4>>, the Grashof number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Nusselt number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "N u**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between mass flux at an interface and specific flux by pure molecular diffusion in a layer of thickness stem:[l] for mass transfer at the boundary of a fluid, expressed by\n\nstem:[N u** = k'l//(rho D)]; where\n\nstem:[k']:: is mass flux density stem:[q_m//A] through the surface, where\nstem:[q_m]::: is mass flow rate (<<iso80000-4>>), and\nstem:[A]::: is area (<<iso80000-3>>),\nstem:[l]:: is thickness (<<iso80000-3>>),\nstem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Sometimes this quantity is called the Sherwood number, stem:[Sh]. +\n\nCompare with <<t11-5.5>>, Nusselt number for heat transfer.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stanton number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "St**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.5",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.5",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.5-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.5-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between mass transfer perpendicular to the surface of a fluid flow and mass transfer parallel to the surface in a free surface flow, expressed by\n\nstem:[St** = k'//(rho v)]; where\n\nstem:[k']:: is mass flux density stem:[q_m//A] through the surface, where\nstem:[q_m]::: is mass flow rate (<<iso80000-4>>), and\nstem:[A]::: is area (<<iso80000-3>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[v]:: is speed (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Stanton number for mass transfer is also given by stem:[St** = N]stem:[u** // Pe**]; where\n\nstem:[N u**]:: is the Nusselt number for mass transfer (<<t11-6.4>>), and +\nstem:[Pe**]:: is the Péclet number for mass transfer (<<t11-6.2>>).\n\nCompare with <<t11-5.7>>, the Stanton number for heat transfer.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Graetz number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Gz**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.6",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.6",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.6-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.6-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of advective mass transfer rate and radial diffusive mass transfer rate for mass transfer in pipes, expressed by\n\nstem:[Gz** = (vd)/D = d/l Pe**]; where\n\nstem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,\nstem:[d]:: is hydraulic diameter (<<iso80000-3>>) of the pipe,\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>),\nstem:[l]:: is length (<<iso80000-3>>) of the pipe, and\nstem:[Pe**]:: is the Péclet number for mass transfer (<<t11-6.2>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mass transfer factor",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.7-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "stem:[j]-factor <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "j**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.7",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.7",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.7-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.7-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.7-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between mass transfer perpendicular to the surface of a fluid and mass transfer parallel to the surface in an open flow of fluids, expressed by\n\nstem:[j** = k/v (sf(ii(v))/D)^(2//3)]; where\n\nstem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where\nstem:[rho]::: is mass density (<<iso80000-4>>),\nstem:[k']::: is mass flux density stem:[q_m//A] through the surface, where\nstem:[q_m]:::: is mass flow rate (<<iso80000-4>>), and\nstem:[A]:::: is area (<<iso80000-3>>),\nstem:[v]:: is speed (<<iso80000-3>>),\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The mass transfer factor is also given by\n\nstem:[j_m = j** = St** * Sc^(2//3)]; where\n\nstem:[St**]:: is the Stanton number for mass transfer (<<t11-6.5>>), and\nstem:[Sc]:: is the Schmidt number (<<t11-7.2>>).\n\nSee also heat transfer factor (<<t11-5.17>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Atwood number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "At",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.8",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.8",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.8-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.8-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "scaled density difference of heavier and lighter fluids, expressed by\n\nstem:[At = (rho_1 - rho_2)/(rho_1 + rho_2)]; where\n\nstem:[rho_1]:: is density of heavier fluid, and\nstem:[rho_2]:: is density of lighter fluid\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Atwood number is used in the study of hydrodynamic instabilities in density stratified flows.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Biot number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bi**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.9",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.9",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.9-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.9-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between mass transfer rate at the interface and mass transfer rate in the interior of a body, expressed by\n\nstem:[Bi** = kl//D_\"int\"]; where\n\nstem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where\nstem:[rho]::: is mass density (<<iso80000-4>>),\nstem:[k']::: is mass flux density stem:[q_m//A] through the surface, where\nstem:[q_m]:::: is mass flow rate (<<iso80000-4>>), and\nstem:[A]:::: is area (<<iso80000-3>>),\nstem:[l]:: is thickness (<<iso80000-3>>) of layer, and\nstem:[D_\"int\"]:: is diffusion coefficient (<<iso80000-9>>) at the interface\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Morton number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Mo",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.10",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.10",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.10-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.10-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of gravitational forces and viscous forces for gas bubbles in a liquid, or liquid drops in a gas, expressed by\n\nstem:[Mo = (g eta^4)/(rho gamma^3) (rho_\"b\"/rho -1)]; where\n\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>),\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the surrounding fluid,\nstem:[rho]:: is mass density (<<iso80000-4>>) of the surrounding fluid,\nstem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface, and\nstem:[rho_b]:: is mass density (<<iso80000-4>>) of the bubble or drop\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Morton number is used to determine the shape of bubbles or drops.\n\nThe Morton number is also given by\n\nstem:[Mo = We^3 Fr^(-2)Re^(-4)]; where\n\nstem:[We]:: is the Weber number (<<t11-4.5>>),\nstem:[Fr]:: is the Froude number (<<t11-4.3>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bond number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Eötvös number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bo",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Eo",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.11",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of inertial force and capillary force for gas bubbles or liquid drops in a fluid, expressed by\n\nstem:[Bo = a/gamma rho l^2 (rho_\"b\"/rho -1)]; where\n\nstem:[a]:: is the acceleration of the body (<<iso80000-3>>), mostly acceleration of free fall, stem:[g] (<<iso80000-3>>),\nstem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface,\nstem:[rho]:: is density (<<iso80000-4>>) of the medium,\nstem:[l]:: is characteristic length (<<iso80000-3>>) (radius of a drop or radius of a capillary tube), and\nstem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the drop or bubble\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "In the case of gravity stem:[a = g] acceleration of free fall (<<iso80000-3>>), the name Eötvös number is mostly used.\n\nThe Bond number is also given by\n\nstem:[Bo = We//Fr]; where\n\nstem:[We]:: is the Weber number (<<t11-4.5>>), and\nstem:[Fr]:: is the Froude number (<<t11-4.3>>).\n\nThe Bond number is also used for capillary action driven by buoyancy.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Archimedes number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ar",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.12",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.12",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.12-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.12-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of buoyancy forces and viscous forces in fluids motion due to density differences for a body in a fluid, expressed by\n\nstem:[Ar = (gl^3)/sf(ii(v))^2 (rho_\"b\"/rho - 1)]; where\n\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>) of the body,\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid,\nstem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body, and\nstem:[rho]:: is mass density (<<iso80000-4>>) of the fluid\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "In this definition, the body can be replaced by an immiscible fluid.\n\nSee also Stokes number <rotameter> (<<t11-4.34>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "expansion number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ex",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.13",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.13",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.13-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.13-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of buoyancy force and inertial force in moving fluids due to density differences for gas bubbles rising in a liquid, expressed by\n\nstem:[Ex = (gd)/v^2 (1-rho_\"b\"/rho)]; where\n\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>),\nstem:[d]:: is diameter (<<iso80000-3>>) of bubbles,\nstem:[v]:: is speed (<<iso80000-3>>) of bubbles,\nstem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of bubbles, and\nstem:[rho]:: is mass density (<<iso80000-4>>) of the liquid\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Marangoni number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Mg",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.14-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Mar",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.14",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.14",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.14-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.14-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.14-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of heat transferred by Marangoni convection and heat transferred by thermal diffusivity in thermo-capillary convection of liquid films on a free surface, expressed by\n\nstem:[Mg = l (Delta T)/(eta a) ((\"d\"gamma)/(\"d\"T))]; where\n\nstem:[l]:: is characteristic thickness (<<iso80000-3>>) of the film,\nstem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between surface and outer surface of the film,\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the liquid,\nstem:[a]:: is thermal diffusivity (<<iso80000-5>>) of the liquid, and\nstem:[gamma]:: is surface tension (<<iso80000-4>>) of the film\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Marangoni convection is free surface flow due to different surface tensions caused by a temperature gradient.\n\nThis quantity is sometimes called Thompson number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lockhart-Martinelli parameter",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lp",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.15",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.15",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.15-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.15-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of mass flow rates multiplied by the square root of density in a two-phase flow, expressed by\n\nstem:[Lp = (dot m_\"1\")/(dot m_\"g\") sqrt(rho_\"g\"/rho_\"l\")]; where\n\nstem:[dot m_\"l\" = q_\"m\"]:: is liquid phase mass flow rate (<<iso80000-4>>),\nstem:[dot m_\"g\"]:: is gas phase mass flow rate,\nstem:[rho_\"g\"]:: is gas density (<<iso80000-4>>), and\nstem:[rho_\"l\"]:: is liquid density\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Lockhart-Martinelli parameter is used, for example, in boiling or condensing.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bejan number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Be**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.16-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Be_2",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.16",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.16",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.16-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.16-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.16-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of mechanical work and frictional and diffusion energy loss in viscous flow of fluids in pipes, expressed by\n\nstem:[Be** = (Delta pl^2)/(eta D)]; where\n\nstem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along a pipe or channel,\nstem:[l]:: is length (<<iso80000-3>>) of channel,\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>), mass diffusivity\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "A similar quantity exists for heat transfer (<<t11-5.9>>).",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "cavitation number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ca",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.17-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cn",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.17",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.17",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.17-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.17-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.17-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the excess of local static head over vapour pressure head and velocity head for fast flow in liquids, expressed by\n\nstem:[Ca = (p-p_\"v\")/(rho v^2//2)]; where\n\nstem:[p]:: is local static pressure (<<iso80000-4>>),\nstem:[p_\"v\"]:: is vapour pressure (<<iso80000-4>>) of the fluid,\nstem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and\nstem:[v]:: is characteristic speed (<<iso80000-3>>) of the flow\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The cavitation number represents the ratio of the excess of local static head over vapour pressure head to velocity head.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "absorption number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ab",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.18",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.18",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.18-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.18-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between mass flow rate and surface area for gas absorption at wetted walls, expressed by\n\nstem:[Ab = k sqrt((ld)/(Dq_V))]; where\n\nstem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where\nstem:[rho]::: is mass density (<<iso80000-4>>), and\nstem:[k']::: is mass flux density through the surface, stem:[k' = q_\"m\"//A], where\nstem:[q_\"m\"]:::: is mass flow rate (<<iso80000-4>>), and\nstem:[A]:::: is area (<<iso80000-3>>),\nstem:[l]:: is length (<<iso80000-3>>) of wetted surface,\nstem:[d]:: is thickness (<<iso80000-3>>) of liquid film,\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>), and\nstem:[q_V]:: is volume flow rate (<<iso80000-4>>) per wetted perimeter\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.19-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "capillary number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.19-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ca",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.19",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.19",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.19-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.19-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of gravitational forces and capillary forces for fluids in narrow pipes, expressed by\n\nstem:[Ca = d^2 rho g//gamma]; where\n\nstem:[d]:: is diameter (<<iso80000-3>>) of the pipe,\nstem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>), and\nstem:[gamma]:: is surface tension (<<iso80000-4>>) of the fluid\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "dynamic capillary number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ca**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.20-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cn",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.20",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.20",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.20-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.20-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.20-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of viscous force and capillary force acting across an interface between a liquid and a gas, or between two immiscible liquids for a flow of fluid influenced by interfacial tension, expressed by\n\nstem:[Ca** = eta v//gamma]; where\n\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid,\nstem:[v]:: is characteristic speed (<<iso80000-3>>), and\nstem:[gamma]:: is surface or interfacial tension (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The dynamic capillary number is also given by the quotient of the Weber number and the Reynolds number.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    }
+  ]
+}

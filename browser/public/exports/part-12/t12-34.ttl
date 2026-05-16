@@ -1,0 +1,23 @@
+isoiec80000:term-t12-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exchange integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-34-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-34" ;
+  skosxl:prefLabel isoiec80000:term-t12-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-34-1 ;
+  skos:definition """constituent of the interaction energy (<<iso80000-5>>) between the spins of adjacent electrons in matter arising from the overlap of electron state functions"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

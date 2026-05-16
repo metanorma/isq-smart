@@ -1,0 +1,28 @@
+isoiec80000:term-t4-9.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling resistance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling drag"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.5-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling friction force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_\"rr\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.5" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.5-0 ;
+  skosxl:altLabel isoiec80000:term-t4-9.5-1 ;
+  skosxl:altLabel isoiec80000:term-t4-9.5-2 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.5-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion when a body rolls on a surface"""@en ;
+  skos:note """For the rolling resistance factor, see <<t4-23.3>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

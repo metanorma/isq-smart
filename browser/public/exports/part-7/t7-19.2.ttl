@@ -1,0 +1,36 @@
+isoiec80000:term-t7-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "photon energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-19.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Q)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-19.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-19.2-1 ;
+  skos:definition """product of the Planck constant and frequency, expressed by
+
+[stem%unnumbered]
+++++
+Q_\"p\" = h nu
+++++
+
+where stem:[h] is the Planck constant (<<iso80000-1>>) and stem:[nu] is the frequency (<<iso80000-3>>) of the corresponding electromagnetic wave
+"""@en ;
+  skos:note """Photon energy can be emitted, transferred or received.
+
+For monochromatic radiation, photon energy may be expressed by photon number (<<t7-19.1>>).
+
+The corresponding radiometric quantity is \"radiant energy\" (<<t7-2.1>>). The corresponding photometric quantity is \"luminous energy\" (<<t7-12>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

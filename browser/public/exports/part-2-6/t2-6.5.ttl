@@ -1,0 +1,24 @@
+isoiec80000:term-t2-6.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "text(card) \" \" A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-6.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs(A)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.5-1 ;
+  skos:definition """number of elements in stem:[A], cardinality of stem:[A]"""@en ;
+  skos:note """The cardinality can be a transfinite number.
+
+The symbol stem:[abs] is also used for absolute value of a real number (see <<t2-10.16>>), modulus of a complex number (see <<t2-15.4>>) and magnitude of a vector (see <<t2-18.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

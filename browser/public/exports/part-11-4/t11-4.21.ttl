@@ -1,0 +1,32 @@
+isoiec80000:term-t11-4.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ekman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ek"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.21" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.21-0 ;
+  skos:definition """quotient of viscous forces and Coriolis forces in the context of transfer of matter for the flow of a rotating fluid, expressed by
+
+stem:[Ek = sf(ii(v))//(2l^2 omega_\"E\" \"sin\"varphi)]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), the scale of the phenomenon,
+stem:[omega_\"E\"]:: is angular frequency (<<iso80000-3>>) of the Earth's rotation, and
+stem:[varphi]:: is angle of latitude
+"""@en ;
+  skos:note """In plasma physics, the square root of this number is used.
+
+The Ekman number is also given by
+
+stem:[Ek = Ro//Re]; where
+
+stem:[Ro]:: is the Rossby number (<<t11-4.20>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

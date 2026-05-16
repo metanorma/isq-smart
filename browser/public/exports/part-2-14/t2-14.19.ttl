@@ -1,0 +1,19 @@
+isoiec80000:term-t2-14.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic cosecant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"csch \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.19-0 ;
+  skos:definition """hyperbolic cosecant of stem:[x]"""@en ;
+  skos:note """stem:[\"csch \"x = 1//\"sinh \"x]
+
+stem:[\"cosech \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

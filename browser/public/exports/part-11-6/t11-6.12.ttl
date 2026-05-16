@@ -1,0 +1,28 @@
+isoiec80000:term-t11-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Archimedes number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ar"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.12-0 ;
+  skos:definition """quotient of buoyancy forces and viscous forces in fluids motion due to density differences for a body in a fluid, expressed by
+
+stem:[Ar = (gl^3)/sf(ii(v))^2 (rho_\"b\"/rho - 1)]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>) of the body,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid,
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body, and
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """In this definition, the body can be replaced by an immiscible fluid.
+
+See also Stokes number <rotameter> (<<t11-4.34>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

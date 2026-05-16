@@ -1,0 +1,26 @@
+isoiec80000:term-t2-12.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Delta f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.17-0 ;
+  skos:definition """delta stem:[f], +
+finite increment of stem:[f]
+"""@en ;
+  skos:note """Difference of two function values implied by the context.
+
+[example]
+====
+stem:[Delta x = x_2-x_1]
+
+stem:[Delta f(x) = f(x_2) - f(x_1)]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

@@ -1,0 +1,31 @@
+isoiec80000:term-t11-8.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reynolds electric number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Re_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.20-0 ;
+  skos:definition """quotient of speed of a fluid and average drift speed of the charged particles in an electrically conducting fluid, expressed by
+
+stem:[Re_\"e\" = v epsilon_\"e\" // (rho_\"e\" l mu)]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,
+stem:[epsilon_\"e\"]:: is electric permittivity (<<iec80000-6>>),
+stem:[rho_\"e\"]:: is electric charge density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers
+"""@en ;
+  skos:note """This number is also called electrical Reynolds number.
+
+The drift speed of the charged particles in an electric field is given by stem:[v_\"d\" = 1/(mu E)],where
+
+stem:[E]:: is electric field strength (<<iec80000-6>>), and
+stem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

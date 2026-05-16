@@ -1,0 +1,37 @@
+isoiec80000:term-t2-10.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean value"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-10.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "<< x >>"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-10.12-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar x_a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.12-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.12-2 ;
+  skos:definition """mean value of stem:[x], +
+arithmetic mean of stem:[x]
+"""@en ;
+  skos:note """Mean values obtained by other methods are the
+
+* harmonic mean denoted by subscript stem:[\"h\"],
+* geometric mean denoted by subscript stem:[\"g\"],
+* quadratic mean, often called \"root mean square\", denoted by subscript stem:[\"q\"] or stem:[\"rms\"].
+
+The subscript may only be omitted for the arithmetic mean.
+
+In mathematics, stem:[bar x] is also used for the complex conjugate of stem:[x]; see <<t2-15.6>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

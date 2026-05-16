@@ -1,0 +1,43 @@
+isoiec80000:term-t7-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant energy <electromagnetism>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-2.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-2.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-2.1-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Q)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-2.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-2.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-2.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t7-2.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t7-2.1-3 ;
+  skos:definition """energy (<<iso80000-5>>) emitted, transferred or received in form of electromagnetic waves"""@en ;
+  skos:note """Radiant energy can be expressed by the time integral of radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], over a given duration (<<iso80000-3>>), stem:[Delta t]
+
+[stem%unnumbered]
+++++
+Q_\"e\" = int_(Delta t) Phi_\"e\" \"d\"t
+++++
+
+Radiant energy is expressed either as a function of wavelength (<<iso80000-3>>), stem:[lambda], as a function of frequency (<<iso80000-3>>), stem:[nu], or as a function of wavenumber, stem:[sigma]. (See also <<cls-0.1>>.)
+
+The corresponding photometric quantity is \"luminous energy\" (<<t7-12>>). The corresponding quantity for photons is \"photon energy\" (<<t7-19.2>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

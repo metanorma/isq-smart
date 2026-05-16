@@ -1,0 +1,21 @@
+isoiec80000:term-t2-14.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcsin \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.8-0 ;
+  skos:definition """arcus sine of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arcsin \"x <=> x = \"sin \"y]
+
+(for stem:[-pi//2 <= y <= pi//2])
+
+The function stem:[\"arcsin\"] is the inverse of the function stem:[\"sin\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

@@ -1,0 +1,23 @@
+isoiec80000:term-t2-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of rational numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(Q))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.3-0 ;
+  skos:definition """the set of rational numbers"""@en ;
+  skos:note """stem:[bb(sf(Q))** = {r in bb(sf(Q)) &#x2223; r != 0}]
+
+Other restrictions can be indicated in an obvious way, as shown below.
+
+stem:[bb(sf(Q))_(<0) = {r in bb(sf(Q)) &#x2223; r < 0}]
+
+The symbols stem:[rm(&#8739;Q)] and stem:[QQ] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

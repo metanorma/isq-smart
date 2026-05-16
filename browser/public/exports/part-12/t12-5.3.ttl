@@ -1,0 +1,25 @@
+isoiec80000:term-t12-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic scattering factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.3-0 ;
+  skos:definition """quotient of radiation amplitude scattered by the atom and radiation amplitude scattered by a single electron"""@en ;
+  skos:note """The atomic scattering factor can be expressed by:
+
+[stem%unnumbered]
+++++
+f = (E_\"a\")/(E_\"e\")
+++++
+
+where stem:[E_\"a\"] is the radiation amplitude scattered by the atom and stem:[E_\"e\"] is the radiation amplitude scattered by a single electron.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

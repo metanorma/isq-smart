@@ -1,0 +1,34 @@
+isoiec80000:term-t10-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.4-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.4" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.4-2 ;
+  skos:definition """atomic quantum number related to the stem:[z] component stem:[l_z], stem:[j_z] or stem:[s_z], of the orbital, total, or spin angular momentum"""@en ;
+  skos:note """stem:[l_z = m_i &#8463;], stem:[j_z = m_j &#8463;], and stem:[s_z = m_s &#8463;], with the ranges from stem:[-l] to stem:[l], from stem:[-j] to stem:[j], and stem:[pm 1//2], respectively.
+
+stem:[m_i] refers to a specific particle stem:[i]. stem:[M] is used for the whole system.
+
+Subscripts stem:[l], stem:[s], stem:[j], etc., as appropriate, indicate the angular momentum involved.
+
+stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

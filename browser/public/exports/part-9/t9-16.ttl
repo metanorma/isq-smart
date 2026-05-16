@@ -1,0 +1,28 @@
+isoiec80000:term-t9-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "latent heat of phase transition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "enthalpy of phase transition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"pt\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-16" ;
+  skosxl:prefLabel isoiec80000:term-t9-16-0 ;
+  skosxl:altLabel isoiec80000:term-t9-16-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-16-0 ;
+  skos:definition """energy (<<iso80000-5>>) necessary to be added or subtracted isothermally and isobarically to a system to completely undergo the phase transition"""@en ;
+  skos:note """Mostly, molar or specific quantity is used and phase transition is expressed explicitly, e.g. molar latent heat of evaporation.
+
+The subscript \"pt\" is the qualifier for the phase transition, which may be changed to e.g. \"l-g\".
+
+The term \"enthalpy of phase transition\" is mainly used in theory.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

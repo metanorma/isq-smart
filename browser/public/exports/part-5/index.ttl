@@ -1,0 +1,1664 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-5 a smart:PublicationDocument ;
+  dcterms:title "Thermodynamics"@en ;
+  dcterms:identifier "ISO 80000-5" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kelvin"@en ;
+  skos:notation "K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-degC a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "degree Celsius"@en ;
+  skos:notation "degC" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per kelvin"@en ;
+  skos:notation "K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Pa/K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "pascal per kelvin"@en ;
+  skos:notation "Pa/K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-1)*s^(-2)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per metre second squared kelvin"@en ;
+  skos:notation "kg*m^(-1)*s^(-2)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Pa^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per pascal"@en ;
+  skos:notation "Pa^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m*s^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre second squared per kilogram"@en ;
+  skos:notation "kg^(-1)*m*s^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared"@en ;
+  skos:notation "kg*m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt"@en ;
+  skos:notation "W" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per second"@en ;
+  skos:notation "J/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed"@en ;
+  skos:notation "kg*m^2*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per square metre"@en ;
+  skos:notation "W/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second cubed"@en ;
+  skos:notation "kg*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/(m*K) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per metre kelvin"@en ;
+  skos:notation "W/(m*K)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-3)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second cubed kelvin"@en ;
+  skos:notation "kg*m*s^(-3)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/(m^2*K) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per square metre kelvin"@en ;
+  skos:notation "W/(m^2*K)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-3)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second cubed kelvin"@en ;
+  skos:notation "kg*s^(-3)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*K/W a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre kelvin per watt"@en ;
+  skos:notation "m^2*K/W" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*s^3*K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second cubed kelvin per kilogram"@en ;
+  skos:notation "kg^(-1)*s^3*K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-K/W a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kelvin per watt"@en ;
+  skos:notation "K/W" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-2)*s^3*K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second cubed kelvin per kilogram square metre"@en ;
+  skos:notation "kg^(-1)*m^(-2)*s^3*K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per kelvin"@en ;
+  skos:notation "W/K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed kelvin"@en ;
+  skos:notation "kg*m^2*s^(-3)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second"@en ;
+  skos:notation "m^2*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per kelvin"@en ;
+  skos:notation "J/K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared kelvin"@en ;
+  skos:notation "kg*m^2*s^(-2)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/(kg*K) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per kilogram kelvin"@en ;
+  skos:notation "J/(kg*K)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-2)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second squared kelvin"@en ;
+  skos:notation "m^2*s^(-2)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per kilogram"@en ;
+  skos:notation "J/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second squared"@en ;
+  skos:notation "m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-K/Pa a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kelvin per pascal"@en ;
+  skos:notation "K/Pa" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m*s^2*K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre second squared kelvin per kilogram"@en ;
+  skos:notation "kg^(-1)*m*s^2*K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per cubic metre"@en ;
+  skos:notation "kg*m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t5-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Theta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-1" ;
+  skosxl:prefLabel isoiec80000:term-t5-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-1-1 ;
+  skos:definition """partial derivative of internal energy with respect to entropy at constant volume and constant number of particles in the system:
+
+[stem%unnumbered]
+++++
+T = ((del U)/(del S))_(V,N)
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>), stem:[S] is entropy (<<t5-18>>), stem:[V] is volume (<<iso80000-3>>), and stem:[N] is number of particles
+"""@en ;
+  skos:note """It is measured with a primary thermometer, examples of which are gas thermometers of different kinds, noise thermometers, or radiation thermometers.
+
+The Boltzmann constant (<<iso80000-1>>) relates energy at the individual particle level with thermodynamic temperature.
+
+Differences of thermodynamic temperatures or changes may be expressed either in kelvin, symbol stem:[\"unitsml(K)\"], or in de grees Celsius, symbol stem:[\"unitsml(degC)\"] (<<t5-2>>).
+
+Thermodynamic temperature is one of the seven base quantities in the International System of Quantities, ISQ (see <<iso80000-1>>).
+
+*The International Temperature Scale of 1990*
+
+For the purpose of practical measurements, the International Temperature Scale of 1990, ITS-90, was adopted by CIPM in 1989, which is a close approximation to the thermodynamic temperature scale.
+
+The quantities defined by this scale are denoted stem:[T_\"90\"] and stem:[t_\"90\"], respectively (replacing stem:[T_\"68\"] and stem:[t_\"68\"] defined by the International Practical Temperature Scale of 1968, IPTS-68), where
+
+[stem%unnumbered]
+++++
+(t_\"90\")/(1 \"unitsml(degC)\") = (T_\"90\")/(1 \"unitsml(K)\") - 273.15
+++++
+
+The units of stem:[T_\"90\"] and stem:[t_\"90\"] are the kelvin, symbol stem:[\"unitsml(K)\"], and the degree Celsius, symbol stem:[\"unitsml(degC)\"] (<<t5-2>>), respectively.
+
+For further information, see <<its90>>, <<mepkelvin>>.
+
+For ready conversion between temperatures reported on the International Temperature Scale and thermodynamic temperatures the systematic deviations can be found in <<estimates>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Celsius temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "t"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-2" ;
+  skosxl:prefLabel isoiec80000:term-t5-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-2-1 ;
+  skos:definition """temperature difference from the thermodynamic temperature of the ice point is called the Celsius temperature stem:[t], which is defined by the quantity equation:
+
+[stem%unnumbered]
+++++
+t = T - T_\"0\"
+++++
+
+where stem:[T] is thermodynamic temperature (<<t5-1>>) and stem:[T_\"0\" = 273.15 \"unitsml(K)\"]
+"""@en ;
+  skos:note """The unit degree Celsius is a special name for the kelvin for use in stating values of Celsius temperature. The unit degree Celsius is by definition equal in magnitude to the kelvin. A difference or interval of temperature may be expressed in kelvin or in degrees Celsius.
+
+The thermodynamic temperature stem:[T_\"0\"] is stem:[0.01 \"unitsml(K)\"] below the thermodynamic temperature of the triple point of water.
+
+The symbol stem:[\"unitsml(degC)\"] for the degree Celsius shall be preceded by a space (see <<iso80000-1>>).
+
+Prefixes are not allowed in combination with the unit stem:[\"unitsml(degC)\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-degC ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-3.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear expansion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-3.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-3.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-3.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-3.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-3.1-0 ;
+  skos:definition """relative change of length with temperature:
+
+[stem%unnumbered]
+++++
+alpha_l = 1/l (\"d\"l)/(\"d\"T)
+++++
+
+where stem:[l] is length (<<iso80000-3>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  skos:note """The subscripts in the symbols may be omitted when there is no risk of confusion."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-3.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cubic expansion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-3.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-3.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-3.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-3.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-3.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-3.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-3.2-1 ;
+  skos:definition """relative change of volume with temperature:
+
+[stem%unnumbered]
+++++
+alpha_V = 1/V (\"d\"V)/(\"d\"T)
+++++
+
+where stem:[V] is volume (<<iso80000-3>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  skos:note """Also called volumetric expansion coefficient.
+
+The subscripts in the symbols may be omitted when there is no risk of confusion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-3.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative pressure coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-3.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-3.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-3.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-3.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-3.3-0 ;
+  skos:definition """relative change of pressure with temperature at constant volume:
+
+[stem%unnumbered]
+++++
+alpha_p = 1/p ((del p)/(del T))_V
+++++
+
+where stem:[p] is pressure (<<iso80000-4>>), stem:[T] is thermodynamic temperature (<<t5-1>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """The subscripts in the symbols may be omitted when there is no risk of confusion."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "pressure coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-4" ;
+  skosxl:prefLabel isoiec80000:term-t5-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-4-0 ;
+  skos:definition """change of pressure with temperature at constant volume:
+
+[stem%unnumbered]
+++++
+beta = ((del p)/(del T))_V
+++++
+
+where stem:[p] is pressure (<<iso80000-4>>), stem:[T] is thermodynamic temperature (<<t5-1>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "isothermal compressibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa_T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-5.1-0 ;
+  skos:definition """negative relative change of volume with pressure at constant temperature:
+
+[stem%unnumbered]
+++++
+kappa_T = 1/V ((del V)/(del p))_T
+++++
+
+where stem:[V] is volume (<<iso80000-3>>), stem:[p] is pressure (<<iso80000-4>>), and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  skos:note """The subscripts in the symbols may be omitted when there is no risk of confusion."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "isentropic compressibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa_S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-5.2-0 ;
+  skos:definition """negative relative change of volume with pressure at constant entropy:
+
+[stem%unnumbered]
+++++
+kappa_S = -1/V ((del V)/(del p))_S
+++++
+
+where stem:[V] is volume (<<iso80000-3>>), stem:[p] is pressure (<<iso80000-4>>), and stem:[S] is entropy (<<t5-18>>)
+"""@en ;
+  skos:note """The subscripts in the symbols may be omitted when there is no risk of confusion."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "heat"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-6.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "amount of heat"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-6.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-6.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-6.1-0 ;
+  skosxl:altLabel isoiec80000:term-t5-6.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-6.1-0 ;
+  skos:definition """difference between the increase in the internal energy (<<t5-20.2>>) of a system and the work (<<iso80000-4>>) done on the system, provided that the amounts of substances within the system are not changed"""@en ;
+  skos:note """The heat transferred in an isothermal phase transformation should be expressed as the change in the appropriate state functions, e.g. stem:[T Delta S], where stem:[T] is thermodynamic temperature (<<t5-1>>) and stem:[S] is entropy (<<t5-18>>), or stem:[Delta H], where stem:[H] is enthalpy (<<t5-20.3>>).
+
+NOTE: A supply of heat can correspond to an increase in thermodynamic temperature or to other effects, such as phase change or chemical processes; see <<t5-6.2>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "latent heat"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-6.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-6.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-6.2-0 ;
+  skos:definition """energy released or absorbed by a system during a constant-temperature process"""@en ;
+  skos:note """Examples of latent heat are latent heat of fusion (melting) and latent heat of vaporization (boiling)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "heat flow rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-7" ;
+  skosxl:prefLabel isoiec80000:term-t5-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-7-0 ;
+  skos:definition """time rate at which heat (<<t5-6.1>>) crosses a given surface"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-J/s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "density of heat flow rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-8" ;
+  skosxl:prefLabel isoiec80000:term-t5-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-8-1 ;
+  skos:definition """quotient of heat flow rate and area:
+
+[stem%unnumbered]
+++++
+q = (dot Q)/A
+++++
+
+where stem:[dot Q] is heat flow rate (<<t5-7>>) and stem:[A] is area (<<iso80000-3>>) of a given surface
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal conductivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(kappa)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-9" ;
+  skosxl:prefLabel isoiec80000:term-t5-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-9-1 ;
+  skos:definition """quotient of density of heat flow rate (<<t5-8>>) and thermodynamic temperature gradient that has the same direction as the heat flow"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/(m*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-3)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coefficient of heat transfer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-10.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(k)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-10.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-10.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-10.1-1 ;
+  skos:definition """quotient of density of heat flow rate (<<t5-8>>) and thermodynamic temperature (<<t5-1>>) difference"""@en ;
+  skos:note """In building technology, the coefficient of heat transfer is often called thermal transmittance, with the symbol stem:[U] (no longer recommended). See remark to <<t5-13>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/(m^2*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface coefficient of heat transfer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-10.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(alpha)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-10.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-10.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-10.2-1 ;
+  skos:definition """quotient of density of heat flow rate and the difference of the temperature at the surface and a reference temperature:
+
+[stem%unnumbered]
+++++
+h = q/((T_\"s\"-T_\"r\"))
+++++
+
+where stem:[q] is density of heat flow rate (<<t5-8>>), stem:[T_\"s\"] is the thermodynamic temperature (<<t5-1>>) at the surface, and stem:[T_\"r\"] is a reference thermodynamic temperature characterizing the adjacent surroundings
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/(m^2*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal insulance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coefficient of thermal insulance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-11" ;
+  skosxl:prefLabel isoiec80000:term-t5-11-0 ;
+  skosxl:altLabel isoiec80000:term-t5-11-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-11-0 ;
+  skos:definition """inverse of coefficient of heat transfer stem:[K]:
+
+[stem%unnumbered]
+++++
+M = 1/K
+++++
+
+where stem:[K] is coefficient of heat transfer (<<t5-10.1>>)
+"""@en ;
+  skos:note """In building technology, this quantity is often called thermal resistance, with the symbol stem:[R]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*K/W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^3*K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal resistance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-12" ;
+  skosxl:prefLabel isoiec80000:term-t5-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-12-0 ;
+  skos:definition """quotient of thermodynamic temperature (<<t5-1>>) difference and heat flow rate (<<t5-7>>)"""@en ;
+  skos:note """See remark to <<t5-11>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K/W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal conductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(H)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-13" ;
+  skosxl:prefLabel isoiec80000:term-t5-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-13-1 ;
+  skos:definition """inverse of thermal resistance stem:[R]:
+
+[stem%unnumbered]
+++++
+G = 1/R
+++++
+
+where stem:[R] is thermal resistance (<<t5-12>>)
+"""@en ;
+  skos:note """See remark to <<t5-11>>. This quantity is also called heat transfer coefficient. See <<t5-10.1>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-14" ;
+  skosxl:prefLabel isoiec80000:term-t5-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-14-0 ;
+  skos:definition """quotient of thermal conductivity and the product of mass density and specific heat capacity:
+
+[stem%unnumbered]
+++++
+a = lambda/(rho c_p)
+++++
+
+where stem:[lambda] is thermal conductivity (<<t5-9>>), stem:[rho] is mass density (<<iso80000-4>>), and stem:[c_p] is specific heat capacity at constant pressure (<<t5-16.2>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "heat capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-15" ;
+  skosxl:prefLabel isoiec80000:term-t5-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-15-0 ;
+  skos:definition """derivative of added heat with respect to thermodynamic temperature of a system:
+
+[stem%unnumbered]
+++++
+C = (\"d\"Q)/(\"d\"T)
+++++
+
+where stem:[Q] is amount of heat (<<t5-6.1>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  skos:note """Heat capacity is not completely defined unless specified as seen in <<t5-16.2>>, <<t5-16.3>> and <<t5-16.4>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific heat capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-16.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-16.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-16.1-0 ;
+  skos:definition """quotient of heat capacity and mass:
+
+[stem%unnumbered]
+++++
+c = C/m
+++++
+
+where stem:[C] is heat capacity (<<t5-15>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  skos:note """For the corresponding quantities related to the amount of substance, see <<iso80000-9>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific heat capacity at constant pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-16.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-16.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-16.2-0 ;
+  skos:definition """specific heat capacity (<<t5-16.1>>) at constant pressure (<<iso80000-4>>)"""@en ;
+  skos:note """Also called specific isobaric heat capacity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific heat capacity at constant volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-16.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-16.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-16.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-16.3-0 ;
+  skos:definition """specific heat capacity (<<t5-16.1>>) at constant volume (<<iso80000-3>>)"""@en ;
+  skos:note """Also called specific isochoric heat capacity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-16.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific heat capacity at saturated vapour pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-16.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"sat\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-16.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-16.4" ;
+  skosxl:prefLabel isoiec80000:term-t5-16.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-16.4-0 ;
+  skos:definition """specific heat capacity (<<t5-16.1>>) at saturated vapour pressure (<<iso80000-4>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ratio of specific heat capacities"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-17.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-17.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-17.1-0 ;
+  skos:definition """quotient of specific heat capacity at constant pressure and specific heat capacity at constant volume:
+
+[stem%unnumbered]
+++++
+gamma = c_p/c_V
+++++
+
+where stem:[c_p] is specific heat capacity at constant pressure (<<t5-16.2>>) and stem:[c_V] is specific heat capacity at constant volume (<<t5-16.3>>)
+"""@en ;
+  skos:note """This quantity can also be expressed by
+
+[stem%unnumbered]
+++++
+gamma = C_p/C_V
+++++
+
+where stem:[C_p] is heat capacity at constant pressure and stem:[C_V] is heat capacity at constant volume.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "isentropic exponent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-17.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "isentropic expansion factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-17.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-17.2-0 ;
+  skosxl:altLabel isoiec80000:term-t5-17.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-17.2-0 ;
+  skos:definition """the negative of relative pressure change, divided by relative volume change, at constant entropy:
+
+[stem%unnumbered]
+++++
+kappa = - V/p ((del p)/(del V))_S
+++++
+
+where stem:[V] is volume (<<iso80000-3>>), stem:[p] is pressure (<<iso80000-4>>), and stem:[S] is entropy (<<t5-18>>)
+"""@en ;
+  skos:note """For an ideal gas, stem:[kappa] is equal to stem:[gamma] (<<t5-17.1>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-18" ;
+  skosxl:prefLabel isoiec80000:term-t5-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-18-0 ;
+  skos:definition """natural logarithm of number of equally probable microscopic configurations in a macroscopic system, multiplied by the Boltzmann constant:
+
+[stem%unnumbered]
+++++
+S = k \" ln\"W
+++++
+
+where stem:[W] is number of configurations and stem:[k] is the Boltzmann constant (<<iso80000-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "s"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-19" ;
+  skosxl:prefLabel isoiec80000:term-t5-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-19-0 ;
+  skos:definition """quotient of entropy and mass:
+
+[stem%unnumbered]
+++++
+s = S/m
+++++
+
+where stem:[S] is entropy (<<t5-18>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  skos:note """For the corresponding quantity related to amount of substance, see <<iso80000-9>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-20.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy <thermodynamics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.1-0 ;
+  skos:definition """ability of a system to do work (<<iso80000-4>>)"""@en ;
+  skos:note """Energy exists in different forms that are mutually transformable into each other, either totally or partially. In contrast to internal energy (<<t5-20.2>>), energy is not a state function."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-20.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "internal energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-20.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.2-0 ;
+  skosxl:altLabel isoiec80000:term-t5-20.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.2-0 ;
+  skos:definition """energy of a system whose change is given by the amount of the heat (<<t5-6.1>>) transferred to the system and the work (<<iso80000-4>>) done on the system, provided that the system is closed and no chemical reactions occur"""@en ;
+  skos:note """In thermodynamic text books, usually the formula
+
+stem:[Delta U = Q + W] is used. Note that the zero of the energy is undefined.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-20.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "enthalpy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.3-0 ;
+  skos:definition """sum of internal energy of the system and the product of pressure and volume of the system:
+
+[stem%unnumbered]
+++++
+H = U + pV
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>), stem:[p] is pressure (<<iso80000-4>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Helmholtz energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-20.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Helmholtz function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-20.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.4" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.4-0 ;
+  skosxl:altLabel isoiec80000:term-t5-20.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.4-1 ;
+  skos:definition """difference of internal energy of the system and the product of thermodynamic temperature and entropy of the system:
+
+[stem%unnumbered]
+++++
+A = U - TS
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>), stem:[T] is thermodynamic temperature (<<t5-1>>), and stem:[S] is entropy (<<t5-18>>)
+"""@en ;
+  skos:note """The name Helmholtz free energy is also used.
+
+However, this term is not recommended.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-20.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gibbs energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-20.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gibbs function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.5" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.5-0 ;
+  skosxl:altLabel isoiec80000:term-t5-20.5-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.5-0 ;
+  skos:definition """difference of the enthalpy and the product of thermodynamic temperature and entropy of the system:
+
+[stem%unnumbered]
+++++
+G = H - TS
+++++
+
+where stem:[H] is enthalpy (<<t5-20.3>>), stem:[T] is thermodynamic temperature (<<t5-1>>), and stem:[S] is entropy (<<t5-18>>)
+"""@en ;
+  skos:note """The name Gibbs free energy is also used. However, this term is not recommended."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-21.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-21.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-21.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-21.1-0 ;
+  skos:definition """quotient of energy and mass:
+
+[stem%unnumbered]
+++++
+e = E/m
+++++
+
+where stem:[E] is energy (<<t5-20.1>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific internal energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-21.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific thermodynamic energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-21.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-21.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-21.2-0 ;
+  skosxl:altLabel isoiec80000:term-t5-21.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-21.2-0 ;
+  skos:definition """quotient of internal energy and mass:
+
+[stem%unnumbered]
+++++
+u = U/m
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-21.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific enthalpy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-21.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-21.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-21.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-21.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-21.3-0 ;
+  skos:definition """quotient of enthalpy and mass:
+
+[stem%unnumbered]
+++++
+h = H/m
+++++
+
+where stem:[H] is enthalpy (<<t5-20.3>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-12.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Helmholtz energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-12.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Helmholtz function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-12.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-12.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-12.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-12.4" ;
+  skosxl:prefLabel isoiec80000:term-t5-12.4-0 ;
+  skosxl:altLabel isoiec80000:term-t5-12.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-12.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-12.4-1 ;
+  skos:definition """quotient of Helmholtz energy and mass:
+
+[stem%unnumbered]
+++++
+a = A/m
+++++
+
+where stem:[A] is Helmholtz energy (<<t5-20.4>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  skos:note """The name specific Helmholtz free energy is also used. However, this term is not recommended."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-21.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Gibbs energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-21.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Gibbs function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-21.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-21.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-21.5" ;
+  skosxl:prefLabel isoiec80000:term-t5-21.5-0 ;
+  skosxl:altLabel isoiec80000:term-t5-21.5-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-21.5-0 ;
+  skos:definition """quotient of Gibbs energy and mass:
+
+[stem%unnumbered]
+++++
+g = G/m
+++++
+
+where stem:[G] is Gibbs energy (<<t5-20.5>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  skos:note """The name specific Gibbs free energy is also used. However, this term is not recommended."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Massieu function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-22" ;
+  skosxl:prefLabel isoiec80000:term-t5-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-22-0 ;
+  skos:definition """quotient of the negative of Helmholtz energy and temperature:
+
+[stem%unnumbered]
+++++
+J = -A/T
+++++
+
+where stem:[A] is Helmholtz energy (<<t5-20.4>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Planck function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-23" ;
+  skosxl:prefLabel isoiec80000:term-t5-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-23-0 ;
+  skos:definition """quotient of the negative of Gibbs energy and temperature:
+
+[stem%unnumbered]
+++++
+Y = -G/T
+++++
+
+where stem:[G] is Gibbs energy (<<t5-20.5>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Joule-Thomson coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"JT\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-24" ;
+  skosxl:prefLabel isoiec80000:term-t5-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-24-0 ;
+  skos:definition """change of thermodynamic temperature with respect to pressure in a Joule-Thomson process at constant enthalpy:
+
+[stem%unnumbered]
+++++
+mu_\"JT\" = ((del T)/(del p))_H
+++++
+
+where stem:[T] is thermodynamic temperature (<<t5-1>>), stem:[p] is pressure (<<iso80000-4>>) and stem:[H] is enthalpy (<<t5-20.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K/Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m*s^2*K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-25.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "efficiency <thermodynamics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-25.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-25.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-25.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-25.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-25.1-0 ;
+  skos:definition """quotient of work (<<iso80000-4>>) delivered by a heat engine and supplied heat:
+
+[stem%unnumbered]
+++++
+eta=W/Q
+++++
+
+where stem:[W] is work (<<iso80000-4>>) and stem:[Q] is heat (<<t5-6.1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-25.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum efficiency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-25.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta_\"max\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-25.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-25.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-25.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-25.2-0 ;
+  skos:definition """efficiency determined by the quotient of the temperatures of the hot source and the cold sink:
+
+[stem%unnumbered]
+++++
+eta_\"max\" = 1- T_\"c\"/T_\"h\"
+++++
+
+where stem:[T_\"c\"] is the thermodynamic temperature (<<t5-1>>) of the cold sink and stem:[T_\"h\"] is the thermodynamic temperature (<<t5-1>>) of the hot source
+"""@en ;
+  skos:note """An ideal heat engine operating according to the Carnot process is delivering the maximum efficiency."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific gas constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-26" ;
+  skosxl:prefLabel isoiec80000:term-t5-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-26-0 ;
+  skos:definition """quotient of the Boltzmann constant stem:[k] (<<iso80000-1>>) and the mass stem:[m] (<<iso80000-4>>) of the gas particle"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(kg*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass concentration of water"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-27" ;
+  skosxl:prefLabel isoiec80000:term-t5-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-27-0 ;
+  skos:definition """quotient of mass of water and a specified volume:
+
+[stem%unnumbered]
+++++
+w = m/V
+++++
+
+where stem:[m] is mass (<<iso80000-4>>) of water, irrespective of the form of aggregation state, and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """Mass concentration of water at saturation is denoted stem:[w_\"sat\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass concentration of water vapour"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-28-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absolute humidity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(ii(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-28" ;
+  skosxl:prefLabel isoiec80000:term-t5-28-0 ;
+  skosxl:altLabel isoiec80000:term-t5-28-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-28-0 ;
+  skos:definition """quotient of mass of water vapour and a specified volume:
+
+[stem%unnumbered]
+++++
+sf(ii(v)) = m/V
+++++
+
+where stem:[m] is mass (<<iso80000-4>>) of water vapour and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """Mass concentration of water vapour at saturation is denoted stem:[sf(ii(v))_\"sat\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass ratio of water to dry matter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-29" ;
+  skosxl:prefLabel isoiec80000:term-t5-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-29-0 ;
+  skos:definition """quotient of mass of water and mass of dry matter:
+
+[stem%unnumbered]
+++++
+u = m/m_\"d\"
+++++
+
+where stem:[m] is mass (<<iso80000-4>>) of water and stem:[m_\"d\"] is mass of dry matter
+"""@en ;
+  skos:note """Mass ratio of water to dry matter at saturation is denoted stem:[u_\"sat\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass ratio of water vapour to dry gas"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-30-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-30" ;
+  skosxl:prefLabel isoiec80000:term-t5-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-30-1 ;
+  skos:definition """quotient of mass of water vapour and mass of dry gas:
+
+[stem%unnumbered]
+++++
+r = m/m_\"d\"
+++++
+
+where stem:[m] is mass (<<iso80000-4>>) of water vapour and stem:[m_\"d\"] is mass of dry gas
+"""@en ;
+  skos:note """Mass ratio of water vapour to dry gas at saturation is denoted stem:[r_\"sat\"].
+
+Mass ratio of water vapour to dry gas is also called mixing ratio.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass fraction of water"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_(\"H\"_2\"O\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-31" ;
+  skosxl:prefLabel isoiec80000:term-t5-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-31-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+w_(\"H\"_2\"O\") = u/(u+1)
+++++
+
+where stem:[u] is mass ratio of water to dry matter (<<t5-29>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass fraction of dry matter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_\"d\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-32" ;
+  skosxl:prefLabel isoiec80000:term-t5-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-32-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+w_\"d\" = 1 - w_(\"H\"_2\"O\")
+++++
+
+where stem:[w_(\"H\"_2\"O\")] is mass fraction of water (<<t5-31>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative humidity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-33" ;
+  skosxl:prefLabel isoiec80000:term-t5-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-33-0 ;
+  skos:definition """quotient of partial pressure of water vapour and partial pressure at its saturation:
+
+[stem%unnumbered]
+++++
+varphi = p/p_\"sat\"
+++++
+
+where stem:[p] is partial pressure (<<iso80000-4>>) of vapour and stem:[p_\"sat\"] is its partial pressure at saturation at the same temperature
+"""@en ;
+  skos:note """Relative humidity is often referred to as RH and expressed in percent. See also remark in <<t5-35>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass concentration of vapour"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-34" ;
+  skosxl:prefLabel isoiec80000:term-t5-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-34-0 ;
+  skos:definition """quotient of mass concentration of water vapour and mass concentration at its saturation:
+
+[stem%unnumbered]
+++++
+varphi = sf(ii(v))/sf(ii(v))_\"sat\"
+++++
+
+where stem:[sf(ii(v))] is mass concentration of water vapour (<<t5-28>>) and stem:[sf(ii(v))_\"sat\"] is its mass concentration of water vapour at saturation of the same temperature
+"""@en ;
+  skos:note """For water vapour concentrations up to stem:[1 \"unitsml(kg/m^3)\"], the relative humidity (<<t5-33>>) is assumed to be equal to relative mass concentration of vapour. For details see <<lovell>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass ratio of vapour"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "psi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-35" ;
+  skosxl:prefLabel isoiec80000:term-t5-35-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-35-0 ;
+  skos:definition """quotient of mass ratio of water vapour to dry gas and mass ratio of water vapour to dry gas at saturation:
+
+[stem%unnumbered]
+++++
+psi = r/r_\"sat\"
+++++
+
+where stem:[r] is mass ratio of water vapour to dry gas (<<t5-30>>) and stem:[r_\"sat\"] is its mass ratio of water vapour to dry gas at saturation of the same temperature
+"""@en ;
+  skos:note """This quantity is also used as an approximation of relative humidity (<<t5-33>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .
+
+isoiec80000:term-t5-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dew-point temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_\"d\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-36" ;
+  skosxl:prefLabel isoiec80000:term-t5-36-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-36-0 ;
+  skos:definition """temperature at which water vapour in the air reaches saturation under isobaric conditions"""@en ;
+  skos:note """The corresponding Celsius temperature, denoted stem:[t_\"d\"], is still called dew-point temperature.
+
+The unit for the corresponding Celsius temperature is degree Celsius, symbol stem:[\"unitsml(degC)\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

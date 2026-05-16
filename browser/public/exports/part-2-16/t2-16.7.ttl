@@ -1,0 +1,16 @@
+isoiec80000:term-t2-16.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transpose matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))^TT"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.7-0 ;
+  skos:definition """transpose matrix of stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[(bb(ii(A))^TT)_(ik) = (bb(ii(A)))_(ki)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

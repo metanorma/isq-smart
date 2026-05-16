@@ -1,0 +1,34 @@
+isoiec80000:term-t6-61-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "non-active power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-61-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-61-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_~"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-61 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-61" ;
+  skosxl:prefLabel isoiec80000:term-t6-61-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-61-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-61-1 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+Q' = sqrt(S^2 - P^2)
+++++
+
+where stem:[S] is apparent power (<<t6-57>>) and stem:[P] is active power (<<t6-56>>)
+"""@en ;
+  skos:note """This formula only holds for sinusoidal waveforms.
+
+See <<iec60050-131,locality:item=\"131-11-43\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

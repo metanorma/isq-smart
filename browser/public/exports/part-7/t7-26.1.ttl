@@ -1,0 +1,53 @@
+isoiec80000:term-t7-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tristimulus values for the CIE 1931 standard colorimetric observer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "X, Y, Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-26.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-26.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-26.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-26.1-0 ;
+  skos:definition """amounts of the three reference colour stimuli in the CIE 1931 standard colorimetric system, required to match the colour of the stimulus considered"""@en ;
+  skos:note """For a given colour stimulus described by the colour stimulus function stem:[Phi_lambda(lambda)] of a radiometric quantity,
+
+[stem%unnumbered]
+++++
+X = k int_0^(oo) Phi_lambda (lambda) bar x (lambda) \"d\"lambda
+++++
+
+[stem%unnumbered]
+++++
+Y = k int_0^(oo) Phi_lambda (lambda) bar y (lambda) \"d\"lambda
+++++
+
+[stem%unnumbered]
+++++
+Z = k int_0^(oo) Phi_lambda (lambda) bar z (lambda) \"d\"lambda
+++++
+
+where stem:[bar x (lambda)], stem:[bar y (lambda)], stem:[bar z (lambda)] are the CIE colour-matching functions for the CIE 1931 standard colorimetric observer (2&deg; observer) (<<t7-27.1>>).
+
+For sources, stem:[k] may be chosen as stem:[k = K_\"m\"] where stem:[K_\"m\"] is the maximum luminous efficacy (<<t7-11.3>>) so that stem:[Y = L_\"v\"] (<<t7-15>>) and the unit of stem:[X], stem:[Y], stem:[Z] is [stem:[\"unitsml(cd*m^(-2))\"]].
+
+For object colours, stem:[varphi_lambda(lambda)] is given by one of the three products
+
+[stem%unnumbered]
+++++
+varphi_lambda(lambda) = S_lambda(lambda) * {(rho(lambda)),(tau(lambda)),(beta(lambda)):}
+++++
+
+where stem:[S_lambda(lambda)] is the relative spectral distribution of a quantity characterizing the source illuminating the object, stem:[rho(lambda)] is the spectral reflectance, stem:[tau(lambda)] is the spectral transmittance, stem:[beta(lambda)] is the spectral radiance factor, and stem:[k] is chosen to be
+
+[stem%unnumbered]
+++++
+k = 100 // int_0^(oo) S_lambda (lambda) bar y (lambda) \"d\"lambda
+++++
+
+Integral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor. In this case, the unit of stem:[X], stem:[Y], stem:[Z] is [1].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["see Remark"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

@@ -1,0 +1,17 @@
+isoiec80000:term-t12-36.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lower critical magnetic flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-36.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"c1\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-36.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-36.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-36.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-36.2-0 ;
+  skos:definition """for type II superconductors, the threshold magnetic flux density (<<iec80000-6>>) for magnetic flux (<<iec80000-6>>) entering the superconductor"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

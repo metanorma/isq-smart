@@ -1,0 +1,28 @@
+isoiec80000:term-t4-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic viscosity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "viscosity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-24" ;
+  skosxl:prefLabel isoiec80000:term-t4-24-0 ;
+  skosxl:altLabel isoiec80000:term-t4-24-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-24-0 ;
+  skos:definition """for laminar flows, proportionality constant between shear stress
+stem:[tau_(xz)] (<<t4-16.2>>) in a fluid moving with a velocity stem:[v_x]
+(<<iso80000-3>>) and gradient stem:[\"d\"v_x//\"d\"z] perpendicular to the plane
+of shear:
+
+stem:[tau_(xz) = eta (\"d\"v_x)/(\"d\"z)]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

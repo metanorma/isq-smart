@@ -1,0 +1,19 @@
+isoiec80000:term-t2-12.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "definite integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "int_a^b f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.25-0 ;
+  skos:definition """definite integral of stem:[f] from stem:[a] to stem:[b]"""@en ;
+  skos:note """This is the simple case of a function defined on an interval. Integration of functions defined on more general domains may also be defined. Special notations, e.g. stem:[int_\"C\"], stem:[int_\"S\"], stem:[int_\"V\"], stem:[oint], are used for integration over a curve stem:[\"C\"], a surface stem:[\"S\"], a three-dimensional domain stem:[\"V\"], and a closed curve or surface, respectively.
+
+Multiple integrals are also denoted stem:[&#x222C;], stem:[&#x222F;] etc.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

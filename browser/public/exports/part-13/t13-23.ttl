@@ -1,0 +1,29 @@
+isoiec80000:term-t13-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decision content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-23" ;
+  skosxl:prefLabel isoiec80000:term-t13-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-23-0 ;
+  skos:definition """stem:[D_a = log_a\\ n]
+
+where stem:[a] is the number of possibilities at
+each decision and stem:[n] the number of
+events
+"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+When the same base is used for the same number of
+events then stem:[D_a = H_0] where stem:[H_0] is maximum entropy
+(<<t13-26,item 13-26>>).
+
+See <<iec60050-171,droploc%locality:item=\"171-07-10\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

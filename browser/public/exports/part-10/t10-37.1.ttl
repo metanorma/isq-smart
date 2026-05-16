@@ -1,0 +1,22 @@
+isoiec80000:term-t10-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reaction energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-37.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-37.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-37.1-0 ;
+  skos:definition """in a nuclear reaction, sum of the kinetic energies (<<iso80000-4>>) and photon energies (<<iso80000-5>>) of the reaction products minus the sum of the kinetic and photon energies of the reactants"""@en ;
+  skos:note """For exothermic nuclear reactions, stem:[Q>0].
+
+For endothermic nuclear reactions, stem:[Q<0].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

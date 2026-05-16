@@ -1,0 +1,17 @@
+isoiec80000:term-t10-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spin"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(s))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-10" ;
+  skosxl:prefLabel isoiec80000:term-t10-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-10-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity expressing the internal angular momentum (<<iso80000-4>>) of a particle or a particle system"""@en ;
+  skos:note """Spin is an additive vector quantity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,20 @@
+isoiec80000:term-t4-17.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative volume strain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-17.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-17.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-17.4" ;
+  skosxl:prefLabel isoiec80000:term-t4-17.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.4-0 ;
+  skos:definition """quotient of change in volume stem:[Delta V] (<<iso80000-3>>) of an object
+and its volume stem:[V_0] (<<iso80000-3>>):
+
+stem:[vartheta=(Delta V)/V_0]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

@@ -1,0 +1,31 @@
+isoiec80000:term-t11-4.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fanning number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.24" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.24-1 ;
+  skos:definition """relation between shear stress and dynamic pressure in the flow of a fluid in a containment, expressed by
+
+stem:[f_\"n\" = (2 tau)/(rho v^2)]; where
+
+stem:[tau]:: is shear stress (<<iso80000-4>>) at the wall,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid in the pipe
+"""@en ;
+  skos:note """The Fanning number describes the flow of fluids in a pipe with friction at the walls represented by its shear stress.
+
+Symbol stem:[f] may be used where no conflicts are possible.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

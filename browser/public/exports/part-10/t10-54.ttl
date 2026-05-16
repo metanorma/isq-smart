@@ -1,0 +1,55 @@
+isoiec80000:term-t10-54-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total linear stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-54-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-54-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-54-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-54 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-54" ;
+  skosxl:prefLabel isoiec80000:term-t10-54-0 ;
+  skosxl:altLabel isoiec80000:term-t10-54-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-54-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-54-1 ;
+  skos:definition """for charged particles of a given type and energy stem:[E_0] the differential quotient of stem:[E] with respect to stem:[x], where stem:[E] is the mean energy (<<iso80000-4>>) lost by the charged particles in traversing a distance (<<iso80000-3>>) stem:[x] in the given material:
+
+[stem%unnumbered]
+++++
+S = -(\"d\"E)/(\"d\"x)
+++++
+"""@en ;
+  skos:note """The total linear stopping power is sometimes also called stopping power.
+
+Both electronic losses and radiative losses are included.
+
+The quotient of the total linear stopping power of a substance and that of a reference substance is called the relative linear stopping power.
+
+See also <<t10-85>>.
+
+Using the relation stem:[S_m = S//rho] between the total mass stopping power stem:[S_m] (<<t10-55>>), the total linear stopping power stem:[S], and the density stem:[rho], the definition given for the mass stopping in report 85a of the ICRU can be applied to that of the total linear stopping power resulting in:
+
+The linear stopping power, stem:[S], of a material, for charged particles of a given type and energy, is the quotient of stem:[\"d\"E] by stem:[\"d\"l], where stem:[\"d\"E] is the mean energy lost by the charged particles in traversing a distance stem:[\"d\"l] in the material:
+
+[stem%unnumbered]
+++++
+S = -(\"d\"E)/(\"d\"x)
+++++
+
+This definition has an equivalent meaning as the one given in column 4 of this item.
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV/m ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

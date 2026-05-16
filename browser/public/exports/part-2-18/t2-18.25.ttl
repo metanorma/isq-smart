@@ -1,0 +1,18 @@
+isoiec80000:term-t2-18.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "scalar product of tensors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T:S)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.25-0 ;
+  skos:definition """scalar product of two tensors stem:[sf(bb(ii(T)))] and stem:[sf(bb(ii(S)))] of the second order"""@en ;
+  skos:note """scalar quantity +
+stem:[sf(bb(ii(T:S))) = sum_i sum_j T_(ij) S_(ij)]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

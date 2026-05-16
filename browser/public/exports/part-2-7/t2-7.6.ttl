@@ -1,0 +1,19 @@
+isoiec80000:term-t2-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of prime numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(P))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.6-0 ;
+  skos:definition """the set of prime numbers"""@en ;
+  skos:note """stem:[bb(sf(P)) = {2, 3, 5, 7, 11, 13, 17, ...}]
+
+The symbol stem:[&#8473;] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

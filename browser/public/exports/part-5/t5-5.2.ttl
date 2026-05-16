@@ -1,0 +1,26 @@
+isoiec80000:term-t5-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "isentropic compressibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa_S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-5.2-0 ;
+  skos:definition """negative relative change of volume with pressure at constant entropy:
+
+[stem%unnumbered]
+++++
+kappa_S = -1/V ((del V)/(del p))_S
+++++
+
+where stem:[V] is volume (<<iso80000-3>>), stem:[p] is pressure (<<iso80000-4>>), and stem:[S] is entropy (<<t5-18>>)
+"""@en ;
+  skos:note """The subscripts in the symbols may be omitted when there is no risk of confusion."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

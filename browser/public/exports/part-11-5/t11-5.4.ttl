@@ -1,0 +1,22 @@
+isoiec80000:term-t11-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Froude number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fr**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.4-0 ;
+  skos:definition """quotient of gravitational forces and thermodiffusion forces for heat transfer in forced convection of fluids, expressed by
+
+stem:[Fr** = (gl^3)/alpha^2]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t11-8.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hartmann number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.5-0 ;
+  skos:definition """relation between magnetically induced stress and hydrodynamic shear stress in an electrically conducting fluid, expressed by
+
+stem:[Ha = Bl sqrt((sigma//mu))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is dynamic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Hartmann number represents also the ratio of magnetic force to viscous force."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

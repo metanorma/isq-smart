@@ -1,0 +1,40 @@
+isoiec80000:term-t10-86.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kerma rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-86.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-86.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-86.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-86.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-86.2-0 ;
+  skos:definition """differential quotient of kerma (<<t10-86.1>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+dot K = (\"d\"K)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(Gy/s)\" = 1 \"unitsml(W/kg)\"
+++++
+
+See the Remarks for <<t10-81.1>>.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The kerma rate, stem:[dot K], is the quotient of stem:[\"d\"K] by stem:[\"d\"t], where stem:[\"d\"K] is the increment of kerma in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+dot K = (\"d\"K)/(\"d\"t).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy/s ;
+  isoiec80000:hasUnit isoiec80000:unit-W/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

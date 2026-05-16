@@ -1,0 +1,33 @@
+isoiec80000:term-t5-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ratio of specific heat capacities"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-17.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-17.1" ;
+  skosxl:prefLabel isoiec80000:term-t5-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-17.1-0 ;
+  skos:definition """quotient of specific heat capacity at constant pressure and specific heat capacity at constant volume:
+
+[stem%unnumbered]
+++++
+gamma = c_p/c_V
+++++
+
+where stem:[c_p] is specific heat capacity at constant pressure (<<t5-16.2>>) and stem:[c_V] is specific heat capacity at constant volume (<<t5-16.3>>)
+"""@en ;
+  skos:note """This quantity can also be expressed by
+
+[stem%unnumbered]
+++++
+gamma = C_p/C_V
+++++
+
+where stem:[C_p] is heat capacity at constant pressure and stem:[C_V] is heat capacity at constant volume.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

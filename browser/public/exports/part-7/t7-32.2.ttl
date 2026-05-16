@@ -1,0 +1,37 @@
+isoiec80000:term-t7-32.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Napierian absorbance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-32.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-32.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-32.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-32.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-32.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-32.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-32.2-1 ;
+  skos:definition """natural (Napierian) logarithm of the reciprocal of the transmittance, stem:[tau] (<<t7-31.5>>)"""@en ;
+  skos:note """If defined in terms of wavelength, the Napierian absorbance can be expressed by
+
+[stem%unnumbered]
+++++
+A_\"n\"(lambda) = B(lambda) = -\"ln\"[tau(lambda)\\]
+++++
+
+It can also be expressed as
+
+[stem%unnumbered]
+++++
+A_\"n\"(lambda) = l alpha(lambda)
+++++
+
+where stem:[alpha] is linear absorption coefficient (<<t7-35.2>>) and stem:[l] is length (<<iso80000-3>>) traversed.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

@@ -1,0 +1,30 @@
+isoiec80000:term-t4-28.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "potential energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-28.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-28.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-28.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-28.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-28.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.1-1 ;
+  skos:definition """for conservative force stem:[bb(ii(F))], scalar additive quantity obeying
+condition stem:[bb(ii(F)) = - bb(nabla) F], if it exists
+"""@en ;
+  skos:note """For the definition of energy, see <<iso80000-5>>.
+
+A force is conservative when the force field is irrotational, i.e.
+stem:[bb(rot) bb(ii(F))=0], or stem:[bb(ii(F))] is perpendicular to the
+speed of the body to ensure stem:[bb(ii(F)) * \"d\"r = 0].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

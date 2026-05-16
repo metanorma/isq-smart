@@ -1,0 +1,27 @@
+isoiec80000:term-t2-20.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Airy function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Ai\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.30-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"Bi\"(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.30 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.30" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.30-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.30-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.30-1 ;
+  skos:definition """Airy function"""@en ;
+  skos:note """stem:[\"Ai\"(z) = 1/3 sqrt(z) [\"I\"_(-1/3)(w) - \"I\"_(1/3)(w)\\]]
+
+stem:[\"Bi\"(z) = sqrt(z/3) [\"I\"_(-1/3)(w) + \"I\"_(1/3)(w)\\]]
+
+where stem:[w=2/3 z^(3//2)].
+
+Entire solution of stem:[y'' - zy=0]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

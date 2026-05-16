@@ -1,0 +1,30 @@
+isoiec80000:term-t4-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "weight"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_\"g\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.2-0 ;
+  skos:definition """force (<<t4-9.1>>) acting on a body in the gravitational field of Earth:
+
+stem:[bb(ii(F_g)) = mg]
+
+where stem:[m] (<<t4-1>>) is the mass of the body and stem:[g] is the local
+acceleration of free fall (<<iso80000-3>>)
+"""@en ;
+  skos:note """In colloquial language, the name \"weight\" continues to be used where \"mass\"
+is meant. This practice should be avoided.
+
+Weight is an example of a gravitational force. Weight comprises not only the
+local gravitational force but also the local centrifugal force due to the
+rotation of the Earth.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

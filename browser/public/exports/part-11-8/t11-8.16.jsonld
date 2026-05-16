@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lundquist number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lu",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.16",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.16",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.16-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.16-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of Alfvén speed and magneto-dynamic speed in a plasma, expressed by\n\nstem:[Lu = Bl sigma sqrt(mu/rho)]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>), and\nstem:[rho]:: is mass density (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[v_\"A\" = B//sqrt(phi mu)] is called Alfvén wave speed. See <<t11-8.4>>.\n\nThe quantity stem:[v_\"m\" = 1//(l sigma mu)] is called magneto dynamic speed; where\n\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>).\n\nThe Lundquist number is also given by\n\nstem:[Lu = Rm//Al]; where\n\nstem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and\nstem:[Al]:: is the Alfvén number (<<t11-8.4>>).\n\nSee also Hartmann number (<<t11-8.5>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    }
+  ]
+}

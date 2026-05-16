@@ -1,0 +1,33 @@
+isoiec80000:term-t6-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-37.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-37.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-37.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-37.1-1 ;
+  skos:definition """for an irrotational magnetic field strength, scalar quantity expressed by
+
+[stem%unnumbered]
+++++
+bb(ii(H)) = -bb(\"grad\") V_\"m\"
+++++
+
+where stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>)
+"""@en ;
+  skos:note """The magnetic scalar potential is not unique since any constant scalar field can be added to it without changing its gradient.
+
+See <<iec60050-121,locality:item=\"121-11-58\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

@@ -1,0 +1,54 @@
+isoiec80000:term-t11-5.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[j]-factor <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "heat transfer factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.8-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Colburn number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Co"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.8-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Jq"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.8-0 ;
+  skosxl:altLabel isoiec80000:term-t11-5.8-1 ;
+  skosxl:altLabel isoiec80000:term-t11-5.8-2 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.8-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.8-2 ;
+  skos:definition """relation between heat transfer and mass transfer in a fluid, expressed by
+
+stem:[j = K/(c_p rho v) ((c_p eta)/lambda)^(2//3)]; where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>),
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The heat transfer factor is also given by
+
+stem:[j=St * Pr^(2//3)]; where
+
+stem:[St]:: is the Stanton number for heat transfer (<<t11-5.7>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+
+See also mass transfer factor (<<t11-6.7>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

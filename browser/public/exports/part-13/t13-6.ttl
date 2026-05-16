@@ -1,0 +1,17 @@
+isoiec80000:term-t13-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "waiting probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-6" ;
+  skosxl:prefLabel isoiec80000:term-t13-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-6-0 ;
+  skos:definition """probability for waiting for a resource"""@en ;
+  skos:note """For the unit one, see the <<intro>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

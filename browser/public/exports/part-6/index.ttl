@@ -1,0 +1,2885 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-6 a smart:PublicationDocument ;
+  dcterms:title "Electromagnetism"@en ;
+  dcterms:identifier "ISO 80000-6" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere"@en ;
+  skos:notation "A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb"@en ;
+  skos:notation "C" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere second"@en ;
+  skos:notation "A*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second ampere"@en ;
+  skos:notation "s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C/m^3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb per cubic metre"@en ;
+  skos:notation "C/m^3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-3)*s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per cubic metre second ampere"@en ;
+  skos:notation "m^(-3)*s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb per square metre"@en ;
+  skos:notation "C/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^-2*s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per square metre second ampere"@en ;
+  skos:notation "m^-2*s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb per metre"@en ;
+  skos:notation "C/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^-1*s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per metre second ampere"@en ;
+  skos:notation "m^-1*s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C*m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb metre"@en ;
+  skos:notation "C*m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m*s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre second ampere"@en ;
+  skos:notation "m*s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per square metre"@en ;
+  skos:notation "A/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-2)*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per square metre"@en ;
+  skos:notation "m^(-2)*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per metre"@en ;
+  skos:notation "A/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^-1*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per metre"@en ;
+  skos:notation "m^-1*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt per metre"@en ;
+  skos:notation "V/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-3)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second cubed ampere"@en ;
+  skos:notation "kg*m*s^(-3)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt"@en ;
+  skos:notation "V" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed ampere"@en ;
+  skos:notation "kg*m^2*s^(-3)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-F a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "farad"@en ;
+  skos:notation "F" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-2)*s^4*A^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second to the fourth ampere squared per kilogram square metre"@en ;
+  skos:notation "kg^(-1)*m^(-2)*s^4*A^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-F/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "farad per metre"@en ;
+  skos:notation "F/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-3)*s^4*A^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second to the fourth ampere squared per kilogram cubic metre"@en ;
+  skos:notation "kg^(-1)*m^(-3)*s^4*A^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-T a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "tesla"@en ;
+  skos:notation "T" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-2)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second squared ampere"@en ;
+  skos:notation "kg*s^(-2)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Wb a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "weber"@en ;
+  skos:notation "Wb" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared ampere"@en ;
+  skos:notation "kg*m^2*s^(-2)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A*m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere square metre"@en ;
+  skos:notation "A*m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre ampere"@en ;
+  skos:notation "m^2*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-1)*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per metre"@en ;
+  skos:notation "m^(-1)*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-H/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "henry per metre"@en ;
+  skos:notation "H/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-2)*A^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second squared ampere squared"@en ;
+  skos:notation "kg*m*s^(-2)*A^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Wb/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "weber per square metre"@en ;
+  skos:notation "Wb/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Wb*m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "weber metre"@en ;
+  skos:notation "Wb*m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^3*s^(-2)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram cubic metre per second squared ampere"@en ;
+  skos:notation "kg*m^3*s^(-2)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/(A*m) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per ampere metre"@en ;
+  skos:notation "J/(A*m)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-2)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second squared ampere"@en ;
+  skos:notation "kg*m*s^(-2)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/m^3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per cubic metre"@en ;
+  skos:notation "J/m^3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-1)*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per metre second squared"@en ;
+  skos:notation "kg*m^(-1)*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per square metre"@en ;
+  skos:notation "W/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^-3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second cubed"@en ;
+  skos:notation "kg*s^-3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre per second"@en ;
+  skos:notation "m/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m*s^-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre per second"@en ;
+  skos:notation "m*s^-1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-H^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per henry"@en ;
+  skos:notation "H^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-2)*s^2*A^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second squared ampere squared per kilogram square metre"@en ;
+  skos:notation "kg^(-1)*m^(-2)*s^2*A^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-H a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "henry"@en ;
+  skos:notation "H" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2)*A^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared ampere squared"@en ;
+  skos:notation "kg*m^2*s^(-2)*A^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-S/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "siemens per metre"@en ;
+  skos:notation "S/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-3)*s^3*A^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second cubed ampere squared per kilogram cubic metre"@en ;
+  skos:notation "kg^(-1)*m^(-3)*s^3*A^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Ohm*m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ohm metre"@en ;
+  skos:notation "Ohm*m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^3*s^(-3)*A^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram cubic metre per second cubed ampere squared"@en ;
+  skos:notation "kg*m^3*s^(-3)*A^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt"@en ;
+  skos:notation "W" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed"@en ;
+  skos:notation "kg*m^2*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Ohm a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ohm"@en ;
+  skos:notation "Ohm" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed ampere squared"@en ;
+  skos:notation "kg*m^2*s^(-3)*A^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-S a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "siemens"@en ;
+  skos:notation "S" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second cubed ampere squared per kilogram square metre"@en ;
+  skos:notation "kg^(-1)*m^(-2)*s^3*A^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian"@en ;
+  skos:notation "rad" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V/A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt per ampere"@en ;
+  skos:notation "V/A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A/V a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per volt"@en ;
+  skos:notation "A/V" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt ampere"@en ;
+  skos:notation "V*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-var a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "var"@en ;
+  skos:notation "var" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt second"@en ;
+  skos:notation "W*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^-2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared"@en ;
+  skos:notation "kg*m^2*s^-2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t6-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric current"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-1" ;
+  skosxl:prefLabel isoiec80000:term-t6-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-1-1 ;
+  skos:definition """scalar quantity equal to the quotient of the net quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge stem:[\"d\"Q] (<<t6-2.1>>) transferred through a surface during a quasi-infinitesimal time interval and the duration stem:[\"d\"t] of that interval:
+
+[stem%unnumbered]
+++++
+I = (\"d\"Q)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """Electric current is one of the base quantities in the International System of Quantities, ISQ, on which the International System of Units, SI, is based.
+
+Electric current stem:[I] through a surface stem:[\"S\"] can also be written as
+
+[stem%unnumbered]
+++++
+I = int_\"S\" bb(ii(J)) * e_\"n\" \"d\"A
+++++
+
+where stem:[bb(ii(J))] is the electric current density (<<t6-8>>) and where stem:[e_\"n\" \"d\"A] is the vector surface element.
+
+Electric current produces a magnetic field.
+
+For related definitions, see <<t6-8>> and <<iec60050-121,locality:item=\"121-11-13\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-2.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-2.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-2.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-2.1-1 ;
+  skos:definition """additive scalar quantity attributed to any particle and, generally, any system of them, to characterize its electromagnetic interactions"""@en ;
+  skos:note """To denote a point charge, stem:[q] is often used, as is done in this document.
+
+Electromagnetic interactions are Coulomb-Lorentz forces, see <<iec60050-121,locality:item=\"121-11-20\">>.
+
+The coherent SI unit of charge is coulomb, stem:[\"unitsml(C)\"]. Another frequently used unit is the ampere-hour (stem:[\"unitsml(A*h)\"]) mentioned in <<iec60050-313,locality:item=\"313-01-16\">>, widely used for battery characteristics.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C ;
+  isoiec80000:hasUnit isoiec80000:unit-A*s ;
+  isoiec80000:hasUnit isoiec80000:unit-s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-2.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "elementary charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-2.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-2.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-2.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-2.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-2.2-0 ;
+  skos:definition """magnitude of the negative electric charge carried by a single electron, which has charge stem:[-1 e]"""@en ;
+  skos:note """In the SI system the elementary charge, stem:[e], is one of the fundamental constants with an exact value
+
+stem:[e = 1.602176634 xx 10^(-19) \"unitsml(C)\"], see <<bipm-si>>.
+
+Electric charge can be positive, negative or zero. The sign convention is such that the elementary electric charge, stem:[e], of the proton, is positive. See <<iec60050-113,locality:item=\"113-02-12\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C ;
+  isoiec80000:hasUnit isoiec80000:unit-A*s ;
+  isoiec80000:hasUnit isoiec80000:unit-s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric charge density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-3" ;
+  skosxl:prefLabel isoiec80000:term-t6-3-0 ;
+  skosxl:altLabel isoiec80000:term-t6-3-1 ;
+  skosxl:altLabel isoiec80000:term-t6-3-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-3-0 ;
+  skos:definition """scalar quantity representing the spatial distribution of electric charge,
+
+[stem%unnumbered]
+++++
+rho(bb(ii(r))) = (\"d\"Q)/(\"d\"V)
+++++
+
+where stem:[\"d\"Q] is quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge (<<t6-2.1>>) contained in a quasi-infinitesimal 3D domain located at position stem:[bb(ii(r))] and stem:[\"d\"V] is quasi-infinitesimal volume (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-07\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface density of electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "areic electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-4-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "areic charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-4" ;
+  skosxl:prefLabel isoiec80000:term-t6-4-0 ;
+  skosxl:altLabel isoiec80000:term-t6-4-1 ;
+  skosxl:altLabel isoiec80000:term-t6-4-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-4-0 ;
+  skos:definition """scalar quantity representing the areal distribution of electric charge,
+
+[stem%unnumbered]
+++++
+sigma = sigma(r) = (\"d\"Q)/(\"d\"A)
+++++
+
+where stem:[\"d\"Q] is a quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge (<<t6-2.1>>) contained in a quasi-infinitesimal 2D domain located at position stem:[r], and stem:[\"d\"A] is a quasi-infinitesimal area (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-08\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-2*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear density of electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lineic electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-5-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lineic charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-5" ;
+  skosxl:prefLabel isoiec80000:term-t6-5-0 ;
+  skosxl:altLabel isoiec80000:term-t6-5-1 ;
+  skosxl:altLabel isoiec80000:term-t6-5-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-5-0 ;
+  skos:definition """scalar quantity representing the linear distribution of electric charge,
+
+[stem%unnumbered]
+++++
+tau = tau(bb(ii(r))) = (\"d\"Q)/(\"d\"l)
+++++
+
+where stem:[\"d\"Q] is a quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge (<<t6-2.1>>) contained in a quasi-infinitesimal domain located at position stem:[bb(ii(r))] and stem:[\"d\"l] is a quasi-infinitesimal length (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-09\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-1*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric dipole moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-6" ;
+  skosxl:prefLabel isoiec80000:term-t6-6-0 ;
+  skosxl:altLabel isoiec80000:term-t6-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-6-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+p = q(r_\"+\" - r_\"-\")
+++++
+
+where stem:[r_\"+\"] and stem:[r_\"-\"] are the position vectors (<<iso80000-3>>) of the carriers of electric charges stem:[q] and stem:[-q] (<<t6-2.1>>), respectively
+"""@en ;
+  skos:note """The electric dipole moment of a substance within a domain is the vector sum of electric dipole moments of all electric dipoles contained in the domain.
+
+See <<iec60050-121,locality:item=\"121-11-35\";and!locality:item=\"121-11-36\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C*m ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric polarization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-7" ;
+  skosxl:prefLabel isoiec80000:term-t6-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-7-0 ;
+  skos:definition """vector quantity representing the spatial distribution of electric dipole moment,
+
+[stem%unnumbered]
+++++
+P(bb(ii(r))) = (\"d\"p)/(\"d\"V)
+++++
+
+where stem:[\"d\"p] is quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric dipole moment (<<t6-6>>) of a substance in a quasi-infinitesimal domain at position stem:[bb(ii(r))] and stem:[\"d\"V] is quasi-infinitesimal volume (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-37\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-2*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-8" ;
+  skosxl:prefLabel isoiec80000:term-t6-8-0 ;
+  skosxl:altLabel isoiec80000:term-t6-8-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-8-0 ;
+  skos:definition """vector quantity equal to the sum, for the charge carriers within a volume element of quasi-infinitesimal volume stem:[V], of the products of their electric charge stem:[Q_i] and their velocity stem:[sf(ii(v))_i], divided by the volume stem:[V], given by
+
+[stem%unnumbered]
+++++
+bb(ii(J))(bb(ii(r))) = bb(ii(J)) = rho sf(ii(v))
+++++
+
+where stem:[i] is the rank of the charge carrier
+"""@en ;
+  skos:note """There can be different charge carriers with different velocities.
+
+Electric current stem:[I] (<<t6-1>>) through a surface stem:[\"S\"] is
+
+[stem%unnumbered]
+++++
+I = int_\"S\" bb(ii(J)) e_\"n\" \"d\"A
+++++
+
+where stem:[e_\"n\" \"d\"A] is the vector surface element.
+
+See <<iec60050-121,locality:item=\"121-11-11\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear electric current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"S\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-9" ;
+  skosxl:prefLabel isoiec80000:term-t6-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-9-0 ;
+  skos:definition """vector quantity equal to the sum, for the charge carriers confined to a surface element of quasi-infinitesimal area stem:[\"S\"], of the products of their electric charge stem:[Q_i] and their velocity stem:[sf(ii(v))_i], divided by the area stem:[\"S\"]
+
+[stem%unnumbered]
+++++
+bb(ii(J))_\"S\"(bb(ii(r))) = bb(ii(J))_\"S\" = sigma sf(ii(v))
+++++
+
+where stem:[i] is the rank of the charge carrier
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-12\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-1*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric field strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(E))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-10" ;
+  skosxl:prefLabel isoiec80000:term-t6-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-10-0 ;
+  skos:definition """additive vector field quantity that exerts on any charged particle located at position stem:[bb(ii(r))] a force stem:[bb(ii(F))] (<<iso80000-4>>) equal to the product of stem:[E] and electric charge stem:[q] (<<t6-2.1>>) of the particle, thus:
+
+[stem%unnumbered]
+++++
+bb(ii(E))(bb(ii(r))) = bb(ii(F))/q
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-18\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-11.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-11.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.1-1 ;
+  skos:definition """scalar quantity expressed by
+
+[stem%unnumbered]
+++++
+-bb(\"grad\") V = bb(ii(E)) + (del bb(ii(A)))/(del t)
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(A))] is magnetic vector potential (<<t6-32>>) and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """The electric potential is not unique since any constant scalar field quantity can be added to it without changing its gradient.
+
+The electric potential, the electric field, and the magnetic vector potential depend on the position.
+
+See <<iec60050-121,locality:item=\"121-11-25\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-11.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric potential difference"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.2-0 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+V_\"ab\" = V_\"a\" - V_\"b\"
+++++
+
+where stem:[V_\"a\"] and stem:[V_\"b\"] are the electric potentials (<<t6-11.1>>) at points stem:[\"a\"] and stem:[\"b\"], respectively
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+V_\"ab\" = int_(bb(ii(r))_\"a\"(C))^(bb(ii(r))_\"b\") (bb(ii(E)) + (del bb(ii(A)))/(del t)) \"d\"bb(ii(r))
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(A))] is magnetic vector potential (<<t6-32>>), stem:[t] is time (<<iso80000-3>>), and stem:[bb(ii(r))] is the position vector (<<iso80000-3>>) along a given curve stem:[\"C\"], from point stem:[\"a\"] to point stem:[\"b\"].
+
+See <<iec60050-121,locality:item=\"121-11-26\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "voltage"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-11.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-11.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-11.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.3" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.3-0 ;
+  skosxl:altLabel isoiec80000:term-t6-11.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.3-2 ;
+  skos:definition """for a conductor, scalar quantity given by the electric potential difference stem:[V_\"ab\"] (<<t6-11.2>>) between two points stem:[\"a\"] and stem:[\"b\"] respectively"""@en ;
+  skos:note """The name \"voltage\", commonly used in the English language, is given in the IEV, but it is an exception to the principle that a quantity name should not refer to any name of a unit.
+
+See <<iec60050-121,locality:item=\"121-11-27\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-11.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "induced voltage"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.4" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.4-0 ;
+  skos:definition """negative of time derivative of protoflux (<<t6-22.2>>)
+
+[stem%unnumbered]
+++++
+U_i = -\"d\"/(\"d\"t) int_\"C\" bb(ii(A)) * \"d\"bb(ii(r))
+++++
+"""@en ;
+  skos:note """If the integration path is closed, the loop voltage is
+
+[stem%unnumbered]
+++++
+U_\"l\" = -\"d\"/(\"d\"t) oint_\"C\" bb(ii(A)) * \"d\"bb(ii(r)) = - (\"d\"Phi)/(\"d\"t)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric displacement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(D))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-12" ;
+  skosxl:prefLabel isoiec80000:term-t6-12-0 ;
+  skosxl:altLabel isoiec80000:term-t6-12-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-12-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+bb(ii(D)) = epsilon_0 bb(ii(E)) + bb(ii(P))
+++++
+
+where stem:[epsilon_0] is electric constant (<<t6-14.1>>), stem:[bb(ii(E))] is electric field strength (<<t6-10>>), and stem:[bb(ii(P))] is electric polarization (<<t6-7>>)
+"""@en ;
+  skos:note """The electric flux density is related to electric charge density via stem:[bb(\"div\") bb(ii(D)) = rho] where stem:[bb(\"div\")] denotes divergence.
+
+The electric flux density, the electric field strength, and the polarization depend on the position.
+
+See <<iec60050-121,locality:item=\"121-11-40\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-2*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "capacitance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-13" ;
+  skosxl:prefLabel isoiec80000:term-t6-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-13-0 ;
+  skos:definition """for a capacitive element, quotient of electric charge stem:[Q] and voltage stem:[U] (<<t6-11.3>>);
+
+[stem%unnumbered]
+++++
+C = Q/U
+++++
+"""@en ;
+  skos:note """The electric charge of a capacitive element is given by the time integral of the electric current.
+
+See <<iec60050-131,locality:item=\"131-12-11\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-F ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^4*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-14.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permittivity of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-14.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-14.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-14.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-14.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-14.1-0 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+epsilon_0 = 1/(mu_0 c_0^2)
+++++
+
+where stem:[mu_0] is the magnetic constant (<<t6-26.1>>) and stem:[c_0] is luminal speed (<<t6-35.2>>)
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-03\">>.
+
+This quantity is considered to be constant in time.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-F/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^4*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permittivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-14.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-14.2-0 ;
+  skos:definition """for linear media, proportionality constant between electric flux density stem:[bb(ii(D))] (<<t6-12>>) and electric field strength stem:[bb(ii(E))] (<<t6-10>>);
+
+[stem%unnumbered]
+++++
+bb(ii(D)) = epsilon bb(ii(E))
+++++
+"""@en ;
+  skos:note """Permittivity stem:[epsilon] is a property of a medium. For an inhomogeneous medium, permittivity stem:[epsilon] depends on position.
+
+For an isotropic medium, stem:[epsilon] is a scalar quantity; for an anisotropic medium, stem:[epsilon] is a second-order tensor.
+
+See <<iec60050-121,locality:item=\"121-12-12\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-F/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^4*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative permittivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-15" ;
+  skosxl:prefLabel isoiec80000:term-t6-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-15-0 ;
+  skos:definition """for linear media, quotient of permittivity stem:[epsilon] (<<t6-14.2>>) and the electric constant stem:[epsilon_0] (<<t6-14.1>>);
+
+[stem%unnumbered]
+++++
+epsilon_\"r\" = epsilon/epsilon_0
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-12-13\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric susceptibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-16" ;
+  skosxl:prefLabel isoiec80000:term-t6-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-16-0 ;
+  skos:definition """for linear media, scalar quantity expressed by
+
+[stem%unnumbered]
+++++
+bb(ii(P)) = epsilon_0 chi bb(ii(E))
+++++
+
+where stem:[bb(ii(P))] is electric polarization (<<t6-7>>), stem:[epsilon_0] is the electric constant (<<t6-14.1>>), and stem:[bb(ii(E))] is electric field strength (<<t6-10>>)
+"""@en ;
+  skos:note """stem:[chi = epsilon_r - 1] where stem:[epsilon_r] is relative permittivity (<<t6-15>>)
+
+Electric susceptibility stem:[chi] is a property of a medium. For an inhomogeneous medium, electric susceptibility stem:[chi] depends on position.
+
+For an isotropic medium, stem:[chi] is a scalar quantity; for an anisotropic medium, stem:[chi] is a second order tensor.
+
+See <<iec60050-121,locality:item=\"121-12-19\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "psi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-17" ;
+  skosxl:prefLabel isoiec80000:term-t6-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-17-0 ;
+  skos:definition """scalar quantity given by the integral
+
+[stem%unnumbered]
+++++
+psi = int_\"S\" bb(ii(D)) * e_\"n\" \"d\"A
+++++
+
+over a surface stem:[\"S\"], where stem:[bb(ii(D))] is electric flux density (<<t6-12>>) and stem:[e_\"n\"\"d\"A] is a vector surface element (<<iso80000-3>>)
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-41\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C ;
+  isoiec80000:hasUnit isoiec80000:unit-s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "displacement current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-18" ;
+  skosxl:prefLabel isoiec80000:term-t6-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-18-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+bb(ii(J))_\"D\" = (del bb(ii(D)))/(del t)
+++++
+
+where stem:[bb(ii(D))] is electric flux density (<<t6-12>>) and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-42\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "displacement current"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-19.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-19.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-19.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-19.1-0 ;
+  skos:definition """scalar quantity given by the integral
+
+[stem%unnumbered]
+++++
+I_\"D\" = int_\"S\" bb(ii(J))_\"D\" * e_\"n\" \"d\"A
+++++
+
+over a surface stem:[\"S\"], where stem:[bb(ii(J))_\"D\"] is displacement current density (<<t6-18>>) and stem:[e_\"n\" \"d\"A] is a vector surface element (<<iso80000-3>>)
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-43\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total current"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-19.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"t\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-19.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-19.2-1 ;
+  skos:definition """scalar quantity given by the sum of electric current stem:[I] (<<t6-1>>) and displacement current stem:[I_\"D\"] (<<t6-19.1>>);
+
+[stem%unnumbered]
+++++
+I_\"tot\" = I + I_\"D\"
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-45\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"t\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-20" ;
+  skosxl:prefLabel isoiec80000:term-t6-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-20-1 ;
+  skos:definition """vector quantity given by the sum of electric current density stem:[bb(ii(J))] (<<t6-8>>) and displacement current density stem:[bb(ii(J))_\"D\"] (<<t6-18>>);
+
+[stem%unnumbered]
+++++
+bb(ii(J))_\"tot\" = bb(ii(J)) + bb(ii(J))_\"D\"
+++++
+"""@en ;
+  skos:note """See <<iec60050-121:1998,locality:item=\"121-11-44\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(B))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-21" ;
+  skosxl:prefLabel isoiec80000:term-t6-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-21-0 ;
+  skos:definition """vector quantity expressed by
+
+[stem%unnumbered]
+++++
+bb(ii(F)) = q sf(ii(v)) xx bb(ii(B))
+++++
+
+where stem:[bb(ii(F))] is the force (<<iso80000-4>>) acting on a test particle with electric charge stem:[q] (<<t6-2.1>>) traversing a magnetic field with flux density stem:[bb(ii(B))], with velocity stem:[sf(ii(v))] (<<iso80000-3>>)
+"""@en ;
+  skos:note """The magnetic flux density depends on position.
+
+See <<iec60050-121,locality:item=\"121-11-19\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-22.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-22.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.1-0 ;
+  skos:definition """scalar quantity given by the integral
+
+[stem%unnumbered]
+++++
+Phi = int_\"S\" bb(ii(B))*e_\"n\" \"d\"A
+++++
+
+over a surface stem:[\"S\"], where stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>) and stem:[e_\"n\" \"d\"A] is a vector surface element (<<iso80000-3>>)
+"""@en ;
+  skos:note """Magnetic flux can also be given by the line integral of the magnetic vector potential stem:[A], (<<t6-32>>) over a closed curve stem:[\"C\"] which is the border of area stem:[\"S\"]:
+
+[stem%unnumbered]
+++++
+Phi = oint_\"C\" A \"d\"r
+++++
+
+See <<iec60050-121,locality:item=\"121-11-21\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "protoflux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Psi_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.2-0 ;
+  skos:definition """scalar quantity given by the integral
+
+[stem%unnumbered]
+++++
+Psi_\"p\" = int_\"C\" A*\"d\"r
+++++
+
+where stem:[A] is magnetic vector potential (<<t6-32>>) and stem:[\"d\"r] is a line vector element of the path stem:[\"C\"]
+"""@en ;
+  skos:note """The former name \"linked flux\" is deprecated.
+
+See <<iec60050-121,locality:item=\"121-11-24\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-22.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linked magnetic flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_\"l\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.3" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.3-0 ;
+  skos:definition """magnetic flux (<<t6-22.1>>), the integration surface of which is such that magnetic field lines cross it in the same orientation more than once"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-24\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-22.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total magnetic flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Psi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-22.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.4" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.4-1 ;
+  skos:definition """highest value of the magnetic flux (<<t6-22.1>>) produced by a current loop"""@en ;
+  skos:note """The integration surface for the magnetic flux has to be chosen such that it is crossed in the same direction by all magnetic field lines produced by the current loop.
+
+The total flux can be a linked flux (<<t6-22.3>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-23-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic area moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-23" ;
+  skosxl:prefLabel isoiec80000:term-t6-23-0 ;
+  skosxl:altLabel isoiec80000:term-t6-23-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-23-0 ;
+  skos:definition """additive vector quantity, for a quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) planar loop given by
+
+[stem%unnumbered]
+++++
+m = I e_\"n\" A
+++++
+
+where stem:[I] is the electric current (<<t6-1>>) in a loop, stem:[e_\"n\"] is a unit vector perpendicular to the planar surface stem:[\"S\"] enclosed by the loop, and stem:[A] is the area (<<iso80000-3>>) in the loop
+"""@en ;
+  skos:note """A magnetic moment is associated with systems of charged particles, such as atoms, molecules, atomic nuclei, nucleons. It can be considered as a product of the motion of charged particles and the magnetic moments of these particles.
+
+Magnetic moment is also an intrinsic property of any charged elementary particle with half-integer spin (e.g. an electron, a neutron or a quark).
+
+The magnetic moment of a substance within a domain is the vector sum of the magnetic moments of all entities contained in the domain.
+
+See <<iec60050-121,locality:item=\"121-11-49\";and!locality:item=\"121-11-50\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(M))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(H_\"i\"))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-24" ;
+  skosxl:prefLabel isoiec80000:term-t6-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-24-1 ;
+  skos:definition """vector quantity representing the spatial distribution of the magnetic moment,
+
+[stem%unnumbered]
+++++
+bb(ii(M))(bb(ii(r))) = (\"d\"m)/(\"d\"V)
+++++
+
+where stem:[\"d\"m] is quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) magnetic moment (<<t6-23>>) of a substance contained in a 3D domain located at position stem:[bb(ii(r))], and stem:[\"d\"V] is volume (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-52\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic field strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetizing field"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(H))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-25" ;
+  skosxl:prefLabel isoiec80000:term-t6-25-0 ;
+  skosxl:altLabel isoiec80000:term-t6-25-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-25-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+bb(ii(H)) = bb(ii(B))/mu_0 - bb(ii(M))
+++++
+
+where stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>), stem:[mu_0] is the magnetic constant (<<t6-26.1>>), and stem:[bb(ii(M))] is the magnetization (<<t6-24>>)
+"""@en ;
+  skos:note """The magnetic field strength is related to the total current density stem:[bb(ii(J))_\"tot\"] (<<t6-20>>) via
+
+[stem%unnumbered]
+++++
+bb(rot) bb(ii(H)) = bb(ii(J))_\"tot\"
+++++
+
+The magnetic field strength, the magnetic flux density, and the magnetization depend on the position.
+
+See <<iec60050-121,locality:item=\"121-11-56\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-26.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permeability of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-26.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-26.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-26.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-26.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-26.1-0 ;
+  skos:definition """scalar quantity given by
+stem:[mu_0 ~~ 4pi xx 10^(-7) \"unitsml(H/m)\"] with a relative standard uncertainty of stem:[2.3 xx 10^(-10)]
+"""@en ;
+  skos:note """This quantity is considered to be constant in time.
+
+The numerical value of the magnetic constant was originally exactly stem:[4pi xx 10^(-7)]. It must be determined experimentally; see <<bipm-si>>.
+
+See <<bipm-si>> and <<iec60050-121,locality:item=\"121-11-14\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permeability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-26.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-26.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-26.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-26.2-0 ;
+  skos:definition """for linear media, proportionality constant between magnetic flux density stem:[bb(ii(B))] (<<t6-21>>) and magnetic field strength stem:[bb(ii(H))] (<<t6-25>>)
+
+[stem%unnumbered]
+++++
+bb(ii(B)) = mu bb(ii(H))
+++++
+"""@en ;
+  skos:note """Permeability stem:[mu] is a property of a medium. For an inhomogeneous medium, permeability stem:[mu] depends on position. For an isotropic medium, stem:[mu] is a scalar quantity; for an anisotropic medium, stem:[mu] is a second order tensor.
+
+See <<iec60050-121,locality:item=\"121-12-28\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative permeability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-27" ;
+  skosxl:prefLabel isoiec80000:term-t6-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-27-0 ;
+  skos:definition """for linear media, quotient of permeability stem:[mu] (<<t6-26.2>>) and the magnetic constant stem:[mu_0] (<<t6-26.1>>)
+
+[stem%unnumbered]
+++++
+mu_\"r\" = mu/mu_0
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-12-29\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic susceptibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-28-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chi_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-28" ;
+  skosxl:prefLabel isoiec80000:term-t6-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-28-1 ;
+  skos:definition """for linear media, proportionality constant between magnetization stem:[M] (<<t6-24>>) and magnetic field strength stem:[H] (<<t6-25>>)
+
+[stem%unnumbered]
+++++
+M = kappa H
+++++
+"""@en ;
+  skos:note """stem:[kappa = mu_\"r\" - 1] where stem:[mu_r] is relative permeability (<<t6-27>>).
+
+This definition applies to an isotropic medium. For an anisotropic medium, magnetic susceptibility is a second order tensor.
+
+The magnetization and the magnetic field strength depend on position.
+
+See <<iec60050-121,locality:item=\"121-12-37\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic polarization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-29" ;
+  skosxl:prefLabel isoiec80000:term-t6-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-29-0 ;
+  skos:definition """vector quantity given by the product of the magnetic constant stem:[mu_0] (<<t6-26.1>>) and magnetization stem:[M] (<<t6-24>>)
+
+[stem%unnumbered]
+++++
+J_\"m\" = mu_0 M
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-54\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic dipole moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-30-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-30" ;
+  skosxl:prefLabel isoiec80000:term-t6-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-30-1 ;
+  skos:definition """vector quantity given by the product of the magnetic constant stem:[mu_0] (<<t6-26.1>>) and magnetic moment stem:[m] (<<t6-23>>)
+
+[stem%unnumbered]
+++++
+j_\"m\" = mu_0 m
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-55\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^3*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coercivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-31-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coercive field strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-31" ;
+  skosxl:prefLabel isoiec80000:term-t6-31-0 ;
+  skosxl:altLabel isoiec80000:term-t6-31-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-31-0 ;
+  skos:definition """scalar quantity giving the magnetic field strength (<<t6-25>>) to be applied to bring the magnetic flux density (<<t6-21>>) in a substance from its remanent magnetic flux density to zero"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-12-69\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-1*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic vector potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-32" ;
+  skosxl:prefLabel isoiec80000:term-t6-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-32-0 ;
+  skos:definition """vector quantity expressed by
+
+[stem%unnumbered]
+++++
+bb(ii(B)) = bb(rot) bb(ii(A))
+++++
+
+where stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>)
+"""@en ;
+  skos:note """The magnetic vector potential is not unique since any irrotational vector field can be added to it without changing its rotation.
+
+The magnetic vector potential and the magnetic flux density depend on position.
+
+See <<iec60050-121,locality:item=\"121-11-23\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(A*m) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electromagnetic energy density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-33" ;
+  skosxl:prefLabel isoiec80000:term-t6-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-33-0 ;
+  skos:definition """scalar quantity given by the sum of scalar products:
+
+[stem%unnumbered]
+++++
+w = (1//2)(bb(ii(E)) * bb(ii(D)) + bb(ii(B)) * bb(ii(H)))
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(D))] is electric flux density (<<t6-12>>), stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>), and stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>)
+"""@en ;
+  skos:note """Electromagnetic energy is a special kind of energy (<<iso80000-5>>). The electromagnetic energy density depends on position.
+
+See <<iec60050-121,locality:item=\"121-11-65\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poynting vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(S))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-34" ;
+  skosxl:prefLabel isoiec80000:term-t6-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-34-0 ;
+  skos:definition """vector quantity given by the vector product
+
+[stem%unnumbered]
+++++
+bb(ii(S)) = bb(ii(E)) xx bb(ii(H))
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>) and stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>)
+"""@en ;
+  skos:note """The Poynting vector depends on the position.
+
+See <<iec60050-121,locality:item=\"121-11-66\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^-3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase speed of electromagnetic waves"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-35.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-35.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-35.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-35.1-0 ;
+  skos:definition """scalar quantity given by the quotient of angular frequency stem:[omega] (<<iso80000-3>>) and angular wavenumber stem:[k] (<<iso80000-3>>) in a given direction:
+
+[stem%unnumbered]
+++++
+c=omega/k
+++++
+"""@en ;
+  skos:note """See <<iso80000-3>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m/s ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "speed of light in vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-35.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "light speed in vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-35.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminal speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-35.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-35.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-35.2-0 ;
+  skosxl:altLabel isoiec80000:term-t6-35.2-1 ;
+  skosxl:altLabel isoiec80000:term-t6-35.2-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-35.2-0 ;
+  skos:definition """scalar quantity equal to the speed of electromagnetic waves in vacuum (<<iso80000-1>>)
+
+[stem%unnumbered]
+++++
+c_0 = 299792458 \"unitsml(m/s)\"
+++++
+"""@en ;
+  skos:note """This value is not only valid for electromagnetic waves in vacuum, but also for gravitational waves. It is also the upper limit for the speed of propagation of information since this requires a physical carrier. This quantity is considered to be constant in time.
+
+Its value has been fixed by CGMP (see <<bipm-si>>).
+
+See also <<iec60050-113,locality:item=\"113-01-34\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m/s ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "source voltage"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-36-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "source tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-36" ;
+  skosxl:prefLabel isoiec80000:term-t6-36-0 ;
+  skosxl:altLabel isoiec80000:term-t6-36-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-36-0 ;
+  skos:definition """voltage (<<t6-11.3>>) between the two terminals of an electric source when there is no electric current (<<t6-1>>) through the source"""@en ;
+  skos:note """The name \"electromotive force\" with the abbreviated term EMF, and the symbol stem:[E] are deprecated.
+See <<iec60050-131,locality:item=\"131-12-22\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-37.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-37.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-37.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-37.1-1 ;
+  skos:definition """for an irrotational magnetic field strength, scalar quantity expressed by
+
+[stem%unnumbered]
+++++
+bb(ii(H)) = -bb(\"grad\") V_\"m\"
+++++
+
+where stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>)
+"""@en ;
+  skos:note """The magnetic scalar potential is not unique since any constant scalar field can be added to it without changing its gradient.
+
+See <<iec60050-121,locality:item=\"121-11-58\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-37.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-37.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-37.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-37.2-0 ;
+  skos:definition """in a magnetic field strength, scalar quantity given by the line integral along a given curve stem:[\"C\"] from point stem:[\"a\"] to point stem:[\"b\"];
+
+[stem%unnumbered]
+++++
+U_\"m\" = int_(bb(ii(r))_\"a\"(\"C\"))^(bb(ii(r))_\"b\") bb(ii(H)) * \"d\"bb(ii(r))
+++++
+
+where stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>) and stem:[bb(ii(r))] is position vector (<<iso80000-3>>)
+"""@en ;
+  skos:note """For an irrotational magnetic field strength, this quantity is equal to the magnetic potential difference.
+
+See <<iec60050-121,locality:item=\"121-11-57\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-37.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetomotive force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-37.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-37.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-37.3" ;
+  skosxl:prefLabel isoiec80000:term-t6-37.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-37.3-0 ;
+  skos:definition """scalar quantity given by the line integral along a closed curve stem:[\"C\"];
+
+[stem%unnumbered]
+++++
+F_\"m\" = oint_\"C\" bb(ii(H)) * \"d\"bb(ii(r))
+++++
+
+where stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>) and stem:[bb(ii(r))] is position vector (<<iso80000-3>>)
+"""@en ;
+  skos:note """Compare to the remark in <<t6-36>>.
+
+See <<iec60050-121,locality:item=\"121-11-60\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of turns in a winding"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-38" ;
+  skosxl:prefLabel isoiec80000:term-t6-38-0 ;
+  skosxl:altLabel isoiec80000:term-t6-38-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-38-0 ;
+  skos:definition """<in winding> number of turns"""@en ;
+  skos:note """stem:[N] may be a non-integer number, see <<iso80000-3>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reluctance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-39-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-39" ;
+  skosxl:prefLabel isoiec80000:term-t6-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-39-1 ;
+  skos:definition """scalar quantity given by the quotient of magnetic tension stem:[U_\"m\"] (<<t6-37.2>>) and total magnetic flux stem:[Psi] (<<t6-22.4>>);
+
+[stem%unnumbered]
+++++
+R_\"m\" = (U_\"m\")/Psi
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-28\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^2*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permeance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-40" ;
+  skosxl:prefLabel isoiec80000:term-t6-40-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-40-0 ;
+  skos:definition """scalar quantity given by the inverse of reluctance stem:[R_\"m\"] (<<t6-39>>);
+
+[stem%unnumbered]
+++++
+ii(Lambda) = 1/R_\"m\"
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-29\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-41.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-41.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "self-inductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-41.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-41.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-41.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-41.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-41.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-41.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-41.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-41.1-1 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+L=Psi/I
+++++
+
+where stem:[Psi] is the total magnetic flux (<<t6-22.4>>) in a conducting loop caused by the magnetic flux density (<<t6-21>>) produced by the electric current stem:[I] (<<t6-1>>) in that loop
+"""@en ;
+  skos:note """The name \"self-inductance\" is used for the quantity associated with mutual inductance when stem:[n = m].
+
+See <<iec60050-131,locality:item=\"131-12-19\">> and <<iec60050-131,locality:item=\"131-12-35\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-41.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mutual inductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-41.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"mn\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-41.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-41.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-41.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-41.2-0 ;
+  skos:definition """for thin conducting loops (numbered stem:[m], stem:[n]), scalar quantity given by
+
+[stem%unnumbered]
+++++
+L_\"mn\" = Phi_\"m\"/I_\"n\"
+++++
+
+where stem:[Phi_\"m\"] is the total magnetic flux (<<t6-22.4>>) in a loop stem:[\"m\"], caused by the magnetic flux density (<<t6-21>>) produced by the electric current stem:[I_\"n\"] (<<t6-1>>) in another loop stem:[\"n\"]
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+L_\"mn\" = L_\"nm\"
+++++
+
+See <<iec60050-131,locality:item=\"131-12-36\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-42.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coupling factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-42.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-42.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-42.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-42.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-42.1-0 ;
+  skos:definition """for inductive coupling between two inductive elements (numbered stem:[\"m\"], stem:[\"n\"]), scalar quantity given by
+
+[stem%unnumbered]
+++++
+k = (abs(L_(\"mn\")))/(sqrt(L_\"m\"L_\"n\"))
+++++
+
+where stem:[L_\"m\"] and stem:[L_\"n\"] are their self-inductances (<<t6-41.1>>), and stem:[L_\"mn\"] is their mutual inductance (<<t6-41.2>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-41\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-42.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "leakage factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-42.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-42.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-42.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-42.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-42.2-0 ;
+  skos:definition """for inductive coupling between two inductive elements, scalar quantity given by
+
+[stem%unnumbered]
+++++
+sigma = 1 - k^2
+++++
+
+where stem:[k] is the coupling factor (<<t6-42.1>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-42\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conductivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-43-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-43 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-43" ;
+  skosxl:prefLabel isoiec80000:term-t6-43-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-43-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-43-1 ;
+  skos:definition """proportionality factor between electric current density stem:[J] (<<t6-8>>) and electric field strength stem:[E] (<<t6-10>>)
+
+[stem%unnumbered]
+++++
+J = sigma E
+++++
+"""@en ;
+  skos:note """Conductivity stem:[sigma] is a property of a medium. For an inhomogeneous medium, conductivity stem:[sigma] depends on position. For an isotropic medium, stem:[sigma] is a scalar quantity; for an anisotropic medium, stem:[sigma] is a second-order tensor.
+
+The symbol stem:[kappa] is used in electrochemistry (see <<iso80000-9>>).
+
+See <<iec60050-121,locality:item=\"121-12-03\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resistivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-44 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-44" ;
+  skosxl:prefLabel isoiec80000:term-t6-44-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-44-0 ;
+  skos:definition """scalar quantity given by the inverse of conductivity stem:[sigma] (<<t6-43>>)
+
+[stem%unnumbered]
+++++
+rho = 1/sigma
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-12-04\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^3*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-45-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "instantaneous power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-45-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-45 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-45" ;
+  skosxl:prefLabel isoiec80000:term-t6-45-0 ;
+  skosxl:altLabel isoiec80000:term-t6-45-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-45-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-45-1 ;
+  skos:definition """scalar quantity given by the product of instantaneous voltage stem:[u] (<<t6-11.3>>) and instantaneous electric current stem:[i] (<<t6-1>>)
+
+[stem%unnumbered]
+++++
+p = ui
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-30\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resistance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-46 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-46" ;
+  skosxl:prefLabel isoiec80000:term-t6-46-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-46-0 ;
+  skos:definition """property of a resistive element, equal to the scalar quantity given by the quotient of voltage stem:[u] (<<t6-11.3>>) and electric current stem:[i] (<<t6-1>>)
+
+[stem%unnumbered]
+++++
+R=u/i
+++++
+"""@en ;
+  skos:note """For alternating current, see <<t6-51.2>>.
+
+See <<iec60050-131,locality:item=\"131-12-04\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-47 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-47" ;
+  skosxl:prefLabel isoiec80000:term-t6-47-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-47-0 ;
+  skos:definition """property of a resistive element, equal to the scalar quantity given by the inverse of its resistance stem:[R] (<<t6-46>>)
+
+[stem%unnumbered]
+++++
+G=1/R
+++++
+"""@en ;
+  skos:note """For alternating current, see <<t6-52.3>>.
+
+See <<iec60050-131,locality:item=\"131-12-06\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-48-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase difference"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-48 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-48" ;
+  skosxl:prefLabel isoiec80000:term-t6-48-0 ;
+  skosxl:altLabel isoiec80000:term-t6-48-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-48-0 ;
+  skos:definition """scalar quantity given by the difference between the phase angle stem:[varphi_\"u\"] (<<iso80000-3>>) of the voltage (<<t6-11.3>>) and the phase angle stem:[varphi_\"i\"] of electric current (<<t6-1>>):
+
+[stem%unnumbered]
+++++
+varphi = varphi_\"u\" - varphi_\"i\"
+++++
+"""@en ;
+  skos:note """This concept can be generalized for any couple of periodic quantities.
+
+See <<iec60050-103,locality:item=\"103-07-06\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric current phasor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul I"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-49 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-49" ;
+  skosxl:prefLabel isoiec80000:term-t6-49-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-49-0 ;
+  skos:definition """for a sinusoidal current, described by stem:[i = hat I e^(\"j\"(omega t-varphi))], complex quantity stem:[ul I = hat I e^(\"j\" varphi)],
+
+where stem:[hat I] is amplitude, stem:[omega] is angular frequency (<<iso80000-3>>), stem:[t] is time (<<iso80000-3>>), stem:[varphi] is the phase angle (<<iso80000-3>>), and stem:[\"j\"] is the imaginary unit (<<iso80000-2>>).
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-26\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-50-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "voltage phasor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-50-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric tension phasor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-50-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul U"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-50 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-50" ;
+  skosxl:prefLabel isoiec80000:term-t6-50-0 ;
+  skosxl:altLabel isoiec80000:term-t6-50-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-50-0 ;
+  skos:definition """for a sinusoidal voltage, described by stem:[u = hat U e^(\"j\"(omega t- varphi))], complex quantity
+
+[stem%unnumbered]
+++++
+ul U = hat U e^(\"j\" varphi)
+++++
+
+where stem:[hat U] is amplitude, stem:[omega] is angular frequency (<<iso80000-3>>), stem:[t] is time (<<iso80000-3>>), stem:[varphi] is the phase angle (<<iso80000-3>>), and stem:[\"j\"] is the imaginary unit (<<iso80000-2>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-26\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-51.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "impedance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-51.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex impedance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-51.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.1-0 ;
+  skos:definition """scalar quantity given by the quotient of voltage phasor stem:[ul U] (<<t6-50>>) and electric current phasor stem:[ul I] (<<t6-49>>)
+
+[stem%unnumbered]
+++++
+ul Z = ul U // ul I
+++++
+"""@en ;
+  skos:note """stem:[ul Z = R + \"j\"X], where stem:[R] is resistance (<<t6-51.3>>) and stem:[X] is reactance (<<t6-51.4>>).
+
+stem:[\"j\"] is the imaginary unit.
+
+stem:[ul Z = abs(Z)e^(\"j\"varphi)]
+
+See <<iec60050-131,locality:item=\"131-12-43\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-51.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "impedance of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-51.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wave impedance in vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.2-0 ;
+  skosxl:altLabel isoiec80000:term-t6-51.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.2-0 ;
+  skos:definition """scalar quantity given by the quotient of the magnitude of the electric field strength (<<t6-10>>) and that of the magnetic field strength (<<t6-25>>) of electromagnetic waves in vacuum"""@en ;
+  skos:note """The impedance of vacuum is equal to stem:[c_0*mu_0]. This quantity is considered to be constant in time."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-51.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resistance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.3" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.3-0 ;
+  skos:definition """real part of impedance stem:[ul Z] (<<t6-51.1>>)
+
+[stem%unnumbered]
+++++
+R = \"Re \"ul Z
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-45\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-51.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reactance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "X"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.4" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.4-0 ;
+  skos:definition """imaginary part of impedance stem:[ul Z] (<<t6-51.1>>);
+
+[stem%unnumbered]
+++++
+X = \"Im \"ul Z
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-46\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-51.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "apparent impedance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.5" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.5-0 ;
+  skos:definition """scalar quantity given by the quotient of RMS voltage (<<t6-11.3>>) and RMS electric current (<<t6-1>>)"""@en ;
+  skos:note """Under sinusoidal conditions, the apparent impedance is the modulus of the impedance, stem:[Z = abs(Z)].
+
+See <<iec60050-131,locality:item=\"131-12-44\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-52.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "admittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-52.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex admittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-52.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.1-0 ;
+  skos:definition """quantity given by the inverse of impedance stem:[ul Z] (<<t6-51.1>>)
+
+[stem%unnumbered]
+++++
+ul Y = 1/(ul Z)
+++++
+"""@en ;
+  skos:note """stem:[ul Y = G + \"j\"B], where stem:[G] is conductance (<<t6-52.2>>), stem:[B] is susceptance (<<t6-52.3>>) and stem:[\"j\"] is the imaginary unit.
+
+[stem%unnumbered]
+++++
+ul Y = abs(Y)e^(-\"j\" varphi)
+++++
+
+See <<iec60050-131,locality:item=\"131-12-51\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-52.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "admittance of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.2-0 ;
+  skos:definition """quantity given by the inverse of the impedance of vacuum stem:[Z_0] (<<t6-51.2>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-52.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conductance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.3" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.3-0 ;
+  skos:definition """<for complex impedance> real part of admittance stem:[ul Y] (<<t6-52.1>>)
+
+[stem%unnumbered]
+++++
+G = \"Re \"ul Y
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-53\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-52.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "susceptance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.4" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.4-0 ;
+  skos:definition """imaginary part of admittance stem:[ul Y] (<<t6-52.1>>)
+
+[stem%unnumbered]
+++++
+B = \"Im \"ul Y
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-54\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-52.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "apparent admittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.5" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.5-0 ;
+  skos:definition """quotient of RMS electric current (<<t6-1>>) and RMS voltage (<<t6-11.3>>)"""@en ;
+  skos:note """Under sinusoidal conditions, the apparent admittance is the modulus of the admittance.(((admittance,modulus of)))
+
+See <<iec60050-131,locality:item=\"131-12-52\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quality factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-53 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-53" ;
+  skosxl:prefLabel isoiec80000:term-t6-53-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-53-0 ;
+  skos:definition """for non-radiating systems, where stem:[ul Z = R + \"j\"X], scalar quantity given by
+
+[stem%unnumbered]
+++++
+Q=(abs X)/R
+++++
+
+where stem:[ul Z] is impedance (<<t6-51.1>>), stem:[R] is resistance (<<t6-51.3>>), and stem:[X] is reactance (<<t6-51.4>>)
+"""@en ;
+  skos:note """For a linear non-radiating two-terminal element or circuit under sinusoidal conditions, the quality factor is the ratio of the absolute value of the reactive power to the active power. See <<iec60050-151,locality:item=\"151-15-45\">>.
+
+For a resonant system, the quality actor, stem:[Q] is defined as stem:[2pi] multiplied by the quotient of stored energy and dissipated energy. See <<iec60050-151,locality:item=\"151-15-46\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-54-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "loss factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-54-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dissipation factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-54-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-54 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-54" ;
+  skosxl:prefLabel isoiec80000:term-t6-54-0 ;
+  skosxl:altLabel isoiec80000:term-t6-54-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-54-0 ;
+  skos:definition """scalar quantity given by the inverse of quality factor stem:[Q] (<<t6-53>>);
+
+[stem%unnumbered]
+++++
+d=1/Q
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-55-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "loss angle"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-55-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-55 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-55" ;
+  skosxl:prefLabel isoiec80000:term-t6-55-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-55-0 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+delta = \"arctan \"d
+++++
+
+where stem:[d] is loss factor (<<t6-54>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-49\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-56-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "active power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-56-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-56 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-56" ;
+  skosxl:prefLabel isoiec80000:term-t6-56-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-56-0 ;
+  skos:definition """<for a periodic process> scalar quantity given by
+
+[stem%unnumbered]
+++++
+P = 1/T int_0^T p \"d\"t
+++++
+
+where stem:[T] is the period (<<iso80000-3>>), stem:[t] is time (<<iso80000-3>>) and stem:[p] is instantaneous power (<<t6-45>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-42\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "apparent power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-57-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs (ul S)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-57 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-57" ;
+  skosxl:prefLabel isoiec80000:term-t6-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-57-1 ;
+  skos:definition """scalar quantity given by the product of RMS value of voltage stem:[U] (<<t6-11.3>>) and RMS value of electric current stem:[I] (<<t6-1>>);
+
+[stem%unnumbered]
+++++
+S = U I
+++++
+"""@en ;
+  skos:note """For RMS values see <<cls-0.4.4>>.
+
+See <<iec60050-131,locality:item=\"131-11-41\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-58-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-58-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-58 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-58" ;
+  skosxl:prefLabel isoiec80000:term-t6-58-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-58-0 ;
+  skos:definition """quotient of the active power stem:[P] (<<t6-56>>) and apparent power stem:[S] (<<t6-57>>);
+
+[stem%unnumbered]
+++++
+lambda=P/S
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-46\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-59 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-59" ;
+  skosxl:prefLabel isoiec80000:term-t6-59-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-59-0 ;
+  skos:definition """quantity given by the product of voltage phasor stem:[ul U] (<<t6-50>>) and the complex conjugate of the electric current phasor stem:[ul I] (<<t6-49>>):
+
+[stem%unnumbered]
+++++
+ul S = ul U ul I
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+ul S = P + \"j\"Q
+++++
+
+where stem:[P] is active power (<<t6-56>>) and stem:[Q] is reactive power (<<t6-60>>)
+
+See <<iec60050-131,locality:item=\"131-11-39\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-60-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reactive power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-60-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-60 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-60" ;
+  skosxl:prefLabel isoiec80000:term-t6-60-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-60-0 ;
+  skos:definition """scalar quantity given by the imaginary part of complex power stem:[ul S] (<<t6-59>>);
+
+[stem%unnumbered]
+++++
+Q = \"Im \" ul S
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-44\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-var ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-61-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "non-active power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-61-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-61-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_~"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-61 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-61" ;
+  skosxl:prefLabel isoiec80000:term-t6-61-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-61-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-61-1 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+Q' = sqrt(S^2 - P^2)
+++++
+
+where stem:[S] is apparent power (<<t6-57>>) and stem:[P] is active power (<<t6-56>>)
+"""@en ;
+  skos:note """This formula only holds for sinusoidal waveforms.
+
+See <<iec60050-131,locality:item=\"131-11-43\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .
+
+isoiec80000:term-t6-62-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "active energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-62-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-62 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-62" ;
+  skosxl:prefLabel isoiec80000:term-t6-62-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-62-0 ;
+  skos:definition """scalar quantity given by the integral over the time interval from stem:[t_1] to stem:[t_2]
+
+[stem%unnumbered]
+++++
+W = int_(t_1)^(t_2) p \"d\"t
+++++
+
+where stem:[p] is instantaneous power (<<t6-45>>) and stem:[t] is time (<<iso80000-3>>).
+"""@en ;
+  skos:note """The coherent SI unit of active energy is joule, stem:[\"unitsml(J)\"]. Another unit is watt hour (<<iec60050-131,locality:item=\"131-11-58\">>). Its multiple kilowatt hour, stem:[\"unitsml(kW*h)\"], is commonly used for billing consumers of electric energy and is therefore indicated on electric energy meters.
+
+See <<iec60050-131,locality:item=\"131-11-57\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-W*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^-2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

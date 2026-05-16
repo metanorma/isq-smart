@@ -1,0 +1,24 @@
+isoiec80000:term-t7-30.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "emissivity at a specified wavelength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-30.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon(lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-30.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-30.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-30.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-30.2-0 ;
+  skos:definition """quotient of the radiant exitance of a radiator at a specified wavelength and the radiant exitance of a Planckian radiator at the same temperature and at the same wavelength, expressed by
+
+[stem%unnumbered]
+++++
+epsilon(lambda) = M(lambda) // M_\"b\"(lambda)
+++++
+
+where stem:[M(lambda)] is the radiant exitance (<<t7-8.1>>) of a thermal radiator at a specified wavelength and stem:[M_\"b\"(lambda)] is the radiant exitance of a Planckian radiator at the same temperature at a specified wavelength (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

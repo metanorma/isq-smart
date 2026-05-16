@@ -1,0 +1,26 @@
+isoiec80000:term-t3-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-26.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-26.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-26.2" ;
+  skosxl:prefLabel isoiec80000:term-t3-26.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-26.2-0 ;
+  skos:definition """change of phase angle (<<t3-7>>) with the length (<<t3-1.1>>) along the path travelled by a plane wave"""@en ;
+  skos:note """If a quantity is a function of distance expressed by:
+
+[stem%unnumbered]
+++++
+f(x) prop \"cos \"beta (x-x_0)
+++++
+
+where stem:[x] denotes distance (<<t3-1.8>>), then stem:[beta] denotes the phase coefficient.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*m^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

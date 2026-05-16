@@ -1,0 +1,22 @@
+isoiec80000:term-t11-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Deborah number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "De"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.8-0 ;
+  skos:definition """quotient of relaxation time of viscoelastic fluids and observation duration in rheology of viscoelastic fluids, expressed by
+
+stem:[De = t_\"c\"//t_\"p\"]; where
+
+stem:[t_\"c\"]:: is stress relaxation time, and
+stem:[t_\"p\"]:: is observation duration (<<iso80000-3>>)
+"""@en ;
+  skos:note """The stress relaxation time is sometimes called the Maxwell relaxation time."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

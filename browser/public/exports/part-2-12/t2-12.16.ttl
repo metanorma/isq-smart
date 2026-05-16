@@ -1,0 +1,25 @@
+isoiec80000:term-t2-12.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "order inferior to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x) = \"o\"(g(x))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.16-0 ;
+  skos:definition """stem:[f(x)] is lower case stem:[\"o\"] of stem:[g(x)],
+
+stem:[f(x)//g(x) -> 0] in the limit implied by the context,
+
+stem:[f(x)] is of the order inferior to stem:[g(x)]
+"""@en ;
+  skos:note """The symbol \"=\" here is used for historical reasons and does not have the meaning of equality, because transitivity does not apply.
+
+[example]
+stem:[\"cos\" x = 1 + \"o\"(x)], when stem:[x -> 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

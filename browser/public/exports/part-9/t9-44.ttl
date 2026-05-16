@@ -1,0 +1,24 @@
+isoiec80000:term-t9-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electrolytic conductivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-44 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-44" ;
+  skosxl:prefLabel isoiec80000:term-t9-44-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-44-0 ;
+  skos:definition """quotient of the magnitude of electric current density stem:[J] (<<iec80000-6>>) and the magnitude electric field strength stem:[E] (<<iec80000-6>>) in an electrolyte:
+
+[stem%unnumbered]
+++++
+kappa = J//E
+++++
+"""@en ;
+  skos:note """For anisotropic media, stem:[kappa] is a tensor. In <<iec80000-6>> the symbols stem:[sigma], stem:[gamma] are used."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

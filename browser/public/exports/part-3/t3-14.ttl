@@ -1,0 +1,22 @@
+isoiec80000:term-t3-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period duration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-14" ;
+  skosxl:prefLabel isoiec80000:term-t3-14-0 ;
+  skosxl:altLabel isoiec80000:term-t3-14-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-14-0 ;
+  skos:definition """duration (<<t3-9>>) of one cycle of a periodic event"""@en ;
+  skos:note """A periodic event is an event that occurs regularly with a fixed time interval."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

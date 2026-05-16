@@ -1,0 +1,19 @@
+isoiec80000:term-t2-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of complex numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(C))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.5-0 ;
+  skos:definition """the set of complex numbers"""@en ;
+  skos:note """stem:[bb(sf(C))** = {z in bb(sf(C)) &#x2223; z != 0}]
+
+The symbol stem:[CC] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

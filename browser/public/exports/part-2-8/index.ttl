@@ -1,0 +1,396 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-8 a smart:PublicationDocument ;
+  dcterms:title "Part 2-8"@en ;
+  dcterms:identifier "ISO 80000-2-8" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-8.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equality"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a = b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.1-0 ;
+  skos:definition """stem:[a] is equal to stem:[b] +
+stem:[a] equals stem:[b]
+"""@en ;
+  skos:note """The symbol stem:[-=] may be used to emphasize that a particular equality is an identity, i.e. holds universally.
+
+But see <<t2-8.18>> for another meaning.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inequality"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a != b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.2-0 ;
+  skos:definition """stem:[a] is not equal to stem:[b]"""@en ;
+  skos:note """The negating stroke may also be vertical."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equal to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a &#x2254; b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.3-0 ;
+  skos:definition """stem:[a] is by definition equal to stem:[b]"""@en ;
+  skos:note """[example]
+====
+stem:[p &#x2254; mv], where stem:[p] is momentum, stem:[m] is mass and stem:[v] is velocity.
+
+The symbols stem:[=_(\"def\")] and stem:[&#x225D;] are also used.
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "corresponds to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a &#x2259; b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.4-0 ;
+  skos:definition """stem:[a] corresponds to stem:[b]"""@en ;
+  skos:note """[example]
+====
+When stem:[E = kT], then stem:[1 \"unitsml(eV)\" &#x2259; 11604.5 \"unitsml(K)\"].
+
+When stem:[1 \"unitsml(cm)\"] on a map corresponds to a length of stem:[10 \"unitsml(km)\"], one may write stem:[1 \"unitsml(cm)\" &#x2259; 10 \"unitsml(km)\"].
+
+The correspondence is not symmetric.
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "approximately equal to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a ~~ b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.5-0 ;
+  skos:definition """stem:[a] is approximately equal to stem:[b]"""@en ;
+  skos:note """It depends on the user whether an approximation is sufficiently good. Equality is not excluded."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "asymptotically equal to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a &#x2243; b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.6-0 ;
+  skos:definition """stem:[a] is asymptotically equal to stem:[b]"""@en ;
+  skos:note """[example]
+====
+stem:[1/(sin(x-a)) &#x2243; 1/(x-a)] as stem:[x -> a]
+
+(For stem:[x -> a], see <<t2-8.16>>.)
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proportional to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a ~ b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.7-0 ;
+  skos:definition """stem:[a] is proportional to stem:[b]"""@en ;
+  skos:note """The symbol stem:[~] is also used for equivalence relations.
+
+The notation stem:[a prop b] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "congruent to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M ~= N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.8-0 ;
+  skos:definition """stem:[M] is congruent to stem:[N],
+
+stem:[M] is isomorphic to stem:[N]
+"""@en ;
+  skos:note """stem:[M] and stem:[N] are point sets (geometrical figures).
+
+This symbol is also used for isomorphisms of mathematical structures.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "less than"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a < b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.9-0 ;
+  skos:definition """stem:[a] is less than stem:[b]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "greater than"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b > a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.10-0 ;
+  skos:definition """stem:[b] is greater than stem:[a]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "less than or equal to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a <= b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.11-0 ;
+  skos:definition """stem:[a] is less than or equal to stem:[b]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "greater than or equal to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b >= a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.12-0 ;
+  skos:definition """stem:[b] is greater than or equal to stem:[a]"""@en ;
+  skos:note """It depends on the situation whether stem:[a] is sufficiently small as compared to stem:[b]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "much greater than"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b &#x226B; a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.14-0 ;
+  skos:definition """stem:[b] is much greater than stem:[a]"""@en ;
+  skos:note """It depends on the situation whether stem:[b] is sufficiently great as compared to stem:[a]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "infinity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "oo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.15-0 ;
+  skos:definition """infinity"""@en ;
+  skos:note """This symbol does not denote a number but is often part of various expressions dealing with limits.
+
+The notations stem:[+oo, -oo] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tends to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x -> a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.16-0 ;
+  skos:definition """stem:[x] tends to stem:[a]"""@en ;
+  skos:note """This symbol occurs as part of various expressions dealing with limits.
+
+stem:[a] may be also stem:[oo], stem:[+oo], or stem:[-oo].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "divides"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m &#x2223; n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.17-0 ;
+  skos:definition """stem:[m] divides stem:[n]"""@en ;
+  skos:note """For integers stem:[m] and stem:[n]:
+
+stem:[EE k in bb(sf(Z))] stem:[m*k = n]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "congruent to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n -= k \" mod \" m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.18-0 ;
+  skos:definition """stem:[n] is congruent to stem:[k] modulo stem:[m]"""@en ;
+  skos:note """For integers stem:[n], stem:[k] and stem:[m]:
+
+stem:[m &#x2223; (n - k)]
+
+This concept of number theory must not be confused with identity of an equation, mentioned in <<t2-8.1>>, column 4.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .
+
+isoiec80000:term-t2-8.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "parentheses"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t2-8.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "square brackets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t2-8.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "braces"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t2-8.19-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angle brackets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a + b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-8.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "[a + b\\]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-8.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{a + b}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-8.19-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "<<a + b>>"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.19-0 ;
+  skosxl:altLabel isoiec80000:term-t2-8.19-1 ;
+  skosxl:altLabel isoiec80000:term-t2-8.19-2 ;
+  skosxl:altLabel isoiec80000:term-t2-8.19-3 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-3 ;
+  skos:definition """parentheses +
+square brackets +
+braces +
+angle brackets
+"""@en ;
+  skos:note """It is recommended to use only parentheses for grouping, since brackets and braces often have a specific meaning in particular fields. Parentheses can be nested without ambiguity."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .

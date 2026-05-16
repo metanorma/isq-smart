@@ -1,0 +1,20 @@
+isoiec80000:term-t4-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kinematic viscosity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(ii(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-25" ;
+  skosxl:prefLabel isoiec80000:term-t4-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-25-0 ;
+  skos:definition """quotient of dynamic viscosity stem:[eta] (<<t4-24>>) and mass density
+stem:[rho] (<<t4-2>>) of a fluid:
+
+stem:[sf(ii(v)) = eta/rho]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

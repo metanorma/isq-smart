@@ -1,0 +1,77 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-17 a smart:PublicationDocument ;
+  dcterms:title "Part 2-17"@en ;
+  dcterms:identifier "ISO 80000-2-17" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian coordinate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x, y, z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-17.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-17.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-17.1-0 ;
+  skos:definition """stem:[bb(ii(r)) = xbb(ii(e))_x + ybb(ii(e))_y + zbb(ii(e))_z] +
+stem:[\"d\"bb(ii(r)) = \"d\"x\" \"bb(ii(e))_x + \"d\"y\" \"bb(ii(e))_y + \"d\"z\" \"bb(ii(e))_z]
+"""@en ;
+  skos:note """The base vectors stem:[bb(ii(e))_x, bb(ii(e))_y, bb(ii(e))_z] form an orthonormal system (i.e. the vectors are unit vectors and orthogonal) which is right-handed, see <<fig1;and!fig4>>.
+
+stem:[bb(ii(e))_1, bb(ii(e))_2, bb(ii(e))_3] or stem:[bb(ii(i)), bb(ii(j)), bb(ii(k))] are also used for the base vectors and stem:[x_1, x_2, x_3] or stem:[i, j, k] for the coordinates.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-17 .
+
+isoiec80000:term-t2-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cylindrical coordinate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho, varphi, z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-17.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-17.2-0 ;
+  skos:definition """stem:[bb(ii(r)) = rho\" \"bb(ii(e))_rho + z\" \"bb(ii(e))_z] +
+stem:[\"d\"bb(ii(r)) = \"d\"rho\" \"bb(e)_rho + rho\" d\"varphi\" \"e_varphi + \"d\"z\" \"e_z]
+"""@en ;
+  skos:note """stem:[bb(ii(e))_rho (varphi), bb(ii(e))_varphi(varphi), bb(ii(e))_z] form an orthonormal right-handed system. See <<fig2>>.
+
+If stem:[z = 0], then stem:[rho] and stem:[varphi] are polar coordinates in the plane.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-17 .
+
+isoiec80000:term-t2-17.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical coordinate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-17.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r, vartheta, varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-17.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-17.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-17.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-17.3-0 ;
+  skos:definition """stem:[bb(ii(r)) = r\" \"bb(ii(e))_r] +
+stem:[\"d\"bb(ii(r)) = \"d\"r bb(ii(e))_r + r \"d\"vartheta bb(ii(e))_vartheta + r\" sin \"vartheta\" d\"varphi\" \"bb(ii(e))_varphi]
+"""@en ;
+  skos:note """stem:[bb(ii(e))_r(vartheta,varphi), bb(ii(e))_vartheta(vartheta, varphi), bb(ii(e))_varphi(varphi)] form an orthonormal right-handed system.
+
+See <<fig3>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-17 .

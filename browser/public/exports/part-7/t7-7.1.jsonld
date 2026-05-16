@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "irradiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "E_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(E)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-7.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-7.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-7.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident radiant flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nE_\"e\" = (\"d\"Phi_\"e\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>) and stem:[A] is the area (<<iso80000-3>>) on which the radiant flux is incident\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding photometric quantity is \"illuminance\" (<<t7-16>>). The corresponding quantity for photons is \"photon irradiance\" (<<t7-23>>).\n\nThe quantity \"spherical irradiance\" is defined by the mean value of irradiance on the outer curved surface of a very small (real or imaginary) sphere at a point in space.\n\nIt can be expressed by\n\n[stem%unnumbered]\n++++\nE_(\"e\",0) = int_(4pi)L_\"e\" \"d\"Omega\n++++\n\nwhere stem:[Omega] is solid angle (<<iso80000-3>>) and stem:[L_\"e\"] is radiance (<<t7-6.1>>).\n\n(See <<cie017,locality:term=\"17-21-054\">>.)\n\nIt can be expressed by the quotient of the radiant flux (<<t7-4.1>>) of all the radiation incident on the outer surface of an infinitely small sphere centred at the specified point and the area (<<iso80000-3>>) of the diametrical cross-section of that sphere.\n\nSpherical irradiance is also called \"fluence rate\" or \"radiant fluence rate\".\n\nThe corresponding photometric quantity to spherical irradiance is called \"spherical illuminance\".\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+isoiec80000:term-t11-4.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bagnold number <solid particles>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ba_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.11-0 ;
+  skos:definition """quotient of drag force and viscous force in a fluid transferring solid particles, expressed by
+
+stem:[Ba_2 = (rho_\"s\" d^2 dot gamma)/eta sqrt(1//(f_\"s\"^(1//2)-1))]; where
+
+stem:[rho_\"s\"]:: is mass density (<<iso80000-4>>) of particles,
+stem:[d]:: is diameter (<<iso80000-3>>) of particles,
+stem:[dot gamma = v//d]:: is shear rate time-derivative of shear strain (<<iso80000-4>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of fluid, and
+stem:[f_\"s\"]:: is volumic fraction of solid particles
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

@@ -1,0 +1,36 @@
+isoiec80000:term-t6-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "voltage"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-11.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-11.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "U_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-11.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.3" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.3-0 ;
+  skosxl:altLabel isoiec80000:term-t6-11.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.3-2 ;
+  skos:definition """for a conductor, scalar quantity given by the electric potential difference stem:[V_\"ab\"] (<<t6-11.2>>) between two points stem:[\"a\"] and stem:[\"b\"] respectively"""@en ;
+  skos:note """The name \"voltage\", commonly used in the English language, is given in the IEV, but it is an exception to the principle that a quantity name should not refer to any name of a unit.
+
+See <<iec60050-121,locality:item=\"121-11-27\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

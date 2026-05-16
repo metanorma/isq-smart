@@ -1,0 +1,22 @@
+isoiec80000:term-t4-30.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass change rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-30.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-30.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-30.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-30.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-30.3-0 ;
+  skos:definition """rate of increment of mass stem:[m] (<<t4-1>>):
+
+stem:[q_m = (\"d\"m)/(\"d\"t)]
+
+where stem:[\"d\"m] is the infinitesimal mass (<<t4-1>>) increment and
+stem:[\"d\"t] is the infinitesimal duration (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

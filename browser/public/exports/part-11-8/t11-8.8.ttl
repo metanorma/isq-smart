@@ -1,0 +1,27 @@
+isoiec80000:term-t11-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic pressure number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(m p)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.8-0 ;
+  skos:definition """quotient of gas pressure and magnetic pressure in a gas or plasma, expressed by
+
+stem:[N_(m p) = p (2mu)/B^2]; where
+
+stem:[p]:: is pressure (<<iso80000-4>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[p_\"m\" = B^2//(2mu)] is called magnetic pressure, where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

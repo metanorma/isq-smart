@@ -1,0 +1,24 @@
+isoiec80000:term-t10-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resonance energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-37.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"res\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-37.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-37.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-37.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-37.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-37.2-1 ;
+  skos:definition """kinetic energy (<<iso80000-4>>) of an incident particle, in the reference frame of the target, corresponding to a resonance in a nuclear reaction"""@en ;
+  skos:note """The energy of the resonance corresponds to the difference of the energy levels involved of the nucleus."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

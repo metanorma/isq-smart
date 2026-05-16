@@ -1,0 +1,37 @@
+isoiec80000:term-t4-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kinetic friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-23.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(f)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.2-0 ;
+  skosxl:altLabel isoiec80000:term-t4-23.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.2-1 ;
+  skos:definition """proportionality factor between the magnitudes of the kinetic friction force,
+stem:[F_(rm(mu))] (<<t4-9.4>>) and the normal component stem:[N] of the
+contact force (<<t4-9.1>>):
+
+stem:[F_(rm(mu)) = mu N]
+"""@en ;
+  skos:note """When it is not necessary to distinguish between dynamic friction factor and
+static friction factor, the name friction factor may be used for both.
+
+The dynamic friction factor stem:[mu] is independent in first approximation
+of the contact surface.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

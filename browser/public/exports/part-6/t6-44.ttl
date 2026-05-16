@@ -1,0 +1,24 @@
+isoiec80000:term-t6-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resistivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-44 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-44" ;
+  skosxl:prefLabel isoiec80000:term-t6-44-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-44-0 ;
+  skos:definition """scalar quantity given by the inverse of conductivity stem:[sigma] (<<t6-43>>)
+
+[stem%unnumbered]
+++++
+rho = 1/sigma
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-12-04\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^3*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

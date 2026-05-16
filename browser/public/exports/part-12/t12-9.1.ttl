@@ -1,0 +1,50 @@
+isoiec80000:term-t12-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t12-9.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular repetency <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-9.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(q)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-9.1-0 ;
+  skosxl:altLabel isoiec80000:term-t12-9.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.1-1 ;
+  skos:definition """quotient of momentum (<<iso80000-4>>) and the reduced Planck constant (<<iso80000-1>>)"""@en ;
+  skos:note """The corresponding vector (<<iso80000-2>>) quantity is called wave vector (<<iso80000-3>>), expressed by:
+
+[stem%unnumbered]
+++++
+bb(ii(k)) = bb(ii(p))/&#8463;
+++++
+
+where stem:[bb(ii(p))] is the momentum (<<iso80000-4>>) of quasi free electrons in an electron gas, and stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>); for phonons, its magnitude is
+
+[stem%unnumbered]
+++++
+k = (2pi)/lambda
+++++
+
+where stem:[lambda] is the wavelength (<<iso80000-3>>) of the lattice vibrations.
+
+When a distinction is needed between stem:[k] and the symbol for the Boltzmann constant (<<iso80000-1>>), stem:[k_\"B\"] can be used for the latter.
+
+When a distinction is needed, stem:[q] should be used for phonons, and stem:[k] for particles such as electrons and neutrons.
+
+The method of cut-off must be specified.
+
+In condensed matter physics, angular wavenumber is often called wavenumber.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

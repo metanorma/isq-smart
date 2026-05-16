@@ -1,0 +1,29 @@
+isoiec80000:term-t11-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Nusselt number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N u**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.4-0 ;
+  skos:definition """relation between mass flux at an interface and specific flux by pure molecular diffusion in a layer of thickness stem:[l] for mass transfer at the boundary of a fluid, expressed by
+
+stem:[N u** = k'l//(rho D)]; where
+
+stem:[k']:: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]::: is area (<<iso80000-3>>),
+stem:[l]:: is thickness (<<iso80000-3>>),
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """Sometimes this quantity is called the Sherwood number, stem:[Sh]. +
+
+Compare with <<t11-5.5>>, Nusselt number for heat transfer.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

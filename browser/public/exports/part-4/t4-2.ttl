@@ -1,0 +1,33 @@
+isoiec80000:term-t4-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[rho]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[rho_\"m\"]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-2" ;
+  skosxl:prefLabel isoiec80000:term-t4-2-0 ;
+  skosxl:altLabel isoiec80000:term-t4-2-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-2-1 ;
+  skos:definition """quantity representing the spatial distribution of mass of a continuous
+material:
+
+stem:[rho(r)=(\"d\"m)/(\"d\"V)]
+
+where stem:[m] is mass of the material contained in an infinitesimal domain
+at point stem:[r] and stem:[V] is volume of this domain
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

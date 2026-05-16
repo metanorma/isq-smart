@@ -1,0 +1,27 @@
+isoiec80000:term-t9-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molecular concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-9.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-9.2-1 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of number stem:[N_\"X\"] of molecules of substance stem:[\"X\"] and volume stem:[V] (<<iso80000-3>>) of the mixture:
+
+[stem%unnumbered]
+++++
+C_\"X\" = N_\"X\"//V
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

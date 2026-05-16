@@ -1,0 +1,31 @@
+isoiec80000:term-t10-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rydberg constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_(oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-7" ;
+  skosxl:prefLabel isoiec80000:term-t10-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-7-0 ;
+  skos:definition """spectroscopic constant that determines the wave numbers of the lines in the spectrum of hydrogen:
+
+[stem%unnumbered]
+++++
+R_(oo) = (e^2)/(8pi epsilon_0 a_0 h c_0)
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>),
+stem:[a_0]:: is the Bohr radius (<<t10-6>>),
+stem:[h]:: is the Planck constant (<<iso80000-1>>), and
+stem:[c_0]:: is the speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  skos:note """The quantity stem:[R_y = R_(oo)hc_0] is called the Rydberg energy."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

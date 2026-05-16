@@ -1,0 +1,26 @@
+isoiec80000:term-t2-18.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dyadic product"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ab)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.21-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) ox bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.21-1 ;
+  skos:definition """dyadic product, +
+tensor product of two vectors stem:[bb(ii(a))] and stem:[bb(ii(b))]
+"""@en ;
+  skos:note """tensor of the second order with coordinates
+
+stem:[(bb(ab))_(ij) = a_ib_j]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

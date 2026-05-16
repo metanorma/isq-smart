@@ -1,0 +1,21 @@
+isoiec80000:term-t2-18.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Levi-Civita symbol"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(varepsilon)_(ijk)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.10-0 ;
+  skos:definition """Levi-Civita symbol"""@en ;
+  skos:note """stem:[rm(varepsilon)_(123) = rm(varepsilon)_(231) = rm(varepsilon)_(312) = 1]
+
+stem:[rm(varepsilon)_(132) = rm(varepsilon)_(321) = rm(varepsilon)_(213) = -1]
+
+All other stem:[rm(varepsilon)_(ijk)] are equal to stem:[0].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

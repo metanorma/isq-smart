@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-21.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mass defect",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-21.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "B",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-21.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-21.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-21.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-21.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "sum of the product of the proton number and the hydrogen atomic mass, and the neutron rest mass, minus the rest mass of the atom:\n\n[stem%unnumbered]\n++++\nB = Z m(\"\"^1\"H\") + N m_\"n\" - m_\"a\"\n++++\n\nwhere\n\nstem:[Z]:: is the proton number (<<t10-1.1>>) of the atom,\nstem:[m(\"\"^1\"H\")]:: is atomic mass (<<t10-4.1>>) of stem:[\"\"^1\"H\"],\nstem:[N]:: is neutron number (<<t10-1.2>>),\nstem:[m_\"n\"]:: is the rest mass (<<t10-2>>) of the neutron, and\nstem:[m_\"a\"]:: is the rest mass (<<t10-2>>) of the atom\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The mass excess is usually expressed in daltons, stem:[1 \"unitsml(Da)\" = 1 \"unitsml(u)\"].\n\nIf the binding energy of the orbital electrons is neglected, stem:[Bc_0^2] is equal to the binding energy of the nucleus.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-kg"
+        },
+        {
+          "@id": "isoiec80000:unit-Da"
+        },
+        {
+          "@id": "isoiec80000:unit-u"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

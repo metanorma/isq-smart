@@ -1,0 +1,22 @@
+isoiec80000:term-t9-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient <chemistry>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-39" ;
+  skosxl:prefLabel isoiec80000:term-t9-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-39-0 ;
+  skos:definition """proportionality coefficient of local molecular concentration stem:[C_\"B\"] (<<t9-9.2>>) of substance stem:[\"B\"] in the mixture multiplied by the local average velocity (<<iso80000-3>>) stem:[v_\"B\"] of the molecules of stem:[\"B\"], and minus the gradient of the local molecular concentration stem:[C_\"B\"] (<<t9-9.2>>) of substance stem:[\"B\"] in the mixture, expressed by:
+
+[stem%unnumbered]
+++++
+C_\"B\" << v_\"B\" >> = -D bb(\"grad\") C_\"B\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

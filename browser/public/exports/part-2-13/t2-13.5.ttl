@@ -1,0 +1,19 @@
+isoiec80000:term-t2-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "natural logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"ln \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.5-0 ;
+  skos:definition """natural logarithm of stem:[x]"""@en ;
+  skos:note """stem:[\"ln \"x = \"log\"_e x]
+
+stem:[\"log \"x] shall not be used in place of stem:[\"ln \"x], stem:[\"lg \"x], stem:[\"lb \"x], or stem:[\"log\"_e x], stem:[log_(10) x], stem:[log_2 x].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .

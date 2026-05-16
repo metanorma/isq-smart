@@ -1,0 +1,115 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous energy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: quantity of light",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Q)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-12",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-12",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "energy of electromagnetic waves weighted by the spectral luminous efficiency (<<t7-10.2>>) multiplied by maximum luminous efficacy (<<t7-11.3>>) of a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous energy for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nQ_\"v\" = K_\"m\" int_0^(oo) Q_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[Q_(\"e\",lambda)(lambda)] is the spectral radiant energy (<<t7-2.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>), and stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>).\n\nLuminous energy can be emitted, transferred or received.\n\nLuminous energy can be expressed by the time integral of the luminous flux (<<t7-13>>), stem:[Phi_\"v\"], over a given duration (<<iso80000-3>>), stem:[Delta t]\n\n[stem%unnumbered]\n++++\nQ_\"v\" = int_(Delta t) Phi_\"v\" \"d\"t\n++++\n\nThe corresponding radiometric quantity is \"radiant energy\" (<<t7-2.1>>). The corresponding quantity for photons is \"photon energy\" (<<t7-19.2>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm*s"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*s"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

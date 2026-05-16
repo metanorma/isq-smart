@@ -1,0 +1,24 @@
+isoiec80000:term-t2-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian product of several sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "prod_(i=1)^n A_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.17-0 ;
+  skos:definition """Cartesian product of the sets
+
+stem:[A_1, A_2, ..., A_n]
+
+stem:[prod_(i=1)^n A_i = A_1 xx ... xx A_n]
+"""@en ;
+  skos:note """The set of ordered stem:[n]-tuples stem:[(x_1, x_2, ..., x_n)] such that stem:[x_1 in A_1, x_2 in A_2, ..., x_n in A_n].
+
+stem:[A xx A xx ... xx A] is denoted by stem:[A^n], where stem:[n] is the number of factors in the product.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

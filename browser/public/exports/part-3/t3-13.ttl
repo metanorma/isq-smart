@@ -1,0 +1,26 @@
+isoiec80000:term-t3-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular acceleration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(alpha)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-13" ;
+  skosxl:prefLabel isoiec80000:term-t3-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-13-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity giving the rate of change of angular velocity (<<t3-12>>)"""@en ;
+  skos:note """The angular acceleration vector is given by:
+
+[stem%unnumbered]
+++++
+bb(alpha) = (\"d\"bb(omega))/(\"d\"t)
+++++
+
+Where stem:[bb(omega)] denotes the angular velocity (<<t3-12>>) and stem:[t] the duration (<<t3-9>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

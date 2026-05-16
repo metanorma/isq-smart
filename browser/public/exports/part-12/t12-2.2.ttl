@@ -1,0 +1,23 @@
+isoiec80000:term-t12-2.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fundamental reciprocal lattice vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-2.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(b))_1, bb(ii(b))_2, bb(ii(b))_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-2.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-2.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-2.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-2.2-0 ;
+  skos:definition """fundamental translation vectors for the reciprocal lattice"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+bb(ii(a))_i * bb(ii(b))_i = 2pi delta_(ij)
+++++
+
+In crystallography, however, the quantities stem:[(bb(ii(b))_j)/(2pi)] are also often used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

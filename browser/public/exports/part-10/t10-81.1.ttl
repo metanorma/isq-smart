@@ -1,0 +1,58 @@
+isoiec80000:term-t10-81.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absorbed dose"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-81.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-81.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-81.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-81.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-81.1-0 ;
+  skos:definition """differential quotient of stem:[bar epsilon] with respect to stem:[m], where stem:[bar epsilon] is the mean energy (<<iso80000-5>>) imparted by ionizing radiation to matter of mass (<<iso80000-4>>) stem:[m]:
+
+[stem%unnumbered]
+++++
+D = (\"d\"bar epsilon)/(\"d\"m)
+++++
+"""@en ;
+  skos:note """The gray is a special name for joule per kilogram, to be used as the coherent SI unit for absorbed dose.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Gy)\" = 1 \"unitsml(J/kg)\"
+++++
+
+[stem%unnumbered]
+++++
+bar epsilon = int D \"d\"m
+++++
+
+where stem:[\"d\"m] is the element of mass of the irradiated matter.
+
+In the limit of a small domain, the mean specific energy stem:[bar z = (ii(Delta)bar epsilon)/(ii(Delta)m)] is equal to the absorbed dose stem:[D].
+
+The absorbed dose can also be expressed in terms of the volume of the mass element by:
+
+[stem%unnumbered]
+++++
+D = (\"d\"bar epsilon)/(\"d\"m) = (\"d\"bar epsilon)/(rho \"d\"V)
+++++
+
+where stem:[rho] is the mass density of the mass element.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The absorbed dose, stem:[D], is the quotient of stem:[\"d\"bar epsilon] by stem:[\"d\"m], where stem:[\"d\"bar epsilon] is the mean energy imparted by ionizing radiation to matter of mass stem:[\"d\"m]:
+
+[stem%unnumbered]
+++++
+D = (\"d\"bar epsilon)/(\"d\"m).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

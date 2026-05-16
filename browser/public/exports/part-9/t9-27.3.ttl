@@ -1,0 +1,21 @@
+isoiec80000:term-t9-27.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard absolute activity of solvent <in a dilute solution>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-27.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"A\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-27.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-27.3" ;
+  skosxl:prefLabel isoiec80000:term-t9-27.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-27.3-0 ;
+  skos:definition """for solvent stem:[\"A\"], standard absolute activity (<<t9-23>>) of the pure substance stem:[\"A\"] at the same temperature (<<iso80000-5>>) and at a standard pressure stem:[p^(&#8854;)] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+lambda_\"A\"^(&#8854;) = lambda_\"A\"^(**) p^(&#8854;)
+++++
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

@@ -1,0 +1,28 @@
+isoiec80000:term-t11-4.42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Womersley number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Wo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.42-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.42 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.42" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.42-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.42-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.42-1 ;
+  skos:definition """relation between inertial forces and viscous forces in oscillating flows of fluids in pipes, expressed by
+
+stem:[Wo = R sqrt(omega//sf(ii(v)))]; where
+
+stem:[R]:: is (effective) radius (<<iso80000-3>>) of the pipe,
+stem:[omega]:: is angular frequency (<<iso80000-3>>) of oscillations, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Womersley number is used for pulsating flows e.g. in blood flow."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

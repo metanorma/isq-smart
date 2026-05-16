@@ -1,0 +1,25 @@
+isoiec80000:term-t12-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mobility ratio"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-31" ;
+  skosxl:prefLabel isoiec80000:term-t12-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-31-0 ;
+  skos:definition """quotient of mobilities (<<iso80000-10>>) of electrons and holes, respectively"""@en ;
+  skos:note """The mobility ratio can be expressed by:
+
+[stem%unnumbered]
+++++
+b = (mu_\"n\")/(mu_\"p\")
+++++
+
+where stem:[mu_\"n\"] and stem:[mu_\"p\"] are mobilities (<<iso80000-10>>) for electrons and holes, respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

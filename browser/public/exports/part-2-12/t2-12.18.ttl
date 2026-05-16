@@ -1,0 +1,38 @@
+isoiec80000:term-t2-12.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(\"d\"f)/(\"d\"x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"d\"f//\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.18-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.18-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"D\"f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-3 ;
+  skos:definition """derivative of stem:[f] with respect to stem:[x]"""@en ;
+  skos:note """Only to be used for functions of one variable.
+
+The independent variable may also be indicated, for example
+
+stem:[(\"d\"f(x))/(\"d\"x)], stem:[\"d\"f(x)//\"d\"x], stem:[f'(x)] and stem:[\"D\"f(x)].
+
+If the independent variable is time stem:[t], stem:[f] is also used for stem:[f'].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

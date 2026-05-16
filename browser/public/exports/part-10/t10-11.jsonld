@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "total angular momentum",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bb(ii(J))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-11",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-11-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "vector (<<iso80000-2>>) quantity in a quantum system composed of the vectorial sum of angular momentum stem:[bb(ii(L))] (<<iso80000-4>>) and spin stem:[bb(ii(s))] (<<t10-10>>)",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "In atomic and nuclear physics, orbital angular momentum is usually denoted by stem:[bb(ii(l))] or stem:[bb(ii(L))].\n\nThe magnitude of stem:[bb(ii(J))] is quantized so that:\n\n[stem%unnumbered]\n++++\nbb(ii(J))^2 = &#8463;^2 j(j+1)\n++++\n\nwhere stem:[j] is the total angular momentum quantum number (<<t10-13.6>>).\n\nTotal angular momentum and magnetic dipole moment have the same direction.\n\nstem:[j] is not the magnitude of the total angular momentum stem:[bb(ii(J))] but its projection onto the quantization axis, divided by stem:[&#8463;].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J*s"
+        },
+        {
+          "@id": "isoiec80000:unit-eV*s"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

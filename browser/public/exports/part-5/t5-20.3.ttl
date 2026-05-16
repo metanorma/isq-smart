@@ -1,0 +1,25 @@
+isoiec80000:term-t5-20.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "enthalpy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.3-0 ;
+  skos:definition """sum of internal energy of the system and the product of pressure and volume of the system:
+
+[stem%unnumbered]
+++++
+H = U + pV
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>), stem:[p] is pressure (<<iso80000-4>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t10-68-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resonance escape probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-68-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-68 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-68" ;
+  skosxl:prefLabel isoiec80000:term-t10-68-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-68-0 ;
+  skos:definition """in an infinite medium, the probability that a neutron slowing down will traverse all or some specified portion of the range of resonance energies (<<t10-37.2>>) without being absorbed"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

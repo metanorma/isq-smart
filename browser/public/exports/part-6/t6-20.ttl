@@ -1,0 +1,29 @@
+isoiec80000:term-t6-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"t\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-20" ;
+  skosxl:prefLabel isoiec80000:term-t6-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-20-1 ;
+  skos:definition """vector quantity given by the sum of electric current density stem:[bb(ii(J))] (<<t6-8>>) and displacement current density stem:[bb(ii(J))_\"D\"] (<<t6-18>>);
+
+[stem%unnumbered]
+++++
+bb(ii(J))_\"tot\" = bb(ii(J)) + bb(ii(J))_\"D\"
+++++
+"""@en ;
+  skos:note """See <<iec60050-121:1998,locality:item=\"121-11-44\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

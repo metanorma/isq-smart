@@ -1,0 +1,28 @@
+isoiec80000:term-t11-4.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.15-0 ;
+  skos:definition """quotient of mechanical work and frictional energy loss in fluid dynamics in a pipe, expressed by
+
+stem:[Be = (Delta p l^2)/(eta sf(ii(v))) = (rho Delta p l^2)/eta^2]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along the pipe,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>).
+"""@en ;
+  skos:note """A similar number exists for heat transfer (<<t11-5.9>>).
+
+The kinematic viscosity is also called momentum diffusivity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

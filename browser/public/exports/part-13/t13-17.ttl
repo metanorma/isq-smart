@@ -1,0 +1,24 @@
+isoiec80000:term-t13-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quantizing distortion"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-17" ;
+  skosxl:prefLabel isoiec80000:term-t13-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-17-0 ;
+  skos:definition """distortion of a signal resulting from the process of quantizing an original signal when the values to be quantized are within the working range of the quantizer"""@en ;
+  skos:note """For the unit watt, see <<iec60050-113,droploc%locality:item=\"113-03-55\">>.
+
+See <<iec60050-704,droploc%locality:item=\"704-24-13\">>.
+
+The unit of the quantizing distortion is the same as
+the unit of the signal. This may not always be the
+watt.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

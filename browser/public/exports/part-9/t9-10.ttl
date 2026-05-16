@@ -1,0 +1,29 @@
+isoiec80000:term-t9-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-10-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(rho_\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-10" ;
+  skosxl:prefLabel isoiec80000:term-t9-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-10-1 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of mass stem:[m_\"X\"] (<<iso80000-4>>) of substance stem:[\"X\"] and volume stem:[V] (<<iso80000-3>>) of the mixture:
+
+[stem%unnumbered]
+++++
+gamma_\"X\" = m_\"X\"//V
+++++
+"""@en ;
+  skos:note """Decided by the 16^th^ CGPM (1979), both \"l\" and \"L\" are allowed for the symbols for the litre."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-g/l ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

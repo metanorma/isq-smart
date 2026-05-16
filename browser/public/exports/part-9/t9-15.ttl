@@ -1,0 +1,28 @@
+isoiec80000:term-t9-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molality"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-15" ;
+  skosxl:prefLabel isoiec80000:term-t9-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-15-1 ;
+  skos:definition """quotient of amount of substance (<<t9-2>>) of solute stem:[\"B\"] and mass stem:[m_\"A\"] (<<iso80000-4>>) of the solvent substance stem:[\"A\"]
+
+[stem%unnumbered]
+++++
+b_\"B\" = n_\"B\"//m_\"A\"
+++++
+"""@en ;
+  skos:note """The alternative symbol stem:[m_\"B\"] should be avoided in situations where it might be mistaken for the mass of substance stem:[\"B\"]. However, the symbol stem:[m_\"B\"] is much more commonly used than the symbol stem:[b_\"B\"] for molality, despite the possible confusion with mass."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol/kg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

@@ -1,0 +1,32 @@
+isoiec80000:term-t11-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rayleigh number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ra"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.3-0 ;
+  skos:definition """relation between buoyancy forces due to thermal expansion and viscous forces in free convection in buoyancy driven flow near a heated surface perpendicular to the gravity force, expressed by
+
+stem:[Ra = (l^3 g alpha_V Delta T)/(sf(ii(v)) alpha)]; where
+
+stem:[l]:: is distance (<<iso80000-3>>) from the wall,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[alpha_V]:: is cubic expansion coefficient (<<iso80000-5>>) of the fluid,
+stem:[Delta T]:: is difference of thermodynamic temperature (<<iso80000-5>>) between surface of the wall and the fluid far away from the wall,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>) of the fluid
+"""@en ;
+  skos:note """The Rayleigh number is also given by
+
+stem:[Ra = Gr * Pr]; where
+
+stem:[Gr]:: is the Grashof number (<<t11-4.4>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t11-4.31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reech number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ree"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.31" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.31-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.31-0 ;
+  skos:definition """relation between the speed of an object submerged in water relative to the water, and wave propagation speed, expressed by
+
+stem:[Ree = sqrt(gl)//v]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[v]:: is speed (<<iso80000-3>>) of the object relative to the water
+"""@en ;
+  skos:note """The Reech number can be used to determine the resistance of a partially submerged object (e.g. a ship) of length stem:[l] (in direction of the motion) moving through water.
+
+A similar quantity is defined as the Boussinesq number stem:[Bs = v//sqrt(2gl)].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-5.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant intensity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "I_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(I)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-5.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-5.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-5.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiant flux with respect to solid angle in a specified direction, expressed by\n\n[stem%unnumbered]\n++++\nI_\"e\" = (\"d\"Phi_\"e\")/(\"d\"Omega)\n++++\n\nwhere stem:[Phi_\"e\"] is the radiant flux (<<t7-4.1>>) emitted in a specified direction, and stem:[Omega] is the solid angle (<<iso80000-3>>) containing that direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The definition holds strictly only for a point source.\n\nThe distribution of the radiant intensities as a function of the direction of emission, e.g. given by the polar angles stem:[(vartheta,varphi)], is used to determine the radiant flux (<<t7-4.1>>) within a certain solid angle (<<iso80000-3>>), stem:[Omega], of a source:\n\n[stem%unnumbered]\n++++\nPhi_\"e\" = &#8748;_Omega I_\"e\" (vartheta,varphi) \"sin\" vartheta \"d\" varphi \"d\" vartheta\n++++\n\nThe corresponding photometric quantity is \"luminous intensity\" (<<t7-14>>). The corresponding quantity for photons is \"photon intensity\" (<<t7-21>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/sr"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-3)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+isoiec80000:term-t10-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum beta-particle energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-33" ;
+  skosxl:prefLabel isoiec80000:term-t10-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-33-0 ;
+  skos:definition """maximum kinetic energy (<<iso80000-4>>) of the emitted beta particle produced in the nuclear disintegration process"""@en ;
+  skos:note """The maximum kinetic energy corresponds to the highest energy of the beta spectrum."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

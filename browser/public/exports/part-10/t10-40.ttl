@@ -1,0 +1,23 @@
+isoiec80000:term-t10-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy distribution of cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"E\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-40" ;
+  skosxl:prefLabel isoiec80000:term-t10-40-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-40-0 ;
+  skos:definition """differential quotient of stem:[sigma] with respect to energy, where stem:[sigma] is the cross section (<<t10-38.1>>) for a process in which the energy stem:[E] (<<iso80000-5>>) of the ejected or scattered particle is between stem:[E] and stem:[E+\"d\"E]:
+
+[stem%unnumbered]
+++++
+sigma_\"E\" = \"d\"sigma//\"d\"E
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2//J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

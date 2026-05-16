@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral luminous efficacy <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "K(lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-11.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-11.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "product of spectral luminous efficiency (<<t7-10.2>>) and maximum luminous efficacy (<<t7-11.3>>) for a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Spectral luminous efficacy for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nK(lambda) = K_\"m\" V(lambda)\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>) and stem:[lambda] is wavelength.\n\nFor scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.\n\nSymbols for different photometric conditions:\n\nstem:[K(lambda)], <for photopic vision>; stem:[K'(lambda)], <for scotopic vision>; stem:[K_\"mes;m\"(lambda)], <for mesopic vision>; stem:[K_(10)(lambda)], <for the CIE 10&deg; photopic photometric observer>; stem:[K_\"M\"(lambda)], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/W"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

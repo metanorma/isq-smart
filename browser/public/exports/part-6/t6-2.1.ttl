@@ -1,0 +1,29 @@
+isoiec80000:term-t6-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-2.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-2.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-2.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-2.1-1 ;
+  skos:definition """additive scalar quantity attributed to any particle and, generally, any system of them, to characterize its electromagnetic interactions"""@en ;
+  skos:note """To denote a point charge, stem:[q] is often used, as is done in this document.
+
+Electromagnetic interactions are Coulomb-Lorentz forces, see <<iec60050-121,locality:item=\"121-11-20\">>.
+
+The coherent SI unit of charge is coulomb, stem:[\"unitsml(C)\"]. Another frequently used unit is the ampere-hour (stem:[\"unitsml(A*h)\"]) mentioned in <<iec60050-313,locality:item=\"313-01-16\">>, widely used for battery characteristics.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C ;
+  isoiec80000:hasUnit isoiec80000:unit-A*s ;
+  isoiec80000:hasUnit isoiec80000:unit-s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

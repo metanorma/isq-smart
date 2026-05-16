@@ -1,0 +1,32 @@
+isoiec80000:term-t10-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total angular momentum quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.6-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.6" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.6-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.6-2 ;
+  skos:definition """quantum number in an atom describing the magnitude of total angular momentum stem:[bb(ii(J))] (<<t10-11>>)"""@en ;
+  skos:note """stem:[j_i] refers to a specific particle stem:[i]; stem:[J] is used for the whole system.
+
+The quantum number stem:[J] and the magnitude of total angular momentum stem:[bb(ii(J))] (<<t10-11>>) are different quantities.
+
+The two values of stem:[j] are stem:[l pm 1//2]. (See <<t10-13.3>>.)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

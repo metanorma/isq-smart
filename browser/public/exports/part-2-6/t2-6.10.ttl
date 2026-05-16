@@ -1,0 +1,19 @@
+isoiec80000:term-t2-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "intersection"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A nn B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.10-0 ;
+  skos:definition """intersection of stem:[A] and stem:[B]"""@en ;
+  skos:note """The set of elements which belong to both sets stem:[A] and stem:[B].
+
+stem:[A nn B = {x &#x2223; x in A ^^ x in B}]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t2-16.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rank of matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"rank \"bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.11-0 ;
+  skos:definition """rank of matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """The rank of matrix stem:[bb(ii(A))] is the number of the linearly independent rows of stem:[bb(ii(A))]. It is also equal to the number of linearly independent columns."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

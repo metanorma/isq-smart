@@ -1,0 +1,32 @@
+isoiec80000:term-t7-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum luminous efficacy <specified photometric condition>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-11.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-11.3" ;
+  skosxl:prefLabel isoiec80000:term-t7-11.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-11.3-0 ;
+  skos:definition """maximum value of spectral luminous efficacy for a specified photometric condition"""@en ;
+  skos:note """See also <<cls-0.4>> and <<cls-0.5>>.
+
+The value of maximum luminous efficacy for photopic vision is calculated by
+
+[stem%unnumbered]
+++++
+K_\"m\" = (683)/(V(lambda_\"cd\")) \"unitsml(cd*sr*W^(-1))\" ~~ 683 \"unitsml(lm*W^(-1))\"
+++++
+
+where stem:[V(lambda)] is the spectral luminous efficiency for photopic vision and stem:[lambda_\"cd\"] is the wavelength in air corresponding to the frequency stem:[540*10^(12) \"unitsml(Hz)\"] specified in the definition of the SI unit candela.
+
+Symbols for different photometric conditions:
+
+stem:[K_\"m\"], <for photopic vision>; stem:[K'_\"m\"], <for scotopic vision>; stem:[K_\"m,mes;m\"], <for mesopic vision>; stem:[K_(\"m\",10)], <for the CIE 10&deg; photopic photometric observer>; stem:[K_\"m,M\"], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-lm/W ;
+  isoiec80000:hasUnit isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

@@ -1,0 +1,37 @@
+isoiec80000:term-t6-52.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "admittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-52.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex admittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-52.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.1-0 ;
+  skos:definition """quantity given by the inverse of impedance stem:[ul Z] (<<t6-51.1>>)
+
+[stem%unnumbered]
+++++
+ul Y = 1/(ul Z)
+++++
+"""@en ;
+  skos:note """stem:[ul Y = G + \"j\"B], where stem:[G] is conductance (<<t6-52.2>>), stem:[B] is susceptance (<<t6-52.3>>) and stem:[\"j\"] is the imaginary unit.
+
+[stem%unnumbered]
+++++
+ul Y = abs(Y)e^(-\"j\" varphi)
+++++
+
+See <<iec60050-131,locality:item=\"131-12-51\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

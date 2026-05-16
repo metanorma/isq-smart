@@ -1,0 +1,26 @@
+isoiec80000:term-t4-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poisson number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-18" ;
+  skosxl:prefLabel isoiec80000:term-t4-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-18-1 ;
+  skos:definition """quotient of change in width stem:[Delta b] (width is defined in
+<<iso80000-3>>) and change in length stem:[Delta l] (length is defined in
+<<iso80000-3>>) of an object:
+
+stem:[mu=(Delta b)/(Delta l)]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

@@ -1,0 +1,32 @@
+isoiec80000:term-t2-18.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian coordinates of vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_x, a_y, a_z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.8-1 ;
+  skos:definition """Cartesian coordinates of vector stem:[bb(ii(a))], +
+Cartesian components of vector stem:[bb(ii(a))]
+"""@en ;
+  skos:note """stem:[bb(ii(a)) = a_x\" \"bb(e)_x + a_y\" \"bb(e)_y + a_z\" \"bb(e)_z]
+
+stem:[a_1\" \"bb(e)_1, a_2\" \"bb(e)_2, a_3\" \"bb(e)_3] are the component vectors. If it is clear from the context which are the base vectors, the vector can be written
+
+stem:[bb(ii(a)) = (a_x, a_y, a_z)].
+
+stem:[a_x = bb(ii(a))*bb(e)_x, a_y = bb(ii(a))*bb(e)_y, a_z = bb(ii(a))*bb(e)_z]
+
+stem:[bb(r) = x bb(e)_x + y bb(e)_y + z bb(e)_z] is the position vector (radius vector) of the point with coordinates stem:[x, y, z].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

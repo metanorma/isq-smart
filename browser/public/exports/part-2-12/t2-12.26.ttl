@@ -1,0 +1,16 @@
+isoiec80000:term-t2-12.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cauchy principal value"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x2A0D;_a^b f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.26 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.26" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.26-0 ;
+  skos:definition """Cauchy principal value of the integral of stem:[f] with singularity at stem:[c], where stem:[a<c<b]"""@en ;
+  skos:note """stem:[lim_(delta -> 0+) (int_a^(c-delta)f(x)\"d\"x + int_(c+delta)^b f(x)\"d\"x)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

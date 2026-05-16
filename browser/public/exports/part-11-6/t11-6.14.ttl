@@ -1,0 +1,33 @@
+isoiec80000:term-t11-6.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Marangoni number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mar"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.14-1 ;
+  skos:definition """quotient of heat transferred by Marangoni convection and heat transferred by thermal diffusivity in thermo-capillary convection of liquid films on a free surface, expressed by
+
+stem:[Mg = l (Delta T)/(eta a) ((\"d\"gamma)/(\"d\"T))]; where
+
+stem:[l]:: is characteristic thickness (<<iso80000-3>>) of the film,
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between surface and outer surface of the film,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the liquid,
+stem:[a]:: is thermal diffusivity (<<iso80000-5>>) of the liquid, and
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the film
+"""@en ;
+  skos:note """The Marangoni convection is free surface flow due to different surface tensions caused by a temperature gradient.
+
+This quantity is sometimes called Thompson number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

@@ -1,0 +1,42 @@
+isoiec80000:term-t7-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(L)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-15" ;
+  skosxl:prefLabel isoiec80000:term-t7-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-15-1 ;
+  skos:definition """density of luminous intensity with respect to projected area in a specified direction at a specified point on a real or imaginary surface, expressed by
+
+[stem%unnumbered]
+++++
+L_\"v\" = (\"d\"I_\"v\")/(\"d\"A) 1/(\"cos\"alpha)
+++++
+
+where stem:[I_\"v\"] is luminous intensity (<<t7-14>>), stem:[A] is area (<<iso80000-3>>) and stem:[alpha] is the angle between the normal to the surface at the specified point and the specified direction
+"""@en ;
+  skos:note """Luminance can be derived from the spectral radiance distribution by
+
+[stem%unnumbered]
+++++
+L_\"v\" = K_\"m\" int_0^(oo) L_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda
+++++
+
+where stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[L_(\"e\",lambda)(lambda)] is the spectral radiance (<<t7-6.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>). See also <<cls-0.1>>.
+
+Integral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.
+
+The corresponding radiometric quantity is \"radiance\" (<<t7-6.1>>). The corresponding quantity for photons is \"photon radiance\" (<<t7-22>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-cd*m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

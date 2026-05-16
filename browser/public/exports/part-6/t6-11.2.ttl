@@ -1,0 +1,34 @@
+isoiec80000:term-t6-11.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric potential difference"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.2-0 ;
+  skos:definition """scalar quantity given by
+
+[stem%unnumbered]
+++++
+V_\"ab\" = V_\"a\" - V_\"b\"
+++++
+
+where stem:[V_\"a\"] and stem:[V_\"b\"] are the electric potentials (<<t6-11.1>>) at points stem:[\"a\"] and stem:[\"b\"], respectively
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+V_\"ab\" = int_(bb(ii(r))_\"a\"(C))^(bb(ii(r))_\"b\") (bb(ii(E)) + (del bb(ii(A)))/(del t)) \"d\"bb(ii(r))
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(A))] is magnetic vector potential (<<t6-32>>), stem:[t] is time (<<iso80000-3>>), and stem:[bb(ii(r))] is the position vector (<<iso80000-3>>) along a given curve stem:[\"C\"], from point stem:[\"a\"] to point stem:[\"b\"].
+
+See <<iec60050-121,locality:item=\"121-11-26\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

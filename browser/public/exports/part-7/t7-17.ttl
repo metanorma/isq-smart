@@ -1,0 +1,43 @@
+isoiec80000:term-t7-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminous exitance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(M)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-17" ;
+  skosxl:prefLabel isoiec80000:term-t7-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-17-1 ;
+  skos:definition """density of exiting luminous flux with respect to area at a point on a real or imaginary surface, expressed by
+
+[stem%unnumbered]
+++++
+M_\"v\" = (\"d\"Phi_\"v\")/(\"d\"A)
+++++
+
+where stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[A] is the area (<<iso80000-3>>) from which the luminous flux leaves
+"""@en ;
+  skos:note """Luminous exitance can be derived from the spectral radiant exitance distribution by
+
+[stem%unnumbered]
+++++
+M_\"v\" = K_\"m\" int_0^(oo) M_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda
+++++
+
+where stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[M_(\"e\",lambda)(lambda)] is the spectral radiant exitance (<<t7-8.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).
+
+Integral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.
+
+The corresponding radiometric quantity is \"radiant exitance\" (<<t7-8.1>>). The corresponding quantity for photons is \"photon exitance\" (<<t7-24>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-lm/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-cd*sr*m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

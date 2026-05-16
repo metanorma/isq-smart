@@ -1,0 +1,28 @@
+isoiec80000:term-t2-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exists"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "EE x in A p(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.7-0 ;
+  skos:definition """there exists an stem:[x] belonging to stem:[A] for which
+stem:[p(x)] is true
+"""@en ;
+  skos:note """If it is clear from the context which set stem:[A] is
+considered, the notation stem:[EE x p(x)] can be used.
+
+stem:[EE] is the existential quantifier.
+
+For stem:[x in A], see <<t2-6.1>>.
+
+stem:[EE^1x p(x)] is used to indicate that there is exactly one element for which stem:[p(x)] is true.
+
+stem:[EE!] is also used for stem:[EE^1].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t2-20.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spherical Hankel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"h\"_l^((1))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.29-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"h\"_l^((2))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.29 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.29" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.29-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.29-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.29-1 ;
+  skos:definition """spherical Hankel function"""@en ;
+  skos:note """stem:[\"h\"_l^((1))(z) = \"j\"_l(z) + i\"n\"_l (z) = (pi/(2z))^(1/2) \"H\"_(l+1/2)^((1))(z)]
+
+stem:[\"h\"_l^((2))(z) = \"j\"_l(z) + i\"n\"_l (z) = (pi/(2z))^(1/2) \"H\"_(l+1/2)^((2))(z)]
+
+Modified spherical Bessel function (analogous to <<t2-20.26>>) can be defined and are denoted by stem:[\"i\"_l(z)] and stem:[\"k\"_l(z)] respectively.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

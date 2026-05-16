@@ -1,0 +1,30 @@
+isoiec80000:term-t11-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grashof magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gr_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.18-0 ;
+  skos:definition """mathematical expression for the heat transfer by free thermo-magnetic convection of a paramagnetic fluid under gravity,
+
+stem:[Gr_\"m\" = 4 pi sigma_\"e\" mu_\"e\" g alpha_V Delta T l^3 // sf(ii(v))]; where
+
+stem:[sigma_\"e\"]:: is electrical conductivity (<<iec80000-6>>),
+stem:[mu_\"e\"]:: is magnetic permeability (<<iec80000-6>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[alpha_V]:: is cubic expansion coefficient (<<iso80000-5>>),
+stem:[Delta T = T_\"S\"-T_(oo)]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>), where stem:[T_\"S\"] is surface temperature and stem:[T_(oo)] is bulk temperature
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """This number is also called magnetic Grashof number.
+
+See also Grashof number (<<t11-4.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

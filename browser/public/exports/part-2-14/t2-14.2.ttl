@@ -1,0 +1,21 @@
+isoiec80000:term-t2-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sin \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.2-0 ;
+  skos:definition """sine of stem:[x]"""@en ;
+  skos:note """stem:[\"sin \"x = (e^(ix)-e^(-ix))/(2i)]
+
+stem:[\"sin \"x = x - x^3//3! + x^5//5! - ...]
+
+stem:[(\"sin \"x)^n], stem:[(\"cos \"x)^n], etc. (for stem:[n >= 2]), are often written stem:[\"sin\"^n x], stem:[\"cos\"^n x], etc.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

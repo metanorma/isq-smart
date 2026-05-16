@@ -1,0 +1,37 @@
+isoiec80000:term-t7-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spectral radiant intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_(\"e\",lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-5.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(I_lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-5.2-1 ;
+  skos:definition """spectral density of radiant intensity, expressed by
+
+[stem%unnumbered]
+++++
+I_(\"e\",lambda) = (\"d\"I_\"e\")/(\"d\"lambda)
+++++
+
+where stem:[I_\"e\"] is radiant intensity (<<t7-5.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)
+"""@en ;
+  skos:note """The integral of (total) radiant intensity is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:
+
+[stem%unnumbered]
+++++
+I_\"e\" = int_(lambda_1)^(lambda_2) I_(\"e\",lambda) \"d\"lambda
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/(sr*nm) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-3)*sr^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

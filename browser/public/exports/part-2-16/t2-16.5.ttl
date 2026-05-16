@@ -1,0 +1,24 @@
+isoiec80000:term-t2-16.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "identity matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(I))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(E))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.5-1 ;
+  skos:definition """identity matrix"""@en ;
+  skos:note """A square matrix for which stem:[(bb(ii(I)))_(ik) = delta_(ik)]
+
+For the definition of stem:[delta_(ik)] see <<t2-18.9>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

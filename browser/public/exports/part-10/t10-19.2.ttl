@@ -1,0 +1,30 @@
+isoiec80000:term-t10-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electron radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-19.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-19.2-0 ;
+  skos:definition """radius of a sphere such that the relativistic electron energy is distributed uniformly:
+
+[stem%unnumbered]
+++++
+r_\"e\" = (e^2)/(4pi epsilon_0 m_\"e\" c_0^2)
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>),
+stem:[m_\"e\"]:: is the rest mass (<<t10-2>>) of electron, and
+stem:[c_0]:: is the speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  skos:note """This quantity corresponds to the electrostatic energy stem:[E] of a charge distributed inside a sphere of radius stem:[r_\"e\"] as if all the rest energy (<<t10-3>>) of the electron were attributed to the energy of electromagnetic origin, using the relation stem:[E=m_\"e\"c_0^2]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

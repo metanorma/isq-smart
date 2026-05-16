@@ -1,0 +1,166 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-19 a smart:PublicationDocument ;
+  dcterms:title "Part 2-19"@en ;
+  dcterms:identifier "ISO 80000-2-19" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fourier transform"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x1D4D5; f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.1-0 ;
+  skos:definition """Fourier transform of stem:[f]"""@en ;
+  skos:note """stem:[(&#x1D4D5; f)(omega) = int_(-oo)^(+oo) e^(-i omega t) f(t) \"d\"t]
+
+(where stem:[omega in bb(sf(R))])
+
+This is often denoted by stem:[&#x1D4D5;(omega)].
+
+stem:[(&#x1D4D5;f)(omega) = 1/(sqrt(2pi)) int_(-oo)^(+oo) e^(-i omega t) f(t) \"d\"t]
+
+is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .
+
+isoiec80000:term-t2-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laplace transform"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x1D4DB; f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.2-0 ;
+  skos:definition """Laplace transform of stem:[f]"""@en ;
+  skos:note """stem:[(&#x1D4DB; f)(s) = int_0^(oo) e^(-st) f(t) \"d\"t]
+
+(where stem:[s in bb(sf(C))])
+
+This is often denoted by stem:[&#x1D4DB;(s)].
+
+The two-sided Laplace transform is also used, defined by the same formula, but with minus infinity instead of zero.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .
+
+isoiec80000:term-t2-19.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z transform"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x01B7; (a_n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.3-0 ;
+  skos:definition """Z transform of stem:[(a_n)]"""@en ;
+  skos:note """stem:[&#x01B7;(a_n) = sum_(n=0)^(oo) a_n z^(-n)]
+
+(where stem:[z in bb(sf(C))])
+
+stem:[&#x01B7;] is an operator operating on a sequence (stem:[a_n]) and not a function of stem:[a_n].
+
+The two-sided Z transform is also used, defined by the same formula, but with minus infinity instead of zero.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .
+
+isoiec80000:term-t2-19.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Heaviside function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-19.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.4-1 ;
+  skos:definition """Heaviside function, +
+unit step function
+"""@en ;
+  skos:note """stem:[H(x) = {(1,\"for\",x>0),(0,\"for\",x<0):}]
+
+stem:[H(0) in [0,1\\]], depending on the field of application.
+
+stem:[U(x)] is also used.
+
+stem:[vartheta(t)] is used for the unit step function of time.
+
+[example]
+stem:[(&#x1D4DB;H)(s) = 1//s] (for stem:[\"Re \"s>0])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .
+
+isoiec80000:term-t2-19.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dirac delta distribution"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.5-0 ;
+  skos:definition """Dirac delta distribution, +
+Dirac delta function
+"""@en ;
+  skos:note """The Dirac delta distribution is defined by
+
+stem:[int_(-oo)^(+oo) varphi(t) delta(t-x) \"d\"t = varphi(x)]
+
+The Dirac delta distribution can be interpreted as derivative of the Heaviside function.
+The name \"unit pulse\" is also used.
+
+[example]
+stem:[&#x1D4DB; delta = 1]
+
+See also item <<t2-19.6>> and <<iec60027-6,clause=2.01>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .
+
+isoiec80000:term-t2-19.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "convolution"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f ** g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.6-0 ;
+  skos:definition """convolution of stem:[f] and stem:[g]"""@en ;
+  skos:note """stem:[f ** g(x) = int_(-oo)^(+oo) f(y) g(x-y) \"d\"y]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t6-56-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "active power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-56-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-56 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-56" ;
+  skosxl:prefLabel isoiec80000:term-t6-56-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-56-0 ;
+  skos:definition """<for a periodic process> scalar quantity given by
+
+[stem%unnumbered]
+++++
+P = 1/T int_0^T p \"d\"t
+++++
+
+where stem:[T] is the period (<<iso80000-3>>), stem:[t] is time (<<iso80000-3>>) and stem:[p] is instantaneous power (<<t6-45>>)
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-42\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

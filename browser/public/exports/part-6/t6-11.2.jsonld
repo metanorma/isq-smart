@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-11.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "electric potential difference",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-11.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "V_\"ab\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t6-11.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "6-11.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-11.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-11.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "scalar quantity given by\n\n[stem%unnumbered]\n++++\nV_\"ab\" = V_\"a\" - V_\"b\"\n++++\n\nwhere stem:[V_\"a\"] and stem:[V_\"b\"] are the electric potentials (<<t6-11.1>>) at points stem:[\"a\"] and stem:[\"b\"], respectively\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "[stem%unnumbered]\n++++\nV_\"ab\" = int_(bb(ii(r))_\"a\"(C))^(bb(ii(r))_\"b\") (bb(ii(E)) + (del bb(ii(A)))/(del t)) \"d\"bb(ii(r))\n++++\n\nwhere stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(A))] is magnetic vector potential (<<t6-32>>), stem:[t] is time (<<iso80000-3>>), and stem:[bb(ii(r))] is the position vector (<<iso80000-3>>) along a given curve stem:[\"C\"], from point stem:[\"a\"] to point stem:[\"b\"].\n\nSee <<iec60050-121,locality:item=\"121-11-26\">>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-V"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-3)*A^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-6"
+      }
+    }
+  ]
+}

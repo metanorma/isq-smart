@@ -1,0 +1,16 @@
+isoiec80000:term-t2-18.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of scalar and vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.3-0 ;
+  skos:definition """product of a number, scalar, or component stem:[x] and vector stem:[bb(ii(a))]"""@en ;
+  skos:note """stem:[(x bb(ii(a)))_i = xa_i]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

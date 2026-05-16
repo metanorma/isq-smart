@@ -1,0 +1,28 @@
+isoiec80000:term-t10-85-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear energy transfer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-85-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_(ii(Delta))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-85 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-85" ;
+  skosxl:prefLabel isoiec80000:term-t10-85-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-85-0 ;
+  skos:definition """quotient of the mean energy (<<iso80000-4>>) stem:[\"d\"E_(ii(Delta))] lost by the charged particles due to electronic interactions in traversing a distance (<<iso80000-3>>) stem:[\"d\"l], minus the mean sum of the kinetic energies in excess of stem:[ii(Delta)] of all the electrons released by the charged particles and stem:[\"d\"l]:
+
+[stem%unnumbered]
+++++
+L_(ii(Delta)) = (\"d\"E_(ii(Delta)))/(\"d\"l)
+++++
+"""@en ;
+  skos:note """This quantity is not completely defined unless stem:[ii(Delta)] is specified, i.e. the maximum kinetic energy of secondary electrons whose energy is considered to be \"locally deposited.\" stem:[ii(Delta)] may be expressed in stem:[\"unitsml(eV)\"].
+
+Note that the abbreviation LET specifically refers to the quantity stem:[L_(oo)] mentioned in the remark to <<t10-82>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV/m ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

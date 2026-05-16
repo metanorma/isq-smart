@@ -1,0 +1,30 @@
+isoiec80000:term-t11-8.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Chandrasekhar number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-8.9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ch"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.9-1 ;
+  skos:definition """quotient of Lorentz force and viscous force in magnetic convection in a fluid, expressed by
+
+stem:[Q=(Bl)^2 sigma // rho sf(ii(v))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), a length scale of the system,
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Chandrasekhar number is also given by stem:[Q = Ha^2] where stem:[Ha] is the Hartmann number (<<t11-8.5>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

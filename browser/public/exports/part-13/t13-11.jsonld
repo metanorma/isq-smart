@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "transfer rate",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "r",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-11-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(v)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t13-11",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "13-11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-11-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-11-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the number of specified data elements transferred in a time interval by the duration of this interval",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The symbol stem:[nu] is the Greek letter nu.\n\nA subscript referring to a specified data element can\nbe added to the symbol.\n\n[example]\ndigit rate, stem:[r_d] or stem:[nu_d] (see <<iec60050-702,droploc%locality:item=\"702-05-23\">> and\n<<iec60050-704,droploc%locality:item=\"704-16-06\">>); +\ntransfer rate for octets (or bytes), stem:[r_o, r_B, nu_o] or stem:[nu_B];\nbinary digit rate or bit rate (<<t13-13,item 13-13>>).\n\nIn English, the name \"byte\", symbol B, is used as a\nsynonym for \"octet\". Here \"byte\" means an eight-bit\nbyte. See remarks in <<t13-9,item 13-9>>.\n\nThe octet per second (or byte per second) may be\ncombined with prefixes, for example kilooctet per\nsecond, symbol ko/s (or kilobyte per second, symbol\nkB/s).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-s^{-1}"
+        },
+        {
+          "@id": "isoiec80000:unit-o/s"
+        },
+        {
+          "@id": "isoiec80000:unit-B/s"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-13"
+      }
+    }
+  ]
+}

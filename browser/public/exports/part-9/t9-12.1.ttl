@@ -1,0 +1,27 @@
+isoiec80000:term-t9-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "amount-of-substance concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-12.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-12.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-12.1-0 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of amount stem:[n_\"X\"] of substance (<<t9-2>>) of stem:[\"X\"] and volume stem:[V] (<<iso80000-3>>) of the mixture
+
+[stem%unnumbered]
+++++
+c_\"X\" = n_\"X\"//V
+++++
+"""@en ;
+  skos:note """In chemistry, the name \"amount-of-substance concentration\" is generally abbreviated to the single word \"concentration\", it being assumed that the adjective \"amount-of-substance\" is intended. For this reason, however, the word \"mass\" should never be omitted from the name \"mass concentration\" in <<t9-10>>.
+
+Decided by the 16^th^ CGPM (1979), both \"l\" and \"L\" are allowed for the symbols for the litre.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol/l ;
+  isoiec80000:hasUnit isoiec80000:unit-mol*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

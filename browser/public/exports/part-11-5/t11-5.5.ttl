@@ -1,0 +1,29 @@
+isoiec80000:term-t11-5.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Nusselt number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.5-0 ;
+  skos:definition """relation between the internal thermal resistance of a body and its surface thermal resistance in a body transferring heat from a surface into its interior or vice versa, expressed by
+
+stem:[N]stem:[u = Kl // lambda = Kl // (alpha rho c_p)] where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,
+stem:[l]:: is length (<<iso80000-3>>) of the body in direction of heat flow,
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>) of the surface,
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>)
+"""@en ;
+  skos:note """The body under consideration can be a solid body, a fluid, or their combination, and additional heat transfer due to convective motion can occur.
+
+In case of merely conductive heat transfer especially in a solid body, the \"Biot number for heat transfer\" (<<t11-5.6>>) is used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

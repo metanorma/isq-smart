@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "multiplication"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ab"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.5-0 ;
+  skos:definition """stem:[a] times stem:[b]"""@en ;
+  skos:note """See also <<t2-6.16>>, <<t2-6.17>>, <<t2-18.11>>, <<t2-18.12>>, <<t2-18.23>> and <<t2-18.24>> for the use of the dot and cross in various products."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

@@ -1,0 +1,29 @@
+isoiec80000:term-t10-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-19.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-19.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-19.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-19.1-0 ;
+  skos:definition """conventional radius (<<iso80000-3>>) of sphere in which the nuclear matter is included"""@en ;
+  skos:note """This quantity is not exactly defined. It is given approximately for nuclei in their ground state by:
+
+[stem%unnumbered]
+++++
+R = r_0 A^(1//3)
+++++
+
+where
+
+stem:[r_0 ~~ 1.2 xx 10^(-15) \"unitsml(m)\"], and stem:[A] is the nucleon number (<<t10-1.3>>).
+
+Nuclear radius is usually expressed in femtometres, stem:[1 \"unitsml(fm)\" = 10^(-15) \"unitsml(m)\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

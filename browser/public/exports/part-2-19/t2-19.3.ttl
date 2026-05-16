@@ -1,0 +1,23 @@
+isoiec80000:term-t2-19.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z transform"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x01B7; (a_n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.3-0 ;
+  skos:definition """Z transform of stem:[(a_n)]"""@en ;
+  skos:note """stem:[&#x01B7;(a_n) = sum_(n=0)^(oo) a_n z^(-n)]
+
+(where stem:[z in bb(sf(C))])
+
+stem:[&#x01B7;] is an operator operating on a sequence (stem:[a_n]) and not a function of stem:[a_n].
+
+The two-sided Z transform is also used, defined by the same formula, but with minus infinity instead of zero.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t4-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "moment of force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(M))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-12.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-12.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-12.1-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity described by the vector product:
+
+stem:[bb(ii(M)) = bb(ii(r)) xx bb(ii(F))]
+
+where stem:[bb(ii(r))] is position vector (<<iso80000-3>>) with respect to
+the axis of rotation and stem:[bb(ii(F))] is force (<<t4-9.1>>)
+"""@en ;
+  skos:note """The bending moment of force is denoted by stem:[bb(ii(M))_\"b\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

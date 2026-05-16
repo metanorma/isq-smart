@@ -1,0 +1,31 @@
+isoiec80000:term-t7-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminous efficiency <specified photometric condition>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-10.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-10.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-10.1-0 ;
+  skos:definition """quotient of radiant flux (<<t7-4.1>>) weighted by the spectral luminous efficiency (<<t7-10.2>>) and the corresponding radiant flux for a specified photometric condition"""@en ;
+  skos:note """Luminous efficiency for photopic vision is expressed by
+
+[stem%unnumbered]
+++++
+V = (int_0^(oo)Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo)Phi_(\"e\",lambda)(lambda)\"d\"lambda) = K/K_\"m\"
+++++
+
+where stem:[Phi_(\"e\",lambda)] is spectral radiant flux (<<t7-4.2>>), stem:[V(lambda)] is spectral luminous efficiency, stem:[lambda] is wavelength, stem:[K] is luminous efficacy of radiation (<<t7-11.1>>), and stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>).
+
+For scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.
+
+Symbols for different photometric conditions:
+
+stem:[V], <for photopic vision>; stem:[V'], <for scotopic vision>; stem:[V_\"mes;m\"], <for mesopic vision>; stem:[V_(10)], <for the CIE 10&deg; photopic photometric observer>; stem:[V_\"M\"], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

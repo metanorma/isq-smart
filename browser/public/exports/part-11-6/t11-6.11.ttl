@@ -1,0 +1,45 @@
+isoiec80000:term-t11-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bond number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-6.11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eötvös number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.11-0 ;
+  skosxl:altLabel isoiec80000:term-t11-6.11-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.11-1 ;
+  skos:definition """quotient of inertial force and capillary force for gas bubbles or liquid drops in a fluid, expressed by
+
+stem:[Bo = a/gamma rho l^2 (rho_\"b\"/rho -1)]; where
+
+stem:[a]:: is the acceleration of the body (<<iso80000-3>>), mostly acceleration of free fall, stem:[g] (<<iso80000-3>>),
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface,
+stem:[rho]:: is density (<<iso80000-4>>) of the medium,
+stem:[l]:: is characteristic length (<<iso80000-3>>) (radius of a drop or radius of a capillary tube), and
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the drop or bubble
+"""@en ;
+  skos:note """In the case of gravity stem:[a = g] acceleration of free fall (<<iso80000-3>>), the name Eötvös number is mostly used.
+
+The Bond number is also given by
+
+stem:[Bo = We//Fr]; where
+
+stem:[We]:: is the Weber number (<<t11-4.5>>), and
+stem:[Fr]:: is the Froude number (<<t11-4.3>>).
+
+The Bond number is also used for capillary action driven by buoyancy.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

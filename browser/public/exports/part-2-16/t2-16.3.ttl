@@ -1,0 +1,16 @@
+isoiec80000:term-t2-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of scalar and matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.3-0 ;
+  skos:definition """product of scalar stem:[x] and matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[(x bb(ii(A)))_(ij) = x (bb(ii(A)))_(ij)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

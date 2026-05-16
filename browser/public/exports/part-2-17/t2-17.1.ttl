@@ -1,0 +1,21 @@
+isoiec80000:term-t2-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian coordinate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x, y, z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-17.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-17.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-17.1-0 ;
+  skos:definition """stem:[bb(ii(r)) = xbb(ii(e))_x + ybb(ii(e))_y + zbb(ii(e))_z] +
+stem:[\"d\"bb(ii(r)) = \"d\"x\" \"bb(ii(e))_x + \"d\"y\" \"bb(ii(e))_y + \"d\"z\" \"bb(ii(e))_z]
+"""@en ;
+  skos:note """The base vectors stem:[bb(ii(e))_x, bb(ii(e))_y, bb(ii(e))_z] form an orthonormal system (i.e. the vectors are unit vectors and orthogonal) which is right-handed, see <<fig1;and!fig4>>.
+
+stem:[bb(ii(e))_1, bb(ii(e))_2, bb(ii(e))_3] or stem:[bb(ii(i)), bb(ii(j)), bb(ii(k))] are also used for the base vectors and stem:[x_1, x_2, x_3] or stem:[i, j, k] for the coordinates.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-17 .

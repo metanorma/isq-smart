@@ -1,0 +1,31 @@
+isoiec80000:term-t2-12.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "((\"d\"f)/(\"d\"x))_(x=a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(\"d\"f//\"d\"x)_(x=a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f'(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.19-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"D\"f(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-3 ;
+  skos:definition """value of the derivative of stem:[f] for stem:[x = a]"""@en ;
+  skos:note """See also <<t2-12.18>>"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

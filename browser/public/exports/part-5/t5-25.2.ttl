@@ -1,0 +1,25 @@
+isoiec80000:term-t5-25.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum efficiency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-25.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta_\"max\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-25.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-25.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-25.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-25.2-0 ;
+  skos:definition """efficiency determined by the quotient of the temperatures of the hot source and the cold sink:
+
+[stem%unnumbered]
+++++
+eta_\"max\" = 1- T_\"c\"/T_\"h\"
+++++
+
+where stem:[T_\"c\"] is the thermodynamic temperature (<<t5-1>>) of the cold sink and stem:[T_\"h\"] is the thermodynamic temperature (<<t5-1>>) of the hot source
+"""@en ;
+  skos:note """An ideal heat engine operating according to the Carnot process is delivering the maximum efficiency."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

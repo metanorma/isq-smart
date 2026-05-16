@@ -1,0 +1,29 @@
+isoiec80000:term-t2-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{x in A &#x2223; p(x)}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.4-0 ;
+  skos:definition """set of those elements of stem:[A] for which the proposition stem:[p(x)] is true"""@en ;
+  skos:note """[example]
+====
+[stem]
+++++
+{x in bb(sf(R)) &#x2223; x >= 5}
+++++
+
+If it is clear from the context which set stem:[A] is considered, the notation stem:[{x &#x2223; p(x)}] can be used (for example stem:[{x &#x2223; x >= 5}], if it is clear that real numbers are considered).
+
+Instead of the vertical line often a colon is used as separator:
+
+stem:[{x in A : p(x)}].
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

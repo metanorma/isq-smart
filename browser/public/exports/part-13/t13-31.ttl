@@ -1,0 +1,23 @@
+isoiec80000:term-t13-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I(x\\|y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-31" ;
+  skosxl:prefLabel isoiec80000:term-t13-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-31-0 ;
+  skos:definition """information content (<<t13-2,item 13-2>>) of event stem:[x]
+under the condition that stem:[y] has occurred:
+
+stem:[I(x\\|y) = I(x,y) - I(y)]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-21\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t9-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equilibrium constant <concentration basis>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-34" ;
+  skosxl:prefLabel isoiec80000:term-t9-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-34-0 ;
+  skos:definition """for solutions, product for all substances stem:[\"B\"] of concentration stem:[c_\"B\"] of substance stem:[\"B\"] (<<t9-9.1>>) in power of its stoichiometric number stem:[nu_\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+K_c = Pi_\"B\" (c_\"B\")^(nu_\"B\")
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:[("unitsml(mol/m^3)")^(sum nu_"B")] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .
