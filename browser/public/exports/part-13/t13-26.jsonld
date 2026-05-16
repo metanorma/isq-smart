@@ -1,0 +1,101 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-26-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "maximum entropy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-26-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_0",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-26-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(H_{\"max\"})",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t13-26",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "13-26",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-26-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-26-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-26-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "maximum entropy occurs when\n\nstem:[p(X_i) = 1//n] for stem:[i = 1, ..., n]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The maximum entropy is sometimes called \"decision\ncontent\" because the value is the same when the\nbase is an integer, for the same number of events.\nSee <<t13-23,item 13-23>>.\n\nSee <<iec60050-171,droploc%locality:item=\"171-07-16\">>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-Sh"
+        },
+        {
+          "@id": "isoiec80000:unit-Hart"
+        },
+        {
+          "@id": "isoiec80000:unit-nat"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-13"
+      }
+    }
+  ]
+}

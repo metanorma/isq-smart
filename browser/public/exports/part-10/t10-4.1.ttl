@@ -1,0 +1,32 @@
+isoiec80000:term-t10-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-4.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-4.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-4.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.1-1 ;
+  skos:definition """rest mass (<<t10-2>>) of an atom stem:[\"X\"] in the ground state"""@en ;
+  skos:note """stem:[(m(\"X\"))/m_\"u\"] is called the relative atomic mass.
+
+stem:[1 \"unitsml(u)\"] is equal to stem:[1//12] times the mass of a free carbon 12 atom, at rest and in its ground state.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Da)\" = 1 \"unitsml(u)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,21 @@
+isoiec80000:term-t2-14.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc cotangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arccot \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.11-0 ;
+  skos:definition """arcus cotangent of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arccot \"x <=> x = \"cot \"y] (for stem:[0 <= y <= pi])
+
+The function stem:[\"arccot\"] is the inverse of the function stem:[\"cot\"] with the restriction mentioned above.
+
+stem:[\"arcctg \"x] should not be used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

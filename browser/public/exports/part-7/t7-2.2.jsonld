@@ -1,0 +1,132 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-2.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant energy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "W_lambda",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "U_lambda",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-3",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Q_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-2.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-2.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-2.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-2"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-3"
+        }
+      ],
+      "skos:definition": {
+        "@value": "spectral density of radiant energy, expressed by\n\n[stem%unnumbered]\n++++\nQ_(\"e\",lambda) = (\"d\"Q_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[Q_\"e\"] is radiant energy (<<t7-2.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) radiant energy is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nQ_\"e\" = int_(lambda_1)^(lambda_2) Q_(\"e\",lambda) \"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/nm"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

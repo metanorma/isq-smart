@@ -1,0 +1,25 @@
+isoiec80000:term-t12-29.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "intrinsic carrier density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"i\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.3-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+n_\"i\" = sqrt(np)
+++++
+
+where stem:[n] is electron density (<<t12-29.1>>), and stem:[p] is hole density (<<t12-29.2>>)
+"""@en ;
+  skos:note """Subscripts stem:[n] and stem:[p] or stem:[-] and stem:[+] are often used to denote electrons and holes, respectively. stem:[n_\"n\"] and stem:[n_\"p\"] are also used for electron densities, and stem:[p_\"n\"] and stem:[p_\"p\"] for hole densities, in stem:[n]-type and stem:[p]-type regions, respectively, of a stem:[n]-stem:[p] junction."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

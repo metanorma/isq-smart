@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t3-11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "acceleration",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t3-11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "ii(bb(sf(a)))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t3-11",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "3-11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t3-11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t3-11-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "vector (<<iso80000-2>>) quantity giving the rate of change of velocity (<<t3-10.1>>)",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The acceleration vector is given by:\n\n[stem%unnumbered]\n++++\nii(bb(sf(a))) = (\"d\"ii(bb(sf(v))))/(\"d\"t)\n++++\n\nwhere stem:[ii(bb(sf(v)))] denotes the velocity (<<t3-10.1>>) and stem:[t] the duration (<<t3-9>>).\n\nThe magnitude (<<iso80000-2>>) of the acceleration of free fall is usually denoted by stem:[g].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m*s^-2"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-3"
+      }
+    }
+  ]
+}

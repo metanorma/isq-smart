@@ -1,0 +1,19 @@
+isoiec80000:term-t10-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha disintegration energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-32" ;
+  skosxl:prefLabel isoiec80000:term-t10-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-32-0 ;
+  skos:definition """sum of the kinetic energy (<<iso80000-4>>) of the stem:[alpha]-particle produced in the disintegration process and the recoil energy (<<iso80000-5>>) of the product atom in a reference frame in which the emitting nucleus is at rest before its disintegration"""@en ;
+  skos:note """The ground-state alpha disintegration energy, stem:[Q_(alpha,0)], also includes the energy of any nuclear transitions that take place in the daughter produced."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

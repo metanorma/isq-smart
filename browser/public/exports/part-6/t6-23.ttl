@@ -1,0 +1,38 @@
+isoiec80000:term-t6-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-23-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic area moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-23" ;
+  skosxl:prefLabel isoiec80000:term-t6-23-0 ;
+  skosxl:altLabel isoiec80000:term-t6-23-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-23-0 ;
+  skos:definition """additive vector quantity, for a quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) planar loop given by
+
+[stem%unnumbered]
+++++
+m = I e_\"n\" A
+++++
+
+where stem:[I] is the electric current (<<t6-1>>) in a loop, stem:[e_\"n\"] is a unit vector perpendicular to the planar surface stem:[\"S\"] enclosed by the loop, and stem:[A] is the area (<<iso80000-3>>) in the loop
+"""@en ;
+  skos:note """A magnetic moment is associated with systems of charged particles, such as atoms, molecules, atomic nuclei, nucleons. It can be considered as a product of the motion of charged particles and the magnetic moments of these particles.
+
+Magnetic moment is also an intrinsic property of any charged elementary particle with half-integer spin (e.g. an electron, a neutron or a quark).
+
+The magnetic moment of a substance within a domain is the vector sum of the magnetic moments of all entities contained in the domain.
+
+See <<iec60050-121,locality:item=\"121-11-49\";and!locality:item=\"121-11-50\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

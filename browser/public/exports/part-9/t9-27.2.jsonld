@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-27.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "osmotic factor of solvent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-27.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "osmotic coefficient of solvent stem:[\"A\"]",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-27.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "varphi",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t9-27.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "9-27.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-27.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-27.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-27.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quantity given by:\n\n[stem%unnumbered]\n++++\nvarphi = -(M_\"A\" sum b_\"B\")^(-1) \"ln\" a_\"A\"\n++++\n\nwhere stem:[M_\"A\"] is the molar mass (<<t9-4>>) of the solvent stem:[A], stem:[sum] denotes summation over all the solutes, stem:[b_\"B\"] is the molality of solute stem:[\"B\"] (<<t9-15>>), and stem:[a_\"A\"] is the activity of solvent stem:[\"A\"] (<<t9-27.1>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The name \"osmotic coefficient\" is generally used, although the name \"osmotic factor\" is more systematic.\n\nThis concept especially applies to a dilute liquid solution.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-9"
+      }
+    }
+  ]
+}

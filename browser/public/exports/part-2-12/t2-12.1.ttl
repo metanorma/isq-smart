@@ -1,0 +1,19 @@
+isoiec80000:term-t2-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f, g, h, ..."@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.1-0 ;
+  skos:definition """functions"""@en ;
+  skos:note """A function assigns to any argument in its domain a unique value in its range.
+
+The arguments are said to be _mapped_ by the function onto the values, which are called _images_ of the arguments under the function.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-80.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mean energy imparted",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-80.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bar epsilon",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-80.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-80.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-80.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-80.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "expectation value of the energy imparted (<<t10-80.1>>):\n\n[stem%unnumbered]\n++++\nbar epsilon = R_\"in\" - R_\"out\" + sum Q\n++++\n\nwhere\n\nstem:[R_\"in\"]:: is the radiant energy (<<t10-45>>) of all those charged and uncharged ionizing particles that enter the volume,\n\nstem:[R_\"out\"]:: is the radiant energy of all those charged and uncharged ionizing particles that leave the volume, and\n\nstem:[sum Q]:: is the sum of all changes of the rest energy (<<t10-3>>) of nuclei and elementary particles that occur in that volume\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Sometimes, it has been called the integral absorbed dose.\n\nstem:[Q > 0] means decrease of rest energy;\n\nstem:[Q < 0] means increase of rest energy.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-eV"
+        },
+        {
+          "@id": "isoiec80000:unit-J"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

@@ -1,0 +1,613 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Prandtl number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Pr",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of kinematic viscosity and thermal diffusivity for a fluid, expressed by\n\nstem:[Pr = sf(ii(v))//a]; where\n\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and\nstem:[a]:: is thermal diffusivity (<<iso80000-5>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Prandtl number also represents the quotient of heat produced by viscosity and heat transferred by thermal diffusivity.\n\nThe mass transfer analogue of the Prandtl number is the Schmidt number (<<t11-7.2>>).\n\nThe Prandtl number is also given by\n\nstem:[Pr = Pe//Re]; where\n\nstem:[Pe]:: is the Péclet number (<<t11-5.2>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Schmidt number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: Colburn number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Sc",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of kinematic viscosity and diffusion coefficient for a fluid, expressed by\n\nstem:[Sc = sf(ii(v))//D]; where\n\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The heat transfer analogue of the Schmidt number is the Prandtl number (<<t11-7.1>>).",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lewis number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Le",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of thermal diffusivity and diffusion coefficient for heat transfer in a fluid, expressed by\n\nstem:[Le = a//D]; where\n\nstem:[a]:: is thermal diffusivity (<<iso80000-5>>), and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Lewis number is also given by\n\nstem:[Le = Sc//Pr]; where\n\nstem:[Sc]:: is the Schmidt number (<<t11-7.2>>), and\nstem:[Pr]:: is the Prandtl number (<<t11-7.1>>).\n\nCompare with <<t11-5.2>>.\n\nThe Lewis number is sometimes defined as reciprocal of this quantity.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ohnesorge number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Oh",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between viscous force and the square root of the product of inertia force and capillary force for atomization of liquids, expressed by\n\nstem:[Oh = eta/(sqrt(gamma rho l))]; where\n\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>),\nstem:[gamma]:: is surface tension (<<iso80000-4>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[l]:: is characteristic length (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Ohnesorge number is also given by\n\nstem:[Oh = sqrt(We)//Re]; where\n\nstem:[We]:: is the Weber number (<<t11-4.5>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n\nSee also Laplace number (<<t11-4.37>>).\n\nThe characteristic length typically is the drop diameter.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cauchy number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.5-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "aeroelasticity parameter",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.5",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.5",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.5-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.5-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.5-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between inertia forces and compression forces in compressible fluids, expressed by\n\nstem:[Cy = rho v^2//K]; where\n\nstem:[rho]:: is mass density (<<iso80000-4>>),\nstem:[v]:: is speed (<<iso80000-3>>), and\nstem:[K]:: is modulus of compression, bulk modulus (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Hooke number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ho_2",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.6",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.6",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.6-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.6-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between inertia forces and linear stress forces in elastic fluids, expressed by\n\nstem:[Ho_2 = rho v^2 // E]; where\n\nstem:[rho]:: is mass density (<<iso80000-4>>),\nstem:[v]:: is speed (<<iso80000-3>>), and\nstem:[E]:: is modulus of elasticity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Weissenberg number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Wi",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.7",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.7",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.7-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.7-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "product of time derivative of shear rate and relaxation time in viscoelastic flows, expressed by\n\nstem:[Wi = dot gamma t_\"r\"]; where\n\nstem:[dot gamma]:: is time derivative of shear strain (<<iso80000-4>>), and\nstem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Weissenberg number represents the relative importance of viscous forces when compared to elastic forces.\n\nThe time derivative of shear strain is sometimes called the shear rate.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Deborah number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "De",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.8",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.8",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.8-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.8-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of relaxation time of viscoelastic fluids and observation duration in rheology of viscoelastic fluids, expressed by\n\nstem:[De = t_\"c\"//t_\"p\"]; where\n\nstem:[t_\"c\"]:: is stress relaxation time, and\nstem:[t_\"p\"]:: is observation duration (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The stress relaxation time is sometimes called the Maxwell relaxation time.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lorentz number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lo",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.9",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.9",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.9-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.9-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of electrical conductivity and thermal conductivity, expressed by\n\nstem:[Lo = (sigma (Delta U)^2)/(lambda Delta T)]; where\n\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[Delta U]:: is difference of voltage stem:[U] (<<iec80000-6>>) between two reference points,\nstem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and\nstem:[Delta T]:: is difference in thermodynamic temperature stem:[T] (<<iso80000-5>>) between the reference points\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "compressibility number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Z",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.10",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.10",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.10-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.10-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of isothermal compressibility (<<iso80000-5>>) of a gas and that of an ideal gas, expressed by\n\nstem:[Z=p/(rho R_\"s\"T)]; where\n\nstem:[p]:: is pressure (<<iso80000-4>>),\nstem:[rho]:: is mass density (<<iso80000-4>>),\nstem:[R_\"s\"]:: is specific gas constant (<<iso80000-5>>), and\nstem:[T]:: is thermodynamic temperature (<<iso80000-5>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    }
+  ]
+}

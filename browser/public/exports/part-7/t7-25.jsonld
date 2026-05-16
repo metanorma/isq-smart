@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-25-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon exposure",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(H)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-25",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-25",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-25-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident photon number with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nH_\"p\" = (\"d\"N_\"p\")/(\"d\"A)\n++++\n\nwhere stem:[N_\"p\"] is photon number (<<t7-19.1>>) and stem:[A] is the area (<<iso80000-3>>) on which the photons are incident\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding radiometric quantity is \"radiant exposure\" (<<t7-9.1>>). The corresponding photometric quantity is \"luminous exposure\" (<<t7-18>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

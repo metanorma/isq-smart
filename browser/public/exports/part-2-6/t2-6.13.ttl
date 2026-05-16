@@ -1,0 +1,25 @@
+isoiec80000:term-t2-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "difference of sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A \\\\ B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.13-0 ;
+  skos:definition """difference of stem:[A] and stem:[B], +
+stem:[A] minus stem:[B]
+"""@en ;
+  skos:note """The set of elements which belong to stem:[A] but not to stem:[B].
+
+stem:[A \\\\ B = {x &#x2223; x in A ^^ x !in B}]
+
+The notation stem:[A - B] should not be used.
+
+stem:[C_A B] is also used. stem:[C_A B] is mainly used when stem:[B] is a subset of stem:[A], and the symbol stem:[A] may be omitted if it is clear from the context which set stem:[A] is considered.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t2-20.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hypergeometric function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"F\"(a,b,c;z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.13-0 ;
+  skos:definition """hypergeometric function"""@en ;
+  skos:note """stem:[F(a,b,c;z) = sum_(n=0)^(oo) ((a)_n (b)_n z^n)/((c)_n n!)]
+
+(for stem:[-c !in bb(sf(N))])
+
+For stem:[(a)_n], stem:[(b)_n] and stem:[(c)_n], see <<t2-11.3>>.
+
+Solution of
+
+stem:[z(1-z)y'' + [c-(a+b+1)z\\]y' - aby = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

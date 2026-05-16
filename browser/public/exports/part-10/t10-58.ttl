@@ -1,0 +1,23 @@
+isoiec80000:term-t10-58-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear ionization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-58-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(\"i\"l)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-58 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-58" ;
+  skosxl:prefLabel isoiec80000:term-t10-58-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-58-0 ;
+  skos:definition """differential quotient of stem:[q] with respect to stem:[l], where stem:[q] is the average total charge (<<iec80000-6>>) of all positive ions produced by an ionizing charged particle over a path stem:[l] (<<iso80000-3>>), divided by the elementary charge, stem:[e] (<<iso80000-1>>):
+
+[stem%unnumbered]
+++++
+N_(\"i\"l) = 1/e (\"d\"q)/(\"d\"l)
+++++
+"""@en ;
+  skos:note """Ionization due to secondary ionizing particles is included."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

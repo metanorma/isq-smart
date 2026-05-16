@@ -1,0 +1,32 @@
+isoiec80000:term-t4-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "torque"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-12.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M_\"Q\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-12.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-12.2-1 ;
+  skos:definition """quantity described by the scalar product:
+
+stem:[T = bb(ii(M)) * bb(ii(e))_\"Q\"]
+
+where stem:[bb(ii(M))] is moment of force (<<t4-12.1>>) and
+stem:[bb(ii(e))_\"Q\"] is unit vector of direction with respect to which the
+torque is considered
+"""@en ;
+  skos:note """For example, torque is the twisting moment of force with respect to
+the longitudinal axis of a beam or shaft.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

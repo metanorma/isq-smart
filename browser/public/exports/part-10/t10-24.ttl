@@ -1,0 +1,38 @@
+isoiec80000:term-t10-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decay constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "disintegration constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-24" ;
+  skosxl:prefLabel isoiec80000:term-t10-24-0 ;
+  skosxl:altLabel isoiec80000:term-t10-24-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-24-0 ;
+  skos:definition """quotient of stem:[-\"d\"N//N] and stem:[\"d\"t], where stem:[\"d\"N//N] is the mean fractional change in the number of nuclei in a particular energy state due to spontaneous transformations in a time interval of duration (<<iso80000-3>>) stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+lambda = -1/N (\"d\"N)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """For exponential decay, this quantity is constant.
+
+For more than one decay channel,
+
+[stem%unnumbered]
+++++
+lambda = sum lambda_a
+++++
+
+where stem:[lambda_a] denotes the decay constant for a specified final state and the sum is taken over all final states.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,21 @@
+isoiec80000:term-t2-20.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithmic integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"li \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.6-0 ;
+  skos:definition """logarithmic integral"""@en ;
+  skos:note """stem:[\"li \"x = int_0^x 1/(\"ln\"t)\"d\"t] (for stem:[0<x<1])
+
+stem:[\"li \"x =] stem:[&#x2A0D;_0^x 1/(\"ln\"t)\"d\"t] (for stem:[x>1])
+
+For stem:[&#x2A0D;], see <<t2-12.26>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

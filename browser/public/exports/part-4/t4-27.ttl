@@ -1,0 +1,22 @@
+isoiec80000:term-t4-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power <mechanics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-27" ;
+  skosxl:prefLabel isoiec80000:term-t4-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-27-0 ;
+  skos:definition """scalar product of force stem:[bb(ii(F))] (<<t4-9.1>>) acting to a body and
+its velocity stem:[v] (<<iso80000-3>>):
+
+stem:[P=Fv]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

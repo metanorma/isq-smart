@@ -1,0 +1,27 @@
+isoiec80000:term-t2-18.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) xx bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.12-0 ;
+  skos:definition """vector product of stem:[bb(ii(a))] and stem:[bb(ii(b))]"""@en ;
+  skos:note """The coordinates, in a right-handed Cartesian coordinate system, are
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_x = a_y b_z - a_z b_y]
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_y = a_z b_x - a_x b_z]
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_z = a_x b_y - a_y b_x]
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_i = sum_j sum_k varepsilon_(ijk) a_j b_k]
+
+See <<t2-18.10>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

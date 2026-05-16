@@ -1,0 +1,23 @@
+isoiec80000:term-t13-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivocation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_{\"+\"}(X\\|I)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-33" ;
+  skosxl:prefLabel isoiec80000:term-t13-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-33-0 ;
+  skos:definition """conditional entropy (<<t13-32,item 13-32>>) of a set stem:[X] of emitted characters given the set I of received characters"""@en ;
+  skos:note """Equivocation is a quantitative measure of the loss of
+information due to noise.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-24\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

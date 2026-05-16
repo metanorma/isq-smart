@@ -1,0 +1,16 @@
+isoiec80000:term-t10-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Larmor frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu_\"L\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-15.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-15.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-15.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-15.2-0 ;
+  skos:definition """quotient of Larmor angular frequency (<<iso80000-3>>) and stem:[2pi]"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

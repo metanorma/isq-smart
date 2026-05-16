@@ -1,0 +1,33 @@
+isoiec80000:term-t2-19.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Heaviside function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-19.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.4-1 ;
+  skos:definition """Heaviside function, +
+unit step function
+"""@en ;
+  skos:note """stem:[H(x) = {(1,\"for\",x>0),(0,\"for\",x<0):}]
+
+stem:[H(0) in [0,1\\]], depending on the field of application.
+
+stem:[U(x)] is also used.
+
+stem:[vartheta(t)] is used for the unit step function of time.
+
+[example]
+stem:[(&#x1D4DB;H)(s) = 1//s] (for stem:[\"Re \"s>0])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .

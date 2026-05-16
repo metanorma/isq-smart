@@ -1,0 +1,25 @@
+isoiec80000:term-t11-4.38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Blake number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bl"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.38" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.38-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.38-0 ;
+  skos:definition """relation between inertial forces and viscous forces in a porous material, expressed by
+
+stem:[Bl = (vpl)/(eta(1-epsilon))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[l]:: is characteristic length (<<iso80000-3>>) defined as the volume of a particle divided by its surface area,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[epsilon]:: is porosity of the material (=void fraction)
+"""@en ;
+  skos:note """The Blake number can be interpreted as a Reynolds number for flow in porous material."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

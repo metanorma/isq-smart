@@ -1,0 +1,29 @@
+isoiec80000:term-t6-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "protoflux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Psi_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.2-0 ;
+  skos:definition """scalar quantity given by the integral
+
+[stem%unnumbered]
+++++
+Psi_\"p\" = int_\"C\" A*\"d\"r
+++++
+
+where stem:[A] is magnetic vector potential (<<t6-32>>) and stem:[\"d\"r] is a line vector element of the path stem:[\"C\"]
+"""@en ;
+  skos:note """The former name \"linked flux\" is deprecated.
+
+See <<iec60050-121,locality:item=\"121-11-24\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

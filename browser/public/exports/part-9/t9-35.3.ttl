@@ -1,0 +1,34 @@
+isoiec80000:term-t9-35.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "grand-canonical partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-35.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "grand partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-35.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Xi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-35.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-35.3" ;
+  skosxl:prefLabel isoiec80000:term-t9-35.3-0 ;
+  skosxl:altLabel isoiec80000:term-t9-35.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-35.3-0 ;
+  skos:definition """sum of canonical partition function stem:[Z (N_\"A\",N_\"B\",...)] for the given number of particles stem:[\"A\", \"B\"] multiplied by absolute activities (<<t9-18>>) stem:[lambda_\"A\", lambda_\"B\", ...] of particles stem:[\"A\", \"B\"]:
+
+[stem%unnumbered]
+++++
+ii(Xi) = sum_(N_\"A\",N_\"B\",...) Z(N_\"A\", N_\"B\",...) * lambda_\"A\"^(N_\"A\")*lambda_\"B\"^(N_\"B\")*...
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+A - sum mu_\"B\" n_\"B\" = - kT \"ln\" ii(Xi)
+++++
+
+where stem:[A] is Helmholtz energy (<<iso80000-5>>), stem:[mu_\"B\"] is the chemical potential of substance stem:[\"B\"], and stem:[n_\"B\"] is the amount of substance stem:[\"B\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

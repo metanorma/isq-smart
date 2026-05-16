@@ -1,0 +1,35 @@
+isoiec80000:term-t7-31.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminous transmittance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-31.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-31.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-31.6" ;
+  skosxl:prefLabel isoiec80000:term-t7-31.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-31.6-0 ;
+  skos:definition """quotient of transmitted luminous flux and incident luminous flux, expressed by
+
+[stem%unnumbered]
+++++
+tau_\"v\" = (Phi_\"v,t\")/(Phi_\"v,m\")
+++++
+
+where stem:[Phi_\"v,t\"] is transmitted luminous flux (<<t7-13>>) and stem:[Phi_\"v,m\"] is luminous flux of the incident radiation
+"""@en ;
+  skos:note """From the spectral transmittance stem:[tau(lambda)], luminous transmittance can be calculated by
+
+[stem%unnumbered]
+++++
+tau_\"v\" = (int_0^(oo) tau(lambda) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)
+++++
+
+where stem:[Phi_(\"e\",lambda)(lambda)] is the spectral radiant flux (or relative spectral distribution) of the source, and stem:[V(lambda)] is the spectral luminous efficiency (<<t7-10.2>>).
+
+See also <<t7-31.5>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

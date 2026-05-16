@@ -1,0 +1,22 @@
+isoiec80000:term-t11-8.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric field parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ef"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.14-0 ;
+  skos:definition """quotient of Coulomb force and Lorentz force on moving electrically charged material or particles, expressed by
+
+stem:[Ef = E // (vB)]; where
+
+stem:[E]:: is electric field strength (<<iec80000-6>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

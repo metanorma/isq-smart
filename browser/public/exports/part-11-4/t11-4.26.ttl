@@ -1,0 +1,29 @@
+isoiec80000:term-t11-4.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hagen number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.26" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.26-1 ;
+  skos:definition """generalization of the Grashof number for forced or free convection in laminar flow, expressed by
+
+stem:[Hg = -1/rho (\"d\"p)/(\"d\"x) l^3/v^2]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>) of fluid,
+stem:[(\"d\"p)/(\"d\"x)]:: is gradient of pressure (<<iso80000-4>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """For free thermal convection with stem:[(\"d\"p)/(\"d\"x) = rho g alpha_\"V\" Delta T], the Hagen number then coincides with the Grashof number (<<t11-4.4>>). See also the Poiseuille number (<<t11-4.28>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

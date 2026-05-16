@@ -1,0 +1,22 @@
+isoiec80000:term-t9-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal diffusion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_\"T\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-41" ;
+  skosxl:prefLabel isoiec80000:term-t9-41-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-41-0 ;
+  skos:definition """product of the thermal diffusion ratio stem:[k_\"T\"] (<<t9-40.1>>) and the diffusion coefficient stem:[D] (<<t9-39>>):
+
+[stem%unnumbered]
+++++
+D_\"T\" = k_\"T\"*D
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

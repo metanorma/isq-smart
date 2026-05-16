@@ -1,0 +1,17 @@
+isoiec80000:term-t6-52.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "admittance of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-52.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-52.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-52.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-52.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-52.2-0 ;
+  skos:definition """quantity given by the inverse of the impedance of vacuum stem:[Z_0] (<<t6-51.2>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

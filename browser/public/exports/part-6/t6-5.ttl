@@ -1,0 +1,36 @@
+isoiec80000:term-t6-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear density of electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lineic electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-5-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lineic charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-5" ;
+  skosxl:prefLabel isoiec80000:term-t6-5-0 ;
+  skosxl:altLabel isoiec80000:term-t6-5-1 ;
+  skosxl:altLabel isoiec80000:term-t6-5-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-5-0 ;
+  skos:definition """scalar quantity representing the linear distribution of electric charge,
+
+[stem%unnumbered]
+++++
+tau = tau(bb(ii(r))) = (\"d\"Q)/(\"d\"l)
+++++
+
+where stem:[\"d\"Q] is a quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge (<<t6-2.1>>) contained in a quasi-infinitesimal domain located at position stem:[bb(ii(r))] and stem:[\"d\"l] is a quasi-infinitesimal length (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-09\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-1*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

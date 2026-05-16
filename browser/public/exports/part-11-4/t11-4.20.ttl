@@ -1,0 +1,32 @@
+isoiec80000:term-t11-4.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rossby number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Kiebel number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ro"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.20-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.20-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.20-0 ;
+  skos:definition """quotient of inertial forces and Coriolis forces in the context of transfer of matter in geophysics, expressed by
+
+stem:[Ro = v//(2 l omega_\"E\" \"sin\"varphi)]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of motion,
+stem:[l]:: is characteristic length (<<iso80000-3>>), the scale of the phenomenon,
+stem:[omega_\"E\"]:: is angular velocity (<<iso80000-3>>) of the Earth's rotation, and
+stem:[varphi]:: is angle (<<iso80000-3>>) of latitude
+"""@en ;
+  skos:note """The Rossby number represents the effect of Earth's rotation on flow in pipes, rivers, ocean currents, tornadoes, etc.
+
+The quantity stem:[omega_\"E\" \"sin\"varphi] is called Coriolis frequency.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

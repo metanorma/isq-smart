@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ohnesorge number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Oh",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between viscous force and the square root of the product of inertia force and capillary force for atomization of liquids, expressed by\n\nstem:[Oh = eta/(sqrt(gamma rho l))]; where\n\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>),\nstem:[gamma]:: is surface tension (<<iso80000-4>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[l]:: is characteristic length (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Ohnesorge number is also given by\n\nstem:[Oh = sqrt(We)//Re]; where\n\nstem:[We]:: is the Weber number (<<t11-4.5>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n\nSee also Laplace number (<<t11-4.37>>).\n\nThe characteristic length typically is the drop diameter.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    }
+  ]
+}

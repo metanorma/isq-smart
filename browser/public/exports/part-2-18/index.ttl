@@ -1,0 +1,598 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-18 a smart:PublicationDocument ;
+  dcterms:title "Part 2-18"@en ;
+  dcterms:identifier "ISO 80000-2-18" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-18.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vec a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.1-1 ;
+  skos:definition """vector stem:[bb(ii(a))]"""@en ;
+  skos:note """An arrow above the letter symbol can be used instead of bold face type to indicate a vector."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum of vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) + bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.2-0 ;
+  skos:definition """sum of vectors stem:[bb(ii(a))] and stem:[bb(ii(b))]"""@en ;
+  skos:note """stem:[(bb(ii(a)) + bb(ii(b)))_i = a_i + b_i]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of scalar and vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.3-0 ;
+  skos:definition """product of a number, scalar, or component stem:[x] and vector stem:[bb(ii(a))]"""@en ;
+  skos:note """stem:[(x bb(ii(a)))_i = xa_i]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnitude of vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs(bb(ii(a)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.4-0 ;
+  skos:definition """magnitude of the vector stem:[bb(ii(a))], +
+norm of the vector stem:[bb(ii(a))]
+"""@en ;
+  skos:note """stem:[abs(bb(ii(a))) = sqrt(a_x^2 + a_y^2 + a_z^2)]
+
+stem:[norm(bb(ii(a)))] is also used.
+
+The symbol stem:[abs] is also used for cardinality of a set (see <<t2-6.5>>), absolute value of a real number (see <<t2-10.16>>), modulus of a complex number (<<t2-15.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "zero vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(0)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vec 0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.5-1 ;
+  skos:definition """zero vector"""@en ;
+  skos:note """The zero vector has magnitude stem:[0]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "unit vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(e_a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hat bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.6-1 ;
+  skos:definition """unit vector in the direction of stem:[bb(ii(a))]"""@en ;
+  skos:note """stem:[bb(e_a) = hat bb(ii(a)) = bb(ii(a))//abs(bb(ii(a)))], (for stem:[bb(ii(a)) != 0])"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "unit vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(e)_x, bb(e)_y, bb(e)_z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(e)_1, bb(e)_2, bb(e)_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.7-1 ;
+  skos:definition """unit vectors in the directions of the Cartesian coordinate axes"""@en ;
+  skos:note """stem:[bb(i), bb(j), bb(k)] are also used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian coordinates of vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_x, a_y, a_z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.8-1 ;
+  skos:definition """Cartesian coordinates of vector stem:[bb(ii(a))], +
+Cartesian components of vector stem:[bb(ii(a))]
+"""@en ;
+  skos:note """stem:[bb(ii(a)) = a_x\" \"bb(e)_x + a_y\" \"bb(e)_y + a_z\" \"bb(e)_z]
+
+stem:[a_1\" \"bb(e)_1, a_2\" \"bb(e)_2, a_3\" \"bb(e)_3] are the component vectors. If it is clear from the context which are the base vectors, the vector can be written
+
+stem:[bb(ii(a)) = (a_x, a_y, a_z)].
+
+stem:[a_x = bb(ii(a))*bb(e)_x, a_y = bb(ii(a))*bb(e)_y, a_z = bb(ii(a))*bb(e)_z]
+
+stem:[bb(r) = x bb(e)_x + y bb(e)_y + z bb(e)_z] is the position vector (radius vector) of the point with coordinates stem:[x, y, z].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Kronecker delta symbol"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta_(ik)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.9-0 ;
+  skos:definition """Kronecker delta symbol"""@en ;
+  skos:note """stem:[delta_(ik)={(1,\"for\",i=k),(0,\"for\",i!=k):}]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Levi-Civita symbol"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rm(varepsilon)_(ijk)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.10-0 ;
+  skos:definition """Levi-Civita symbol"""@en ;
+  skos:note """stem:[rm(varepsilon)_(123) = rm(varepsilon)_(231) = rm(varepsilon)_(312) = 1]
+
+stem:[rm(varepsilon)_(132) = rm(varepsilon)_(321) = rm(varepsilon)_(213) = -1]
+
+All other stem:[rm(varepsilon)_(ijk)] are equal to stem:[0].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "scalar product of vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) * bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.11-0 ;
+  skos:definition """scalar product of stem:[bb(ii(a))] and stem:[bb(ii(b))]"""@en ;
+  skos:note """stem:[bb(ii(a)) * bb(ii(b)) = a_xb_x + a_yb_y + a_zb_z]
+
+stem:[bb(ii(a)) * bb(ii(a)) = sum_i a_i b_i]
+
+stem:[bb(ii(a)) * bb(ii(a)) = bb(ii(a))^2 = abs(bb(ii(a)))^2 = a^2]
+
+In special fields, stem:[(bb(ii(a)), bb(ii(b)))] or stem:[< a, b >] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) xx bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.12-0 ;
+  skos:definition """vector product of stem:[bb(ii(a))] and stem:[bb(ii(b))]"""@en ;
+  skos:note """The coordinates, in a right-handed Cartesian coordinate system, are
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_x = a_y b_z - a_z b_y]
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_y = a_z b_x - a_x b_z]
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_z = a_x b_y - a_y b_x]
+
+stem:[(bb(ii(a)) xx bb(ii(b)))_i = sum_j sum_k varepsilon_(ijk) a_j b_k]
+
+See <<t2-18.10>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nabla operator"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vec grad"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.13-1 ;
+  skos:definition """nabla operator"""@en ;
+  skos:note """stem:[bb(grad) = e_x del/(del x) + e_y del/(del y) + e_z del/(del z) = sum_i e_i del/(del x_i)]
+
+The operator is also called \"del operator\".
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gradient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad) varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(\"grad\")\" \"varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.14-1 ;
+  skos:definition """gradient of stem:[varphi]"""@en ;
+  skos:note """stem:[bb(grad) varphi = sum_i e_i (del varphi)/(del x_i)]
+
+The operator stem:[bb(\"grad\")] should be written in bold face.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "divergence"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad) * a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(\"div\")\" \"a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.15-1 ;
+  skos:definition """divergence of stem:[bb(ii(a))]"""@en ;
+  skos:note """stem:[bb(grad) * a = sum_i (del a_i)/(del x_i)]
+
+The operator stem:[bb(\"div\")] should be written in bold face.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad) xx a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(\"rot\")\" \"bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.16-1 ;
+  skos:definition """rotation of stem:[bb(ii(a))]"""@en ;
+  skos:note """The coordinates are
+
+stem:[(bb(grad) xx bb(ii(a)))_x = (del a_z)/(del y) - (del a_y)/(del z)]
+
+stem:[(bb(grad) xx bb(ii(a)))_y = (del a_x)/(del z) - (del a_z)/(del x)]
+
+stem:[(bb(grad) xx bb(ii(a)))_z = (del a_y)/(del x) - (del a_x)/(del y)]
+
+The operator stem:[bb(\"curl\")] should be avoided and the operator stem:[bb(\"rot\")] should be written in bold face.
+
+stem:[(bb(grad) xx bb(ii(a)))_i = sum_j sum_k varepsilon_(ijk) (del a_k)/(del x_j)]
+
+See <<t2-18.10>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laplacian"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad)^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Delta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.17-1 ;
+  skos:definition """Laplacian"""@en ;
+  skos:note """stem:[bb(grad)^2 = (del^2)/(del x^2) + (del^2)/(del y^2) + (del^2)/(del z^2)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d'Alembertian"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "square"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.18-0 ;
+  skos:definition """d'Alembertian"""@en ;
+  skos:note """stem:[square = (del^2)/(del x^2) + (del^2)/(del y^2) + (del^2)/(del z^2) - 1/(c^2) (del^2)/(del t^2)]
+
+where the independent variable stem:[t] is time (<<iso80000-3>>) and stem:[c] is the speed (<<iso80000-3>>) of light
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tensor of second order"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vec(vec T)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.19-1 ;
+  skos:definition """tensor stem:[sf(bb(ii(T))] of the second order"""@en ;
+  skos:note """Two arrows above the letter symbol can be used instead of bold face sans serif type to indicate a tensor of the second order."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cartesian coordinates of tensor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_(x x), T_(xy), ..., T_(zz)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_(11), T_(12), ..., T_(33)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.20-1 ;
+  skos:definition """Cartesian coordinates of tensor stem:[sf(bb(ii(T)))], +
+Cartesian components of tensor stem:[sf(bb(ii(T)))]
+"""@en ;
+  skos:note """The scalars stem:[T_(x x), T_(xy), ..., T_(zz)] in the representation
+
+stem:[sf(bb(ii(T))) = T_(x x) e_x e_x + T_(xy) e_x e_y + ... + T_(zz) e_z e_z]
+
+of the tensor stem:[bb(ii(T))] by the base tensors
+
+stem:[e_x e_x, e_x e_y, ..., e_z e_z].
+
+stem:[T_(x x) e_x e_x, T_(xy) e_x e_y, ..., T_(zz) e_z e_z], are the component tensors.
+
+If it is clear from the context which are the base vectors, the tensor can be written
+
+stem:[sf(bb(ii(T))) = ([T_(x x), T_(xy), T_(xz)\\],[T_(yx), T_(yy), T_(yz)\\],[T_(zx), T_(zy), T_(zz)\\]) ].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dyadic product"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ab)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.21-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) ox bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.21-1 ;
+  skos:definition """dyadic product, +
+tensor product of two vectors stem:[bb(ii(a))] and stem:[bb(ii(b))]
+"""@en ;
+  skos:note """tensor of the second order with coordinates
+
+stem:[(bb(ab))_(ij) = a_ib_j]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tensor product of tensors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T))) ox sf(bb(ii(S)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.22-0 ;
+  skos:definition """tensor product of two tensors stem:[sf(bb(ii(T)))] and stem:[sf(bb(ii(S)))] of the second order"""@en ;
+  skos:note """tensor of the fourth order with coordinates
+
+stem:[(sf(bb(ii(T))) ox sf(bb(ii(S))))_(ijkl) = T_(ij) S_(kl)]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inner product of tensors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T))) * sf(bb(ii(S)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.23 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.23" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.23-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.23-0 ;
+  skos:definition """inner product of two tensors stem:[sf(bb(ii(T)))] and stem:[sf(bb(ii(S)))] of the second order"""@en ;
+  skos:note """tensor of the second order with coordinates
+
+stem:[(sf(bb(ii(T)))* sf(bb(ii(S))))_(ik) = sum_j T_(ij) S_(jk)]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inner product of tensor and vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T)))* bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.24 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.24" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.24-0 ;
+  skos:definition """inner product of a tensor stem:[sf(bb(ii(T)))] of the second order and a vector stem:[bb(ii(a))]"""@en ;
+  skos:note """vector with coordinates
+
+stem:[(sf(bb(ii(T)))* bb(ii(a)))_i = sum_j T_(ij) a_j]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .
+
+isoiec80000:term-t2-18.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "scalar product of tensors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T:S)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.25-0 ;
+  skos:definition """scalar product of two tensors stem:[sf(bb(ii(T)))] and stem:[sf(bb(ii(S)))] of the second order"""@en ;
+  skos:note """scalar quantity +
+stem:[sf(bb(ii(T:S))) = sum_i sum_j T_(ij) S_(ij)]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

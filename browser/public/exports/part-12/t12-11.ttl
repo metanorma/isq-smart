@@ -1,0 +1,25 @@
+isoiec80000:term-t12-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Theta)_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-11" ;
+  skosxl:prefLabel isoiec80000:term-t12-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-11-0 ;
+  skos:definition """in the Debye model, quantity given by:
+
+[stem%unnumbered]
+++++
+ii(Theta)_\"D\" = &#8463; (omega_\"D\")/k
+++++
+
+where stem:[k] is the Boltzmann constant, (<<iso80000-1>>), stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>), and stem:[omega_\"D\"] is Debye angular frequency (<<t12-10>>)
+"""@en ;
+  skos:note """A Debye temperature can also be defined by fitting a Debye model result to a certain quantity, for instance, the heat capacity at a certain temperature."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Prandtl number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Pr",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-7.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-7.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-7.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-7.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of kinematic viscosity and thermal diffusivity for a fluid, expressed by\n\nstem:[Pr = sf(ii(v))//a]; where\n\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and\nstem:[a]:: is thermal diffusivity (<<iso80000-5>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Prandtl number also represents the quotient of heat produced by viscosity and heat transferred by thermal diffusivity.\n\nThe mass transfer analogue of the Prandtl number is the Schmidt number (<<t11-7.2>>).\n\nThe Prandtl number is also given by\n\nstem:[Pr = Pe//Re]; where\n\nstem:[Pe]:: is the Péclet number (<<t11-5.2>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-7"
+      }
+    }
+  ]
+}

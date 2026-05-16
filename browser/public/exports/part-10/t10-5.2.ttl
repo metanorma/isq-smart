@@ -1,0 +1,29 @@
+isoiec80000:term-t10-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "charge number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-5.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ionization number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-5.2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-5.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-5.2-0 ;
+  skos:definition """for a particle, quotient of the electric charge (<<iec80000-6>>) and the elementary charge (<<iso80000-1>>)"""@en ;
+  skos:note """A particle is said to be electrically neutral if its charge number is equal to zero.
+
+The charge number of a particle can be positive, negative, or zero.
+
+The state of charge of a particle may be presented as a superscript to the symbol of that particle, e.g.
+
+stem:[\"H\"^\\+], stem:[\"He\"^(++)], stem:[\"Al\"^(3+)], stem:[\"Cl\"^-], stem:[\"S\"^(--)], stem:[\"N\"^(3-)].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

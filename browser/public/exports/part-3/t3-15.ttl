@@ -1,0 +1,30 @@
+isoiec80000:term-t3-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "time constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-15" ;
+  skosxl:prefLabel isoiec80000:term-t3-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-15-1 ;
+  skos:definition """parameter characterizing the response to a step input of a first-order, linear time-invariant system"""@en ;
+  skos:note """If a quantity is a function of the duration (<<t3-9>>) expressed by:
+
+[stem%unnumbered]
+++++
+F(t) prop \"e\"^(-t//tau)
+++++
+
+where stem:[t] denotes the duration (<<t3-9>>), then stem:[tau] denotes the time constant. Here the time constant stem:[tau] applies to an exponentially decaying quantity.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

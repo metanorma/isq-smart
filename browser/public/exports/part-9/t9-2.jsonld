@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "amount of substance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: number of moles",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "n(X)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t9-2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "9-2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of number stem:[N] of specified elementary entities of kind stem:[\"X\"] (<<t9-1>>) in a sample, and the Avogadro constant stem:[N_\"A\"] (<<iso80000-1>>):\n\n[stem%unnumbered]\n++++\nn(\"X\") = (N(\"X\"))/N_\"A\"\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Amount of substance is one of the seven base quantities in the International System of Quantities, ISQ (see <<iso80000-1>>).\n\nElementary entities, such as molecules, atoms, ions, electrons, holes and other quasi-particles, double bonds can be used. It is necessary to specify precisely the entity involved, e.g. atoms of hydrogen stem:[\"H\"] vs. molecules of hydrogen stem:[\"H\"_2], preferably by giving the molecular chemical formula of the material involved.\n\nIn the name \"amount of substance\", the words \"of substance\" could be replaced by words specifying the substance concerned, e.g. \"amount of hydrogen chloride, stem:[\"HCl\"]\", or \"amount of benzene, stem:[\"C\"_6\"H\"_6]\".\n\nThe name \"number of moles\" is often used for \"amount of substance\", but this is deprecated because the name of a quantity should be distinguished from the name of the unit.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-mol"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-9"
+      }
+    }
+  ]
+}

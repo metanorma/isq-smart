@@ -1,0 +1,47 @@
+isoiec80000:term-t7-4.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spectral radiant flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t7-4.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spectral radiant power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-4.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_(\"e\",lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-4.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P_(\"e\",lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-4.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Phi_lambda, P_lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-4.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-4.2" ;
+  skosxl:prefLabel isoiec80000:term-t7-4.2-0 ;
+  skosxl:altLabel isoiec80000:term-t7-4.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t7-4.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-4.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t7-4.2-2 ;
+  skos:definition """spectral density of radiant flux, expressed by
+
+[stem%unnumbered]
+++++
+Phi_(\"e\",lambda) = (\"d\" Phi_\"e\")/(\"d\"lambda)
+++++
+
+where stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)
+"""@en ;
+  skos:note """The integral of (total) radiant flux is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:
+
+[stem%unnumbered]
+++++
+Phi_\"e\" = int_(lambda_1)^(lambda_2) Phi_(\"e\",lambda) \"d\"lambda
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/nm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

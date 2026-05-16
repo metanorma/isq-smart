@@ -1,0 +1,36 @@
+isoiec80000:term-t6-11.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric potential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-11.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-11.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-11.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-11.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-11.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-11.1-1 ;
+  skos:definition """scalar quantity expressed by
+
+[stem%unnumbered]
+++++
+-bb(\"grad\") V = bb(ii(E)) + (del bb(ii(A)))/(del t)
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(A))] is magnetic vector potential (<<t6-32>>) and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """The electric potential is not unique since any constant scalar field quantity can be added to it without changing its gradient.
+
+The electric potential, the electric field, and the magnetic vector potential depend on the position.
+
+See <<iec60050-121,locality:item=\"121-11-25\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

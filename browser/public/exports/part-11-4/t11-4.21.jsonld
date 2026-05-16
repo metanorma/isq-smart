@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ekman number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-4.21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ek",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-4.21",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-4.21",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.21-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-4.21-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of viscous forces and Coriolis forces in the context of transfer of matter for the flow of a rotating fluid, expressed by\n\nstem:[Ek = sf(ii(v))//(2l^2 omega_\"E\" \"sin\"varphi)]; where\n\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>), the scale of the phenomenon,\nstem:[omega_\"E\"]:: is angular frequency (<<iso80000-3>>) of the Earth's rotation, and\nstem:[varphi]:: is angle of latitude\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "In plasma physics, the square root of this number is used.\n\nThe Ekman number is also given by\n\nstem:[Ek = Ro//Re]; where\n\nstem:[Ro]:: is the Rossby number (<<t11-4.20>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-4"
+      }
+    }
+  ]
+}

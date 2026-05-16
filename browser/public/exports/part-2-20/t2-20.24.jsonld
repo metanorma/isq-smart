@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-20.24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Neumann function",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-20.24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"N\"_nu(z)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-20.24",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-20.24",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-20.24-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-20.24-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "Neumann function, +\ncylinder Bessel function of the second kind\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"N\"_nu(z) = (\"J\"_nu (z)\"cos\"(nu pi)-\"J\"_(-nu)(z))/(\"sin\"(nu pi))]\n\n(for stem:[nu in bb(sf(C))])\n\nThe right-hand side of this equation is replaced by its limiting value if stem:[nu in bb(sf(Z))].\n\nstem:[\"Y\"_nu(z)] is also used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-20"
+      }
+    }
+  ]
+}

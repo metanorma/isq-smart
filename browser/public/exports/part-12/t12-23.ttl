@@ -1,0 +1,19 @@
+isoiec80000:term-t12-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Thomson coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-23" ;
+  skosxl:prefLabel isoiec80000:term-t12-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-23-0 ;
+  skos:definition """quotient of Thomson heat power (<<iso80000-5>>) developed, and the electric current (<<iec80000-6>>) and temperature (<<iso80000-5>>) difference"""@en ;
+  skos:note """stem:[mu] is positive if heat is developed when the temperature decreases in the direction of the electric current."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

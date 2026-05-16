@@ -1,0 +1,33 @@
+isoiec80000:term-t10-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "level width"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Gamma)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-26" ;
+  skosxl:prefLabel isoiec80000:term-t10-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-26-0 ;
+  skos:definition """quotient of the reduced Planck constant and the mean life:
+
+[stem%unnumbered]
+++++
+ii(Gamma) = &#8463;/tau
+++++
+
+where
+
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and
+stem:[tau]:: is mean duration of life (<<t10-25>>)
+"""@en ;
+  skos:note """Level width is the uncertainty of the energy of an unstable particle or an excited state of a system due to the Heisenberg principle.
+
+The term energy level refers to the configuration of the distribution function of the density of states. Energy levels may be considered as discrete, like those in an atom, or may have a finite width, like e.g. this item or like e.g. the valence or conduction band in solid state physics. Energy levels are applicable to both real and virtual particles, e.g. electrons and phonons, respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

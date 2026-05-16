@@ -1,0 +1,26 @@
+isoiec80000:term-t2-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "([a_(11), ..., a_(1n)\\],[vdots,ddots,vdots\\],[a_(m1), ..., a_(mn)\\])"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.1-1 ;
+  skos:definition """matrix stem:[bb(ii(A))] of type stem:[m] by stem:[n]"""@en ;
+  skos:note """stem:[bb(ii(A))] is the matrix with the elements stem:[a_(ij) = (bb(ii(A)))_(ij)], stem:[m] is the number of rows and stem:[n] is the number of columns.
+
+stem:[bb(ii(A)) = (a_(ij))] is also used.
+
+Square brackets are also used instead of parentheses.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

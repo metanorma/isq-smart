@@ -1,0 +1,22 @@
+isoiec80000:term-t2-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "congruent to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M ~= N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.8-0 ;
+  skos:definition """stem:[M] is congruent to stem:[N],
+
+stem:[M] is isomorphic to stem:[N]
+"""@en ;
+  skos:note """stem:[M] and stem:[N] are point sets (geometrical figures).
+
+This symbol is also used for isomorphisms of mathematical structures.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .

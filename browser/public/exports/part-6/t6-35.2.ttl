@@ -1,0 +1,39 @@
+isoiec80000:term-t6-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "speed of light in vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-35.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "light speed in vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-35.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminal speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-35.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-35.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-35.2-0 ;
+  skosxl:altLabel isoiec80000:term-t6-35.2-1 ;
+  skosxl:altLabel isoiec80000:term-t6-35.2-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-35.2-0 ;
+  skos:definition """scalar quantity equal to the speed of electromagnetic waves in vacuum (<<iso80000-1>>)
+
+[stem%unnumbered]
+++++
+c_0 = 299792458 \"unitsml(m/s)\"
+++++
+"""@en ;
+  skos:note """This value is not only valid for electromagnetic waves in vacuum, but also for gravitational waves. It is also the upper limit for the speed of propagation of information since this requires a physical carrier. This quantity is considered to be constant in time.
+
+Its value has been fixed by CGMP (see <<bipm-si>>).
+
+See also <<iec60050-113,locality:item=\"113-01-34\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m/s ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

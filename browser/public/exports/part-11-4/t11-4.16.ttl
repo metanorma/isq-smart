@@ -1,0 +1,30 @@
+isoiec80000:term-t11-4.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lagrange number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.16-0 ;
+  skos:definition """quotient of mechanical work and frictional energy loss in fluid dynamics in a pipe, expressed by
+
+stem:[Lg = (l Delta p)/(eta v)]; where
+
+stem:[l]:: is length (<<iso80000-3>>) of the pipe,
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along the pipe,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Lagrange number is also given by
+
+stem:[La = Re * Eu]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Eu]:: is the Euler number (<<t11-4.2>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

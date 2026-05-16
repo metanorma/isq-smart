@@ -1,0 +1,23 @@
+isoiec80000:term-t2-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exponential function to the base stem:[\"e\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"e\"^x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-13.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"exp \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.3-1 ;
+  skos:definition """stem:[\"e\"] to the power of stem:[x], +
+exponential function to the base stem:[\"e\"] of argument stem:[x]
+"""@en ;
+  skos:note """See <<t2-15.5>>."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .

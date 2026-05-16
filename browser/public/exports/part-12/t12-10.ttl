@@ -1,0 +1,17 @@
+isoiec80000:term-t12-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-10" ;
+  skosxl:prefLabel isoiec80000:term-t12-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-10-0 ;
+  skos:definition """cut-off angular frequency (<<iso80000-3>>) in the Debye model of the vibrational spectrum of a solid"""@en ;
+  skos:note """The method of cut-off must be specified."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

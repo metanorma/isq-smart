@@ -1,0 +1,54 @@
+isoiec80000:term-t5-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Theta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-1" ;
+  skosxl:prefLabel isoiec80000:term-t5-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-1-1 ;
+  skos:definition """partial derivative of internal energy with respect to entropy at constant volume and constant number of particles in the system:
+
+[stem%unnumbered]
+++++
+T = ((del U)/(del S))_(V,N)
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>), stem:[S] is entropy (<<t5-18>>), stem:[V] is volume (<<iso80000-3>>), and stem:[N] is number of particles
+"""@en ;
+  skos:note """It is measured with a primary thermometer, examples of which are gas thermometers of different kinds, noise thermometers, or radiation thermometers.
+
+The Boltzmann constant (<<iso80000-1>>) relates energy at the individual particle level with thermodynamic temperature.
+
+Differences of thermodynamic temperatures or changes may be expressed either in kelvin, symbol stem:[\"unitsml(K)\"], or in de grees Celsius, symbol stem:[\"unitsml(degC)\"] (<<t5-2>>).
+
+Thermodynamic temperature is one of the seven base quantities in the International System of Quantities, ISQ (see <<iso80000-1>>).
+
+*The International Temperature Scale of 1990*
+
+For the purpose of practical measurements, the International Temperature Scale of 1990, ITS-90, was adopted by CIPM in 1989, which is a close approximation to the thermodynamic temperature scale.
+
+The quantities defined by this scale are denoted stem:[T_\"90\"] and stem:[t_\"90\"], respectively (replacing stem:[T_\"68\"] and stem:[t_\"68\"] defined by the International Practical Temperature Scale of 1968, IPTS-68), where
+
+[stem%unnumbered]
+++++
+(t_\"90\")/(1 \"unitsml(degC)\") = (T_\"90\")/(1 \"unitsml(K)\") - 273.15
+++++
+
+The units of stem:[T_\"90\"] and stem:[t_\"90\"] are the kelvin, symbol stem:[\"unitsml(K)\"], and the degree Celsius, symbol stem:[\"unitsml(degC)\"] (<<t5-2>>), respectively.
+
+For further information, see <<its90>>, <<mepkelvin>>.
+
+For ready conversion between temperatures reported on the International Temperature Scale and thermodynamic temperatures the systematic deviations can be found in <<estimates>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

@@ -1,0 +1,33 @@
+isoiec80000:term-t5-3.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cubic expansion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-3.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-3.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-3.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-3.2" ;
+  skosxl:prefLabel isoiec80000:term-t5-3.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-3.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-3.2-1 ;
+  skos:definition """relative change of volume with temperature:
+
+[stem%unnumbered]
+++++
+alpha_V = 1/V (\"d\"V)/(\"d\"T)
+++++
+
+where stem:[V] is volume (<<iso80000-3>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  skos:note """Also called volumetric expansion coefficient.
+
+The subscripts in the symbols may be omitted when there is no risk of confusion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

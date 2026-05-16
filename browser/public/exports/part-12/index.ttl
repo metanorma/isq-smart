@@ -1,0 +1,1608 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-12 a smart:PublicationDocument ;
+  dcterms:title "Condensed Matter"@en ;
+  dcterms:identifier "ISO 80000-12" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre"@en ;
+  skos:notation "m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per metre"@en ;
+  skos:notation "m^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-deg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "degree"@en ;
+  skos:notation "deg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per second"@en ;
+  skos:notation "s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kelvin"@en ;
+  skos:notation "K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-3)*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per cubic metre second"@en ;
+  skos:notation "m^(-3)*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J^(-1)*m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per joule cubic metre"@en ;
+  skos:notation "J^(-1)*m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV^(-1)*m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per electronvolt cubic metre"@en ;
+  skos:notation "eV^(-1)*m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^(-5)*s^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second squared per kilogram metre to the fifth"@en ;
+  skos:notation "kg^(-1)*m^(-5)*s^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Ohm*m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ohm metre"@en ;
+  skos:notation "Ohm*m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^3*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram cubic metre per second cubed"@en ;
+  skos:notation "kg*m^3*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per ampere squared"@en ;
+  skos:notation "A^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V^2/K^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt squared per kelvin squared"@en ;
+  skos:notation "V^2/K^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^2*m^4*s^(-6) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram squared metre to the fourth per second to the sixth"@en ;
+  skos:notation "kg^2*m^4*s^(-6)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A^(-2)*K^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per ampere squared kelvin squared"@en ;
+  skos:notation "A^(-2)*K^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3/C a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre per coulomb"@en ;
+  skos:notation "m^3/C" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3*s^(-1)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre per second ampere"@en ;
+  skos:notation "m^3*s^(-1)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt"@en ;
+  skos:notation "V" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed"@en ;
+  skos:notation "kg*m^2*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per ampere"@en ;
+  skos:notation "A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-V/K a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "volt per kelvin"@en ;
+  skos:notation "V/K" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A^(-1)*K^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per ampere kelvin"@en ;
+  skos:notation "A^(-1)*K^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "electronvolt"@en ;
+  skos:notation "eV" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared"@en ;
+  skos:notation "kg*m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A*m^(-2)*K^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per square metre kelvin squared"@en ;
+  skos:notation "A*m^(-2)*K^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per cubic metre"@en ;
+  skos:notation "m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram"@en ;
+  skos:notation "kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second"@en ;
+  skos:notation "s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-T a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "tesla"@en ;
+  skos:notation "T" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-2)*A^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second squared ampere"@en ;
+  skos:notation "kg*s^(-2)*A^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t12-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lattice vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(R))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-1.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-1.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-1.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-1.1-0 ;
+  skos:definition """translation vector that maps the crystal lattice on itself"""@en ;
+  skos:note """The non-SI unit ångström (stem:[\"unitsml(Aring)\"]) is widely used by x-ray crystallographers and structural chemists."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fundamental lattice vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a))_1, bb(ii(a))_2, bb(ii(a))_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-1.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)), bb(ii(b)), bb(ii(c))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-1.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-1.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-1.2-1 ;
+  skos:definition """fundamental translation vectors for the crystal lattice"""@en ;
+  skos:note """The lattice vector (<<t12-1.1>>) can be given as
+
+[stem%unnumbered]
+++++
+bb(ii(R)) = n_1 bb(ii(a))_1 + n_2 bb(ii(a))_2 + n_3 bb(ii(a))_3
+++++
+
+where stem:[n_1], stem:[n_2] and stem:[n_3] are integers.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular reciprocal lattice vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-2.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(G))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-2.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-2.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-2.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-2.1-0 ;
+  skos:definition """vector whose scalar products with all fundamental lattice vectors are integral multiples of stem:[2pi]"""@en ;
+  skos:note """In crystallography, however, the quantity stem:[bb(ii(G))/(2pi)] is sometimes used."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-2.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fundamental reciprocal lattice vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-2.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(b))_1, bb(ii(b))_2, bb(ii(b))_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-2.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-2.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-2.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-2.2-0 ;
+  skos:definition """fundamental translation vectors for the reciprocal lattice"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+bb(ii(a))_i * bb(ii(b))_i = 2pi delta_(ij)
+++++
+
+In crystallography, however, the quantities stem:[(bb(ii(b))_j)/(2pi)] are also often used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lattice plane spacing"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-3" ;
+  skosxl:prefLabel isoiec80000:term-t12-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-3-0 ;
+  skos:definition """distance (<<iso80000-3>>) between successive lattice planes"""@en ;
+  skos:note """The non-SI unit ångström (stem:[\"unitsml(Aring)\"]) is widely used by x-ray crystallographers and structural chemists."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bragg angle"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-4" ;
+  skosxl:prefLabel isoiec80000:term-t12-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-4-0 ;
+  skos:definition """angle between the scattered ray and the lattice plane"""@en ;
+  skos:note """Bragg angle stem:[vartheta] is given by
+
+[stem%unnumbered]
+++++
+2d \"sin\" vartheta = n lambda
+++++
+
+where stem:[d] is the lattice plane spacing (<<t12-3>>), stem:[lambda] is the wavelength (<<iso80000-7>>) of the radiation, and stem:[n] is the order of reflexion which is an integer.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-deg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "short-range order parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-5.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.1-1 ;
+  skos:definition """fraction of nearest-neighbour atom pairs in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction"""@en ;
+  skos:note """Similar definitions apply to other order-disorder phenomena.
+
+Other symbols are frequently used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "long-range order parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-5.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "s"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.2-1 ;
+  skos:definition """fraction of atoms in an Ising ferromagnet having magnetic moments in one direction, minus the fraction having magnetic moments in the opposite direction"""@en ;
+  skos:note """Similar definitions apply to other order-disorder phenomena.
+
+Other symbols are frequently used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic scattering factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.3-0 ;
+  skos:definition """quotient of radiation amplitude scattered by the atom and radiation amplitude scattered by a single electron"""@en ;
+  skos:note """The atomic scattering factor can be expressed by:
+
+[stem%unnumbered]
+++++
+f = (E_\"a\")/(E_\"e\")
+++++
+
+where stem:[E_\"a\"] is the radiation amplitude scattered by the atom and stem:[E_\"e\"] is the radiation amplitude scattered by a single electron.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "structure factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F(h,k,l)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.4" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.4-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+F(h,k,l) = sum_(n=1)^N f_n \"exp\" [2pi \"i\" (hx_n + ky_n + lz_n)]
+++++
+
+where stem:[f_n] is the atomic scattering factor (<<t12-5.3>>) for atom stem:[n], stem:[x_n], stem:[y_n], stem:[z_n] are fractional coordinates of its position, stem:[N] is the total number of atoms in the unit cell and stem:[h], stem:[k], stem:[l] are the Miller indices
+"""@en ;
+  skos:note """For the Miller indices stem:[h], stem:[k], stem:[l], see <<annexA>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Burgers vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-6" ;
+  skosxl:prefLabel isoiec80000:term-t12-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-6-0 ;
+  skos:definition """closing vector in a sequence of vectors encircling a dislocation"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle position vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(r))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-7.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(R))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-7.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-7.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.1-1 ;
+  skos:definition """position vector (<<iso80000-3>>) of a particle"""@en ;
+  skos:note """Often, stem:[bb(ii(r))] is used for electrons and stem:[bb(ii(R))] is used for atoms and other heavier particles."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equilibrium position vector <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(R))_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-7.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-7.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-7.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.2-0 ;
+  skos:definition """position vector (<<iso80000-3>>) of an ion or atom in equilibrium"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "displacement vector <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(u))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-7.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-7.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-7.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.3-0 ;
+  skos:definition """difference between the position vector (<<iso80000-3>>) of an ion or atom and its position vector in equilibrium"""@en ;
+  skos:note """The displacement vector can be expressed by:
+
+[stem%unnumbered]
+++++
+bb(ii(u)) = bb(ii(R)) - bb(ii(R))_0
+++++
+
+where stem:[bb(ii(R))] is particle position vector (<<t12-7.1>>) and stem:[bb(ii(R))_0] is position vector of an ion or atom in equilibrium (<<t12-7.2>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye-Waller factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-8" ;
+  skosxl:prefLabel isoiec80000:term-t12-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-8-1 ;
+  skos:definition """factor by which the intensity of a diffraction line is reduced because of the lattice vibrations"""@en ;
+  skos:note """stem:[D] is sometimes expressed as stem:[D = \"exp\"(-2W)]; in Mössbauer spectroscopy, it is also called the stem:[f] factor and denoted by stem:[f]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t12-9.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular repetency <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-9.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(q)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-9.1-0 ;
+  skosxl:altLabel isoiec80000:term-t12-9.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.1-1 ;
+  skos:definition """quotient of momentum (<<iso80000-4>>) and the reduced Planck constant (<<iso80000-1>>)"""@en ;
+  skos:note """The corresponding vector (<<iso80000-2>>) quantity is called wave vector (<<iso80000-3>>), expressed by:
+
+[stem%unnumbered]
+++++
+bb(ii(k)) = bb(ii(p))/&#8463;
+++++
+
+where stem:[bb(ii(p))] is the momentum (<<iso80000-4>>) of quasi free electrons in an electron gas, and stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>); for phonons, its magnitude is
+
+[stem%unnumbered]
+++++
+k = (2pi)/lambda
+++++
+
+where stem:[lambda] is the wavelength (<<iso80000-3>>) of the lattice vibrations.
+
+When a distinction is needed between stem:[k] and the symbol for the Boltzmann constant (<<iso80000-1>>), stem:[k_\"B\"] can be used for the latter.
+
+When a distinction is needed, stem:[q] should be used for phonons, and stem:[k] for particles such as electrons and neutrons.
+
+The method of cut-off must be specified.
+
+In condensed matter physics, angular wavenumber is often called wavenumber.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fermi angular wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t12-9.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fermi angular repetency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k_\"F\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-9.2-0 ;
+  skosxl:altLabel isoiec80000:term-t12-9.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.2-0 ;
+  skos:definition """angular wavenumber (<<t12-9.1>>) of electrons in states on the Fermi sphere"""@en ;
+  skos:note """In condensed matter physics, angular wavenumber is often called wavenumber."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye angular wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t12-9.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye angular repetency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-9.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-9.3-0 ;
+  skosxl:altLabel isoiec80000:term-t12-9.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-9.3-0 ;
+  skos:definition """cut-off angular wavenumber (<<t12-9.1>>) in the Debye model of the vibrational spectrum of a solid"""@en ;
+  skos:note """The method of cut-off must be specified.
+
+In condensed matter physics, angular wavenumber is often called wavenumber.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-10" ;
+  skosxl:prefLabel isoiec80000:term-t12-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-10-0 ;
+  skos:definition """cut-off angular frequency (<<iso80000-3>>) in the Debye model of the vibrational spectrum of a solid"""@en ;
+  skos:note """The method of cut-off must be specified."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Theta)_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-11" ;
+  skosxl:prefLabel isoiec80000:term-t12-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-11-0 ;
+  skos:definition """in the Debye model, quantity given by:
+
+[stem%unnumbered]
+++++
+ii(Theta)_\"D\" = &#8463; (omega_\"D\")/k
+++++
+
+where stem:[k] is the Boltzmann constant, (<<iso80000-1>>), stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>), and stem:[omega_\"D\"] is Debye angular frequency (<<t12-10>>)
+"""@en ;
+  skos:note """A Debye temperature can also be defined by fitting a Debye model result to a certain quantity, for instance, the heat capacity at a certain temperature."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "density of vibrational states <angular frequency>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-12" ;
+  skosxl:prefLabel isoiec80000:term-t12-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-12-0 ;
+  skos:definition """quotient of the number of vibrational modes in an infinitesimal interval of angular frequency (<<iso80000-3>>), and the product of the width of that interval and volume (<<iso80000-3>>)"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+g(omega) = n_omega = (\"d\"n(omega))/(\"d\"omega)
+++++
+
+where stem:[n(omega)] is the total number of vibrational modes per volume with angular frequency less than stem:[omega].
+
+The density of states may also be normalized in other ways instead of with respect to volume.
+
+See also <<t12-16>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic Grüneisen parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"G\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(ii(Gamma)_\"G\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-13" ;
+  skosxl:prefLabel isoiec80000:term-t12-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-13-1 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+gamma_\"G\" = (alpha_\"V\")/(kappa_\"T\" c_\"V\" rho)
+++++
+
+where stem:[alpha_\"V\"] is cubic expansion coefficient (<<iso80000-5>>), stem:[kappa_\"T\"] is isothermal compressibility (<<iso80000-5>>), stem:[c_\"V\"] is specific heat capacity at constant volume (<<iso80000-5>>), and stem:[rho] is mass density (<<iso80000-4>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grüneisen parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-14" ;
+  skosxl:prefLabel isoiec80000:term-t12-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-14-0 ;
+  skos:definition """quantity given by minus the partial differential quotient:
+
+[stem%unnumbered]
+++++
+gamma = - (del \"ln\" omega)/(del \"ln\" V)
+++++
+
+where stem:[omega] is a lattice vibration frequency (<<iso80000-3>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """stem:[omega] can also refer to an average of the vibrational spectrum, for instance as represented by a Debye angular frequency (<<t12-10>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-15.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean free path of phonons"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-15.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-15.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-15.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-15.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-15.1-0 ;
+  skos:definition """average distance (<<iso80000-3>>) that phonons travel between two successive interactions"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean free path of electrons"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-15.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-15.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-15.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-15.2-0 ;
+  skos:definition """average distance (<<iso80000-3>>) that electrons travel between two successive interactions"""@en ;
+  skos:note """"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy density of states"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"E\"(E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho(E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-16" ;
+  skosxl:prefLabel isoiec80000:term-t12-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-16-1 ;
+  skos:definition """quantity given by the differential quotient with respect to energy:
+
+[stem%unnumbered]
+++++
+n_\"E\"(E) = (\"d\"n(E))/(\"d\"E)
+++++
+
+where stem:[n_\"E\"(E)] is the total number of one-electron states per volume (<<iso80000-3>>) with energy less than stem:[E] (<<iso80000-5>>)
+"""@en ;
+  skos:note """Density of states refers to electrons or other entities, e.g. phonons. It may be normalized in other ways instead of with respect to volume, e.g. with respect to amount of substance.
+
+See also <<t12-12>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J^(-1)*m^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-eV^(-1)*m^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-5)*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "residual resistivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-17" ;
+  skosxl:prefLabel isoiec80000:term-t12-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-17-0 ;
+  skos:definition """for metals, the resistivity (<<iec80000-6>>) extrapolated to zero thermodynamic temperature (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^3*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lorenz coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-18" ;
+  skosxl:prefLabel isoiec80000:term-t12-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-18-0 ;
+  skos:definition """quotient of thermal conductivity (<<iso80000-5>>), and the product of electric conductivity (<<iec80000-6>>) and thermodynamic temperature (<<iso80000-3>>)"""@en ;
+  skos:note """The Lorenz coefficient can be expressed by
+
+[stem%unnumbered]
+++++
+L = lambda/(sigma T)
+++++
+
+where stem:[lambda] is thermal conductivity (<<iso80000-5>>), stem:[sigma] is electric conductivity (<<iec80000-6>>), and stem:[T] is thermodynamic temperature (<<iso80000-5>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V^2/K^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^2*m^4*s^(-6) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-2)*K^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hall coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-19" ;
+  skosxl:prefLabel isoiec80000:term-t12-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-19-1 ;
+  skos:definition """in an isotropic conductor, relation between electric field strength, stem:[bb(ii(E))], (<<iec80000-6>>) and electric current density, stem:[bb(ii(J))], (<<iec80000-6>>) expressed as:
+
+[stem%unnumbered]
+++++
+bb(ii(E)) = rho bb(ii(J)) + R_\"H\" (bb(ii(B)) xx bb(ii(J)))
+++++
+
+where stem:[rho] is resistivity (<<iec80000-6>>), and stem:[bb(ii(B))] is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3/C ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*s^(-1)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermoelectric voltage (between substances stem:[\"a\"] and stem:[\"b\"])"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-20" ;
+  skosxl:prefLabel isoiec80000:term-t12-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-20-0 ;
+  skos:definition """voltage (<<iec80000-6>>) between substances stem:[\"a\"] and stem:[\"b\"] caused by the thermoelectric effect"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Seebeck coefficient (for substances stem:[\"a\"] and stem:[\"b\"])"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-21" ;
+  skosxl:prefLabel isoiec80000:term-t12-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-21-0 ;
+  skos:definition """differential quotient of thermoelectric voltage with respect to thermodynamic temperature:
+
+[stem%unnumbered]
+++++
+S_\"ab\" = (\"d\"E_\"ab\")/(\"d\"T)
+++++
+
+where stem:[E_\"ab\"] is the thermoelectric voltage between substances stem:[\"a\"] and stem:[\"b\"] (<<t12-20>>) and stem:[T] is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  skos:note """This term is also called \"thermoelectric power\"."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Peltier coefficient (for substances stem:[\"a\"] and stem:[\"b\"])"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Pi)_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-22" ;
+  skosxl:prefLabel isoiec80000:term-t12-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-22-0 ;
+  skos:definition """quotient of Peltier heat power (<<iso80000-5>>) developed at a junction, and the electric current (<<iec80000-6>>) flowing from substance stem:[\"a\"] to substance stem:[\"b\"]"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+ii(Pi)_\"ab\" = ii(Pi)_\"a\" - ii(Pi)_\"b\"
+++++
+
+where stem:[ii(Pi)_\"a\"] and stem:[ii(Pi)_\"b\"] are the Peltier coefficients of substances stem:[\"a\"] and stem:[\"b\"], respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Thomson coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-23" ;
+  skosxl:prefLabel isoiec80000:term-t12-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-23-0 ;
+  skos:definition """quotient of Thomson heat power (<<iso80000-5>>) developed, and the electric current (<<iec80000-6>>) and temperature (<<iso80000-5>>) difference"""@en ;
+  skos:note """stem:[mu] is positive if heat is developed when the temperature decreases in the direction of the electric current."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-24.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "work function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-24.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-24.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-24.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-24.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-24.1-0 ;
+  skos:definition """difference between energy (<<iso80000-5>>) of an electron at rest at infinity and the Fermi energy (<<t12-27.1>>)"""@en ;
+  skos:note """The term \"energy level\" is often used for the state of the electron, not only for its energy.
+
+The contact potential difference between substances a and b is given by
+
+[stem%unnumbered]
+++++
+V_\"a\" - V_\"b\" = (phi_\"a\"-phi_\"b\")/e
+++++
+
+where stem:[e] is the elementary charge (<<iso80000-1>>).
+
+A set of energy levels, the energies of which occupy an interval practically continuously, is called an energy band.
+
+In semi-conductors stem:[E_\"d\"] and stem:[E_\"a\"] are used for donors and acceptors, respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-24.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ionization energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-24.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"i\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-24.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-24.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-24.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-24.2-0 ;
+  skos:definition """difference between energy (<<iso80000-5>>) of an electron at rest at infinity and a certain energy level which is the energy of an electron in the interior of a substance"""@en ;
+  skos:note """The term \"energy level\" is often used for the state of the electron, not only for its energy.
+
+The contact potential difference between substances a and b is given by
+
+[stem%unnumbered]
+++++
+V_\"a\" - V_\"b\" = (phi_\"a\"-phi_\"b\")/e
+++++
+
+where stem:[e] is the elementary charge (<<iso80000-1>>).
+
+A set of energy levels, the energies of which occupy an interval practically continuously, is called an energy band.
+
+In semi-conductors stem:[E_\"d\"] and stem:[E_\"a\"] are used for donors and acceptors, respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electron affinity <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-25" ;
+  skosxl:prefLabel isoiec80000:term-t12-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-25-0 ;
+  skos:definition """energy (<<iso80000-5>>) difference between an electron at rest at infinity and an electron at the lowest level of the conduction band in an insulator or semiconductor"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Richardson constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-26" ;
+  skosxl:prefLabel isoiec80000:term-t12-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-26-0 ;
+  skos:definition """parameter in the expression for the thermionic emission current density stem:[J] (<<iec80000-6>>) for a metal in terms of the thermodynamic temperature stem:[T] (<<iso80000-5>>) and work function stem:[phi], (<<t12-24.1>>):
+
+[stem%unnumbered]
+++++
+J = AT^2 \"exp\" (phi/(kT))
+++++
+
+where stem:[k] is the Boltzmann constant (<<iso80000-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^(-2)*K^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-27.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fermi energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-27.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"F\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-27.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-27.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-27.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-27.1-0 ;
+  skos:definition """in a metal, highest occupied energy level at zero thermodynamic temperature (<<iso80000-5>>), where energy level means the energy (<<iso80000-5>>) of an electron in the interior of a substance"""@en ;
+  skos:note """The term \"energy level\" is often used for the state of the electron, not only for its energy.
+
+At stem:[T = 0 \"unitsml(K)\"], stem:[E_\"F\"] is equal to the chemical potential per electron.
+
+In condensed matter physics, the reference level for the energy is sometimes chosen so that, for instance, stem:[E_\"F\" = 0].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gap energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"g\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-27.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-27.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-27.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-27.2-0 ;
+  skos:definition """difference in energy (<<iso80000-5>>) between the lowest level of conduction band and the highest level of valence band at zero thermodynamic temperature (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fermi temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_\"F\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-28" ;
+  skosxl:prefLabel isoiec80000:term-t12-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-28-0 ;
+  skos:definition """in the free electron model, the Fermi energy (<<t12-27.1>>) divided by the Boltzmann constant (<<iso80000-1>>)"""@en ;
+  skos:note """The Fermi temperature is expressed by:
+
+[stem%unnumbered]
+++++
+T_\"F\" = (E_\"F\")/k
+++++
+
+where stem:[E_\"F\"] is Fermi energy (<<t12-27.1>>) and stem:[k] is the Boltzmann constant (<<iso80000-1>>).
+
+stem:[E_\"F\"] is relative to the lowest occupied state.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-29.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electron density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.1-0 ;
+  skos:definition """quotient of number of electrons in conduction band and volume (<<iso80000-3>>)"""@en ;
+  skos:note """Subscripts stem:[\"n\"] and stem:[\"p\"] or stem:[-] and stem:[+] are often used to denote electrons and holes, respectively. stem:[n_\"n\"] and stem:[n_\"p\"] are also used for electron densities, and stem:[p_\"n\"] and stem:[p_\"p\"] for hole densities, in stem:[n]-type and stem:[p]-type regions, respectively, of a stem:[n]-stem:[p] junction."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-29.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hole density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.2-0 ;
+  skos:definition """quotient of number of holes in valence band and volume (<<iso80000-3>>)"""@en ;
+  skos:note """Subscripts stem:[n] and stem:[p] or stem:[-] and stem:[+] are often used to denote electrons and holes, respectively. stem:[n_\"n\"] and stem:[n_\"p\"] are also used for electron densities, and stem:[p_\"n\"] and stem:[p_\"p\"] for hole densities, in stem:[n]-type and stem:[p]-type regions, respectively, of a stem:[n]-stem:[p] junction."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-29.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "intrinsic carrier density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"i\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.3-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+n_\"i\" = sqrt(np)
+++++
+
+where stem:[n] is electron density (<<t12-29.1>>), and stem:[p] is hole density (<<t12-29.2>>)
+"""@en ;
+  skos:note """Subscripts stem:[n] and stem:[p] or stem:[-] and stem:[+] are often used to denote electrons and holes, respectively. stem:[n_\"n\"] and stem:[n_\"p\"] are also used for electron densities, and stem:[p_\"n\"] and stem:[p_\"p\"] for hole densities, in stem:[n]-type and stem:[p]-type regions, respectively, of a stem:[n]-stem:[p] junction."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-29.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "donor density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"d\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.4" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.4-0 ;
+  skos:definition """quotient of number of donor levels and volume (<<iso80000-3>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-29.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "acceptor density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-29.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n_\"a\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-29.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-29.5" ;
+  skosxl:prefLabel isoiec80000:term-t12-29.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-29.5-0 ;
+  skos:definition """quotient of number of acceptor levels and volume (<<iso80000-3>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "effective mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-30" ;
+  skosxl:prefLabel isoiec80000:term-t12-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-30-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+m** = &#8463;^2k // (\"d\"epsilon//\"d\"k)
+++++
+
+where stem:[k] is wavenumber (<<iso80000-3>>), stem:[epsilon] is the energy (<<iso80000-5>>) of an electron in the interior of a substance, and stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>)
+"""@en ;
+  skos:note """When stem:[k] refers to a state where stem:[epsilon] has an extremum, stem:[m** = &#8463;^2 // (\"d\"^2 epsilon // \"d\"k^2)]. The effective mass can be generalized to refer to an anisotropic system with stem:[epsilon=epsilon(bb(ii(k)))]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mobility ratio"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-31" ;
+  skosxl:prefLabel isoiec80000:term-t12-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-31-0 ;
+  skos:definition """quotient of mobilities (<<iso80000-10>>) of electrons and holes, respectively"""@en ;
+  skos:note """The mobility ratio can be expressed by:
+
+[stem%unnumbered]
+++++
+b = (mu_\"n\")/(mu_\"p\")
+++++
+
+where stem:[mu_\"n\"] and stem:[mu_\"p\"] are mobilities (<<iso80000-10>>) for electrons and holes, respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-32.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relaxation time <condensed matter>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-32.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-32.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-32.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-32.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-32.1-0 ;
+  skos:definition """time constant (<<iso80000-3>>) for scattering, trapping or annihilation of charge carriers, phonons or other quasiparticles"""@en ;
+  skos:note """For electrons in metals,
+
+[stem%unnumbered]
+++++
+tau = l/nu_\"F\"
+++++
+
+where stem:[l] is mean free path (<<t12-15.2>>) and stem:[nu_\"F\"] is speed (<<iso80000-3>>) of electrons on the Fermi surface.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-32.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "carrier lifetime <semiconductors>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-32.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-32.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-32.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-32.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-32.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-32.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-32.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-32.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-32.2-2 ;
+  skos:definition """time constant (<<iso80000-3>>) for recombination or trapping of minority charge carriers in semiconductors"""@en ;
+  skos:note """Indices \"stem:[\"n\"]\" and \"stem:[\"p\"]\" denote negative and positive charge carriers, respectively. Positive charge carriers can also be holes."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion length <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-33-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-33-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-33" ;
+  skosxl:prefLabel isoiec80000:term-t12-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-33-1 ;
+  skosxl:altLabel isoiec80000:sym-t12-33-2 ;
+  skos:definition """square root of the product of diffusion coefficient (<<iso80000-10>>) and lifetime (<<iso80000-10>>)"""@en ;
+  skos:note """The diffusion length can be expressed by:
+
+[stem%unnumbered]
+++++
+L = sqrt(D tau)
+++++
+
+where stem:[D] is the diffusion coefficient (<<iso80000-9>>) and stem:[tau] is lifetime (<<iso80000-3>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exchange integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-34-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-34" ;
+  skosxl:prefLabel isoiec80000:term-t12-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-34-1 ;
+  skos:definition """constituent of the interaction energy (<<iso80000-5>>) between the spins of adjacent electrons in matter arising from the overlap of electron state functions"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Curie temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-35.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_\"C\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-35.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-35.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-35.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-35.1-0 ;
+  skos:definition """critical thermodynamic temperature (<<iso80000-5>>) of a ferromagnet"""@en ;
+  skos:note """stem:[T_\"cr\"] is used for critical thermodynamic temperature in general."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Néel temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-35.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_\"N\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-35.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-35.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-35.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-35.2-0 ;
+  skos:definition """critical thermodynamic temperature (<<iso80000-5>>) of an antiferromagnet"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-35.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "superconduction transition temperature"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-35.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-35.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-35.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-35.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-35.3-0 ;
+  skos:definition """critical thermodynamic temperature (<<iso80000-5>>) of a superconductor"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-36.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic critical magnetic flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-36.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-36.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-36.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-36.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-36.1-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+B_\"c\" = sqrt((2mu_0(G_\"n\"-G_\"s\"))/V)
+++++
+
+where stem:[G_\"n\"] and stem:[G_\"s\"] are the Gibbs energies (<<iso80000-5>>) at zero magnetic flux density (<<iec80000-6>>) in a normal conductor and superconductor, respectively, stem:[mu_0] is the magnetic constant (<<iec80000-6>>), and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """In type I superconductors, stem:[B_\"c\"] is the critical magnetic flux density for disappearance of superconductivity. The symbol stem:[B_\"c3\"] is used for the critical magnetic flux density for disappearance of surface superconductivity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-36.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lower critical magnetic flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-36.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"c1\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-36.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-36.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-36.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-36.2-0 ;
+  skos:definition """for type II superconductors, the threshold magnetic flux density (<<iec80000-6>>) for magnetic flux (<<iec80000-6>>) entering the superconductor"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-36.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "upper critical magnetic flux density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-36.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"c2\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-36.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-36.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-36.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-36.3-0 ;
+  skos:definition """for type II superconductors, the threshold magnetic flux density (<<iec80000-6>>) for disappearance of bulk superconductivity"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-T ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "superconductor energy gap"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Delta)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-37 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-37" ;
+  skosxl:prefLabel isoiec80000:term-t12-37-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-37-0 ;
+  skos:definition """width of the forbidden energy band (<<t12-24.2>>) in a superconductor"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-38.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "London penetration depth"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-38.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"L\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-38.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-38.1" ;
+  skosxl:prefLabel isoiec80000:term-t12-38.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-38.1-0 ;
+  skos:definition """distance (<<iso80000-3>>) a magnetic field penetrates the plane surface of a semi-finite superconductor according to the expression:
+
+[stem%unnumbered]
+++++
+B(x) = B(0) \"exp\" ((-x)/(lambda_\"L\"))
+++++
+
+where stem:[B] is magnetic flux density (<<iec80000-6>>) and stem:[x] is distance (<<iso80000-3>>) from the surface
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .
+
+isoiec80000:term-t12-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coherence length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "xi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-38.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-38.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-38.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-38.2-0 ;
+  skos:definition """distance (<<iso80000-3>>) in a superconductor over which the effect of a perturbation is appreciable at zero thermodynamic temperature (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

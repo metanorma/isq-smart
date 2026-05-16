@@ -1,0 +1,27 @@
+isoiec80000:term-t12-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Seebeck coefficient (for substances stem:[\"a\"] and stem:[\"b\"])"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-21" ;
+  skosxl:prefLabel isoiec80000:term-t12-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-21-0 ;
+  skos:definition """differential quotient of thermoelectric voltage with respect to thermodynamic temperature:
+
+[stem%unnumbered]
+++++
+S_\"ab\" = (\"d\"E_\"ab\")/(\"d\"T)
+++++
+
+where stem:[E_\"ab\"] is the thermoelectric voltage between substances stem:[\"a\"] and stem:[\"b\"] (<<t12-20>>) and stem:[T] is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  skos:note """This term is also called \"thermoelectric power\"."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

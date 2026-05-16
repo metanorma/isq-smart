@@ -1,0 +1,23 @@
+isoiec80000:term-t11-5.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be_1"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.9-0 ;
+  skos:definition """quotient of mechanical work and frictional and thermal diffusion energy losses for a forced flow, expressed by
+
+stem:[Be_1 = (Delta pl^2)/(eta alpha)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along a pipe,
+stem:[l]:: is length (<<iso80000-3>>) of the pipe,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

@@ -1,0 +1,33 @@
+isoiec80000:term-t10-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total angular momentum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-11" ;
+  skosxl:prefLabel isoiec80000:term-t10-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-11-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity in a quantum system composed of the vectorial sum of angular momentum stem:[bb(ii(L))] (<<iso80000-4>>) and spin stem:[bb(ii(s))] (<<t10-10>>)"""@en ;
+  skos:note """In atomic and nuclear physics, orbital angular momentum is usually denoted by stem:[bb(ii(l))] or stem:[bb(ii(L))].
+
+The magnitude of stem:[bb(ii(J))] is quantized so that:
+
+[stem%unnumbered]
+++++
+bb(ii(J))^2 = &#8463;^2 j(j+1)
+++++
+
+where stem:[j] is the total angular momentum quantum number (<<t10-13.6>>).
+
+Total angular momentum and magnetic dipole moment have the same direction.
+
+stem:[j] is not the magnitude of the total angular momentum stem:[bb(ii(J))] but its projection onto the quantization axis, divided by stem:[&#8463;].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J*s ;
+  isoiec80000:hasUnit isoiec80000:unit-eV*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

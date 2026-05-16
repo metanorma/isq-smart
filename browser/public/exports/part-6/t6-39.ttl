@@ -1,0 +1,29 @@
+isoiec80000:term-t6-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reluctance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-39-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-39" ;
+  skosxl:prefLabel isoiec80000:term-t6-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-39-1 ;
+  skos:definition """scalar quantity given by the quotient of magnetic tension stem:[U_\"m\"] (<<t6-37.2>>) and total magnetic flux stem:[Psi] (<<t6-22.4>>);
+
+[stem%unnumbered]
+++++
+R_\"m\" = (U_\"m\")/Psi
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-12-28\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-H^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^2*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

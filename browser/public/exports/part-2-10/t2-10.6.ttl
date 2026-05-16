@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "divided by"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a\" \":\" \"b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.6-0 ;
+  skos:definition """stem:[a] divided by stem:[b]"""@en ;
+  skos:note """The symbol stem:[-:] should not be used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

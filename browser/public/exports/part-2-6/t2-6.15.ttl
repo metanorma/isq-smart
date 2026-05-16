@@ -1,0 +1,16 @@
+isoiec80000:term-t2-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ordered stem:[n]-tuple"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a_1, a_2, ..., a_n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.15-0 ;
+  skos:definition """ordered stem:[n]-tuple"""@en ;
+  skos:note """See remark to <<t2-6.14>>."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

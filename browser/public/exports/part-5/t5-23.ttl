@@ -1,0 +1,25 @@
+isoiec80000:term-t5-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Planck function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-23" ;
+  skosxl:prefLabel isoiec80000:term-t5-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-23-0 ;
+  skos:definition """quotient of the negative of Gibbs energy and temperature:
+
+[stem%unnumbered]
+++++
+Y = -G/T
+++++
+
+where stem:[G] is Gibbs energy (<<t5-20.5>>) and stem:[T] is thermodynamic temperature (<<t5-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/K ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

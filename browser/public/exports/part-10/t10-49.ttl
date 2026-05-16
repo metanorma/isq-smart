@@ -1,0 +1,44 @@
+isoiec80000:term-t10-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear attenuation coefficient <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-49-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-49 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-49" ;
+  skosxl:prefLabel isoiec80000:term-t10-49-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-49-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-49-1 ;
+  skos:definition """for uncharged particles of a given type and energy the differential quotient stem:[n] with respect to stem:[l], where stem:[n] is the fraction of stem:[N] incoming particles that experience interactions in traversing a distance (<<iso80000-3>>) stem:[l] in a given material:
+
+[stem%unnumbered]
+++++
+mu = (\"d\"n)/(\"d\"l) = 1/N (\"d\"N)/(\"d\"l)
+++++
+
+where stem:[\"d\"N] is the number of particles that experience interactions in traversing stem:[\"d\"l]
+"""@en ;
+  skos:note """stem:[mu] is equal to the macroscopic total cross section stem:[ii(Sigma)_\"tot\"] for the removal of particles from the beam.
+
+Using the relation stem:[mu_m = mu//rho] between the linear attenuation coefficient stem:[mu], the mass attenuation coefficient stem:[mu_m] (<<t10-50>>) and the density stem:[rho], the definition given for the mass attenuation coefficient in report 85a of the ICRU can be applied to the linear attenuation coefficient resulting in:
+
+The linear attenuation coefficient, stem:[mu], of a material, for uncharged particles of a given type and energy, is the quotient of stem:[\"d\"N//N] by stem:[\"d\"l], where stem:[\"d\"N//N] is the mean fraction of the particles that experience interactions in traversing a distance stem:[\"d\"l] in the material:
+
+[stem%unnumbered]
+++++
+mu = 1/(\"d\"l) (\"d\"N)/N.
+++++
+
+This definition has an equivalent meaning as the one given in column 4 of this item.
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

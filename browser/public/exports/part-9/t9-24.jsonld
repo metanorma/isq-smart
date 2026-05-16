@@ -1,0 +1,112 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "activity of solute",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-24-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "relative activity of solute",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "a_\"X\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-24-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "a_\"m,X\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t9-24",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "9-24",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-24-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-24-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-24-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-24-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for a solute stem:[\"X\"] in a solution, quantity proportional to the absolute activity, stem:[lambda_\"X\"] (<<t9-18>>), the proportionality factor, which is a function of temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>) only, being determined by the condition that, at constant temperature and pressure, aX divided by the molality (<<t9-15>>) ratio, stem:[b_\"X\"//b^(&#8854;)] tends to 1 at infinite dilution; stem:[b_\"X\"] is the molality of solute stem:[\"X\"] (<<t9-15>>), and stem:[b^(&#8854;)] is standard molality:\n\n[stem%unnumbered]\n++++\na_\"X\" = lambda_\"X\" * \"lim\"_(sum b_\"x\" -> 0) (b_\"X\"//b^(&#8854;))/(lambda_\"X\")\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[a_\"c,X\"], similarly defined in terms of the concentration ratio stem:[c_\"X\"//c^(&#8854;)], is also called the activity or relative activity of solute stem:[\"X\"]; stem:[c^(&#8854;)] is a standard amount-of-substance concentration (<<t9-12.2>>):\n\n[stem%unnumbered]\n++++\na_\"c,X\" = lambda_\"X\" \"lim\"_(sum c_\"x\" -> 0) (c_\"x\"//c^(&#8854;))/(lambda_\"X\")\n++++\n\nwhere stem:[sum] denotes summation over all the solute substances. This especially applies to a dilute liquid solution.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-9"
+      }
+    }
+  ]
+}

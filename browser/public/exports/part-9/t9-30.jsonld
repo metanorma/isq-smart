@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-30-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "affinity of a chemical reaction",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-30-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "A",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t9-30",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "9-30",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-30-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-30-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "negative of the sum over all substances stem:[\"B\"] of products of stoichiometric number stem:[nu_\"B\"] of substance stem:[\"B\"] (<<t9-29>>) and chemical potential stem:[mu_\"B\"] of substance stem:[\"B\"] (<<t9-17>>):\n\n[stem%unnumbered]\n++++\nA = - sum nu_\"B\" mu_\"B\"\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The affinity of a reaction is a measure of the \"driving force\" of the reaction. When it is positive, the reaction goes spontaneously from reactants to products, and when it is negative, the reaction goes in the opposite direction. Another way to write the definition is:\n\n[stem%unnumbered]\n++++\nA = (del G// del xi)_(p,T)\n++++\n\nwhere stem:[G] is Gibbs energy (<<iso80000-5>>) and stem:[xi] is the extent of the reaction (<<t9-31>>).\n\nNote that stem:[nu_\"B\"] is negative for reactants and positive for products.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/mol"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-9"
+      }
+    }
+  ]
+}

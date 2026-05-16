@@ -1,0 +1,23 @@
+isoiec80000:term-t2-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laplace transform"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x1D4DB; f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-19.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-19.2-0 ;
+  skos:definition """Laplace transform of stem:[f]"""@en ;
+  skos:note """stem:[(&#x1D4DB; f)(s) = int_0^(oo) e^(-st) f(t) \"d\"t]
+
+(where stem:[s in bb(sf(C))])
+
+This is often denoted by stem:[&#x1D4DB;(s)].
+
+The two-sided Laplace transform is also used, defined by the same formula, but with minus infinity instead of zero.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-19 .

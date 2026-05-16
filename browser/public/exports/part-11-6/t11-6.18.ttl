@@ -1,0 +1,28 @@
+isoiec80000:term-t11-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absorption number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ab"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.18-0 ;
+  skos:definition """relation between mass flow rate and surface area for gas absorption at wetted walls, expressed by
+
+stem:[Ab = k sqrt((ld)/(Dq_V))]; where
+
+stem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where
+stem:[rho]::: is mass density (<<iso80000-4>>), and
+stem:[k']::: is mass flux density through the surface, stem:[k' = q_\"m\"//A], where
+stem:[q_\"m\"]:::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]:::: is area (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) of wetted surface,
+stem:[d]:: is thickness (<<iso80000-3>>) of liquid film,
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>), and
+stem:[q_V]:: is volume flow rate (<<iso80000-4>>) per wetted perimeter
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

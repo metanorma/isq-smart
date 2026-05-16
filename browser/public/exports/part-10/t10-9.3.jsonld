@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-9.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "nuclear magneton",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-9.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu_\"N\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-9.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-9.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-9.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-9.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "absolute value of the magnetic moment of a nucleus:\n\n[stem%unnumbered]\n++++\nmu_\"N\" = (e&#8463;)/(2m_\"p\")\n++++\n\nwhere\n\nstem:[e]:: is the elementary charge (<<iso80000-1>>),\nstem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and\nstem:[m_\"p\"]:: is the rest mass (<<t10-2>>) of proton\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Subscript stem:[\"N\"] stands for nucleus. For the neutron magnetic moment, subscript stem:[\"n\"] is used. The magnetic moments of protons and neutrons differ from this quantity by their specific stem:[g] factors (<<t10-14.2>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^2*A"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

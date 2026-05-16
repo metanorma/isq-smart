@@ -1,0 +1,19 @@
+isoiec80000:term-t2-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "left half-open interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a, b\\]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.8-0 ;
+  skos:definition """left half-open interval from stem:[a] excluded to stem:[b] included"""@en ;
+  skos:note """stem:[(a, b\\] = {x in bb(sf(R)) &#x2223; a < x <= b}]
+
+The notation stem:[\\]a, b\\]] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

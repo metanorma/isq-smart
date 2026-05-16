@@ -1,0 +1,30 @@
+isoiec80000:term-t7-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "photon irradiance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-23-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-23" ;
+  skosxl:prefLabel isoiec80000:term-t7-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-23-1 ;
+  skos:definition """density of incident photon flux with respect to area at a point on a real or imaginary surface, expressed by
+
+[stem%unnumbered]
+++++
+E_\"p\" = (\"d\"Phi_\"p\")/(\"d\"A)
+++++
+
+where stem:[Phi_\"p\"] is photon flux (<<t7-20>>) and stem:[A] is the area (<<iso80000-3>>) on which the photon flux is incident
+"""@en ;
+  skos:note """The corresponding radiometric quantity is \"irradiance\" (<<t7-7.1>>). The corresponding photometric quantity is \"illuminance\" (<<t7-16>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

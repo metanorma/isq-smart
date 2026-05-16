@@ -1,0 +1,28 @@
+isoiec80000:term-t10-63-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "recombination coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-63-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-63 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-63" ;
+  skosxl:prefLabel isoiec80000:term-t10-63-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-63-0 ;
+  skos:definition """coefficient in the law of recombination:
+
+[stem%unnumbered]
+++++
+-(\"d\"n^+)/(\"d\"t) = -(\"d\"n^-)/(\"d\"t) = alpha * n^+ n^-
+++++
+
+where stem:[n^+] and stem:[n^-] are the ion number densities (<<t10-62.2>>) of positive and negative ions, respectively, recombined during a time interval of duration stem:[\"d\"t] (<<iso80000-3>>)
+"""@en ;
+  skos:note """The widely used term \"recombination factor\" is not correct because \"factor\" should only be used for quantities with dimension 1.
+
+The terms stem:[(\"d\"n^+)/(\"d\"t)], stem:[(\"d\"n^-)/(\"d\"t)] are differential quotients.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

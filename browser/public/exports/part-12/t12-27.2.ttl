@@ -1,0 +1,18 @@
+isoiec80000:term-t12-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gap energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"g\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-27.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-27.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-27.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-27.2-0 ;
+  skos:definition """difference in energy (<<iso80000-5>>) between the lowest level of conduction band and the highest level of valence band at zero thermodynamic temperature (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t12-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equilibrium position vector <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(R))_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-7.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-7.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-7.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.2-0 ;
+  skos:definition """position vector (<<iso80000-3>>) of an ion or atom in equilibrium"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t13-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "signal energy per binary digit"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_{\"bit\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-19" ;
+  skosxl:prefLabel isoiec80000:term-t13-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-19-0 ;
+  skos:definition """stem:[E_{\"bit\"} = P_C T_{\"bit\"}]
+where stem:[P_C] is carrier power (<<t13-18,item 13-18>>)
+and stem:[T_{\"bit\"}] is period of binary digits (item
+13-14)
+"""@en ;
+  skos:note """For the unit joule, see <<iec60050-113,droploc%locality:item=\"113-03-46\">>.
+
+See <<iec60050-171,droploc%locality:item=\"171-06-07\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

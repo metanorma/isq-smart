@@ -1,0 +1,17 @@
+isoiec80000:term-t10-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "half-value thickness"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d_(1//2)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-53 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-53" ;
+  skosxl:prefLabel isoiec80000:term-t10-53-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-53-0 ;
+  skos:definition """thickness (<<iso80000-3>>) of the attenuating layer that reduces the quantity of interest of a unidirectional beam of infinitesimal width to half of its initial value"""@en ;
+  skos:note """For exponential attenuation, stem:[d_(1//2) = \"ln\"(2)//mu]. The quantity of interest is often the air kerma or exposure."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

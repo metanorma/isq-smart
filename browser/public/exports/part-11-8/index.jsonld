@@ -1,0 +1,1306 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Reynolds magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Rm",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between inertial force and magneto-dynamic viscous force in an electrically conducting fluid, expressed by\n\nstem:[Rm = vl mu sigma = vl // sf(ii(v))_\"m\"]; where\n\nstem:[v]:: is speed (<<iso80000-3>>) of the fluid,\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[sf(ii(v))_\"m\" = 1//(mu sigma)]:: is magnetic viscosity (magnetic diffusivity)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This number is also called magnetic Reynolds number.\n\nThe Reynolds magnetic number is also given by\n\nstem:[Rm = Re * Pr_\"m\"]; where\n\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>), and\nstem:[Pr_\"m\"]:: is the Prandtl magnetic number (<<t11-8.10>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Batchelor number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bt",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between inertia and magneto-dynamic diffusion in an electrically conducting liquid, expressed by\n\nstem:[Bt = v l sigma mu // (epsilon_\"r\" mu_\"r\")]; where\n\nstem:[v]:: is speed (<<iso80000-3>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>),\nstem:[epsilon_\"r\"]:: is relative permittivity (<<iec80000-6>>), and\nstem:[mu_\"r\"]:: is relative permeability (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Nusselt electric number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ne",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between convective current and diffusive current of ions in electrochemistry, expressed by\n\nstem:[Ne = vl//D**]; where\n\nstem:[v]:: is speed (<<iso80000-3>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>), and\nstem:[D** = (D^+ + D^-)//2]; where::\nstem:[D^+], stem:[D^-]::: are diffusion coefficients (<<iso80000-9>>) of positive or negative ions respectively\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This number is also called electric Nusselt number.\n\nSometimes this quantity is called the Reynolds electric number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Alfvén number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.4-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Mach magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.4-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Kárman number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Al",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.4-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.4-2"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between speed of a plasma and the Alfvén wave speed, expressed by\n\nstem:[Al = v/(B//sqrt(rho mu))]; where\n\nstem:[v]:: is speed (<<iso80000-3>>),\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Often, the inverse of this number is wrongly used.\n\nThe name \"Alfvén Mach number\" is used in investigations on the solar wind.\n\nThe quantity stem:[v_\"A\"=B//sqrt(rho mu)] is called Alfvén wave speed, where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Hartmann number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ha",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.5",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.5",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.5-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.5-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between magnetically induced stress and hydrodynamic shear stress in an electrically conducting fluid, expressed by\n\nstem:[Ha = Bl sqrt((sigma//mu))]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[mu]:: is dynamic viscosity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Hartmann number represents also the ratio of magnetic force to viscous force.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cowling number <magnetism>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.6-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Euler magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Co",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.6",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.6",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.6-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.6-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.6-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of magnetic and kinematic energy density in a plasma, expressed by\n\nstem:[Co = B^2 // (mu rho v^2)]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[v]:: is speed (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Cowling number also represents the ratio of magnetic to dynamic pressure.\n\nThis quantity is equal to the square of the inverse of the Alfvén number.\n\nThis quantity is often called the second Cowling number, stem:[Co_2].\n\nThe first Cowling number is then defined as stem:[Co_1 = Co * Rm]; where stem:[Rm] is the Reynolds magnetic number (<<t11-8.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stuart electrical number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Se",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.7",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.7",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.7-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.7-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of electric energy density and kinematic energy density in a plasma, expressed by\n\nstem:[Se = epsilon E^2 // (rho v^2)]; where\n\nstem:[epsilon]:: is electric permittivity (<<iec80000-6>>),\nstem:[E]:: is electric field strength (<<iec80000-6>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[v]:: is speed (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Stuart electrical number is the electrical counterpart of the Cowling number (<<t11-8.6>>).",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "magnetic pressure number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "N_(m p)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.8",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.8",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.8-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.8-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of gas pressure and magnetic pressure in a gas or plasma, expressed by\n\nstem:[N_(m p) = p (2mu)/B^2]; where\n\nstem:[p]:: is pressure (<<iso80000-4>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>), and\nstem:[B]:: is magnetic flux density (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[p_\"m\" = B^2//(2mu)] is called magnetic pressure, where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Chandrasekhar number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.9-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ch",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.9",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.9",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.9-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.9-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.9-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of Lorentz force and viscous force in magnetic convection in a fluid, expressed by\n\nstem:[Q=(Bl)^2 sigma // rho sf(ii(v))]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>), a length scale of the system,\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Chandrasekhar number is also given by stem:[Q = Ha^2] where stem:[Ha] is the Hartmann number (<<t11-8.5>>).",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Prandtl magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Pr_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.10",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.10",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.10-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.10-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of kinematic viscosity and magnetic viscosity in an electrically conducting liquid, expressed by\n\nstem:[Pr_\"m\" = sf(ii(v)) sigma mu]; where\n\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[sf(ii(v))_\"m\" = 1//(mu sigma)] is called magnetic viscosity or magnetic diffusivity. See <<t11-8.11>>.\n\nThe Prandtl magnetic number is also given by\n\nstem:[Pr_\"m\" = Rm//Re]; where\n\nstem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n\nThis number is also called magnetic Prandtl number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Roberts number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ro",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.11",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.11-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of thermal diffusivity and magnetic viscosity in an electrically conducting liquid, expressed by\n\nstem:[Ro = alpha sigma mu]; where\n\nstem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[v_\"m\" = 1//(mu sigma)] is called magnetic viscosity or magnetic diffusivity; where\n\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>), and\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stuart number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stw",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.12",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.12",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.12-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.12-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of magnetic forces and inertia forces in an electrically conducting liquid, expressed by\n\nstem:[Stw = B^2 l sigma // (v rho)]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[v]:: is characteristic speed (<<iso80000-3>>), and\nstem:[rho]:: is mass density (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Stuart number sometimes is called magnetic force parameter.\n\nSometimes the square root is wrongly used.\n\nThe Stuart number is also given by\n\nstem:[Stw = Ha^2//Re]; where\n\nstem:[Ha]:: is the Hartmann number, and\nstem:[Re]:: is the Reynolds number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "N_(mg)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.13",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.13",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.13-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.13-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of magnetic forces and viscous forces in an electrically conducting fluid, expressed by\n\nstem:[N_(mg) = B sqrt(l sigma // (eta v))]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and\nstem:[v]:: is speed (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "electric field parameter",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ef",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.14",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.14",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.14-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.14-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of Coulomb force and Lorentz force on moving electrically charged material or particles, expressed by\n\nstem:[Ef = E // (vB)]; where\n\nstem:[E]:: is electric field strength (<<iec80000-6>>),\nstem:[v]:: is speed (<<iso80000-3>>), and\nstem:[B]:: is magnetic flux density (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Hall number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_\"c\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.15-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "C_\"H\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.15",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.15",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.15-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.15-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.15-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of gyro frequency and collision frequency in a plasma, expressed by\n\nstem:[H_\"c\" = (omega_\"c\")/(2pi) lambda/v]; where\n\nstem:[omega_\"c\"]:: is cyclotron angular frequency (<<iso80000-10>>),\nstem:[lambda]:: is mean free path (<<iso80000-9>>), and\nstem:[v]:: is average speed (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Sometimes the inverse of this number is wrongly used.\n\nstem:[2pi] times this quantity is called the Hall parameter.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lundquist number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Lu",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.16",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.16",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.16-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.16-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of Alfvén speed and magneto-dynamic speed in a plasma, expressed by\n\nstem:[Lu = Bl sigma sqrt(mu/rho)]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>), and\nstem:[rho]:: is mass density (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[v_\"A\" = B//sqrt(phi mu)] is called Alfvén wave speed. See <<t11-8.4>>.\n\nThe quantity stem:[v_\"m\" = 1//(l sigma mu)] is called magneto dynamic speed; where\n\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>).\n\nThe Lundquist number is also given by\n\nstem:[Lu = Rm//Al]; where\n\nstem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and\nstem:[Al]:: is the Alfvén number (<<t11-8.4>>).\n\nSee also Hartmann number (<<t11-8.5>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Joule magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Jo_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.17",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.17",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.17-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.17-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of Joule heating energy and magnetic field energy in a plasma, expressed by\n\nstem:[Jo_\"m\" = 2 rho mu c_p Delta T // B^2]; where\n\nstem:[rho]:: is mass density (<<iso80000-4>>),\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>),\nstem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),\nstem:[T]:: is thermodynamic temperature (<<iso80000-5>>), and\nstem:[B]:: is magnetic flux density (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This number is also called magnetic Joule number.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Grashof magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Gr_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.18",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.18",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.18-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.18-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "mathematical expression for the heat transfer by free thermo-magnetic convection of a paramagnetic fluid under gravity,\n\nstem:[Gr_\"m\" = 4 pi sigma_\"e\" mu_\"e\" g alpha_V Delta T l^3 // sf(ii(v))]; where\n\nstem:[sigma_\"e\"]:: is electrical conductivity (<<iec80000-6>>),\nstem:[mu_\"e\"]:: is magnetic permeability (<<iec80000-6>>),\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>),\nstem:[alpha_V]:: is cubic expansion coefficient (<<iso80000-5>>),\nstem:[Delta T = T_\"S\"-T_(oo)]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>), where stem:[T_\"S\"] is surface temperature and stem:[T_(oo)] is bulk temperature\nstem:[l]:: is characteristic length (<<iso80000-3>>), and\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This number is also called magnetic Grashof number.\n\nSee also Grashof number (<<t11-4.4>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.19-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Naze number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.19-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Na",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.19",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.19",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.19-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.19-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of velocity of Alfvén waves and velocity of sound in a plasma, expressed by\n\nstem:[Na = B // (c sqrt(rho mu))]; where\n\nstem:[B]:: is magnetic flux density (<<iec80000-6>>),\nstem:[c]:: is speed of sound (<<iso80000-8>>),\nstem:[rho]:: is mass density (<<iso80000-4>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[v_\"A\" = B // sqrt(rho mu)] is called Alfvén wave speed. See <<t11-8.4>>.",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Reynolds electric number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Re_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.20",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.20",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.20-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.20-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of speed of a fluid and average drift speed of the charged particles in an electrically conducting fluid, expressed by\n\nstem:[Re_\"e\" = v epsilon_\"e\" // (rho_\"e\" l mu)]; where\n\nstem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,\nstem:[epsilon_\"e\"]:: is electric permittivity (<<iec80000-6>>),\nstem:[rho_\"e\"]:: is electric charge density (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>), and\nstem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This number is also called electrical Reynolds number.\n\nThe drift speed of the charged particles in an electric field is given by stem:[v_\"d\" = 1/(mu E)],where\n\nstem:[E]:: is electric field strength (<<iec80000-6>>), and\nstem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ampère number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Am",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.21",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.21",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.21-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.21-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between electric surface current and magnetic field strength in an electrically conducting liquid, expressed by\n\nstem:[Am = I_A // lH]; where\n\nstem:[I_A]:: is electric surface current,\nstem:[l]:: is characteristic length (<<iso80000-3>>), and\nstem:[H]:: is magnetic field strength (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This number is also called ((magnetic field number)).\n\nThe electric surface current is given by\n\nstem:[I_A = rho_A I mu E]; where\n\nstem:[rho_A]:: is surface density of electric charge (<<iec80000-6>>),\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers, and\nstem:[E]:: is electric field strength (<<iec80000-6>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    }
+  ]
+}

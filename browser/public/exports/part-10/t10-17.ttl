@@ -1,0 +1,32 @@
+isoiec80000:term-t10-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyroradius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Larmor radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"g\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"L\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-17" ;
+  skosxl:prefLabel isoiec80000:term-t10-17-0 ;
+  skosxl:altLabel isoiec80000:term-t10-17-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-17-1 ;
+  skos:definition """radius (<<iso80000-3>>) of circular movement of a particle with mass (<<iso80000-4>>), velocity stem:[bb(ii(nu))] (<<iso80000-3>>), and electric charge stem:[q] (<<iec80000-6>>), moving in a magnetic field with magnetic flux density stem:[bb(ii(B))] (<<iec80000-6>>):
+
+[stem%unnumbered]
+++++
+r_\"g\" = (m * abs(bb(ii(nu)) xx bb(ii(B))))/(qB^2)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,23 @@
+isoiec80000:term-t10-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle emission rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-36" ;
+  skosxl:prefLabel isoiec80000:term-t10-36-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-36-0 ;
+  skos:definition """differential quotient of stem:[N] with respect to time, where stem:[N] is the number of particles being emitted from an infinitesimally small volume element in the time interval of duration stem:[\"d\"t] (<<iso80000-3>>), and stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+N=(\"d\"N)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """Usually the kind of particles is specified, e.g. neutron emission rate or alpha particle emission rate."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

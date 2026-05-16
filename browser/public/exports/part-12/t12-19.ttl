@@ -1,0 +1,30 @@
+isoiec80000:term-t12-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hall coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-19" ;
+  skosxl:prefLabel isoiec80000:term-t12-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-19-1 ;
+  skos:definition """in an isotropic conductor, relation between electric field strength, stem:[bb(ii(E))], (<<iec80000-6>>) and electric current density, stem:[bb(ii(J))], (<<iec80000-6>>) expressed as:
+
+[stem%unnumbered]
+++++
+bb(ii(E)) = rho bb(ii(J)) + R_\"H\" (bb(ii(B)) xx bb(ii(J)))
+++++
+
+where stem:[rho] is resistivity (<<iec80000-6>>), and stem:[bb(ii(B))] is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3/C ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*s^(-1)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

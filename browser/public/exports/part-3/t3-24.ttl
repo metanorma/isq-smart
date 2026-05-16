@@ -1,0 +1,16 @@
+isoiec80000:term-t3-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "damping coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-24" ;
+  skosxl:prefLabel isoiec80000:term-t3-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-24-0 ;
+  skos:definition """inverse of the time constant (<<t3-15>>) of an exponentially varying quantity"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

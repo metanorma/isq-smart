@@ -1,0 +1,23 @@
+isoiec80000:term-t9-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equilibrium constant <pressure basis>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-33" ;
+  skosxl:prefLabel isoiec80000:term-t9-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-33-0 ;
+  skos:definition """for gases, product for all substances stem:[\"B\"] of partial pressure stem:[p_\"B\"] of substance stem:[\"B\"] (<<t9-19>>) in power of its stoichiometric number stem:[nu_\"B\"] (<<t9-29>>):
+
+[stem%unnumbered]
+++++
+K_p = Pi_\"B\"(p_\"B\")^(nu_\"B\")
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["unitsml(Pa)"^(sum nu_"B")] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:[("unitsml(kg*m^(-1)*s^(-2))")^(sum nu_"B")] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

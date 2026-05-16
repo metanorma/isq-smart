@@ -1,0 +1,20 @@
+isoiec80000:term-t13-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hamming distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d_h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-21" ;
+  skosxl:prefLabel isoiec80000:term-t13-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-21-0 ;
+  skos:definition """number of digit positions in which the corresponding digits of two words of the same length are different"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+See <<iec60050-721,droploc%locality:item=\"721-08-25\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

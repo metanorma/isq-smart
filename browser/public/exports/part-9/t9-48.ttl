@@ -1,0 +1,23 @@
+isoiec80000:term-t9-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar optical rotatory power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha_n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-48 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-48" ;
+  skosxl:prefLabel isoiec80000:term-t9-48-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-48-0 ;
+  skos:definition """angle stem:[alpha] of optical rotation (<<t9-47>>), multiplied by the quotient of cross-sectional area stem:[A] (<<iso80000-3>>) of a linearly polarized light beam and the amount of substance stem:[n] (<<t9-2>>) of the optically active component in the path of the beam:
+
+[stem%unnumbered]
+++++
+alpha_n = alpha A//n
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*m^2/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

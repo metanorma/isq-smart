@@ -1,0 +1,24 @@
+isoiec80000:term-t9-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-8" ;
+  skosxl:prefLabel isoiec80000:term-t9-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-8-0 ;
+  skos:definition """quotient of entropy stem:[S] (<<iso80000-5>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+S_\"m\" = S//n
+++++
+"""@en ;
+  skos:note """Conditions (constant pressure or volume etc.) must be specified."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(mol*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t6-22.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total magnetic flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Psi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-22.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.4" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.4-1 ;
+  skos:definition """highest value of the magnetic flux (<<t6-22.1>>) produced by a current loop"""@en ;
+  skos:note """The integration surface for the magnetic flux has to be chosen such that it is crossed in the same direction by all magnetic field lines produced by the current loop.
+
+The total flux can be a linked flux (<<t6-22.3>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

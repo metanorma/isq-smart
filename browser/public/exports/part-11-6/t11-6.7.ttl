@@ -1,0 +1,41 @@
+isoiec80000:term-t11-6.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass transfer factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-6.7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[j]-factor <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.7-0 ;
+  skosxl:altLabel isoiec80000:term-t11-6.7-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.7-0 ;
+  skos:definition """relation between mass transfer perpendicular to the surface of a fluid and mass transfer parallel to the surface in an open flow of fluids, expressed by
+
+stem:[j** = k/v (sf(ii(v))/D)^(2//3)]; where
+
+stem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where
+stem:[rho]::: is mass density (<<iso80000-4>>),
+stem:[k']::: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]:::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]:::: is area (<<iso80000-3>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The mass transfer factor is also given by
+
+stem:[j_m = j** = St** * Sc^(2//3)]; where
+
+stem:[St**]:: is the Stanton number for mass transfer (<<t11-6.5>>), and
+stem:[Sc]:: is the Schmidt number (<<t11-7.2>>).
+
+See also heat transfer factor (<<t11-5.17>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

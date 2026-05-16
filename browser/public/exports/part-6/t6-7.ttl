@@ -1,0 +1,26 @@
+isoiec80000:term-t6-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric polarization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-7" ;
+  skosxl:prefLabel isoiec80000:term-t6-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-7-0 ;
+  skos:definition """vector quantity representing the spatial distribution of electric dipole moment,
+
+[stem%unnumbered]
+++++
+P(bb(ii(r))) = (\"d\"p)/(\"d\"V)
+++++
+
+where stem:[\"d\"p] is quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric dipole moment (<<t6-6>>) of a substance in a quasi-infinitesimal domain at position stem:[bb(ii(r))] and stem:[\"d\"V] is quasi-infinitesimal volume (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-37\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-2*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

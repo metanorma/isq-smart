@@ -1,0 +1,16 @@
+isoiec80000:term-t2-12.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "function mapping onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f: A >->> B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.8-0 ;
+  skos:definition """stem:[f] maps stem:[A] bijectively onto stem:[B]"""@en ;
+  skos:note """stem:[f: A ->> B] and stem:[f: A >-> B]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

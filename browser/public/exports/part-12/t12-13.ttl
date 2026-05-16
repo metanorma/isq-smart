@@ -1,0 +1,29 @@
+isoiec80000:term-t12-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermodynamic Grüneisen parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"G\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(ii(Gamma)_\"G\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-13" ;
+  skosxl:prefLabel isoiec80000:term-t12-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-13-1 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+gamma_\"G\" = (alpha_\"V\")/(kappa_\"T\" c_\"V\" rho)
+++++
+
+where stem:[alpha_\"V\"] is cubic expansion coefficient (<<iso80000-5>>), stem:[kappa_\"T\"] is isothermal compressibility (<<iso80000-5>>), stem:[c_\"V\"] is specific heat capacity at constant volume (<<iso80000-5>>), and stem:[rho] is mass density (<<iso80000-4>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

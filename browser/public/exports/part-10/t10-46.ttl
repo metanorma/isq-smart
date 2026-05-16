@@ -1,0 +1,35 @@
+isoiec80000:term-t10-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy fluence"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Psi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-46 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-46" ;
+  skosxl:prefLabel isoiec80000:term-t10-46-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-46-0 ;
+  skos:definition """differential quotient of radiant energy stem:[R] (<<t10-45>>) incident on a sphere of cross-sectional area (<<t10-38.1>>) a with respect to that area:
+
+[stem%unnumbered]
+++++
+ii(Psi) = (\"d\"R)/(\"d\"a)
+++++
+"""@en ;
+  skos:note """In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The energy fluence, stem:[ii(Psi)], is the quotient of stem:[\"d\"R] and stem:[\"d\"a], where stem:[\"d\"R] is the radiant energy incident on a sphere of cross-sectional area stem:[\"d\"a]:
+
+[stem%unnumbered]
+++++
+ii(Psi) = (\"d\"R)/(\"d\"a)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

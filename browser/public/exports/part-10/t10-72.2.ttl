@@ -1,0 +1,17 @@
+isoiec80000:term-t10-72.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-72.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-72.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-72.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-72.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-72.2-0 ;
+  skos:definition """in an infinite homogenous medium, one-sixth of the mean square distance (<<iso80000-3>>) between the point where a neutron enters a specified class and the point where it leaves this class"""@en ;
+  skos:note """The class of neutrons must be specified, e.g. thermal."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

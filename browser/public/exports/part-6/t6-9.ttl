@@ -1,0 +1,26 @@
+isoiec80000:term-t6-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear electric current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))_\"S\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-9" ;
+  skosxl:prefLabel isoiec80000:term-t6-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-9-0 ;
+  skos:definition """vector quantity equal to the sum, for the charge carriers confined to a surface element of quasi-infinitesimal area stem:[\"S\"], of the products of their electric charge stem:[Q_i] and their velocity stem:[sf(ii(v))_i], divided by the area stem:[\"S\"]
+
+[stem%unnumbered]
+++++
+bb(ii(J))_\"S\"(bb(ii(r))) = bb(ii(J))_\"S\" = sigma sf(ii(v))
+++++
+
+where stem:[i] is the rank of the charge carrier
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-12\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A/m ;
+  isoiec80000:hasUnit isoiec80000:unit-m^-1*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

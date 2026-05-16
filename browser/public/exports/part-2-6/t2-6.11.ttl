@@ -1,0 +1,24 @@
+isoiec80000:term-t2-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "union of sets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "uuu_(i=1)^n A_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.11-0 ;
+  skos:definition """union of the sets stem:[A_1, A_2, ..., A_n]
+
+stem:[uuu_(i=1)^n A_i = A_1 uu ... uu A_n]
+"""@en ;
+  skos:note """The set of elements belonging to at least one of the sets stem:[A_1, A_2, ..., A_n]
+
+stem:[uuu_(i=1)^n], stem:[uuu_(i in I)] and stem:[uuu_(i in I)] are also used,
+
+where stem:[I] denotes a set of subscripts.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

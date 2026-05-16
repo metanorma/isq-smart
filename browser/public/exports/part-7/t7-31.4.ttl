@@ -1,0 +1,35 @@
+isoiec80000:term-t7-31.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminous reflectance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-31.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-31.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-31.4" ;
+  skosxl:prefLabel isoiec80000:term-t7-31.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-31.4-0 ;
+  skos:definition """quotient of reflected luminous flux and incident luminous flux, is expressed by
+
+[stem%unnumbered]
+++++
+rho_\"v\" = (Phi_(\"v,r\"))/(Phi_\"v,m\")
+++++
+
+where stem:[Phi_\"v,r\"] is reflected luminous flux (<<t7-13>>) and stem:[Phi_\"v,m\"] is incident luminous flux
+"""@en ;
+  skos:note """From spectral reflectance, stem:[rho(lambda)], luminous reflectance can be calculated by
+
+[stem%unnumbered]
+++++
+rho_\"v\" = (int_0^(oo) rho(lambda) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)
+++++
+
+where stem:[Phi_(\"e\",lambda)(lambda)] is spectral radiant flux (or relative spectral distribution) of the source, and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).
+
+See also <<t7-31.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

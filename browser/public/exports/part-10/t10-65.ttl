@@ -1,0 +1,41 @@
+isoiec80000:term-t10-65-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient for fluence rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-65-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_Phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-65-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-65 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-65" ;
+  skosxl:prefLabel isoiec80000:term-t10-65-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-65-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-65-1 ;
+  skos:definition """proportionality constant between the particle current density stem:[bb(ii(J))] (<<t10-48>>) and the gradient of the particle fluence rate stem:[Phi] (<<t10-44>>):
+
+[stem%unnumbered]
+++++
+bb(ii(J)) = -D * nabla Phi
+++++
+"""@en ;
+  skos:note """For a particle of a given speed stem:[nu]:
+
+[stem%unnumbered]
+++++
+D_(dot Psi)(nu) = -(J_(nu,x))/(del (dot Psi)_nu//del x)
+++++
+
+and
+
+[stem%unnumbered]
+++++
+nu*D_(dot Psi)(nu) = -D_n(nu)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

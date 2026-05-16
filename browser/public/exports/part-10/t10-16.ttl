@@ -1,0 +1,30 @@
+isoiec80000:term-t10-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cyclotron angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-16" ;
+  skosxl:prefLabel isoiec80000:term-t10-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-16-0 ;
+  skos:definition """quotient of the product of the electric charge of a particle and the magnitude of the magnetic flux density of the magnetic field, and the particle mass:
+
+[stem%unnumbered]
+++++
+omega_\"c\" = (abs q)/m B
+++++
+
+where
+
+stem:[q]:: is the electric charge (<<iec80000-6>>) of the particle,
+stem:[m]:: is the mass (<<iso80000-4>>) of the particle, and
+stem:[B]:: is the absolute value of the magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[nu_\"c\" = omega_\"c\"//2pi] is called the cyclotron frequency."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t11-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hooke number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ho_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.6-0 ;
+  skos:definition """relation between inertia forces and linear stress forces in elastic fluids, expressed by
+
+stem:[Ho_2 = rho v^2 // E]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[E]:: is modulus of elasticity (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

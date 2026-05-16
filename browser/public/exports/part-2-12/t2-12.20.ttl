@@ -1,0 +1,38 @@
+isoiec80000:term-t2-12.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(\"d\"^nf)/(\"d\"x^n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"d\"^nf//\"d\"x^n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.20-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f^((n))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.20-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"D\"^n f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-3 ;
+  skos:definition """stem:[n^(\"th\")] derivative of stem:[f] with respect to stem:[x]"""@en ;
+  skos:note """Only to be used for functions of one variable.
+
+stem:[(\"d\"^nf(x))/(\"d\"x^n)], stem:[\"d\"^nf(x)//\"d\"x^n], stem:[f^((n))(x)] and stem:[\"D\"^nf] are also used.
+
+stem:[f^('')] and stem:[f^(''')] are also used for stem:[f^((2))] and stem:[f^((3))], respectively.
+
+If the independent variable is time stem:[t], stem:[ddot f] is also used for stem:[f^(''')].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

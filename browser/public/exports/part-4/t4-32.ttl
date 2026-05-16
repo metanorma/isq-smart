@@ -1,0 +1,21 @@
+isoiec80000:term-t4-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "action"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-32" ;
+  skosxl:prefLabel isoiec80000:term-t4-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-32-0 ;
+  skos:definition """time integral of energy stem:[E] over a time interval stem:[(t_1, t_2)]:
+
+stem:[S = int_(t_1)^(t_2) E \"d\"t]
+"""@en ;
+  skos:note """The energy may be expressed by a Lagrangian or Hamiltonian function."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

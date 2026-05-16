@@ -1,0 +1,23 @@
+isoiec80000:term-t10-78.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "infinite multiplication factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-78.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k_(oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-78.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-78.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-78.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-78.2-0 ;
+  skos:definition """multiplication factor (<<t10-78.1>>) for an infinite medium or for an infinite repeating lattice"""@en ;
+  skos:note """For a thermal reactor,
+
+[stem%unnumbered]
+++++
+k_(oo) = eta * epsilon * p * f
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

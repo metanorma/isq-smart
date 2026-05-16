@@ -1,0 +1,33 @@
+isoiec80000:term-t11-8.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reynolds magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rm"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.1-0 ;
+  skos:definition """relation between inertial force and magneto-dynamic viscous force in an electrically conducting fluid, expressed by
+
+stem:[Rm = vl mu sigma = vl // sf(ii(v))_\"m\"]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[sf(ii(v))_\"m\" = 1//(mu sigma)]:: is magnetic viscosity (magnetic diffusivity)
+"""@en ;
+  skos:note """This number is also called magnetic Reynolds number.
+
+The Reynolds magnetic number is also given by
+
+stem:[Rm = Re * Pr_\"m\"]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Pr_\"m\"]:: is the Prandtl magnetic number (<<t11-8.10>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

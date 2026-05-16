@@ -1,0 +1,38 @@
+isoiec80000:term-t9-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "amount-of-substance fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mole fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "y_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-13" ;
+  skosxl:prefLabel isoiec80000:term-t9-13-0 ;
+  skosxl:altLabel isoiec80000:term-t9-13-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-13-1 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of amount of substance stem:[n_\"X\"] (<<t9-2>>) of stem:[\"X\"] and total amount stem:[n] of substance (<<t9-2>>) in the mixture:
+
+[stem%unnumbered]
+++++
+x_\"X\" = n_\"X\"//n
+++++
+"""@en ;
+  skos:note """For condensed phases, stem:[x_\"X\"] is used, and for gaseous mixtures stem:[y_\"X\"] may be used.
+
+The unsystematic name \"mole fraction\" is still used. However, the use of this name is deprecated.
+
+For this quantity, the entity used to define the amount of substance should always be a single molecule for every species in the mixture.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

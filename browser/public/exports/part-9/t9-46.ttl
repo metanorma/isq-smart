@@ -1,0 +1,27 @@
+isoiec80000:term-t9-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transport number of the ion stem:[\"B\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-46-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "current fraction of the ion stem:[\"B\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "t_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-46 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-46" ;
+  skosxl:prefLabel isoiec80000:term-t9-46-0 ;
+  skosxl:altLabel isoiec80000:term-t9-46-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-46-0 ;
+  skos:definition """for the ion stem:[\"B\"], quotient of electric current stem:[i_\"B\"] (<<iec80000-6>>) carried by the ion stem:[\"B\"] and total electric current stem:[i] (<<iec80000-6>>) in an electrolyte:
+
+[stem%unnumbered]
+++++
+t_\"B\" = i_\"B\"//i
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

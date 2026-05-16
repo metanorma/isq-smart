@@ -1,0 +1,638 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-11-6 a smart:PublicationDocument ;
+  dcterms:title "Part 11-6"@en ;
+  dcterms:identifier "ISO 80000-11-6" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t11-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fourier number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fo**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.1-0 ;
+  skos:definition """relation between diffusive mass transfer within a given duration and mass storage rate in transient mass transfer, expressed by
+
+stem:[Fo** = (Dt)/l^2]; where
+
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>),
+stem:[t]:: is duration (<<iso80000-3>>) of observation, and
+stem:[l]:: is length (<<iso80000-3>>) of transfer
+"""@en ;
+  skos:note """The Fourier number for mass transfer is also given by
+
+stem:[Fo** = Fo//Le]; where
+
+stem:[Fo]:: is the Fourier number for heat transfer (<<t11-5.1>>), and
+stem:[Le]:: is the Lewis number (<<t11-7.3>>).
+
+See also the Fourier number for heat transfer (<<t11-5.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Péclet number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-6.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bodenstein number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pe**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bd"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bod"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.2-0 ;
+  skosxl:altLabel isoiec80000:term-t11-6.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.2-2 ;
+  skos:definition """relation between advective mass transfer rate and longitudinal diffusive mass transfer rate for mass transfer in reactors, expressed by
+
+stem:[Pe** = vl//D]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The Péclet number for mass transfer is also given by
+
+stem:[Pe** = Pe * Le = Re * Sc]; where
+
+stem:[Pe]:: is the Péclet number for heat transfer,
+stem:[Le]:: is the Lewis number (<<t11-7.3>>),
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Sc]:: is the Schmidt number (<<t11-7.2>>).
+
+Compare with <<t11-5.2>>, the Péclet number for heat transfer.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grashof number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gr**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.3-0 ;
+  skos:definition """relation between buoyancy forces and viscous forces in natural convection of fluids, expressed by
+
+stem:[Gr** = l^3 g beta Delta x // sf(ii(v))^2]; where
+
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>)
+stem:[beta = -(1//rho)(del rho // del x)_(T,p)], where::
+stem:[rho]::: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[x]::: is amount-of-substance fraction (<<iso80000-9>>),
+stem:[Delta x]:: is difference of amount-of-substance fraction (<<iso80000-9>>) along length stem:[l], and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """Instead of \"amount-of-substance fraction\" the \"amount-of-substance concentration\" (<<iso80000-9>>) is used also.
+
+Compare with <<t11-4.4>>, the Grashof number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Nusselt number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N u**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.4-0 ;
+  skos:definition """relation between mass flux at an interface and specific flux by pure molecular diffusion in a layer of thickness stem:[l] for mass transfer at the boundary of a fluid, expressed by
+
+stem:[N u** = k'l//(rho D)]; where
+
+stem:[k']:: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]::: is area (<<iso80000-3>>),
+stem:[l]:: is thickness (<<iso80000-3>>),
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """Sometimes this quantity is called the Sherwood number, stem:[Sh]. +
+
+Compare with <<t11-5.5>>, Nusselt number for heat transfer.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stanton number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "St**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.5-0 ;
+  skos:definition """relation between mass transfer perpendicular to the surface of a fluid flow and mass transfer parallel to the surface in a free surface flow, expressed by
+
+stem:[St** = k'//(rho v)]; where
+
+stem:[k']:: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]::: is area (<<iso80000-3>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Stanton number for mass transfer is also given by stem:[St** = N]stem:[u** // Pe**]; where
+
+stem:[N u**]:: is the Nusselt number for mass transfer (<<t11-6.4>>), and +
+stem:[Pe**]:: is the Péclet number for mass transfer (<<t11-6.2>>).
+
+Compare with <<t11-5.7>>, the Stanton number for heat transfer.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Graetz number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gz**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.6-0 ;
+  skos:definition """quotient of advective mass transfer rate and radial diffusive mass transfer rate for mass transfer in pipes, expressed by
+
+stem:[Gz** = (vd)/D = d/l Pe**]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,
+stem:[d]:: is hydraulic diameter (<<iso80000-3>>) of the pipe,
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>),
+stem:[l]:: is length (<<iso80000-3>>) of the pipe, and
+stem:[Pe**]:: is the Péclet number for mass transfer (<<t11-6.2>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass transfer factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-6.7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[j]-factor <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.7-0 ;
+  skosxl:altLabel isoiec80000:term-t11-6.7-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.7-0 ;
+  skos:definition """relation between mass transfer perpendicular to the surface of a fluid and mass transfer parallel to the surface in an open flow of fluids, expressed by
+
+stem:[j** = k/v (sf(ii(v))/D)^(2//3)]; where
+
+stem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where
+stem:[rho]::: is mass density (<<iso80000-4>>),
+stem:[k']::: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]:::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]:::: is area (<<iso80000-3>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The mass transfer factor is also given by
+
+stem:[j_m = j** = St** * Sc^(2//3)]; where
+
+stem:[St**]:: is the Stanton number for mass transfer (<<t11-6.5>>), and
+stem:[Sc]:: is the Schmidt number (<<t11-7.2>>).
+
+See also heat transfer factor (<<t11-5.17>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Atwood number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "At"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.8-0 ;
+  skos:definition """scaled density difference of heavier and lighter fluids, expressed by
+
+stem:[At = (rho_1 - rho_2)/(rho_1 + rho_2)]; where
+
+stem:[rho_1]:: is density of heavier fluid, and
+stem:[rho_2]:: is density of lighter fluid
+"""@en ;
+  skos:note """The Atwood number is used in the study of hydrodynamic instabilities in density stratified flows."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Biot number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bi**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.9-0 ;
+  skos:definition """relation between mass transfer rate at the interface and mass transfer rate in the interior of a body, expressed by
+
+stem:[Bi** = kl//D_\"int\"]; where
+
+stem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where
+stem:[rho]::: is mass density (<<iso80000-4>>),
+stem:[k']::: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]:::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]:::: is area (<<iso80000-3>>),
+stem:[l]:: is thickness (<<iso80000-3>>) of layer, and
+stem:[D_\"int\"]:: is diffusion coefficient (<<iso80000-9>>) at the interface
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Morton number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.10-0 ;
+  skos:definition """quotient of gravitational forces and viscous forces for gas bubbles in a liquid, or liquid drops in a gas, expressed by
+
+stem:[Mo = (g eta^4)/(rho gamma^3) (rho_\"b\"/rho -1)]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the surrounding fluid,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the surrounding fluid,
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface, and
+stem:[rho_b]:: is mass density (<<iso80000-4>>) of the bubble or drop
+"""@en ;
+  skos:note """The Morton number is used to determine the shape of bubbles or drops.
+
+The Morton number is also given by
+
+stem:[Mo = We^3 Fr^(-2)Re^(-4)]; where
+
+stem:[We]:: is the Weber number (<<t11-4.5>>),
+stem:[Fr]:: is the Froude number (<<t11-4.3>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bond number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-6.11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eötvös number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.11-0 ;
+  skosxl:altLabel isoiec80000:term-t11-6.11-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.11-1 ;
+  skos:definition """quotient of inertial force and capillary force for gas bubbles or liquid drops in a fluid, expressed by
+
+stem:[Bo = a/gamma rho l^2 (rho_\"b\"/rho -1)]; where
+
+stem:[a]:: is the acceleration of the body (<<iso80000-3>>), mostly acceleration of free fall, stem:[g] (<<iso80000-3>>),
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface,
+stem:[rho]:: is density (<<iso80000-4>>) of the medium,
+stem:[l]:: is characteristic length (<<iso80000-3>>) (radius of a drop or radius of a capillary tube), and
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the drop or bubble
+"""@en ;
+  skos:note """In the case of gravity stem:[a = g] acceleration of free fall (<<iso80000-3>>), the name Eötvös number is mostly used.
+
+The Bond number is also given by
+
+stem:[Bo = We//Fr]; where
+
+stem:[We]:: is the Weber number (<<t11-4.5>>), and
+stem:[Fr]:: is the Froude number (<<t11-4.3>>).
+
+The Bond number is also used for capillary action driven by buoyancy.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Archimedes number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ar"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.12-0 ;
+  skos:definition """quotient of buoyancy forces and viscous forces in fluids motion due to density differences for a body in a fluid, expressed by
+
+stem:[Ar = (gl^3)/sf(ii(v))^2 (rho_\"b\"/rho - 1)]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>) of the body,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid,
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body, and
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """In this definition, the body can be replaced by an immiscible fluid.
+
+See also Stokes number <rotameter> (<<t11-4.34>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "expansion number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ex"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.13-0 ;
+  skos:definition """quotient of buoyancy force and inertial force in moving fluids due to density differences for gas bubbles rising in a liquid, expressed by
+
+stem:[Ex = (gd)/v^2 (1-rho_\"b\"/rho)]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[d]:: is diameter (<<iso80000-3>>) of bubbles,
+stem:[v]:: is speed (<<iso80000-3>>) of bubbles,
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of bubbles, and
+stem:[rho]:: is mass density (<<iso80000-4>>) of the liquid
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Marangoni number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mar"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.14-1 ;
+  skos:definition """quotient of heat transferred by Marangoni convection and heat transferred by thermal diffusivity in thermo-capillary convection of liquid films on a free surface, expressed by
+
+stem:[Mg = l (Delta T)/(eta a) ((\"d\"gamma)/(\"d\"T))]; where
+
+stem:[l]:: is characteristic thickness (<<iso80000-3>>) of the film,
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between surface and outer surface of the film,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the liquid,
+stem:[a]:: is thermal diffusivity (<<iso80000-5>>) of the liquid, and
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the film
+"""@en ;
+  skos:note """The Marangoni convection is free surface flow due to different surface tensions caused by a temperature gradient.
+
+This quantity is sometimes called Thompson number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lockhart-Martinelli parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lp"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.15-0 ;
+  skos:definition """quotient of mass flow rates multiplied by the square root of density in a two-phase flow, expressed by
+
+stem:[Lp = (dot m_\"1\")/(dot m_\"g\") sqrt(rho_\"g\"/rho_\"l\")]; where
+
+stem:[dot m_\"l\" = q_\"m\"]:: is liquid phase mass flow rate (<<iso80000-4>>),
+stem:[dot m_\"g\"]:: is gas phase mass flow rate,
+stem:[rho_\"g\"]:: is gas density (<<iso80000-4>>), and
+stem:[rho_\"l\"]:: is liquid density
+"""@en ;
+  skos:note """The Lockhart-Martinelli parameter is used, for example, in boiling or condensing."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.16-1 ;
+  skos:definition """quotient of mechanical work and frictional and diffusion energy loss in viscous flow of fluids in pipes, expressed by
+
+stem:[Be** = (Delta pl^2)/(eta D)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along a pipe or channel,
+stem:[l]:: is length (<<iso80000-3>>) of channel,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>), mass diffusivity
+"""@en ;
+  skos:note """A similar quantity exists for heat transfer (<<t11-5.9>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cavitation number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.17-1 ;
+  skos:definition """quotient of the excess of local static head over vapour pressure head and velocity head for fast flow in liquids, expressed by
+
+stem:[Ca = (p-p_\"v\")/(rho v^2//2)]; where
+
+stem:[p]:: is local static pressure (<<iso80000-4>>),
+stem:[p_\"v\"]:: is vapour pressure (<<iso80000-4>>) of the fluid,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the flow
+"""@en ;
+  skos:note """The cavitation number represents the ratio of the excess of local static head over vapour pressure head to velocity head."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absorption number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ab"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.18-0 ;
+  skos:definition """relation between mass flow rate and surface area for gas absorption at wetted walls, expressed by
+
+stem:[Ab = k sqrt((ld)/(Dq_V))]; where
+
+stem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where
+stem:[rho]::: is mass density (<<iso80000-4>>), and
+stem:[k']::: is mass flux density through the surface, stem:[k' = q_\"m\"//A], where
+stem:[q_\"m\"]:::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]:::: is area (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) of wetted surface,
+stem:[d]:: is thickness (<<iso80000-3>>) of liquid film,
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>), and
+stem:[q_V]:: is volume flow rate (<<iso80000-4>>) per wetted perimeter
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "capillary number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.19" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.19-0 ;
+  skos:definition """quotient of gravitational forces and capillary forces for fluids in narrow pipes, expressed by
+
+stem:[Ca = d^2 rho g//gamma]; where
+
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>), and
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the fluid
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .
+
+isoiec80000:term-t11-6.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic capillary number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-6.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.20-1 ;
+  skos:definition """quotient of viscous force and capillary force acting across an interface between a liquid and a gas, or between two immiscible liquids for a flow of fluid influenced by interfacial tension, expressed by
+
+stem:[Ca** = eta v//gamma]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid,
+stem:[v]:: is characteristic speed (<<iso80000-3>>), and
+stem:[gamma]:: is surface or interfacial tension (<<iso80000-4>>)
+"""@en ;
+  skos:note """The dynamic capillary number is also given by the quotient of the Weber number and the Reynolds number."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

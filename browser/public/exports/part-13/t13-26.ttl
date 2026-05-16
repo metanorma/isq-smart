@@ -1,0 +1,33 @@
+isoiec80000:term-t13-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(H_{\"max\"})"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-26" ;
+  skosxl:prefLabel isoiec80000:term-t13-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-26-1 ;
+  skos:definition """maximum entropy occurs when
+
+stem:[p(X_i) = 1//n] for stem:[i = 1, ..., n]
+"""@en ;
+  skos:note """The maximum entropy is sometimes called \"decision
+content\" because the value is the same when the
+base is an integer, for the same number of events.
+See <<t13-23,item 13-23>>.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-16\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

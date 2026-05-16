@@ -1,0 +1,36 @@
+isoiec80000:term-t10-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass defect"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-21.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-21.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-21.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-21.2-0 ;
+  skos:definition """sum of the product of the proton number and the hydrogen atomic mass, and the neutron rest mass, minus the rest mass of the atom:
+
+[stem%unnumbered]
+++++
+B = Z m(\"\"^1\"H\") + N m_\"n\" - m_\"a\"
+++++
+
+where
+
+stem:[Z]:: is the proton number (<<t10-1.1>>) of the atom,
+stem:[m(\"\"^1\"H\")]:: is atomic mass (<<t10-4.1>>) of stem:[\"\"^1\"H\"],
+stem:[N]:: is neutron number (<<t10-1.2>>),
+stem:[m_\"n\"]:: is the rest mass (<<t10-2>>) of the neutron, and
+stem:[m_\"a\"]:: is the rest mass (<<t10-2>>) of the atom
+"""@en ;
+  skos:note """The mass excess is usually expressed in daltons, stem:[1 \"unitsml(Da)\" = 1 \"unitsml(u)\"].
+
+If the binding energy of the orbital electrons is neglected, stem:[Bc_0^2] is equal to the binding energy of the nucleus.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

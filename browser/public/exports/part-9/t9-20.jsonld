@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "fugacity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tilde p_\"X\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t9-20",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "9-20",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t9-20-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t9-20-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for substance stem:[\"X\"], quantity proportional to the absolute activity, stem:[lambda_\"X\"] (<<t9-18>>), the proportionality factor, which is a function of temperature (<<iso80000-5>>) only, being determined by the condition that, at constant temperature and composition, stem:[p_\"X\"//tilde p_\"X\"] tends to 1 for an indefinitely dilute gas",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "[stem%unnumbered]\n++++\ntilde p_\"X\" = lambda_\"X\" * lim_(p -> 0)(p_\"X\"//lambda_\"X\")\n++++\n\nwhere stem:[p] is total pressure (<<iso80000-4>>).\n\nThe IUPAC preferred symbol for fugacity is stem:[f].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-Pa"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-9"
+      }
+    }
+  ]
+}

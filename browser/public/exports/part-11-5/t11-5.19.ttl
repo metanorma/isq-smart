@@ -1,0 +1,35 @@
+isoiec80000:term-t11-5.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Boltzmann number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bz"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bol"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.19" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.19-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.19-2 ;
+  skos:definition """relation between convective heat and radiant heat for a fluid in a channel, expressed by
+
+stem:[Bz = rho v c_p // (epsilon sigma T^3)]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[epsilon]:: is emissivity (<<iso80000-7>>),
+stem:[sigma]:: is the Stefan-Boltzmann constant (<<iso80000-7>>), and
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

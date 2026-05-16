@@ -1,0 +1,41 @@
+isoiec80000:term-t13-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-24" ;
+  skosxl:prefLabel isoiec80000:term-t13-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-24-0 ;
+  skos:definition """stem:[I(x)] +
+stem:[= lb 1/p(x) \" Sh\"] +
+stem:[= lg 1/p(x) \" Hart\"] +
+stem:[= ln 1/p(x) \" nat\"]
+
+where stem:[p(x)] is the probability of event stem:[x]
+"""@en ;
+  skos:note """One shannon is the quantity value when the argument
+is equal to two.
+
+stem:[1 \" Sh\" ~~ 0,693 \"unitsml(nat)\" ~~ 0,301 \" Hart\"]
+
+One hartley is the quantity value when the argument
+is equal to ten.
+
+stem:[1 \" Hart\" ~~ 3,322 \" Sh\" ~~ 2,303 \"unitsml(nat)\"]
+
+One natural unit of information is the quantity value
+when the argument is equal to stem:[e], Euler's number.
+
+stem:[1 \"unitsml(nat)\" ~~ 1,433 \" Sh\" ~~ 0,434 \" Hart\"]
+
+See <<iec60050-171,droploc%locality:item=\"171-07-14\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

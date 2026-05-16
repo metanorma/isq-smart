@@ -1,0 +1,21 @@
+isoiec80000:term-t11-5.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Carnot number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.14-0 ;
+  skos:definition """theoretical maximum efficiency (<<iso80000-5>>) of a Carnot cycle operating between temperature reservoirs
+
+stem:[Ca = (T_2-T_1)//T_2]; where
+
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>), and +
+stem:[T_2, T_1]:: are the thermodynamic temperatures of a heat source and a heat sink, respectively
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

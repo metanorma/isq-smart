@@ -1,0 +1,21 @@
+isoiec80000:term-t8-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "acoustic impedance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z_\"a\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-13" ;
+  skosxl:prefLabel isoiec80000:term-t8-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-13-0 ;
+  skos:definition """at a surface, quotient of the average sound pressure (<<t8-2.2>>) over that surface and the sound volume flow rate (<<t8-6>>) through that surface"""@en ;
+  skos:note """This definition applies to a sound pressure that is in phase with the volume flow rate. In this situation, the acoustic impedance is real.
+
+Both the sound pressure, stem:[p], and sound volume flow rate, stem:[q], are real quantities that fluctuate with time. If the fluctuations are in phase (phase difference equal to zero), the quotient stem:[p//q] is a constant. If they are out of phase (phase difference not equal to zero), they can be represented by complex quantities in the frequency domain, the quotient of which is also complex.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa*s/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-4)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

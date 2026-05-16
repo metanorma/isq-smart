@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"max\"(a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.22-0 ;
+  skos:definition """maximum of stem:[a] and stem:[b]"""@en ;
+  skos:note """The operation generalizes to more than two numbers and to sets of numbers. However, an infinite set of numbers need not have a greatest element, in this case use sup (see <<t2-10.15>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

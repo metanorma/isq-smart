@@ -1,0 +1,26 @@
+isoiec80000:term-t8-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volume velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t8-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volume flow rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t8-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_nu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-6" ;
+  skosxl:prefLabel isoiec80000:term-t8-6-0 ;
+  skosxl:altLabel isoiec80000:term-t8-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t8-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-6-1 ;
+  skos:definition """surface integral of the normal component of the sound particle velocity (<<t8-4>>) over a defined surface"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

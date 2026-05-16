@@ -1,0 +1,33 @@
+isoiec80000:term-t10-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear quadrupole moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-18" ;
+  skosxl:prefLabel isoiec80000:term-t10-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-18-0 ;
+  skos:definition """stem:[z] component of the diagonalized tensor of nuclear quadrupole moment:
+
+[stem%unnumbered]
+++++
+Q = (1/e) int (3z^2-r^2) rho(x,y,z) \"d\"V
+++++
+
+in the quantum state with the nuclear spin in the field direction (stem:[z]), where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>), +
+stem:[r^2 = x^2 + y^2 + z^2],
+stem:[rho(x,y,z)]:: is the nuclear electric charge density (<<iec80000-6>>), and
+stem:[\"d\"V]:: is the volume element stem:[\"d\"x] stem:[\"d\"y] stem:[\"d\"z]
+"""@en ;
+  skos:note """The electric nuclear quadrupole moment is stem:[eQ].
+
+This value is equal to the stem:[z] component of the diagonalized tensor of quadrupole moment.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

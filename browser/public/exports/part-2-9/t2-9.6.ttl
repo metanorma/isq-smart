@@ -1,0 +1,16 @@
+isoiec80000:term-t2-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "distance between points A and B"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d(\"A\", \"B\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.6-0 ;
+  skos:definition """distance between points stem:[\"A\"] and stem:[\"B\"]"""@en ;
+  skos:note """The distance is the length of the line segment stem:[bar(\"AB\")] and also the magnitude of the vector stem:[vec(\"AB\")]."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .

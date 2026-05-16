@@ -1,0 +1,24 @@
+isoiec80000:term-t6-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric field strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(E))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-10" ;
+  skosxl:prefLabel isoiec80000:term-t6-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-10-0 ;
+  skos:definition """additive vector field quantity that exerts on any charged particle located at position stem:[bb(ii(r))] a force stem:[bb(ii(F))] (<<iso80000-4>>) equal to the product of stem:[E] and electric charge stem:[q] (<<t6-2.1>>) of the particle, thus:
+
+[stem%unnumbered]
+++++
+bb(ii(E))(bb(ii(r))) = bb(ii(F))/q
+++++
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-18\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-3)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

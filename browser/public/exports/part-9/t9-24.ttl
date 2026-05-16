@@ -1,0 +1,41 @@
+isoiec80000:term-t9-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity of solute"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative activity of solute"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t9-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"m,X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-24" ;
+  skosxl:prefLabel isoiec80000:term-t9-24-0 ;
+  skosxl:altLabel isoiec80000:term-t9-24-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-24-1 ;
+  skos:definition """for a solute stem:[\"X\"] in a solution, quantity proportional to the absolute activity, stem:[lambda_\"X\"] (<<t9-18>>), the proportionality factor, which is a function of temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>) only, being determined by the condition that, at constant temperature and pressure, aX divided by the molality (<<t9-15>>) ratio, stem:[b_\"X\"//b^(&#8854;)] tends to 1 at infinite dilution; stem:[b_\"X\"] is the molality of solute stem:[\"X\"] (<<t9-15>>), and stem:[b^(&#8854;)] is standard molality:
+
+[stem%unnumbered]
+++++
+a_\"X\" = lambda_\"X\" * \"lim\"_(sum b_\"x\" -> 0) (b_\"X\"//b^(&#8854;))/(lambda_\"X\")
+++++
+"""@en ;
+  skos:note """The quantity stem:[a_\"c,X\"], similarly defined in terms of the concentration ratio stem:[c_\"X\"//c^(&#8854;)], is also called the activity or relative activity of solute stem:[\"X\"]; stem:[c^(&#8854;)] is a standard amount-of-substance concentration (<<t9-12.2>>):
+
+[stem%unnumbered]
+++++
+a_\"c,X\" = lambda_\"X\" \"lim\"_(sum c_\"x\" -> 0) (c_\"x\"//c^(&#8854;))/(lambda_\"X\")
+++++
+
+where stem:[sum] denotes summation over all the solute substances. This especially applies to a dilute liquid solution.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

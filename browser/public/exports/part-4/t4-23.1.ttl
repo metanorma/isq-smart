@@ -1,0 +1,40 @@
+isoiec80000:term-t4-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coefficient of static friction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(f_\"s\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.1-0 ;
+  skosxl:altLabel isoiec80000:term-t4-23.1-1 ;
+  skosxl:altLabel isoiec80000:term-t4-23.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.1-1 ;
+  skos:definition """proportionality factor between the maximum magnitude of the tangential
+component stem:[F_\"max\"] of the static friction force (<<t4-9.3>>) and the
+magnitude of the normal component stem:[N] of the contact force (<<t4-9.1>>)
+between two bodies at relative rest with respect to each other:
+
+stem:[F_\"max\" = mu_\"s\"N]
+"""@en ;
+  skos:note """When it is not necessary to distinguish between dynamic friction factor and
+static friction factor, the name friction factor may be used for both.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

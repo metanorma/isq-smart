@@ -1,0 +1,30 @@
+isoiec80000:term-t13-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binary digit rate, bit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_{\"bit\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v_{\"bit\"})"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-13" ;
+  skosxl:prefLabel isoiec80000:term-t13-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-13-1 ;
+  skos:definition """transfer rate (<<t13-11,item 13-11>>) where the data elements are binary digits"""@en ;
+  skos:note """In English, the systematic name would be \"transfer
+rate for binary digits\".
+
+The bit per second may be combined with prefixes,
+for example megabit per second, symbol Mbit/s.
+
+See <<iec60050-704,droploc%locality:item=\"704-16-07\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-bit/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

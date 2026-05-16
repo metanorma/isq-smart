@@ -1,0 +1,22 @@
+isoiec80000:term-t9-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-5" ;
+  skosxl:prefLabel isoiec80000:term-t9-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-5-0 ;
+  skos:definition """for a pure substance, quotient of its volume stem:[V] (<<iso80000-3>>) and amount stem:[n] of substance (<<t9-2>>):
+
+[stem%unnumbered]
+++++
+V_\"m\" = V//n
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

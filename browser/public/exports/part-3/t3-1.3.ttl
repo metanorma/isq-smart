@@ -1,0 +1,35 @@
+isoiec80000:term-t3-1.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "height"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-1.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "depth"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-1.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "altitude"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.3" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.3-0 ;
+  skosxl:altLabel isoiec80000:term-t3-1.3-1 ;
+  skosxl:altLabel isoiec80000:term-t3-1.3-2 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.3-1 ;
+  skos:definition """minimum length of a straight line segment between a point and a reference line or reference surface"""@en ;
+  skos:note """This quantity is usually signed. The sign expresses the position of the particular point with respect to the reference line or surface and is chosen by convention.
+
+The symbol stem:[H] is often used to denote altitude, i.e. height above sea level.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

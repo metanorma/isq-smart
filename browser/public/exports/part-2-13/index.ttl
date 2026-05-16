@@ -1,0 +1,150 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-13 a smart:PublicationDocument ;
+  dcterms:title "Part 2-13"@en ;
+  dcterms:identifier "ISO 80000-2-13" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-13.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "base of natural logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.1-0 ;
+  skos:definition """base of natural logarithm"""@en ;
+  skos:note """stem:[e := lim_(n->oo) (1 + 1/n)^n = 2.7188128...]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .
+
+isoiec80000:term-t2-13.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exponential function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.2-0 ;
+  skos:definition """stem:[a] to the power of stem:[x], +
+exponential function to the base stem:[a] of argument stem:[x]
+"""@en ;
+  skos:note """See also <<t2-10.9>>."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .
+
+isoiec80000:term-t2-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exponential function to the base stem:[\"e\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"e\"^x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-13.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"exp \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.3-1 ;
+  skos:definition """stem:[\"e\"] to the power of stem:[x], +
+exponential function to the base stem:[\"e\"] of argument stem:[x]
+"""@en ;
+  skos:note """See <<t2-15.5>>."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .
+
+isoiec80000:term-t2-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithm to the base stem:[a]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"log\"_a x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.4-0 ;
+  skos:definition """logarithm to the base stem:[a] of argument stem:[x]"""@en ;
+  skos:note """stem:[\"log \"x] is used when the base does not need to be specified."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .
+
+isoiec80000:term-t2-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "natural logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"ln \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.5-0 ;
+  skos:definition """natural logarithm of stem:[x]"""@en ;
+  skos:note """stem:[\"ln \"x = \"log\"_e x]
+
+stem:[\"log \"x] shall not be used in place of stem:[\"ln \"x], stem:[\"lg \"x], stem:[\"lb \"x], or stem:[\"log\"_e x], stem:[log_(10) x], stem:[log_2 x].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .
+
+isoiec80000:term-t2-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decimal logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"lg \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.6-0 ;
+  skos:definition """decimal logarithm of stem:[x], +
+common logarithm of stem:[x]
+"""@en ;
+  skos:note """stem:[\"lg \"x = \"log\"_(10) x]
+
+See remark to <<t2-13.5>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .
+
+isoiec80000:term-t2-13.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binary logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"lb \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.7-0 ;
+  skos:definition """binary logarithm of stem:[x]"""@en ;
+  skos:note """stem:[\"lb \"x = \"log\"_2 x]
+
+See remark to <<t2-13.5>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .

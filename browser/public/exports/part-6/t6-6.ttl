@@ -1,0 +1,30 @@
+isoiec80000:term-t6-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric dipole moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-6" ;
+  skosxl:prefLabel isoiec80000:term-t6-6-0 ;
+  skosxl:altLabel isoiec80000:term-t6-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-6-0 ;
+  skos:definition """vector quantity given by
+
+[stem%unnumbered]
+++++
+p = q(r_\"+\" - r_\"-\")
+++++
+
+where stem:[r_\"+\"] and stem:[r_\"-\"] are the position vectors (<<iso80000-3>>) of the carriers of electric charges stem:[q] and stem:[-q] (<<t6-2.1>>), respectively
+"""@en ;
+  skos:note """The electric dipole moment of a substance within a domain is the vector sum of electric dipole moments of all electric dipoles contained in the domain.
+
+See <<iec60050-121,locality:item=\"121-11-35\";and!locality:item=\"121-11-36\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C*m ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

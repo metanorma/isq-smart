@@ -1,0 +1,118 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-54-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "total linear stopping power",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-54-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "linear stopping power",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-54-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "S",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-54-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "S_l",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-54",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-54",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-54-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-54-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-54-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-54-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for charged particles of a given type and energy stem:[E_0] the differential quotient of stem:[E] with respect to stem:[x], where stem:[E] is the mean energy (<<iso80000-4>>) lost by the charged particles in traversing a distance (<<iso80000-3>>) stem:[x] in the given material:\n\n[stem%unnumbered]\n++++\nS = -(\"d\"E)/(\"d\"x)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The total linear stopping power is sometimes also called stopping power.\n\nBoth electronic losses and radiative losses are included.\n\nThe quotient of the total linear stopping power of a substance and that of a reference substance is called the relative linear stopping power.\n\nSee also <<t10-85>>.\n\nUsing the relation stem:[S_m = S//rho] between the total mass stopping power stem:[S_m] (<<t10-55>>), the total linear stopping power stem:[S], and the density stem:[rho], the definition given for the mass stopping in report 85a of the ICRU can be applied to that of the total linear stopping power resulting in:\n\nThe linear stopping power, stem:[S], of a material, for charged particles of a given type and energy, is the quotient of stem:[\"d\"E] by stem:[\"d\"l], where stem:[\"d\"E] is the mean energy lost by the charged particles in traversing a distance stem:[\"d\"l] in the material:\n\n[stem%unnumbered]\n++++\nS = -(\"d\"E)/(\"d\"x)\n++++\n\nThis definition has an equivalent meaning as the one given in column 4 of this item.\n\nSee also <<cls-0.3>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-eV/m"
+        },
+        {
+          "@id": "isoiec80000:unit-J/m"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

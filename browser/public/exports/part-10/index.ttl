@@ -1,0 +1,4128 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-10 a smart:PublicationDocument ;
+  dcterms:title "Atomic and Nuclear"@en ;
+  dcterms:identifier "ISO 80000-10" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram"@en ;
+  skos:notation "kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-u a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "unified atomic mass unit"@en ;
+  skos:notation "u" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Da a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "dalton"@en ;
+  skos:notation "Da" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton metre"@en ;
+  skos:notation "N*m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared"@en ;
+  skos:notation "kg*m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb"@en ;
+  skos:notation "C" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second ampere"@en ;
+  skos:notation "s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre"@en ;
+  skos:notation "m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Aring a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "angstrom"@en ;
+  skos:notation "Aring" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per metre"@en ;
+  skos:notation "m^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "electronvolt"@en ;
+  skos:notation "eV" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre ampere"@en ;
+  skos:notation "m^2*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second"@en ;
+  skos:notation "kg*m^2*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule second"@en ;
+  skos:notation "J*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "electronvolt second"@en ;
+  skos:notation "eV*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A*m^2*J^(-1)*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere square metre per joule second"@en ;
+  skos:notation "A*m^2*J^(-1)*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-A*s/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere second per kilogram"@en ;
+  skos:notation "A*s/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*s*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second ampere per kilogram"@en ;
+  skos:notation "kg^(-1)*s*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-rad*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "radian per second"@en ;
+  skos:notation "rad*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per second"@en ;
+  skos:notation "s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre"@en ;
+  skos:notation "m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second"@en ;
+  skos:notation "s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Bq a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "becquerel"@en ;
+  skos:notation "Bq" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Bq/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "becquerel per kilogram"@en ;
+  skos:notation "Bq/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per kilogram second"@en ;
+  skos:notation "kg^(-1)*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Bq/m^3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "becquerel per cubic metre"@en ;
+  skos:notation "Bq/m^3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-3)*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per cubic metre second"@en ;
+  skos:notation "m^(-3)*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Bq/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "becquerel per square metre"@en ;
+  skos:notation "Bq/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-2)*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per square metre second"@en ;
+  skos:notation "m^(-2)*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["b"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "barn"@en ;
+  skos:notation "stem:["b"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*sr^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per steradian"@en ;
+  skos:notation "m^2*sr^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2//J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per joule"@en ;
+  skos:notation "m^2//J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*s^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second squared per kilogram"@en ;
+  skos:notation "kg^(-1)*s^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2/(J*sr) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per joule steradian"@en ;
+  skos:notation "m^2/(J*sr)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per square metre"@en ;
+  skos:notation "m^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "electronvolt per square metre"@en ;
+  skos:notation "eV/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per square metre"@en ;
+  skos:notation "J/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second squared"@en ;
+  skos:notation "kg*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per square metre"@en ;
+  skos:notation "W/m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second cubed"@en ;
+  skos:notation "kg*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per kilogram"@en ;
+  skos:notation "kg^(-1)*m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*mol^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per mole"@en ;
+  skos:notation "m^2*mol^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "electronvolt per metre"@en ;
+  skos:notation "eV/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per metre"@en ;
+  skos:notation "J/m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second squared"@en ;
+  skos:notation "kg*m*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-eV*m^(-2)/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "electronvolt per square metre kilogram"@en ;
+  skos:notation "eV*m^(-2)/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J*m^2/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule square metre per kilogram"@en ;
+  skos:notation "J*m^2/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^4*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre to the fourth per second squared"@en ;
+  skos:notation "m^4*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per square metre"@en ;
+  skos:notation "kg*m^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2/(V*s) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per volt second"@en ;
+  skos:notation "m^2/(V*s)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*s^2*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second squared ampere per kilogram"@en ;
+  skos:notation "kg^(-1)*s^2*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per cubic metre"@en ;
+  skos:notation "m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre per second"@en ;
+  skos:notation "m^3*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second"@en ;
+  skos:notation "m^2*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Gy a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "gray"@en ;
+  skos:notation "Gy" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule per kilogram"@en ;
+  skos:notation "J/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second squared"@en ;
+  skos:notation "m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Sv a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "sievert"@en ;
+  skos:notation "Sv" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Sv/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "sievert per second"@en ;
+  skos:notation "Sv/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt per kilogram"@en ;
+  skos:notation "W/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second cubed"@en ;
+  skos:notation "m^2*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Gy/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "gray per second"@en ;
+  skos:notation "Gy/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C/kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb per kilogram"@en ;
+  skos:notation "C/kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-C/(kg*s) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "coulomb per kilogram second"@en ;
+  skos:notation "C/(kg*s)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*A a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "ampere per kilogram"@en ;
+  skos:notation "kg^(-1)*A" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t10-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-1.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proton number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-1.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-1.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-1.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-1.1-0 ;
+  skosxl:altLabel isoiec80000:term-t10-1.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-1.1-0 ;
+  skos:definition """number of protons in an atomic nucleus"""@en ;
+  skos:note """A nuclide is a species of atom with specified numbers of protons and neutrons.
+
+Nuclides with the same value of stem:[Z] but different values of stem:[N] are called isotopes of an element.
+
+The ordinal number of an element in the periodic table is equal to the atomic number.
+
+The atomic number equals the quotient of the charge (<<iec80000-6>>) of the nucleus and the elementary charge (<<iso80000-1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "neutron number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-1.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-1.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-1.2-0 ;
+  skos:definition """number of neutrons in an atomic nucleus"""@en ;
+  skos:note """Nuclides with the same value of stem:[N] but different values of stem:[Z] are called isotones.
+
+stem:[N - Z] is called the neutron excess number.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-1.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nucleon number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-1.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-1.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-1.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-1.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-1.3-0 ;
+  skosxl:altLabel isoiec80000:term-t10-1.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-1.3-0 ;
+  skos:definition """number of nucleons in an atomic nucleus"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+A = Z + N
+++++
+
+Nuclides with the same value of stem:[A] are called isobars.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rest mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proper mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-2" ;
+  skosxl:prefLabel isoiec80000:term-t10-2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-2-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-2-1 ;
+  skos:definition """for particle stem:[\"X\"], mass (<<iso80000-4>>) of that particle at rest in an inertial frame"""@en ;
+  skos:note """[example]
+====
+stem:[m(\"H\"_2\"O\")] for a water molecule, stem:[m_\"e\"] for an electron.
+
+Rest mass is often denoted stem:[m_0].
+
+stem:[1 \"unitsml(u)\"] is equal to stem:[1//12] times the mass of a free carbon 12 atom, at rest and in its ground state.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Da)\" = 1 \"unitsml(u)\"
+++++
+====
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rest energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-3" ;
+  skosxl:prefLabel isoiec80000:term-t10-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-3-0 ;
+  skos:definition """energy stem:[E_0] (<<iso80000-5>>) of a particle at rest:
+
+[stem%unnumbered]
+++++
+E_0 = m_0c_0^2
+++++
+
+where
+
+stem:[m_0]:: is the rest mass (<<t10-2>>) of that particle, and
+stem:[c_0]:: is speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-4.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-4.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-4.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.1-1 ;
+  skos:definition """rest mass (<<t10-2>>) of an atom stem:[\"X\"] in the ground state"""@en ;
+  skos:note """stem:[(m(\"X\"))/m_\"u\"] is called the relative atomic mass.
+
+stem:[1 \"unitsml(u)\"] is equal to stem:[1//12] times the mass of a free carbon 12 atom, at rest and in its ground state.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Da)\" = 1 \"unitsml(u)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-4.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclidic mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-4.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m(\"X\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-4.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-4.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-4.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-4.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.2-1 ;
+  skos:definition """rest mass (<<t10-2>>) of a nuclide stem:[\"X\"] in the ground state"""@en ;
+  skos:note """stem:[1 \"unitsml(u)\"] is equal to stem:[1//12] times the mass of a free carbon 12 atom, at rest and in its ground state.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Da)\" = 1 \"unitsml(u)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-4.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "unified atomic mass constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-4.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_\"u\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-4.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-4.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-4.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-4.3-0 ;
+  skos:definition """stem:[1//12] of the mass (<<iso80000-4>>) of an atom of the nuclide stem:[\"\"^(12)\"C\"] in the ground state at rest"""@en ;
+  skos:note """stem:[1 \"unitsml(u)\"] is equal to stem:[1//12] times the mass of a free carbon 12 atom, at rest and in its ground state.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Da)\" = 1 \"unitsml(u)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "elementary charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-5.1-0 ;
+  skos:definition """one of the fundamental constants in the SI system (<<iso80000-1>>), equal to the charge of the proton and opposite to the charge of the electron"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C ;
+  isoiec80000:hasUnit isoiec80000:unit-s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "charge number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-5.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ionization number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-5.2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-5.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-5.2-0 ;
+  skos:definition """for a particle, quotient of the electric charge (<<iec80000-6>>) and the elementary charge (<<iso80000-1>>)"""@en ;
+  skos:note """A particle is said to be electrically neutral if its charge number is equal to zero.
+
+The charge number of a particle can be positive, negative, or zero.
+
+The state of charge of a particle may be presented as a superscript to the symbol of that particle, e.g.
+
+stem:[\"H\"^\\+], stem:[\"He\"^(++)], stem:[\"Al\"^(3+)], stem:[\"Cl\"^-], stem:[\"S\"^(--)], stem:[\"N\"^(3-)].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bohr radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-6" ;
+  skosxl:prefLabel isoiec80000:term-t10-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-6-0 ;
+  skos:definition """radius (<<iso80000-3>>) of the electron orbital in the hydrogen atom in its ground state in the Bohr model of the atom:
+
+[stem%unnumbered]
+++++
+a_0 = (4pi epsilon_0 &#8463;^2)/(m_\"e\"e^2)
+++++
+
+where
+
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>),
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>),
+stem:[m_\"e\"]:: is the rest mass (<<t10-2>>) of electron, and
+stem:[e]:: is the elementary charge (<<iso80000-1>>)
+"""@en ;
+  skos:note """The radius of the electron orbital in the stem:[\"H\"] atom in its ground state is stem:[a_0] in the Bohr model of the atom.
+
+ångström (stem:[\"unitsml(Aring)\"]), stem:[1 \"unitsml(Aring)\" := 10^(-10) \"unitsml(m)\"]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  isoiec80000:hasUnit isoiec80000:unit-Aring ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rydberg constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_(oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-7" ;
+  skosxl:prefLabel isoiec80000:term-t10-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-7-0 ;
+  skos:definition """spectroscopic constant that determines the wave numbers of the lines in the spectrum of hydrogen:
+
+[stem%unnumbered]
+++++
+R_(oo) = (e^2)/(8pi epsilon_0 a_0 h c_0)
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>),
+stem:[a_0]:: is the Bohr radius (<<t10-6>>),
+stem:[h]:: is the Planck constant (<<iso80000-1>>), and
+stem:[c_0]:: is the speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  skos:note """The quantity stem:[R_y = R_(oo)hc_0] is called the Rydberg energy."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hartree energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"h\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-8" ;
+  skosxl:prefLabel isoiec80000:term-t10-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-8-1 ;
+  skos:definition """energy (<<iso80000-5>>) of the electron in a hydrogen atom in its ground state:
+
+[stem%unnumbered]
+++++
+E_\"H\" = (e^2)/(4pi epsilon_0 a_0)
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>), and
+stem:[a_0]:: is the Bohr radius (<<t10-6>>)
+"""@en ;
+  skos:note """The energy of the electron in an stem:[\"H\"] atom in its ground state is stem:[E_\"H\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic dipole moment <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-9.1-0 ;
+  skos:definition """for a particle, vector (<<iso80000-2>>) quantity causing a change to its energy (<<iso80000-5>>) stem:[Delta W] in an external magnetic field of field flux density stem:[bb(ii(B))] (<<iec80000-6>>):
+
+[stem%unnumbered]
+++++
+Delta W = -mu * bb(ii(B))
+++++
+"""@en ;
+  skos:note """For an atom or nucleus, this energy is quantized and can be written as:
+
+[stem%unnumbered]
+++++
+W = g mu_\"x\" M B
+++++
+
+where
+
+stem:[g] is the appropriate stem:[g] factor (<<t10-14.1>> or <<t10-14.2>>), stem:[mu_\"x\"] is mostly the Bohr magneton or nuclear magneton (<<t10-9.2>> or <<t10-9.3>>), stem:[M] is magnetic quantum number (<<t10-13.4>>), and stem:[B] is magnitude of the magnetic flux density.
+
+See also <<iec80000-6>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bohr magneton"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-9.2-0 ;
+  skos:definition """magnitude of the magnetic moment of an electron in a state with orbital angular momentum quantum number stem:[l=1] (<<t10-13.3>>) due to its orbital motion:
+
+[stem%unnumbered]
+++++
+mu_\"B\" = (e &#8463;)/(2m_\"e\")
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and
+stem:[m_\"e\"]:: is the rest mass (<<t10-2>>) of electron
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear magneton"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"N\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-9.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-9.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-9.3-0 ;
+  skos:definition """absolute value of the magnetic moment of a nucleus:
+
+[stem%unnumbered]
+++++
+mu_\"N\" = (e&#8463;)/(2m_\"p\")
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and
+stem:[m_\"p\"]:: is the rest mass (<<t10-2>>) of proton
+"""@en ;
+  skos:note """Subscript stem:[\"N\"] stands for nucleus. For the neutron magnetic moment, subscript stem:[\"n\"] is used. The magnetic moments of protons and neutrons differ from this quantity by their specific stem:[g] factors (<<t10-14.2>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spin"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(s))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-10" ;
+  skosxl:prefLabel isoiec80000:term-t10-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-10-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity expressing the internal angular momentum (<<iso80000-4>>) of a particle or a particle system"""@en ;
+  skos:note """Spin is an additive vector quantity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total angular momentum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-11" ;
+  skosxl:prefLabel isoiec80000:term-t10-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-11-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity in a quantum system composed of the vectorial sum of angular momentum stem:[bb(ii(L))] (<<iso80000-4>>) and spin stem:[bb(ii(s))] (<<t10-10>>)"""@en ;
+  skos:note """In atomic and nuclear physics, orbital angular momentum is usually denoted by stem:[bb(ii(l))] or stem:[bb(ii(L))].
+
+The magnitude of stem:[bb(ii(J))] is quantized so that:
+
+[stem%unnumbered]
+++++
+bb(ii(J))^2 = &#8463;^2 j(j+1)
+++++
+
+where stem:[j] is the total angular momentum quantum number (<<t10-13.6>>).
+
+Total angular momentum and magnetic dipole moment have the same direction.
+
+stem:[j] is not the magnitude of the total angular momentum stem:[bb(ii(J))] but its projection onto the quantization axis, divided by stem:[&#8463;].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J*s ;
+  isoiec80000:hasUnit isoiec80000:unit-eV*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyromagnetic ratio"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-12.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetogyric ratio"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-12.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyromagnetic coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-12.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-12.1-0 ;
+  skosxl:altLabel isoiec80000:term-t10-12.1-1 ;
+  skosxl:altLabel isoiec80000:term-t10-12.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t10-12.1-0 ;
+  skos:definition """proportionality constant between the magnetic dipole moment and the angular momentum:
+
+[stem%unnumbered]
+++++
+bb(ii(mu)) = gamma bb(ii(J))
+++++
+
+where
+
+stem:[bb(ii(mu))]:: is the magnetic dipole moment (<<t10-9.1>>), and
+stem:[bb(ii(J))]:: is the total angular momentum (<<t10-11>>)
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(A*m^2/(J*s))\" = 1 \"unitsml(A*s/kg)\" = 1 \"unitsml(T^(-1)*s^(-1))\"
+++++
+
+The systematic name is \"gyromagnetic coefficient\", but \"gyromagnetic ratio\" is more usual.
+
+The gyromagnetic ratio of the proton is denoted by stem:[gamma_\"p\"].
+
+The gyromagnetic ratio of the neutron is denoted by stem:[gamma_\"n\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^2*J^(-1)*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-A*s/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyromagnetic ratio of the electron"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-12.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetogyric ratio of the electron"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-12.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyromagnetic coefficient of the electron"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-12.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-12.2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-12.2-1 ;
+  skosxl:altLabel isoiec80000:term-t10-12.2-2 ;
+  skosxl:altLabel isoiec80000:sym-t10-12.2-0 ;
+  skos:definition """proportionality constant between the magnetic dipole moment and the angular momentum of the electron
+
+[stem%unnumbered]
+++++
+bb(ii(mu)) = gamma_\"e\" bb(ii(J))
+++++
+
+where
+
+stem:[bb(ii(mu))]:: is the magnetic dipole moment (<<t10-9.1>>), and
+stem:[bb(ii(J))]:: is the total angular momentum (<<t10-11>>)
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(A*m^2/(J*s))\" = 1 \"unitsml(A*s/kg)\" = 1 \"unitsml(T^(-1)*s^(-1))\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^2*J^(-1)*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-A*s/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.1-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.1-4 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "s"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.1-5 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.1-3 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.1-4 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.1-5 ;
+  skos:definition """number describing a particular state of a quantum system"""@en ;
+  skos:note """Electron states determine the binding energy stem:[E = E(n,l,m,j,s,f)] in an atom.
+
+Upper case letters stem:[N, L, M, J, S, F] are usually used for the whole system.
+
+The spatial probability distribution of an electron is given by stem:[abs(ii(Psi))^2], where stem:[ii(Psi)] is its wave function. For an electron in an stem:[\"H\"] atom in a non-relativistic approximation, the wave function can be presented as:
+
+[stem%unnumbered]
+++++
+ii(Psi)(r,vartheta,phi) = R_(nl)*Y_l^m (vartheta,phi)
+++++
+
+where
+
+stem:[r, vartheta, phi] are spherical coordinates (<<iso80000-2>>) with respect to the nucleus and to a given (quantization) axis, stem:[R_(nl)(r)] is the radial distribution function, and stem:[Y_l^m(vartheta,phi)] are spherical harmonics.
+
+In the Bohr model of one-electron atoms, stem:[n], stem:[l], and stem:[m] define the possible orbits of an electron about the nucleus.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "principal quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.2-0 ;
+  skos:definition """atomic quantum number related to the number stem:[n-1] of radial nodes of one-electron wave functions"""@en ;
+  skos:note """In the Bohr model, stem:[n = 1,2,...,oo] is related to the binding energy of an electron and the radius of spherical orbits (principal axis of the elliptic orbits).
+
+For an electron in an stem:[\"H\"] atom, the semi-classical radius of its orbit is stem:[r_n = a_0n^2] and its binding energy is stem:[E_n = E_\"H\"//n^2].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "orbital angular momentum quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.3-2 ;
+  skos:definition """atomic quantum number related to the orbital angular momentum stem:[l] of a one-electron state"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+abs(bb(ii(l)))^2 = &#8463;^2 l(l-1),\" \"l=0,1,...,n-1
+++++
+
+stem:[bb(ii(l))] is the orbital angular momentum and stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>).
+
+If reference is made to a specific particle stem:[i], the symbol stem:[l_i] is used instead of stem:[l]; +
+if reference is made to the whole system, the symbol stem:[L] is used instead of stem:[l].
+
+An electron in an stem:[\"H\"] atom for stem:[l = 0] appears as a spherical cloud. In the Bohr model, it is related to the form of the orbit.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.4-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.4" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.4-2 ;
+  skos:definition """atomic quantum number related to the stem:[z] component stem:[l_z], stem:[j_z] or stem:[s_z], of the orbital, total, or spin angular momentum"""@en ;
+  skos:note """stem:[l_z = m_i &#8463;], stem:[j_z = m_j &#8463;], and stem:[s_z = m_s &#8463;], with the ranges from stem:[-l] to stem:[l], from stem:[-j] to stem:[j], and stem:[pm 1//2], respectively.
+
+stem:[m_i] refers to a specific particle stem:[i]. stem:[M] is used for the whole system.
+
+Subscripts stem:[l], stem:[s], stem:[j], etc., as appropriate, indicate the angular momentum involved.
+
+stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "spin quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "s"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.5" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.5-0 ;
+  skos:definition """characteristic quantum number stem:[s] of a particle, related to its spin (<<t10-10>>), stem:[bb(ii(s))]:
+
+stem:[bb(ii(s))^2 = &#8463;^2 s(s+1)]
+
+where stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>)
+"""@en ;
+  skos:note """Spin quantum numbers of fermions are odd multiples of stem:[1//2], and those of bosons are integers."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total angular momentum quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.6-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "J"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.6" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.6-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.6-2 ;
+  skos:definition """quantum number in an atom describing the magnitude of total angular momentum stem:[bb(ii(J))] (<<t10-11>>)"""@en ;
+  skos:note """stem:[j_i] refers to a specific particle stem:[i]; stem:[J] is used for the whole system.
+
+The quantum number stem:[J] and the magnitude of total angular momentum stem:[bb(ii(J))] (<<t10-11>>) are different quantities.
+
+The two values of stem:[j] are stem:[l pm 1//2]. (See <<t10-13.3>>.)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear spin quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.7" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.7-0 ;
+  skos:definition """quantum number related to the total angular momentum (<<t10-11>>), stem:[bb(ii(J))], of a nucleus in any specified state, normally called nuclear spin:
+
+[stem%unnumbered]
+++++
+bb(ii(J))^2 = &#8463;^2 I (I+1)
+++++
+
+where stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>)
+"""@en ;
+  skos:note """Nuclear spin is composed of spins of the nucleons (protons and neutrons) and their (orbital) motions.
+
+In principle there is no upper limit for the nuclear spin quantum number. It has possible values stem:[I = 0,1,2,...] for even stem:[A] and stem:[I=1/2, 3/2,...] for odd stem:[A].
+
+In nuclear and particle physics, stem:[bb(ii(J))] is often used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-13.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperfine structure quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.8" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.8-0 ;
+  skos:definition """quantum number of an atom describing the inclination of the nuclear spin with respect to a quantization axis given by the magnetic field produced by the orbital electrons"""@en ;
+  skos:note """The interval of stem:[F] is stem:[abs(I-J), abs(I-J)+1, ..., I-J].
+
+This is related to the hyperfine splitting of the atomic energy levels due to the interaction between the electron and nuclear magnetic moments.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Landé factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-14.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[g] factor of atom"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-14.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-14.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-14.1-0 ;
+  skosxl:altLabel isoiec80000:term-t10-14.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-14.1-0 ;
+  skos:definition """quotient of the magnetic dipole moment of an atom, and the product of the total angular momentum quantum number and the Bohr magneton:
+
+[stem%unnumbered]
+++++
+g = mu/(J * mu_\"B\")
+++++
+
+where
+
+stem:[mu]:: is magnitude of magnetic dipole moment (<<t10-9.1>>),
+stem:[J]:: is total angular momentum quantum number (<<t10-13.6>>), and
+stem:[mu_\"B\"]:: is the Bohr magneton (<<t10-9.2>>)
+"""@en ;
+  skos:note """These quantities are also called stem:[g] values.
+
+The Landé factor can be calculated from the expression:
+
+[stem%unnumbered]
+++++
+g(L,S,J) = 1 + (g_\"e\"-1) xx (J(J+1) + S(S+1) - L(L+1))/(2J(J+1))
+++++
+
+where stem:[g_\"e\"] is the stem:[g] factor of the electron.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[g] factor of nucleus or nuclear particle"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-14.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-14.2-0 ;
+  skos:definition """quotient of the magnetic dipole moment of an atom, and the product of the nuclear spin quantum number and the nuclear magneton:
+
+[stem%unnumbered]
+++++
+g = mu/(I*mu_\"N\")
+++++
+
+where
+
+stem:[mu]:: is magnitude of magnetic dipole moment (<<t10-9.1>>),
+stem:[I]:: is nuclear spin quantum number (<<t10-13.7>>), and
+stem:[mu_\"N\"]:: is the nuclear magneton (<<t10-9.3>>)
+"""@en ;
+  skos:note """The stem:[g] factors for nuclei or nucleons are known from measurements."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-15.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Larmor angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-15.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega_\"L\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-15.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-15.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-15.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-15.1-0 ;
+  skos:definition """angular frequency (<<iso80000-3>>) of the electron angular momentum (<<iso80000-4>>) vector precession about the axis of an external magnetic field:
+
+[stem%unnumbered]
+++++
+omega_\"L\" = e/(2m_\"e\") B
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[m_\"e\"]:: is the rest mass (<<t10-2>>) of electron, and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Larmor frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-15.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu_\"L\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-15.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-15.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-15.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-15.2-0 ;
+  skos:definition """quotient of Larmor angular frequency (<<iso80000-3>>) and stem:[2pi]"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-15.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear precession angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-15.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega_\"N\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-15.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-15.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-15.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-15.3-0 ;
+  skos:definition """frequency (<<iso80000-3>>) by which the nucleus angular momentum vector (<<iso80000-4>>) precesses about the axis of an external magnetic field:
+
+[stem%unnumbered]
+++++
+omega_\"N\" = gamma B
+++++
+
+where
+
+stem:[gamma]:: is the gyromagnetic ratio (<<t10-12.1>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cyclotron angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-16" ;
+  skosxl:prefLabel isoiec80000:term-t10-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-16-0 ;
+  skos:definition """quotient of the product of the electric charge of a particle and the magnitude of the magnetic flux density of the magnetic field, and the particle mass:
+
+[stem%unnumbered]
+++++
+omega_\"c\" = (abs q)/m B
+++++
+
+where
+
+stem:[q]:: is the electric charge (<<iec80000-6>>) of the particle,
+stem:[m]:: is the mass (<<iso80000-4>>) of the particle, and
+stem:[B]:: is the absolute value of the magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[nu_\"c\" = omega_\"c\"//2pi] is called the cyclotron frequency."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyroradius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Larmor radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"g\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"L\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-17" ;
+  skosxl:prefLabel isoiec80000:term-t10-17-0 ;
+  skosxl:altLabel isoiec80000:term-t10-17-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-17-1 ;
+  skos:definition """radius (<<iso80000-3>>) of circular movement of a particle with mass (<<iso80000-4>>), velocity stem:[bb(ii(nu))] (<<iso80000-3>>), and electric charge stem:[q] (<<iec80000-6>>), moving in a magnetic field with magnetic flux density stem:[bb(ii(B))] (<<iec80000-6>>):
+
+[stem%unnumbered]
+++++
+r_\"g\" = (m * abs(bb(ii(nu)) xx bb(ii(B))))/(qB^2)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear quadrupole moment"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-18" ;
+  skosxl:prefLabel isoiec80000:term-t10-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-18-0 ;
+  skos:definition """stem:[z] component of the diagonalized tensor of nuclear quadrupole moment:
+
+[stem%unnumbered]
+++++
+Q = (1/e) int (3z^2-r^2) rho(x,y,z) \"d\"V
+++++
+
+in the quantum state with the nuclear spin in the field direction (stem:[z]), where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>), +
+stem:[r^2 = x^2 + y^2 + z^2],
+stem:[rho(x,y,z)]:: is the nuclear electric charge density (<<iec80000-6>>), and
+stem:[\"d\"V]:: is the volume element stem:[\"d\"x] stem:[\"d\"y] stem:[\"d\"z]
+"""@en ;
+  skos:note """The electric nuclear quadrupole moment is stem:[eQ].
+
+This value is equal to the stem:[z] component of the diagonalized tensor of quadrupole moment.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-19.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-19.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-19.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-19.1-0 ;
+  skos:definition """conventional radius (<<iso80000-3>>) of sphere in which the nuclear matter is included"""@en ;
+  skos:note """This quantity is not exactly defined. It is given approximately for nuclei in their ground state by:
+
+[stem%unnumbered]
+++++
+R = r_0 A^(1//3)
+++++
+
+where
+
+stem:[r_0 ~~ 1.2 xx 10^(-15) \"unitsml(m)\"], and stem:[A] is the nucleon number (<<t10-1.3>>).
+
+Nuclear radius is usually expressed in femtometres, stem:[1 \"unitsml(fm)\" = 10^(-15) \"unitsml(m)\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electron radius"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-19.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-19.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-19.2-0 ;
+  skos:definition """radius of a sphere such that the relativistic electron energy is distributed uniformly:
+
+[stem%unnumbered]
+++++
+r_\"e\" = (e^2)/(4pi epsilon_0 m_\"e\" c_0^2)
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[epsilon_0]:: is the electric constant (<<iec80000-6>>),
+stem:[m_\"e\"]:: is the rest mass (<<t10-2>>) of electron, and
+stem:[c_0]:: is the speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  skos:note """This quantity corresponds to the electrostatic energy stem:[E] of a charge distributed inside a sphere of radius stem:[r_\"e\"] as if all the rest energy (<<t10-3>>) of the electron were attributed to the energy of electromagnetic origin, using the relation stem:[E=m_\"e\"c_0^2]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Compton wavelength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"C\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-20" ;
+  skosxl:prefLabel isoiec80000:term-t10-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-20-0 ;
+  skos:definition """quotient of the Planck constant and the product of the mass of the particle and the speed of light in vacuum:
+
+[stem%unnumbered]
+++++
+lambda_\"C\" = h/(mc_0)
+++++
+
+where
+
+stem:[h]:: is the Planck constant (<<iso80000-1>>),
+stem:[m]:: is the rest mass (<<t10-2>>) of a particle, and
+stem:[c_0]:: is the speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  skos:note """The wavelength of electromagnetic radiation scattered from free electrons (Compton scattering) is larger than that of the incident radiation by a maximum of stem:[2lambda_\"C\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass excess"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Delta)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-21.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-21.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-21.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-21.1-0 ;
+  skos:definition """difference between the mass of an atom, and the product of its mass number and the unified mass constant:
+
+[stem%unnumbered]
+++++
+ii(Delta) = m_\"a\" - A * m_\"u\"
+++++
+
+where
+
+stem:[m_\"a\"]:: is the rest mass (<<t10-2>>) of the atom,
+stem:[A]:: is its nucleon number (<<t10-1.3>>), and
+stem:[m_\"u\"]:: is the unified atomic mass constant (<<t10-4.3>>)
+"""@en ;
+  skos:note """The mass excess is usually expressed in daltons, stem:[1 \"unitsml(Da)\" = 1 \"unitsml(u)\"].
+
+See <<t10-2>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass defect"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-21.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-21.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-21.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-21.2-0 ;
+  skos:definition """sum of the product of the proton number and the hydrogen atomic mass, and the neutron rest mass, minus the rest mass of the atom:
+
+[stem%unnumbered]
+++++
+B = Z m(\"\"^1\"H\") + N m_\"n\" - m_\"a\"
+++++
+
+where
+
+stem:[Z]:: is the proton number (<<t10-1.1>>) of the atom,
+stem:[m(\"\"^1\"H\")]:: is atomic mass (<<t10-4.1>>) of stem:[\"\"^1\"H\"],
+stem:[N]:: is neutron number (<<t10-1.2>>),
+stem:[m_\"n\"]:: is the rest mass (<<t10-2>>) of the neutron, and
+stem:[m_\"a\"]:: is the rest mass (<<t10-2>>) of the atom
+"""@en ;
+  skos:note """The mass excess is usually expressed in daltons, stem:[1 \"unitsml(Da)\" = 1 \"unitsml(u)\"].
+
+If the binding energy of the orbital electrons is neglected, stem:[Bc_0^2] is equal to the binding energy of the nucleus.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  isoiec80000:hasUnit isoiec80000:unit-Da ;
+  isoiec80000:hasUnit isoiec80000:unit-u ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-22.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass excess"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-22.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Delta)_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-22.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-22.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-22.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-22.1-0 ;
+  skos:definition """quotient of mass excess and the unified atomic mass constant:
+
+[stem%unnumbered]
+++++
+ii(Delta)_\"r\" = ii(Delta)//m_\"u\"
+++++
+
+where
+
+stem:[ii(Delta)]:: is mass excess (<<t10-21.1>>), and
+stem:[m_\"u\"]:: is the unified atomic mass constant (<<t10-4.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass defect"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-22.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-22.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-22.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-22.2-0 ;
+  skos:definition """quotient of mass defect and the unified atomic mass constant:
+
+[stem%unnumbered]
+++++
+B_\"r\" = B//m_\"u\"
+++++
+
+where
+
+stem:[B]:: is mass defect (<<t10-21.2>>), and
+stem:[m_\"u\"]:: is the unified atomic mass constant (<<t10-4.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "packing fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-23.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-23.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-23.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-23.1-0 ;
+  skos:definition """quotient of relative mass excess and the nucleon number:
+
+[stem%unnumbered]
+++++
+f = ii(Delta)_\"r\"//A
+++++
+
+where
+
+stem:[ii(Delta)_\"r\"]:: is relative mass excess (<<t10-22.1>>), and
+stem:[A]:: is the nucleon number (<<t10-1.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binding fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-23.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-23.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-23.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-23.2-0 ;
+  skos:definition """quotient of relative mass defect and the nucleon number:
+
+[stem%unnumbered]
+++++
+b = B_\"r\"//A
+++++
+
+where
+
+stem:[B_\"r\"]:: is relative mass defect (<<t10-22.2>>), and
+stem:[A]:: is the nucleon number (<<t10-1.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decay constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "disintegration constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-24" ;
+  skosxl:prefLabel isoiec80000:term-t10-24-0 ;
+  skosxl:altLabel isoiec80000:term-t10-24-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-24-0 ;
+  skos:definition """quotient of stem:[-\"d\"N//N] and stem:[\"d\"t], where stem:[\"d\"N//N] is the mean fractional change in the number of nuclei in a particular energy state due to spontaneous transformations in a time interval of duration (<<iso80000-3>>) stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+lambda = -1/N (\"d\"N)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """For exponential decay, this quantity is constant.
+
+For more than one decay channel,
+
+[stem%unnumbered]
+++++
+lambda = sum lambda_a
+++++
+
+where stem:[lambda_a] denotes the decay constant for a specified final state and the sum is taken over all final states.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean duration of life"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean life time <atomic and nuclear physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-25" ;
+  skosxl:prefLabel isoiec80000:term-t10-25-0 ;
+  skosxl:altLabel isoiec80000:term-t10-25-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-25-0 ;
+  skos:definition """reciprocal of the decay constant stem:[lambda] (<<t10-24>>):
+
+[stem%unnumbered]
+++++
+tau = 1/lambda
+++++
+"""@en ;
+  skos:note """Mean duration of life is the expected value of the duration of life of an unstable particle or an excited state of a particle when the number of decay events in a short time interval follows a Poisson distribution."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "level width"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Gamma)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-26" ;
+  skosxl:prefLabel isoiec80000:term-t10-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-26-0 ;
+  skos:definition """quotient of the reduced Planck constant and the mean life:
+
+[stem%unnumbered]
+++++
+ii(Gamma) = &#8463;/tau
+++++
+
+where
+
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and
+stem:[tau]:: is mean duration of life (<<t10-25>>)
+"""@en ;
+  skos:note """Level width is the uncertainty of the energy of an unstable particle or an excited state of a system due to the Heisenberg principle.
+
+The term energy level refers to the configuration of the distribution function of the density of states. Energy levels may be considered as discrete, like those in an atom, or may have a finite width, like e.g. this item or like e.g. the valence or conduction band in solid state physics. Energy levels are applicable to both real and virtual particles, e.g. electrons and phonons, respectively.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-27" ;
+  skosxl:prefLabel isoiec80000:term-t10-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-27-0 ;
+  skos:definition """differential quotient of stem:[N] with respect to time, where stem:[N] is the mean change in the number of nuclei in a particular energy state due to spontaneous nuclear transformations in a time interval of duration (<<iso80000-3>>) stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+A = -(\"d\"N)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """For exponential decay, stem:[A = lambda N], where stem:[lambda] is the decay constant (<<t10-24>>).
+
+The becquerel (stem:[\"unitsml(Bq)\"]) is a special name for second to the power minus one, to be used as the coherent SI unit of activity.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as: The activity, stem:[A], of an amount of a radionuclide in a particular energy state at a given time is the quotient of stem:[-\"d\"N] by stem:[\"d\"t], where stem:[\"d\"N] is the mean change in the number of nuclei in that energy state due to spontaneous nuclear transformations in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+A = -(\"d\"N)/(\"d\"t)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-28-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "massic activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-28" ;
+  skosxl:prefLabel isoiec80000:term-t10-28-0 ;
+  skosxl:altLabel isoiec80000:term-t10-28-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-28-0 ;
+  skos:definition """quotient of the activity stem:[A] (<<t10-27>>) of a sample and the mass stem:[m] (<<iso80000-4>>) of that sample:
+
+[stem%unnumbered]
+++++
+a = A//m
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-29-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic activity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-29-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity concentration"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"A\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-29" ;
+  skosxl:prefLabel isoiec80000:term-t10-29-0 ;
+  skosxl:altLabel isoiec80000:term-t10-29-1 ;
+  skosxl:altLabel isoiec80000:term-t10-29-2 ;
+  skosxl:altLabel isoiec80000:sym-t10-29-0 ;
+  skos:definition """quotient of the activity stem:[A] (<<t10-27>>) of a sample and the volume stem:[V] (<<iso80000-3>>) of that sample:
+
+[stem%unnumbered]
+++++
+c_\"A\" = A//V
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface-activity density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a_\"S\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-30" ;
+  skosxl:prefLabel isoiec80000:term-t10-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-30-0 ;
+  skos:definition """quotient of the activity stem:[A] (<<t10-27>>) of a sample and the total area stem:[S] (<<iso80000-3>>) of the surface of that sample:
+
+[stem%unnumbered]
+++++
+a_\"S\" = A//S
+++++
+"""@en ;
+  skos:note """This value is usually defined for flat sources, where stem:[S] corresponds to the total area of surface of one side of the source."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Bq/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "half life"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_(1//2)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-31" ;
+  skosxl:prefLabel isoiec80000:term-t10-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-31-0 ;
+  skos:definition """mean duration (<<iso80000-3>>) required for the decay of one half of the atoms or nuclei"""@en ;
+  skos:note """For exponential decay, stem:[T_(1//2) = (\"ln\"2)//lambda], where stem:[lambda] is the decay constant (<<t10-24>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha disintegration energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-32" ;
+  skosxl:prefLabel isoiec80000:term-t10-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-32-0 ;
+  skos:definition """sum of the kinetic energy (<<iso80000-4>>) of the stem:[alpha]-particle produced in the disintegration process and the recoil energy (<<iso80000-5>>) of the product atom in a reference frame in which the emitting nucleus is at rest before its disintegration"""@en ;
+  skos:note """The ground-state alpha disintegration energy, stem:[Q_(alpha,0)], also includes the energy of any nuclear transitions that take place in the daughter produced."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum beta-particle energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-33" ;
+  skosxl:prefLabel isoiec80000:term-t10-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-33-0 ;
+  skos:definition """maximum kinetic energy (<<iso80000-4>>) of the emitted beta particle produced in the nuclear disintegration process"""@en ;
+  skos:note """The maximum kinetic energy corresponds to the highest energy of the beta spectrum."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta disintegration energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-34" ;
+  skosxl:prefLabel isoiec80000:term-t10-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-34-0 ;
+  skos:definition """sum of the maximum beta-particle kinetic energy (<<t10-33>>) and the recoil energy (<<iso80000-5>>) of the atom produced in a reference frame in which the emitting nucleus is at rest before its disintegration"""@en ;
+  skos:note """For positron emitters, the energy for the production of the annihilation radiation created in the combination of an electron with the positron is part of the beta disintegration energy.
+
+The ground-state beta disintegration energy, stem:[Q_(beta,0)], also includes the energy of any nuclear transitions that take place in the daughter product.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "internal conversion factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-35" ;
+  skosxl:prefLabel isoiec80000:term-t10-35-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-35-0 ;
+  skos:definition """quotient of the number of internal conversion electrons and the number of gamma quanta emitted by the radioactive atom in a given transition, where a conversion electron represents an orbital electron emitted through the radioactive decay"""@en ;
+  skos:note """The quantity stem:[alpha//(alpha+1)] is also used and called the internal-conversion fraction.
+
+Partial conversion fractions referring to the various electron shells stem:[\"K\", \"L\", ...] are indicated by stem:[alpha_\"K\", alpha_\"L\", ...].
+
+stem:[alpha_\"K\"//alpha_\"L\"] is called the stem:[\"K\"]-to-stem:[\"L\"] internal conversion ratio.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle emission rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-36" ;
+  skosxl:prefLabel isoiec80000:term-t10-36-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-36-0 ;
+  skos:definition """differential quotient of stem:[N] with respect to time, where stem:[N] is the number of particles being emitted from an infinitesimally small volume element in the time interval of duration stem:[\"d\"t] (<<iso80000-3>>), and stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+N=(\"d\"N)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """Usually the kind of particles is specified, e.g. neutron emission rate or alpha particle emission rate."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reaction energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-37.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-37.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-37.1-0 ;
+  skos:definition """in a nuclear reaction, sum of the kinetic energies (<<iso80000-4>>) and photon energies (<<iso80000-5>>) of the reaction products minus the sum of the kinetic and photon energies of the reactants"""@en ;
+  skos:note """For exothermic nuclear reactions, stem:[Q>0].
+
+For endothermic nuclear reactions, stem:[Q<0].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resonance energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-37.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-37.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"res\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-37.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-37.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-37.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-37.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-37.2-1 ;
+  skos:definition """kinetic energy (<<iso80000-4>>) of an incident particle, in the reference frame of the target, corresponding to a resonance in a nuclear reaction"""@en ;
+  skos:note """The energy of the resonance corresponds to the difference of the energy levels involved of the nucleus."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-38.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-38.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-38.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-38.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-38.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-38.1-0 ;
+  skos:definition """for a specified target entity and for a specified reaction or process produced by incident charged or uncharged particles of a given type and energy, the quotient of the mean number of such reactions or processes and the incident-particle fluence (<<t10-43>>)"""@en ;
+  skos:note """The type of process is indicated by subscripts, e.g. absorption cross section stem:[sigma_\"a\"], scattering cross section stem:[sigma_\"s\"], fission cross section stem:[sigma_\"f\"].
+
+[stem%unnumbered]
+++++
+1 \" barn (b)\" = 10^(-28) \"unitsml(m^2)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["b"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-38.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"T\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-38.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-38.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-38.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-38.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-38.2-1 ;
+  skos:definition """sum of all cross sections (<<t10-38.1>>) corresponding to the various reactions or processes between an incident particle of specified type and energy (<<iso80000-5>>) and a target entity"""@en ;
+  skos:note """In the case of a narrow unidirectional beam of incident particles, this is the effective cross section for the removal of an incident particle from the beam. See the Remarks for <<t10-52>>.
+
+[stem%unnumbered]
+++++
+1 \" barn (b)\" = 10^(-28) \"unitsml(m^2)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["b"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "direction distribution of cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_(ii(Omega))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-39" ;
+  skosxl:prefLabel isoiec80000:term-t10-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-39-0 ;
+  skos:definition """differential quotient of stem:[sigma] with respect to stem:[ii(Omega)], where stem:[sigma] is the cross section (<<t10-38.1>>) for ejecting or scattering a particle into a specified direction, and stem:[ii(Omega)] is the solid angle (<<iso80000-3>>) around that direction:
+
+[stem%unnumbered]
+++++
+sigma_(ii(Omega)) = \"d\"sigma // \"d\"ii(Omega)
+++++
+"""@en ;
+  skos:note """Quantities listed under <<t10-39>>, <<t10-40>> and <<t10-41>> are sometimes called differential cross sections.
+
+The type of interaction needs to be specified.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*sr^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy distribution of cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"E\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-40" ;
+  skosxl:prefLabel isoiec80000:term-t10-40-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-40-0 ;
+  skos:definition """differential quotient of stem:[sigma] with respect to energy, where stem:[sigma] is the cross section (<<t10-38.1>>) for a process in which the energy stem:[E] (<<iso80000-5>>) of the ejected or scattered particle is between stem:[E] and stem:[E+\"d\"E]:
+
+[stem%unnumbered]
+++++
+sigma_\"E\" = \"d\"sigma//\"d\"E
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2//J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "direction and energy distribution of cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_(ii(Omega),E)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-41" ;
+  skosxl:prefLabel isoiec80000:term-t10-41-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-41-0 ;
+  skos:definition """partial differential quotient of stem:[sigma] with respect to solid angle and energy, where stem:[sigma] is the cross section (<<t10-38.1>>) for ejecting or scattering a particle into a solid angle stem:[\"d\"ii(Omega)] around a specified direction and with an energy between stem:[E] and stem:[E+\"d\"E]:
+
+[stem%unnumbered]
+++++
+sigma_(ii(Omega),E) = (del^2 sigma)/(del ii(Omega) del E)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2/(J*sr) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-42.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic cross section"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-42.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "macroscopic cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-42.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Sigma)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-42.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-42.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-42.1-0 ;
+  skosxl:altLabel isoiec80000:term-t10-42.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-42.1-0 ;
+  skos:definition """product of the number density stem:[n_\"a\"] of the atoms and of the cross section (<<t10-38.1>>) stem:[sigma_\"a\"] for a given type of atoms:
+
+[stem%unnumbered]
+++++
+ii(Sigma) = n_\"a\" sigma_\"a\"
+++++
+"""@en ;
+  skos:note """When the target particles of the medium are at rest, stem:[ii(Sigma) = 1//l], where stem:[l] is the mean free path (<<t10-71>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-42.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic total cross section"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-42.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "macroscopic total cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-42.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Sigma)_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-42.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Sigma)_\"T\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-42.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-42.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-42.2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-42.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-42.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-42.2-1 ;
+  skos:definition """product of the number density stem:[n_\"a\"] of the atoms and the cross section (<<t10-38.1>>) stem:[sigma_\"tot\"] for a given type of atoms:
+
+[stem%unnumbered]
+++++
+ii(Sigma)_\"tot\" = n_\"a\"sigma_\"tot\"
+++++
+"""@en ;
+  skos:note """See the Remarks for <<t10-49>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle fluence"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Phi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-43 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-43" ;
+  skosxl:prefLabel isoiec80000:term-t10-43-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-43-0 ;
+  skos:definition """differential quotient of stem:[N] with respect to stem:[a], where stem:[N] is the number of particles incident on a sphere of cross-sectional area stem:[a] (<<t10-38.1>>):
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"N)/(\"d\"a)
+++++
+"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example _proton_ fluence.
+
+If a flat area of size stem:[\"d\"A] is passed perpendicularly by a number of stem:[\"d\"N] particles, the corresponding particle fluence is: stem:[ii(Phi) = (\"d\"N)/(\"d\"A)]
+
+A plane area of size stem:[\"d\"A] crossed at an angle stem:[alpha] with respect to the surface normal by a number of stem:[\"d\"N] particles results in the particle fluence:
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"N)/(\"cos\"(alpha)\"d\"A)
+++++
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The fluence, stem:[ii(Phi)], is the quotient of stem:[\"d\"N] and stem:[\"d\"a], where stem:[\"d\"N] is the number of particles incident on a sphere of cross-sectional area stem:[\"d\"a]:
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"N)/(\"d\"a)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle fluence rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Phi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-44 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-44" ;
+  skosxl:prefLabel isoiec80000:term-t10-44-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-44-0 ;
+  skos:definition """differential quotient of fluence stem:[ii(Phi)] (<<t10-43>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"ii(Phi))/(\"d\"t)
+++++
+"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example proton fluence rate.
+
+The distribution function expressed in terms of speed and energy, stem:[ii(Phi)_nu] and stem:[ii(Phi)_E], are related to by:
+
+[stem%unnumbered]
+++++
+ii(Phi) = int ii(Phi)_nu \"d\"nu = int ii(Phi)_E \"d\"E.
+++++
+
+This quantity has also been termed particle flux density. Because the word \"density\" has several connotations, the term \"fluence rate\" is preferred. For a radiation field composed of particles of velocity stem:[nu], the fluence rate is equal to stem:[n*nu] where stem:[n] is the particle number density.
+
+See Remarks for <<t10-43>>.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The fluence rate, stem:[ii(Phi)], is the quotient of stem:[\"d\"ii(Phi)] and stem:[\"d\"t], where stem:[\"d\"ii(Phi)] is the increment of the fluence in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"ii(Phi))/(\"d\"t)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant energy <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-45 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-45" ;
+  skosxl:prefLabel isoiec80000:term-t10-45-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-45-0 ;
+  skos:definition """mean energy (<<iso80000-5>>), excluding rest energy (<<t10-3>>), of the particles that are emitted, transferred, or received"""@en ;
+  skos:note """For particles of energy stem:[E] (excluding rest energy), the radiant energy, stem:[R], is equal to the product stem:[N*E] where stem:[N] is the number of the particles that are emitted, transferred, or received
+
+The distributions, stem:[N_\"E\"] and stem:[R_\"E\"], of the particle number and the radiant energy with respect to energy are given by stem:[N_\"E\" = \"d\"N//\"d\"E] and +
+stem:[R_\"E\" = \"d\"R//\"d\"E], respectively, where stem:[\"d\"N] is the number of particles with energy between stem:[E] and stem:[E+\"d\"E], and stem:[\"d\"R] is their radiant energy. The two distributions are related by stem:[R_\"E\" = E*N_\"E\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy fluence"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-46-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Psi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-46 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-46" ;
+  skosxl:prefLabel isoiec80000:term-t10-46-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-46-0 ;
+  skos:definition """differential quotient of radiant energy stem:[R] (<<t10-45>>) incident on a sphere of cross-sectional area (<<t10-38.1>>) a with respect to that area:
+
+[stem%unnumbered]
+++++
+ii(Psi) = (\"d\"R)/(\"d\"a)
+++++
+"""@en ;
+  skos:note """In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The energy fluence, stem:[ii(Psi)], is the quotient of stem:[\"d\"R] and stem:[\"d\"a], where stem:[\"d\"R] is the radiant energy incident on a sphere of cross-sectional area stem:[\"d\"a]:
+
+[stem%unnumbered]
+++++
+ii(Psi) = (\"d\"R)/(\"d\"a)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy fluence rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(dot Psi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-47 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-47" ;
+  skosxl:prefLabel isoiec80000:term-t10-47-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-47-0 ;
+  skos:definition """differential quotient of the energy fluence stem:[ii(Psi)] (<<t10-46>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+ii(dot Psi) = (\"d\"ii(Psi))/(\"d\"t)
+++++
+"""@en ;
+  skos:note """In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The energy-fluence rate, stem:[ii(dot Psi)], is the quotient of stem:[\"d\"ii(Psi)] by stem:[\"d\"t], where stem:[\"d\"ii(Psi)] is the increment of the energy fluence in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+ii(dot Psi) = (\"d\"ii(Psi))/(\"d\"t)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-48-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(S))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-48 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-48" ;
+  skosxl:prefLabel isoiec80000:term-t10-48-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-48-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-48-1 ;
+  skos:definition """vector whose component in direction of an area normal is given by:
+
+[stem%unnumbered]
+++++
+bb(ii(J))_n = int ii(Phi)_(ii(Omega)) (theta,alpha) \"cos\" (ii(theta)) \"d\"ii(Omega)
+++++
+
+where
+
+stem:[ii(Phi)_(ii(Omega)) (ii(theta),alpha)]:: is the directional distribution of the particle fluence rate (<<t10-44>>), and
+stem:[ii(theta)] and stem:[alpha]:: are polar and azimuthal angles, respectively
+"""@en ;
+  skos:note """Usually the word \"particle\" is replaced by the name of a specific particle, for example proton current.
+
+Symbol stem:[bb(ii(S))] is recommended when there is a possibility of confusion with the symbol stem:[bb(ii(J))] for electric current density. For neutron current, the symbol stem:[bb(ii(J))] is generally used. The distribution functions expressed in terms of speed and energy, stem:[bb(ii(J))_nu] and stem:[bb(ii(J))_\"E\"], are related to stem:[bb(ii(J))] by:
+
+[stem%unnumbered]
+++++
+bb(ii(J)) = int bb(ii(J))_nu \"d\"nu = int bb(ii(J))_\"E\" \"d\"E.
+++++
+
+The directional distribution of the particle fluence rate is also denoted as particle radiance.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear attenuation coefficient <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-49-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-49-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-49 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-49" ;
+  skosxl:prefLabel isoiec80000:term-t10-49-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-49-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-49-1 ;
+  skos:definition """for uncharged particles of a given type and energy the differential quotient stem:[n] with respect to stem:[l], where stem:[n] is the fraction of stem:[N] incoming particles that experience interactions in traversing a distance (<<iso80000-3>>) stem:[l] in a given material:
+
+[stem%unnumbered]
+++++
+mu = (\"d\"n)/(\"d\"l) = 1/N (\"d\"N)/(\"d\"l)
+++++
+
+where stem:[\"d\"N] is the number of particles that experience interactions in traversing stem:[\"d\"l]
+"""@en ;
+  skos:note """stem:[mu] is equal to the macroscopic total cross section stem:[ii(Sigma)_\"tot\"] for the removal of particles from the beam.
+
+Using the relation stem:[mu_m = mu//rho] between the linear attenuation coefficient stem:[mu], the mass attenuation coefficient stem:[mu_m] (<<t10-50>>) and the density stem:[rho], the definition given for the mass attenuation coefficient in report 85a of the ICRU can be applied to the linear attenuation coefficient resulting in:
+
+The linear attenuation coefficient, stem:[mu], of a material, for uncharged particles of a given type and energy, is the quotient of stem:[\"d\"N//N] by stem:[\"d\"l], where stem:[\"d\"N//N] is the mean fraction of the particles that experience interactions in traversing a distance stem:[\"d\"l] in the material:
+
+[stem%unnumbered]
+++++
+mu = 1/(\"d\"l) (\"d\"N)/N.
+++++
+
+This definition has an equivalent meaning as the one given in column 4 of this item.
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-50-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass attenuation coefficient <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-50-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-50 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-50" ;
+  skosxl:prefLabel isoiec80000:term-t10-50-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-50-0 ;
+  skos:definition """quotient of the linear attenuation coefficient stem:[mu] (<<t10-49>>) and the mass density stem:[rho] (<<iso80000-4>>) of the medium:
+
+[stem%unnumbered]
+++++
+mu_m = mu//rho
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-51-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar attenuation coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-51-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_c"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-51 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-51" ;
+  skosxl:prefLabel isoiec80000:term-t10-51-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-51-0 ;
+  skos:definition """quotient of linear attenuation coefficient stem:[mu] (<<t10-49>>) and the amount stem:[c] (<<iso80000-9>>) of the medium:
+
+[stem%unnumbered]
+++++
+mu_c = mu//c
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-52-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic attenuation coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-52-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"a\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-52 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-52" ;
+  skosxl:prefLabel isoiec80000:term-t10-52-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-52-0 ;
+  skos:definition """quotient of the linear attenuation coefficient stem:[mu] (<<t10-49>>) and the number density (<<t10-62.1>>), stem:[n], of atoms in the substance:
+
+[stem%unnumbered]
+++++
+mu_\"a\" = mu//n
+++++
+"""@en ;
+  skos:note """stem:[mu] is equal to the total cross section stem:[sigma_\"tot\"] for the removal of particles from the beam.
+
+See also <<t10-38.2>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "half-value thickness"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d_(1//2)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-53 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-53" ;
+  skosxl:prefLabel isoiec80000:term-t10-53-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-53-0 ;
+  skos:definition """thickness (<<iso80000-3>>) of the attenuating layer that reduces the quantity of interest of a unidirectional beam of infinitesimal width to half of its initial value"""@en ;
+  skos:note """For exponential attenuation, stem:[d_(1//2) = \"ln\"(2)//mu]. The quantity of interest is often the air kerma or exposure."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-54-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total linear stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-54-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-54-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-54-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-54 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-54" ;
+  skosxl:prefLabel isoiec80000:term-t10-54-0 ;
+  skosxl:altLabel isoiec80000:term-t10-54-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-54-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-54-1 ;
+  skos:definition """for charged particles of a given type and energy stem:[E_0] the differential quotient of stem:[E] with respect to stem:[x], where stem:[E] is the mean energy (<<iso80000-4>>) lost by the charged particles in traversing a distance (<<iso80000-3>>) stem:[x] in the given material:
+
+[stem%unnumbered]
+++++
+S = -(\"d\"E)/(\"d\"x)
+++++
+"""@en ;
+  skos:note """The total linear stopping power is sometimes also called stopping power.
+
+Both electronic losses and radiative losses are included.
+
+The quotient of the total linear stopping power of a substance and that of a reference substance is called the relative linear stopping power.
+
+See also <<t10-85>>.
+
+Using the relation stem:[S_m = S//rho] between the total mass stopping power stem:[S_m] (<<t10-55>>), the total linear stopping power stem:[S], and the density stem:[rho], the definition given for the mass stopping in report 85a of the ICRU can be applied to that of the total linear stopping power resulting in:
+
+The linear stopping power, stem:[S], of a material, for charged particles of a given type and energy, is the quotient of stem:[\"d\"E] by stem:[\"d\"l], where stem:[\"d\"E] is the mean energy lost by the charged particles in traversing a distance stem:[\"d\"l] in the material:
+
+[stem%unnumbered]
+++++
+S = -(\"d\"E)/(\"d\"x)
+++++
+
+This definition has an equivalent meaning as the one given in column 4 of this item.
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV/m ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-55-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total mass stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-55-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-55-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-55 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-55" ;
+  skosxl:prefLabel isoiec80000:term-t10-55-0 ;
+  skosxl:altLabel isoiec80000:term-t10-55-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-55-0 ;
+  skos:definition """quotient of the total linear stopping power stem:[S] (<<t10-54>>) and the mass density stem:[rho] (<<iso80000-4>>) of the material:
+
+[stem%unnumbered]
+++++
+S_m = S//rho
+++++
+"""@en ;
+  skos:note """The quotient of total mass stopping power of a material and that of a reference material is called relative mass stopping power."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV*m^(-2)/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-J*m^2/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^4*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-56-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean linear range"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-56-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-56-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-56 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-56" ;
+  skosxl:prefLabel isoiec80000:term-t10-56-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-56-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-56-1 ;
+  skos:definition """mean total rectified path length (<<iso80000-3>>) travelled by a particle in the course of slowing down to rest in a given material averaged over a group of particles having the same initial energy (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean mass range"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-57-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-57 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-57" ;
+  skosxl:prefLabel isoiec80000:term-t10-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-57-1 ;
+  skos:definition """product of the mean linear range (<<t10-56>>) stem:[R] and the mass density stem:[rho] (<<iso80000-4>>) of the material:
+
+[stem%unnumbered]
+++++
+R_rho = R rho
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-58-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear ionization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-58-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(\"i\"l)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-58 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-58" ;
+  skosxl:prefLabel isoiec80000:term-t10-58-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-58-0 ;
+  skos:definition """differential quotient of stem:[q] with respect to stem:[l], where stem:[q] is the average total charge (<<iec80000-6>>) of all positive ions produced by an ionizing charged particle over a path stem:[l] (<<iso80000-3>>), divided by the elementary charge, stem:[e] (<<iso80000-1>>):
+
+[stem%unnumbered]
+++++
+N_(\"i\"l) = 1/e (\"d\"q)/(\"d\"l)
+++++
+"""@en ;
+  skos:note """Ionization due to secondary ionizing particles is included."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total ionization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_\"i\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-59 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-59" ;
+  skosxl:prefLabel isoiec80000:term-t10-59-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-59-0 ;
+  skos:definition """quotient of the total mean charge of all positive ions produced by an ionizing charged particle along its entire path and along the paths of any secondary charged particles, and the elementary charge, stem:[e] (<<iso80000-1>>)"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+N_\"i\" = int N_(\"i\"l) \"d\"l
+++++
+
+See <<t10-58>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-60-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average energy loss per elementary charge produced"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-60-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W_\"i\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-60 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-60" ;
+  skosxl:prefLabel isoiec80000:term-t10-60-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-60-0 ;
+  skos:definition """quotient of the initial kinetic energy stem:[E_\"k\"] (<<iso80000-4>>) of an ionizing charged particle and the total ionization stem:[N_\"i\"] (<<t10-59>>) produced by that particle:
+
+[stem%unnumbered]
+++++
+W_\"i\" = E_\"k\"//N_\"i\"
+++++
+"""@en ;
+  skos:note """The name \"average energy loss per ion pair formed\" is usually used, although it is ambiguous.
+
+In the practical dosimetry of ionizing radiation the term stem:[W//e], the quotient of stem:[W], the average energy deposited in dry air per ion pair formed, and stem:[e], the elementary charge, is used as the factor which, when multiplied with the electric charge of one sign carried by all ion pairs formed in dry air of given mass, gives the energy deposited in this amount of dry air in the form of excitations and ionizations.
+
+In ICRU Report 85a, the mean energy expended in a gas per ion pair formed, stem:[W], is the quotient of stem:[E] by stem:[N], where stem:[N] is the mean total liberated charge of either sign, divided by the elementary charge when the initial kinetic energy stem:[E] of a charged particle introduced into the gas is completely dissipated in the gas. Thus, stem:[W = E//N]. It follows from the definition of stem:[W] that the ions produced by bremsstrahlung or other secondary radiation emitted by the initial and secondary charged particles are included in stem:[N].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-61-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mobility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-61-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-61-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-61 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-61" ;
+  skosxl:prefLabel isoiec80000:term-t10-61-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-61-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-61-1 ;
+  skos:definition """quotient of average drift speed (<<iso80000-3>>) imparted to a charged particle in a medium by an electric field, and the electric field strength (<<iec80000-6>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2/(V*s) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-62.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle number density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-62.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-62.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-62.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-62.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-62.1-0 ;
+  skos:definition """quotient of the mean number stem:[N] of particles in the volume (<<iso80000-3>>) stem:[V] and volume:
+
+[stem%unnumbered]
+++++
+n=N//V
+++++
+"""@en ;
+  skos:note """stem:[n] is the general symbol for the number density of particles.
+
+The distribution functions expressed in terms of speed and energy, stem:[n_nu] and stem:[n_\"E\"], are related to stem:[n] by:
+
+[stem%unnumbered]
+++++
+n = int n_nu \"d\"nu = int n_\"E\" \"d\"E
+++++
+
+The word \"particle\" is usually replaced by the name of a specific particle, for example _neutron_ number density.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-62.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ion number density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-62.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ion density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-62.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n^(+)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-62.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n^(-)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-62.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-62.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-62.2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-62.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-62.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-62.2-1 ;
+  skos:definition """quotient of the number of positive and negative ions, stem:[N^(+)] and stem:[N^(-)], respectively, in the volume stem:[V] (<<iso80000-3>>), and that volume:
+
+[stem%unnumbered]
+++++
+n^(+) = N^(+)//V,\" \"n^(-) = N^(-)//V
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-63-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "recombination coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-63-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-63 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-63" ;
+  skosxl:prefLabel isoiec80000:term-t10-63-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-63-0 ;
+  skos:definition """coefficient in the law of recombination:
+
+[stem%unnumbered]
+++++
+-(\"d\"n^+)/(\"d\"t) = -(\"d\"n^-)/(\"d\"t) = alpha * n^+ n^-
+++++
+
+where stem:[n^+] and stem:[n^-] are the ion number densities (<<t10-62.2>>) of positive and negative ions, respectively, recombined during a time interval of duration stem:[\"d\"t] (<<iso80000-3>>)
+"""@en ;
+  skos:note """The widely used term \"recombination factor\" is not correct because \"factor\" should only be used for quantities with dimension 1.
+
+The terms stem:[(\"d\"n^+)/(\"d\"t)], stem:[(\"d\"n^-)/(\"d\"t)] are differential quotients.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-64-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-64-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient for particle number density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-64-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-64-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-64 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-64" ;
+  skosxl:prefLabel isoiec80000:term-t10-64-0 ;
+  skosxl:altLabel isoiec80000:term-t10-64-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-64-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-64-1 ;
+  skos:definition """proportionality constant between the particle current density stem:[bb(ii(J))] (<<t10-48>>) and the gradient of the particle number density stem:[n] (<<t10-62.1>>):
+
+[stem%unnumbered]
+++++
+bb(ii(J)) = -D * nabla n
+++++
+"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example _neutron_ number density.
+
+For a particle of a given speed stem:[nu]:
+
+[stem%unnumbered]
+++++
+D_n(nu) = -(J_(nu,x))/(del n_nu//del x)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-65-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion coefficient for fluence rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-65-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_Phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-65-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-65 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-65" ;
+  skosxl:prefLabel isoiec80000:term-t10-65-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-65-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-65-1 ;
+  skos:definition """proportionality constant between the particle current density stem:[bb(ii(J))] (<<t10-48>>) and the gradient of the particle fluence rate stem:[Phi] (<<t10-44>>):
+
+[stem%unnumbered]
+++++
+bb(ii(J)) = -D * nabla Phi
+++++
+"""@en ;
+  skos:note """For a particle of a given speed stem:[nu]:
+
+[stem%unnumbered]
+++++
+D_(dot Psi)(nu) = -(J_(nu,x))/(del (dot Psi)_nu//del x)
+++++
+
+and
+
+[stem%unnumbered]
+++++
+nu*D_(dot Psi)(nu) = -D_n(nu)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-66-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle source density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-66-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-66 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-66" ;
+  skosxl:prefLabel isoiec80000:term-t10-66-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-66-0 ;
+  skos:definition """quotient of the mean rate of production of particles in a volume, and that volume (<<iso80000-3>>)"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example _proton_ source density.
+
+The distribution functions expressed in terms of speed and energy, stem:[S_nu] and stem:[S_E], are related to stem:[S] by:
+
+[stem%unnumbered]
+++++
+S = int S_nu \"d\"nu = int S_E \"d\"E.
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-67-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "slowing-down density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-67-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-67 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-67" ;
+  skosxl:prefLabel isoiec80000:term-t10-67-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-67-0 ;
+  skos:definition """differential quotient of stem:[n] with respect to time, where stem:[n] is the number density of particles that are slowed down in a time interval of duration (<<iso80000-3>>) stem:[t]:
+
+[stem]
+++++
+q = -(\"d\"n)/(\"d\"t)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-68-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "resonance escape probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-68-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-68 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-68" ;
+  skosxl:prefLabel isoiec80000:term-t10-68-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-68-0 ;
+  skos:definition """in an infinite medium, the probability that a neutron slowing down will traverse all or some specified portion of the range of resonance energies (<<t10-37.2>>) without being absorbed"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-69-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lethargy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-69-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-69 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-69" ;
+  skosxl:prefLabel isoiec80000:term-t10-69-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-69-0 ;
+  skos:definition """for a neutron of kinetic energy stem:[E] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+u = \"ln\"(E_0//E),
+++++
+
+where stem:[E_0] is a reference energy
+"""@en ;
+  skos:note """Lethargy is also referred to as logarithmic energy decrement."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-70-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average logarithmic energy decrement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-70-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "zeta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-70 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-70" ;
+  skosxl:prefLabel isoiec80000:term-t10-70-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-70-0 ;
+  skos:definition """average value of the increase in lethargy (<<t10-69>>) in elastic collisions between neutrons and nuclei whose kinetic energy (<<iso80000-4>>) is negligible compared with that of the neutrons"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-71-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean free path <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-71-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-71-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-71 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-71" ;
+  skosxl:prefLabel isoiec80000:term-t10-71-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-71-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-71-1 ;
+  skos:definition """average distance (<<iso80000-3>>) that particles travel between two successive specified reactions or processes"""@en ;
+  skos:note """See the Remarks for <<t10-42.1>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-72.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "slowing-down area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-72.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"s\"^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-72.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"sl\"^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-72.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-72.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-72.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-72.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-72.1-1 ;
+  skos:definition """in an infinite homogenous medium, one-sixth of the mean square of the distance (<<iso80000-3>>) between the neutron source and the point where a neutron reaches a given energy (<<iso80000-5>>)"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-72.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-72.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-72.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-72.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-72.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-72.2-0 ;
+  skos:definition """in an infinite homogenous medium, one-sixth of the mean square distance (<<iso80000-3>>) between the point where a neutron enters a specified class and the point where it leaves this class"""@en ;
+  skos:note """The class of neutrons must be specified, e.g. thermal."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-72.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "migration area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-72.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-72.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-72.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-72.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-72.3-0 ;
+  skos:definition """sum of the slowing-down area (<<t10-72.1>>) from fission energy to thermal energy (<<iso80000-5>>) and the diffusion area (<<t10-72.2>>) for thermal neutrons"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-73.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "slowing-down length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-73.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-73.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_\"sl\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-73.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-73.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-73.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-73.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-73.1-1 ;
+  skos:definition """square root of the slowing down area stem:[L_\"s\"^2] (<<t10-72.1>>):
+
+[stem%unnumbered]
+++++
+L_\"s\" = sqrt(L_\"s\"^2)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-73.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "diffusion length <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-73.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-73.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-73.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-73.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-73.2-0 ;
+  skos:definition """square root of the diffusion area stem:[L^2] (<<t10-72.2>>):
+
+[stem%unnumbered]
+++++
+L = sqrt(L^2)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-73.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "migration length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-73.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-73.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-73.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-73.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-73.3-0 ;
+  skos:definition """square root of the migration area stem:[M^2] (<<t10-72.3>>):
+
+[stem%unnumbered]
+++++
+M = sqrt(M^2)
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-74.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "neutron yield per fission"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-74.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-74.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-74.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-74.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-74.1-0 ;
+  skos:definition """average number of fission neutrons, both prompt and delayed, emitted per fission event"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-74.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "neutron yield per absorption"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-74.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-74.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-74.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-74.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-74.2-0 ;
+  skos:definition """average number of fission neutrons, both prompt and delayed, emitted per neutron absorbed in a fissionable nuclide or in a nuclear fuel, as specified"""@en ;
+  skos:note """stem:[nu//eta] is equal to the quotient of the macroscopic cross section for fission and that for absorption, both for neutrons in the fuel material."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-75-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fast fission factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-75-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-75 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-75" ;
+  skosxl:prefLabel isoiec80000:term-t10-75-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-75-0 ;
+  skos:definition """in an infinite medium, the quotient of the mean number of neutrons produced by fission due to neutrons of all energies (<<iso80000-5>>) and the mean number of neutrons produced by fissions due to thermal neutrons only"""@en ;
+  skos:note """The class of neutrons must be specified, e.g. thermal."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-76-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal utilization factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-76-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-76 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-76" ;
+  skosxl:prefLabel isoiec80000:term-t10-76-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-76-0 ;
+  skos:definition """in an infinite medium, the quotient of the number of thermal neutrons absorbed in a fissionable nuclide or in a nuclear fuel, as specified, and the total number of thermal neutrons absorbed"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-77-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "non-leakage probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-77-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Lambda)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-77 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-77" ;
+  skosxl:prefLabel isoiec80000:term-t10-77-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-77-0 ;
+  skos:definition """probability that a neutron will not escape from the reactor during the slowing-down process or while it diffuses as a thermal neutron"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-78.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "multiplication factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-78.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-78.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-78.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-78.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-78.1-0 ;
+  skos:definition """quotient of the total number of fission or fission-dependent neutrons produced in the duration of a time interval and the total number of neutrons lost by absorption and leakage in that duration"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-78.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "infinite multiplication factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-78.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "k_(oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-78.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-78.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-78.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-78.2-0 ;
+  skos:definition """multiplication factor (<<t10-78.1>>) for an infinite medium or for an infinite repeating lattice"""@en ;
+  skos:note """For a thermal reactor,
+
+[stem%unnumbered]
+++++
+k_(oo) = eta * epsilon * p * f
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-79-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reactor time constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-79-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-79 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-79" ;
+  skosxl:prefLabel isoiec80000:term-t10-79-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-79-0 ;
+  skos:definition """duration (<<iso80000-3>>) required for the neutron fluence rate (<<t10-44>>) in a reactor to change by the factor stem:[\"e\"] when the fluence rate is rising or falling exponentially"""@en ;
+  skos:note """Also called reactor period."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-80.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy imparted"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-80.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-80.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-80.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-80.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-80.1-0 ;
+  skos:definition """sum of all energy deposits in a given volume:
+
+[stem%unnumbered]
+++++
+epsilon = sum_i epsilon_i
+++++
+
+where the summation is performed over all energy (<<iso80000-5>>) deposits stem:[epsilon_i] of interaction stem:[i] in that volume
+"""@en ;
+  skos:note """Energy imparted is a stochastic quantity.
+
+stem:[epsilon_i] is given by:
+
+[stem%unnumbered]
+++++
+epsilon_i = epsilon_\"in\" - epsilon_\"out\" + Q
+++++
+
+where stem:[epsilon_\"in\"] is the energy (<<iso80000-5>>) of the incident ionizing particle, excluding rest energy (<<t10-3>>), stem:[epsilon_\"out\"] is the sum of the energies (<<iso80000-5>>) of all ionizing particles leaving the interaction, excluding rest energy (<<t10-3>>), and stem:[Q] is the change in the rest energies (<<t10-3>>) of the nucleus and of all particles involved in the interaction.
+
+stem:[Q > 0] means decrease of rest energy;
+
+stem:[Q < 0] means increase of rest energy.
+
+Stochastic quantities such as the energy imparted and the specific energy imparted (<<t10-81.2>>) and their probability distributions have been introduced as they describe the discontinuous nature of the ionizing radiations as a determinant of radiochemical and radiobiological effects. In radiation applications involving large numbers of ionizing particles, e.g. in medicine, radiation protection and materials testing and processing, these fluctuations are adequately represented by the expectation values of the probability distributions. Non-stochastic quantities such as particle fluence (<<t10-43>>), absorbed dose (<<t10-81.1>>) and kerma (<<t10-86.1>>) are based on these expectation values.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-80.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean energy imparted"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-80.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-80.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-80.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-80.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-80.2-0 ;
+  skos:definition """expectation value of the energy imparted (<<t10-80.1>>):
+
+[stem%unnumbered]
+++++
+bar epsilon = R_\"in\" - R_\"out\" + sum Q
+++++
+
+where
+
+stem:[R_\"in\"]:: is the radiant energy (<<t10-45>>) of all those charged and uncharged ionizing particles that enter the volume,
+
+stem:[R_\"out\"]:: is the radiant energy of all those charged and uncharged ionizing particles that leave the volume, and
+
+stem:[sum Q]:: is the sum of all changes of the rest energy (<<t10-3>>) of nuclei and elementary particles that occur in that volume
+"""@en ;
+  skos:note """Sometimes, it has been called the integral absorbed dose.
+
+stem:[Q > 0] means decrease of rest energy;
+
+stem:[Q < 0] means increase of rest energy.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-81.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absorbed dose"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-81.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-81.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-81.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-81.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-81.1-0 ;
+  skos:definition """differential quotient of stem:[bar epsilon] with respect to stem:[m], where stem:[bar epsilon] is the mean energy (<<iso80000-5>>) imparted by ionizing radiation to matter of mass (<<iso80000-4>>) stem:[m]:
+
+[stem%unnumbered]
+++++
+D = (\"d\"bar epsilon)/(\"d\"m)
+++++
+"""@en ;
+  skos:note """The gray is a special name for joule per kilogram, to be used as the coherent SI unit for absorbed dose.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Gy)\" = 1 \"unitsml(J/kg)\"
+++++
+
+[stem%unnumbered]
+++++
+bar epsilon = int D \"d\"m
+++++
+
+where stem:[\"d\"m] is the element of mass of the irradiated matter.
+
+In the limit of a small domain, the mean specific energy stem:[bar z = (ii(Delta)bar epsilon)/(ii(Delta)m)] is equal to the absorbed dose stem:[D].
+
+The absorbed dose can also be expressed in terms of the volume of the mass element by:
+
+[stem%unnumbered]
+++++
+D = (\"d\"bar epsilon)/(\"d\"m) = (\"d\"bar epsilon)/(rho \"d\"V)
+++++
+
+where stem:[rho] is the mass density of the mass element.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The absorbed dose, stem:[D], is the quotient of stem:[\"d\"bar epsilon] by stem:[\"d\"m], where stem:[\"d\"bar epsilon] is the mean energy imparted by ionizing radiation to matter of mass stem:[\"d\"m]:
+
+[stem%unnumbered]
+++++
+D = (\"d\"bar epsilon)/(\"d\"m).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-81.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific energy imparted"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-81.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-81.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-81.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-81.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-81.2-0 ;
+  skos:definition """quotient of the energy imparted stem:[epsilon] (<<t10-80.1>>) and the mass stem:[m] (<<iso80000-4>>) of the matter in a given volume element:
+
+[stem%unnumbered]
+++++
+z = epsilon/m
+++++
+"""@en ;
+  skos:note """stem:[z] is a stochastic quantity.
+
+In the limit of a small domain, the mean specific energy stem:[bar z] is equal to the absorbed dose stem:[D].
+
+The specific energy imparted can be due to one or more (energy-deposition) events.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-82-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quality factor <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-82-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-82 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-82" ;
+  skosxl:prefLabel isoiec80000:term-t10-82-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-82-0 ;
+  skos:definition """factor in the calculation and measurement of dose equivalent (<<t10-83.1>>), by which the absorbed dose (<<t10-81.1>>) is to be weighted in order to account for different biological effectiveness of radiations, for radiation protection purposes"""@en ;
+  skos:note """stem:[Q] is determined by the linear energy transfer (<<t10-85>>) for stem:[ii(Delta)-> oo], stem:[L_(oo)] (often denoted as stem:[L] or stem:[\"LET\"]), of charged particles passing through a small volume element at this point (the value of stem:[L_(oo)] refers to water, not to tissue; the difference, however, is small). The relationship between stem:[L] and stem:[Q] is given in ICRP Publication 103 (ICRP, 2007)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-83.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dose equivalent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-83.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-83.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-83.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-83.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-83.1-0 ;
+  skos:definition """product of the absorbed dose stem:[D] (<<t10-81.1>>) to tissue at the point of interest and the quality factor stem:[Q] (<<t10-82>>) at that point:
+
+[stem%unnumbered]
+++++
+H = DQ
+++++
+"""@en ;
+  skos:note """The sievert (stem:[\"unitsml(Sv)\"]) is a special name for joule per kilogram, and is the coherent SI unit for dose equivalent.
+
+[stem%unnumbered]
+++++
+1 \"unitsml(Sv)\" = 1 \"unitsml(J/kg)\"
+++++
+
+The dose equivalent at a point in tissue is given by:
+
+[stem%unnumbered]
+++++
+H = int_0^(oo) Q(L)D_L \"d\"L
+++++
+
+where stem:[D_L = \"d\"D//\"d\"L] is the distribution of stem:[D] in stem:[L] at the point of interest. See <<icrp>>.
+
+The quantities measured with radiation protection dosimeters are based on the definition stem:[H = Q D]. If various radiation qualities stem:[i] have to be simultaneously accounted for, the definition is:
+
+[stem%unnumbered]
+++++
+H = sum_i Q_i D_i.
+++++
+
+In ICRU 51 this quantity is denoted as \"dose equivalent\".
+
+In order to quantify the radiation exposition of the human body and to specify dose limits, use is made of a quantity defined in ICRP 103, the \"equivalent dose to a tissue or organ\": stem:[H_\"T\" = w_\"T\" sum_\"R\" w_\"R\" D_\"T,R\"]. The weighting factors stem:[w_\"T\"] for various tissues and organs stem:[T] and stem:[w_\"R\"] for various radiation qualities stem:[\"R\"] have been numerically laid down in ICRP 103. stem:[D_\"T,R\"] is the mean absorbed dose to tissue within a tissue or organ stem:[\"T\"], imparted by radiation with radiation quality stem:[\"R\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sv ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-83.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dose equivalent rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-83.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-83.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-83.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-83.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-83.2-0 ;
+  skos:definition """differential quotient of dose equivalent stem:[H] (<<t10-83.1>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+dot H = (\"d\"H)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(Sv/s)\" = 1 \"unitsml(W/kg)\"
+++++
+
+See the remarks for <<t10-83.1>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sv/s ;
+  isoiec80000:hasUnit isoiec80000:unit-W/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-84-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absorbed-dose rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-84-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-84 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-84" ;
+  skosxl:prefLabel isoiec80000:term-t10-84-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-84-0 ;
+  skos:definition """differential quotient of the absorbed dose stem:[D] (<<t10-81.1>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+dot D = (\"d\"D)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(Gy/s)\" = 1 \"unitsml(W/kg)\"
+++++
+
+See the remarks for <<t10-81.1>>.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The absorbed-does rate, stem:[dot D], is the quotient of stem:[\"d\"D] by stem:[\"d\"t], where stem:[\"d\"D] is the increment of absorbed does in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+dot D = (\"d\"D)/(\"d\"t).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy/s ;
+  isoiec80000:hasUnit isoiec80000:unit-W/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-85-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear energy transfer"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-85-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_(ii(Delta))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-85 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-85" ;
+  skosxl:prefLabel isoiec80000:term-t10-85-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-85-0 ;
+  skos:definition """quotient of the mean energy (<<iso80000-4>>) stem:[\"d\"E_(ii(Delta))] lost by the charged particles due to electronic interactions in traversing a distance (<<iso80000-3>>) stem:[\"d\"l], minus the mean sum of the kinetic energies in excess of stem:[ii(Delta)] of all the electrons released by the charged particles and stem:[\"d\"l]:
+
+[stem%unnumbered]
+++++
+L_(ii(Delta)) = (\"d\"E_(ii(Delta)))/(\"d\"l)
+++++
+"""@en ;
+  skos:note """This quantity is not completely defined unless stem:[ii(Delta)] is specified, i.e. the maximum kinetic energy of secondary electrons whose energy is considered to be \"locally deposited.\" stem:[ii(Delta)] may be expressed in stem:[\"unitsml(eV)\"].
+
+Note that the abbreviation LET specifically refers to the quantity stem:[L_(oo)] mentioned in the remark to <<t10-82>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV/m ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-86.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kerma"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-86.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-86.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-86.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-86.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-86.1-0 ;
+  skos:definition """for uncharged ionizing radiation, differential quotient of stem:[E_\"tr\"] with respect to stem:[m], where stem:[E_\"tr\"] is the mean sum of the initial kinetic energies (<<iso80000-4>>) of all the charged ionizing particles liberated in a mass (<<iso80000-4>>) stem:[m] of a material:
+
+[stem%unnumbered]
+++++
+K = (\"d\"E_(\"tr\"))/(\"d\"m)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(Gy)\" = 1 \"unitsml(J/kg)\"
+++++
+
+See the remarks for <<t10-81.1>>.
+
+The name \"kerma\" is derived from Kinetic Energy Released in MAtter (or MAss or MAterial).
+
+The quantity stem:[\"d\"E_\"tr\"] includes also the kinetic energy of the charged particles emitted in the decay of excited atoms, molecules, or nuclei.
+
+When the mass element stem:[\"d\"m] consists of air the term air kerma is used. It can be convenient to refer to a value of air kerma in free space or at a point inside a material different from air, e.g. to the air kerma at a point inside a water phantom.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The kerma, stem:[K], for ionizing uncharged particles, is the quotient of stem:[\"d\"E_\"tr\"] by stem:[\"d\"m], where stem:[\"d\"E_\"tr\"] is the mean sum of the initial kinetic energies of all the charged particles liberated in a mass stem:[\"d\"m] of a material by the uncharged particles incident on stem:[\"d\"m]:
+
+[stem%unnumbered]
+++++
+K = (\"d\"E_\"tr\")/(\"d\"m).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-86.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kerma rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-86.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-86.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-86.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-86.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-86.2-0 ;
+  skos:definition """differential quotient of kerma (<<t10-86.1>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+dot K = (\"d\"K)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(Gy/s)\" = 1 \"unitsml(W/kg)\"
+++++
+
+See the Remarks for <<t10-81.1>>.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The kerma rate, stem:[dot K], is the quotient of stem:[\"d\"K] by stem:[\"d\"t], where stem:[\"d\"K] is the increment of kerma in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+dot K = (\"d\"K)/(\"d\"t).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy/s ;
+  isoiec80000:hasUnit isoiec80000:unit-W/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-87-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass energy-transfer coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-87-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"tr\"//rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-87 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-87" ;
+  skosxl:prefLabel isoiec80000:term-t10-87-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-87-0 ;
+  skos:definition """for ionizing uncharged particles of a given type and energy, the differential quotient of stem:[R_\"tr\"] with respect to stem:[l]:
+
+[stem%unnumbered]
+++++
+(mu_\"tr\")/rho = 1/rho 1/R (\"d\"R_\"tr\")/(\"d\"l)
+++++
+
+where stem:[R_\"tr\"] is the mean energy (<<iso80000-5>>) that is transferred to kinetic energy (<<iso80000-4>>) of charged particles by interactions of the uncharged particles of incident radiant energy stem:[R] (<<t10-45>>) in traversing a distance (<<iso80000-3>>) stem:[l] in the material of density (<<iso80000-4>>) stem:[rho], divided by stem:[rho] and stem:[R]
+"""@en ;
+  skos:note """stem:[mu_\"tr\"//rho = dot K//ii(Psi)], where stem:[dot K] is kerma rate (<<t10-86.2>>) and stem:[ii(Psi)] is energy fluence rate (<<t10-47>>).
+
+The quantity:
+
+[stem%unnumbered]
+++++
+mu_\"en\"//rho = (mu_\"tr\"//rho)(1-g)
+++++
+
+where stem:[g] is mean fraction of the kinetic energy of the liberated charged particles that is lost in radiative processes in the material, is called mass energy-absorption coefficient.
+
+The mass energy-absorption coefficient of a compound material depends on the stopping power of the material. Thus, its evaluation cannot, in principle, be reduced to a simple summation of the mass energy-absorption coefficient of the atomic constituents. Such a summation can provide an adequate approximation when the value of stem:[g] is sufficiently small.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The mass energy-transfer coefficient, stem:[mu_\"tr\"//rho], of a material, for uncharged particles of a given type and energy, is the quotient of stem:[\"d\"R_\"tr\"//R] by stem:[rho \"d\"l], where stem:[\"d\"R_\"tr\"] is the mean energy that is transferred to kinetic energy of charged particles by interactions of the uncharged particles of incident radiant energy stem:[R] in traversing a distance stem:[\"d\"l] in the material of density stem:[rho]:
+
+[stem%unnumbered]
+++++
+(mu_\"tr\")/rho = 1/(rho \"d\"l) (\"d\"R_\"tr\")/R.
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-88-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exposure <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-88-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "X"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-88 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-88" ;
+  skosxl:prefLabel isoiec80000:term-t10-88-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-88-0 ;
+  skos:definition """for X- or gamma radiation the differential quotient of stem:[q] with respect to stem:[m], where stem:[q] is the absolute value of the mean total electric charge of the ions of one sign produced when all the electrons and positrons liberated or created by photons incident on an element of dry air with mass stem:[m] (<<iso80000-4>>) are completely stopped in dry air:
+
+[stem%unnumbered]
+++++
+X = (\"d\"q)/(\"d\"m)
+++++
+"""@en ;
+  skos:note """The ionization produced by electrons emitted in atomic or molecular relaxation is included in stem:[\"d\"q]. The ionization due to photons emitted by radiative processes (i.e. bremsstrahlung and fluorescence photons) is not included in stem:[\"d\"q].
+
+This quantity should not be confused with the quantity photon exposure (<<iso80000-7>>), radiation exposure (<<iso80000-7>>), or the quantity luminous exposure (<<iso80000-7>>).
+
+It can be convenient to refer to a value of exposure in free space or at a point inside a material different from air, e.g. to the exposure at a point inside a water phantom.
+
+The exposure is related to the air kerma, stem:[K_\"a\"], (see <<t10-86.1>>) by:
+
+[stem%unnumbered]
+++++
+X = (e(1-g))/W K_\"a\",
+++++
+
+where stem:[e] is the elementary charge (<<iso80000-1>>), stem:[W] the average energy loss per elementary charge produced (<<t10-60>>), and stem:[g] is the fraction of the kinetic energy of liberated charged particles that is lost in radiative processes.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The exposure, stem:[X], is the quotient of stem:[\"d\"q] by stem:[\"d\"m], where stem:[\"d\"q] is the absolute value of the mean total charge of the ions of one sign produced when all the electrons and positrons liberated or created by photons incident on a mass stem:[\"d\"m] of dry air are completely stopped in dry air:
+
+[stem%unnumbered]
+++++
+X = (\"d\"q)/(\"d\"m).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
+
+isoiec80000:term-t10-89-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exposure rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-89-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dot X"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-89 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-89" ;
+  skosxl:prefLabel isoiec80000:term-t10-89-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-89-0 ;
+  skos:definition """differential quotient of the exposure stem:[X] (<<t10-88>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+dot X = (\"d\"X)/(\"d\"t)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(C/(kg*s))\" = 1 \"unitsml(A/kg)\"
+++++
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The exposure rate, stem:[dot X], is the quotient of stem:[\"d\"X] by stem:[\"d\"t], where stem:[\"d\"X] is the increment of exposure in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+dot X = (\"d\"X)/(\"d\"t).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/(kg*s) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

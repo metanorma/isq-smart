@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-11.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "rising factorial",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-11.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "a^(bar(k))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-11.3",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-11.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-11.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-11.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "rising factorial",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[a^(bar(k)) = a *(a + 1)* ... *(a + k - 1)] (for stem:[k > 0])\n\nstem:[a^(bar(0)) = 1]\n\nstem:[a] may be a complex number.\n\nFor a natural number stem:[n]:\n\nstem:[n^(bar(k)) = ((n+k-1)!)/((n-1)!)]\n\nIn the theory of special functions, the symbol stem:[(a)_k] is often used for the rising factorial and called Pochhammer symbol. In combinatorics and statistics, however, the same symbol is often used for the falling factorial.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-11"
+      }
+    }
+  ]
+}

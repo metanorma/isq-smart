@@ -1,0 +1,46 @@
+isoiec80000:term-t10-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle fluence rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-44-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Phi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-44 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-44" ;
+  skosxl:prefLabel isoiec80000:term-t10-44-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-44-0 ;
+  skos:definition """differential quotient of fluence stem:[ii(Phi)] (<<t10-43>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"ii(Phi))/(\"d\"t)
+++++
+"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example proton fluence rate.
+
+The distribution function expressed in terms of speed and energy, stem:[ii(Phi)_nu] and stem:[ii(Phi)_E], are related to by:
+
+[stem%unnumbered]
+++++
+ii(Phi) = int ii(Phi)_nu \"d\"nu = int ii(Phi)_E \"d\"E.
+++++
+
+This quantity has also been termed particle flux density. Because the word \"density\" has several connotations, the term \"fluence rate\" is preferred. For a radiation field composed of particles of velocity stem:[nu], the fluence rate is equal to stem:[n*nu] where stem:[n] is the particle number density.
+
+See Remarks for <<t10-43>>.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The fluence rate, stem:[ii(Phi)], is the quotient of stem:[\"d\"ii(Phi)] and stem:[\"d\"t], where stem:[\"d\"ii(Phi)] is the increment of the fluence in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"ii(Phi))/(\"d\"t)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

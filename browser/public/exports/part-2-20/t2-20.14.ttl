@@ -1,0 +1,23 @@
+isoiec80000:term-t2-20.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "confluent hypergeometric function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F(a;c;z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.14-0 ;
+  skos:definition """confluent hypergeometric function"""@en ;
+  skos:note """stem:[F(a;c;z) = sum_(n=0)^(oo) ((a)_n)/((c)_n n!) z^n]
+
+(for stem:[-c !in bb(sf(N))])
+
+For stem:[(a)_n] and stem:[(c)_n], see <<t2-11.3>>.
+
+Solution of stem:[zy'' + (c-z)y' - ay = 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

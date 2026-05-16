@@ -1,0 +1,30 @@
+isoiec80000:term-t11-4.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grashof number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.4-0 ;
+  skos:definition """quotient of buoyancy forces due to thermal expansion which results in a change of mass density and viscous forces for free convection due to temperature differences, expressed by
+
+stem:[Gr = l^3 g alpha_V Delta T // sf(ii(v))^2]; where
+
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[alpha_V]:: is thermal cubic expansion coefficient (<<iso80000-5>>),
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between surface of the body and the fluid far away from the body, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """Heating can occur near hot vertical walls, in pipes, or by a bluff body.
+
+The characteristic length can be the vertical height of a hot plate, the diameter of a pipe, or the effective length of a body.
+
+See also Rayleigh number (<<t11-5.3>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

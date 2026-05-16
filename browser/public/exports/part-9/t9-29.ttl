@@ -1,0 +1,31 @@
+isoiec80000:term-t9-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stoichiometric number of substance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nu_\"B\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-29" ;
+  skosxl:prefLabel isoiec80000:term-t9-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-29-0 ;
+  skos:definition """for substance stem:[\"B\"], an integer number or a simple fraction, being negative for a reactant and positive for a product, occurring in the expression for a chemical reaction:
+
+[stem%unnumbered]
+++++
+0 = sum nu_\"B\"
+++++
+
+where the symbol stem:[B] denotes the reactants and products involved in the reaction
+"""@en ;
+  skos:note """[example]
+====
+stem:[(1//2)\"N\"_2 + (3//2)\"H\"_2 = \"NH\"_3]
+
+stem:[nu (\"N\"_2) = -1//2], stem:[nu (\"H\"_2) = -3//2], stem:[nu (\"NH\"_3) = +1].
+====
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

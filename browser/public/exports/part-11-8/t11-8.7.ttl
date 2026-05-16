@@ -1,0 +1,24 @@
+isoiec80000:term-t11-8.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stuart electrical number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Se"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.7-0 ;
+  skos:definition """quotient of electric energy density and kinematic energy density in a plasma, expressed by
+
+stem:[Se = epsilon E^2 // (rho v^2)]; where
+
+stem:[epsilon]:: is electric permittivity (<<iec80000-6>>),
+stem:[E]:: is electric field strength (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Stuart electrical number is the electrical counterpart of the Cowling number (<<t11-8.6>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

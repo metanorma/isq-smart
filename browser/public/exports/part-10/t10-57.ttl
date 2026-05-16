@@ -1,0 +1,27 @@
+isoiec80000:term-t10-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean mass range"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-57-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-57-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-57 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-57" ;
+  skosxl:prefLabel isoiec80000:term-t10-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-57-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-57-1 ;
+  skos:definition """product of the mean linear range (<<t10-56>>) stem:[R] and the mass density stem:[rho] (<<iso80000-4>>) of the material:
+
+[stem%unnumbered]
+++++
+R_rho = R rho
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

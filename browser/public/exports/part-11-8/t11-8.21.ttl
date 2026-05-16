@@ -1,0 +1,33 @@
+isoiec80000:term-t11-8.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ampère number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Am"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.21" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.21-0 ;
+  skos:definition """relation between electric surface current and magnetic field strength in an electrically conducting liquid, expressed by
+
+stem:[Am = I_A // lH]; where
+
+stem:[I_A]:: is electric surface current,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[H]:: is magnetic field strength (<<iec80000-6>>)
+"""@en ;
+  skos:note """This number is also called ((magnetic field number)).
+
+The electric surface current is given by
+
+stem:[I_A = rho_A I mu E]; where
+
+stem:[rho_A]:: is surface density of electric charge (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers, and
+stem:[E]:: is electric field strength (<<iec80000-6>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

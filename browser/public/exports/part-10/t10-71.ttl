@@ -1,0 +1,22 @@
+isoiec80000:term-t10-71-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean free path <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-71-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-71-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-71 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-71" ;
+  skosxl:prefLabel isoiec80000:term-t10-71-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-71-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-71-1 ;
+  skos:definition """average distance (<<iso80000-3>>) that particles travel between two successive specified reactions or processes"""@en ;
+  skos:note """See the Remarks for <<t10-42.1>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

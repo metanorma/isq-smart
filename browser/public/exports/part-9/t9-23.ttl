@@ -1,0 +1,23 @@
+isoiec80000:term-t9-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard absolute activity <in a mixture>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"X\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-23" ;
+  skosxl:prefLabel isoiec80000:term-t9-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-23-0 ;
+  skos:definition """for substance stem:[X] in a liquid or a solid mixture, absolute activity stem:[lambda_\"X\"^(**)] (<<t9-18>>) of the pure substance stem:[X] at the same temperature (<<iso80000-5>>) but at standard pressure (<<iso80000-4>>) stem:[10^5 \"unitsml(Pa)\"]:
+
+[stem%unnumbered]
+++++
+lambda_\"X\"^(&#8854;) = lambda_\"X\"^(**) (p^(&#8854;))
+++++
+"""@en ;
+  skos:note """This quantity is a function of temperature only."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

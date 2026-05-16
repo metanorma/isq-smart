@@ -1,0 +1,29 @@
+isoiec80000:term-t7-30.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "emissivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-30.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-30.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon_\"T\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-30.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-30.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-30.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-30.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-30.1-1 ;
+  skos:definition """quotient of the radiant exitance of a radiator and the radiant exitance of a Planckian radiator at the same temperature, expressed by
+
+[stem%unnumbered]
+++++
+epsilon = M/M_\"b\"
+++++
+
+where stem:[M] is the radiant exitance (<<t7-8.1>>) of a thermal radiator and stem:[M_\"b\"] is the radiant exitance of a Planckian radiator at the same temperature (<<iso80000-5>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

@@ -1,0 +1,33 @@
+isoiec80000:term-t10-62.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle number density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-62.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-62.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-62.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-62.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-62.1-0 ;
+  skos:definition """quotient of the mean number stem:[N] of particles in the volume (<<iso80000-3>>) stem:[V] and volume:
+
+[stem%unnumbered]
+++++
+n=N//V
+++++
+"""@en ;
+  skos:note """stem:[n] is the general symbol for the number density of particles.
+
+The distribution functions expressed in terms of speed and energy, stem:[n_nu] and stem:[n_\"E\"], are related to stem:[n] by:
+
+[stem%unnumbered]
+++++
+n = int n_nu \"d\"nu = int n_\"E\" \"d\"E
+++++
+
+The word \"particle\" is usually replaced by the name of a specific particle, for example _neutron_ number density.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

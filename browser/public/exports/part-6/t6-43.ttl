@@ -1,0 +1,34 @@
+isoiec80000:term-t6-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conductivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t6-43-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-43 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-43" ;
+  skosxl:prefLabel isoiec80000:term-t6-43-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-43-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-43-1 ;
+  skos:definition """proportionality factor between electric current density stem:[J] (<<t6-8>>) and electric field strength stem:[E] (<<t6-10>>)
+
+[stem%unnumbered]
+++++
+J = sigma E
+++++
+"""@en ;
+  skos:note """Conductivity stem:[sigma] is a property of a medium. For an inhomogeneous medium, conductivity stem:[sigma] depends on position. For an isotropic medium, stem:[sigma] is a scalar quantity; for an anisotropic medium, stem:[sigma] is a second-order tensor.
+
+The symbol stem:[kappa] is used in electrochemistry (see <<iso80000-9>>).
+
+See <<iec60050-121,locality:item=\"121-12-03\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-S/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^3*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

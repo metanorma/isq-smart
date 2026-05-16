@@ -1,0 +1,22 @@
+isoiec80000:term-t13-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "carrier power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P_C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-18" ;
+  skosxl:prefLabel isoiec80000:term-t13-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-18-1 ;
+  skos:definition """power supplied to the antenna feed line by a radio transmitter taken under the condition of no modulation"""@en ;
+  skos:note """See <<iec60050-713,droploc%locality:item=\"713-09-20\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

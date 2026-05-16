@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <gravity>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.35" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.35-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.35-0 ;
+  skos:definition """relation between viscous forces and gravity forces for particles falling in a fluid, expressed by
+
+stem:[Stk_3 = v sf(ii(v)) // (gl^2)]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of particles,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>), and
+stem:[l]:: is length (<<iso80000-3>>) of fall
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

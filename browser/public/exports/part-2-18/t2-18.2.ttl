@@ -1,0 +1,16 @@
+isoiec80000:term-t2-18.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum of vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) + bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.2-0 ;
+  skos:definition """sum of vectors stem:[bb(ii(a))] and stem:[bb(ii(b))]"""@en ;
+  skos:note """stem:[(bb(ii(a)) + bb(ii(b)))_i = a_i + b_i]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

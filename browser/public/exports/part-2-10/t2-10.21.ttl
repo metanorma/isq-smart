@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "minimum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"min\"(a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.21-0 ;
+  skos:definition """minimum of stem:[a] and stem:[b]"""@en ;
+  skos:note """The operation generalizes to more than two numbers and to sets of numbers. However, an infinite set of numbers need not have a smallest element, in this case use stem:[\"inf\"] (see <<t2-10.14>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

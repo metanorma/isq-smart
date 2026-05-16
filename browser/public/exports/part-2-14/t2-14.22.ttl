@@ -1,0 +1,23 @@
+isoiec80000:term-t2-14.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic tangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"artanh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.22-0 ;
+  skos:definition """inverse hyperbolic tangent of stem:[x], +
+area hyperbolic tangent of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"artanh \"x <=> x = \"tanh \"y]
+
+The function stem:[\"artanh\"] is the inverse of the function stem:[\"tanh\"].
+
+stem:[\"arth \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

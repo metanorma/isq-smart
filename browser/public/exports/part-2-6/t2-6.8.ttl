@@ -1,0 +1,24 @@
+isoiec80000:term-t2-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "proper subset"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B sub A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.8-0 ;
+  skos:definition """stem:[B] is properly included in stem:[A],
+
+stem:[B] is a proper subset of stem:[A]
+"""@en ;
+  skos:note """Every element of stem:[B] belongs to stem:[A], but at least one element of stem:[A] does not belong to stem:[B].
+
+If stem:[sub] is used for <<t2-6.7>>, then &#x228A; shall be used for <<t2-6.8>>.
+
+stem:[A sup B] has the same meaning as stem:[B sub A].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

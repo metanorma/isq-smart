@@ -1,0 +1,35 @@
+isoiec80000:term-t11-8.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stuart number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stw"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.12-0 ;
+  skos:definition """quotient of magnetic forces and inertia forces in an electrically conducting liquid, expressed by
+
+stem:[Stw = B^2 l sigma // (v rho)]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[v]:: is characteristic speed (<<iso80000-3>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Stuart number sometimes is called magnetic force parameter.
+
+Sometimes the square root is wrongly used.
+
+The Stuart number is also given by
+
+stem:[Stw = Ha^2//Re]; where
+
+stem:[Ha]:: is the Hartmann number, and
+stem:[Re]:: is the Reynolds number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

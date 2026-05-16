@@ -1,0 +1,19 @@
+isoiec80000:term-t2-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum of matrices"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A)) + bb(ii(B))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.2-0 ;
+  skos:definition """sum of matrices stem:[bb(ii(A))] and stem:[bb(ii(B))]"""@en ;
+  skos:note """stem:[(bb(ii(A)) + bb(ii(B)))_(ij) = (bb(ii(A)))_(ij) + (bb(ii(B)))_(ij)]
+
+The matrices stem:[bb(ii(A))] and stem:[bb(ii(B))] must have the same number of columns and the same number of rows.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

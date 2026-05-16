@@ -1,0 +1,21 @@
+isoiec80000:term-t2-20.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "incomplete elliptic integral of the second kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"E\"(varphi,k)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.11-0 ;
+  skos:definition """incomplete elliptic integral of the second kind"""@en ;
+  skos:note """stem:[E(varphi,k) = int_0^varphi sqrt(1-k^2 \"sin\"^2 sigma)\"d\"sigma]
+
+stem:[k in bb(sf(R))], stem:[0<k<1]
+
+stem:[\"E\"(k) = \"E\"(pi/2,k)], is the complete elliptic integral of the second kind.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

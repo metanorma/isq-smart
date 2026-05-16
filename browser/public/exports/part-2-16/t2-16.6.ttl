@@ -1,0 +1,19 @@
+isoiec80000:term-t2-16.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse of a square matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))^(-1)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.6-0 ;
+  skos:definition """inverse of a square matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[bb(ii(A)ii(A)^(-1))=bb(ii(A))^(-1)bb(A) = bb(I)]
+
+when stem:[\"det \"bb(ii(A)) != 0], for the definition of stem:[\"det \"bb(ii(A))] see <<t2-16.10>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t11-4.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.9-0 ;
+  skos:definition """relation between the effective drag force and inertial forces for a body moving in a fluid, expressed by
+
+stem:[c_\"D\" = (2F_\"D\")/(rho v^2 A)]; where
+
+stem:[F_\"D\"]:: is drag force (<<iso80000-4>>) on the body,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is speed (<<iso80000-3>>) of the body, and
+stem:[A]:: is cross-sectional area (<<iso80000-3>>)
+"""@en ;
+  skos:note """The drag coefficient is strongly dependant on the shape of the body."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

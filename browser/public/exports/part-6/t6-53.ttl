@@ -1,0 +1,28 @@
+isoiec80000:term-t6-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quality factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-53-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-53 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-53" ;
+  skosxl:prefLabel isoiec80000:term-t6-53-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-53-0 ;
+  skos:definition """for non-radiating systems, where stem:[ul Z = R + \"j\"X], scalar quantity given by
+
+[stem%unnumbered]
+++++
+Q=(abs X)/R
+++++
+
+where stem:[ul Z] is impedance (<<t6-51.1>>), stem:[R] is resistance (<<t6-51.3>>), and stem:[X] is reactance (<<t6-51.4>>)
+"""@en ;
+  skos:note """For a linear non-radiating two-terminal element or circuit under sinusoidal conditions, the quality factor is the ratio of the absolute value of the reactive power to the active power. See <<iec60050-151,locality:item=\"151-15-45\">>.
+
+For a resonant system, the quality actor, stem:[Q] is defined as stem:[2pi] multiplied by the quotient of stored energy and dissipated energy. See <<iec60050-151,locality:item=\"151-15-46\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

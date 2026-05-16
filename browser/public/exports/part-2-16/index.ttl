@@ -1,0 +1,284 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-16 a smart:PublicationDocument ;
+  dcterms:title "Part 2-16"@en ;
+  dcterms:identifier "ISO 80000-2-16" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "([a_(11), ..., a_(1n)\\],[vdots,ddots,vdots\\],[a_(m1), ..., a_(mn)\\])"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.1-1 ;
+  skos:definition """matrix stem:[bb(ii(A))] of type stem:[m] by stem:[n]"""@en ;
+  skos:note """stem:[bb(ii(A))] is the matrix with the elements stem:[a_(ij) = (bb(ii(A)))_(ij)], stem:[m] is the number of rows and stem:[n] is the number of columns.
+
+stem:[bb(ii(A)) = (a_(ij))] is also used.
+
+Square brackets are also used instead of parentheses.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum of matrices"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A)) + bb(ii(B))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.2-0 ;
+  skos:definition """sum of matrices stem:[bb(ii(A))] and stem:[bb(ii(B))]"""@en ;
+  skos:note """stem:[(bb(ii(A)) + bb(ii(B)))_(ij) = (bb(ii(A)))_(ij) + (bb(ii(B)))_(ij)]
+
+The matrices stem:[bb(ii(A))] and stem:[bb(ii(B))] must have the same number of columns and the same number of rows.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of scalar and matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.3-0 ;
+  skos:definition """product of scalar stem:[x] and matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[(x bb(ii(A)))_(ij) = x (bb(ii(A)))_(ij)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of matrices"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(AB))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.4-0 ;
+  skos:definition """product of matrices stem:[bb(ii(A))] and stem:[bb(ii(B))]"""@en ;
+  skos:note """stem:[(bb(ii(AB)))_(ik) = sum_j (bb(ii(A))_(ij))bb(ii(B))_(jk)]
+
+The number of columns of stem:[bb(ii(A))] must be equal to the number of rows of stem:[bb(ii(B))].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "identity matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(I))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(E))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.5-1 ;
+  skos:definition """identity matrix"""@en ;
+  skos:note """A square matrix for which stem:[(bb(ii(I)))_(ik) = delta_(ik)]
+
+For the definition of stem:[delta_(ik)] see <<t2-18.9>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse of a square matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))^(-1)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.6-0 ;
+  skos:definition """inverse of a square matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[bb(ii(A)ii(A)^(-1))=bb(ii(A))^(-1)bb(A) = bb(I)]
+
+when stem:[\"det \"bb(ii(A)) != 0], for the definition of stem:[\"det \"bb(ii(A))] see <<t2-16.10>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transpose matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))^TT"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.7-0 ;
+  skos:definition """transpose matrix of stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[(bb(ii(A))^TT)_(ik) = (bb(ii(A)))_(ki)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex conjugate matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.8-1 ;
+  skos:definition """complex conjugate matrix of stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[(bar bb(ii(A)))_(ik) = bar((bb(ii(A)))_(ik))]
+
+stem:[bar bb(ii(A))] is used in mathematics,
+
+stem:[bb(ii(A))**] in physics and electrotechnology.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hermitian conjugate matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))^(\"H\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.9-0 ;
+  skos:definition """Hermitian conjugate matrix of stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[bb(ii(A))^(\"H\") = (bb(bar A))^(\"T\")]
+
+The term \"adjoint matrix\" is also used.
+
+stem:[bb(ii(A))**] and stem:[bb(ii(A))^(+)] are also used for stem:[bb(ii(A))^(\"H\")].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "determinant of matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"det \"bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.10-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\\|[a_(11), ..., a_(1n)\\],[vdots,ddots,vdots\\],[a_(n1), ..., a_(n n)\\]\\|"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.10-1 ;
+  skos:definition """determinant of a square matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """Sometimes stem:[abs(bb(ii(A)))] is used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rank of matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"rank \"bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.11-0 ;
+  skos:definition """rank of matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """The rank of matrix stem:[bb(ii(A))] is the number of the linearly independent rows of stem:[bb(ii(A))]. It is also equal to the number of linearly independent columns."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "trace of a square matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"tr \"bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.12-0 ;
+  skos:definition """trace of a square matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[\"tr \"bb(ii(A)) = sum_i (bb(ii(A)))_(i i)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .
+
+isoiec80000:term-t2-16.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "norm of matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "norm(bb(ii(A)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.13-0 ;
+  skos:definition """norm of matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """The norm of matrix stem:[bb(ii(A))] is a number characterizing this matrix and satisfying the triangle inequality:
+
+if stem:[bb(ii(A)) + bb(ii(B)) = bb(ii(C))], then stem:[norm(bb(ii(A))) + norm(bb(ii(B))) >= norm(bb(ii(C)))].
+
+Different matrix norms are used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

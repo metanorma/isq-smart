@@ -1,0 +1,2428 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-13 a smart:PublicationDocument ;
+  dcterms:title "Information Science"@en ;
+  dcterms:identifier "ISO 80000-13" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["E"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "erlang"@en ;
+  skos:notation "stem:["E"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per second"@en ;
+  skos:notation "s^-1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-bit a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "bit"@en ;
+  skos:notation "bit" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["o"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "octet"@en ;
+  skos:notation "stem:["o"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["B"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "byte"@en ;
+  skos:notation "stem:["B"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["o"//"s"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "octet per second"@en ;
+  skos:notation "stem:["o"//"s"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["B"//"s"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "byte per second"@en ;
+  skos:notation "stem:["B"//"s"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second"@en ;
+  skos:notation "s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-bit/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "bit per second"@en ;
+  skos:notation "bit/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["Bd"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "baud"@en ;
+  skos:notation "stem:["Bd"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt"@en ;
+  skos:notation "W" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Hz a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "hertz"@en ;
+  skos:notation "Hz" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["Sh"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "shannon"@en ;
+  skos:notation "stem:["Sh"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["Hart"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "hartley"@en ;
+  skos:notation "stem:["Hart"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-nat a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "nat"@en ;
+  skos:notation "nat" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["Sh/s"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "shannon per second"@en ;
+  skos:notation "stem:["Sh/s"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-stem:["Hart/s"] a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "hartley per second"@en ;
+  skos:notation "stem:["Hart/s"]" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-nat/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "nat/s"@en ;
+  skos:notation "nat/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-E a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "erlang"@en ;
+  skos:notation "E" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-s^{-1} a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "second to the
+power of
+minus one
+
+inverse
+second
+"@en ;
+  skos:notation "s^{-1}" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-o a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "octet"@en ;
+  skos:notation "o" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-B a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "byte"@en ;
+  skos:notation "B" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-o/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "digit per second"@en ;
+  skos:notation "o/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-B/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "octet per second, byte per second"@en ;
+  skos:notation "B/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Bd a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "baud"@en ;
+  skos:notation "Bd" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Sh a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "shannon"@en ;
+  skos:notation "Sh" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Hart a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "hartley"@en ;
+  skos:notation "Hart" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Sh/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "shannon per second"@en ;
+  skos:notation "Sh/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Hart/s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "hartley per second"@en ;
+  skos:notation "Hart/s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t13-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(A)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-1" ;
+  skosxl:prefLabel isoiec80000:term-t13-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-1-0 ;
+  skos:definition """number of simultaneously busy resources in a particular pool of resources"""@en ;
+  skos:note """See <<iec60050-715,locality:item=\"715-05-02\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["E"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic offered intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(A)_o"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-2" ;
+  skosxl:prefLabel isoiec80000:term-t13-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-2-0 ;
+  skos:definition """traffic intensity (<<t13-1>>) of the traffic that would have been generated by the users of a pool of resources if their use had not been limited by the size of the pool"""@en ;
+  skos:note """See <<iec60050-715,locality:item=\"715-05-05\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["E"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic carried intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic load"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-3" ;
+  skosxl:prefLabel isoiec80000:term-t13-3-0 ;
+  skosxl:altLabel isoiec80000:term-t13-3-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-3-0 ;
+  skos:definition """traffic intensity (<<t13-1>>) of the traffic served by a particular pool of resources"""@en ;
+  skos:note """General practice is to estimate the traffic intensity as an average over a specified time interval, e.g. the busy hour.
+
+See <<iec60050-715,locality:item=\"715-05-04\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["E"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean queue length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(L)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(ii(Omega))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-4" ;
+  skosxl:prefLabel isoiec80000:term-t13-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-4-1 ;
+  skos:definition """time average of queue length"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "loss probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(B)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-5" ;
+  skosxl:prefLabel isoiec80000:term-t13-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-5-0 ;
+  skos:definition """probability for losing a call attempt"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "waiting probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(W)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-6" ;
+  skosxl:prefLabel isoiec80000:term-t13-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-6-0 ;
+  skos:definition """probability for waiting for a resource"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "call intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-7-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "calling rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-7" ;
+  skosxl:prefLabel isoiec80000:term-t13-7-0 ;
+  skosxl:altLabel isoiec80000:term-t13-7-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-7-0 ;
+  skos:definition """number of call attempts over a specified time interval divided by the duration (<<iso80000-3,locality:item=\"3-7\">>) of this interval"""@en ;
+  skos:note """See <<iec60050-715,locality:item=\"715-03-13\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "completed call intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-8" ;
+  skosxl:prefLabel isoiec80000:term-t13-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-8-0 ;
+  skos:definition """call intensity (<<t13-7>>) for the call attempts that result in the transmission of an answer signal"""@en ;
+  skos:note """For a definition of the complete call attempt, see <<iec60050-715,locality:item=\"715-03-11\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "storage capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "storage size"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(M)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-9" ;
+  skosxl:prefLabel isoiec80000:term-t13-9-0 ;
+  skosxl:altLabel isoiec80000:term-t13-9-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-9-0 ;
+  skos:definition """amount of data that can be contained in a storage device, expressed as a number of specified data elements"""@en ;
+  skos:note """The specified data elements depend on the organization of the storage device, for example, binary elements also called bits, octets also called bytes, words of a given number of bits, blocks. A subscript referring to a specified data element can be added to the symbol.
+
+[example]
+====
+storage capacity for bits, stem:[ii(M)_(\"b\")] or stem:[ii(M)_(\"bit\")]
+
+storage capacity for octets, stem:[ii(M)_(\"o\")] or stem:[ii(M)_(\"B\")].
+====
+
+For registers, the term \"register length\" is used with the same meaning.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["o"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["B"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent binary storage capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(M)_(\"e\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-10" ;
+  skosxl:prefLabel isoiec80000:term-t13-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-10-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(M)_(\"e\") = \"lb \"n
+++++
+
+where stem:[n] is the number of possible states of the given device
+"""@en ;
+  skos:note """The minimum storage capacity of a bit-organized storage device which would contain the amount of data in the given storage device is equal to the smallest integer greater than or equal to the equivalent binary storage capacity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transfer rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(nu)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-11" ;
+  skosxl:prefLabel isoiec80000:term-t13-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-11-1 ;
+  skos:definition """quotient of the number of specified data elements transferred in a time interval by the duration of this interval"""@en ;
+  skos:note """The symbol stem:[nu] is the Greek letter nu.
+
+A subscript referring to a specified data element can be added to the symbol.
+
+[example]
+====
+digit rate, stem:[r_\"d\"] or stem:[nu_\"d\"] (see <<iec60050-702,locality:item=\"702-05-23\">> and <<iec60050-704,locality:item=\"704-16-06\">>);
+
+transfer rate for octets (or bytes), stem:[r_\"o\"], stem:[r_\"B\"], stem:[nu_\"o\"], or stem:[nu_\"B\"]; binary digit rate or bit rate (<<t13-13>>).
+====
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["o"//"s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["B"//"s"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period of data elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-12" ;
+  skosxl:prefLabel isoiec80000:term-t13-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-12-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(T) = 1//r
+++++
+
+where stem:[r] is transfer rate (<<t13-11>>) when the data elements are transmitted in series
+"""@en ;
+  skos:note """A subscript referring to a specified data element can be added to the symbol.
+
+[example]
+====
+period of digits, stem:[ii(T)_\"d\"];
+
+period of octets (or bytes), stem:[ii(T)_\"o\"] or stem:[ii(T)_\"B\"].
+====
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binary digit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"b\", r_\"bit\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(nu_\"b\", nu_\"bit\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-13" ;
+  skosxl:prefLabel isoiec80000:term-t13-13-0 ;
+  skosxl:altLabel isoiec80000:term-t13-13-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-13-1 ;
+  skos:definition """transfer rate (<<t13-11>>) where the data elements are binary digits"""@en ;
+  skos:note """In English, the systematic name would be \"transfer rate for binary digits\".
+
+See <<iec60050-704,locality:item=\"704-16-07\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period of binary digits"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bit period"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)_\"b\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)_(\"bit\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-14" ;
+  skosxl:prefLabel isoiec80000:term-t13-14-0 ;
+  skosxl:altLabel isoiec80000:term-t13-14-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-14-1 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(T)_\"b\" = 1//r_\"b\"
+++++
+
+where stem:[r_\"b\"] is the binary digit rate (<<t13-13>>) when the binary digits are transmitted in series
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent binary digit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent bit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(nu_\"e\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-15" ;
+  skosxl:prefLabel isoiec80000:term-t13-15-0 ;
+  skosxl:altLabel isoiec80000:term-t13-15-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-15-1 ;
+  skos:definition """binary digit rate (<<t13-13>>) equivalent to a transfer rate (<<t13-11>>) for specified data elements"""@en ;
+  skos:note """In English, the systematic name would be \"equivalent binary transfer rate\".
+
+See <<iec60050-704,locality:item=\"704-17-05\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulation rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "line digit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-16" ;
+  skosxl:prefLabel isoiec80000:term-t13-16-0 ;
+  skosxl:altLabel isoiec80000:term-t13-16-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-16-1 ;
+  skos:definition """inverse of the shortest duration of a signal element"""@en ;
+  skos:note """The term \"modulation rate\" is used in conventional telegraphy and data transmission. In isochronous digital transmission, the term \"line digit rate\" is generally used.
+
+See <<iec60050-704,locality:item=\"704-17-03\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Bd"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quantizing distortion power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)_\"Q\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-17" ;
+  skosxl:prefLabel isoiec80000:term-t13-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-17-0 ;
+  skos:definition """distortion of a signal resulting from the process of quantizing an original signal when the values to be quantized are within the working range of the quantizer"""@en ;
+  skos:note """See <<iec60050-704,locality:item=\"704-24-13\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "carrier power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(P)_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(C)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-18" ;
+  skosxl:prefLabel isoiec80000:term-t13-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-18-1 ;
+  skos:definition """power supplied to the antenna feed line by a radio transmitter taken under the condition of no modulation"""@en ;
+  skos:note """See <<iec60050-713,locality:item=\"713-09-20\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "signal energy per binary digit"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(E)_\"b\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(E)_\"bit\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-19" ;
+  skosxl:prefLabel isoiec80000:term-t13-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-19-1 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(E)_\"b\" = ii(P)_\"c\" * ii(T)_\"b\"
+++++
+
+where stem:[ii(P)_\"c\"] is carrier power (<<t13-18>>) and stem:[ii(T)_\"b\"] is period of binary digits (<<t13-14>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "error probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(P)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-20" ;
+  skosxl:prefLabel isoiec80000:term-t13-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-20-0 ;
+  skos:definition """probability that a data element be incorrectly received"""@en ;
+  skos:note """A subscript referring to a specified data element can be added to the symbol.
+
+[example]
+====
+error probability for binary digits or bit error probability, stem:[ii(P)_\"b\"] or stem:[ii(P)_\"bit\"];
+
+block error probability, stem:[ii(P)_\"bl\"].
+====
+
+The measured value is designated as \"error ratio\", whereas \"error rate\" is deprecated, for example, bit error ratio (BER), block error ratio.
+
+See <<iec60050-704>> and <<iec60050-721>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hamming distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-21" ;
+  skosxl:prefLabel isoiec80000:term-t13-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-21-0 ;
+  skos:definition """number of digit positions in which the corresponding digits of two words of the same length are different"""@en ;
+  skos:note """See <<iec60050-721,locality:item=\"721-08-25\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "clock frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-22-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "clock rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_\"cl\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-22" ;
+  skosxl:prefLabel isoiec80000:term-t13-22-0 ;
+  skosxl:altLabel isoiec80000:term-t13-22-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-22-0 ;
+  skos:definition """frequency at which a clock oscillates"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Hz ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decision content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(D)_a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-23" ;
+  skosxl:prefLabel isoiec80000:term-t13-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-23-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(D)_a = \"log\"_a n
+++++
+
+where stem:[a] is the number of possibilities at each decision and stem:[n] the number of events
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.03.01\">>.
+
+See also <<iec60027-3>>.
+
+When the same base is used for the same number of events then stem:[ii(D)_a = ii(H)_0], where stem:[ii(H)_0] is maximum entropy (<<t13-28>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-24" ;
+  skosxl:prefLabel isoiec80000:term-t13-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-24-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+I(x) = \"lb\" 1/(p(x)) \" Sh\" = \"lg\" 1/(p(x))\" Hart\" = \"ln\" 1/(p(x)) \" nat\"
+++++
+
+where stem:[p(x)] is the probability of event stem:[x]
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.03.02\">>.
+
+See also <<iec60027-3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-25" ;
+  skosxl:prefLabel isoiec80000:term-t13-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-25-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(H)(ii(X)) = sum_(i=1)^n p(x_i)ii(I)(x_i)
+++++
+
+for the set stem:[ii(X) = {x_1, ..., x_n}]
+
+where
+
+stem:[p(x_i)] is the probability and
+
+stem:[ii(I)(x_i)] is the information content of event stem:[x_i]
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.03.03\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(ii(H)_\"max\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-26" ;
+  skosxl:prefLabel isoiec80000:term-t13-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-26-1 ;
+  skos:definition """maximum entropy occurs when stem:[p(x_i) = 1//n] for stem:[i = 1, ..., n]"""@en ;
+  skos:note """The maximum entropy is sometimes called \"decision content\" because the value is the same when the base is an integer, for the same number of events. See <<t13-23>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)_r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-27" ;
+  skosxl:prefLabel isoiec80000:term-t13-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-27-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(H)_r = ii(H) // ii(H)_0
+++++
+
+where stem:[ii(H)] is entropy (<<t13-25>>) and stem:[ii(H)_0] is maximum entropy (<<t13-26>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.03.04\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "redundancy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(R)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-28" ;
+  skosxl:prefLabel isoiec80000:term-t13-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-28-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(R) = ii(H)_0 - ii(H)
+++++
+
+where stem:[ii(H)] is entropy (<<t13-25>>) and stem:[ii(H)_0] is maximum entropy (<<t13-26>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.03.05\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative redundancy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-29" ;
+  skosxl:prefLabel isoiec80000:term-t13-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-29-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+r = ii(R) // ii(H)_0
+++++
+
+where +
+stem:[ii(R)] is redundancy (<<t13-28>>) and +
+stem:[ii(H)_0] is maximum entropy (<<t13-26>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.01\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "joint information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(I)(x, y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-30" ;
+  skosxl:prefLabel isoiec80000:term-t13-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-30-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(I)(x,y) = \"lb\" 1/(p(x,y)) \" Sh\" = \"lg\" 1/(p(x,y)) \" Hart\" = \"ln\" 1/(p(x,y)) \" nat\"
+++++
+
+where stem:[p(x, y)] is the joint probability of events stem:[x] and stem:[y]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(I)(x\\|y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-31" ;
+  skosxl:prefLabel isoiec80000:term-t13-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-31-0 ;
+  skos:definition """information content (<<t13-2>>) of event stem:[x] under the condition that stem:[y] has occurred:
+
+[stem%unnumbered]
+++++
+ii(I)(x\\|y) = ii(I)(x, y) - ii(I)(y)
+++++
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.02\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conditional entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-32-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-32-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)(ii(X)\\|ii(Y))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-32" ;
+  skosxl:prefLabel isoiec80000:term-t13-32-0 ;
+  skosxl:altLabel isoiec80000:term-t13-32-1 ;
+  skosxl:altLabel isoiec80000:term-t13-32-2 ;
+  skosxl:altLabel isoiec80000:sym-t13-32-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(H)(ii(X)\\|ii(Y)) = sum_(i=1)^n sum_(j=1)^m p(x_i,y_j)ii(I)(x_i\\|y_j)
+++++
+
+where stem:[p(x_i, y_j)] is the joint probability of events stem:[x_i] and stem:[y_j], and stem:[ii(I)(x_i\\|y_j)] is conditional information content (<<t13-31>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.04\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivocation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)(ii(X)\\|ii(Y))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-33" ;
+  skosxl:prefLabel isoiec80000:term-t13-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-33-0 ;
+  skos:definition """conditional entropy (<<t13-32>>) of a set stem:[ii(X)] of emitted characters given the set stem:[ii(Y)] of received characters"""@en ;
+  skos:note """Equivocation is a quantitative measure of the loss of information due to noise.
+
+See <<iso2382-16,locality:item=\"16.04.05\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "irrelevance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)(ii(Y)\\|ii(X))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-34" ;
+  skosxl:prefLabel isoiec80000:term-t13-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-34-0 ;
+  skos:definition """conditional entropy (<<t13-32>>) of a set stem:[ii(Y)] of received characters given the set stem:[ii(X)] of emitted characters:
+
+stem:[ii(H)(ii(Y)\\|ii(X)) = ii(H)(ii(X)\\|ii(Y)) + ii(H)(ii(Y)) - ii(H)(ii(X))], where
+stem:[ii(H)(ii(X)\\|ii(Y))] is equivocation (<<t13-33>>) and stem:[ii(H)] is entropy (<<t13-25>>)
+"""@en ;
+  skos:note """Irrelevance is a quantitative measure of the information added to the emitted information due to distortion.
+
+See <<iso2382-16,locality:item=\"16.04.06\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transinformation content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)(x,y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-35" ;
+  skosxl:prefLabel isoiec80000:term-t13-35-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-35-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(T)(x,y) = ii(I)(x) + ii(I)(y) - ii(I)(x, y)
+++++
+
+where stem:[ii(I)(x)] and stem:[ii(I)(y)] are the information contents (<<t13-24>>) of events stem:[x] and stem:[y], respectively, and stem:[ii(I)(x, y)] is their joint information content (<<t13-30>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.07\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean transinformation content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-36" ;
+  skosxl:prefLabel isoiec80000:term-t13-36-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-36-0 ;
+  skos:definition """stem:[ii(T)(x,y) = sum_(i=1)^n sum_(j=1)^m p(x_i,y_j)ii(T)(x_i,y_j)] for the sets
+
+stem:[ii(X) = {x_1, ..., x_n}], stem:[ii(Y) = {y_1, ..., y_m}],
+
+where stem:[p(x_i, y_j)] is the joint probability of events stem:[x_i] and stem:[y_j], and stem:[ii(T)(x_i, y_j)] is their transinformation content (<<t13-35>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.08\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "character mean entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-37 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-37" ;
+  skosxl:prefLabel isoiec80000:term-t13-37-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-37-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(H)' = \"lim\"_(m -> oo) (ii(H)_m)/m
+++++
+
+where stem:[ii(H)_m] is the entropy (<<t13-3>>) of the set of all sequences of stem:[m] characters
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.09\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average information rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(H)**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-38" ;
+  skosxl:prefLabel isoiec80000:term-t13-38-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-38-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(H)** = ii(H)' // t(ii(X))
+++++
+
+where stem:[ii(H)'] is character mean entropy (<<t13-37>>) and stem:[t(ii(X))] is the mean value of the duration of a character in the set stem:[ii(X)]
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.10\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh/s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart/s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "character mean transinformation content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-39" ;
+  skosxl:prefLabel isoiec80000:term-t13-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-39-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(T)' = \"lim\"_(m->oo) (ii(T)_m)/m
+++++
+
+where stem:[ii(T)_m] is the mean transinformation content (<<t13-36>>) for all pairs of input and output sequences of stem:[m] characters
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.11\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average transinformation rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(T)**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-40" ;
+  skosxl:prefLabel isoiec80000:term-t13-40-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-40-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(T)** = (ii(T)')/(sum_(i=1)^n sum_(j=1)^m p(x_i,y_j)t(x_i,y_j))
+++++
+
+where stem:[ii(T)'] is character mean transinformation content (<<t13-39>>) and stem:[t(x_i, y_j)] is the mean duration of the pair of characters stem:[(x_i, y_j)] with joint probability stem:[p(x_i, y_j)]
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.12\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh/s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart/s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "channel capacity per character"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-41-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "channel capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(C)'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-41" ;
+  skosxl:prefLabel isoiec80000:term-t13-41-0 ;
+  skosxl:altLabel isoiec80000:term-t13-41-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-41-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(C)' = \"max\" ii(T)'
+++++
+
+where stem:[ii(T)'] is character mean transinformation content (<<t13-39>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.13\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "channel time capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t13-42-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "channel capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(C)**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-42 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-42" ;
+  skosxl:prefLabel isoiec80000:term-t13-42-0 ;
+  skosxl:altLabel isoiec80000:term-t13-42-1 ;
+  skosxl:altLabel isoiec80000:sym-t13-42-0 ;
+  skos:definition """[stem%unnumbered]
+++++
+ii(C)** = \"max\" ii(T)**
+++++
+
+where stem:[ii(T)**] is average transinformation rate (<<t13-40>>)
+"""@en ;
+  skos:note """See <<iso2382-16,locality:item=\"16.04.13\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Sh/s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["Hart/s"] ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-1" ;
+  skosxl:prefLabel isoiec80000:term-t13-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-1-0 ;
+  skos:definition """number of simultaneously busy resources in a particular pool of resources"""@en ;
+  skos:note """stem:[1 \" E\"] corresponds to the occupancy of one resource.
+
+The name \"erlang\" was given to the traffic intensity
+unit in 1946 by the International Telephone
+Consultative Committee (CCIF), in honour of the
+Danish mathematician, A. K. Erlang (1878-1929), who
+was the founder of traffic theory in telephony.
+
+See <<iec60050-715,droploc%locality:item=\"715-05-02\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-E ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic offered intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A_o"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-2" ;
+  skosxl:prefLabel isoiec80000:term-t13-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-2-0 ;
+  skos:definition """traffic intensity (<<t13-1,item 13-1>>) of the traffic that would have been generated by the users of a pool of resources if their use had not been limited by the size of the pool"""@en ;
+  skos:note """stem:[1 \" E\"] corresponds to the occupancy of one resource.
+
+See <<iec60050-715,droploc%locality:item=\"715-05-05\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-E ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "traffic carried intensity, traffic load"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-3" ;
+  skosxl:prefLabel isoiec80000:term-t13-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-3-0 ;
+  skos:definition """traffic intensity (<<t13-1,item 13-1>>) of the traffic served by a particular pool of resources"""@en ;
+  skos:note """stem:[1 \" E\"] corresponds to the occupancy of one resource.
+
+General practice is to estimate the traffic intensity as
+an average over a specified time interval, e.g. the
+busy hour.
+
+See <<iec60050-715,droploc%locality:item=\"715-05-04\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-E ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean queue length"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Omega)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-4" ;
+  skosxl:prefLabel isoiec80000:term-t13-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-4-1 ;
+  skos:definition """time average of queue length"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+See <<iec60050-171,droploc%locality:item=\"171-02-34\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "loss probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-5" ;
+  skosxl:prefLabel isoiec80000:term-t13-5-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-5-0 ;
+  skos:definition """probability for losing a call attempt"""@en ;
+  skos:note """For the unit one, see the <<intro>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "waiting probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-6" ;
+  skosxl:prefLabel isoiec80000:term-t13-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-6-0 ;
+  skos:definition """probability for waiting for a resource"""@en ;
+  skos:note """For the unit one, see the <<intro>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "call intensity, calling rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-7" ;
+  skosxl:prefLabel isoiec80000:term-t13-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-7-0 ;
+  skos:definition """number of call attempts over a specified time interval divided by the duration (ISO 80000-3:2019, item 3-9) of this interval"""@en ;
+  skos:note """See <<iec60050-715,droploc%locality:item=\"715-03-13\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "completed call intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-8" ;
+  skosxl:prefLabel isoiec80000:term-t13-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-8-0 ;
+  skos:definition """call intensity (<<t13-7,item 13-7>>) for the call attempts that result in the transmission of an answer signal"""@en ;
+  skos:note """For a definition of the complete call attempt,
+see <<iec60050-715,droploc%locality:item=\"715-03-11\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "storage capacity, storage size"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-9" ;
+  skosxl:prefLabel isoiec80000:term-t13-9-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-9-0 ;
+  skos:definition """amount of data that can be contained in a storage device, expressed as a number of specified data elements"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+The specified data elements depend on the
+organization of the storage device, for example,
+binary elements (also called \"bits\"), octets (also
+called \"bytes\"), words of a given number of bits,
+blocks. A subscript referring to a specified data
+element can be added to the symbol.
+
+[example]
+storage capacity for bits, stem:[M_{\"bit\"}] +
+storage capacity for octets, stem:[M_o] or stem:[M_B].
+
+For registers, the term \"register length\" is used with
+the same meaning.
+
+Although in this context the designation \"bit\", symbol
+bit, is not really a unit, it is often used like a unit, e.g.
+stem:[M_{\"bit\"} = 32000], where the unit one is implicit, is often
+written as stem:[M = 32000 \"unitsml(bit)\"]. Similarly, although the
+designation octet or byte, symbols o and B,
+respectively, are not units, they are often used like
+units, e.g., stem:[M_o = 4000] or stem:[M_B = 4000], where the unit
+one is implicit, are often written stem:[M = 4000] o or
+stem:[M = 4000 \" B\"].
+
+When used to express a storage capacity or an
+equivalent binary storage capacity, the bit and the
+octet (or byte) may be combined with SI prefixes or
+prefixes for binary multiples.
+
+In English, the name \"byte\", symbol B, is used as a
+synonym for \"octet\". Here, \"byte\" means an eight-bit
+byte. However, \"byte\" has been used for numbers of
+bits other than eight. To avoid the risk of confusion, it
+is strongly recommended that the name \"byte\" and
+the symbol B be used only for eight-bit bytes.
+
+The symbol B for byte is not international and is not
+to be confused with the symbol B for bel.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit ;
+  isoiec80000:hasUnit isoiec80000:unit-o ;
+  isoiec80000:hasUnit isoiec80000:unit-B ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent binary storage capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M_e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-10" ;
+  skosxl:prefLabel isoiec80000:term-t13-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-10-0 ;
+  skos:definition """stem:[M_e = \"lb\"\\ n]
+
+where stem:[n] is the number of possible states
+of the given device
+"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+The minimum storage capacity of a bit-organized
+storage device which would contain the amount of
+data in the given storage device is equal to the
+smallest integer greater than or equal to the
+equivalent binary storage capacity.
+
+When used to express a storage capacity or an
+equivalent binary storage capacity, the bit may be
+combined with SI prefixes or prefixes for binary
+multiples (see <<sec_4>>).
+
+In this context, \"bit\" is a special name as well as
+symbol for the coherent unit one. For the unit one,
+see the <<intro>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transfer rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-11" ;
+  skosxl:prefLabel isoiec80000:term-t13-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-11-1 ;
+  skos:definition """quotient of the number of specified data elements transferred in a time interval by the duration of this interval"""@en ;
+  skos:note """The symbol stem:[nu] is the Greek letter nu.
+
+A subscript referring to a specified data element can
+be added to the symbol.
+
+[example]
+digit rate, stem:[r_d] or stem:[nu_d] (see <<iec60050-702,droploc%locality:item=\"702-05-23\">> and
+<<iec60050-704,droploc%locality:item=\"704-16-06\">>); +
+transfer rate for octets (or bytes), stem:[r_o, r_B, nu_o] or stem:[nu_B];
+binary digit rate or bit rate (<<t13-13,item 13-13>>).
+
+In English, the name \"byte\", symbol B, is used as a
+synonym for \"octet\". Here \"byte\" means an eight-bit
+byte. See remarks in <<t13-9,item 13-9>>.
+
+The octet per second (or byte per second) may be
+combined with prefixes, for example kilooctet per
+second, symbol ko/s (or kilobyte per second, symbol
+kB/s).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-o/s ;
+  isoiec80000:hasUnit isoiec80000:unit-B/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period of data elements, period duration of data elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-12" ;
+  skosxl:prefLabel isoiec80000:term-t13-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-12-0 ;
+  skos:definition """stem:[T = 1 // r] where r is the transfer rate
+(<<t13-11,item 13-11>>) when the data elements are
+transmitted in series
+"""@en ;
+  skos:note """A subscript referring to a specified data element can
+be added to the symbol.
+
+[example]
+period of digits, stem:[T_d]; +
+period of octets (or bytes), stem:[T_o] or stem:[T_B].
+
+For the unit second, see <<iec60050-112,droploc%locality:item=\"112-02-04\">>.
+
+See <<iec60050-171,droploc%locality:item=\"171-06-05\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binary digit rate, bit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_{\"bit\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v_{\"bit\"})"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-13" ;
+  skosxl:prefLabel isoiec80000:term-t13-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-13-1 ;
+  skos:definition """transfer rate (<<t13-11,item 13-11>>) where the data elements are binary digits"""@en ;
+  skos:note """In English, the systematic name would be \"transfer
+rate for binary digits\".
+
+The bit per second may be combined with prefixes,
+for example megabit per second, symbol Mbit/s.
+
+See <<iec60050-704,droploc%locality:item=\"704-16-07\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-bit/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period of binary digits, period duration of binary digits, bit period"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_{\"bit\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-14" ;
+  skosxl:prefLabel isoiec80000:term-t13-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-14-0 ;
+  skos:definition """stem:[T_{\"bit\"} = 1 // r_{\"bit\"}] where stem:[r_{\"bit\"}] is the binary digit
+rate (<<t13-13,item 13-13>>) when the binary digits are
+transmitted in series
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-06-06\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent binary digit rate, equivalent bit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(nu_e)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-15" ;
+  skosxl:prefLabel isoiec80000:term-t13-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-15-1 ;
+  skos:definition """binary digit rate (<<t13-13,item 13-13>>) equivalent to a transfer rate (<<t13-11,item 13-11>>) for specified data elements"""@en ;
+  skos:note """In English, the systematic name would be \"equivalent
+binary transfer rate\".
+
+See <<iec60050-704,droploc%locality:item=\"704-17-05\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-bit/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulation rate, line digit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-16" ;
+  skosxl:prefLabel isoiec80000:term-t13-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-16-1 ;
+  skos:definition """inverse of the shortest duration of a signal element"""@en ;
+  skos:note """The term \"modulation rate\" is used in conventional
+telegraphy and data transmission. In isochronous
+digital transmission, the term \"line digit rate\" is
+generally used.
+
+stem:[1 \" Bd\" = s^{-1}]
+
+Baud is a special name for the second to the power of
+minus one for this quantity.
+
+The baud may be combined with prefixes, for example
+kilobaud, symbol kBd, megabaud, symbol MBd.
+
+See <<iec60050-704,droploc%locality:item=\"704-17-03\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-Bd ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quantizing distortion"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-17" ;
+  skosxl:prefLabel isoiec80000:term-t13-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-17-0 ;
+  skos:definition """distortion of a signal resulting from the process of quantizing an original signal when the values to be quantized are within the working range of the quantizer"""@en ;
+  skos:note """For the unit watt, see <<iec60050-113,droploc%locality:item=\"113-03-55\">>.
+
+See <<iec60050-704,droploc%locality:item=\"704-24-13\">>.
+
+The unit of the quantizing distortion is the same as
+the unit of the signal. This may not always be the
+watt.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "carrier power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P_C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-18" ;
+  skosxl:prefLabel isoiec80000:term-t13-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-18-1 ;
+  skos:definition """power supplied to the antenna feed line by a radio transmitter taken under the condition of no modulation"""@en ;
+  skos:note """See <<iec60050-713,droploc%locality:item=\"713-09-20\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "signal energy per binary digit"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_{\"bit\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-19" ;
+  skosxl:prefLabel isoiec80000:term-t13-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-19-0 ;
+  skos:definition """stem:[E_{\"bit\"} = P_C T_{\"bit\"}]
+where stem:[P_C] is carrier power (<<t13-18,item 13-18>>)
+and stem:[T_{\"bit\"}] is period of binary digits (item
+13-14)
+"""@en ;
+  skos:note """For the unit joule, see <<iec60050-113,droploc%locality:item=\"113-03-46\">>.
+
+See <<iec60050-171,droploc%locality:item=\"171-06-07\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "error probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-20" ;
+  skosxl:prefLabel isoiec80000:term-t13-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-20-0 ;
+  skos:definition """probability that a data element be incorrectly received"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+A subscript referring to a specified data element can
+be added to the symbol.
+
+[example]
+error probability for binary digits or bit error
+probability, stem:[P_{\"bit\"}]; +
+block error probability, stem:[P_{\"bl\"}].
+
+The measured value is designated as \"error ratio\",
+whereas \"error rate\" is deprecated, for example, \"bit
+error ratio\" (BER), \"block error ratio\".
+
+See <<iec60050-171,droploc%locality:item=\"171-06-08\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hamming distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d_h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-21" ;
+  skosxl:prefLabel isoiec80000:term-t13-21-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-21-0 ;
+  skos:definition """number of digit positions in which the corresponding digits of two words of the same length are different"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+See <<iec60050-721,droploc%locality:item=\"721-08-25\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "clock frequency, clock rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_{\"cl\"}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-22" ;
+  skosxl:prefLabel isoiec80000:term-t13-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-22-0 ;
+  skos:definition """frequency at which a clock oscillates"""@en ;
+  skos:note """For the unit hertz, see <<iec60050-103,droploc%locality:item=\"103-06-18\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Hz ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "decision content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D_a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-23" ;
+  skosxl:prefLabel isoiec80000:term-t13-23-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-23-0 ;
+  skos:definition """stem:[D_a = log_a\\ n]
+
+where stem:[a] is the number of possibilities at
+each decision and stem:[n] the number of
+events
+"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+When the same base is used for the same number of
+events then stem:[D_a = H_0] where stem:[H_0] is maximum entropy
+(<<t13-26,item 13-26>>).
+
+See <<iec60050-171,droploc%locality:item=\"171-07-10\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-24" ;
+  skosxl:prefLabel isoiec80000:term-t13-24-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-24-0 ;
+  skos:definition """stem:[I(x)] +
+stem:[= lb 1/p(x) \" Sh\"] +
+stem:[= lg 1/p(x) \" Hart\"] +
+stem:[= ln 1/p(x) \" nat\"]
+
+where stem:[p(x)] is the probability of event stem:[x]
+"""@en ;
+  skos:note """One shannon is the quantity value when the argument
+is equal to two.
+
+stem:[1 \" Sh\" ~~ 0,693 \"unitsml(nat)\" ~~ 0,301 \" Hart\"]
+
+One hartley is the quantity value when the argument
+is equal to ten.
+
+stem:[1 \" Hart\" ~~ 3,322 \" Sh\" ~~ 2,303 \"unitsml(nat)\"]
+
+One natural unit of information is the quantity value
+when the argument is equal to stem:[e], Euler's number.
+
+stem:[1 \"unitsml(nat)\" ~~ 1,433 \" Sh\" ~~ 0,434 \" Hart\"]
+
+See <<iec60050-171,droploc%locality:item=\"171-07-14\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-25" ;
+  skosxl:prefLabel isoiec80000:term-t13-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-25-0 ;
+  skos:definition """stem:[H(X) = sum_{i=1}^n p(X_i) I(X_i)] for the set
+stem:[X = {X_1, ..., X_n}]
+
+where stem:[p(X_i)] is the probability, and
+
+stem:[I(X_i)] is the information content of event
+stem:[X_i]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-15\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(H_{\"max\"})"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-26" ;
+  skosxl:prefLabel isoiec80000:term-t13-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-26-1 ;
+  skos:definition """maximum entropy occurs when
+
+stem:[p(X_i) = 1//n] for stem:[i = 1, ..., n]
+"""@en ;
+  skos:note """The maximum entropy is sometimes called \"decision
+content\" because the value is the same when the
+base is an integer, for the same number of events.
+See <<t13-23,item 13-23>>.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-16\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-27" ;
+  skosxl:prefLabel isoiec80000:term-t13-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-27-0 ;
+  skos:definition """stem:[H_r = H // H_0]
+
+where stem:[H] is entropy (<<t13-25,item 13-25>>) and stem:[H_0]
+is maximum entropy (<<t13-26,item 13-26>>)
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-17\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "redundancy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-28" ;
+  skosxl:prefLabel isoiec80000:term-t13-28-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-28-0 ;
+  skos:definition """stem:[R = H_0 - H]
+
+where H is entropy (<<t13-25,item 13-25>>) and stem:[H_0]
+is maximum entropy (<<t13-26,item 13-26>>)
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-18\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative redundancy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-29" ;
+  skosxl:prefLabel isoiec80000:term-t13-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-29-0 ;
+  skos:definition """stem:[r = R // H_0]
+
+where stem:[R] is redundancy (<<t13-28,item 13-28>>) and
+stem:[H_0] is maximum entropy (<<t13-26,item 13-26>>)
+"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-19\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "joint information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I(x,y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-30" ;
+  skosxl:prefLabel isoiec80000:term-t13-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-30-0 ;
+  skos:definition """stem:[I(x,y)]
+
+stem:[= \"lb\" {1}/{p(x,y)} \" Sh\"]
+
+stem:[= \"lg\" {1}/{p(x,y)} \" Hart\"]
+
+stem:[= \"ln\" {1}/{p(x,y)} \"unitsml(nat)\"]
+
+is the joint probability of events stem:[x] and stem:[y]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-20\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I(x\\|y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-31" ;
+  skosxl:prefLabel isoiec80000:term-t13-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-31-0 ;
+  skos:definition """information content (<<t13-2,item 13-2>>) of event stem:[x]
+under the condition that stem:[y] has occurred:
+
+stem:[I(x\\|y) = I(x,y) - I(y)]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-21\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conditional entropy, mean conditional information content, average conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H(x\\|y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-32" ;
+  skosxl:prefLabel isoiec80000:term-t13-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-32-0 ;
+  skos:definition """stem:[H(x\\|y) = sum_{i=1}^n sum_{j=1}^m p(x_i,y_j) I(x_i\\|y_j)]
+
+where stem:[p(x_i,y_j)] is the joint probability of
+events stem:[x_i] and stem:[y_j], and stem:[I(x_i\\|y_j)] is
+conditional information content (<<t13-31,item 13-31>>)
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-23\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivocation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_{\"+\"}(X\\|I)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-33" ;
+  skosxl:prefLabel isoiec80000:term-t13-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-33-0 ;
+  skos:definition """conditional entropy (<<t13-32,item 13-32>>) of a set stem:[X] of emitted characters given the set I of received characters"""@en ;
+  skos:note """Equivocation is a quantitative measure of the loss of
+information due to noise.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-24\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "irrelevance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_{\"-\"}(I\\|X)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-34" ;
+  skosxl:prefLabel isoiec80000:term-t13-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-34-0 ;
+  skos:definition """conditional entropy (<<t13-32,item 13-32>>) of a set stem:[I] of received characters
+given the set stem:[X] of emitted characters:
+
+stem:[H_{\"-\"}(I\\|X) = H_{\"+\"}(X\\|I) + H(I) - H(X)],
+
+where stem:[H_{\"+\"}(X\\|I)] is equivocation (<<t13-33,item 13-33>>)
+and stem:[H] is entropy (<<t13-25,item 13-25>>)
+"""@en ;
+  skos:note """Irrelevance is a quantitative measure of the
+information added to the emitted information owing to
+distortion.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-25\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "transinformation content, mutual information"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T(x,y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-35" ;
+  skosxl:prefLabel isoiec80000:term-t13-35-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-35-0 ;
+  skos:definition """stem:[T(x,y) = I(x) + I(y) - I(x,y)]
+
+where stem:[I(x)] and stem:[I(y)] are the information
+contents (<<t13-24,13-24>>) of events stem:[x] and stem:[y],
+respectively, and stem:[I(x,y)] is their joint
+information content (<<t13-30,item 13-30>>)
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-26\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean transinformation content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-36" ;
+  skosxl:prefLabel isoiec80000:term-t13-36-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-36-0 ;
+  skos:definition """stem:[T(X,Y) = sum_{i=1}^n sum_{j=1}^m p(x_i,y_j) T(x_i,y_j)]
+
+for the sets stem:[X = {x_1,...,x_n}],
+stem:[Y = {y_1,...,y_m}],
+
+where stem:[p(x_i,y_j)] is the joint probability of
+events stem:[x_i] and stem:[y_j], and stem:[T(x_i,y_j)] is their
+transinformation content (<<t13-35,item 13-35>>)
+"""@en ;
+  skos:note """In practice, the unit \"shannon per character\" is
+generally used, and sometimes the units \"hartley per
+character\" and \"natural unit per character\".
+
+See <<iec60050-171,droploc%locality:item=\"171-07-27\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "character mean entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-37 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-37" ;
+  skosxl:prefLabel isoiec80000:term-t13-37-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-37-0 ;
+  skos:definition """stem:[H' = lim_{m -> oo} H_m/m]
+
+where stem:[H_m] is the entropy (<<t13-25,item 13-25>>) of the set
+of all sequences of stem:[m] characters
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-28\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average information rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H^{**}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-38" ;
+  skosxl:prefLabel isoiec80000:term-t13-38-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-38-0 ;
+  skos:definition """stem:[H^{**} = H' // t(X)]
+
+where stem:[H'] is character mean entropy (<<t13-37,item 13-37>>) and stem:[t(X)] is the mean value of the duration of a character in the set stem:[X]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-29\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh/s ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart/s ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "character mean transinformation content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-39" ;
+  skosxl:prefLabel isoiec80000:term-t13-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-39-0 ;
+  skos:definition """stem:[T' = lim_{m -> oo} T_m/m]
+
+where stem:[T_m] is the mean transinformation content (<<t13-36,item 13-36>>) for all pairs of input and output sequences of stem:[m] characters
+"""@en ;
+  skos:note """In practice, the unit \"shannon per character\" is
+generally used, and sometimes the units \"hartley per
+character\" and \"natural unit per character\".
+
+See <<iec60050-171,droploc%locality:item=\"171-07-30\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "average transinformation rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T^{**}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-40" ;
+  skosxl:prefLabel isoiec80000:term-t13-40-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-40-0 ;
+  skos:definition """stem:[T^{**} = (T')/(sum_(i=1)^n sum_(j=1)^m p(x_i,y_j)t(x_i,y_j))]
+
+where stem:[T'] is character mean transinformation content (<<t13-39,item 13-39>>) and stem:[t(x_i, y_j)] is the mean duration of the pair of characters stem:[(x_i, y_j)] with joint probability stem:[p(x_i, y_j)]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-31\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh/s ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart/s ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "channel capacity per character"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-41" ;
+  skosxl:prefLabel isoiec80000:term-t13-41-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-41-0 ;
+  skos:definition """stem:[C' = maxT']
+
+where stem:[T'] is character mean transinformation content (<<t13-39,item 13-39>>)
+"""@en ;
+  skos:note """In practice, the unit \"shannon per character\" is generally used,
+and sometimes the units \"hartley per character\" and \"natural unit per character\".
+
+See <<iec60050-171,droploc%locality:item=\"171-07-32\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .
+
+isoiec80000:term-t13-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "channel time capacity; channel capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C^{**}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-42 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-42" ;
+  skosxl:prefLabel isoiec80000:term-t13-42-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-42-0 ;
+  skos:definition """stem:[C^{**} = maxT^{**}]
+
+where stem:[T^{**}] is average transinformation rate (<<t13-40,item 13-40>>)
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-33\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh/s ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart/s ;
+  isoiec80000:hasUnit isoiec80000:unit-nat/s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

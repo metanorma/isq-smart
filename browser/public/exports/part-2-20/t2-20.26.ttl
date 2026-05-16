@@ -1,0 +1,28 @@
+isoiec80000:term-t2-20.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modified Bessel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"I\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"K\"_nu(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.26 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.26" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.26-1 ;
+  skos:definition """modified Bessel function"""@en ;
+  skos:note """stem:[\"I\"_nu (z) = \"e\"^(-1//2 \"i\"nu pi)\"J\"_nu (\"e\"^(1//2 \"i\"pi_Z))]
+
+stem:[\"K\"_nu (z) = (\"i\"pi)/2 \"e\"^(1//2 nu pi) \"H\"_nu^((1)) (\"e\"^(1//2 \"i\"pi_Z))]
+
+(for stem:[nu in bb(sf(C))])
+
+Solution of stem:[z^2 y'' + zy' - (z^2+nu^2)y=0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

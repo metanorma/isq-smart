@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.40-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Taylor number <momentum transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-4.40-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ta",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-4.40",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-4.40",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-4.40-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-4.40-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between centrifugal force and viscous force of a rotating shaft, expressed by\n\nstem:[Ta = 4 omega^2 l^4 // sf(ii(v))^2]; where\n\nstem:[omega]:: is angular velocity (<<iso80000-3>>) of rotation,\nstem:[l]:: is length (<<iso80000-3>>) perpendicular to the rotation axis, and\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Sometimes the square root of this quantity is wrongly used.\n\nThe Taylor number for a rotating shaft relative to an annulus is given by\n\nstem:[Ta_\"a\" = (omega//sf(ii(v)))^2 ra^3]; where\n\nstem:[omega]:: is angular velocity (<<iso80000-3>>) of the shaft,\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),\nstem:[r = (r_2+r_1)//2]:: is mean radius (<<iso80000-3>>) of the annulus, and\nstem:[a = (r_2-r_1)]:: is width of the annulus, where\nstem:[r_1]::: is inner radius of the annulus, and\nstem:[r_2]::: is outer radius of the annulus.\n\nSometimes the square root of this quantity is used; this use is deprecated.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-4"
+      }
+    }
+  ]
+}

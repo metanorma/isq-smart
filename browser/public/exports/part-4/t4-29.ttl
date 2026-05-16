@@ -1,0 +1,24 @@
+isoiec80000:term-t4-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "efficiency <mechanics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-29" ;
+  skosxl:prefLabel isoiec80000:term-t4-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-29-0 ;
+  skos:definition """quotient of output power stem:[P_\"out\"] (<<t4-27>>) from a system and input
+power stem:[P_\"in\"] (<<t4-27>>) to this system:
+
+stem:[eta=P_\"out\"/P_\"in\"]
+"""@en ;
+  skos:note """The system must be specified.
+
+This quantity is often expressed by the unit percent, symbol %.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

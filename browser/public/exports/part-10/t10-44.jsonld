@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-44-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "particle fluence rate",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-44-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "ii(Phi)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-44",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-44",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-44-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-44-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "differential quotient of fluence stem:[ii(Phi)] (<<t10-43>>) with respect to time (<<iso80000-3>>):\n\n[stem%unnumbered]\n++++\nii(Phi) = (\"d\"ii(Phi))/(\"d\"t)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The word \"particle\" is usually replaced by the name of a specific particle, for example proton fluence rate.\n\nThe distribution function expressed in terms of speed and energy, stem:[ii(Phi)_nu] and stem:[ii(Phi)_E], are related to by:\n\n[stem%unnumbered]\n++++\nii(Phi) = int ii(Phi)_nu \"d\"nu = int ii(Phi)_E \"d\"E.\n++++\n\nThis quantity has also been termed particle flux density. Because the word \"density\" has several connotations, the term \"fluence rate\" is preferred. For a radiation field composed of particles of velocity stem:[nu], the fluence rate is equal to stem:[n*nu] where stem:[n] is the particle number density.\n\nSee Remarks for <<t10-43>>.\n\nIn report 85a of the ICRU a definition with an equivalent meaning is given as:\n\nThe fluence rate, stem:[ii(Phi)], is the quotient of stem:[\"d\"ii(Phi)] and stem:[\"d\"t], where stem:[\"d\"ii(Phi)] is the increment of the fluence in the time interval stem:[\"d\"t]:\n\n[stem%unnumbered]\n++++\nii(Phi) = (\"d\"ii(Phi))/(\"d\"t)\n++++\n\nSee also <<cls-0.3>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)*s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

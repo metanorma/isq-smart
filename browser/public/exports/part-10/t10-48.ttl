@@ -1,0 +1,43 @@
+isoiec80000:term-t10-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle current density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-48-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-48-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(S))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-48 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-48" ;
+  skosxl:prefLabel isoiec80000:term-t10-48-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-48-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-48-1 ;
+  skos:definition """vector whose component in direction of an area normal is given by:
+
+[stem%unnumbered]
+++++
+bb(ii(J))_n = int ii(Phi)_(ii(Omega)) (theta,alpha) \"cos\" (ii(theta)) \"d\"ii(Omega)
+++++
+
+where
+
+stem:[ii(Phi)_(ii(Omega)) (ii(theta),alpha)]:: is the directional distribution of the particle fluence rate (<<t10-44>>), and
+stem:[ii(theta)] and stem:[alpha]:: are polar and azimuthal angles, respectively
+"""@en ;
+  skos:note """Usually the word \"particle\" is replaced by the name of a specific particle, for example proton current.
+
+Symbol stem:[bb(ii(S))] is recommended when there is a possibility of confusion with the symbol stem:[bb(ii(J))] for electric current density. For neutron current, the symbol stem:[bb(ii(J))] is generally used. The distribution functions expressed in terms of speed and energy, stem:[bb(ii(J))_nu] and stem:[bb(ii(J))_\"E\"], are related to stem:[bb(ii(J))] by:
+
+[stem%unnumbered]
+++++
+bb(ii(J)) = int bb(ii(J))_nu \"d\"nu = int bb(ii(J))_\"E\" \"d\"E.
+++++
+
+The directional distribution of the particle fluence rate is also denoted as particle radiance.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Prandtl magnetic number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Pr_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-8.10",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-8.10",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-8.10-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-8.10-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of kinematic viscosity and magnetic viscosity in an electrically conducting liquid, expressed by\n\nstem:[Pr_\"m\" = sf(ii(v)) sigma mu]; where\n\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),\nstem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and\nstem:[mu]:: is magnetic permeability (<<iec80000-6>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The quantity stem:[sf(ii(v))_\"m\" = 1//(mu sigma)] is called magnetic viscosity or magnetic diffusivity. See <<t11-8.11>>.\n\nThe Prandtl magnetic number is also given by\n\nstem:[Pr_\"m\" = Rm//Re]; where\n\nstem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>).\n\nThis number is also called magnetic Prandtl number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-8"
+      }
+    }
+  ]
+}

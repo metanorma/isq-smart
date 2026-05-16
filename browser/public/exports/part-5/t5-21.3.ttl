@@ -1,0 +1,25 @@
+isoiec80000:term-t5-21.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific enthalpy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-21.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "h"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-21.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-21.3" ;
+  skosxl:prefLabel isoiec80000:term-t5-21.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-21.3-0 ;
+  skos:definition """quotient of enthalpy and mass:
+
+[stem%unnumbered]
+++++
+h = H/m
+++++
+
+where stem:[H] is enthalpy (<<t5-20.3>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

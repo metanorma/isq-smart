@@ -1,0 +1,29 @@
+isoiec80000:term-t9-35.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molecular partition function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-35.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "partition function of a molecule"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-35.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-35.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-35.4" ;
+  skosxl:prefLabel isoiec80000:term-t9-35.4-0 ;
+  skosxl:altLabel isoiec80000:term-t9-35.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-35.4-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+q = sum_r \"exp\" ((-epsilon_r)/(kT))
+++++
+
+where stem:[epsilon_r] is the energy (<<iso80000-5>>) of the stem:[r]-th level of the molecule consistent with given volume (<<iso80000-3>>) and external fields, stem:[k] is the Boltzmann constant (<<iso80000-1>>), and stem:[T] is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

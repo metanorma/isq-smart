@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Richardson number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ri"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.30" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.30-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.30-0 ;
+  skos:definition """quotient of potential energy and kinetic energy for a falling body, expressed by
+
+stem:[Ri = gh//v^2]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[h]:: is characteristic height (<<iso80000-3>>), and
+stem:[v]:: is characteristic speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """In geophysics differences of these quantities are of interest."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

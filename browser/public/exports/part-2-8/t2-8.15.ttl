@@ -1,0 +1,19 @@
+isoiec80000:term-t2-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "infinity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "oo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.15-0 ;
+  skos:definition """infinity"""@en ;
+  skos:note """This symbol does not denote a number but is often part of various expressions dealing with limits.
+
+The notations stem:[+oo, -oo] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .

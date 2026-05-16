@@ -1,0 +1,30 @@
+isoiec80000:term-t8-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sound exposure level"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L_E"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-16" ;
+  skosxl:prefLabel isoiec80000:term-t8-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-16-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+L_E = 10 \"lg\" E/E_0 \" dB\"
+++++
+
+where stem:[E] is sound exposure (<<t8-11>>) and stem:[E_0] is the reference value of sound exposure
+"""@en ;
+  skos:note """For sound in air and other gases, the reference value of sound exposure is given by stem:[E_0 = 400 \"unitsml(uPa^2*s)\"]. For sound in water and other liquids, the reference value of sound exposure is given by stem:[E_0 = 1 \"unitsml(uPa^2*s)\"]. When stating a value of sound exposure level, the reference value shall be specified.
+
+The value of sound exposure level depends on the selected frequency range and time duration. When stating a value of sound exposure level, the frequency range and time duration shall be specified.
+
+In accordance with <<iso80000-1>>, any attachment to the unit symbol as a means of giving information about the special nature of the quantity or context of measurement under consideration is not permitted. If specific frequency and time weightings as specified in <<iec61672-1>> or specific frequency bands or time duration are applied, this should be indicated by appropriate subscripts to the quantity symbol.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["dB"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

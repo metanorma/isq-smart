@@ -1,0 +1,5228 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-1.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "speed of light in a medium",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-1.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "c",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-1.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-1.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-1.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-1.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "phase speed of an electromagnetic wave at a given point in a medium",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "See also <<iso80000-3>>.\n\nThe value of the speed of light in a medium can depend on the frequency, polarization, and direction.\n\nFor the definition of the speed of electromagnetic waves in vacuum, stem:[c_0], see <<iso80000-1>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m*s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-1.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "refractive index",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-1.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "n",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-1.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-1.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-1.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-1.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of speed of light in vacuum (<<iso80000-1>>) and speed of light in a medium (<<t7-1.1>>)",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The value of the refractive index can depend on the frequency, polarization, and direction.\n\nThe refractive index is expressed by stem:[n = c_0//c], where stem:[c_0] is the speed of light in vacuum and stem:[c] is the speed of light in the medium.\n\nFor a medium with absorption, the complex refractive index stem:[n] is defined by\n\n[stem%unnumbered]\n++++\nn = n + \"i\"k\n++++\n\nwhere stem:[k] is spectral absorption index (<<iec60050-845>>) and stem:[\"i\"] is imaginary unit.\n\nThe refractivity is expressed by stem:[n-1], where stem:[n] is refractive index.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-2.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant energy <electromagnetism>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "W",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "U",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-3",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Q)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-2.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-2.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-2.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-2"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.1-3"
+        }
+      ],
+      "skos:definition": {
+        "@value": "energy (<<iso80000-5>>) emitted, transferred or received in form of electromagnetic waves",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Radiant energy can be expressed by the time integral of radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], over a given duration (<<iso80000-3>>), stem:[Delta t]\n\n[stem%unnumbered]\n++++\nQ_\"e\" = int_(Delta t) Phi_\"e\" \"d\"t\n++++\n\nRadiant energy is expressed either as a function of wavelength (<<iso80000-3>>), stem:[lambda], as a function of frequency (<<iso80000-3>>), stem:[nu], or as a function of wavenumber, stem:[sigma]. (See also <<cls-0.1>>.)\n\nThe corresponding photometric quantity is \"luminous energy\" (<<t7-12>>). The corresponding quantity for photons is \"photon energy\" (<<t7-19.2>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-2.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant energy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "W_lambda",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "U_lambda",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-3",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Q_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-2.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-2.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-2.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-2"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-2.2-3"
+        }
+      ],
+      "skos:definition": {
+        "@value": "spectral density of radiant energy, expressed by\n\n[stem%unnumbered]\n++++\nQ_(\"e\",lambda) = (\"d\"Q_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[Q_\"e\"] is radiant energy (<<t7-2.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) radiant energy is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nQ_\"e\" = int_(lambda_1)^(lambda_2) Q_(\"e\",lambda) \"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/nm"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant energy density",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "w",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(rho_\"e\")",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-3.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-3.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "volumetric density of radiant energy, expressed by\n\n[stem%unnumbered]\n++++\nw = (\"d\"Q_\"e\")/(\"d\"V)\n++++\n\nwhere stem:[Q_\"e\"] is radiant energy (<<t7-2.1>>) in an elementary three-dimensional domain and stem:[V] is the volume (<<iso80000-3>>) of that domain\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Radiant energy density within a Planckian radiator is given by\n\n[stem%unnumbered]\n++++\nw = (4 sigma)/c_0 T^4\n++++\n\nwhere stem:[sigma] is the Stefan-Boltzmann constant (<<iso80000-1>>), stem:[c_0] is speed of light in vacuum (<<iso80000-1>>) and stem:[T] is thermodynamic temperature (<<iso80000-5>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/m^3"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant energy density in terms of wavelength",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "w_lambda",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-3.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-3.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "change of radiant energy density with wavelength, expressed by\n\n[stem%unnumbered]\n++++\nw_lambda = (\"d\"w)/(\"d\"lambda)\n++++\n\nwhere stem:[w] is radiant energy density (<<t7-3.1>>) as a function of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Spectral radiant energy density within a Planckian radiator is given by stem:[w_lambda = 8 pi h c_0 * f(lambda, T)], where stem:[h] is the Planck constant (<<iso80000-1>>), stem:[c_0] is speed of light in vacuum (<<iso80000-1>>), stem:[T] is thermodynamic temperature (<<iso80000-5>) and\n\n[stem%unnumbered]\n++++\nf(lambda,T) = (lambda^(-5))/(\"exp\"(c_2 lambda^(-1)T^(-1))-1)\n++++\n\nFor the radiation constant stem:[c_2] in stem:[f(lambda, T)], see <<iso80000-1>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/(m^3*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-2)*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant energy density in terms of wavenumber",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "w_(tilde nu)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.3-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "rho_(tilde nu)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-3.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-3.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.3-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.3-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "change of radiant energy density with wavenumber, expressed by\n\n[stem%unnumbered]\n++++\nw_(tilde nu) = (\"d\"w)/(\"d\"tilde nu)\n++++\n\nwhere stem:[w] is radiant energy density (<<t7-3.1>>) as a function of wavenumber stem:[tilde nu] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant flux",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant power",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Phi_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "P_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.1-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Phi, P)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-4.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-4.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.1-2"
+        }
+      ],
+      "skos:definition": {
+        "@value": "change in radiant energy with time, expressed by\n\n[stem%unnumbered]\n++++\nPhi_\"e\" = (\"d\"Q_\"e\")/(\"d\"t)\n++++\n\nwhere stem:[Q_\"e\"] is the radiant energy (<<t7-2.1>>) emitted, transferred or received and stem:[t] is time (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding photometric quantity is \"luminous flux\" (<<t7-13>>). The corresponding quantity for photons is \"photon flux\" (<<t7-20>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant flux",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant power",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Phi_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "P_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.2-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Phi_lambda, P_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-4.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-4.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-4.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-4.2-2"
+        }
+      ],
+      "skos:definition": {
+        "@value": "spectral density of radiant flux, expressed by\n\n[stem%unnumbered]\n++++\nPhi_(\"e\",lambda) = (\"d\" Phi_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) radiant flux is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nPhi_\"e\" = int_(lambda_1)^(lambda_2) Phi_(\"e\",lambda) \"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/nm"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-5.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant intensity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "I_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(I)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-5.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-5.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-5.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiant flux with respect to solid angle in a specified direction, expressed by\n\n[stem%unnumbered]\n++++\nI_\"e\" = (\"d\"Phi_\"e\")/(\"d\"Omega)\n++++\n\nwhere stem:[Phi_\"e\"] is the radiant flux (<<t7-4.1>>) emitted in a specified direction, and stem:[Omega] is the solid angle (<<iso80000-3>>) containing that direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The definition holds strictly only for a point source.\n\nThe distribution of the radiant intensities as a function of the direction of emission, e.g. given by the polar angles stem:[(vartheta,varphi)], is used to determine the radiant flux (<<t7-4.1>>) within a certain solid angle (<<iso80000-3>>), stem:[Omega], of a source:\n\n[stem%unnumbered]\n++++\nPhi_\"e\" = &#8748;_Omega I_\"e\" (vartheta,varphi) \"sin\" vartheta \"d\" varphi \"d\" vartheta\n++++\n\nThe corresponding photometric quantity is \"luminous intensity\" (<<t7-14>>). The corresponding quantity for photons is \"photon intensity\" (<<t7-21>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/sr"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-3)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-5.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant intensity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "I_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(I_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-5.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-5.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-5.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-5.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "spectral density of radiant intensity, expressed by\n\n[stem%unnumbered]\n++++\nI_(\"e\",lambda) = (\"d\"I_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[I_\"e\"] is radiant intensity (<<t7-5.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) radiant intensity is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nI_\"e\" = int_(lambda_1)^(lambda_2) I_(\"e\",lambda) \"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/(sr*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m*s^(-3)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-6.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "L_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(L)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-6.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-6.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-6.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiant intensity with respect to projected area in a specified direction at a specified point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nL_\"e\" = (\"d\"l_\"e\")/(\"d\"A) 1/(\"cos\"alpha)\n++++\n\nwhere stem:[I_\"e\"] is radiant intensity (<<t7-5.1>>), A is area (<<iso80000-3>>), and stem:[alpha] is the angle between the normal to the surface at the specified point and the specified direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "See also <<cls-0.1>>.\n\nFor Planckian radiation,\n\n[stem%unnumbered]\n++++\nL_\"e\" = sigma/pi T^4\n++++\n\nwhere stem:[T] is thermodynamic temperature (<<iso80000-5>>) and stem:[sigma] is the Stefan-Boltzmann constant (<<iso80000-1>>).\n\nThe corresponding photometric quantity is \"luminance\" (<<t7-15>>). The corresponding quantity for photons is \"photon radiance\" (<<t7-22>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/(sr*m^2)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*s^(-3)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-6.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "L_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(L_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-6.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-6.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-6.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-6.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiance with respect to wavelength, expressed by\n\n[stem%unnumbered]\n++++\nL_(\"e\",lambda) = (\"d\"L_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[L_\"e\"] is radiance (<<t7-6.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For Planckian radiation,\n\n[stem%unnumbered]\n++++\nL_(\"e\",lambda)(lambda) = (c(lambda))/(4pi) omega_lambda (lambda) = hc_0^2*f(lambda,T)\n++++\n\nwhere stem:[c(lambda)] is phase speed (<<iso80000-3>>) of electromagnetic radiation of a wavelength (<<iso80000-3>>) stem:[lambda] in a given medium, stem:[omega_lambda(lambda)] is spectral radiant energy density in terms of wavelength, stem:[c_0] is speed of light in vacuum (<<iso80000-1>>), stem:[h] is the Planck constant (<<iso80000-1>>), and\n\n[stem%unnumbered]\n++++\nf(lambda,T) = (lambda^(-5))/(\"exp\"(c_2 lambda^(-1)T^(-1))-1)\n++++\n\nwhere the radiation constant stem:[c_2 = hc//k].\n\nThe integral of (total) radiance is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nL_\"e\" = int_(lambda_1)^(lambda_2)L_(\"e\",lambda)(lambda)\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/(sr*m^2*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-3)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "irradiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "E_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(E)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-7.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-7.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-7.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident radiant flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nE_\"e\" = (\"d\"Phi_\"e\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>) and stem:[A] is the area (<<iso80000-3>>) on which the radiant flux is incident\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding photometric quantity is \"illuminance\" (<<t7-16>>). The corresponding quantity for photons is \"photon irradiance\" (<<t7-23>>).\n\nThe quantity \"spherical irradiance\" is defined by the mean value of irradiance on the outer curved surface of a very small (real or imaginary) sphere at a point in space.\n\nIt can be expressed by\n\n[stem%unnumbered]\n++++\nE_(\"e\",0) = int_(4pi)L_\"e\" \"d\"Omega\n++++\n\nwhere stem:[Omega] is solid angle (<<iso80000-3>>) and stem:[L_\"e\"] is radiance (<<t7-6.1>>).\n\n(See <<cie017,locality:term=\"17-21-054\">>.)\n\nIt can be expressed by the quotient of the radiant flux (<<t7-4.1>>) of all the radiation incident on the outer surface of an infinitely small sphere centred at the specified point and the area (<<iso80000-3>>) of the diametrical cross-section of that sphere.\n\nSpherical irradiance is also called \"fluence rate\" or \"radiant fluence rate\".\n\nThe corresponding photometric quantity to spherical irradiance is called \"spherical illuminance\".\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-7.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral irradiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "E_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(E_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-7.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-7.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-7.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-7.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of irradiance with respect to wavelength, expressed by\n\n[stem%unnumbered]\n++++\nE_(\"e\",lambda) = (\"d\"E_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[E_\"e\"] is irradiance (<<t7-7.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) irradiance is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nE_\"e\" = int_(lambda_1)^(lambda_2) E_(\"e\",lambda)\"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/(m^2*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-8.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant exitance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-8.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: radiant emittance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "M_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(M)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-8.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-8.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-8.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-8.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of exiting radiant flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nM_\"e\" = (\"d\"Phi_\"e\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>) and stem:[A] is the area (<<iso80000-3>>) from which the radiant flux leaves\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For Planckian radiation, stem:[M_\"e\" = sigma T^4] where stem:[T] is thermodynamic temperature (<<iso80000-5>>) and stem:[sigma] is the Stefan-Boltzmann constant (<<iso80000-1>>).\n\nThe corresponding photometric quantity is \"luminous exitance\" (<<t7-17>>). The corresponding quantity for photons is \"photon exitance\" (<<t7-24>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-8.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant exitance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "M_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(M_(lambda))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-8.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-8.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-8.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-8.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiant exitance with respect to wavelength, expressed by\n\n[stem%unnumbered]\n++++\nM_(\"e\",lambda) = (\"d\"M_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[M_\"e\"] is radiant exitance (<<t7-8.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) radiant exitance is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nM_\"e\" = int_(lambda_1)^(lambda_2) M_(\"e\",lambda)\"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-W/(m^2*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-3)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-9.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiant exposure",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(H)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-9.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-9.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-9.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident radiant energy with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nH_\"e\" = (\"d\"Q_\"e\")/(\"d\"A)\n++++\n\nwhere stem:[Q_\"e\"] is radiant energy (<<t7-2.1>>) and stem:[A] is the area on which the radiant energy is incident (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding photometric quantity is \"luminous exposure\" (<<t7-18>>). The corresponding quantity for photons is \"photon exposure\" (<<t7-25>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-9.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant exposure",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_(\"e\",lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(H_lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-9.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-9.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-9.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-9.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of radiant exposure with respect to wavelength, expressed by\n\n[stem%unnumbered]\n++++\nH_(\"e\",lambda) = (\"d\"H_\"e\")/(\"d\"lambda)\n++++\n\nwhere stem:[H_\"e\"] is radiant exposure (<<t7-9.1>>) in terms of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The integral of (total) radiant exposure is determined by the wavelength interval stem:[(lambda_1, lambda_2)] under consideration:\n\n[stem%unnumbered]\n++++\nH_\"e\" = int_(lambda_1)^(lambda_2) H_(\"e\",lambda) \"d\"lambda\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/(m^2*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-1)*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-10.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous efficiency <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-10.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "V",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-10.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-10.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-10.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-10.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of radiant flux (<<t7-4.1>>) weighted by the spectral luminous efficiency (<<t7-10.2>>) and the corresponding radiant flux for a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous efficiency for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nV = (int_0^(oo)Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo)Phi_(\"e\",lambda)(lambda)\"d\"lambda) = K/K_\"m\"\n++++\n\nwhere stem:[Phi_(\"e\",lambda)] is spectral radiant flux (<<t7-4.2>>), stem:[V(lambda)] is spectral luminous efficiency, stem:[lambda] is wavelength, stem:[K] is luminous efficacy of radiation (<<t7-11.1>>), and stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>).\n\nFor scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.\n\nSymbols for different photometric conditions:\n\nstem:[V], <for photopic vision>; stem:[V'], <for scotopic vision>; stem:[V_\"mes;m\"], <for mesopic vision>; stem:[V_(10)], <for the CIE 10&deg; photopic photometric observer>; stem:[V_\"M\"], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-10.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral luminous efficiency <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-10.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "V(lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-10.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-10.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-10.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-10.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the radiant flux (<<t7-4.1>>) at wavelength stem:[lambda_\"m\"] and that at wavelength stem:[lambda], such that both produce equally intense luminous sensations for a specified photometric condition and stem:[lambda_\"m\"] is chosen so that the maximum value of this quotient is equal to 1",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The spectral luminous efficiency of the human eye depends on a number of factors, particularly the state of visual adaptation and the size and position of the source in the visual field. The photometric condition should be specified (e.g. photopic, scotopic, mesopic). If it is not specified, photopic vision is assumed and the symbol stem:[V(lambda)] is used.\n\nFor scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.\n\nSymbols for different photometric conditions:\n\nstem:[V(lambda)], <for photopic vision>; stem:[V'(lambda)], <for scotopic vision>; stem:[V_\"mes;m\"(lambda)], <for mesopic vision>; stem:[V_(10)(lambda)], <for the CIE 10&deg; photopic photometric observer>; stem:[V_\"M\"(lambda)], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous efficacy of radiation <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "K",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-11.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-11.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of luminous flux (<<t7-13>>) and the corresponding radiant flux (<<t7-4.1>>) for a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous efficacy of radiation for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nK = (Phi_\"v\")/(Phi_\"e\")\n++++\n\nwhere stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>).\n\nFor scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.\n\nSymbols for different photometric conditions:\n\nstem:[K], <for photopic vision>; stem:[K'], <for scotopic vision>; stem:[K_(\"mes\";m)], <for mesopic vision>; stem:[K_(10)], <for the CIE 10&deg; photopic photometric observer>; stem:[K_\"M\"], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/W"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral luminous efficacy <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "K(lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-11.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-11.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "product of spectral luminous efficiency (<<t7-10.2>>) and maximum luminous efficacy (<<t7-11.3>>) for a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Spectral luminous efficacy for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nK(lambda) = K_\"m\" V(lambda)\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>) and stem:[lambda] is wavelength.\n\nFor scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.\n\nSymbols for different photometric conditions:\n\nstem:[K(lambda)], <for photopic vision>; stem:[K'(lambda)], <for scotopic vision>; stem:[K_\"mes;m\"(lambda)], <for mesopic vision>; stem:[K_(10)(lambda)], <for the CIE 10&deg; photopic photometric observer>; stem:[K_\"M\"(lambda)], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/W"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "maximum luminous efficacy <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "K_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-11.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-11.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "maximum value of spectral luminous efficacy for a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "See also <<cls-0.4>> and <<cls-0.5>>.\n\nThe value of maximum luminous efficacy for photopic vision is calculated by\n\n[stem%unnumbered]\n++++\nK_\"m\" = (683)/(V(lambda_\"cd\")) \"unitsml(cd*sr*W^(-1))\" ~~ 683 \"unitsml(lm*W^(-1))\"\n++++\n\nwhere stem:[V(lambda)] is the spectral luminous efficiency for photopic vision and stem:[lambda_\"cd\"] is the wavelength in air corresponding to the frequency stem:[540*10^(12) \"unitsml(Hz)\"] specified in the definition of the SI unit candela.\n\nSymbols for different photometric conditions:\n\nstem:[K_\"m\"], <for photopic vision>; stem:[K'_\"m\"], <for scotopic vision>; stem:[K_\"m,mes;m\"], <for mesopic vision>; stem:[K_(\"m\",10)], <for the CIE 10&deg; photopic photometric observer>; stem:[K_\"m,M\"], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/W"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous efficacy of a source",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "eta_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.4-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(eta)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-11.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-11.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.4-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.4-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the luminous flux emitted and the power consumed by the source, expressed by\n\n[stem%unnumbered]\n++++\neta_\"v\" = (Phi_\"v\")/P\n++++\n\nwhere stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[P] is the power (<<iso80000-4>>) consumed by the source\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/W"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous energy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: quantity of light",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Q)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-12",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-12",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-12-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-12-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "energy of electromagnetic waves weighted by the spectral luminous efficiency (<<t7-10.2>>) multiplied by maximum luminous efficacy (<<t7-11.3>>) of a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous energy for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nQ_\"v\" = K_\"m\" int_0^(oo) Q_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[Q_(\"e\",lambda)(lambda)] is the spectral radiant energy (<<t7-2.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>), and stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>).\n\nLuminous energy can be emitted, transferred or received.\n\nLuminous energy can be expressed by the time integral of the luminous flux (<<t7-13>>), stem:[Phi_\"v\"], over a given duration (<<iso80000-3>>), stem:[Delta t]\n\n[stem%unnumbered]\n++++\nQ_\"v\" = int_(Delta t) Phi_\"v\" \"d\"t\n++++\n\nThe corresponding radiometric quantity is \"radiant energy\" (<<t7-2.1>>). The corresponding quantity for photons is \"photon energy\" (<<t7-19.2>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm*s"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*s"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous flux",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Phi_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Phi)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-13",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-13",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-13-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-13-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "change in luminous energy with time, expressed by\n\n[stem%unnumbered]\n++++\nPhi_\"v\" = (\"d\"Q_\"v\")/(\"d\"t)\n++++\n\nwhere stem:[Q_\"v\"] is the luminous energy (<<t7-12>>) emitted, transferred or received and stem:[t] is time (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous flux is a quantity derived from the radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], by evaluating the radiation according to its action upon the CIE standard photometric observer. (See <<cie017,locality:term=17-738>>.)\n\nLuminous flux can be derived from the spectral radiant flux distribution by\n\n[stem%unnumbered]\n++++\nPhi_\"v\" = K_\"m\" int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda) \"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[Phi_(\"e\",lambda)(lambda)] is spectral radiant flux (<<t7-4.2>>), stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>) and stem:[lambda] is wavelength (<<iso80000-3>>).\n\nThe corresponding radiometric quantity is \"radiant flux\" (<<t7-4.1>>). The corresponding quantity for photons is \"photon flux\" (<<t7-20>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous intensity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "I_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-14-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(I)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-14",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-14",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-14-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-14-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-14-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of luminous flux with respect to solid angle in a specified direction, expressed by\n\n[stem%unnumbered]\n++++\nI_\"v\" = (\"d\"Phi_\"v\")/(\"d\"Omega)\n++++\n\nwhere stem:[Phi_\"v\"] is the luminous flux (<<t7-13>>) emitted in a specified direction, and stem:[Omega] is the solid angle (<<iso80000-3>>) containing that direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The definition holds strictly only for a point source.\n\nThe distribution of the luminous intensities as a function of the direction of emission, e.g. given by the polar angles stem:[(vartheta,varphi)], is used to determine the luminous flux (<<t7-13>>) within a certain solid angle (<<iso80000-3>>) stem:[Omega] of a source:\n\n[stem%unnumbered]\n++++\nPhi_\"v\" = &#8748;_Omega I_\"v\" (vartheta,varphi)\"sin\" vartheta \"d\"varphi \"d\"vartheta\n++++\n\nLuminous intensity can be derived from the spectral radiant intensity distribution by\n\n[stem%unnumbered]\n++++\nI_\"v\" = K_\"m\" int_0^(oo) I_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[I_(\"e\",lambda)(lambda)] is the spectral radiant intensity (<<t7-5.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nThe corresponding radiometric quantity is \"radiant intensity\" (<<t7-5.1>>). The corresponding quantity for photons is \"photon intensity\" (<<t7-21>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-cd"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "L_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-15-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(L)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-15",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-15",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-15-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-15-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-15-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of luminous intensity with respect to projected area in a specified direction at a specified point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nL_\"v\" = (\"d\"I_\"v\")/(\"d\"A) 1/(\"cos\"alpha)\n++++\n\nwhere stem:[I_\"v\"] is luminous intensity (<<t7-14>>), stem:[A] is area (<<iso80000-3>>) and stem:[alpha] is the angle between the normal to the surface at the specified point and the specified direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminance can be derived from the spectral radiance distribution by\n\n[stem%unnumbered]\n++++\nL_\"v\" = K_\"m\" int_0^(oo) L_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[L_(\"e\",lambda)(lambda)] is the spectral radiance (<<t7-6.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>). See also <<cls-0.1>>.\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.\n\nThe corresponding radiometric quantity is \"radiance\" (<<t7-6.1>>). The corresponding quantity for photons is \"photon radiance\" (<<t7-22>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-cd*m^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "illuminance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "E_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-16-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(E)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-16",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-16",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-16-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-16-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-16-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident luminous flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nE_\"v\" = (\"d\"Phi_\"v\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[A] is the area (<<iso80000-3>>) on which the luminous flux is incident\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Illuminance can be derived from the spectral irradiance distribution by\n\n[stem%unnumbered]\n++++\nE_\"v\" = K_\"m\" int_0^(oo) E_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[E_(\"e\",lambda)(lambda)] is the spectral irradiance (<<t7-7.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.\n\nThe corresponding radiometric quantity is \"irradiance\" (<<t7-7.1>>). The corresponding quantity for photons is \"photon irradiance\" (<<t7-23>>).\n\nThe quantity \"spherical illuminance\" is defined by the mean value of illuminance on the outer curved surface of a very small (real or imaginary) sphere at a point in space.\n\nIt can be expressed by\n\n[stem%unnumbered]\n++++\nE_(\"v\",0) = int_(4pi)L_\"v\"\"d\"Omega\n++++\n\nwhere stem:[Omega] is solid angle (<<iso80000-3>>) and stem:[L_\"v\"] is luminance (<<t7-15>>).\n\nIt can be expressed by the quotient of the luminous flux (<<t7-13>>) of all the light incident on the outer surface of an infinitely small sphere centred at the given point, and the area (<<iso80000-3>>) of the diametrical cross-section of that sphere.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lx"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*m^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous exitance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "M_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(M)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-17",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-17",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-17-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-17-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of exiting luminous flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nM_\"v\" = (\"d\"Phi_\"v\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[A] is the area (<<iso80000-3>>) from which the luminous flux leaves\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous exitance can be derived from the spectral radiant exitance distribution by\n\n[stem%unnumbered]\n++++\nM_\"v\" = K_\"m\" int_0^(oo) M_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[M_(\"e\",lambda)(lambda)] is the spectral radiant exitance (<<t7-8.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.\n\nThe corresponding radiometric quantity is \"radiant exitance\" (<<t7-8.1>>). The corresponding quantity for photons is \"photon exitance\" (<<t7-24>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*m^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous exposure",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-18-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: quantity of illumination",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-18-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "DEPRECATED: light exposure",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-18-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(H)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-18",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-18",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-18-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-18-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-18-2"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-18-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-18-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident luminous energy with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nH_\"v\" = (\"d\"Q_\"v\")/(\"d\"A)\n++++\n\nwhere stem:[Q_\"v\"] is luminous energy (<<t7-12>>) and stem:[A] is the area on which the luminous energy is incident (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous exposure can be derived from the spectral radiant exposure distribution by\n\n[stem%unnumbered]\n++++\nH_\"v\" = K_\"m\" int_0^(oo) H_(\"e\",lambda)(lambda) V(lambda) \"d\"lambda\n++++\n\nwhere stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[H_(\"e\",lambda)(lambda)] is the spectral radiant exposure (<<t7-9.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor.\n\nThe corresponding radiometric quantity is \"radiant exposure\" (<<t7-9.1>>). The corresponding quantity for photons is \"photon exposure\" (<<t7-25>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lx*s"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*m^(-2)*s"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-19.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-19.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "number of photons",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-19.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "N_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-19.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-19.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-19.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-19.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-19.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of radiant energy and photon energy, expressed by\n\n[stem%unnumbered]\n++++\nN_\"p\" = (Q_\"e\")/(h nu)\n++++\n\nwhere stem:[Q_\"e\"] is radiant energy (<<t7-2.1>>), stem:[h] is the Planck constant (<<iso80000-1>>), and stem:[nu] is the frequency (<<iso80000-3>>) of the corresponding electromagnetic wave\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Photon number can also be expressed by the time integral of the photon flux (<<t7-20>>), stem:[Phi_\"p\"], over a given duration, stem:[Delta t],\n\n[stem%unnumbered]\n++++\nN_\"p\" = int_(Delta t)Phi_\"p\" \"d\"t\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-19.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon energy",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-19.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Q_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-19.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Q)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-19.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-19.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-19.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-19.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-19.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "product of the Planck constant and frequency, expressed by\n\n[stem%unnumbered]\n++++\nQ_\"p\" = h nu\n++++\n\nwhere stem:[h] is the Planck constant (<<iso80000-1>>) and stem:[nu] is the frequency (<<iso80000-3>>) of the corresponding electromagnetic wave\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Photon energy can be emitted, transferred or received.\n\nFor monochromatic radiation, photon energy may be expressed by photon number (<<t7-19.1>>).\n\nThe corresponding radiometric quantity is \"radiant energy\" (<<t7-2.1>>). The corresponding photometric quantity is \"luminous energy\" (<<t7-12>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^2*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon flux",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Phi_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-20-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(Phi)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-20",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-20",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-20-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-20-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-20-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "rate of photon number per time interval, expressed by\n\n[stem%unnumbered]\n++++\nPhi_\"p\" = (\"d\"N_\"p\")/(\"d\"t)\n++++\n\nwhere stem:[N_\"p\"] is photon number (e.g. given by <<t7-19.1>>), transmitted or received, and stem:[t] is time (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Photon flux stem:[Phi_\"p\"] is related to radiant flux (<<t7-4.1>>), stem:[Phi_\"e\"], of monochromatic radiation, by\n\n[stem%unnumbered]\n++++\nPhi_\"p\" = (Phi_\"e\")/(h nu)\n++++\n\nwhere stem:[h] is the Planck constant (<<iso80000-1>>), and stem:[nu] is the frequency (<<iso80000-3>>) of the corresponding electromagnetic wave.\n\nThe corresponding radiometric quantity is \"radiant flux\" (<<t7-4.1>>). The corresponding photometric quantity is \"luminous flux\" (<<t7-13>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon intensity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "I_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-21-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(I)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-21",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-21",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-21-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-21-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-21-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of photon flux with respect to solid angle in a specified direction, expressed by\n\n[stem%unnumbered]\n++++\nI_\"p\" = (\"d\"Phi_\"p\")/(\"d\"Omega)\n++++\n\nwhere stem:[Phi_\"p\"] is the photon flux (<<t7-20>>) emitted in the given direction, and stem:[Omega] is the solid angle (<<iso80000-3>>) containing that direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The distribution of the photon intensities as a function of the direction of emission, e.g. given by the polar angles stem:[(vartheta, varphi)], is used to determine the photon flux (<<t7-20>>) within a certain solid angle (<<iso80000-3>>) stem:[Omega] of a source:\n\n[stem%unnumbered]\n++++\nPhi_\"p\" = &#8748;_Omega I_\"p\" (vartheta,varphi) \"sin\" vartheta \"d\"varphi \"d\"vartheta\n++++\n\nThe corresponding radiometric quantity is \"radiant intensity\" (<<t7-5.1>>). The corresponding photometric quantity is \"luminous intensity\" (<<t7-14>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-s^(-1)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-22-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon radiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-22-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "L_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-22-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(L)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-22",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-22",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-22-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-22-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-22-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of photon intensity with respect to projected area in a specified direction at a specified point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nL_\"p\" = (\"d\"I_\"p\")/(\"d\"A) 1/(\"cos\"alpha)\n++++\n\nwhere stem:[I_\"p\"] is photon intensity (<<t7-21>>), stem:[A] is area (<<iso80000-3>>) and stem:[alpha] the angle between the normal to the surface at the specified point and the specified direction\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding radiometric quantity is \"radiance\" (<<t7-6.1>>). The corresponding photometric quantity is \"luminance\" (<<t7-15>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)*s^(-1)*sr^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-23-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon irradiance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-23-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "E_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-23-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(E)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-23",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-23",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-23-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-23-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-23-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident photon flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nE_\"p\" = (\"d\"Phi_\"p\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"p\"] is photon flux (<<t7-20>>) and stem:[A] is the area (<<iso80000-3>>) on which the photon flux is incident\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding radiometric quantity is \"irradiance\" (<<t7-7.1>>). The corresponding photometric quantity is \"illuminance\" (<<t7-16>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)*s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon exitance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "M_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-24-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(M)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-24",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-24",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-24-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-24-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-24-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of exiting photon flux with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nM_\"p\" = (\"d\"Phi_\"p\")/(\"d\"A)\n++++\n\nwhere stem:[Phi_\"p\"] is photon flux (<<t7-20>>) and stem:[A] is the area (<<iso80000-3>>) from which the photon flux leaves\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding radiometric quantity is \"radiant exitance\" (<<t7-8.1>>). The corresponding photometric quantity is \"luminous exitance\" (<<t7-17>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)*s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-25-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "photon exposure",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_\"p\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(H)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-25",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-25",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-25-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-25-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "density of incident photon number with respect to area at a point on a real or imaginary surface, expressed by\n\n[stem%unnumbered]\n++++\nH_\"p\" = (\"d\"N_\"p\")/(\"d\"A)\n++++\n\nwhere stem:[N_\"p\"] is photon number (<<t7-19.1>>) and stem:[A] is the area (<<iso80000-3>>) on which the photons are incident\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The corresponding radiometric quantity is \"radiant exposure\" (<<t7-9.1>>). The corresponding photometric quantity is \"luminous exposure\" (<<t7-18>>).",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-26.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tristimulus values for the CIE 1931 standard colorimetric observer",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-26.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "X, Y, Z",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-26.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-26.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-26.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-26.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "amounts of the three reference colour stimuli in the CIE 1931 standard colorimetric system, required to match the colour of the stimulus considered",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For a given colour stimulus described by the colour stimulus function stem:[Phi_lambda(lambda)] of a radiometric quantity,\n\n[stem%unnumbered]\n++++\nX = k int_0^(oo) Phi_lambda (lambda) bar x (lambda) \"d\"lambda\n++++\n\n[stem%unnumbered]\n++++\nY = k int_0^(oo) Phi_lambda (lambda) bar y (lambda) \"d\"lambda\n++++\n\n[stem%unnumbered]\n++++\nZ = k int_0^(oo) Phi_lambda (lambda) bar z (lambda) \"d\"lambda\n++++\n\nwhere stem:[bar x (lambda)], stem:[bar y (lambda)], stem:[bar z (lambda)] are the CIE colour-matching functions for the CIE 1931 standard colorimetric observer (2&deg; observer) (<<t7-27.1>>).\n\nFor sources, stem:[k] may be chosen as stem:[k = K_\"m\"] where stem:[K_\"m\"] is the maximum luminous efficacy (<<t7-11.3>>) so that stem:[Y = L_\"v\"] (<<t7-15>>) and the unit of stem:[X], stem:[Y], stem:[Z] is [stem:[\"unitsml(cd*m^(-2))\"]].\n\nFor object colours, stem:[varphi_lambda(lambda)] is given by one of the three products\n\n[stem%unnumbered]\n++++\nvarphi_lambda(lambda) = S_lambda(lambda) * {(rho(lambda)),(tau(lambda)),(beta(lambda)):}\n++++\n\nwhere stem:[S_lambda(lambda)] is the relative spectral distribution of a quantity characterizing the source illuminating the object, stem:[rho(lambda)] is the spectral reflectance, stem:[tau(lambda)] is the spectral transmittance, stem:[beta(lambda)] is the spectral radiance factor, and stem:[k] is chosen to be\n\n[stem%unnumbered]\n++++\nk = 100 // int_0^(oo) S_lambda (lambda) bar y (lambda) \"d\"lambda\n++++\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor. In this case, the unit of stem:[X], stem:[Y], stem:[Z] is [1].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-stem:[\"see Remark\"]"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-26.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tristimulus values for the CIE 1964 standard colorimetric observer",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-26.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "X_(10), Y_(10), Z_(10)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-26.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-26.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-26.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-26.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "amounts of the three reference colour stimuli in the CIE 1964 standard colorimetric system, required to match the colour of the stimulus considered",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For a given colour stimulus described by the colour stimulus function stem:[varphi_lambda(lambda)] of a radiometric quantity,\n\n[stem%unnumbered]\n++++\nX_(10) = k int_0^(oo) varphi_lambda(lambda) bar x_(10) (lambda) \"d\"lambda\n++++\n\n[stem%unnumbered]\n++++\nY_(10) = k int_0^(oo) varphi_lambda(lambda) bar y_(10) (lambda) \"d\"lambda\n++++\n\n[stem%unnumbered]\n++++\nZ_(10) = k int_0^(oo) varphi_lambda(lambda) bar z_(10) (lambda) \"d\"lambda\n++++\n\nwhere stem:[bar x_(10)(lambda)], stem:[bar y_(10)(lambda)], stem:[bar z_(10)(lambda)] are the CIE colour-matching functions for the CIE 1964 standard colorimetric observer (10&deg; observer) (<<t7-27.2>>).\n\nFor sources, stem:[k] may be chosen as stem:[k = K_(10)] where stem:[K_(10)] is the maximum luminous efficacy (<<t7-11.3>>) of the CIE 1964 standard colorimetric observer so that stem:[Y_(10) = L_(10)] and the unit of stem:[X], stem:[Y], stem:[Z] is [stem:[\"unitsml(cd*m^(-2))\"]].\n\nFor object colours, stem:[varphi_lambda(lambda)] is given by one of the three products\n\n[stem%unnumbered]\n++++\nvarphi_lambda (lambda) = S_lambda (lambda) * {(rho(lambda)),(tau(lambda)),(beta(lambda)):}\n++++\n\nwhere stem:[S_lambda(lambda)] is the relative spectral distribution of a quantity characterizing the source illuminating the object, stem:[rho(lambda)] is the spectral reflectance, stem:[tau(lambda)] is the spectral transmittance, stem:[beta(lambda)] is the spectral radiance factor, and stem:[k] is chosen to be\n\n[stem%unnumbered]\n++++\nk = 100 // int_0^(oo) S_lambda (lambda) bar y (lambda) \"d\"lambda\n++++\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor. In this case, the unit of stem:[X], stem:[Y], stem:[Z] is [1].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-stem:[\"see Remark\"]"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-27.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "CIE colour-matching functions for the CIE 1931 standard colorimetric observer",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-27.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bar x(lambda), bar y(lambda), bar z(lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-27.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-27.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-27.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-27.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "functions stem:[bar x(lambda)], stem:[bar y(lambda)], stem:[bar z(lambda)] in the CIE 1931 standard colorimetric system",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Values of stem:[bar x(lambda)], stem:[bar y(lambda)] and stem:[bar z(lambda)] are defined in the CIE 1931 standard colorimetric system (2&deg; observer) -- applicable to fields of observation of angular opening from 1&deg; to 4&deg;.",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-27.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "CIE colour-matching functions for the CIE 1964 standard colorimetric observer",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-27.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bar x_(10)(lambda), bar y_(10)(lambda), bar z_(10)(lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-27.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-27.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-27.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-27.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "functions stem:[bar x_(10)(lambda)], stem:[bar y_(10)(lambda)], stem:[bar z_(10)(lambda)] in the CIE 1964 standard colorimetric system",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Values of stem:[bar x_(10)(lambda)], stem:[bar y_(10)(lambda)] and stem:[bar z_(10)(lambda)] are defined in the CIE 1964 standard colorimetric system (10&deg; observer) -- applicable to fields of observation with angles greater than 4&deg;.",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-28.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "chromaticity coordinates in the CIE 1931 standard colorimetric system",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-28.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "x, y, z",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-28.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-28.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-28.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-28.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "coordinates expressing the quotients of each of a set of three tristimulus values for the CIE 1931 standard colorimetric observer (<<t7-26.1>>) and their sum, expressed by\n\n[stem%unnumbered]\n++++\nx = X // (X+Y+Z),\n++++\n\n[stem%unnumbered]\n++++\ny = Y // (X+Y+Z),\n++++\n\n[stem%unnumbered]\n++++\nz = Z // (X+Y+Z)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Since stem:[x + y + z = 1], two variables are sufficient to express chromaticity.",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-28.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "chromaticity coordinates in the CIE 1964 standard colorimetric system",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-28.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "x_(10), y_(10), z_(10)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-28.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-28.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-28.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-28.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "coordinates expressing the quotients of each of a set of three tristimulus values for the CIE 1964 standard colorimetric observer (<<t7-26.2>>) and their sum, expressed by\n\n[stem%unnumbered]\n++++\nx_(10) = X_(10) // (X_(10) + Y_(10) + Z_(10)),\n++++\n\n[stem%unnumbered]\n++++\ny_(10) = Y_(10) // (X_(10) + Y_(10) + Z_(10)),\n++++\n\n[stem%unnumbered]\n++++\nz_(10) = Z_(10) // (X_(10) + Y_(10) + Z_(10))\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Since stem:[x_(10) + y_(10) + z_(10) = 1], two variables are sufficient to express chromaticity.",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-29.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "colour temperature",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-29.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "T_\"c\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-29.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-29.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-29.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-29.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "temperature of a Planckian radiator whose radiation has the same chromaticity as that of a given stimulus",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-K"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-29.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "correlated colour temperature",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-29.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "T_\"cp\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-29.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-29.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-29.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-29.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "temperature of a Planckian radiator having the chromaticity nearest the chromaticity associated with the given spectral distribution on a modified 1976 CIE Uniform Chromaticity Scale (UCS) diagram where\n\nstem:[u'], stem:[2/3 v'] are the coordinates of the Planckian locus and the test stimulus\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-K"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-30.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "emissivity",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-30.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "epsilon",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-30.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "epsilon_\"T\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-30.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-30.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-30.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-30.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-30.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the radiant exitance of a radiator and the radiant exitance of a Planckian radiator at the same temperature, expressed by\n\n[stem%unnumbered]\n++++\nepsilon = M/M_\"b\"\n++++\n\nwhere stem:[M] is the radiant exitance (<<t7-8.1>>) of a thermal radiator and stem:[M_\"b\"] is the radiant exitance of a Planckian radiator at the same temperature (<<iso80000-5>>)\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-30.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "emissivity at a specified wavelength",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-30.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "epsilon(lambda)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-30.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-30.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-30.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-30.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the radiant exitance of a radiator at a specified wavelength and the radiant exitance of a Planckian radiator at the same temperature and at the same wavelength, expressed by\n\n[stem%unnumbered]\n++++\nepsilon(lambda) = M(lambda) // M_\"b\"(lambda)\n++++\n\nwhere stem:[M(lambda)] is the radiant exitance (<<t7-8.1>>) of a thermal radiator at a specified wavelength and stem:[M_\"b\"(lambda)] is the radiant exitance of a Planckian radiator at the same temperature at a specified wavelength (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "absorptance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "alpha",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "a",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of absorbed radiant flux and incident radiant flux, expressed by\n\n[stem%unnumbered]\n++++\nalpha = Phi_\"a\"/Phi_\"m\"\n++++\n\nwhere stem:[Phi_\"a\"] is absorbed radiant flux (<<t7-4.1>>) and stem:[Phi_\"m\"] is incident radiant flux\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case \"spectral\" is added before the quantity name.\n\nDue to energy conservation, stem:[alpha + rho + tau = 1] except when polarized radiation is observed, where stem:[rho] is reflectance (<<t7-31.3>>) and stem:[tau] is transmittance (<<t7-31.5>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous absorptance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "alpha_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of absorbed luminous flux and incident luminous flux, expressed by\n\n[stem%unnumbered]\n++++\nalpha_\"v\" = (Phi_(\"v,a\"))/(Phi_\"v,m\")\n++++\n\nwhere stem:[Phi_\"v,a\"] is absorbed luminous flux (<<t7-13>>) and stem:[Phi_\"v,m\"] is incident luminous flux\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "From spectral absorptance, stem:[alpha(lambda)], luminous absorptance can be calculated by\n\n[stem%unnumbered]\n++++\nalpha_\"v\" = (int_0^(oo) alpha(lambda) Phi_(\"e\",lambda)(lambda) V(lambda) \"d\"lambda)/(int_0^(oo) Phi_(\"e\",lambda)(lambda) V(lambda) \"d\"lambda)\n++++\n\nwhere stem:[Phi_(\"e\",lambda)(lambda)] is spectral radiant flux (or relative spectral distribution) of the source, and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nSee also <<t7-31.1>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "reflectance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "rho",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of reflected radiant flux and incident radiant flux, expressed by\n\n[stem%unnumbered]\n++++\nrho = Phi_\"r\"/Phi_\"m\"\n++++\n\nwhere stem:[Phi_\"r\"] is reflected radiant flux (<<t7-4.1>>) and stem:[Phi_\"m\"] is incident radiant flux\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before the quantity name.\n\nDue to energy conservation, stem:[alpha + rho + tau = 1] except when polarized radiation is observed, where stem:[alpha] is absorptance (<<t7-31.1>>) and stem:[tau] is transmittance (<<t7-31.5>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous reflectance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "rho_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of reflected luminous flux and incident luminous flux, is expressed by\n\n[stem%unnumbered]\n++++\nrho_\"v\" = (Phi_(\"v,r\"))/(Phi_\"v,m\")\n++++\n\nwhere stem:[Phi_\"v,r\"] is reflected luminous flux (<<t7-13>>) and stem:[Phi_\"v,m\"] is incident luminous flux\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "From spectral reflectance, stem:[rho(lambda)], luminous reflectance can be calculated by\n\n[stem%unnumbered]\n++++\nrho_\"v\" = (int_0^(oo) rho(lambda) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)\n++++\n\nwhere stem:[Phi_(\"e\",lambda)(lambda)] is spectral radiant flux (or relative spectral distribution) of the source, and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).\n\nSee also <<t7-31.3>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "transmittance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tau",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.5-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "T",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.5",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.5",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.5-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.5-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.5-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of transmitted radiant flux and incident radiant flux, expressed by\n\n[stem%unnumbered]\n++++\ntau = Phi_\"t\"/Phi_\"m\"\n++++\n\nwhere stem:[Phi_\"t\"] is transmitted radiant flux (<<t7-4.1>>) and stem:[Phi_\"m\"] is incident radiant flux\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before the quantity name.\n\nDue to energy conservation, stem:[alpha + rho + tau = 1] except when polarized radiation is observed, where stem:[alpha] is absorptance (<<t7-31.1>>) and stem:[rho] is reflectance (<<t7-31.3>>).\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous transmittance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tau_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-31.6",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-31.6",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-31.6-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-31.6-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of transmitted luminous flux and incident luminous flux, expressed by\n\n[stem%unnumbered]\n++++\ntau_\"v\" = (Phi_\"v,t\")/(Phi_\"v,m\")\n++++\n\nwhere stem:[Phi_\"v,t\"] is transmitted luminous flux (<<t7-13>>) and stem:[Phi_\"v,m\"] is luminous flux of the incident radiation\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "From the spectral transmittance stem:[tau(lambda)], luminous transmittance can be calculated by\n\n[stem%unnumbered]\n++++\ntau_\"v\" = (int_0^(oo) tau(lambda) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)/(int_0^(oo) Phi_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda)\n++++\n\nwhere stem:[Phi_(\"e\",lambda)(lambda)] is the spectral radiant flux (or relative spectral distribution) of the source, and stem:[V(lambda)] is the spectral luminous efficiency (<<t7-10.2>>).\n\nSee also <<t7-31.5>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "transmittance optical density",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "optical density",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "transmittance density",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-3",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "decadic absorbance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "D",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "A_(10)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.1-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "D_tau",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-32.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-32.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-2"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.1-3"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.1-2"
+        }
+      ],
+      "skos:definition": {
+        "@value": "logarithm to base 10 of the reciprocal of the transmittance, stem:[tau] (<<t7-31.5>>)",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "If defined in terms of wavelength, the optical density can be expressed by\n\n[stem%unnumbered]\n++++\nA_(10)(lambda) = -\"lg\"[tau(lambda)\\]\n++++\n\nwhere stem:[tau(lambda)] is the transmittance (<<t7-31.5>>) in terms of wavelength.\n\nIn spectroscopy, the name \"absorbance stem:[A_(10)]\" is generally used.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Napierian absorbance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "A_\"n\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "B",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-32.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-32.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-32.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-32.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "natural (Napierian) logarithm of the reciprocal of the transmittance, stem:[tau] (<<t7-31.5>>)",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "If defined in terms of wavelength, the Napierian absorbance can be expressed by\n\n[stem%unnumbered]\n++++\nA_\"n\"(lambda) = B(lambda) = -\"ln\"[tau(lambda)\\]\n++++\n\nIt can also be expressed as\n\n[stem%unnumbered]\n++++\nA_\"n\"(lambda) = l alpha(lambda)\n++++\n\nwhere stem:[alpha] is linear absorption coefficient (<<t7-35.2>>) and stem:[l] is length (<<iso80000-3>>) traversed.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-33.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "radiance factor",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "beta_\"e\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(beta)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-33.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-33.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-33.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the radiance of a surface element in a specified direction and the radiance of the perfect reflecting diffuser or perfect transmitting diffuser identically irradiated and viewed, expressed by\n\n[stem%unnumbered]\n++++\nbeta_\"e\" = (L_\"e,n\")/(L_\"e,d\")\n++++\n\nwhere stem:[L_\"e,n\"] is the radiance (<<t7-6.1>>) of a surface element in a given direction and stem:[L_\"e,d\"] is the radiance of the perfect reflecting or transmitting diffuser identically irradiated and viewed\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The definition holds for a surface element of a non-self-radiating medium, in a given direction and under specified conditions of irradiation.\n\nRadiance factor is equivalent to reflectance factor (<<t7-34>>) or luminance factor (<<t7-33.2>>) when the cone angle is infinitely small, and is equivalent to reflectance (<<t7-31.3>>) when the cone angle is stem:[2pi \"unitsml(sr)\"]. These quantities are also defined spectrally and called spectral radiance factor stem:[beta(lambda)] and spectral reflectance factor stem:[R(lambda)].\n\nThe ideal isotropic (Lambertian) diffuser with reflectance (<<t7-31.3>>) or transmittance (<<t7-31.5>>) equal to 1 is called \"perfect diffuser\".\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-33.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminance factor",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "beta_\"v\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "(beta)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-33.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-33.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-33.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-33.2-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the luminance of a surface element in a specified direction and the luminance of the perfect reflecting diffuser or perfect transmitting diffuser identically illuminated and viewed, expressed by\n\n[stem%unnumbered]\n++++\nbeta_\"v\" = (L_\"v,n\")/(L_\"v,d\")\n++++\n\nwhere stem:[L_\"v,n\"] is the luminance (<<t7-15>>) of a surface element in a given direction and stem:[L_\"v,d\"] is the luminance of the perfect reflecting or transmitting diffuser identically illuminated and viewed\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The definition holds for a surface element of a non-luminous medium, in a given direction and under specified conditions of irradiation.\n\nThis quantity is also defined spectrally and is called \"spectral luminance factor\".\n\nFor the analogous radiant quantity \"radiance factor\", see <<t7-33.1>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "reflectance factor",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "R",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-34",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-34",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-34-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-34-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the flux reflected in the directions delimited by a given cone with apex at a surface element and the flux reflected in the same directions by a perfect reflecting diffuser identically irradiated or illuminated, expressed by\n\n[stem%unnumbered]\n++++\nR=Phi_\"n\"/Phi_\"d\"\n++++\n\nwhere stem:[Phi_\"n\"] is the flux reflected in the directions delimited by a given cone and stem:[Phi_\"d\"] is the flux reflected in the same directions by an identically irradiated diffuser of reflectance (<<t7-31.3>>) equal to 1\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The flux can be a radiant flux (<<t7-4.1>>) or a luminous flux (<<t7-13>>).\n\nThe definition holds for a surface element, for the part of the reflected radiation contained in a given cone with apex at the surface element, and for incident radiation of given spectral composition, polarization and geometric distribution.\n\nReflectance factor is equivalent to radiance factor (<<t7-33.1>>) or luminance factor (<<t7-33.2>>) when the cone angle is infinitely small, and is equivalent to reflectance (<<t7-31.3>>) when the cone angle is stem:[2pi \"unitsml(sr)\"]. These quantities are also defined spectrally and called spectral radiance factor stem:[beta(lambda)] and spectral reflectance factor stem:[R(lambda)].\n\nThe ideal isotropic (Lambertian) diffuser with reflectance (<<t7-31.3>>) or transmittance (<<t7-31.5>>) equal to 1 is called a perfect diffuser.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-35.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "linear attenuation coefficient",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-35.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "linear extinction coefficient <radiometry>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu_\"l\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-35.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-35.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-35.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-35.1-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relative decrease in radiant flux caused by absorption and scattering",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before this quantity name.\n\nThe spectral linear attenuation coefficient can be expressed by the relative decrease in the spectral radiant flux, stem:[Phi_(\"e\",lambda)(lambda)], with respect to propagation length, stem:[l], of a collimated beam at a point in an absorbing and scattering medium\n\n[stem%unnumbered]\n++++\nmu(lambda) = 1/(Phi_(\"e\",lambda)(lambda)) (\"d\"Phi_(\"e\",lambda)(lambda))/(\"d\"l)\n++++\n\nSimilarly, luminous and photon quantities can be defined.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-35.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "linear absorption coefficient <radiometry>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "alpha_\"l\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.2-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "a_\"l\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.2-2",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "alpha",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-35.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-35.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-35.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.2-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.2-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-35.2-2"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relative decrease in radiant flux (<<t7-4.1>>) caused by absorption",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before this quantity name.\n\nThe spectral linear absorption coefficient can be expressed by the relative decrease in the spectral radiant flux, stem:[Phi_(\"e\",lambda)(lambda)], with respect to propagation length, stem:[l], of a collimated beam at a point in an absorbing medium\n\n[stem%unnumbered]\n++++\nalpha_\"l\"(lambda) = 1/(Phi_(\"e\",lambda)(lambda)) (\"d\"Phi_(\"e\",lambda)(lambda))/(\"d\"l)\n++++\n\nIt can also be expressed as a function of transmittance (<<t7-31.5>>).\n\n[stem%unnumbered]\n++++\nalpha_\"l\" = -\"ln\"(tau)//l = A_\"n\"//l\n++++\n\nThe linear absorption coefficient is that part of the linear attenuation coefficient (<<t7-35.1>>) that is due to absorption. Scattering might also contribute.\n\nSimilarly, luminous and photon quantities can be defined.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-36.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mass attenuation coefficient <radiometry>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-36.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-36.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-36.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-36.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-36.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the linear attenuation coefficient (<<t7-35.1>>), stem:[mu], and the mass density (<<iso80000-4>>), stem:[rho], of the medium",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before this quantity name, which can be expressed by\n\n[stem%unnumbered]\n++++\nmu_\"m\"(lambda) = (mu(lambda))/rho_\"m\"\n++++\n\nSimilarly, luminous and photon quantities can be defined.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-kg^(-1)*m^2"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-36.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mass absorption coefficient <radiometry>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-36.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "alpha_\"m\"",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-36.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-36.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-36.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-36.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of the linear absorption coefficient (<<t7-35.2>>), stem:[alpha], and the mass density (<<iso80000-4>>), stem:[rho], of the medium",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "This quantity is also defined spectrally in terms of wavelength, in which case, \"spectral\" is added before this quantity name, which can be expressed by\n\n[stem%unnumbered]\n++++\nalpha_\"m\"(lambda) = (alpha(lambda))/rho_\"m\"\n++++\n\nSimilarly, luminous and photon quantities can be defined.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-37-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "molar absorption coefficient <radiometry>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-37-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "chi",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-37",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-37",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-37-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-37-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "product of linear absorption coefficient and molar volume, expressed by\n\n[stem%unnumbered]\n++++\nchi = alpha V_\"m\"\n++++\n\nwhere stem:[alpha] is linear absorption coefficient (<<t7-35.2>>) and stem:[V_\"m\"] is molar volume (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The molar absorption coefficient can also be expressed by\n\n[stem%unnumbered]\n++++\nchi=alpha c\n++++\n\nwhere stem:[c] is amount-of-substance concentration (<<iso80000-9>>).\n\nSimilarly, luminous and photon quantities can be defined.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^2*mol^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

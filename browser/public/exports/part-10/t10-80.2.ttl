@@ -1,0 +1,38 @@
+isoiec80000:term-t10-80.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean energy imparted"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-80.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-80.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-80.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-80.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-80.2-0 ;
+  skos:definition """expectation value of the energy imparted (<<t10-80.1>>):
+
+[stem%unnumbered]
+++++
+bar epsilon = R_\"in\" - R_\"out\" + sum Q
+++++
+
+where
+
+stem:[R_\"in\"]:: is the radiant energy (<<t10-45>>) of all those charged and uncharged ionizing particles that enter the volume,
+
+stem:[R_\"out\"]:: is the radiant energy of all those charged and uncharged ionizing particles that leave the volume, and
+
+stem:[sum Q]:: is the sum of all changes of the rest energy (<<t10-3>>) of nuclei and elementary particles that occur in that volume
+"""@en ;
+  skos:note """Sometimes, it has been called the integral absorbed dose.
+
+stem:[Q > 0] means decrease of rest energy;
+
+stem:[Q < 0] means increase of rest energy.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

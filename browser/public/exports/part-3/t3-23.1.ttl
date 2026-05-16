@@ -1,0 +1,39 @@
+isoiec80000:term-t3-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phase speed"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c, ii(sf(v)), (v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_varphi, ii(sf(v))_varphi, (v_varphi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-23.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-23.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-23.1-0 ;
+  skosxl:altLabel isoiec80000:term-t3-23.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-23.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-23.1-1 ;
+  skos:definition """speed with which the phase angle (<<t3-7>>) of a wave propagates in space"""@en ;
+  skos:note """The phase velocity is given by:
+
+[stem%unnumbered]
+++++
+c = omega/k
+++++
+
+where stem:[omega] denotes the angular frequency (<<t3-18>>) and stem:[k] the angular repetency (<<t3-22>>).
+
+If phase velocities of electromagnetic waves and other phase velocities are both involved, then stem:[c] should be used for the former and stem:[v] for the latter.
+
+Phase velocity can also be written as stem:[c = lambda f].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

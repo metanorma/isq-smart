@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-48-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "particle current density",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-48-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bb(ii(J))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-48-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bb(ii(S))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-48",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-48",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-48-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-48-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-48-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "vector whose component in direction of an area normal is given by:\n\n[stem%unnumbered]\n++++\nbb(ii(J))_n = int ii(Phi)_(ii(Omega)) (theta,alpha) \"cos\" (ii(theta)) \"d\"ii(Omega)\n++++\n\nwhere\n\nstem:[ii(Phi)_(ii(Omega)) (ii(theta),alpha)]:: is the directional distribution of the particle fluence rate (<<t10-44>>), and\nstem:[ii(theta)] and stem:[alpha]:: are polar and azimuthal angles, respectively\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Usually the word \"particle\" is replaced by the name of a specific particle, for example proton current.\n\nSymbol stem:[bb(ii(S))] is recommended when there is a possibility of confusion with the symbol stem:[bb(ii(J))] for electric current density. For neutron current, the symbol stem:[bb(ii(J))] is generally used. The distribution functions expressed in terms of speed and energy, stem:[bb(ii(J))_nu] and stem:[bb(ii(J))_\"E\"], are related to stem:[bb(ii(J))] by:\n\n[stem%unnumbered]\n++++\nbb(ii(J)) = int bb(ii(J))_nu \"d\"nu = int bb(ii(J))_\"E\" \"d\"E.\n++++\n\nThe directional distribution of the particle fluence rate is also denoted as particle radiance.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-2)*s^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

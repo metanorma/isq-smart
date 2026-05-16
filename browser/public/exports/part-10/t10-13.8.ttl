@@ -1,0 +1,20 @@
+isoiec80000:term-t10-13.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperfine structure quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.8" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.8-0 ;
+  skos:definition """quantum number of an atom describing the inclination of the nuclear spin with respect to a quantization axis given by the magnetic field produced by the orbital electrons"""@en ;
+  skos:note """The interval of stem:[F] is stem:[abs(I-J), abs(I-J)+1, ..., I-J].
+
+This is related to the hyperfine splitting of the atomic energy levels due to the interaction between the electron and nuclear magnetic moments.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

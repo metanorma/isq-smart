@@ -1,0 +1,50 @@
+isoiec80000:term-t2-8.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "parentheses"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t2-8.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "square brackets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t2-8.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "braces"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t2-8.19-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angle brackets"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a + b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-8.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "[a + b\\]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-8.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{a + b}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-8.19-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "<<a + b>>"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.19-0 ;
+  skosxl:altLabel isoiec80000:term-t2-8.19-1 ;
+  skosxl:altLabel isoiec80000:term-t2-8.19-2 ;
+  skosxl:altLabel isoiec80000:term-t2-8.19-3 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.19-3 ;
+  skos:definition """parentheses +
+square brackets +
+braces +
+angle brackets
+"""@en ;
+  skos:note """It is recommended to use only parentheses for grouping, since brackets and braces often have a specific meaning in particular fields. Parentheses can be nested without ambiguity."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .

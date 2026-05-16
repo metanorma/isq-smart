@@ -1,0 +1,24 @@
+isoiec80000:term-t11-8.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(mg)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.13-0 ;
+  skos:definition """quotient of magnetic forces and viscous forces in an electrically conducting fluid, expressed by
+
+stem:[N_(mg) = B sqrt(l sigma // (eta v))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

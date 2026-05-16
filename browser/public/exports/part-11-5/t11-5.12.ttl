@@ -1,0 +1,30 @@
+isoiec80000:term-t11-5.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Brinkman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Br"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(Br)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.12-1 ;
+  skos:definition """relation between heat produced by viscosity and heat conducted from a wall adjacent to a fluid moving relative to it, expressed by
+
+stem:[Br = eta v^2 // (lambda Delta T)]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[v]:: is characteristic speed (<<iso80000-3>>),
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T = T_W - T_0]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>), where
+stem:[T_0]:: is bulk fluid temperature, and
+stem:[T_W]:: is wall temperature
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

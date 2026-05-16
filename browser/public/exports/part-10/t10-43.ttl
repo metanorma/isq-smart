@@ -1,0 +1,44 @@
+isoiec80000:term-t10-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "particle fluence"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-43-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(Phi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-43 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-43" ;
+  skosxl:prefLabel isoiec80000:term-t10-43-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-43-0 ;
+  skos:definition """differential quotient of stem:[N] with respect to stem:[a], where stem:[N] is the number of particles incident on a sphere of cross-sectional area stem:[a] (<<t10-38.1>>):
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"N)/(\"d\"a)
+++++
+"""@en ;
+  skos:note """The word \"particle\" is usually replaced by the name of a specific particle, for example _proton_ fluence.
+
+If a flat area of size stem:[\"d\"A] is passed perpendicularly by a number of stem:[\"d\"N] particles, the corresponding particle fluence is: stem:[ii(Phi) = (\"d\"N)/(\"d\"A)]
+
+A plane area of size stem:[\"d\"A] crossed at an angle stem:[alpha] with respect to the surface normal by a number of stem:[\"d\"N] particles results in the particle fluence:
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"N)/(\"cos\"(alpha)\"d\"A)
+++++
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The fluence, stem:[ii(Phi)], is the quotient of stem:[\"d\"N] and stem:[\"d\"a], where stem:[\"d\"N] is the number of particles incident on a sphere of cross-sectional area stem:[\"d\"a]:
+
+[stem%unnumbered]
+++++
+ii(Phi) = (\"d\"N)/(\"d\"a)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

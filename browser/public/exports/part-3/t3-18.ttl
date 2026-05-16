@@ -1,0 +1,26 @@
+isoiec80000:term-t3-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular frequency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "omega"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-18" ;
+  skosxl:prefLabel isoiec80000:term-t3-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-18-0 ;
+  skos:definition """rate of change of the phase angle (<<t3-7>>)"""@en ;
+  skos:note """The angular frequency is given by:
+
+[stem%unnumbered]
+++++
+omega = 2 pi f
+++++
+
+where stem:[f] denotes the frequency (<<t3-17.1>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

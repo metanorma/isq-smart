@@ -1,0 +1,16 @@
+isoiec80000:term-t3-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wavelength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-19" ;
+  skosxl:prefLabel isoiec80000:term-t3-19-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-19-0 ;
+  skos:definition """length (<<t3-1.1>>) of the repetition interval of a wave"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

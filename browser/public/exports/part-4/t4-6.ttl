@@ -1,0 +1,28 @@
+isoiec80000:term-t4-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-6" ;
+  skosxl:prefLabel isoiec80000:term-t4-6-0 ;
+  skosxl:altLabel isoiec80000:term-t4-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-6-0 ;
+  skos:definition """quantity representing the linear distribution of mass of a continuous
+material:
+
+stem:[rho_l = (\"d\"m)/(\"d\"l)]
+
+where stem:[m] is the mass of the material at position stem:[r] and stem:[l]
+is length
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

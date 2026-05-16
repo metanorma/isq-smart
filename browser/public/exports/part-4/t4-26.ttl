@@ -1,0 +1,27 @@
+isoiec80000:term-t4-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-26" ;
+  skosxl:prefLabel isoiec80000:term-t4-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-26-1 ;
+  skos:definition """magnitude of a force acting against the enlargement of area portion of a
+surface separating a liquid from its surrounding
+"""@en ;
+  skos:note """The concept of ((surface energy)) is closely related to surface tension and
+has the same dimension.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

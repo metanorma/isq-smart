@@ -1,0 +1,16 @@
+isoiec80000:term-t2-11.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binomial coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "((n),(k))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.4-0 ;
+  skos:definition """binomial coefficient"""@en ;
+  skos:note """stem:[((n),(k)) = (n!)/(k!(n-k)!)] (for stem:[0<=k<=n])"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .

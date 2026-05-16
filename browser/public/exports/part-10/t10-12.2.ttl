@@ -1,0 +1,44 @@
+isoiec80000:term-t10-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyromagnetic ratio of the electron"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-12.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetogyric ratio of the electron"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-12.2-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gyromagnetic coefficient of the electron"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-12.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-12.2-0 ;
+  skosxl:altLabel isoiec80000:term-t10-12.2-1 ;
+  skosxl:altLabel isoiec80000:term-t10-12.2-2 ;
+  skosxl:altLabel isoiec80000:sym-t10-12.2-0 ;
+  skos:definition """proportionality constant between the magnetic dipole moment and the angular momentum of the electron
+
+[stem%unnumbered]
+++++
+bb(ii(mu)) = gamma_\"e\" bb(ii(J))
+++++
+
+where
+
+stem:[bb(ii(mu))]:: is the magnetic dipole moment (<<t10-9.1>>), and
+stem:[bb(ii(J))]:: is the total angular momentum (<<t10-11>>)
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(A*m^2/(J*s))\" = 1 \"unitsml(A*s/kg)\" = 1 \"unitsml(T^(-1)*s^(-1))\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-A*m^2*J^(-1)*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-A*s/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

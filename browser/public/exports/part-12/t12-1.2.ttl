@@ -1,0 +1,30 @@
+isoiec80000:term-t12-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fundamental lattice vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-1.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a))_1, bb(ii(a))_2, bb(ii(a))_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-1.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)), bb(ii(b)), bb(ii(c))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-1.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-1.2" ;
+  skosxl:prefLabel isoiec80000:term-t12-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-1.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-1.2-1 ;
+  skos:definition """fundamental translation vectors for the crystal lattice"""@en ;
+  skos:note """The lattice vector (<<t12-1.1>>) can be given as
+
+[stem%unnumbered]
+++++
+bb(ii(R)) = n_1 bb(ii(a))_1 + n_2 bb(ii(a))_2 + n_3 bb(ii(a))_3
+++++
+
+where stem:[n_1], stem:[n_2] and stem:[n_3] are integers.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

@@ -1,0 +1,28 @@
+isoiec80000:term-t2-20.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hankel function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"H\"_nu^((1))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-20.25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"H\"_nu^((2))(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.25-1 ;
+  skos:definition """Hankel function, +
+cylinder Bessel function of the third kind
+"""@en ;
+  skos:note """stem:[\"H\"_nu^((1))(z) = \"J\"_nu (z) + \"iN\"_nu(z)]
+
+stem:[\"H\"_nu^((2))(z) = \"J\"_nu (z) + \"iN\"_nu(z)]
+
+(for stem:[nu in bb(sf(C))])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

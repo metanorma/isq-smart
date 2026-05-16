@@ -1,0 +1,23 @@
+isoiec80000:term-t10-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total ionization"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_\"i\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-59 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-59" ;
+  skosxl:prefLabel isoiec80000:term-t10-59-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-59-0 ;
+  skos:definition """quotient of the total mean charge of all positive ions produced by an ionizing charged particle along its entire path and along the paths of any secondary charged particles, and the elementary charge, stem:[e] (<<iso80000-1>>)"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+N_\"i\" = int N_(\"i\"l) \"d\"l
+++++
+
+See <<t10-58>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

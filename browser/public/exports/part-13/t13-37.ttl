@@ -1,0 +1,23 @@
+isoiec80000:term-t13-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "character mean entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-37 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-37" ;
+  skosxl:prefLabel isoiec80000:term-t13-37-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-37-0 ;
+  skos:definition """stem:[H' = lim_{m -> oo} H_m/m]
+
+where stem:[H_m] is the entropy (<<t13-25,item 13-25>>) of the set
+of all sequences of stem:[m] characters
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-28\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

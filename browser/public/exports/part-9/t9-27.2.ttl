@@ -1,0 +1,32 @@
+isoiec80000:term-t9-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "osmotic factor of solvent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t9-27.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "osmotic coefficient of solvent stem:[\"A\"]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-27.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-27.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-27.2" ;
+  skosxl:prefLabel isoiec80000:term-t9-27.2-0 ;
+  skosxl:altLabel isoiec80000:term-t9-27.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t9-27.2-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+varphi = -(M_\"A\" sum b_\"B\")^(-1) \"ln\" a_\"A\"
+++++
+
+where stem:[M_\"A\"] is the molar mass (<<t9-4>>) of the solvent stem:[A], stem:[sum] denotes summation over all the solutes, stem:[b_\"B\"] is the molality of solute stem:[\"B\"] (<<t9-15>>), and stem:[a_\"A\"] is the activity of solvent stem:[\"A\"] (<<t9-27.1>>)
+"""@en ;
+  skos:note """The name \"osmotic coefficient\" is generally used, although the name \"osmotic factor\" is more systematic.
+
+This concept especially applies to a dilute liquid solution.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

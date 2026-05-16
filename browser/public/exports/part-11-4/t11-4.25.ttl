@@ -1,0 +1,29 @@
+isoiec80000:term-t11-4.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Goertler number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Goertler parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Go"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.25" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.25-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.25-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.25-0 ;
+  skos:definition """characterization of the stability of laminar boundary layer flows in transfer of matter in a boundary layer on curved surfaces, expressed by
+
+stem:[Go = (v l_\"b\")/sf(ii(v)) sqrt((l_\"b\"/r_\"c\"))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l_\"b\"]:: is boundary layer thickness (<<iso80000-3>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[r_\"c\"]:: is radius of curvature (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Goertler number represents the ratio of centrifugal effects to viscous effects."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

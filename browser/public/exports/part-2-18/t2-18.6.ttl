@@ -1,0 +1,21 @@
+isoiec80000:term-t2-18.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "unit vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(e_a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hat bb(ii(a))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.6-1 ;
+  skos:definition """unit vector in the direction of stem:[bb(ii(a))]"""@en ;
+  skos:note """stem:[bb(e_a) = hat bb(ii(a)) = bb(ii(a))//abs(bb(ii(a)))], (for stem:[bb(ii(a)) != 0])"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

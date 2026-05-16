@@ -1,0 +1,663 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-12 a smart:PublicationDocument ;
+  dcterms:title "Part 2-12"@en ;
+  dcterms:identifier "ISO 80000-2-12" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f, g, h, ..."@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.1-0 ;
+  skos:definition """functions"""@en ;
+  skos:note """A function assigns to any argument in its domain a unique value in its range.
+
+The arguments are said to be _mapped_ by the function onto the values, which are called _images_ of the arguments under the function.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "value of function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x_1, ..., x_n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.2-1 ;
+  skos:definition """value of function stem:[f] for argument stem:[x] or for argument stem:[(x_1, ..., x_n)], respectively"""@en ;
+  skos:note """A function having a set of stem:[n]-tuples as its domain is an stem:[n]-place function."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "domain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"dom \"f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.3-0 ;
+  skos:definition """domain of stem:[f]"""@en ;
+  skos:note """Set of objects to which stem:[f] assigns a value.
+
+stem:[\"D\"(f)] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "range"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"ran \"f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.4-0 ;
+  skos:definition """range of stem:[f]"""@en ;
+  skos:note """Set of values of the function stem:[f].
+
+stem:[R(f)] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maps into"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f: A -> B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.5-0 ;
+  skos:definition """stem:[f] maps stem:[A] into stem:[B]"""@en ;
+  skos:note """stem:[\"dom \"f = A] and stem:[\"ran \"f sube B]
+
+It is not necessary that all elements of stem:[B] are values of the function stem:[f].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maps surjectively onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f: A ->> B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.6-0 ;
+  skos:definition """stem:[f] maps stem:[A] surjectively onto stem:[B]"""@en ;
+  skos:note """stem:[\"dom \"f = A] and stem:[\"ran \"f = B]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maps injectively onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f: A >-> B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.7-0 ;
+  skos:definition """stem:[f] maps stem:[A] injectively into stem:[B]"""@en ;
+  skos:note """stem:[f: A -> B] and for all stem:[x, y in A]
+
+if stem:[x != y] then stem:[f(x) != f(y)].
+
+The function stem:[f] is then said to be injective or one-one.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "function mapping onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f: A >->> B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.8-0 ;
+  skos:definition """stem:[f] maps stem:[A] bijectively onto stem:[B]"""@en ;
+  skos:note """stem:[f: A ->> B] and stem:[f: A >-> B]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "function mapping onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x \\|-> T(x), \" \" x in A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.9-0 ;
+  skos:definition """function that maps any stem:[x in A] onto stem:[T(x)]"""@en ;
+  skos:note """stem:[T(x)] is a defining term denoting the values of some function for the arguments stem:[x in A].
+
+If this function is called stem:[f], then it holds stem:[f(x) = T(x)] for any stem:[x in A]. Therefore the defining term stem:[T(x)] is often used to denote the function stem:[f].
+
+[example]
+stem:[x &#8614; 3x^2y], stem:[x in [0, 2\\]]
+
+This is the quadratic function (of stem:[x] depending on the parameter stem:[y]) defined on the stated interval by the term stem:[3x^2y].
+
+If no function symbol is introduced, the term stem:[3x^2y] is used to denote this function.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f^(-1)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.10-0 ;
+  skos:definition """inverse function of stem:[f]"""@en ;
+  skos:note """The inverse function stem:[f^(-1)] of a function stem:[f] is only defined if stem:[f] is injective.
+
+If stem:[f] is injective then
+
+stem:[\"dom\"(f^(-1)) = \"ran\"(f), \"ran\"(f^(-1)) = \"dom\"(f)], and
+
+stem:[f^(-1)(f(x)) = x] for stem:[x in \"dom \"f].
+
+The inverse function stem:[f^(-1)] should not be confused with the pointwise reciprocal function stem:[x &#8614; f(x)^(-1)].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "composite function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g @ f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.11-0 ;
+  skos:definition """composite function of stem:[f] and stem:[g], +
+stem:[g] circle stem:[f]
+"""@en ;
+  skos:note """(g @ f)(x) = g(f(x))
+
+In the composite stem:[g @ f], the function stem:[g] is applied after function stem:[f] has been applied.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maps onto"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x overset(f)(->) y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f : x &#8614; y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.12-1 ;
+  skos:definition """stem:[f(x) = y], +
+stem:[f] maps stem:[x] onto stem:[y]
+"""@en ;
+  skos:note """[example]
+stem:[pi overset(\"cos\")(->) -1]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "definite integrals"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f &#x2223;_a^b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(...,u,...)&#x2223;_(u=a)^(u=b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.13-1 ;
+  skos:definition """stem:[f(b)-f(a)] +
+stem:[f(...,b,...)-f(...,a,...)]
+"""@en ;
+  skos:note """This notation is used mainly when evaluating definite integrals."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "limit"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lim_(x->a)f(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lim_(x->a)f(x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.14-1 ;
+  skos:definition """limit of stem:[f(x)] as stem:[x] tends to stem:[a]"""@en ;
+  skos:note """stem:[f(x) -> b] as stem:[x -> a]
+
+may be written for stem:[lim_(x->a)f(x)=b].
+
+Limits \"from the right\" stem:[(x > a)] and \"from the left\" stem:[(x < a)] are denoted by
+
+stem:[lim_(x->a+)f(x)] and
+
+stem:[lim_(x->a-)f(x)], respectively.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "order comparable with or inferior to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x) = \"O\"(g(x))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.15-0 ;
+  skos:definition """stem:[f(x)] is upper case stem:[\"O\"] of stem:[g(x)],
+
+stem:[abs(f(x)//g(x))] is bounded from above in the limit implied by the context,
+
+stem:[f(x)] is of the order comparable with or inferior to stem:[g(x)]
+"""@en ;
+  skos:note """The symbol \"=\" here is used for historical reasons and does not have the meaning of equality, because transitivity does not apply.
+
+[example]
+stem:[\"sin\" x=\"O\"(x)], when stem:[x -> 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "order inferior to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x) = \"o\"(g(x))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.16-0 ;
+  skos:definition """stem:[f(x)] is lower case stem:[\"o\"] of stem:[g(x)],
+
+stem:[f(x)//g(x) -> 0] in the limit implied by the context,
+
+stem:[f(x)] is of the order inferior to stem:[g(x)]
+"""@en ;
+  skos:note """The symbol \"=\" here is used for historical reasons and does not have the meaning of equality, because transitivity does not apply.
+
+[example]
+stem:[\"cos\" x = 1 + \"o\"(x)], when stem:[x -> 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Delta f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.17-0 ;
+  skos:definition """delta stem:[f], +
+finite increment of stem:[f]
+"""@en ;
+  skos:note """Difference of two function values implied by the context.
+
+[example]
+====
+stem:[Delta x = x_2-x_1]
+
+stem:[Delta f(x) = f(x_2) - f(x_1)]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(\"d\"f)/(\"d\"x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"d\"f//\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.18-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f'"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.18-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"D\"f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.18-3 ;
+  skos:definition """derivative of stem:[f] with respect to stem:[x]"""@en ;
+  skos:note """Only to be used for functions of one variable.
+
+The independent variable may also be indicated, for example
+
+stem:[(\"d\"f(x))/(\"d\"x)], stem:[\"d\"f(x)//\"d\"x], stem:[f'(x)] and stem:[\"D\"f(x)].
+
+If the independent variable is time stem:[t], stem:[f] is also used for stem:[f'].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "((\"d\"f)/(\"d\"x))_(x=a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(\"d\"f//\"d\"x)_(x=a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f'(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.19-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"D\"f(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.19-3 ;
+  skos:definition """value of the derivative of stem:[f] for stem:[x = a]"""@en ;
+  skos:note """See also <<t2-12.18>>"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(\"d\"^nf)/(\"d\"x^n)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"d\"^nf//\"d\"x^n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.20-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f^((n))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.20-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"D\"^n f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-2 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.20-3 ;
+  skos:definition """stem:[n^(\"th\")] derivative of stem:[f] with respect to stem:[x]"""@en ;
+  skos:note """Only to be used for functions of one variable.
+
+stem:[(\"d\"^nf(x))/(\"d\"x^n)], stem:[\"d\"^nf(x)//\"d\"x^n], stem:[f^((n))(x)] and stem:[\"D\"^nf] are also used.
+
+stem:[f^('')] and stem:[f^(''')] are also used for stem:[f^((2))] and stem:[f^((3))], respectively.
+
+If the independent variable is time stem:[t], stem:[ddot f] is also used for stem:[f^(''')].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "partial derivative"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(del f)/(del x)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.21-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "del f//del x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.21-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "del_x f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.21-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.21-2 ;
+  skos:definition """partial derivative of stem:[f] with respect to stem:[x]"""@en ;
+  skos:note """Only to be used for functions of several variables.
+
+stem:[(del f(x,y,...))/(del x)], stem:[del f(x,y,...)//del x], stem:[del_x f(x,y,...)]
+and stem:[\"D\"_x f(x,y,...)] are also used.
+
+The other independent variables may be shown as subscripts, e.g. stem:[((del f)/(del x))_(y...)].
+
+This partial derivative notation is extended to derivatives of higher order, e.g.
+
+stem:[(del^2f)/(del x^2) = del/(del x) ((del f)/(del x))]
+
+stem:[(del^2f)/(delx dely) = del/(delx) ((del f)/(del y))]
+
+Other notations, e.g. stem:[f_(xy) = del/(del x)((del f)/(del y))], are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total differential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"d\"f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.22-0 ;
+  skos:definition """total differential of stem:[f]"""@en ;
+  skos:note """stem:[\"d\"f(x,y,...) = (del f)/(del x) \"d\"x + (del f)/(del y) \"d\"y + ...]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "infinitesimal variation of function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "delta f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.23 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.23" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.23-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.23-0 ;
+  skos:definition """(infinitesimal) variation of stem:[f]
+"""@en ;
+  skos:note """This symbol is used in variational calculus."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "indefinite integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "int f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.24 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.24" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.24-0 ;
+  skos:definition """indefinite integral of stem:[f]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "definite integral"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "int_a^b f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.25-0 ;
+  skos:definition """definite integral of stem:[f] from stem:[a] to stem:[b]"""@en ;
+  skos:note """This is the simple case of a function defined on an interval. Integration of functions defined on more general domains may also be defined. Special notations, e.g. stem:[int_\"C\"], stem:[int_\"S\"], stem:[int_\"V\"], stem:[oint], are used for integration over a curve stem:[\"C\"], a surface stem:[\"S\"], a three-dimensional domain stem:[\"V\"], and a closed curve or surface, respectively.
+
+Multiple integrals are also denoted stem:[&#x222C;], stem:[&#x222F;] etc.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cauchy principal value"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x2A0D;_a^b f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.26 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.26" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.26-0 ;
+  skos:definition """Cauchy principal value of the integral of stem:[f] with singularity at stem:[c], where stem:[a<c<b]"""@en ;
+  skos:note """stem:[lim_(delta -> 0+) (int_a^(c-delta)f(x)\"d\"x + int_(c+delta)^b f(x)\"d\"x)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .
+
+isoiec80000:term-t2-12.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cauchy principal value"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x2A0D;_(-oo)^(+oo) f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.27 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.27" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.27-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.27-0 ;
+  skos:definition """Cauchy principal value of the integral of stem:[f]"""@en ;
+  skos:note """stem:[lim_(a -> oo) &#x2A0D;_{-a}^{+a} f(x)\"d\"x]
+
+See <<t2-12.26>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

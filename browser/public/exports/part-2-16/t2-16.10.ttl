@@ -1,0 +1,21 @@
+isoiec80000:term-t2-16.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "determinant of matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"det \"bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.10-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\\|[a_(11), ..., a_(1n)\\],[vdots,ddots,vdots\\],[a_(n1), ..., a_(n n)\\]\\|"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.10-1 ;
+  skos:definition """determinant of a square matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """Sometimes stem:[abs(bb(ii(A)))] is used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

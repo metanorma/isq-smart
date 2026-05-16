@@ -1,0 +1,23 @@
+isoiec80000:term-t2-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"B\"(z,w)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.4-0 ;
+  skos:definition """beta function"""@en ;
+  skos:note """stem:[\"B\"(z,w) = int_0^1 t^(z-1)(1-t)^(w-1) \"d\"t]
+
+(for stem:[\"Re \"z > 0], stem:[\"Re \"w > 0])
+
+stem:[rm(B)(z,w) = Gamma(z) Gamma(w) // Gamma(z+w)]
+
+stem:[1/((n+1)rm(B)(k+1,n-k+1))= ((n),(k))] (for stem:[k <= n])
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

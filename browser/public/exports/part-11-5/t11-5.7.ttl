@@ -1,0 +1,34 @@
+isoiec80000:term-t11-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stanton number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "St"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.7-0 ;
+  skos:definition """relation between heat transfer into a fluid from a surface and its heat transfer by convection, expressed by
+
+stem:[St = K // (rho v c_p)]; where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>) of the fluid
+"""@en ;
+  skos:note """The Stanton number is also given by
+
+stem:[St = N u // (Re*Pr) = N u//Pe]; where
+
+stem:[N u]:: is Nusselt number for heat transfer (<<t11-5.5>>),
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>),
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>), and
+stem:[Pe]:: is the Péclet number (<<t11-5.2>>).
+
+Sometimes this quantity is called Margoulis number, symbol stem:[Ms] or stem:[Mg].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

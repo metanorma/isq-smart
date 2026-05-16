@@ -1,0 +1,1465 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "ratio of the circumference to diameter",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "pi",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.1",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "ratio of the circumference of a circle to its diameter",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[pi = 3.1415926...]",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "sine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"sin \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.2",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "sine of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"sin \"x = (e^(ix)-e^(-ix))/(2i)]\n\nstem:[\"sin \"x = x - x^3//3! + x^5//5! - ...]\n\nstem:[(\"sin \"x)^n], stem:[(\"cos \"x)^n], etc. (for stem:[n >= 2]), are often written stem:[\"sin\"^n x], stem:[\"cos\"^n x], etc.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "cosine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"cos \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.3",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "cosine of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"cos \"x = \"sin\"(x + pi//2)]",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"tan \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.4",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "tangent of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"tan \"x = \"sin \" x//\"cos \"x]\n\nstem:[\"tg \"x] should not be used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "cotangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.5-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"cot \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.5",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.5",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.5-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.5-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "cotangent of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"cot \"x = 1//\"tan \"x]\n\nstem:[\"ctg \"x] should not be used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "secant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.6-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"sec \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.6",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.6",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.6-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.6-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "secant of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"sec \"x = 1//\"cos \"x]",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "cosecant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"csc \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.7",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.7",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.7-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.7-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "cosecant of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"csc \"x = 1//\"sin \"x]\n\nstem:[\"cosec \"x] is also used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "arc sine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arcsin \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.8",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.8",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.8-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.8-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "arcus sine of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arcsin \"x <=> x = \"sin \"y]\n\n(for stem:[-pi//2 <= y <= pi//2])\n\nThe function stem:[\"arcsin\"] is the inverse of the function stem:[\"sin\"] with the restriction mentioned above.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "arc cosine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arccos \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.9",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.9",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.9-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.9-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "arcus cosine of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arccos \"x <=> x = \"cos \"y] (for stem:[0 <= y <= pi])\n\nThe function stem:[\"arccos\"] is the inverse of the function stem:[\"cos\"] with the restriction mentioned above.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "arc tangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.10-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arctan \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.10",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.10",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.10-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.10-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "arcus tangent of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arctan \"x <=> x = \"tan \"y]\n\n(for stem:[-pi//2 <= y <= pi//2])\n\nThe function stem:[\"arctan\"] is the inverse of the function stem:[\"tan\"] with the restriction mentioned above.\n\nstem:[\"arctg \"x] should not be used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "arc cotangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arccot \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.11",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.11-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "arcus cotangent of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arccot \"x <=> x = \"cot \"y] (for stem:[0 <= y <= pi])\n\nThe function stem:[\"arccot\"] is the inverse of the function stem:[\"cot\"] with the restriction mentioned above.\n\nstem:[\"arcctg \"x] should not be used.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "arc secant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.12-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arcsec \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.12",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.12",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.12-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.12-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "arcus secant of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arcsec \"x <=> x = \"sec \"y]\n\n(for stem:[0 <= y <= pi], stem:[y != pi//2])\n\nThe function stem:[\"arcsec\"] is the inverse of the function stem:[\"sec\"] with the restriction mentioned above.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "arc cosecant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.13-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arccsc \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.13",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.13",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.13-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.13-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "arcus cosecant of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arccsc \"x <=> x = \"csc \"y]\n\n(for stem:[-pi//2 <= y <= pi//2, y != 0])\n\nThe function stem:[\"arccsc\"] is the inverse of the function stem:[\"csc\"] with the restriction mentioned above.\n\nstem:[\"arccosec \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "hyperbolic sine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.14-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"sinh \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.14",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.14",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.14-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.14-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "hyperbolic sine of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"sinh \"x = (\"e\"^x-\"e\"^(-x))/2]\n\nstem:[\"sinh \"x = x + x^3//3! + ...]\n\nstem:[\"sh \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "hyperbolic cosine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.15-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"cosh \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.15",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.15",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.15-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.15-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "hyperbolic cosine of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"cosh\"^2\" \"x = \"sinh\"^2\" \"x + 1]\n\nstem:[\"ch \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "hyperbolic tangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.16-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"tanh \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.16",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.16",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.16-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.16-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "hyperbolic tangent of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"tanh \"x = \"sinh \"x//\"cosh \"x]\n\nstem:[\"th \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "hyperbolic cotangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.17-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"coth \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.17",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.17",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.17-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.17-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "hyperbolic cotangent of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"coth \"x = 1//\"tanh \"x]",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "hyperbolic secant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.18-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"sech \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.18",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.18",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.18-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.18-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "hyperbolic secant of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"sech \"x = 1//\"cosh \"x]",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.19-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "hyperbolic cosecant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.19-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"csch \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.19",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.19",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.19-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.19-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "hyperbolic cosecant of stem:[x]",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[\"csch \"x = 1//\"sinh \"x]\n\nstem:[\"cosech \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "inverse hyperbolic sine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arsinh \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.20",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.20",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.20-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.20-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "inverse hyperbolic sine of stem:[x], +\narea hyperbolic sine of stem:[x]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arsinh \"x <=> x = \"sinh \"y]\n\nThe function stem:[\"arsinh\"] is the inverse of the function stem:[\"sinh\"].\n\nstem:[\"arsh \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "inverse hyperbolic cosine",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.21-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arcosh \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.21",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.21",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.21-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.21-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "inverse hyperbolic cosine of stem:[x], +\narea hyperbolic cosine of stem:[x]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arcosh \"x <=> x = \"cosh \"y] (for stem:[y >= 0])\n\nThe function stem:[\"arcosh\"] is the inverse of the function stem:[\"cosh\"] with the restriction mentioned above.\n\nstem:[\"arch \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.22-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "inverse hyperbolic tangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.22-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"artanh \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.22",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.22",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.22-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.22-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "inverse hyperbolic tangent of stem:[x], +\narea hyperbolic tangent of stem:[x]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"artanh \"x <=> x = \"tanh \"y]\n\nThe function stem:[\"artanh\"] is the inverse of the function stem:[\"tanh\"].\n\nstem:[\"arth \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.23-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "inverse hyperbolic cotangent",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.23-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arcoth \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.23",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.23",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.23-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.23-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "inverse hyperbolic cotangent of stem:[x], +\narea hyperbolic cotangent of stem:[x]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arcoth \"x <=> x = \"coth \"y] (for stem:[y != 0])\n\nThe function stem:[\"arcoth\"] is the inverse of the function stem:[\"coth\"] with the restriction mentioned above.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "inverse hyperbolic secant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.24-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arsech \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.24",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.24",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.24-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.24-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "inverse hyperbolic secant of stem:[x], +\narea hyperbolic secant of stem:[x]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arsech \"x <=> x = \"sech \"y] (for stem:[y >= 0])\n\nThe function stem:[\"arsech\"] is the inverse of the function stem:[\"sech\"] with the restriction mentioned above.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.25-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "inverse hyperbolic cosecant",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.25-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "\"arcsch \"x",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-14.25",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-14.25",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-14.25-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-14.25-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "inverse hyperbolic cosecant of stem:[x], +\narea hyperbolic cosecant of stem:[x]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[y = \"arcsch \"x <=> x = \"csch \"y] (for stem:[y >= 0])\n\nThe function stem:[\"arcsch\"] is the inverse of the function stem:[\"csch\"] with the restriction mentioned above.\n\nstem:[\"arcosech \"x] should be avoided.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-14"
+      }
+    }
+  ]
+}

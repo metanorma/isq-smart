@@ -1,0 +1,26 @@
+isoiec80000:term-t2-16.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex conjugate matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-16.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(A))**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.8-1 ;
+  skos:definition """complex conjugate matrix of stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[(bar bb(ii(A)))_(ik) = bar((bb(ii(A)))_(ik))]
+
+stem:[bar bb(ii(A))] is used in mathematics,
+
+stem:[bb(ii(A))**] in physics and electrotechnology.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

@@ -1,0 +1,24 @@
+isoiec80000:term-t2-18.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "divergence"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad) * a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(\"div\")\" \"a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.15-1 ;
+  skos:definition """divergence of stem:[bb(ii(a))]"""@en ;
+  skos:note """stem:[bb(grad) * a = sum_i (del a_i)/(del x_i)]
+
+The operator stem:[bb(\"div\")] should be written in bold face.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

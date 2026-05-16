@@ -1,0 +1,27 @@
+isoiec80000:term-t11-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Schmidt number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-7.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: Colburn number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sc"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.2-0 ;
+  skosxl:altLabel isoiec80000:term-t11-7.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.2-0 ;
+  skos:definition """quotient of kinematic viscosity and diffusion coefficient for a fluid, expressed by
+
+stem:[Sc = sf(ii(v))//D]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The heat transfer analogue of the Schmidt number is the Prandtl number (<<t11-7.1>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

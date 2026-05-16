@@ -1,0 +1,534 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-14 a smart:PublicationDocument ;
+  dcterms:title "Part 2-14"@en ;
+  dcterms:identifier "ISO 80000-2-14" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ratio of the circumference to diameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "pi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.1-0 ;
+  skos:definition """ratio of the circumference of a circle to its diameter"""@en ;
+  skos:note """stem:[pi = 3.1415926...]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sin \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.2-0 ;
+  skos:definition """sine of stem:[x]"""@en ;
+  skos:note """stem:[\"sin \"x = (e^(ix)-e^(-ix))/(2i)]
+
+stem:[\"sin \"x = x - x^3//3! + x^5//5! - ...]
+
+stem:[(\"sin \"x)^n], stem:[(\"cos \"x)^n], etc. (for stem:[n >= 2]), are often written stem:[\"sin\"^n x], stem:[\"cos\"^n x], etc.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cosine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"cos \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.3-0 ;
+  skos:definition """cosine of stem:[x]"""@en ;
+  skos:note """stem:[\"cos \"x = \"sin\"(x + pi//2)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"tan \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.4-0 ;
+  skos:definition """tangent of stem:[x]"""@en ;
+  skos:note """stem:[\"tan \"x = \"sin \" x//\"cos \"x]
+
+stem:[\"tg \"x] should not be used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cotangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"cot \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.5-0 ;
+  skos:definition """cotangent of stem:[x]"""@en ;
+  skos:note """stem:[\"cot \"x = 1//\"tan \"x]
+
+stem:[\"ctg \"x] should not be used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "secant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sec \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.6-0 ;
+  skos:definition """secant of stem:[x]"""@en ;
+  skos:note """stem:[\"sec \"x = 1//\"cos \"x]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cosecant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"csc \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.7-0 ;
+  skos:definition """cosecant of stem:[x]"""@en ;
+  skos:note """stem:[\"csc \"x = 1//\"sin \"x]
+
+stem:[\"cosec \"x] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcsin \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.8-0 ;
+  skos:definition """arcus sine of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arcsin \"x <=> x = \"sin \"y]
+
+(for stem:[-pi//2 <= y <= pi//2])
+
+The function stem:[\"arcsin\"] is the inverse of the function stem:[\"sin\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc cosine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arccos \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.9-0 ;
+  skos:definition """arcus cosine of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arccos \"x <=> x = \"cos \"y] (for stem:[0 <= y <= pi])
+
+The function stem:[\"arccos\"] is the inverse of the function stem:[\"cos\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc tangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arctan \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.10-0 ;
+  skos:definition """arcus tangent of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arctan \"x <=> x = \"tan \"y]
+
+(for stem:[-pi//2 <= y <= pi//2])
+
+The function stem:[\"arctan\"] is the inverse of the function stem:[\"tan\"] with the restriction mentioned above.
+
+stem:[\"arctg \"x] should not be used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc cotangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arccot \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.11-0 ;
+  skos:definition """arcus cotangent of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arccot \"x <=> x = \"cot \"y] (for stem:[0 <= y <= pi])
+
+The function stem:[\"arccot\"] is the inverse of the function stem:[\"cot\"] with the restriction mentioned above.
+
+stem:[\"arcctg \"x] should not be used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc secant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcsec \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.12-0 ;
+  skos:definition """arcus secant of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arcsec \"x <=> x = \"sec \"y]
+
+(for stem:[0 <= y <= pi], stem:[y != pi//2])
+
+The function stem:[\"arcsec\"] is the inverse of the function stem:[\"sec\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc cosecant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arccsc \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.13-0 ;
+  skos:definition """arcus cosecant of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arccsc \"x <=> x = \"csc \"y]
+
+(for stem:[-pi//2 <= y <= pi//2, y != 0])
+
+The function stem:[\"arccsc\"] is the inverse of the function stem:[\"csc\"] with the restriction mentioned above.
+
+stem:[\"arccosec \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sinh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.14-0 ;
+  skos:definition """hyperbolic sine of stem:[x]"""@en ;
+  skos:note """stem:[\"sinh \"x = (\"e\"^x-\"e\"^(-x))/2]
+
+stem:[\"sinh \"x = x + x^3//3! + ...]
+
+stem:[\"sh \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic cosine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"cosh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.15-0 ;
+  skos:definition """hyperbolic cosine of stem:[x]"""@en ;
+  skos:note """stem:[\"cosh\"^2\" \"x = \"sinh\"^2\" \"x + 1]
+
+stem:[\"ch \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic tangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"tanh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.16-0 ;
+  skos:definition """hyperbolic tangent of stem:[x]"""@en ;
+  skos:note """stem:[\"tanh \"x = \"sinh \"x//\"cosh \"x]
+
+stem:[\"th \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic cotangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"coth \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.17-0 ;
+  skos:definition """hyperbolic cotangent of stem:[x]"""@en ;
+  skos:note """stem:[\"coth \"x = 1//\"tanh \"x]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic secant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sech \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.18-0 ;
+  skos:definition """hyperbolic secant of stem:[x]"""@en ;
+  skos:note """stem:[\"sech \"x = 1//\"cosh \"x]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic cosecant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"csch \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.19-0 ;
+  skos:definition """hyperbolic cosecant of stem:[x]"""@en ;
+  skos:note """stem:[\"csch \"x = 1//\"sinh \"x]
+
+stem:[\"cosech \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arsinh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.20-0 ;
+  skos:definition """inverse hyperbolic sine of stem:[x], +
+area hyperbolic sine of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arsinh \"x <=> x = \"sinh \"y]
+
+The function stem:[\"arsinh\"] is the inverse of the function stem:[\"sinh\"].
+
+stem:[\"arsh \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic cosine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcosh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.21-0 ;
+  skos:definition """inverse hyperbolic cosine of stem:[x], +
+area hyperbolic cosine of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arcosh \"x <=> x = \"cosh \"y] (for stem:[y >= 0])
+
+The function stem:[\"arcosh\"] is the inverse of the function stem:[\"cosh\"] with the restriction mentioned above.
+
+stem:[\"arch \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic tangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"artanh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.22-0 ;
+  skos:definition """inverse hyperbolic tangent of stem:[x], +
+area hyperbolic tangent of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"artanh \"x <=> x = \"tanh \"y]
+
+The function stem:[\"artanh\"] is the inverse of the function stem:[\"tanh\"].
+
+stem:[\"arth \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic cotangent"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcoth \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.23 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.23" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.23-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.23-0 ;
+  skos:definition """inverse hyperbolic cotangent of stem:[x], +
+area hyperbolic cotangent of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arcoth \"x <=> x = \"coth \"y] (for stem:[y != 0])
+
+The function stem:[\"arcoth\"] is the inverse of the function stem:[\"coth\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic secant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arsech \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.24 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.24" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.24-0 ;
+  skos:definition """inverse hyperbolic secant of stem:[x], +
+area hyperbolic secant of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arsech \"x <=> x = \"sech \"y] (for stem:[y >= 0])
+
+The function stem:[\"arsech\"] is the inverse of the function stem:[\"sech\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .
+
+isoiec80000:term-t2-14.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "inverse hyperbolic cosecant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arcsch \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.25 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.25" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.25-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.25-0 ;
+  skos:definition """inverse hyperbolic cosecant of stem:[x], +
+area hyperbolic cosecant of stem:[x]
+"""@en ;
+  skos:note """stem:[y = \"arcsch \"x <=> x = \"csch \"y] (for stem:[y >= 0])
+
+The function stem:[\"arcsch\"] is the inverse of the function stem:[\"csch\"] with the restriction mentioned above.
+
+stem:[\"arcosech \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

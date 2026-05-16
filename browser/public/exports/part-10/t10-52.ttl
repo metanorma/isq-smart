@@ -1,0 +1,26 @@
+isoiec80000:term-t10-52-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "atomic attenuation coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-52-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"a\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-52 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-52" ;
+  skosxl:prefLabel isoiec80000:term-t10-52-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-52-0 ;
+  skos:definition """quotient of the linear attenuation coefficient stem:[mu] (<<t10-49>>) and the number density (<<t10-62.1>>), stem:[n], of atoms in the substance:
+
+[stem%unnumbered]
+++++
+mu_\"a\" = mu//n
+++++
+"""@en ;
+  skos:note """stem:[mu] is equal to the total cross section stem:[sigma_\"tot\"] for the removal of particles from the beam.
+
+See also <<t10-38.2>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

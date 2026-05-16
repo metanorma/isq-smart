@@ -1,0 +1,21 @@
+isoiec80000:term-t2-18.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laplacian"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(grad)^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Delta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.17-1 ;
+  skos:definition """Laplacian"""@en ;
+  skos:note """stem:[bb(grad)^2 = (del^2)/(del x^2) + (del^2)/(del y^2) + (del^2)/(del z^2)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

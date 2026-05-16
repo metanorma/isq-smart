@@ -1,0 +1,37 @@
+isoiec80000:term-t13-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulation rate, line digit rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t13-16-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-16" ;
+  skosxl:prefLabel isoiec80000:term-t13-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-16-1 ;
+  skos:definition """inverse of the shortest duration of a signal element"""@en ;
+  skos:note """The term \"modulation rate\" is used in conventional
+telegraphy and data transmission. In isochronous
+digital transmission, the term \"line digit rate\" is
+generally used.
+
+stem:[1 \" Bd\" = s^{-1}]
+
+Baud is a special name for the second to the power of
+minus one for this quantity.
+
+The baud may be combined with prefixes, for example
+kilobaud, symbol kBd, megabaud, symbol MBd.
+
+See <<iec60050-704,droploc%locality:item=\"704-17-03\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s^{-1} ;
+  isoiec80000:hasUnit isoiec80000:unit-Bd ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

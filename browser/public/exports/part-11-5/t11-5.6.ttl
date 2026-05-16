@@ -1,0 +1,23 @@
+isoiec80000:term-t11-5.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Biot number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.6-0 ;
+  skos:definition """special case of the Nusselt number for heat transfer (item <<t11-5.5>>) in case of conductive heat transfer in a solid body, expressed by
+
+stem:[Bi = Kl // lambda]; where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>) of the body
+"""@en ;
+  skos:note """The characteristic length is commonly defined as the volume of the body divided by its surface area."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

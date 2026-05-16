@@ -1,0 +1,31 @@
+isoiec80000:term-t5-21.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Gibbs energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-21.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Gibbs function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-21.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-21.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-21.5" ;
+  skosxl:prefLabel isoiec80000:term-t5-21.5-0 ;
+  skosxl:altLabel isoiec80000:term-t5-21.5-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-21.5-0 ;
+  skos:definition """quotient of Gibbs energy and mass:
+
+[stem%unnumbered]
+++++
+g = G/m
+++++
+
+where stem:[G] is Gibbs energy (<<t5-20.5>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  skos:note """The name specific Gibbs free energy is also used. However, this term is not recommended."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

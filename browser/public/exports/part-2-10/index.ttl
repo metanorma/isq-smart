@@ -1,0 +1,467 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-10 a smart:PublicationDocument ;
+  dcterms:title "Part 2-10"@en ;
+  dcterms:identifier "ISO 80000-2-10" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "plus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a + b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.1-0 ;
+  skos:definition """stem:[a] plus stem:[b]"""@en ;
+  skos:note """This operation is named addition. The symbol + is the addition symbol."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "minus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a - b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.2-0 ;
+  skos:definition """stem:[a] minus stem:[b]"""@en ;
+  skos:note """This operation is named subtraction. The symbol - is the subtraction symbol."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "plus or minus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a +- b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.3-0 ;
+  skos:definition """stem:[a] plus or minus stem:[b]"""@en ;
+  skos:note """This is a combination of two values into one expression."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "minus or plus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a &#x2213; b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.4-0 ;
+  skos:definition """stem:[a] minus or plus stem:[b]"""@en ;
+  skos:note """stem:[-(a pm b) = -a &#x2213; b]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "multiplication"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ab"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.5-0 ;
+  skos:definition """stem:[a] times stem:[b]"""@en ;
+  skos:note """See also <<t2-6.16>>, <<t2-6.17>>, <<t2-18.11>>, <<t2-18.12>>, <<t2-18.23>> and <<t2-18.24>> for the use of the dot and cross in various products."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "divided by"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a\" \":\" \"b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.6-0 ;
+  skos:definition """stem:[a] divided by stem:[b]"""@en ;
+  skos:note """The symbol stem:[-:] should not be used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum of"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sum_(i=1)^n a_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.7-0 ;
+  skos:definition """sum of stem:[a_1, a_2, ..., a_n]"""@en ;
+  skos:note """The notations stem:[sum_(i=1)^n], stem:[sum_i a_i], stem:[sum_i a_i] and stem:[sum a_i] are also used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "product of"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "prod_(i=1)^n a_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.8-0 ;
+  skos:definition """product of stem:[a_1, a_2, ..., a_n]"""@en ;
+  skos:note """The notations stem:[prod_(i=1)^n a_i], stem:[prod_i a_i], stem:[prod_i a_i] and stem:[prod a_i] are also used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.9-0 ;
+  skos:definition """stem:[a] to the power stem:[p]"""@en ;
+  skos:note """The verbal equivalent of stem:[a^2] is a squared; the verbal equivalent of stem:[a^3] is a cubed."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "square root"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^(1//2)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-10.10-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sqrt(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.10-1 ;
+  skos:definition """stem:[a] a to the power stem:[1//2], +
+square root of stem:[a]
+"""@en ;
+  skos:note """If stem:[a >= 0], then stem:[sqrt(a) >= 0].
+
+The symbol stem:[sqrt(a)] should be avoided.
+
+See remark to <<t2-10.11>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "root(n)(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.11-0 ;
+  skos:definition """stem:[n]^th^ root of stem:[a]"""@en ;
+  skos:note """If stem:[a >= 0], then stem:[root(n)(a) >= 0].
+
+The symbol without the upper line stem:[root(n)(a)] should be avoided.
+
+If however the symbol stem:[root(n)(\" \")] or stem:[sqrt] is used acting on a composite expression, parentheses shall be used to avoid ambiguity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean value"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-10.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "<< x >>"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-10.12-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bar x_a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.12-1 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.12-2 ;
+  skos:definition """mean value of stem:[x], +
+arithmetic mean of stem:[x]
+"""@en ;
+  skos:note """Mean values obtained by other methods are the
+
+* harmonic mean denoted by subscript stem:[\"h\"],
+* geometric mean denoted by subscript stem:[\"g\"],
+* quadratic mean, often called \"root mean square\", denoted by subscript stem:[\"q\"] or stem:[\"rms\"].
+
+The subscript may only be omitted for the arithmetic mean.
+
+In mathematics, stem:[bar x] is also used for the complex conjugate of stem:[x]; see <<t2-15.6>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "signum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sgn \" a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.13-0 ;
+  skos:definition """signum stem:[a]"""@en ;
+  skos:note """For real stem:[a]:
+
+stem:[\"sgn \" a = {(1 \" if \" a>0),(0 \" if \" a=0),(-1 \" if \" a<0):}]
+
+See also item <<t2-15.7>>. Sometimes stem:[\"sgn \"0] is left undefined.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "infimum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"inf \"M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.14-0 ;
+  skos:definition """infimum of stem:[M]"""@en ;
+  skos:note """Greatest lower bound of a non-empty set of numbers bounded from below."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "supremum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sup \"M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.15-0 ;
+  skos:definition """supremum of stem:[M]"""@en ;
+  skos:note """Smallest upper bound of a non-empty set of numbers bounded from above."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnitude"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "abs(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.16 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.16" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.16-0 ;
+  skos:definition """magnitude of stem:[a]"""@en ;
+  skos:note """The notation stem:[\"abs \"a] is also used.
+
+The symbol stem:[abs] is also used for cardinality of a set (see <<t2-6.5>>), modulus of a complex number (<<t2-15.4>>) and magnitude of a vector (see <<t2-18.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "floor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "floor(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.17 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.17" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.17-0 ;
+  skos:definition """floor stem:[a], +
+the greatest integer less than or equal to the real number stem:[a]
+"""@en ;
+  skos:note """The notation stem:[\"ent \"a] is also used.
+
+[example]
+====
+stem:[floor(2,4) = 2]
+
+stem:[floor(-2,4) = -3]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ceil"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ceil(a)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.18-0 ;
+  skos:definition """ceil stem:[a], +
+the least integer greater than or equal to the real number stem:[a]
+"""@en ;
+  skos:note """\"ceil\" is an abbreviation of the English word \"ceiling\".
+
+[example]
+====
+stem:[ceil(2,4) = 3]
+
+stem:[ceil(-2,4) = -2]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "integer part"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"int \"a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.19-0 ;
+  skos:definition """integer part of the real number stem:[a]"""@en ;
+  skos:note """stem:[\"int \"a = \"sgn \"a * floor(abs(a))]
+
+[example]
+====
+stem:[\"int\"(2,4) = 2]
+
+stem:[\"int\"(-2,4) = -2]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "fractional part"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"frac \"a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.20 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.20" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.20-0 ;
+  skos:definition """fractional part of the real number stem:[a]"""@en ;
+  skos:note """stem:[\"frac \"a = a - \"int \"a]
+
+[example]
+====
+stem:[\"frac\"(2,4) = 0,4]
+
+stem:[\"frac\"(-2,4) = -0,4]
+====
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "minimum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"min\"(a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.21 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.21" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.21-0 ;
+  skos:definition """minimum of stem:[a] and stem:[b]"""@en ;
+  skos:note """The operation generalizes to more than two numbers and to sets of numbers. However, an infinite set of numbers need not have a smallest element, in this case use stem:[\"inf\"] (see <<t2-10.14>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .
+
+isoiec80000:term-t2-10.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "maximum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"max\"(a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.22-0 ;
+  skos:definition """maximum of stem:[a] and stem:[b]"""@en ;
+  skos:note """The operation generalizes to more than two numbers and to sets of numbers. However, an infinite set of numbers need not have a greatest element, in this case use sup (see <<t2-10.15>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

@@ -1,0 +1,27 @@
+isoiec80000:term-t3-1.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "distance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-1.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-1.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "r"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-1.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-1.8" ;
+  skosxl:prefLabel isoiec80000:term-t3-1.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-1.8-1 ;
+  skos:definition """shortest path length (<<t3-1.7>>) between two points in a metric space"""@en ;
+  skos:note """A metric space might be curved. An example of a curved metric space is the surface of the Earth.
+
+In this case, distances are measured along great circles.
+
+A metric is not necessarily Euclidean.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

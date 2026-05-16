@@ -1,0 +1,24 @@
+isoiec80000:term-t11-6.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Graetz number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gz**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.6-0 ;
+  skos:definition """quotient of advective mass transfer rate and radial diffusive mass transfer rate for mass transfer in pipes, expressed by
+
+stem:[Gz** = (vd)/D = d/l Pe**]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,
+stem:[d]:: is hydraulic diameter (<<iso80000-3>>) of the pipe,
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>),
+stem:[l]:: is length (<<iso80000-3>>) of the pipe, and
+stem:[Pe**]:: is the Péclet number for mass transfer (<<t11-6.2>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

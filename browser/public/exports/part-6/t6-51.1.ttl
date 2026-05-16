@@ -1,0 +1,36 @@
+isoiec80000:term-t6-51.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "impedance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-51.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex impedance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-51.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.1-0 ;
+  skos:definition """scalar quantity given by the quotient of voltage phasor stem:[ul U] (<<t6-50>>) and electric current phasor stem:[ul I] (<<t6-49>>)
+
+[stem%unnumbered]
+++++
+ul Z = ul U // ul I
+++++
+"""@en ;
+  skos:note """stem:[ul Z = R + \"j\"X], where stem:[R] is resistance (<<t6-51.3>>) and stem:[X] is reactance (<<t6-51.4>>).
+
+stem:[\"j\"] is the imaginary unit.
+
+stem:[ul Z = abs(Z)e^(\"j\"varphi)]
+
+See <<iec60050-131,locality:item=\"131-12-43\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Ohm ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

@@ -1,0 +1,30 @@
+isoiec80000:term-t13-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "period of data elements, period duration of data elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-12" ;
+  skosxl:prefLabel isoiec80000:term-t13-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-12-0 ;
+  skos:definition """stem:[T = 1 // r] where r is the transfer rate
+(<<t13-11,item 13-11>>) when the data elements are
+transmitted in series
+"""@en ;
+  skos:note """A subscript referring to a specified data element can
+be added to the symbol.
+
+[example]
+period of digits, stem:[T_d]; +
+period of octets (or bytes), stem:[T_o] or stem:[T_B].
+
+For the unit second, see <<iec60050-112,droploc%locality:item=\"112-02-04\">>.
+
+See <<iec60050-171,droploc%locality:item=\"171-06-05\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

@@ -1,0 +1,29 @@
+isoiec80000:term-t6-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "permittivity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-14.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-14.2-0 ;
+  skos:definition """for linear media, proportionality constant between electric flux density stem:[bb(ii(D))] (<<t6-12>>) and electric field strength stem:[bb(ii(E))] (<<t6-10>>);
+
+[stem%unnumbered]
+++++
+bb(ii(D)) = epsilon bb(ii(E))
+++++
+"""@en ;
+  skos:note """Permittivity stem:[epsilon] is a property of a medium. For an inhomogeneous medium, permittivity stem:[epsilon] depends on position.
+
+For an isotropic medium, stem:[epsilon] is a scalar quantity; for an anisotropic medium, stem:[epsilon] is a second-order tensor.
+
+See <<iec60050-121,locality:item=\"121-12-12\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-F/m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-3)*s^4*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

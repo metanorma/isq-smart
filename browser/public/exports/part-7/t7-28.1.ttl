@@ -1,0 +1,33 @@
+isoiec80000:term-t7-28.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chromaticity coordinates in the CIE 1931 standard colorimetric system"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-28.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "x, y, z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-28.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-28.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-28.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-28.1-0 ;
+  skos:definition """coordinates expressing the quotients of each of a set of three tristimulus values for the CIE 1931 standard colorimetric observer (<<t7-26.1>>) and their sum, expressed by
+
+[stem%unnumbered]
+++++
+x = X // (X+Y+Z),
+++++
+
+[stem%unnumbered]
+++++
+y = Y // (X+Y+Z),
+++++
+
+[stem%unnumbered]
+++++
+z = Z // (X+Y+Z)
+++++
+"""@en ;
+  skos:note """Since stem:[x + y + z = 1], two variables are sufficient to express chromaticity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

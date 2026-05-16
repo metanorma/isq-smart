@@ -1,0 +1,33 @@
+isoiec80000:term-t11-8.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Prandtl magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pr_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.10-0 ;
+  skos:definition """quotient of kinematic viscosity and magnetic viscosity in an electrically conducting liquid, expressed by
+
+stem:[Pr_\"m\" = sf(ii(v)) sigma mu]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[sf(ii(v))_\"m\" = 1//(mu sigma)] is called magnetic viscosity or magnetic diffusivity. See <<t11-8.11>>.
+
+The Prandtl magnetic number is also given by
+
+stem:[Pr_\"m\" = Rm//Re]; where
+
+stem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+
+This number is also called magnetic Prandtl number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

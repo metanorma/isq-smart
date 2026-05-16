@@ -1,0 +1,26 @@
+isoiec80000:term-t12-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bragg angle"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-4" ;
+  skosxl:prefLabel isoiec80000:term-t12-4-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-4-0 ;
+  skos:definition """angle between the scattered ray and the lattice plane"""@en ;
+  skos:note """Bragg angle stem:[vartheta] is given by
+
+[stem%unnumbered]
+++++
+2d \"sin\" vartheta = n lambda
+++++
+
+where stem:[d] is the lattice plane spacing (<<t12-3>>), stem:[lambda] is the wavelength (<<iso80000-7>>) of the radiation, and stem:[n] is the order of reflexion which is an integer.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-deg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

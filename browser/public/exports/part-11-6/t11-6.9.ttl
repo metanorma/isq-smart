@@ -1,0 +1,26 @@
+isoiec80000:term-t11-6.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Biot number <mass transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bi**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.9-0 ;
+  skos:definition """relation between mass transfer rate at the interface and mass transfer rate in the interior of a body, expressed by
+
+stem:[Bi** = kl//D_\"int\"]; where
+
+stem:[k]:: is the mass transfer coefficient through the surface, stem:[k=k'//rho], where
+stem:[rho]::: is mass density (<<iso80000-4>>),
+stem:[k']::: is mass flux density stem:[q_m//A] through the surface, where
+stem:[q_m]:::: is mass flow rate (<<iso80000-4>>), and
+stem:[A]:::: is area (<<iso80000-3>>),
+stem:[l]:: is thickness (<<iso80000-3>>) of layer, and
+stem:[D_\"int\"]:: is diffusion coefficient (<<iso80000-9>>) at the interface
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

@@ -1,0 +1,21 @@
+isoiec80000:term-t2-20.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hermite polynomial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"H\"_n(z)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.18-0 ;
+  skos:definition """Hermite polynomial"""@en ;
+  skos:note """stem:[\"H\"_n(z) = (-1)^n \"e\"^(z^2) (\"d\"^n)/(\"d\"z^n) \"e\"^(-z^2)]
+
+(for stem:[n in bb(sf(N))])
+
+Solution of stem:[y'' - 2zy' + 2ny =0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

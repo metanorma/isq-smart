@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "minus or plus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a &#x2213; b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.4-0 ;
+  skos:definition """stem:[a] minus or plus stem:[b]"""@en ;
+  skos:note """stem:[-(a pm b) = -a &#x2213; b]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

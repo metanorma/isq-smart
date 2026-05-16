@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "electric current",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "I",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-1-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "i",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t6-1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "6-1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-1-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-1-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "scalar quantity equal to the quotient of the net quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge stem:[\"d\"Q] (<<t6-2.1>>) transferred through a surface during a quasi-infinitesimal time interval and the duration stem:[\"d\"t] of that interval:\n\n[stem%unnumbered]\n++++\nI = (\"d\"Q)/(\"d\"t)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Electric current is one of the base quantities in the International System of Quantities, ISQ, on which the International System of Units, SI, is based.\n\nElectric current stem:[I] through a surface stem:[\"S\"] can also be written as\n\n[stem%unnumbered]\n++++\nI = int_\"S\" bb(ii(J)) * e_\"n\" \"d\"A\n++++\n\nwhere stem:[bb(ii(J))] is the electric current density (<<t6-8>>) and where stem:[e_\"n\" \"d\"A] is the vector surface element.\n\nElectric current produces a magnetic field.\n\nFor related definitions, see <<t6-8>> and <<iec60050-121,locality:item=\"121-11-13\">>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-A"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-6"
+      }
+    }
+  ]
+}

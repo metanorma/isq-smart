@@ -1,0 +1,26 @@
+isoiec80000:term-t13-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "entropy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-25" ;
+  skosxl:prefLabel isoiec80000:term-t13-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-25-0 ;
+  skos:definition """stem:[H(X) = sum_{i=1}^n p(X_i) I(X_i)] for the set
+stem:[X = {X_1, ..., X_n}]
+
+where stem:[p(X_i)] is the probability, and
+
+stem:[I(X_i)] is the information content of event
+stem:[X_i]
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-15\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

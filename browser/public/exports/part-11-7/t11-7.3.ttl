@@ -1,0 +1,32 @@
+isoiec80000:term-t11-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lewis number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Le"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.3-0 ;
+  skos:definition """quotient of thermal diffusivity and diffusion coefficient for heat transfer in a fluid, expressed by
+
+stem:[Le = a//D]; where
+
+stem:[a]:: is thermal diffusivity (<<iso80000-5>>), and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The Lewis number is also given by
+
+stem:[Le = Sc//Pr]; where
+
+stem:[Sc]:: is the Schmidt number (<<t11-7.2>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+
+Compare with <<t11-5.2>>.
+
+The Lewis number is sometimes defined as reciprocal of this quantity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

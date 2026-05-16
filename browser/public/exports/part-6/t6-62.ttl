@@ -1,0 +1,30 @@
+isoiec80000:term-t6-62-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "active energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-62-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-62 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-62" ;
+  skosxl:prefLabel isoiec80000:term-t6-62-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-62-0 ;
+  skos:definition """scalar quantity given by the integral over the time interval from stem:[t_1] to stem:[t_2]
+
+[stem%unnumbered]
+++++
+W = int_(t_1)^(t_2) p \"d\"t
+++++
+
+where stem:[p] is instantaneous power (<<t6-45>>) and stem:[t] is time (<<iso80000-3>>).
+"""@en ;
+  skos:note """The coherent SI unit of active energy is joule, stem:[\"unitsml(J)\"]. Another unit is watt hour (<<iec60050-131,locality:item=\"131-11-58\">>). Its multiple kilowatt hour, stem:[\"unitsml(kW*h)\"], is commonly used for billing consumers of electric energy and is therefore indicated on electric energy meters.
+
+See <<iec60050-131,locality:item=\"131-11-57\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-W*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^-2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

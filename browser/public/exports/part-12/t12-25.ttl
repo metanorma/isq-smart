@@ -1,0 +1,18 @@
+isoiec80000:term-t12-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electron affinity <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "chi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-25" ;
+  skosxl:prefLabel isoiec80000:term-t12-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-25-0 ;
+  skos:definition """energy (<<iso80000-5>>) difference between an electron at rest at infinity and an electron at the lowest level of the conduction band in an insulator or semiconductor"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

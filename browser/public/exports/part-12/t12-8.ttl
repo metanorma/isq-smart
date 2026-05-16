@@ -1,0 +1,22 @@
+isoiec80000:term-t12-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Debye-Waller factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "D"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t12-8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-8" ;
+  skosxl:prefLabel isoiec80000:term-t12-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-8-1 ;
+  skos:definition """factor by which the intensity of a diffraction line is reduced because of the lattice vibrations"""@en ;
+  skos:note """stem:[D] is sometimes expressed as stem:[D = \"exp\"(-2W)]; in Mössbauer spectroscopy, it is also called the stem:[f] factor and denoted by stem:[f]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

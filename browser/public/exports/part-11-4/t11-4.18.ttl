@@ -1,0 +1,28 @@
+isoiec80000:term-t11-4.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hedström number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "He"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hd"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.18-1 ;
+  skos:definition """quotient of yield stress and viscous stress of a viscous material at flow limit for visco-plastic material in a channel, expressed by
+
+stem:[He = (tau_0 d^2 rho)/eta^2]; where
+
+stem:[tau_0]:: is shear stress (<<iso80000-4>>) at flow limit,
+stem:[d]:: is characteristic diameter (<<iso80000-3>>), e.g. effective channel width,
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

@@ -1,0 +1,16 @@
+isoiec80000:term-t2-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "logarithm to the base stem:[a]"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"log\"_a x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.4-0 ;
+  skos:definition """logarithm to the base stem:[a] of argument stem:[x]"""@en ;
+  skos:note """stem:[\"log \"x] is used when the base does not need to be specified."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .

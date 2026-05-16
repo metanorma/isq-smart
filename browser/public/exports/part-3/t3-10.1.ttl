@@ -1,0 +1,42 @@
+isoiec80000:term-t3-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "velocity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-10.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(bb(sf(v)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(sf(u,v,w))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-10.1-3 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(u,v,w)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-10.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-10.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t3-10.1-3 ;
+  skos:definition """vector (<<iso80000-2>>) quantity giving the rate of change of a position vector (<<t3-1.10>>)"""@en ;
+  skos:note """The velocity vector is given by:
+
+[stem%unnumbered]
+++++
+ii(bb(sf(v))) = (\"d\"ii(sf(r)))/(\"d\"t)
+++++
+
+where stem:[ii(sf(r))] denotes the position vector (<<t3-1.10>>) and stem:[t] the duration (<<t3-9>>).
+
+When the general symbol stem:[ii(bb(sf(v)))] is not used for the velocity, the symbols stem:[ii(sf(u))], stem:[ii(sf(v))], stem:[ii(sf(w))] may be used for the components (<<iso80000-2>>) of the velocity.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m*s^-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

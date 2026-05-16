@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <vibrating particles>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_1"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.33" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.33-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.33-0 ;
+  skos:definition """quotient of friction and inertia forces for the special case of particles vibrating in a fluid or plasma, expressed by
+
+stem:[Stk_1 = sf(ii(v)) // (d^2f)]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid or plasma,
+stem:[d]:: is diameter (<<iso80000-3>>) of particle, and
+stem:[f]:: is frequency (<<iso80000-3>>) of particle vibrations
+"""@en ;
+  skos:note """Sometimes the inverse of this number is wrongly used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

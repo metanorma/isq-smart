@@ -1,0 +1,657 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-11-8 a smart:PublicationDocument ;
+  dcterms:title "Part 11-8"@en ;
+  dcterms:identifier "ISO 80000-11-8" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t11-8.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reynolds magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rm"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.1-0 ;
+  skos:definition """relation between inertial force and magneto-dynamic viscous force in an electrically conducting fluid, expressed by
+
+stem:[Rm = vl mu sigma = vl // sf(ii(v))_\"m\"]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[sf(ii(v))_\"m\" = 1//(mu sigma)]:: is magnetic viscosity (magnetic diffusivity)
+"""@en ;
+  skos:note """This number is also called magnetic Reynolds number.
+
+The Reynolds magnetic number is also given by
+
+stem:[Rm = Re * Pr_\"m\"]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Pr_\"m\"]:: is the Prandtl magnetic number (<<t11-8.10>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Batchelor number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bt"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.2-0 ;
+  skos:definition """relation between inertia and magneto-dynamic diffusion in an electrically conducting liquid, expressed by
+
+stem:[Bt = v l sigma mu // (epsilon_\"r\" mu_\"r\")]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[epsilon_\"r\"]:: is relative permittivity (<<iec80000-6>>), and
+stem:[mu_\"r\"]:: is relative permeability (<<iec80000-6>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Nusselt electric number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ne"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.3-0 ;
+  skos:definition """relation between convective current and diffusive current of ions in electrochemistry, expressed by
+
+stem:[Ne = vl//D**]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[D** = (D^+ + D^-)//2]; where::
+stem:[D^+], stem:[D^-]::: are diffusion coefficients (<<iso80000-9>>) of positive or negative ions respectively
+"""@en ;
+  skos:note """This number is also called electric Nusselt number.
+
+Sometimes this quantity is called the Reynolds electric number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Alfvén number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-8.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mach magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-8.4-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Kárman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Al"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.4-0 ;
+  skosxl:altLabel isoiec80000:term-t11-8.4-1 ;
+  skosxl:altLabel isoiec80000:term-t11-8.4-2 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.4-0 ;
+  skos:definition """relation between speed of a plasma and the Alfvén wave speed, expressed by
+
+stem:[Al = v/(B//sqrt(rho mu))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>)
+"""@en ;
+  skos:note """Often, the inverse of this number is wrongly used.
+
+The name \"Alfvén Mach number\" is used in investigations on the solar wind.
+
+The quantity stem:[v_\"A\"=B//sqrt(rho mu)] is called Alfvén wave speed, where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hartmann number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.5-0 ;
+  skos:definition """relation between magnetically induced stress and hydrodynamic shear stress in an electrically conducting fluid, expressed by
+
+stem:[Ha = Bl sqrt((sigma//mu))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is dynamic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Hartmann number represents also the ratio of magnetic force to viscous force."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cowling number <magnetism>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-8.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Euler magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Co"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.6-0 ;
+  skosxl:altLabel isoiec80000:term-t11-8.6-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.6-0 ;
+  skos:definition """quotient of magnetic and kinematic energy density in a plasma, expressed by
+
+stem:[Co = B^2 // (mu rho v^2)]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Cowling number also represents the ratio of magnetic to dynamic pressure.
+
+This quantity is equal to the square of the inverse of the Alfvén number.
+
+This quantity is often called the second Cowling number, stem:[Co_2].
+
+The first Cowling number is then defined as stem:[Co_1 = Co * Rm]; where stem:[Rm] is the Reynolds magnetic number (<<t11-8.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stuart electrical number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Se"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.7-0 ;
+  skos:definition """quotient of electric energy density and kinematic energy density in a plasma, expressed by
+
+stem:[Se = epsilon E^2 // (rho v^2)]; where
+
+stem:[epsilon]:: is electric permittivity (<<iec80000-6>>),
+stem:[E]:: is electric field strength (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Stuart electrical number is the electrical counterpart of the Cowling number (<<t11-8.6>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic pressure number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(m p)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.8-0 ;
+  skos:definition """quotient of gas pressure and magnetic pressure in a gas or plasma, expressed by
+
+stem:[N_(m p) = p (2mu)/B^2]; where
+
+stem:[p]:: is pressure (<<iso80000-4>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[p_\"m\" = B^2//(2mu)] is called magnetic pressure, where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Chandrasekhar number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-8.9-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ch"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.9-1 ;
+  skos:definition """quotient of Lorentz force and viscous force in magnetic convection in a fluid, expressed by
+
+stem:[Q=(Bl)^2 sigma // rho sf(ii(v))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), a length scale of the system,
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Chandrasekhar number is also given by stem:[Q = Ha^2] where stem:[Ha] is the Hartmann number (<<t11-8.5>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Prandtl magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pr_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.10-0 ;
+  skos:definition """quotient of kinematic viscosity and magnetic viscosity in an electrically conducting liquid, expressed by
+
+stem:[Pr_\"m\" = sf(ii(v)) sigma mu]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[sf(ii(v))_\"m\" = 1//(mu sigma)] is called magnetic viscosity or magnetic diffusivity. See <<t11-8.11>>.
+
+The Prandtl magnetic number is also given by
+
+stem:[Pr_\"m\" = Rm//Re]; where
+
+stem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+
+This number is also called magnetic Prandtl number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Roberts number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ro"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.11-0 ;
+  skos:definition """quotient of thermal diffusivity and magnetic viscosity in an electrically conducting liquid, expressed by
+
+stem:[Ro = alpha sigma mu]; where
+
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[v_\"m\" = 1//(mu sigma)] is called magnetic viscosity or magnetic diffusivity; where
+
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>), and
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stuart number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stw"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.12-0 ;
+  skos:definition """quotient of magnetic forces and inertia forces in an electrically conducting liquid, expressed by
+
+stem:[Stw = B^2 l sigma // (v rho)]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[v]:: is characteristic speed (<<iso80000-3>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Stuart number sometimes is called magnetic force parameter.
+
+Sometimes the square root is wrongly used.
+
+The Stuart number is also given by
+
+stem:[Stw = Ha^2//Re]; where
+
+stem:[Ha]:: is the Hartmann number, and
+stem:[Re]:: is the Reynolds number.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(mg)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.13-0 ;
+  skos:definition """quotient of magnetic forces and viscous forces in an electrically conducting fluid, expressed by
+
+stem:[N_(mg) = B sqrt(l sigma // (eta v))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric field parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ef"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.14-0 ;
+  skos:definition """quotient of Coulomb force and Lorentz force on moving electrically charged material or particles, expressed by
+
+stem:[Ef = E // (vB)]; where
+
+stem:[E]:: is electric field strength (<<iec80000-6>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hall number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_\"c\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-8.15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"H\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.15-1 ;
+  skos:definition """quotient of gyro frequency and collision frequency in a plasma, expressed by
+
+stem:[H_\"c\" = (omega_\"c\")/(2pi) lambda/v]; where
+
+stem:[omega_\"c\"]:: is cyclotron angular frequency (<<iso80000-10>>),
+stem:[lambda]:: is mean free path (<<iso80000-9>>), and
+stem:[v]:: is average speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """Sometimes the inverse of this number is wrongly used.
+
+stem:[2pi] times this quantity is called the Hall parameter.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lundquist number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.16-0 ;
+  skos:definition """quotient of Alfvén speed and magneto-dynamic speed in a plasma, expressed by
+
+stem:[Lu = Bl sigma sqrt(mu/rho)]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>)
+"""@en ;
+  skos:note """The quantity stem:[v_\"A\" = B//sqrt(phi mu)] is called Alfvén wave speed. See <<t11-8.4>>.
+
+The quantity stem:[v_\"m\" = 1//(l sigma mu)] is called magneto dynamic speed; where
+
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[sigma]:: is electrical conductivity (<<iec80000-6>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>).
+
+The Lundquist number is also given by
+
+stem:[Lu = Rm//Al]; where
+
+stem:[Rm]:: is the Reynolds magnetic number (<<t11-8.1>>), and
+stem:[Al]:: is the Alfvén number (<<t11-8.4>>).
+
+See also Hartmann number (<<t11-8.5>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Joule magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Jo_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.17-0 ;
+  skos:definition """quotient of Joule heating energy and magnetic field energy in a plasma, expressed by
+
+stem:[Jo_\"m\" = 2 rho mu c_p Delta T // B^2]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  skos:note """This number is also called magnetic Joule number."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grashof magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gr_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.18-0 ;
+  skos:definition """mathematical expression for the heat transfer by free thermo-magnetic convection of a paramagnetic fluid under gravity,
+
+stem:[Gr_\"m\" = 4 pi sigma_\"e\" mu_\"e\" g alpha_V Delta T l^3 // sf(ii(v))]; where
+
+stem:[sigma_\"e\"]:: is electrical conductivity (<<iec80000-6>>),
+stem:[mu_\"e\"]:: is magnetic permeability (<<iec80000-6>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[alpha_V]:: is cubic expansion coefficient (<<iso80000-5>>),
+stem:[Delta T = T_\"S\"-T_(oo)]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>), where stem:[T_\"S\"] is surface temperature and stem:[T_(oo)] is bulk temperature
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """This number is also called magnetic Grashof number.
+
+See also Grashof number (<<t11-4.4>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Naze number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Na"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.19" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.19-0 ;
+  skos:definition """quotient of velocity of Alfvén waves and velocity of sound in a plasma, expressed by
+
+stem:[Na = B // (c sqrt(rho mu))]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[c]:: is speed of sound (<<iso80000-8>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>)
+"""@en ;
+  skos:note """The quantity stem:[v_\"A\" = B // sqrt(rho mu)] is called Alfvén wave speed. See <<t11-8.4>>."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reynolds electric number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Re_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.20-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.20-0 ;
+  skos:definition """quotient of speed of a fluid and average drift speed of the charged particles in an electrically conducting fluid, expressed by
+
+stem:[Re_\"e\" = v epsilon_\"e\" // (rho_\"e\" l mu)]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,
+stem:[epsilon_\"e\"]:: is electric permittivity (<<iec80000-6>>),
+stem:[rho_\"e\"]:: is electric charge density (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers
+"""@en ;
+  skos:note """This number is also called electrical Reynolds number.
+
+The drift speed of the charged particles in an electric field is given by stem:[v_\"d\" = 1/(mu E)],where
+
+stem:[E]:: is electric field strength (<<iec80000-6>>), and
+stem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .
+
+isoiec80000:term-t11-8.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ampère number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Am"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.21" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.21-0 ;
+  skos:definition """relation between electric surface current and magnetic field strength in an electrically conducting liquid, expressed by
+
+stem:[Am = I_A // lH]; where
+
+stem:[I_A]:: is electric surface current,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[H]:: is magnetic field strength (<<iec80000-6>>)
+"""@en ;
+  skos:note """This number is also called ((magnetic field number)).
+
+The electric surface current is given by
+
+stem:[I_A = rho_A I mu E]; where
+
+stem:[rho_A]:: is surface density of electric charge (<<iec80000-6>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[mu]:: is mobility (<<iso80000-10>>) of charge carriers, and
+stem:[E]:: is electric field strength (<<iec80000-6>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

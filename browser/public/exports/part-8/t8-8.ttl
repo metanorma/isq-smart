@@ -1,0 +1,26 @@
+isoiec80000:term-t8-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sound energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-8" ;
+  skosxl:prefLabel isoiec80000:term-t8-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-8-0 ;
+  skos:definition """integral of sound energy density (<<t8-7>>) over a specified volume"""@en ;
+  skos:note """The sound energy in region stem:[\"R\"] can be expressed by:
+
+[stem%unnumbered]
+++++
+Q = oint_\"R\" w(bb(ii(x)))\"d\"^3 bb(ii(x))
+++++
+
+where stem:[\"d\"^3bb(ii(x))] is an element of volume.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

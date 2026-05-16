@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "irrelevance",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-34-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "H_{\"-\"}(I\\|X)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t13-34",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "13-34",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-34-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-34-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "conditional entropy (<<t13-32,item 13-32>>) of a set stem:[I] of received characters\ngiven the set stem:[X] of emitted characters:\n\nstem:[H_{\"-\"}(I\\|X) = H_{\"+\"}(X\\|I) + H(I) - H(X)],\n\nwhere stem:[H_{\"+\"}(X\\|I)] is equivocation (<<t13-33,item 13-33>>)\nand stem:[H] is entropy (<<t13-25,item 13-25>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Irrelevance is a quantitative measure of the\ninformation added to the emitted information owing to\ndistortion.\n\nSee <<iec60050-171,droploc%locality:item=\"171-07-25\">>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-Sh"
+        },
+        {
+          "@id": "isoiec80000:unit-Hart"
+        },
+        {
+          "@id": "isoiec80000:unit-nat"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-13"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+isoiec80000:term-t10-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-38.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"tot\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-38.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"T\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-38.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-38.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-38.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-38.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-38.2-1 ;
+  skos:definition """sum of all cross sections (<<t10-38.1>>) corresponding to the various reactions or processes between an incident particle of specified type and energy (<<iso80000-5>>) and a target entity"""@en ;
+  skos:note """In the case of a narrow unidirectional beam of incident particles, this is the effective cross section for the removal of an incident particle from the beam. See the Remarks for <<t10-52>>.
+
+[stem%unnumbered]
+++++
+1 \" barn (b)\" = 10^(-28) \"unitsml(m^2)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["b"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

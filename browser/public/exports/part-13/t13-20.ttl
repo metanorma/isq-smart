@@ -1,0 +1,32 @@
+isoiec80000:term-t13-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "error probability"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-20" ;
+  skosxl:prefLabel isoiec80000:term-t13-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-20-0 ;
+  skos:definition """probability that a data element be incorrectly received"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+A subscript referring to a specified data element can
+be added to the symbol.
+
+[example]
+error probability for binary digits or bit error
+probability, stem:[P_{\"bit\"}]; +
+block error probability, stem:[P_{\"bl\"}].
+
+The measured value is designated as \"error ratio\",
+whereas \"error rate\" is deprecated, for example, \"bit
+error ratio\" (BER), \"block error ratio\".
+
+See <<iec60050-171,droploc%locality:item=\"171-06-08\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

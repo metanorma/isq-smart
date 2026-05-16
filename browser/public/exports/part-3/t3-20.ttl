@@ -1,0 +1,35 @@
+isoiec80000:term-t3-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "repetency"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wavenumber"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tilde ii(sf(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-20" ;
+  skosxl:prefLabel isoiec80000:term-t3-20-0 ;
+  skosxl:altLabel isoiec80000:term-t3-20-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-20-1 ;
+  skos:definition """inverse of the wavelength (<<t3-19>>)"""@en ;
+  skos:note """The repetency is given by:
+
+[stem%unnumbered]
+++++
+sigma = 1/lambda
+++++
+
+where stem:[lambda] denotes the wavelength (<<t3-19>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

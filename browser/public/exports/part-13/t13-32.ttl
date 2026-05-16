@@ -1,0 +1,24 @@
+isoiec80000:term-t13-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "conditional entropy, mean conditional information content, average conditional information content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H(x\\|y)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-32" ;
+  skosxl:prefLabel isoiec80000:term-t13-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-32-0 ;
+  skos:definition """stem:[H(x\\|y) = sum_{i=1}^n sum_{j=1}^m p(x_i,y_j) I(x_i\\|y_j)]
+
+where stem:[p(x_i,y_j)] is the joint probability of
+events stem:[x_i] and stem:[y_j], and stem:[I(x_i\\|y_j)] is
+conditional information content (<<t13-31,item 13-31>>)
+"""@en ;
+  skos:note """See <<iec60050-171,droploc%locality:item=\"171-07-23\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

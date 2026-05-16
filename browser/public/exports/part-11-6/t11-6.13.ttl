@@ -1,0 +1,24 @@
+isoiec80000:term-t11-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "expansion number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ex"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.13-0 ;
+  skos:definition """quotient of buoyancy force and inertial force in moving fluids due to density differences for gas bubbles rising in a liquid, expressed by
+
+stem:[Ex = (gd)/v^2 (1-rho_\"b\"/rho)]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[d]:: is diameter (<<iso80000-3>>) of bubbles,
+stem:[v]:: is speed (<<iso80000-3>>) of bubbles,
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of bubbles, and
+stem:[rho]:: is mass density (<<iso80000-4>>) of the liquid
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

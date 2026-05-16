@@ -1,0 +1,31 @@
+isoiec80000:term-t11-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Péclet number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pe"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.2-0 ;
+  skos:definition """relation between convective heat transfer rate and conductive heat transfer rate, expressed by
+
+stem:[Pe = vl//alpha]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) in the direction of heat transfer, and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The thermal Péclet number is also given by
+
+stem:[Pe = Re * Pr]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+
+Compare with <<t11-6.2>>, Péclet number for mass transfer.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

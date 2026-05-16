@@ -1,0 +1,16 @@
+isoiec80000:term-t10-72.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "migration area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-72.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M^2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-72.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-72.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-72.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-72.3-0 ;
+  skos:definition """sum of the slowing-down area (<<t10-72.1>>) from fission energy to thermal energy (<<iso80000-5>>) and the diffusion area (<<t10-72.2>>) for thermal neutrons"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

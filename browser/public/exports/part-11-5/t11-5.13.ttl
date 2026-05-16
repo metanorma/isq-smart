@@ -1,0 +1,24 @@
+isoiec80000:term-t11-5.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Clausius number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cl"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.13-0 ;
+  skos:definition """relation between energy transfer associated with fluid momentum and energy transfer by thermal conduction in forced heating, expressed by
+
+stem:[Cl = v^3 l rho // (lambda Delta T)]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) of the path of energy transfer,
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) along length stem:[l]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

@@ -1,0 +1,199 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-11 a smart:PublicationDocument ;
+  dcterms:title "Part 2-11"@en ;
+  dcterms:identifier "ISO 80000-2-11" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-11.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "factorial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n!"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.1-0 ;
+  skos:definition """factorial"""@en ;
+  skos:note """stem:[n! = prod_(k=1)^n] stem:[k=1*2*3*...*n] (for stem:[n>0])
+
+stem:[0! = 1]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "falling factorial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^(ul(k))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.2-0 ;
+  skos:definition """falling factorial"""@en ;
+  skos:note """stem:[a^(ul(k)) = a*(a - 1)*...*(a - k + 1)] (for stem:[k > 0])
+
+stem:[a^(ul(0))=1]
+
+stem:[a] may be a complex number.
+
+For a natural number stem:[n]:
+
+stem:[n^(ul(k)) = (n!)/((n-k)!)]
+
+In combinatorics and statistics, the symbol stem:[(a)_k] is often used for the falling factorial. In the theory of special functions, however, the same symbol is often used for the rising factorial and called Pochhammer symbol.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rising factorial"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a^(bar(k))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.3-0 ;
+  skos:definition """rising factorial"""@en ;
+  skos:note """stem:[a^(bar(k)) = a *(a + 1)* ... *(a + k - 1)] (for stem:[k > 0])
+
+stem:[a^(bar(0)) = 1]
+
+stem:[a] may be a complex number.
+
+For a natural number stem:[n]:
+
+stem:[n^(bar(k)) = ((n+k-1)!)/((n-1)!)]
+
+In the theory of special functions, the symbol stem:[(a)_k] is often used for the rising factorial and called Pochhammer symbol. In combinatorics and statistics, however, the same symbol is often used for the falling factorial.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binomial coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "((n),(k))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.4-0 ;
+  skos:definition """binomial coefficient"""@en ;
+  skos:note """stem:[((n),(k)) = (n!)/(k!(n-k)!)] (for stem:[0<=k<=n])"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bernoulli numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"B\"_n"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.5-0 ;
+  skos:definition """Bernoulli numbers"""@en ;
+  skos:note """stem:[\"B\"_n = -1/(n+1) sum_(k=0)^(n-1) ((n+1),(k)) \"B\"_k]
+
+(for stem:[n > 0])
+
+stem:[\"B\"_0 = 1]
+
+stem:[\"B\"_1 = -1//2], stem:[\"B\"_(2n+3)= 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of combinations without repetition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"C\"_n^k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.6-0 ;
+  skos:definition """number of combinations without repetition"""@en ;
+  skos:note """stem:[\"C\"_n^k = ((n),(k)) = (n!)/(k!(n-k)!)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of combinations with repetition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x200c;^\"R\" \"C\"_n^k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.7-0 ;
+  skos:definition """number of combinations with repetition"""@en ;
+  skos:note """stem:[&#x200c;^\"R\" \"C\"_n^k = ((n+k-1),(k))]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of variations without repetition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"V\"_n^k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.8-0 ;
+  skos:definition """number of variations without repetition"""@en ;
+  skos:note """stem:[\"V\"_n^k = n^(ul k) = (n!)/((n-k)!)]
+
+The term \"permutation\" is used when stem:[n = k].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .
+
+isoiec80000:term-t2-11.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "number of variations with repetition"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-11.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x200c;^\"R\" \"V\"_n^k"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-11.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-11.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-11.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-11.9-0 ;
+  skos:definition """number of variations with repetition"""@en ;
+  skos:note """stem:[&#x200c;^\"R\" \"V\"_n^k = n^k]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-11 .

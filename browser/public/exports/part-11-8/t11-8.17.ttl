@@ -1,0 +1,25 @@
+isoiec80000:term-t11-8.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Joule magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Jo_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.17-0 ;
+  skos:definition """quotient of Joule heating energy and magnetic field energy in a plasma, expressed by
+
+stem:[Jo_\"m\" = 2 rho mu c_p Delta T // B^2]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>), and
+stem:[B]:: is magnetic flux density (<<iec80000-6>>)
+"""@en ;
+  skos:note """This number is also called magnetic Joule number."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-5.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Rayleigh number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-5.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Ra",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-5.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-5.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-5.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-5.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between buoyancy forces due to thermal expansion and viscous forces in free convection in buoyancy driven flow near a heated surface perpendicular to the gravity force, expressed by\n\nstem:[Ra = (l^3 g alpha_V Delta T)/(sf(ii(v)) alpha)]; where\n\nstem:[l]:: is distance (<<iso80000-3>>) from the wall,\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>),\nstem:[alpha_V]:: is cubic expansion coefficient (<<iso80000-5>>) of the fluid,\nstem:[Delta T]:: is difference of thermodynamic temperature (<<iso80000-5>>) between surface of the wall and the fluid far away from the wall,\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid, and\nstem:[alpha]:: is thermal diffusivity (<<iso80000-5>>) of the fluid\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Rayleigh number is also given by\n\nstem:[Ra = Gr * Pr]; where\n\nstem:[Gr]:: is the Grashof number (<<t11-4.4>>), and\nstem:[Pr]:: is the Prandtl number (<<t11-7.1>>).\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-5"
+      }
+    }
+  ]
+}

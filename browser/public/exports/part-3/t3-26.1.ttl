@@ -1,0 +1,32 @@
+isoiec80000:term-t3-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "attenuation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-26.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "extinction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-26.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-26.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-26.1" ;
+  skosxl:prefLabel isoiec80000:term-t3-26.1-0 ;
+  skosxl:altLabel isoiec80000:term-t3-26.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-26.1-0 ;
+  skos:definition """gradual decrease in magnitude (<<iso80000-2>>) of any kind of flux through a medium"""@en ;
+  skos:note """If a quantity is a function of distance (<<t3-1.8>>) expressed by:
+
+[stem%unnumbered]
+++++
+f(x) prop e^(-alpha x)
+++++
+
+where stem:[x] denotes distance (<<t3-1.8>>), then stem:[alpha] denotes attenuation.
+
+The inverse of attenuation is called attenuation length.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

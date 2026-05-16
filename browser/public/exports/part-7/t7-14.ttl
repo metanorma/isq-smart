@@ -1,0 +1,49 @@
+isoiec80000:term-t7-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "luminous intensity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"v\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-14-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(I)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-14" ;
+  skosxl:prefLabel isoiec80000:term-t7-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-14-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-14-1 ;
+  skos:definition """density of luminous flux with respect to solid angle in a specified direction, expressed by
+
+[stem%unnumbered]
+++++
+I_\"v\" = (\"d\"Phi_\"v\")/(\"d\"Omega)
+++++
+
+where stem:[Phi_\"v\"] is the luminous flux (<<t7-13>>) emitted in a specified direction, and stem:[Omega] is the solid angle (<<iso80000-3>>) containing that direction
+"""@en ;
+  skos:note """The definition holds strictly only for a point source.
+
+The distribution of the luminous intensities as a function of the direction of emission, e.g. given by the polar angles stem:[(vartheta,varphi)], is used to determine the luminous flux (<<t7-13>>) within a certain solid angle (<<iso80000-3>>) stem:[Omega] of a source:
+
+[stem%unnumbered]
+++++
+Phi_\"v\" = &#8748;_Omega I_\"v\" (vartheta,varphi)\"sin\" vartheta \"d\"varphi \"d\"vartheta
+++++
+
+Luminous intensity can be derived from the spectral radiant intensity distribution by
+
+[stem%unnumbered]
+++++
+I_\"v\" = K_\"m\" int_0^(oo) I_(\"e\",lambda)(lambda)V(lambda)\"d\"lambda
+++++
+
+where stem:[K_\"m\"] is maximum luminous efficacy (<<t7-11.3>>), stem:[I_(\"e\",lambda)(lambda)] is the spectral radiant intensity (<<t7-5.2>>) at wavelength stem:[lambda] (<<iso80000-3>>), and stem:[V(lambda)] is spectral luminous efficiency (<<t7-10.2>>).
+
+The corresponding radiometric quantity is \"radiant intensity\" (<<t7-5.1>>). The corresponding quantity for photons is \"photon intensity\" (<<t7-21>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-cd ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

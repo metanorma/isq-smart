@@ -1,0 +1,25 @@
+isoiec80000:term-t2-20.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "error function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"erf \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.9-0 ;
+  skos:definition """error function"""@en ;
+  skos:note """stem:[\"erf \"x = 2/(sqrt pi) int_0^x e^(-t^2) \"d\"t]
+
+stem:[\"erfc \" x = 1 - \"erf \"x] is called the complementary error function.
+
+In statistics, the distribution function
+
+stem:[rm(Phi)(x) = 1/(sqrt(2pi)) int_(-oo)^x e^(-t^2//2)\"d\"t]
+
+is used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

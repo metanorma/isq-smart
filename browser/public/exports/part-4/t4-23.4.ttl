@@ -1,0 +1,29 @@
+isoiec80000:term-t4-23.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.4" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.4-0 ;
+  skosxl:altLabel isoiec80000:term-t4-23.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.4-0 ;
+  skos:definition """factor proportional to magnitude stem:[F_\"D\"] of the drag force (<<t4-9.6>>)
+of a body moving in a fluid, dependent on the shape and speed stem:[v]
+(<<iso80000-3>>) of a body:
+
+stem:[F_\"D\" = 1/2 C_\"D\" rho v^2 A]
+
+where stem:[rho] is mass density (<<t4-2>>) of the fluid and stem:[A] is
+cross-section area (<<iso80000-3>>) of the body
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

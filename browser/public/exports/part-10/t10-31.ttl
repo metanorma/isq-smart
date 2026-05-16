@@ -1,0 +1,17 @@
+isoiec80000:term-t10-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "half life"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T_(1//2)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-31" ;
+  skosxl:prefLabel isoiec80000:term-t10-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-31-0 ;
+  skos:definition """mean duration (<<iso80000-3>>) required for the decay of one half of the atoms or nuclei"""@en ;
+  skos:note """For exponential decay, stem:[T_(1//2) = (\"ln\"2)//lambda], where stem:[lambda] is the decay constant (<<t10-24>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

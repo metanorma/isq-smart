@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-5.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Stanton number <heat transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-5.7-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "St",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-5.7",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-5.7",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-5.7-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-5.7-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between heat transfer into a fluid from a surface and its heat transfer by convection, expressed by\n\nstem:[St = K // (rho v c_p)]; where\n\nstem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,\nstem:[rho]:: is mass density (<<iso80000-4>>),\nstem:[v]:: is speed (<<iso80000-3>>), and\nstem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>) of the fluid\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The Stanton number is also given by\n\nstem:[St = N u // (Re*Pr) = N u//Pe]; where\n\nstem:[N u]:: is Nusselt number for heat transfer (<<t11-5.5>>),\nstem:[Re]:: is the Reynolds number (<<t11-4.1>>),\nstem:[Pr]:: is the Prandtl number (<<t11-7.1>>), and\nstem:[Pe]:: is the Péclet number (<<t11-5.2>>).\n\nSometimes this quantity is called Margoulis number, symbol stem:[Ms] or stem:[Mg].\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-5"
+      }
+    }
+  ]
+}

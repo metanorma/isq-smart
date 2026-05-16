@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "electric current density",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-8-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "bb(ii(J))",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t6-8",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "6-8",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-8-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-8-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-8-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "vector quantity equal to the sum, for the charge carriers within a volume element of quasi-infinitesimal volume stem:[V], of the products of their electric charge stem:[Q_i] and their velocity stem:[sf(ii(v))_i], divided by the volume stem:[V], given by\n\n[stem%unnumbered]\n++++\nbb(ii(J))(bb(ii(r))) = bb(ii(J)) = rho sf(ii(v))\n++++\n\nwhere stem:[i] is the rank of the charge carrier\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "There can be different charge carriers with different velocities.\n\nElectric current stem:[I] (<<t6-1>>) through a surface stem:[\"S\"] is\n\n[stem%unnumbered]\n++++\nI = int_\"S\" bb(ii(J)) e_\"n\" \"d\"A\n++++\n\nwhere stem:[e_\"n\" \"d\"A] is the vector surface element.\n\nSee <<iec60050-121,locality:item=\"121-11-11\">>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-A/m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-m^(-2)*A"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-6"
+      }
+    }
+  ]
+}

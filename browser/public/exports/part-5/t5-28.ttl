@@ -1,0 +1,30 @@
+isoiec80000:term-t5-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass concentration of water vapour"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-28-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "absolute humidity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(ii(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-28" ;
+  skosxl:prefLabel isoiec80000:term-t5-28-0 ;
+  skosxl:altLabel isoiec80000:term-t5-28-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-28-0 ;
+  skos:definition """quotient of mass of water vapour and a specified volume:
+
+[stem%unnumbered]
+++++
+sf(ii(v)) = m/V
+++++
+
+where stem:[m] is mass (<<iso80000-4>>) of water vapour and stem:[V] is volume (<<iso80000-3>>)
+"""@en ;
+  skos:note """Mass concentration of water vapour at saturation is denoted stem:[sf(ii(v))_\"sat\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

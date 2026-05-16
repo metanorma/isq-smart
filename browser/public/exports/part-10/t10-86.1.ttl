@@ -1,0 +1,46 @@
+isoiec80000:term-t10-86.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kerma"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-86.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-86.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-86.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-86.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-86.1-0 ;
+  skos:definition """for uncharged ionizing radiation, differential quotient of stem:[E_\"tr\"] with respect to stem:[m], where stem:[E_\"tr\"] is the mean sum of the initial kinetic energies (<<iso80000-4>>) of all the charged ionizing particles liberated in a mass (<<iso80000-4>>) stem:[m] of a material:
+
+[stem%unnumbered]
+++++
+K = (\"d\"E_(\"tr\"))/(\"d\"m)
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+1 \"unitsml(Gy)\" = 1 \"unitsml(J/kg)\"
+++++
+
+See the remarks for <<t10-81.1>>.
+
+The name \"kerma\" is derived from Kinetic Energy Released in MAtter (or MAss or MAterial).
+
+The quantity stem:[\"d\"E_\"tr\"] includes also the kinetic energy of the charged particles emitted in the decay of excited atoms, molecules, or nuclei.
+
+When the mass element stem:[\"d\"m] consists of air the term air kerma is used. It can be convenient to refer to a value of air kerma in free space or at a point inside a material different from air, e.g. to the air kerma at a point inside a water phantom.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The kerma, stem:[K], for ionizing uncharged particles, is the quotient of stem:[\"d\"E_\"tr\"] by stem:[\"d\"m], where stem:[\"d\"E_\"tr\"] is the mean sum of the initial kinetic energies of all the charged particles liberated in a mass stem:[\"d\"m] of a material by the uncharged particles incident on stem:[\"d\"m]:
+
+[stem%unnumbered]
+++++
+K = (\"d\"E_\"tr\")/(\"d\"m).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Gy ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,29 @@
+isoiec80000:term-t4-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "impulse"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(I))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-10" ;
+  skosxl:prefLabel isoiec80000:term-t4-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-10-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity describing the effect of force acting
+during a time interval:
+
+stem:[bb(ii(I)) = int_(t_1)^(t_2) bb(ii(F)) \"d\"t]
+
+where stem:[bb(ii(F))] is force (<<t4-9.1>>), stem:[t] is time
+(<<iso80000-3>>) and stem:[[t_1, t_2\\]] is considered time interval
+"""@en ;
+  skos:note """For a time interval stem:[[t_1, t_2\\]],
+stem:[bb(ii(I)) (t_1,t_2) = bb(ii(p))(t_1) - bb(ii(p))(t_2) = Delta bb(ii(p))]
+
+where stem:[bb(ii(p))] is momentum (<<t4-8>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

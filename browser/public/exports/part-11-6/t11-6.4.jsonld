@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Nusselt number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.4-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "N u**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.4",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.4",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.4-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.4-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between mass flux at an interface and specific flux by pure molecular diffusion in a layer of thickness stem:[l] for mass transfer at the boundary of a fluid, expressed by\n\nstem:[N u** = k'l//(rho D)]; where\n\nstem:[k']:: is mass flux density stem:[q_m//A] through the surface, where\nstem:[q_m]::: is mass flow rate (<<iso80000-4>>), and\nstem:[A]::: is area (<<iso80000-3>>),\nstem:[l]:: is thickness (<<iso80000-3>>),\nstem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and\nstem:[D]:: is diffusion coefficient (<<iso80000-9>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Sometimes this quantity is called the Sherwood number, stem:[Sh]. +\n\nCompare with <<t11-5.5>>, Nusselt number for heat transfer.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    }
+  ]
+}

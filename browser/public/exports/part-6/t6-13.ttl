@@ -1,0 +1,27 @@
+isoiec80000:term-t6-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "capacitance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-13" ;
+  skosxl:prefLabel isoiec80000:term-t6-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-13-0 ;
+  skos:definition """for a capacitive element, quotient of electric charge stem:[Q] and voltage stem:[U] (<<t6-11.3>>);
+
+[stem%unnumbered]
+++++
+C = Q/U
+++++
+"""@en ;
+  skos:note """The electric charge of a capacitive element is given by the time integral of the electric current.
+
+See <<iec60050-131,locality:item=\"131-12-11\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-F ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^(-2)*s^4*A^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

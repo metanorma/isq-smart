@@ -1,0 +1,39 @@
+isoiec80000:term-t5-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Helmholtz energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-20.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Helmholtz function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-20.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-20.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-20.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-20.4" ;
+  skosxl:prefLabel isoiec80000:term-t5-20.4-0 ;
+  skosxl:altLabel isoiec80000:term-t5-20.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-20.4-1 ;
+  skos:definition """difference of internal energy of the system and the product of thermodynamic temperature and entropy of the system:
+
+[stem%unnumbered]
+++++
+A = U - TS
+++++
+
+where stem:[U] is internal energy (<<t5-20.2>>), stem:[T] is thermodynamic temperature (<<t5-1>>), and stem:[S] is entropy (<<t5-18>>)
+"""@en ;
+  skos:note """The name Helmholtz free energy is also used.
+
+However, this term is not recommended.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

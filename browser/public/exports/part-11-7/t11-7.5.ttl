@@ -1,0 +1,27 @@
+isoiec80000:term-t11-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cauchy number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-7.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "aeroelasticity parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cy"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.5-0 ;
+  skosxl:altLabel isoiec80000:term-t11-7.5-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.5-0 ;
+  skos:definition """relation between inertia forces and compression forces in compressible fluids, expressed by
+
+stem:[Cy = rho v^2//K]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[K]:: is modulus of compression, bulk modulus (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

@@ -1,0 +1,36 @@
+isoiec80000:term-t6-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electric charge density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic electric charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volumic charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-3" ;
+  skosxl:prefLabel isoiec80000:term-t6-3-0 ;
+  skosxl:altLabel isoiec80000:term-t6-3-1 ;
+  skosxl:altLabel isoiec80000:term-t6-3-2 ;
+  skosxl:altLabel isoiec80000:sym-t6-3-0 ;
+  skos:definition """scalar quantity representing the spatial distribution of electric charge,
+
+[stem%unnumbered]
+++++
+rho(bb(ii(r))) = (\"d\"Q)/(\"d\"V)
+++++
+
+where stem:[\"d\"Q] is quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) electric charge (<<t6-2.1>>) contained in a quasi-infinitesimal 3D domain located at position stem:[bb(ii(r))] and stem:[\"d\"V] is quasi-infinitesimal volume (<<iso80000-3>>) of this domain
+"""@en ;
+  skos:note """See <<iec60050-121,locality:item=\"121-11-07\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

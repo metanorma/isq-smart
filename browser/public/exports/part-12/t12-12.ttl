@@ -1,0 +1,27 @@
+isoiec80000:term-t12-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "density of vibrational states <angular frequency>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "g"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-12" ;
+  skosxl:prefLabel isoiec80000:term-t12-12-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-12-0 ;
+  skos:definition """quotient of the number of vibrational modes in an infinitesimal interval of angular frequency (<<iso80000-3>>), and the product of the width of that interval and volume (<<iso80000-3>>)"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+g(omega) = n_omega = (\"d\"n(omega))/(\"d\"omega)
+++++
+
+where stem:[n(omega)] is the total number of vibrational modes per volume with angular frequency less than stem:[omega].
+
+The density of states may also be normalized in other ways instead of with respect to volume.
+
+See also <<t12-16>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^(-3)*s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

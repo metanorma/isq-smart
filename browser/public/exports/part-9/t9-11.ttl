@@ -1,0 +1,22 @@
+isoiec80000:term-t9-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass fraction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-11" ;
+  skosxl:prefLabel isoiec80000:term-t9-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-11-0 ;
+  skos:definition """for substance stem:[\"X\"] in a mixture, quotient of mass stem:[m_\"X\"] (<<iso80000-4>>) of substance stem:[\"X\"] and total mass stem:[m] of the mixture:
+
+[stem%unnumbered]
+++++
+w_\"X\" = m_\"X\"//m
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

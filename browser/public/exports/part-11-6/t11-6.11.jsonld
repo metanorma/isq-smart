@@ -1,0 +1,107 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bond number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Eötvös number",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Bo",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Eo",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.11",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.11",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.11-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.11-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of inertial force and capillary force for gas bubbles or liquid drops in a fluid, expressed by\n\nstem:[Bo = a/gamma rho l^2 (rho_\"b\"/rho -1)]; where\n\nstem:[a]:: is the acceleration of the body (<<iso80000-3>>), mostly acceleration of free fall, stem:[g] (<<iso80000-3>>),\nstem:[gamma]:: is surface tension (<<iso80000-4>>) of the interface,\nstem:[rho]:: is density (<<iso80000-4>>) of the medium,\nstem:[l]:: is characteristic length (<<iso80000-3>>) (radius of a drop or radius of a capillary tube), and\nstem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the drop or bubble\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "In the case of gravity stem:[a = g] acceleration of free fall (<<iso80000-3>>), the name Eötvös number is mostly used.\n\nThe Bond number is also given by\n\nstem:[Bo = We//Fr]; where\n\nstem:[We]:: is the Weber number (<<t11-4.5>>), and\nstem:[Fr]:: is the Froude number (<<t11-4.3>>).\n\nThe Bond number is also used for capillary action driven by buoyancy.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    }
+  ]
+}

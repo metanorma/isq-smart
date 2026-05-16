@@ -1,0 +1,21 @@
+isoiec80000:term-t2-20.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "incomplete elliptic integral of the third kind"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-20.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pi(n,varphi,k)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-20.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-20.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-20.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-20.12-0 ;
+  skos:definition """incomplete elliptic integral of the third kind"""@en ;
+  skos:note """stem:[Pi(n,varphi,k) = int_0^varphi (\"d\" vartheta)/((1-n \"sin\"^2 vartheta)sqrt(1-k^2 \"sin\"^2 vartheta))]
+
+stem:[n,k in bb(sf(R))], stem:[0<k<1].
+
+stem:[Pi(n,k) = Pi(n, pi/2, k)] is the complete elliptic integral of the third kind. (Sometimes the elliptic integral of the third kind is defined with an inverse sign for the _characteristic_ stem:[n].)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-20 .

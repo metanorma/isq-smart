@@ -1,0 +1,41 @@
+isoiec80000:term-t7-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t7-4.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-4.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-4.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(Phi, P)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-4.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-4.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-4.1-0 ;
+  skosxl:altLabel isoiec80000:term-t7-4.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t7-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-4.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t7-4.1-2 ;
+  skos:definition """change in radiant energy with time, expressed by
+
+[stem%unnumbered]
+++++
+Phi_\"e\" = (\"d\"Q_\"e\")/(\"d\"t)
+++++
+
+where stem:[Q_\"e\"] is the radiant energy (<<t7-2.1>>) emitted, transferred or received and stem:[t] is time (<<iso80000-3>>)
+"""@en ;
+  skos:note """The corresponding photometric quantity is \"luminous flux\" (<<t7-13>>). The corresponding quantity for photons is \"photon flux\" (<<t7-20>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

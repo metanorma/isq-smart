@@ -1,0 +1,16 @@
+isoiec80000:term-t2-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set with elements"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-6.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "{x_1, x_2, ..., x_n}"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-6.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-6.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-6.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-6.3-0 ;
+  skos:definition """set with elements stem:[x_1, x_2, ..., x_n]"""@en ;
+  skos:note """Also stem:[{x_i &#x2223; i in I}], where stem:[I] denotes a set of subscripts."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-6 .

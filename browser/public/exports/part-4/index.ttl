@@ -1,0 +1,1686 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-4 a smart:PublicationDocument ;
+  dcterms:title "Mechanics"@en ;
+  dcterms:identifier "ISO 80000-4" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram"@en ;
+  skos:notation "kg" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per cubic metre"@en ;
+  skos:notation "kg*m^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m^3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre per kilogram"@en ;
+  skos:notation "kg^(-1)*m^3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-1 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "one"@en ;
+  skos:notation "1" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per square metre"@en ;
+  skos:notation "kg*m^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per metre"@en ;
+  skos:notation "kg*m^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre"@en ;
+  skos:notation "kg*m^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second"@en ;
+  skos:notation "kg*m*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton"@en ;
+  skos:notation "N" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram metre per second squared"@en ;
+  skos:notation "kg*m*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton second"@en ;
+  skos:notation "N*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second"@en ;
+  skos:notation "kg*m^2*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*m a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton metre"@en ;
+  skos:notation "N*m" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second squared"@en ;
+  skos:notation "kg*m^2*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*m*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton metre second"@en ;
+  skos:notation "N*m*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Pa a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "pascal"@en ;
+  skos:notation "Pa" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*m^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton per square metre"@en ;
+  skos:notation "N*m^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-1)*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per metre second squared"@en ;
+  skos:notation "kg*m^(-1)*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Pa^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "per pascal"@en ;
+  skos:notation "Pa^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg^(-1)*m*s^2 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "metre second squared per kilogram"@en ;
+  skos:notation "kg^(-1)*m*s^2" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^4 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "quartic metre"@en ;
+  skos:notation "m^4" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3 a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre"@en ;
+  skos:notation "m^3" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-Pa*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "pascal second"@en ;
+  skos:notation "Pa*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-1)*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per metre second"@en ;
+  skos:notation "kg*m^(-1)*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^2*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "square metre per second"@en ;
+  skos:notation "m^2*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*m^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton per metre"@en ;
+  skos:notation "N*m^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-2) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second squared"@en ;
+  skos:notation "kg*s^(-2)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-W a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "watt"@en ;
+  skos:notation "W" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-N*m*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "newton metre per second"@en ;
+  skos:notation "N*m*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^2*s^(-3) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram square metre per second cubed"@en ;
+  skos:notation "kg*m^2*s^(-3)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule"@en ;
+  skos:notation "J" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*m^(-2)*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per square metre second"@en ;
+  skos:notation "kg*m^(-2)*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-kg*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "kilogram per second"@en ;
+  skos:notation "kg*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-m^3*s^(-1) a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "cubic metre per second"@en ;
+  skos:notation "m^3*s^(-1)" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:unit-J*s a isoiec80000:Unit, smart:TermEntry ;
+  skos:prefLabel "joule second"@en ;
+  skos:notation "J*s" ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t4-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-1" ;
+  skosxl:prefLabel isoiec80000:term-t4-1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-1-0 ;
+  skos:definition """property of a body which expresses itself in terms of inertia with regard to
+changes in its state of motion as well as its gravitational attraction to
+other bodies
+"""@en ;
+  skos:note """The kilogram (kg) is one of the seven base units (see <<iso80000-1>>) of the
+International System of Units, the SI.
+
+See also <<iec60050-113>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[rho]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[rho_\"m\"]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-2" ;
+  skosxl:prefLabel isoiec80000:term-t4-2-0 ;
+  skosxl:altLabel isoiec80000:term-t4-2-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-2-1 ;
+  skos:definition """quantity representing the spatial distribution of mass of a continuous
+material:
+
+stem:[rho(r)=(\"d\"m)/(\"d\"V)]
+
+where stem:[m] is mass of the material contained in an infinitesimal domain
+at point stem:[r] and stem:[V] is volume of this domain
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific volume"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(ii(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-3" ;
+  skosxl:prefLabel isoiec80000:term-t4-3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-3-0 ;
+  skos:definition """reciprocal of mass density stem:[rho] (<<t4-2>>):
+
+stem:[sf(ii(v)) = 1/rho]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m^3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-4" ;
+  skosxl:prefLabel isoiec80000:term-t4-4-0 ;
+  skosxl:altLabel isoiec80000:term-t4-4-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-4-0 ;
+  skos:definition """quotient of mass density of a substance stem:[rho] and mass density of a
+reference substance stem:[rho_0]:
+
+stem:[d = rho/rho_0]
+"""@en ;
+  skos:note """Conditions and material should be specified for the reference substance."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-5" ;
+  skosxl:prefLabel isoiec80000:term-t4-5-0 ;
+  skosxl:altLabel isoiec80000:term-t4-5-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-5-0 ;
+  skos:definition """quantity representing the areal distribution of mass of a continuous
+material:
+
+stem:[rho_A(r) = (\"d\"m)/(\"d\"A)]
+
+where stem:[m] is the mass of the material at position stem:[r] and stem:[A]
+is area
+"""@en ;
+  skos:note """The name \"grammage\" should not be used for this quantity."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear mass density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "linear density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rho_l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-6" ;
+  skosxl:prefLabel isoiec80000:term-t4-6-0 ;
+  skosxl:altLabel isoiec80000:term-t4-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-6-0 ;
+  skos:definition """quantity representing the linear distribution of mass of a continuous
+material:
+
+stem:[rho_l = (\"d\"m)/(\"d\"l)]
+
+where stem:[m] is the mass of the material at position stem:[r] and stem:[l]
+is length
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "moment of inertia"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(J))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-7" ;
+  skosxl:prefLabel isoiec80000:term-t4-7-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-7-0 ;
+  skos:definition """tensor (<<iso80000-2>>) quantity representing rotational inertia of a rigid
+body relative to a fixed centre of rotation expressed by the tensor product:
+
+stem:[bb(ii(L)) = bb(ii(J)) omega]
+
+where stem:[bb(ii(L))] is angular momentum (<<iso80000-3>>) of the body
+relative to the reference point and stem:[omega] is its angular velocity
+(<<iso80000-3>>)
+"""@en ;
+  skos:note """The calculation of the value requires an integration."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "momentum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-8" ;
+  skosxl:prefLabel isoiec80000:term-t4-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-8-0 ;
+  skos:definition """product of mass stem:[m] (<<t4-1>>) of a body and velocity stem:[v]
+(<<iso80000-3>>) of its centre of mass:
+
+stem:[p=mv]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.1-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity describing interaction between bodies or
+particles
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "weight"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_\"g\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.2-0 ;
+  skos:definition """force (<<t4-9.1>>) acting on a body in the gravitational field of Earth:
+
+stem:[bb(ii(F_g)) = mg]
+
+where stem:[m] (<<t4-1>>) is the mass of the body and stem:[g] is the local
+acceleration of free fall (<<iso80000-3>>)
+"""@en ;
+  skos:note """In colloquial language, the name \"weight\" continues to be used where \"mass\"
+is meant. This practice should be avoided.
+
+Weight is an example of a gravitational force. Weight comprises not only the
+local gravitational force but also the local centrifugal force due to the
+rotation of the Earth.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F_\"s\"))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.3-0 ;
+  skosxl:altLabel isoiec80000:term-t4-9.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.3-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion before a body starts to slide on a
+surface
+"""@en ;
+  skos:note """For the static friction coefficient, see <<t4-23.1>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-9.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kinetic friction force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic friction force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_(rm(mu))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.4" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.4-0 ;
+  skosxl:altLabel isoiec80000:term-t4-9.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.4-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion when a body slides on a surface"""@en ;
+  skos:note """For the kinetic friction factor, see <<t4-23.2>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-9.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling resistance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.5-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling drag"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.5-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling friction force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_\"rr\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.5" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.5-0 ;
+  skosxl:altLabel isoiec80000:term-t4-9.5-1 ;
+  skosxl:altLabel isoiec80000:term-t4-9.5-2 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.5-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion when a body rolls on a surface"""@en ;
+  skos:note """For the rolling resistance factor, see <<t4-23.3>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F))_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.6" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.6-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion of a body in a fluid"""@en ;
+  skos:note """For the drag coefficient, see <<t4-23.4>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "impulse"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(I))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-10" ;
+  skosxl:prefLabel isoiec80000:term-t4-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-10-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity describing the effect of force acting
+during a time interval:
+
+stem:[bb(ii(I)) = int_(t_1)^(t_2) bb(ii(F)) \"d\"t]
+
+where stem:[bb(ii(F))] is force (<<t4-9.1>>), stem:[t] is time
+(<<iso80000-3>>) and stem:[[t_1, t_2\\]] is considered time interval
+"""@en ;
+  skos:note """For a time interval stem:[[t_1, t_2\\]],
+stem:[bb(ii(I)) (t_1,t_2) = bb(ii(p))(t_1) - bb(ii(p))(t_2) = Delta bb(ii(p))]
+
+where stem:[bb(ii(p))] is momentum (<<t4-8>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular momentum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(L))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-11" ;
+  skosxl:prefLabel isoiec80000:term-t4-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-11-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity described by the vector product:
+
+stem:[bb(ii(L)) = bb(ii(r)) xx bb(ii(p))]
+
+where stem:[bb(ii(r))] is position vector (<<iso80000-3>>) with respect to
+the axis of rotation and stem:[bb(ii(p))] is momentum (<<t4-8>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "moment of force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-12.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(M))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-12.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-12.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-12.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-12.1-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity described by the vector product:
+
+stem:[bb(ii(M)) = bb(ii(r)) xx bb(ii(F))]
+
+where stem:[bb(ii(r))] is position vector (<<iso80000-3>>) with respect to
+the axis of rotation and stem:[bb(ii(F))] is force (<<t4-9.1>>)
+"""@en ;
+  skos:note """The bending moment of force is denoted by stem:[bb(ii(M))_\"b\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "torque"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-12.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-12.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M_\"Q\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-12.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-12.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-12.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-12.2-1 ;
+  skos:definition """quantity described by the scalar product:
+
+stem:[T = bb(ii(M)) * bb(ii(e))_\"Q\"]
+
+where stem:[bb(ii(M))] is moment of force (<<t4-12.1>>) and
+stem:[bb(ii(e))_\"Q\"] is unit vector of direction with respect to which the
+torque is considered
+"""@en ;
+  skos:note """For example, torque is the twisting moment of force with respect to
+the longitudinal axis of a beam or shaft.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular impulse"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(H))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-13" ;
+  skosxl:prefLabel isoiec80000:term-t4-13-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-13-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity describing the effect of moment of force
+during a time interval:
+
+stem:[bb(ii(H))(t_1;t_2) = int_(t_1)^(t_2) bb(ii(M)) \"d\"t]
+
+where stem:[bb(ii(M))] is moment of force (<<t4-12.1>>), stem:[t] is time
+(<<iso80000-3>>) and stem:[[t_1, t_2\\]] is considered time interval
+"""@en ;
+  skos:note """For a time interval stem:[[t_1, t_2\\]],
+
+stem:[bb(ii(H))(t_1,t_2) = bb(ii(L))(t_2) - bb(ii(L))(t_1) = Delta bb(ii(L))]
+
+where stem:[bb(ii(L))] is angular momentum.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-14.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-14.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-14.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-14.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-14.1-0 ;
+  skos:definition """quotient of the component of a force normal to a surface and its area:
+
+stem:[p = (bb(ii(e))_\"n\"bb(ii(F)))/A]
+
+where stem:[bb(ii(e))_\"n\"] is unit vector of the surface normal,
+stem:[bb(ii(F))] is force (<<t4-9.1>>) and stem:[A] is area (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gauge pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-14.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-14.2-0 ;
+  skos:definition """pressure stem:[p] (<<t4-14.1>>) decremented by ambient pressure
+stem:[p_\"amb\"]:
+
+stem:[p_\"e\" = p - p_\"amb\"]
+"""@en ;
+  skos:note """Often, stem:[p_\"amb\"] is chosen as a standard pressure.
+
+Gauge pressure is positive or negative.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stress"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-15" ;
+  skosxl:prefLabel isoiec80000:term-t4-15-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-15-0 ;
+  skos:definition """tensor (<<iso80000-2>>) quantity representing state of tension of matter"""@en ;
+  skos:note """Stress tensor is symmetric and has three normal-stress and three
+shear-stress (Cartesian) components.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "normal stress"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-16.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-16.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-16.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-16.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-16.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-16.1-1 ;
+  skos:definition """scalar (<<iso80000-2>>) quantity describing surface action of a force into a
+body equal to:
+
+stem:[sigma_\"n\" = (\"d\"F_\"n\")/(\"d\"A)]
+
+where stem:[F_\"n\"] is the normal component of force (<<t4-9.1>>) and
+stem:[A] is the area (<<iso80000-3>>) of the surface element
+"""@en ;
+  skos:note """A couple of mutually opposite forces of magnitude F acting on the opposite
+surfaces of a slice (layer) of homogenous solid matter normal to it, and
+evenly distributed, cause a constant normal stress stem:[sigma_\"n\"=FA] in
+the slice (layer).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "shear stress"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-16.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-16.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-16.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-16.2-1 ;
+  skos:definition """scalar (<<iso80000-2>>) quantity describing surface action of a force into a
+body equal to:
+
+stem:[tau_\"s\" = (\"d\"F_\"t\")/(\"d\"A)]
+
+where stem:[F_\"t\"] is the tangential component of force (<<t4-9.1>>) and
+stem:[A] is the area (<<iso80000-3>>) of the surface element
+"""@en ;
+  skos:note """A couple of mutually opposite forces of magnitude stem:[F] acting on the
+opposite surfaces of a slice (layer) of homogenous solid matter parallel to
+it, and evenly distributed, cause a constant shear stress stem:[tau=F//A] in
+the slice (layer).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "strain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-17.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(epsilon))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-17.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-17.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-17.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.1-0 ;
+  skos:definition """tensor (<<iso80000-2>>) quantity representing the deformation of matter
+caused by stress
+"""@en ;
+  skos:note """Strain tensor is symmetric and has three linear-strain and three shear
+strain (Cartesian) components.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative linear strain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-17.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "epsilon"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-17.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(e)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-17.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-17.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.2-1 ;
+  skos:definition """quotient of change in length stem:[Delta l] (<<iso80000-3>>) of an object
+and its length stem:[l] (<<iso80000-3>>):
+
+stem:[epsilon=(Delta l)/l]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-17.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "shear strain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-17.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-17.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-17.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-17.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.3-0 ;
+  skos:definition """quotient of parallel displacement stem:[Delta x] (<<iso80000-3>>) of two
+surfaces of a layer and the thickness stem:[d] (<<iso80000-3>>) of the
+layer:
+
+stem:[gamma=(Delta x)/d]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-17.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative volume strain"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-17.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-17.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-17.4" ;
+  skosxl:prefLabel isoiec80000:term-t4-17.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-17.4-0 ;
+  skos:definition """quotient of change in volume stem:[Delta V] (<<iso80000-3>>) of an object
+and its volume stem:[V_0] (<<iso80000-3>>):
+
+stem:[vartheta=(Delta V)/V_0]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poisson number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(v)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-18" ;
+  skosxl:prefLabel isoiec80000:term-t4-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-18-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-18-1 ;
+  skos:definition """quotient of change in width stem:[Delta b] (width is defined in
+<<iso80000-3>>) and change in length stem:[Delta l] (length is defined in
+<<iso80000-3>>) of an object:
+
+stem:[mu=(Delta b)/(Delta l)]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulus of elasticity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-19.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Young modulus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-19.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-19.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-19.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Y"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-19.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-19.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-19.1-0 ;
+  skosxl:altLabel isoiec80000:term-t4-19.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.1-2 ;
+  skos:definition """quotient of normal stress stem:[sigma] (<<t4-16.1>>) and relative linear
+strain stem:[epsilon] (<<t4-17.2>>):
+
+stem:[E = sigma/epsilon]
+"""@en ;
+  skos:note """Conditions should be specified (e.g. adiabatic or isothermal process)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulus of rigidity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-19.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "shear modulus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-19.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "G"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-19.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-19.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-19.2-0 ;
+  skosxl:altLabel isoiec80000:term-t4-19.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.2-0 ;
+  skos:definition """quotient of shear stress stem:[tau] (<<t4-16.2>>) and shear strain
+stem:[gamma] (<<t4-17.3>>):
+
+stem:[G = tau/gamma]
+"""@en ;
+  skos:note """Conditions should be specified (e.g. isentropic or isothermal process)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-19.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "modulus of compression"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-19.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bulk modulus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-19.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-19.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_\"m\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-19.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-19.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-19.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-19.3-0 ;
+  skosxl:altLabel isoiec80000:term-t4-19.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-19.3-2 ;
+  skos:definition """negative of the quotient of pressure stem:[p] (<<t4-14.1>>) and relative
+volume strain stem:[vartheta] (<<t4-17.4>>):
+
+stem:[K = p/vartheta]
+"""@en ;
+  skos:note """Conditions should be specified (e.g. isentropic or isothermal process)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "compressibility"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kappa"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-20" ;
+  skosxl:prefLabel isoiec80000:term-t4-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-20-0 ;
+  skos:definition """negative relative change of volume stem:[V] (<<iso80000-3>>) of an object
+under pressure stem:[p] (<<t4-14.1>>) expressed by:
+
+stem:[kappa= -1/V (\"d\"V)/(\"d\"p)]
+"""@en ;
+  skos:note """Conditions should be specified (e.g. isentropic or isothermal process).
+
+See also <<iso80000-5>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*m*s^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "second axial moment of area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"a\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-21.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-21.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-21.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-21.1-0 ;
+  skos:definition """geometrical characteristic of a shape of a body equal to:
+
+stem:[I_\"a\" = &#8748;_\"M\" r_\"Q\"^2 \"d\"A]
+
+where stem:[\"M\"] is the two-dimensional domain of the cross-section of a
+plane and considered body, stem:[r_\"Q\"] is radial distance (<<iso80000-3>>)
+from a stem:[\"Q\"]-axis in the plane of the surface considered and stem:[A]
+is area (<<iso80000-3>>)
+"""@en ;
+  skos:note """This quantity is often referred to wrongly as \"moment of inertia\" (<<t4-7>>).
+
+The subscript, stem:[\"a\"], may be omitted when there is no risk of confusion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^4 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "second polar moment of area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-21.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-21.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-21.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-21.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-21.2-0 ;
+  skos:definition """geometrical characteristic of a shape of a body equal to:
+
+stem:[I_\"p\" = &#8748;_\"M\" r_\"Q\"^2 \"d\"A]
+
+where stem:[\"M\"] is the two-dimensional domain of the cross-section of a
+plane and considered body, stem:[r_\"Q\"] is radial distance (<<iso80000-3>>)
+from a stem:[\"Q\"]-axis perpendicular to the plane of the surface considered
+and stem:[A] is area (<<iso80000-3>>)
+"""@en ;
+  skos:note """This quantity is often referred to wrongly as \"moment of inertia\" (<<t4-7>>).
+
+The subscript, stem:[p], may be omitted when there is no risk of confusion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^4 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "section modulus"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-22-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(W)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-22" ;
+  skosxl:prefLabel isoiec80000:term-t4-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-22-1 ;
+  skos:definition """geometrical characteristic of a shape of a body equal to:
+
+stem:[Z = I_\"a\"//r_\"Q,max\"]
+
+where stem:[I_\"a\"] is the second axial moment of area (<<t4-21.1>>) and
+stem:[r_\"Q,max\"] is the maximum radial distance (<<iso80000-3>>) of any
+point in the surface considered from the stem:[\"Q\"]-axis with respect to
+which stem:[I_\"a\"] is defined
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.1-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coefficient of static friction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-23.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(f_\"s\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.1-0 ;
+  skosxl:altLabel isoiec80000:term-t4-23.1-1 ;
+  skosxl:altLabel isoiec80000:term-t4-23.1-2 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.1-1 ;
+  skos:definition """proportionality factor between the maximum magnitude of the tangential
+component stem:[F_\"max\"] of the static friction force (<<t4-9.3>>) and the
+magnitude of the normal component stem:[N] of the contact force (<<t4-9.1>>)
+between two bodies at relative rest with respect to each other:
+
+stem:[F_\"max\" = mu_\"s\"N]
+"""@en ;
+  skos:note """When it is not necessary to distinguish between dynamic friction factor and
+static friction factor, the name friction factor may be used for both.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kinetic friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-23.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(f)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.2-0 ;
+  skosxl:altLabel isoiec80000:term-t4-23.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.2-1 ;
+  skos:definition """proportionality factor between the magnitudes of the kinetic friction force,
+stem:[F_(rm(mu))] (<<t4-9.4>>) and the normal component stem:[N] of the
+contact force (<<t4-9.1>>):
+
+stem:[F_(rm(mu)) = mu N]
+"""@en ;
+  skos:note """When it is not necessary to distinguish between dynamic friction factor and
+static friction factor, the name friction factor may be used for both.
+
+The dynamic friction factor stem:[mu] is independent in first approximation
+of the contact surface.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-23.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rolling resistance factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"rr\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.3-0 ;
+  skos:definition """proportionality factor between the magnitude of the tangential component
+stem:[F] and the magnitude of the normal component stem:[N] of the force
+applied to a body rolling on a surface at constant speed:
+
+stem:[F = C_\"rr\"N]
+"""@en ;
+  skos:note """Also known as rolling resistance coefficient, ((RRC))."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-23.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-23.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-23.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "C_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-23.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-23.4" ;
+  skosxl:prefLabel isoiec80000:term-t4-23.4-0 ;
+  skosxl:altLabel isoiec80000:term-t4-23.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-23.4-0 ;
+  skos:definition """factor proportional to magnitude stem:[F_\"D\"] of the drag force (<<t4-9.6>>)
+of a body moving in a fluid, dependent on the shape and speed stem:[v]
+(<<iso80000-3>>) of a body:
+
+stem:[F_\"D\" = 1/2 C_\"D\" rho v^2 A]
+
+where stem:[rho] is mass density (<<t4-2>>) of the fluid and stem:[A] is
+cross-section area (<<iso80000-3>>) of the body
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "dynamic viscosity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "viscosity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-24" ;
+  skosxl:prefLabel isoiec80000:term-t4-24-0 ;
+  skosxl:altLabel isoiec80000:term-t4-24-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-24-0 ;
+  skos:definition """for laminar flows, proportionality constant between shear stress
+stem:[tau_(xz)] (<<t4-16.2>>) in a fluid moving with a velocity stem:[v_x]
+(<<iso80000-3>>) and gradient stem:[\"d\"v_x//\"d\"z] perpendicular to the plane
+of shear:
+
+stem:[tau_(xz) = eta (\"d\"v_x)/(\"d\"z)]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kinematic viscosity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(ii(v))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-25" ;
+  skosxl:prefLabel isoiec80000:term-t4-25-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-25-0 ;
+  skos:definition """quotient of dynamic viscosity stem:[eta] (<<t4-24>>) and mass density
+stem:[rho] (<<t4-2>>) of a fluid:
+
+stem:[sf(ii(v)) = eta/rho]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "surface tension"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gamma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-26" ;
+  skosxl:prefLabel isoiec80000:term-t4-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-26-1 ;
+  skos:definition """magnitude of a force acting against the enlargement of area portion of a
+surface separating a liquid from its surrounding
+"""@en ;
+  skos:note """The concept of ((surface energy)) is closely related to surface tension and
+has the same dimension.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power <mechanics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "P"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-27" ;
+  skosxl:prefLabel isoiec80000:term-t4-27-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-27-0 ;
+  skos:definition """scalar product of force stem:[bb(ii(F))] (<<t4-9.1>>) acting to a body and
+its velocity stem:[v] (<<iso80000-3>>):
+
+stem:[P=Fv]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m*s^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-28.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "potential energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-28.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-28.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"p\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-28.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-28.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-28.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.1-1 ;
+  skos:definition """for conservative force stem:[bb(ii(F))], scalar additive quantity obeying
+condition stem:[bb(ii(F)) = - bb(nabla) F], if it exists
+"""@en ;
+  skos:note """For the definition of energy, see <<iso80000-5>>.
+
+A force is conservative when the force field is irrotational, i.e.
+stem:[bb(rot) bb(ii(F))=0], or stem:[bb(ii(F))] is perpendicular to the
+speed of the body to ensure stem:[bb(ii(F)) * \"d\"r = 0].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-28.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "kinetic energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-28.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-28.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"k\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-28.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-28.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-28.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.2-1 ;
+  skos:definition """scalar (<<iso80000-2>>) quantity characterizing a moving body expressed by:
+
+stem:[T = 1/2 mv^2]
+
+where stem:[m] is mass (<<t4-1>>) of the body and vis its speed
+(<<iso80000-3>>)
+"""@en ;
+  skos:note """For the definition of energy, see <<iso80000-5>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-28.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mechanical energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-28.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-28.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-28.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-28.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-28.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.3-1 ;
+  skos:definition """sum of kinetic energy stem:[T] (<<t4-28.2>>) and potential energy stem:[V]
+(<<t4-28.1>>):
+
+stem:[E = T + V]
+"""@en ;
+  skos:note """The symbols stem:[E] and stem:[W] are also used for other kinds of energy.
+
+This definition is understood in a classical way and it does not include
+thermal motion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-28.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mechanical work"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-28.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "work"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-28.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-28.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "W"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-28.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-28.4" ;
+  skosxl:prefLabel isoiec80000:term-t4-28.4-0 ;
+  skosxl:altLabel isoiec80000:term-t4-28.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-28.4-1 ;
+  skos:definition """process quantity describing the total action of a force stem:[bb(ii(F))]
+(<<t4-9.1>>) along a continuous curve stem:[Gamma] in three-dimensional
+space with infinitesimal displacement (<<iso80000-3>>) stem:[\"d\"r], as a
+line integral of their scalar product:
+
+stem:[A = int_Gamma bb(ii(F)) * \"d\"r]
+"""@en ;
+  skos:note """The definition covers the case
+
+stem:[A = - int_Gamma p * \"d\"V]
+
+where stem:[Gamma] is a curve in the phase space and implies that work
+generally depends upon stem:[Gamma], and that type of process must be
+defined (e.g. isentropic or isothermic).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "efficiency <mechanics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "eta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-29" ;
+  skosxl:prefLabel isoiec80000:term-t4-29-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-29-0 ;
+  skos:definition """quotient of output power stem:[P_\"out\"] (<<t4-27>>) from a system and input
+power stem:[P_\"in\"] (<<t4-27>>) to this system:
+
+stem:[eta=P_\"out\"/P_\"in\"]
+"""@en ;
+  skos:note """The system must be specified.
+
+This quantity is often expressed by the unit percent, symbol %.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-30.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass flow"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-30.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(j))_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-30.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-30.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-30.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-30.1-0 ;
+  skos:definition """vector (<<iso80000-2>>) quantity characterizing a flowing fluid by the
+product of its local mass density stem:[rho] (<<t4-2>>) and local velocity
+stem:[v] (<<iso80000-3>>):
+
+stem:[bb(ii(j))_m = rho v]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-2)*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-30.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass flow rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-30.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-30.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-30.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-30.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-30.2-0 ;
+  skos:definition """scalar (<<iso80000-2>>) quantity characterizing the total flow through the
+two-dimensional domain stem:[\"A\"] with normal vector stem:[bb(ii(e))_\"n\"] of
+a flowing fluid with mass flow stem:[bb(ii(j))_m] (<<t4-30.1>>) as an
+integral:
+
+stem:[q_m = &#8748;_\"A\" bb(ii(j))_m*bb(ii(e))_n \"d\"A]
+
+where stem:[\"d\"A] is the area (<<iso80000-3>>) of an element of the
+two-dimensional domain stem:[\"A\"]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-30.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass change rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-30.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-30.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-30.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-30.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-30.3-0 ;
+  skos:definition """rate of increment of mass stem:[m] (<<t4-1>>):
+
+stem:[q_m = (\"d\"m)/(\"d\"t)]
+
+where stem:[\"d\"m] is the infinitesimal mass (<<t4-1>>) increment and
+stem:[\"d\"t] is the infinitesimal duration (<<iso80000-3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "volume flow rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q_V"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-31" ;
+  skosxl:prefLabel isoiec80000:term-t4-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-31-0 ;
+  skos:definition """scalar (<<iso80000-2>>) quantity characterizing the total flow through the
+two-dimensional domain stem:[\"A\"] with the normal vector
+stem:[bb(ii(e))_\"n\"] of a flowing fluid with velocity stem:[v]
+(<<iso80000-3>>) as an integral:
+
+stem:[q_V = &#8748;_\"A\" v * bb(ii(e))_\"n\" \"d\"A]
+
+where stem:[\"d\"A] is the area (<<iso80000-3>>) of an element of the
+two-dimensional domain stem:[\"A\"]
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^3*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .
+
+isoiec80000:term-t4-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "action"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-32" ;
+  skosxl:prefLabel isoiec80000:term-t4-32-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-32-0 ;
+  skos:definition """time integral of energy stem:[E] over a time interval stem:[(t_1, t_2)]:
+
+stem:[S = int_(t_1)^(t_2) E \"d\"t]
+"""@en ;
+  skos:note """The energy may be expressed by a Lagrangian or Hamiltonian function."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

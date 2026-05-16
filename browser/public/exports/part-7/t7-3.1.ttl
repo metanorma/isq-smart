@@ -1,0 +1,39 @@
+isoiec80000:term-t7-3.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant energy density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t7-3.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t7-3.1-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(rho_\"e\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t7-3.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "7-3.1" ;
+  skosxl:prefLabel isoiec80000:term-t7-3.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-3.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t7-3.1-1 ;
+  skos:definition """volumetric density of radiant energy, expressed by
+
+[stem%unnumbered]
+++++
+w = (\"d\"Q_\"e\")/(\"d\"V)
+++++
+
+where stem:[Q_\"e\"] is radiant energy (<<t7-2.1>>) in an elementary three-dimensional domain and stem:[V] is the volume (<<iso80000-3>>) of that domain
+"""@en ;
+  skos:note """Radiant energy density within a Planckian radiator is given by
+
+[stem%unnumbered]
+++++
+w = (4 sigma)/c_0 T^4
+++++
+
+where stem:[sigma] is the Stefan-Boltzmann constant (<<iso80000-1>>), stem:[c_0] is speed of light in vacuum (<<iso80000-1>>) and stem:[T] is thermodynamic temperature (<<iso80000-5>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-7 .

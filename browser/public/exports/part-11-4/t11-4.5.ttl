@@ -1,0 +1,35 @@
+isoiec80000:term-t11-4.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Weber number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "We"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.5-0 ;
+  skos:definition """relation between inertial forces and capillary forces due to surface tension at the interface between two different fluids, expressed by
+
+stem:[We = rho v^2 l // gamma]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[gamma]:: is surface tension (<<iso80000-4>>)
+"""@en ;
+  skos:note """The fluids can be gases or liquids.
+
+The different fluids often are drops moving in a gas or bubbles in a liquid.
+
+The characteristic length is commonly the diameter of bubbles or drops.
+
+The square root of the Weber number is called Rayleigh number.
+
+Sometimes the square root of the Weber number as defined here is called the Weber number. That definition is deprecated.
+
+Interfaces only exist between two fluids which are not miscible.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

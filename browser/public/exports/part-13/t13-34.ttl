@@ -1,0 +1,31 @@
+isoiec80000:term-t13-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "irrelevance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "H_{\"-\"}(I\\|X)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-34" ;
+  skosxl:prefLabel isoiec80000:term-t13-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-34-0 ;
+  skos:definition """conditional entropy (<<t13-32,item 13-32>>) of a set stem:[I] of received characters
+given the set stem:[X] of emitted characters:
+
+stem:[H_{\"-\"}(I\\|X) = H_{\"+\"}(X\\|I) + H(I) - H(X)],
+
+where stem:[H_{\"+\"}(X\\|I)] is equivocation (<<t13-33,item 13-33>>)
+and stem:[H] is entropy (<<t13-25,item 13-25>>)
+"""@en ;
+  skos:note """Irrelevance is a quantitative measure of the
+information added to the emitted information owing to
+distortion.
+
+See <<iec60050-171,droploc%locality:item=\"171-07-25\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

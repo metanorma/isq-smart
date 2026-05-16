@@ -1,0 +1,15 @@
+isoiec80000:term-t2-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "negation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "not p"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-5.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-5.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-5.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-5.3-0 ;
+  skos:definition """negation of stem:[p], not stem:[p]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-5 .

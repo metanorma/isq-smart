@@ -1,0 +1,38 @@
+isoiec80000:term-t11-5.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stark number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: Stefan number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.20-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: Biot radiation number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sk"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.20-0 ;
+  skosxl:altLabel isoiec80000:term-t11-5.20-1 ;
+  skosxl:altLabel isoiec80000:term-t11-5.20-2 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.20-0 ;
+  skos:definition """relation between radiant heat and conductive heat multiplied by the relative temperature difference for a body, expressed by
+
+stem:[Sk = epsilon sigma T^3l//lambda]; where
+
+stem:[epsilon]:: is emissivity (<<iso80000-7>>) of the surface,
+stem:[sigma]:: is the Stefan-Boltzmann constant (<<iso80000-7>>),
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The relative temperature difference is defined by stem:[(Delta T)/T]; where stem:[Delta T = T_\"s\" - T_\"l\"] is the difference of the temperature at the surface, stem:[T_\"s\"], and the temperature at a layer at a distance stem:[l] from the surface, stem:[T_\"l\"].
+
+Sometimes this characteristic number is wrongly defined without the factor stem:[epsilon].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

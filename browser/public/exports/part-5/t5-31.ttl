@@ -1,0 +1,24 @@
+isoiec80000:term-t5-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass fraction of water"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w_(\"H\"_2\"O\")"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-31" ;
+  skosxl:prefLabel isoiec80000:term-t5-31-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-31-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+w_(\"H\"_2\"O\") = u/(u+1)
+++++
+
+where stem:[u] is mass ratio of water to dry matter (<<t5-29>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

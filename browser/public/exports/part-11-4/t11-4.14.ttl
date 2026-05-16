@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dean number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.14-0 ;
+  skos:definition """relation between centrifugal force and inertial force, for flows of fluids in curved pipes, expressed by
+
+stem:[Dn = (2vr)/sf(ii(v)) sqrt(r/R)]; where
+
+stem:[v]:: is (axial) speed (<<iso80000-3>>),
+stem:[r]:: is radius (<<iso80000-3>>) of the pipe,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[R]:: is radius of curvature (<<iso80000-3>>) of the path of the pipe
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

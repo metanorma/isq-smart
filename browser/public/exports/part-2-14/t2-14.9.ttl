@@ -1,0 +1,19 @@
+isoiec80000:term-t2-14.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "arc cosine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"arccos \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.9-0 ;
+  skos:definition """arcus cosine of stem:[x]"""@en ;
+  skos:note """stem:[y = \"arccos \"x <=> x = \"cos \"y] (for stem:[0 <= y <= pi])
+
+The function stem:[\"arccos\"] is the inverse of the function stem:[\"cos\"] with the restriction mentioned above.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

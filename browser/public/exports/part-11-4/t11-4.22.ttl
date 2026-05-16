@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "elasticity number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "El"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.22" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.22-0 ;
+  skos:definition """relation between relaxation time and diffusion time in viscoelastic flows, expressed by
+
+stem:[El = t_\"r\" sf(ii(v))//r^2]; where
+
+stem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[r]:: is radius (<<iso80000-3>>) of pipe
+"""@en ;
+  skos:note """See also Deborah number (<<t11-7.8>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

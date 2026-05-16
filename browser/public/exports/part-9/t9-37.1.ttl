@@ -1,0 +1,24 @@
+isoiec80000:term-t9-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "molar gas constant"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-37.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-37.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-37.1" ;
+  skosxl:prefLabel isoiec80000:term-t9-37.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-37.1-0 ;
+  skos:definition """product of the Boltzmann constant (<<iso80000-1>>) and the Avogadro constant (<<iso80000-1>>)"""@en ;
+  skos:note """For an ideal gas,
+
+[stem%unnumbered]
+++++
+rho V_\"m\" = RT
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/(mol*K) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*K^(-1)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

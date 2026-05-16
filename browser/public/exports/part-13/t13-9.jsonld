@@ -1,0 +1,87 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "storage capacity, storage size",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-9-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "M",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t13-9",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "13-9",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t13-9-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t13-9-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "amount of data that can be contained in a storage device, expressed as a number of specified data elements",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For the unit one, see the <<intro>>.\n\nThe specified data elements depend on the\norganization of the storage device, for example,\nbinary elements (also called \"bits\"), octets (also\ncalled \"bytes\"), words of a given number of bits,\nblocks. A subscript referring to a specified data\nelement can be added to the symbol.\n\n[example]\nstorage capacity for bits, stem:[M_{\"bit\"}] +\nstorage capacity for octets, stem:[M_o] or stem:[M_B].\n\nFor registers, the term \"register length\" is used with\nthe same meaning.\n\nAlthough in this context the designation \"bit\", symbol\nbit, is not really a unit, it is often used like a unit, e.g.\nstem:[M_{\"bit\"} = 32000], where the unit one is implicit, is often\nwritten as stem:[M = 32000 \"unitsml(bit)\"]. Similarly, although the\ndesignation octet or byte, symbols o and B,\nrespectively, are not units, they are often used like\nunits, e.g., stem:[M_o = 4000] or stem:[M_B = 4000], where the unit\none is implicit, are often written stem:[M = 4000] o or\nstem:[M = 4000 \" B\"].\n\nWhen used to express a storage capacity or an\nequivalent binary storage capacity, the bit and the\noctet (or byte) may be combined with SI prefixes or\nprefixes for binary multiples.\n\nIn English, the name \"byte\", symbol B, is used as a\nsynonym for \"octet\". Here, \"byte\" means an eight-bit\nbyte. However, \"byte\" has been used for numbers of\nbits other than eight. To avoid the risk of confusion, it\nis strongly recommended that the name \"byte\" and\nthe symbol B be used only for eight-bit bytes.\n\nThe symbol B for byte is not international and is not\nto be confused with the symbol B for bel.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-1"
+        },
+        {
+          "@id": "isoiec80000:unit-bit"
+        },
+        {
+          "@id": "isoiec80000:unit-o"
+        },
+        {
+          "@id": "isoiec80000:unit-B"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-13"
+      }
+    }
+  ]
+}

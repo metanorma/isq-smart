@@ -1,0 +1,25 @@
+isoiec80000:term-t4-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction force"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t4-9.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "static friction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(F_\"s\"))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-9.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t4-9.3-0 ;
+  skosxl:altLabel isoiec80000:term-t4-9.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t4-9.3-0 ;
+  skos:definition """force (<<t4-9.1>>) resisting the motion before a body starts to slide on a
+surface
+"""@en ;
+  skos:note """For the static friction coefficient, see <<t4-23.1>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-N ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

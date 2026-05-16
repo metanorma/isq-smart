@@ -1,0 +1,25 @@
+isoiec80000:term-t2-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of integers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(Z))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.2-0 ;
+  skos:definition """the set of integers"""@en ;
+  skos:note """stem:[bb(sf(Z)) = {..., -2, -1, 0, 1, 2, ...}]
+
+stem:[bb(sf(Z))** = {n in bb(sf(Z)) &#x2223; n != 0}]
+
+Other restrictions can be indicated in an obvious way, as shown below.
+
+stem:[bb(sf(Z))_(>-3) = {n in bb(sf(Z)) &#x2223; n > -3}]
+
+The symbol stem:[ZZ] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

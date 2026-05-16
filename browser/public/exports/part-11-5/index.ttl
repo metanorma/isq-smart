@@ -1,0 +1,603 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-11-5 a smart:PublicationDocument ;
+  dcterms:title "Part 11-5"@en ;
+  dcterms:identifier "ISO 80000-11-5" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t11-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fourier number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.1-0 ;
+  skos:definition """relation between heat conduction rate and the rate of thermal energy storage in a body for conductive heat transfer into a body, expressed by
+
+stem:[Fo = (alpha t)/l^2]; where
+
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),
+stem:[t]:: is time (<<iso80000-3>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  skos:note """The characteristic length stem:[l] of the body is often defined as the quotient of the body's volume and its heated surface.
+
+Sometimes the reciprocal of this number is wrongly used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Péclet number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pe"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.2-0 ;
+  skos:definition """relation between convective heat transfer rate and conductive heat transfer rate, expressed by
+
+stem:[Pe = vl//alpha]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) in the direction of heat transfer, and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The thermal Péclet number is also given by
+
+stem:[Pe = Re * Pr]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+
+Compare with <<t11-6.2>>, Péclet number for mass transfer.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rayleigh number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ra"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.3-0 ;
+  skos:definition """relation between buoyancy forces due to thermal expansion and viscous forces in free convection in buoyancy driven flow near a heated surface perpendicular to the gravity force, expressed by
+
+stem:[Ra = (l^3 g alpha_V Delta T)/(sf(ii(v)) alpha)]; where
+
+stem:[l]:: is distance (<<iso80000-3>>) from the wall,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[alpha_V]:: is cubic expansion coefficient (<<iso80000-5>>) of the fluid,
+stem:[Delta T]:: is difference of thermodynamic temperature (<<iso80000-5>>) between surface of the wall and the fluid far away from the wall,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>) of the fluid
+"""@en ;
+  skos:note """The Rayleigh number is also given by
+
+stem:[Ra = Gr * Pr]; where
+
+stem:[Gr]:: is the Grashof number (<<t11-4.4>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Froude number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fr**"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.4-0 ;
+  skos:definition """quotient of gravitational forces and thermodiffusion forces for heat transfer in forced convection of fluids, expressed by
+
+stem:[Fr** = (gl^3)/alpha^2]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Nusselt number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.5-0 ;
+  skos:definition """relation between the internal thermal resistance of a body and its surface thermal resistance in a body transferring heat from a surface into its interior or vice versa, expressed by
+
+stem:[N]stem:[u = Kl // lambda = Kl // (alpha rho c_p)] where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,
+stem:[l]:: is length (<<iso80000-3>>) of the body in direction of heat flow,
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>) of the surface,
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>)
+"""@en ;
+  skos:note """The body under consideration can be a solid body, a fluid, or their combination, and additional heat transfer due to convective motion can occur.
+
+In case of merely conductive heat transfer especially in a solid body, the \"Biot number for heat transfer\" (<<t11-5.6>>) is used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Biot number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.6-0 ;
+  skos:definition """special case of the Nusselt number for heat transfer (item <<t11-5.5>>) in case of conductive heat transfer in a solid body, expressed by
+
+stem:[Bi = Kl // lambda]; where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>) of the body
+"""@en ;
+  skos:note """The characteristic length is commonly defined as the volume of the body divided by its surface area."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stanton number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "St"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.7-0 ;
+  skos:definition """relation between heat transfer into a fluid from a surface and its heat transfer by convection, expressed by
+
+stem:[St = K // (rho v c_p)]; where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>) through the surface,
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>) of the fluid
+"""@en ;
+  skos:note """The Stanton number is also given by
+
+stem:[St = N u // (Re*Pr) = N u//Pe]; where
+
+stem:[N u]:: is Nusselt number for heat transfer (<<t11-5.5>>),
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>),
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>), and
+stem:[Pe]:: is the Péclet number (<<t11-5.2>>).
+
+Sometimes this quantity is called Margoulis number, symbol stem:[Ms] or stem:[Mg].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "stem:[j]-factor <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "heat transfer factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.8-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Colburn number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "j"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Co"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.8-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Jq"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.8-0 ;
+  skosxl:altLabel isoiec80000:term-t11-5.8-1 ;
+  skosxl:altLabel isoiec80000:term-t11-5.8-2 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.8-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.8-2 ;
+  skos:definition """relation between heat transfer and mass transfer in a fluid, expressed by
+
+stem:[j = K/(c_p rho v) ((c_p eta)/lambda)^(2//3)]; where
+
+stem:[K]:: is coefficient of heat transfer (<<iso80000-5>>),
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The heat transfer factor is also given by
+
+stem:[j=St * Pr^(2//3)]; where
+
+stem:[St]:: is the Stanton number for heat transfer (<<t11-5.7>>), and
+stem:[Pr]:: is the Prandtl number (<<t11-7.1>>).
+
+See also mass transfer factor (<<t11-6.7>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be_1"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.9-0 ;
+  skos:definition """quotient of mechanical work and frictional and thermal diffusion energy losses for a forced flow, expressed by
+
+stem:[Be_1 = (Delta pl^2)/(eta alpha)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along a pipe,
+stem:[l]:: is length (<<iso80000-3>>) of the pipe,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number <entropy>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be_S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.10-0 ;
+  skos:definition """efficiency of heat transfer by a fluid, expressed by
+
+stem:[Be_S = (S(Delta T))/(S(Delta T) + S(Delta p))]; where
+
+stem:[S(Delta T)]:: is entropy generation contributed by heat transfer, and
+stem:[S(Delta p)]:: is entropy generation contributed by fluid friction
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stefan number <phase transition>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ste"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stf"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.11-1 ;
+  skos:definition """relation between heat content and latent heat content in a binary mixture undergoing a phase transition, expressed by
+
+stem:[Ste = c_p Delta T // Q]; where
+
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between the phases, and
+stem:[Q]:: is quotient of latent heat of phase transition (<<iso80000-5>>) and mass (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Brinkman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Br"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N_(Br)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.12-1 ;
+  skos:definition """relation between heat produced by viscosity and heat conducted from a wall adjacent to a fluid moving relative to it, expressed by
+
+stem:[Br = eta v^2 // (lambda Delta T)]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[v]:: is characteristic speed (<<iso80000-3>>),
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T = T_W - T_0]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>), where
+stem:[T_0]:: is bulk fluid temperature, and
+stem:[T_W]:: is wall temperature
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Clausius number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cl"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.13-0 ;
+  skos:definition """relation between energy transfer associated with fluid momentum and energy transfer by thermal conduction in forced heating, expressed by
+
+stem:[Cl = v^3 l rho // (lambda Delta T)]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) of the path of energy transfer,
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) along length stem:[l]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Carnot number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.14-0 ;
+  skos:definition """theoretical maximum efficiency (<<iso80000-5>>) of a Carnot cycle operating between temperature reservoirs
+
+stem:[Ca = (T_2-T_1)//T_2]; where
+
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>), and +
+stem:[T_2, T_1]:: are the thermodynamic temperatures of a heat source and a heat sink, respectively
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eckert number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dulong number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ec"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.15-0 ;
+  skosxl:altLabel isoiec80000:term-t11-5.15-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.15-0 ;
+  skos:definition """relation between the kinetic energy of a flow and its enthalpy change in fluid dynamics exhibiting dissipation, expressed by
+
+stem:[Ec = v^2 // (c_p Delta T)]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>),
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>) of the flow, and
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) due to dissipation (by friction)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Graetz number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gz"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.16-0 ;
+  skos:definition """relation between heat transferred by convection and heat transferred by conduction in a laminar flow in a pipe, expressed by
+
+stem:[Gz = (vd^2)/(alpha l)]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid, +
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe, +
+stem:[alpha]:: is thermal diffusivity (<<iso80000-5>>) of the fluid, and +
+stem:[l]:: is length (<<iso80000-3>>) of the pipe
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "heat transfer number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "K_Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.17-0 ;
+  skos:definition """relation between heat transferred by a flow and its kinetic energy, expressed by
+
+stem:[K_Q = Phi // (v^3l^2rho)]; where
+
+stem:[Phi]:: is heat flow rate (<<iso80000-5>>),
+stem:[v]:: is characteristic speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pomerantsev number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Po"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pov"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.18-1 ;
+  skos:definition """relation between heat generated in a body and conducted heat in the body, expressed by
+
+stem:[Po = Q_\"m\" l^2 // (lambda Delta T)]; where
+
+stem:[Q_\"m\"]:: is (constant) volumic heat generation rate,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T = T_\"m\" - T_0]:: is difference of thermodynamic temperature (<<iso80000-5>>) between that of the medium (stem:[T_\"m\"]) and the initial temperature of the body (stem:[T_0])
+"""@en ;
+  skos:note """Similar numbers are known for areic, lineic and point sources of heat, each with decreasing power of length stem:[l] respectively."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Boltzmann number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bz"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bol"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.19-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.19" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.19-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.19-2 ;
+  skos:definition """relation between convective heat and radiant heat for a fluid in a channel, expressed by
+
+stem:[Bz = rho v c_p // (epsilon sigma T^3)]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid,
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[epsilon]:: is emissivity (<<iso80000-7>>),
+stem:[sigma]:: is the Stefan-Boltzmann constant (<<iso80000-7>>), and
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .
+
+isoiec80000:term-t11-5.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stark number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: Stefan number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.20-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "DEPRECATED: Biot radiation number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sk"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.20-0 ;
+  skosxl:altLabel isoiec80000:term-t11-5.20-1 ;
+  skosxl:altLabel isoiec80000:term-t11-5.20-2 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.20-0 ;
+  skos:definition """relation between radiant heat and conductive heat multiplied by the relative temperature difference for a body, expressed by
+
+stem:[Sk = epsilon sigma T^3l//lambda]; where
+
+stem:[epsilon]:: is emissivity (<<iso80000-7>>) of the surface,
+stem:[sigma]:: is the Stefan-Boltzmann constant (<<iso80000-7>>),
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>)
+"""@en ;
+  skos:note """The relative temperature difference is defined by stem:[(Delta T)/T]; where stem:[Delta T = T_\"s\" - T_\"l\"] is the difference of the temperature at the surface, stem:[T_\"s\"], and the temperature at a layer at a distance stem:[l] from the surface, stem:[T_\"l\"].
+
+Sometimes this characteristic number is wrongly defined without the factor stem:[epsilon].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

@@ -1,0 +1,22 @@
+isoiec80000:term-t9-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ionic strength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-42 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-42" ;
+  skosxl:prefLabel isoiec80000:term-t9-42-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-42-0 ;
+  skos:definition """in a sample, one half of the sum of square of the charge number stem:[z_i] (<<iso80000-10>>) of stem:[i]-th ion multiplied by its molality stem:[b_i] (<<t9-15>>) over any involved ion:
+
+[stem%unnumbered]
+++++
+I = 1/2 sum z_i^2 b_i
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-mol*kg^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

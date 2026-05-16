@@ -1,0 +1,31 @@
+isoiec80000:term-t5-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermal insulance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "coefficient of thermal insulance"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-11" ;
+  skosxl:prefLabel isoiec80000:term-t5-11-0 ;
+  skosxl:altLabel isoiec80000:term-t5-11-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-11-0 ;
+  skos:definition """inverse of coefficient of heat transfer stem:[K]:
+
+[stem%unnumbered]
+++++
+M = 1/K
+++++
+
+where stem:[K] is coefficient of heat transfer (<<t5-10.1>>)
+"""@en ;
+  skos:note """In building technology, this quantity is often called thermal resistance, with the symbol stem:[R]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*K/W ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s^3*K ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

@@ -1,0 +1,17 @@
+isoiec80000:term-t10-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "elementary charge"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-5.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-5.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-5.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-5.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-5.1-0 ;
+  skos:definition """one of the fundamental constants in the SI system (<<iso80000-1>>), equal to the charge of the proton and opposite to the charge of the electron"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C ;
+  isoiec80000:hasUnit isoiec80000:unit-s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

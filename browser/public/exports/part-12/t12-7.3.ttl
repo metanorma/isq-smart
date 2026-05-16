@@ -1,0 +1,25 @@
+isoiec80000:term-t12-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "displacement vector <condensed matter physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(u))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-7.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-7.3" ;
+  skosxl:prefLabel isoiec80000:term-t12-7.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-7.3-0 ;
+  skos:definition """difference between the position vector (<<iso80000-3>>) of an ion or atom and its position vector in equilibrium"""@en ;
+  skos:note """The displacement vector can be expressed by:
+
+[stem%unnumbered]
+++++
+bb(ii(u)) = bb(ii(R)) - bb(ii(R))_0
+++++
+
+where stem:[bb(ii(R))] is particle position vector (<<t12-7.1>>) and stem:[bb(ii(R))_0] is position vector of an ion or atom in equilibrium (<<t12-7.2>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

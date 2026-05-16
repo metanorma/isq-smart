@@ -1,0 +1,27 @@
+isoiec80000:term-t10-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "relative mass defect"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-22.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "B_\"r\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-22.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-22.2" ;
+  skosxl:prefLabel isoiec80000:term-t10-22.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-22.2-0 ;
+  skos:definition """quotient of mass defect and the unified atomic mass constant:
+
+[stem%unnumbered]
+++++
+B_\"r\" = B//m_\"u\"
+++++
+
+where
+
+stem:[B]:: is mass defect (<<t10-21.2>>), and
+stem:[m_\"u\"]:: is the unified atomic mass constant (<<t10-4.3>>)
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

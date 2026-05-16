@@ -1,0 +1,47 @@
+isoiec80000:term-t10-88-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "exposure <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-88-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "X"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-88 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-88" ;
+  skosxl:prefLabel isoiec80000:term-t10-88-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-88-0 ;
+  skos:definition """for X- or gamma radiation the differential quotient of stem:[q] with respect to stem:[m], where stem:[q] is the absolute value of the mean total electric charge of the ions of one sign produced when all the electrons and positrons liberated or created by photons incident on an element of dry air with mass stem:[m] (<<iso80000-4>>) are completely stopped in dry air:
+
+[stem%unnumbered]
+++++
+X = (\"d\"q)/(\"d\"m)
+++++
+"""@en ;
+  skos:note """The ionization produced by electrons emitted in atomic or molecular relaxation is included in stem:[\"d\"q]. The ionization due to photons emitted by radiative processes (i.e. bremsstrahlung and fluorescence photons) is not included in stem:[\"d\"q].
+
+This quantity should not be confused with the quantity photon exposure (<<iso80000-7>>), radiation exposure (<<iso80000-7>>), or the quantity luminous exposure (<<iso80000-7>>).
+
+It can be convenient to refer to a value of exposure in free space or at a point inside a material different from air, e.g. to the exposure at a point inside a water phantom.
+
+The exposure is related to the air kerma, stem:[K_\"a\"], (see <<t10-86.1>>) by:
+
+[stem%unnumbered]
+++++
+X = (e(1-g))/W K_\"a\",
+++++
+
+where stem:[e] is the elementary charge (<<iso80000-1>>), stem:[W] the average energy loss per elementary charge produced (<<t10-60>>), and stem:[g] is the fraction of the kinetic energy of liberated charged particles that is lost in radiative processes.
+
+In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The exposure, stem:[X], is the quotient of stem:[\"d\"q] by stem:[\"d\"m], where stem:[\"d\"q] is the absolute value of the mean total charge of the ions of one sign produced when all the electrons and positrons liberated or created by photons incident on a mass stem:[\"d\"m] of dry air are completely stopped in dry air:
+
+[stem%unnumbered]
+++++
+X = (\"d\"q)/(\"d\"m).
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-C/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^(-1)*s*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

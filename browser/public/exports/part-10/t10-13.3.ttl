@@ -1,0 +1,38 @@
+isoiec80000:term-t10-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "orbital angular momentum quantum number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-13.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.3-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "l_i"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t10-13.3-2 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "L"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-13.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-13.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.3-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-13.3-2 ;
+  skos:definition """atomic quantum number related to the orbital angular momentum stem:[l] of a one-electron state"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+abs(bb(ii(l)))^2 = &#8463;^2 l(l-1),\" \"l=0,1,...,n-1
+++++
+
+stem:[bb(ii(l))] is the orbital angular momentum and stem:[&#8463;] is the reduced Planck constant (<<iso80000-1>>).
+
+If reference is made to a specific particle stem:[i], the symbol stem:[l_i] is used instead of stem:[l]; +
+if reference is made to the whole system, the symbol stem:[L] is used instead of stem:[l].
+
+An electron in an stem:[\"H\"] atom for stem:[l = 0] appears as a spherical cloud. In the Bohr model, it is related to the form of the orbit.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

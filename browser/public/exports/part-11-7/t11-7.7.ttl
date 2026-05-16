@@ -1,0 +1,25 @@
+isoiec80000:term-t11-7.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Weissenberg number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Wi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.7-0 ;
+  skos:definition """product of time derivative of shear rate and relaxation time in viscoelastic flows, expressed by
+
+stem:[Wi = dot gamma t_\"r\"]; where
+
+stem:[dot gamma]:: is time derivative of shear strain (<<iso80000-4>>), and
+stem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>)
+"""@en ;
+  skos:note """The Weissenberg number represents the relative importance of viscous forces when compared to elastic forces.
+
+The time derivative of shear strain is sometimes called the shear rate.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

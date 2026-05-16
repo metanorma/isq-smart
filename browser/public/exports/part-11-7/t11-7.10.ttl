@@ -1,0 +1,23 @@
+isoiec80000:term-t11-7.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "compressibility number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.10-0 ;
+  skos:definition """quotient of isothermal compressibility (<<iso80000-5>>) of a gas and that of an ideal gas, expressed by
+
+stem:[Z=p/(rho R_\"s\"T)]; where
+
+stem:[p]:: is pressure (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[R_\"s\"]:: is specific gas constant (<<iso80000-5>>), and
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

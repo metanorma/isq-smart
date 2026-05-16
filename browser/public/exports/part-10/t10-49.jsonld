@@ -1,0 +1,95 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-49-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "linear attenuation coefficient <ionizing radiation>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-49-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-49-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "mu_l",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-49",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-49",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-49-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-49-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-49-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for uncharged particles of a given type and energy the differential quotient stem:[n] with respect to stem:[l], where stem:[n] is the fraction of stem:[N] incoming particles that experience interactions in traversing a distance (<<iso80000-3>>) stem:[l] in a given material:\n\n[stem%unnumbered]\n++++\nmu = (\"d\"n)/(\"d\"l) = 1/N (\"d\"N)/(\"d\"l)\n++++\n\nwhere stem:[\"d\"N] is the number of particles that experience interactions in traversing stem:[\"d\"l]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "stem:[mu] is equal to the macroscopic total cross section stem:[ii(Sigma)_\"tot\"] for the removal of particles from the beam.\n\nUsing the relation stem:[mu_m = mu//rho] between the linear attenuation coefficient stem:[mu], the mass attenuation coefficient stem:[mu_m] (<<t10-50>>) and the density stem:[rho], the definition given for the mass attenuation coefficient in report 85a of the ICRU can be applied to the linear attenuation coefficient resulting in:\n\nThe linear attenuation coefficient, stem:[mu], of a material, for uncharged particles of a given type and energy, is the quotient of stem:[\"d\"N//N] by stem:[\"d\"l], where stem:[\"d\"N//N] is the mean fraction of the particles that experience interactions in traversing a distance stem:[\"d\"l] in the material:\n\n[stem%unnumbered]\n++++\nmu = 1/(\"d\"l) (\"d\"N)/N.\n++++\n\nThis definition has an equivalent meaning as the one given in column 4 of this item.\n\nSee also <<cls-0.3>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-m^(-1)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

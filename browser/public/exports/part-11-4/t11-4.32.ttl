@@ -1,0 +1,22 @@
+isoiec80000:term-t11-4.32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <time-related>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.32" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.32-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.32-0 ;
+  skos:definition """quotient of friction and inertia forces for particles in a fluid or in a plasma, expressed by
+
+stem:[Stkt = t_\"r\"//t_\"a\"]; where
+
+stem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>) of particles to achieve fluid's velocity due to friction (viscosity), and
+stem:[t_\"a\"]:: is time (<<iso80000-3>>) of fluid to alter its velocity under external influence
+"""@en ;
+  skos:note """In most cases stem:[t_\"r\"=l//v]; where stem:[l] is characteristic length, and stem:[v] is speed of fluid. The characteristic length can be the diameter of an obstacle or hole."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

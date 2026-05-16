@@ -1,0 +1,310 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-2-7 a smart:PublicationDocument ;
+  dcterms:title "Part 2-7"@en ;
+  dcterms:identifier "ISO 80000-2-7" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t2-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "natural numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(N)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.1-0 ;
+  skos:definition """the set of natural numbers, +
+the set of positive integers and zero
+"""@en ;
+  skos:note """stem:[bb(sf(N)) = {0, 1, 2, 3, ...}]
+
+stem:[bb(sf(N))** = {1, 2, 3, ...}]
+
+Other restrictions can be indicated in an obvious way, as shown below.
+
+stem:[bb(sf(N))_(>5) = {n in bb(sf(N)) &#x2223; n > 5}]
+
+The symbols stem:[rm(&#8739;N)] and stem:[NN] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of integers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(Z))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.2 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.2" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.2-0 ;
+  skos:definition """the set of integers"""@en ;
+  skos:note """stem:[bb(sf(Z)) = {..., -2, -1, 0, 1, 2, ...}]
+
+stem:[bb(sf(Z))** = {n in bb(sf(Z)) &#x2223; n != 0}]
+
+Other restrictions can be indicated in an obvious way, as shown below.
+
+stem:[bb(sf(Z))_(>-3) = {n in bb(sf(Z)) &#x2223; n > -3}]
+
+The symbol stem:[ZZ] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of rational numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(Q))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.3 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.3" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.3-0 ;
+  skos:definition """the set of rational numbers"""@en ;
+  skos:note """stem:[bb(sf(Q))** = {r in bb(sf(Q)) &#x2223; r != 0}]
+
+Other restrictions can be indicated in an obvious way, as shown below.
+
+stem:[bb(sf(Q))_(<0) = {r in bb(sf(Q)) &#x2223; r < 0}]
+
+The symbols stem:[rm(&#8739;Q)] and stem:[QQ] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of real numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(R))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.4 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.4" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.4-0 ;
+  skos:definition """the set of real numbers"""@en ;
+  skos:note """stem:[bb(sf(R))** = {x in bb(sf(R)) &#x2223; x != 0}]
+
+Other restrictions can be indicated in an obvious way, as shown below.
+
+stem:[bb(sf(R))_(>0) = {x in bb(sf(R)) &#x2223; x > 0}]
+
+The symbols stem:[rm(&#8739;R)] and stem:[RR] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of complex numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(C))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.5 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.5" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.5-0 ;
+  skos:definition """the set of complex numbers"""@en ;
+  skos:note """stem:[bb(sf(C))** = {z in bb(sf(C)) &#x2223; z != 0}]
+
+The symbol stem:[CC] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "set of prime numbers"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(sf(P))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.6 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.6" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.6-0 ;
+  skos:definition """the set of prime numbers"""@en ;
+  skos:note """stem:[bb(sf(P)) = {2, 3, 5, 7, 11, 13, 17, ...}]
+
+The symbol stem:[&#8473;] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "closed interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "[a, b\\]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.7-0 ;
+  skos:definition """closed interval from stem:[a] included to stem:[b] included"""@en ;
+  skos:note """stem:[[a, b\\] = {x in bb(sf(R)) &#x2223; a <= x <= b}]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "left half-open interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a, b\\]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.8 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.8" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.8-0 ;
+  skos:definition """left half-open interval from stem:[a] excluded to stem:[b] included"""@en ;
+  skos:note """stem:[(a, b\\] = {x in bb(sf(R)) &#x2223; a < x <= b}]
+
+The notation stem:[\\]a, b\\]] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "right half-open interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "[a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.9 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.9" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.9-0 ;
+  skos:definition """right half-open interval from stem:[a] included to stem:[b] excluded"""@en ;
+  skos:note """stem:[[a, b) = {x in bb(sf(R)) &#x2223; a <= x < b}]
+
+The notation stem:[[a, b[] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "open interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.10 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.10" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.10-0 ;
+  skos:definition """open interval from stem:[a] excluded to stem:[b] excluded"""@en ;
+  skos:note """stem:[(a, b) = {x in bb(sf(R)) &#x2223; a < x < b}]
+
+The notation stem:[\\]a], stem:[b[] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "closed unbounded interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(-oo, b\\]"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.11-0 ;
+  skos:definition """closed unbounded interval up to stem:[b] included"""@en ;
+  skos:note """stem:[(-oo, b\\] = {x in bb(sf(R)) &#x2223; x <= b}]
+
+The notation stem:[\\]-oo, b\\]] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "open unbounded interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(-oo, b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.12-0 ;
+  skos:definition """open unbounded interval up to stem:[b] excluded"""@en ;
+  skos:note """stem:[(-oo, b) = {x in bb(sf(R)) &#x2223; x < b}]
+
+The notation stem:[\\]-oo, b[] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "closed unbounded interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "[a, +oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.13-0 ;
+  skos:definition """closed unbounded interval onward from stem:[a] included"""@en ;
+  skos:note """stem:[[a, +oo) = {x in bb(sf(R)) &#x2223; a <= x}]
+
+The notations stem:[[a, oo), [a, +oo[] and stem:[[a, oo[] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .
+
+isoiec80000:term-t2-7.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "open unbounded interval"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-7.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "(a, +oo)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-7.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-7.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-7.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-7.14-0 ;
+  skos:definition """open unbounded interval onward from stem:[a] excluded"""@en ;
+  skos:note """stem:[(a, +oo) = {x in bb(sf(R)) &#x2223; a < x}]
+
+The notations stem:[(a, oo)], stem:[\\]a, +oo[] and stem:[\\]a, oo[] are also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-7 .

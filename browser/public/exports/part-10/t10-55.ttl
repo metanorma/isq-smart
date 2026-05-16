@@ -1,0 +1,30 @@
+isoiec80000:term-t10-55-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total mass stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t10-55-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mass stopping power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-55-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "S_m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-55 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-55" ;
+  skosxl:prefLabel isoiec80000:term-t10-55-0 ;
+  skosxl:altLabel isoiec80000:term-t10-55-1 ;
+  skosxl:altLabel isoiec80000:sym-t10-55-0 ;
+  skos:definition """quotient of the total linear stopping power stem:[S] (<<t10-54>>) and the mass density stem:[rho] (<<iso80000-4>>) of the material:
+
+[stem%unnumbered]
+++++
+S_m = S//rho
+++++
+"""@en ;
+  skos:note """The quotient of total mass stopping power of a material and that of a reference material is called relative mass stopping power."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV*m^(-2)/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-J*m^2/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^4*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

@@ -1,0 +1,84 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-86.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "kerma",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-86.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "K",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-86.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-86.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-86.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-86.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for uncharged ionizing radiation, differential quotient of stem:[E_\"tr\"] with respect to stem:[m], where stem:[E_\"tr\"] is the mean sum of the initial kinetic energies (<<iso80000-4>>) of all the charged ionizing particles liberated in a mass (<<iso80000-4>>) stem:[m] of a material:\n\n[stem%unnumbered]\n++++\nK = (\"d\"E_(\"tr\"))/(\"d\"m)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "[stem%unnumbered]\n++++\n1 \"unitsml(Gy)\" = 1 \"unitsml(J/kg)\"\n++++\n\nSee the remarks for <<t10-81.1>>.\n\nThe name \"kerma\" is derived from Kinetic Energy Released in MAtter (or MAss or MAterial).\n\nThe quantity stem:[\"d\"E_\"tr\"] includes also the kinetic energy of the charged particles emitted in the decay of excited atoms, molecules, or nuclei.\n\nWhen the mass element stem:[\"d\"m] consists of air the term air kerma is used. It can be convenient to refer to a value of air kerma in free space or at a point inside a material different from air, e.g. to the air kerma at a point inside a water phantom.\n\nIn report 85a of the ICRU a definition with an equivalent meaning is given as:\n\nThe kerma, stem:[K], for ionizing uncharged particles, is the quotient of stem:[\"d\"E_\"tr\"] by stem:[\"d\"m], where stem:[\"d\"E_\"tr\"] is the mean sum of the initial kinetic energies of all the charged particles liberated in a mass stem:[\"d\"m] of a material by the uncharged particles incident on stem:[\"d\"m]:\n\n[stem%unnumbered]\n++++\nK = (\"d\"E_\"tr\")/(\"d\"m).\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-Gy"
+        },
+        {
+          "@id": "isoiec80000:unit-J/kg"
+        },
+        {
+          "@id": "isoiec80000:unit-m^2*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

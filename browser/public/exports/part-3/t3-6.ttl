@@ -1,0 +1,40 @@
+isoiec80000:term-t3-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotational displacement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t3-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angular displacement"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vartheta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t3-6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-6" ;
+  skosxl:prefLabel isoiec80000:term-t3-6-0 ;
+  skosxl:altLabel isoiec80000:term-t3-6-1 ;
+  skosxl:altLabel isoiec80000:sym-t3-6-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-6-1 ;
+  skos:definition """quotient of the traversed circular path length (<<t3-1.7>>) of a point in space during a rotation and its distance (<<t3-1.8>>) from the axis or centre of rotation"""@en ;
+  skos:note """The rotational displacement is given by:
+
+[stem%unnumbered]
+++++
+phi=s/r
+++++
+
+where stem:[s] denotes the traversed path length (<<t3-1.7>>) along the periphery of a circle, centred at the vertex of the plane angle, and stem:[r] the radius (<<t3-1.6>>) of that circle.
+
+The rotational displacement is signed. The sign denotes the direction of rotation and is chosen by convention.
+
+Other symbols are also used.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

@@ -1,0 +1,18 @@
+isoiec80000:term-t12-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thermoelectric voltage (between substances stem:[\"a\"] and stem:[\"b\"])"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E_\"ab\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-20" ;
+  skosxl:prefLabel isoiec80000:term-t12-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-20-0 ;
+  skos:definition """voltage (<<iec80000-6>>) between substances stem:[\"a\"] and stem:[\"b\"] caused by the thermoelectric effect"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  isoiec80000:hasUnit isoiec80000:unit-A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

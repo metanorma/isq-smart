@@ -1,0 +1,23 @@
+isoiec80000:term-t11-4.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.29" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.29-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.29-0 ;
+  skos:definition """quotient of power consumption by agitators due to drag and rotational inertial power in fluids, expressed by
+
+stem:[Pn = P//(rho n^3d^5)]; where
+
+stem:[P]:: is active power (<<iec80000-6>>) consumed by a stirrer,
+stem:[rho]:: is mass density (<<iso80000-4>>) of fluid,
+stem:[n]:: is rotational frequency (<<iso80000-3>>), and
+stem:[d]:: is diameter (<<iso80000-3>>) of stirrer
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

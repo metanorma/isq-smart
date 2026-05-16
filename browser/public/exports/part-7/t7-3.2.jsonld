@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "spectral radiant energy density in terms of wavelength",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "w_lambda",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-3.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-3.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-3.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-3.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "change of radiant energy density with wavelength, expressed by\n\n[stem%unnumbered]\n++++\nw_lambda = (\"d\"w)/(\"d\"lambda)\n++++\n\nwhere stem:[w] is radiant energy density (<<t7-3.1>>) as a function of wavelength stem:[lambda] (<<iso80000-3>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Spectral radiant energy density within a Planckian radiator is given by stem:[w_lambda = 8 pi h c_0 * f(lambda, T)], where stem:[h] is the Planck constant (<<iso80000-1>>), stem:[c_0] is speed of light in vacuum (<<iso80000-1>>), stem:[T] is thermodynamic temperature (<<iso80000-5>) and\n\n[stem%unnumbered]\n++++\nf(lambda,T) = (lambda^(-5))/(\"exp\"(c_2 lambda^(-1)T^(-1))-1)\n++++\n\nFor the radiation constant stem:[c_2] in stem:[f(lambda, T)], see <<iso80000-1>>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-J/(m^3*nm)"
+        },
+        {
+          "@id": "isoiec80000:unit-kg*m^(-2)*s^(-2)"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

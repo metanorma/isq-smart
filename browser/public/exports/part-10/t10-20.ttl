@@ -1,0 +1,29 @@
+isoiec80000:term-t10-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Compton wavelength"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"C\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-20" ;
+  skosxl:prefLabel isoiec80000:term-t10-20-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-20-0 ;
+  skos:definition """quotient of the Planck constant and the product of the mass of the particle and the speed of light in vacuum:
+
+[stem%unnumbered]
+++++
+lambda_\"C\" = h/(mc_0)
+++++
+
+where
+
+stem:[h]:: is the Planck constant (<<iso80000-1>>),
+stem:[m]:: is the rest mass (<<t10-2>>) of a particle, and
+stem:[c_0]:: is the speed of light in vacuum (<<iso80000-1>>)
+"""@en ;
+  skos:note """The wavelength of electromagnetic radiation scattered from free electrons (Compton scattering) is larger than that of the incident radiation by a maximum of stem:[2lambda_\"C\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

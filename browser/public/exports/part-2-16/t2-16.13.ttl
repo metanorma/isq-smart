@@ -1,0 +1,21 @@
+isoiec80000:term-t2-16.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "norm of matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "norm(bb(ii(A)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.13-0 ;
+  skos:definition """norm of matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """The norm of matrix stem:[bb(ii(A))] is a number characterizing this matrix and satisfying the triangle inequality:
+
+if stem:[bb(ii(A)) + bb(ii(B)) = bb(ii(C))], then stem:[norm(bb(ii(A))) + norm(bb(ii(B))) >= norm(bb(ii(C)))].
+
+Different matrix norms are used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t9-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "activity factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_\"X\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-22" ;
+  skosxl:prefLabel isoiec80000:term-t9-22-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-22-0 ;
+  skos:definition """for substance stem:[\"X\"] in a liquid or a solid mixture, quotient of absolute activity stem:[lambda_\"X\"] (<<t9-18>>) of substance stem:[\"X\"] and the product of absolute activity stem:[lambda_\"X\"^(**)] of the pure substance stem:[\"X\"] at the same temperature (<<iso80000-5>>) and pressure (<<iso80000-4>>) and amount-of-substance fraction stem:[x_\"X\"] of substance stem:[\"X\"] (<<t9-13>>):
+
+[stem%unnumbered]
+++++
+f_\"X\" = lambda_\"X\" // (lambda_\"X\"^(**) x_\"X\")
+++++
+"""@en ;
+  skos:note """The systematic name is \"activity factor\", but the name \"activity coefficient\" is also commonly used (see <<t9-25>>).
+
+Activity factors can also be obtained applying Raoult's law or Henry's law.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

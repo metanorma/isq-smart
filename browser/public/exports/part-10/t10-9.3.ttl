@@ -1,0 +1,29 @@
+isoiec80000:term-t10-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "nuclear magneton"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-9.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mu_\"N\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-9.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-9.3" ;
+  skosxl:prefLabel isoiec80000:term-t10-9.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-9.3-0 ;
+  skos:definition """absolute value of the magnetic moment of a nucleus:
+
+[stem%unnumbered]
+++++
+mu_\"N\" = (e&#8463;)/(2m_\"p\")
+++++
+
+where
+
+stem:[e]:: is the elementary charge (<<iso80000-1>>),
+stem:[&#8463;]:: is the reduced Planck constant (<<iso80000-1>>), and
+stem:[m_\"p\"]:: is the rest mass (<<t10-2>>) of proton
+"""@en ;
+  skos:note """Subscript stem:[\"N\"] stands for nucleus. For the neutron magnetic moment, subscript stem:[\"n\"] is used. The magnetic moments of protons and neutrons differ from this quantity by their specific stem:[g] factors (<<t10-14.2>>)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*A ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

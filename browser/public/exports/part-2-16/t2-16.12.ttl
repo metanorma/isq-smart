@@ -1,0 +1,16 @@
+isoiec80000:term-t2-16.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "trace of a square matrix"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-16.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"tr \"bb(ii(A))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-16.12 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-16.12" ;
+  skosxl:prefLabel isoiec80000:term-t2-16.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-16.12-0 ;
+  skos:definition """trace of a square matrix stem:[bb(ii(A))]"""@en ;
+  skos:note """stem:[\"tr \"bb(ii(A)) = sum_i (bb(ii(A)))_(i i)]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-16 .

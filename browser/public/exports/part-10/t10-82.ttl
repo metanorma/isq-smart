@@ -1,0 +1,17 @@
+isoiec80000:term-t10-82-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "quality factor <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-82-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-82 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-82" ;
+  skosxl:prefLabel isoiec80000:term-t10-82-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-82-0 ;
+  skos:definition """factor in the calculation and measurement of dose equivalent (<<t10-83.1>>), by which the absorbed dose (<<t10-81.1>>) is to be weighted in order to account for different biological effectiveness of radiations, for radiation protection purposes"""@en ;
+  skos:note """stem:[Q] is determined by the linear energy transfer (<<t10-85>>) for stem:[ii(Delta)-> oo], stem:[L_(oo)] (often denoted as stem:[L] or stem:[\"LET\"]), of charged particles passing through a small volume element at this point (the value of stem:[L_(oo)] refers to water, not to tissue; the difference, however, is small). The relationship between stem:[L] and stem:[Q] is given in ICRP Publication 103 (ICRP, 2007)."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

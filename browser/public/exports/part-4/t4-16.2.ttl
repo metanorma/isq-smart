@@ -1,0 +1,35 @@
+isoiec80000:term-t4-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "shear stress"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-16.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau_\"s\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t4-16.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tau"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-16.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-16.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-16.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-16.2-1 ;
+  skos:definition """scalar (<<iso80000-2>>) quantity describing surface action of a force into a
+body equal to:
+
+stem:[tau_\"s\" = (\"d\"F_\"t\")/(\"d\"A)]
+
+where stem:[F_\"t\"] is the tangential component of force (<<t4-9.1>>) and
+stem:[A] is the area (<<iso80000-3>>) of the surface element
+"""@en ;
+  skos:note """A couple of mutually opposite forces of magnitude stem:[F] acting on the
+opposite surfaces of a slice (layer) of homogenous solid matter parallel to
+it, and evenly distributed, cause a constant shear stress stem:[tau=F//A] in
+the slice (layer).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

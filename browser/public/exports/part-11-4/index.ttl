@@ -1,0 +1,1239 @@
+@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+
+isoiec80000:part-11-4 a smart:PublicationDocument ;
+  dcterms:title "Part 11-4"@en ;
+  dcterms:identifier "ISO 80000-11-4" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isoiec80000:term-t11-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reynolds number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Re"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.1" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.1-0 ;
+  skos:definition """quotient of inertial forces and viscous forces in a fluid flow, expressed by
+
+stem:[Re = (rho v l)/eta = (v l)/sf(ii(v))]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The value of the Reynolds number gives an estimate on the flow state: laminar flow or turbulent flow.
+
+In rotating movement, the speed stem:[v= omega l], where stem:[l] is the distance from the rotation axis and stem:[omega] is the angular velocity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Euler number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eu"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.2" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.2-0 ;
+  skos:definition """relationship between pressure drop in a flow and the kinetic energy per volume for flow of fluids in a pipe, expressed by
+
+stem:[Eu = (Delta p)/(rho v^2)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Euler number is used to characterize losses in the flow.
+
+A modification of the Euler number is considering the dimensions of the containment (pipe):
+
+stem:[Eu' = d/l Eu]; where
+
+stem:[d]:: is inner diameter (<<iso80000-3>>) of the pipe, and
+stem:[l]:: is length (<<iso80000-3>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Froude number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.3-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.3 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.3" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.3-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.3-0 ;
+  skos:definition """quotient of a body's inertial forces and its gravitational forces for flow of fluids, expressed by
+
+stem:[Fr = v/(sqrt(lg))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of flow,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Froude number can be modified by buoyancy.
+
+Sometimes the square and sometimes the inverse of the Froude number as defined here is wrongly used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Grashof number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Gr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.4-0 ;
+  skos:definition """quotient of buoyancy forces due to thermal expansion which results in a change of mass density and viscous forces for free convection due to temperature differences, expressed by
+
+stem:[Gr = l^3 g alpha_V Delta T // sf(ii(v))^2]; where
+
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[alpha_V]:: is thermal cubic expansion coefficient (<<iso80000-5>>),
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between surface of the body and the fluid far away from the body, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """Heating can occur near hot vertical walls, in pipes, or by a bluff body.
+
+The characteristic length can be the vertical height of a hot plate, the diameter of a pipe, or the effective length of a body.
+
+See also Rayleigh number (<<t11-5.3>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Weber number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.5-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "We"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.5 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.5" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.5-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.5-0 ;
+  skos:definition """relation between inertial forces and capillary forces due to surface tension at the interface between two different fluids, expressed by
+
+stem:[We = rho v^2 l // gamma]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[gamma]:: is surface tension (<<iso80000-4>>)
+"""@en ;
+  skos:note """The fluids can be gases or liquids.
+
+The different fluids often are drops moving in a gas or bubbles in a liquid.
+
+The characteristic length is commonly the diameter of bubbles or drops.
+
+The square root of the Weber number is called Rayleigh number.
+
+Sometimes the square root of the Weber number as defined here is called the Weber number. That definition is deprecated.
+
+Interfaces only exist between two fluids which are not miscible.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Mach number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.6-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.6-0 ;
+  skos:definition """quotient of the speed of flow and the speed of sound, expressed by
+
+stem:[Ma = v//c]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the body, and
+stem:[c]:: is speed of sound (<<iso80000-8>>) in the fluid
+"""@en ;
+  skos:note """The Mach number represents the relationship of inertial forces compared to compression forces.
+
+For an ideal gas
+
+stem:[c = sqrt(gamma p/rho) = sqrt(gamma (RT)/M) = sqrt(gamma (kT)/m)]; where stem:[gamma] is ratio of the specific heat capacity (<<iso80000-5>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Knudsen number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Kn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.7-0 ;
+  skos:definition """quotient of free path length of a particle and a characteristic length, expressed by
+
+stem:[Kn = lambda // l]; where
+
+stem:[lambda]:: is mean free path (<<iso80000-9>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Knudsen number is a measure to estimate whether the gas in flow behaves like a continuum.
+
+The characteristic length, stem:[l], can be a characteristic size of the gas flow region like a pipe diameter.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Strouhal number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Thomson number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sr"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sh"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.8-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.8-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.8-1 ;
+  skos:definition """relation between a characteristic frequency and a characteristic speed for unsteady flow with periodic behaviour, expressed by
+
+stem:[Sr = fl // v]; where
+
+stem:[f]:: is frequency (<<iso80000-3>>) of vortex shedding,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[v]:: is speed (<<iso80000-3>>) of flow
+"""@en ;
+  skos:note """The characteristic length, stem:[l], can be the diameter of an obstacle in the flow which can cause vortex shedding, or the length of it."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "drag coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.9-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.9 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.9" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.9-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.9-0 ;
+  skos:definition """relation between the effective drag force and inertial forces for a body moving in a fluid, expressed by
+
+stem:[c_\"D\" = (2F_\"D\")/(rho v^2 A)]; where
+
+stem:[F_\"D\"]:: is drag force (<<iso80000-4>>) on the body,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is speed (<<iso80000-3>>) of the body, and
+stem:[A]:: is cross-sectional area (<<iso80000-3>>)
+"""@en ;
+  skos:note """The drag coefficient is strongly dependant on the shape of the body."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bagnold number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.10" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.10-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.10-0 ;
+  skos:definition """quotient of drag force and gravitational force for a body moving in a fluid, expressed by
+
+stem:[Bg = (c_\"D\"rho v^2)/(l g rho_\"b\")]; where
+
+stem:[c_\"D\"]:: is drag coefficient (<<t11-4.9>>) of the body,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is speed (<<iso80000-3>>) of the body,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>), and
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body
+"""@en ;
+  skos:note """The characteristic length, stem:[l], is the body's volume divided by its cross-sectional area."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bagnold number <solid particles>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ba_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.11-0 ;
+  skos:definition """quotient of drag force and viscous force in a fluid transferring solid particles, expressed by
+
+stem:[Ba_2 = (rho_\"s\" d^2 dot gamma)/eta sqrt(1//(f_\"s\"^(1//2)-1))]; where
+
+stem:[rho_\"s\"]:: is mass density (<<iso80000-4>>) of particles,
+stem:[d]:: is diameter (<<iso80000-3>>) of particles,
+stem:[dot gamma = v//d]:: is shear rate time-derivative of shear strain (<<iso80000-4>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of fluid, and
+stem:[f_\"s\"]:: is volumic fraction of solid particles
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lift coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.12-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"l\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.12-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"A\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.12 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.12" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.12-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.12-1 ;
+  skos:definition """quotient of the lift force available from a wing at a given angle and the inertial force for a wing shaped body moving in a fluid, expressed by
+
+stem:[c_\"l\" = (2F_\"l\")/(rho v^2 S) = F_\"l\"/(qS)]; where
+
+stem:[F_\"l\"]:: is lift force (<<iso80000-4>>) on the wing,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is speed (<<iso80000-3>>) of the body,
+stem:[S = A\" cos \"alpha]:: is effective area (<<iso80000-3>>) when stem:[alpha] is the angle of attack and stem:[A] is area of the wing, and
+stem:[q=rho v^2//2]:: is dynamic pressure.
+"""@en ;
+  skos:note """The lift coefficient is dependant on the shape of the wing."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "thrust coefficient"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "c_\"t\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.13 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.13" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.13-0 ;
+  skos:definition """quotient of the effective thrust force available from a propeller and the inertial force in a fluid, expressed by
+
+stem:[c_\"t\" = F_\"T\" // (rho n^2 d^4)]; where
+
+stem:[F_\"T\"]:: is thrust force (<<iso80000-4>>) of the propeller,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[n]:: is rotational frequency (<<iso80000-3>>), and
+stem:[d]:: is tip diameter (<<iso80000-3>>) of the propeller
+"""@en ;
+  skos:note """The thrust coefficient is dependant on the shape of the propeller."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dean number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.14 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.14" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.14-0 ;
+  skos:definition """relation between centrifugal force and inertial force, for flows of fluids in curved pipes, expressed by
+
+stem:[Dn = (2vr)/sf(ii(v)) sqrt(r/R)]; where
+
+stem:[v]:: is (axial) speed (<<iso80000-3>>),
+stem:[r]:: is radius (<<iso80000-3>>) of the pipe,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[R]:: is radius of curvature (<<iso80000-3>>) of the path of the pipe
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bejan number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Be"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.15-0 ;
+  skos:definition """quotient of mechanical work and frictional energy loss in fluid dynamics in a pipe, expressed by
+
+stem:[Be = (Delta p l^2)/(eta sf(ii(v))) = (rho Delta p l^2)/eta^2]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along the pipe,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[rho]:: is mass density (<<iso80000-4>>).
+"""@en ;
+  skos:note """A similar number exists for heat transfer (<<t11-5.9>>).
+
+The kinematic viscosity is also called momentum diffusivity.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lagrange number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Lg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.16" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.16-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.16-0 ;
+  skos:definition """quotient of mechanical work and frictional energy loss in fluid dynamics in a pipe, expressed by
+
+stem:[Lg = (l Delta p)/(eta v)]; where
+
+stem:[l]:: is length (<<iso80000-3>>) of the pipe,
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along the pipe,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Lagrange number is also given by
+
+stem:[La = Re * Eu]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Eu]:: is the Euler number (<<t11-4.2>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bingham number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "plasticity number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bm"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.17-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.17-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.17-1 ;
+  skos:definition """quotient of yield stress and viscous stress in a viscous material for flow of viscoplastic material in channels, expressed by
+
+stem:[Bm = (tau d)/(eta v)]; where
+
+stem:[tau]:: is shear stress (<<iso80000-4>>),
+stem:[d]:: is characteristic diameter (<<iso80000-3>>), e.g. effective channel width,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hedström number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "He"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hd"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.18-1 ;
+  skos:definition """quotient of yield stress and viscous stress of a viscous material at flow limit for visco-plastic material in a channel, expressed by
+
+stem:[He = (tau_0 d^2 rho)/eta^2]; where
+
+stem:[tau_0]:: is shear stress (<<iso80000-4>>) at flow limit,
+stem:[d]:: is characteristic diameter (<<iso80000-3>>), e.g. effective channel width,
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bodenstein number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bd"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.19" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.19-0 ;
+  skos:definition """mathematical expression of the transfer of matter by convection in reactors with respect to diffusion,
+
+stem:[Bd = vl//D]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l]:: is length (<<iso80000-3>>) of the reactor, and
+stem:[D]:: is diffusion coefficient (<<iso80000-9>>)
+"""@en ;
+  skos:note """The Bodenstein number is also given by
+
+stem:[Bd = Pe** = Re * Sc]; where
+
+stem:[Pe**]:: is the Péclet number for mass transfer (<<t11-6.2>>),
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[Sc = eta//(rho D) = v//D]:: is Schmidt number (<<t11-7.2>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Rossby number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.20-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Kiebel number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.20-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ro"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.20 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.20" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.20-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.20-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.20-0 ;
+  skos:definition """quotient of inertial forces and Coriolis forces in the context of transfer of matter in geophysics, expressed by
+
+stem:[Ro = v//(2 l omega_\"E\" \"sin\"varphi)]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of motion,
+stem:[l]:: is characteristic length (<<iso80000-3>>), the scale of the phenomenon,
+stem:[omega_\"E\"]:: is angular velocity (<<iso80000-3>>) of the Earth's rotation, and
+stem:[varphi]:: is angle (<<iso80000-3>>) of latitude
+"""@en ;
+  skos:note """The Rossby number represents the effect of Earth's rotation on flow in pipes, rivers, ocean currents, tornadoes, etc.
+
+The quantity stem:[omega_\"E\" \"sin\"varphi] is called Coriolis frequency.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ekman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.21-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ek"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.21 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.21" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.21-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.21-0 ;
+  skos:definition """quotient of viscous forces and Coriolis forces in the context of transfer of matter for the flow of a rotating fluid, expressed by
+
+stem:[Ek = sf(ii(v))//(2l^2 omega_\"E\" \"sin\"varphi)]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), the scale of the phenomenon,
+stem:[omega_\"E\"]:: is angular frequency (<<iso80000-3>>) of the Earth's rotation, and
+stem:[varphi]:: is angle of latitude
+"""@en ;
+  skos:note """In plasma physics, the square root of this number is used.
+
+The Ekman number is also given by
+
+stem:[Ek = Ro//Re]; where
+
+stem:[Ro]:: is the Rossby number (<<t11-4.20>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "elasticity number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "El"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.22 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.22" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.22-0 ;
+  skos:definition """relation between relaxation time and diffusion time in viscoelastic flows, expressed by
+
+stem:[El = t_\"r\" sf(ii(v))//r^2]; where
+
+stem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[r]:: is radius (<<iso80000-3>>) of pipe
+"""@en ;
+  skos:note """See also Deborah number (<<t11-7.8>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Darcy friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.23-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Moody friction factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.23-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_\"D\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.23 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.23" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.23-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.23-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.23-0 ;
+  skos:definition """representation of pressure loss in a pipe due to friction within a laminar or turbulent flow of a fluid in a pipe, expressed by
+
+stem:[f_\"D\" = (2 Delta p)/(rho v^2) d/l]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) due to friction,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[v]:: is (average) speed (<<iso80000-3>>) of the fluid in the pipe,
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe, and
+stem:[l]:: is length (<<iso80000-3>>) of the pipe
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Fanning number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.24-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f_\"n\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.24-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.24 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.24" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.24-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.24-1 ;
+  skos:definition """relation between shear stress and dynamic pressure in the flow of a fluid in a containment, expressed by
+
+stem:[f_\"n\" = (2 tau)/(rho v^2)]; where
+
+stem:[tau]:: is shear stress (<<iso80000-4>>) at the wall,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid, and
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid in the pipe
+"""@en ;
+  skos:note """The Fanning number describes the flow of fluids in a pipe with friction at the walls represented by its shear stress.
+
+Symbol stem:[f] may be used where no conflicts are possible.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Goertler number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.25-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Goertler parameter"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.25-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Go"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.25 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.25" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.25-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.25-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.25-0 ;
+  skos:definition """characterization of the stability of laminar boundary layer flows in transfer of matter in a boundary layer on curved surfaces, expressed by
+
+stem:[Go = (v l_\"b\")/sf(ii(v)) sqrt((l_\"b\"/r_\"c\"))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[l_\"b\"]:: is boundary layer thickness (<<iso80000-3>>),
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>), and
+stem:[r_\"c\"]:: is radius of curvature (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Goertler number represents the ratio of centrifugal effects to viscous effects."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hagen number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Hg"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.26-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.26" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.26-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.26-1 ;
+  skos:definition """generalization of the Grashof number for forced or free convection in laminar flow, expressed by
+
+stem:[Hg = -1/rho (\"d\"p)/(\"d\"x) l^3/v^2]; where
+
+stem:[rho]:: is mass density (<<iso80000-4>>) of fluid,
+stem:[(\"d\"p)/(\"d\"x)]:: is gradient of pressure (<<iso80000-4>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """For free thermal convection with stem:[(\"d\"p)/(\"d\"x) = rho g alpha_\"V\" Delta T], the Hagen number then coincides with the Grashof number (<<t11-4.4>>). See also the Poiseuille number (<<t11-4.28>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laval number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "La"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.27 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.27" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.27-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.27-0 ;
+  skos:definition """quotient of speed and the (critical) sound speed at the throat of a nozzle, expressed by
+
+stem:[La = v // sqrt((R_\"s\"T 2 gamma)//(gamma + 1))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>),
+stem:[R_\"s\" = R/M]:: is specific gas constant, where
+stem:[R]::: is molar gas constant (<<iso80000-9>>), and
+stem:[M]::: is molar mass (<<iso80000-9>>),
+stem:[T]:: is thermodynamic temperature (<<iso80000-5>>), and
+stem:[gamma]:: is ratio of the specific heat capacities (<<iso80000-5>>)
+"""@en ;
+  skos:note """The Laval number is a specific kind of Mach number (<<t11-4.6>>)."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poiseuille number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.28-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.28 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.28" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.28-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.28-0 ;
+  skos:definition """quotient of propulsive force by pressure and viscous force for a flow of fluids in a pipe, expressed by
+
+stem:[Poi = (Delta p)/l d^2/(eta v)]; where
+
+stem:[Delta p]:: is drop of pressure (<<iso80000-4>>) along the pipe,
+stem:[l]:: is length (<<iso80000-3>>) of the pipe,
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of the fluid
+"""@en ;
+  skos:note """The Poiseuille number is stem:[Poi=32] for laminar flow in a round pipe.
+
+See also the Hagen number (<<t11-4.26>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.29-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.29 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.29" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.29-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.29-0 ;
+  skos:definition """quotient of power consumption by agitators due to drag and rotational inertial power in fluids, expressed by
+
+stem:[Pn = P//(rho n^3d^5)]; where
+
+stem:[P]:: is active power (<<iec80000-6>>) consumed by a stirrer,
+stem:[rho]:: is mass density (<<iso80000-4>>) of fluid,
+stem:[n]:: is rotational frequency (<<iso80000-3>>), and
+stem:[d]:: is diameter (<<iso80000-3>>) of stirrer
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Richardson number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ri"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.30" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.30-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.30-0 ;
+  skos:definition """quotient of potential energy and kinetic energy for a falling body, expressed by
+
+stem:[Ri = gh//v^2]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[h]:: is characteristic height (<<iso80000-3>>), and
+stem:[v]:: is characteristic speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """In geophysics differences of these quantities are of interest."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Reech number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.31-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ree"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.31 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.31" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.31-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.31-0 ;
+  skos:definition """relation between the speed of an object submerged in water relative to the water, and wave propagation speed, expressed by
+
+stem:[Ree = sqrt(gl)//v]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[v]:: is speed (<<iso80000-3>>) of the object relative to the water
+"""@en ;
+  skos:note """The Reech number can be used to determine the resistance of a partially submerged object (e.g. a ship) of length stem:[l] (in direction of the motion) moving through water.
+
+A similar quantity is defined as the Boussinesq number stem:[Bs = v//sqrt(2gl)].
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <time-related>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.32-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.32 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.32" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.32-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.32-0 ;
+  skos:definition """quotient of friction and inertia forces for particles in a fluid or in a plasma, expressed by
+
+stem:[Stkt = t_\"r\"//t_\"a\"]; where
+
+stem:[t_\"r\"]:: is relaxation time (<<iso80000-12>>) of particles to achieve fluid's velocity due to friction (viscosity), and
+stem:[t_\"a\"]:: is time (<<iso80000-3>>) of fluid to alter its velocity under external influence
+"""@en ;
+  skos:note """In most cases stem:[t_\"r\"=l//v]; where stem:[l] is characteristic length, and stem:[v] is speed of fluid. The characteristic length can be the diameter of an obstacle or hole."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <vibrating particles>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_1"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.33" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.33-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.33-0 ;
+  skos:definition """quotient of friction and inertia forces for the special case of particles vibrating in a fluid or plasma, expressed by
+
+stem:[Stk_1 = sf(ii(v)) // (d^2f)]; where
+
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid or plasma,
+stem:[d]:: is diameter (<<iso80000-3>>) of particle, and
+stem:[f]:: is frequency (<<iso80000-3>>) of particle vibrations
+"""@en ;
+  skos:note """Sometimes the inverse of this number is wrongly used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <rotameter>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.34-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "power coefficient <rotameter>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_2"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.34" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.34-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.34-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.34-0 ;
+  skos:definition """Stokes number for calibration of rotameters metering vertical flows of fluids by means of a floating body, expressed by
+
+stem:[Stk_2 = {r^3 g m rho}/{eta^2} {(rho_{\"b\"} - rho)}/{rho_{\"b\"}} = {r^3 g m}/{v^2} (1/{rho} - 1/{rho_{\"b\"}})]; where
+
+stem:[r]:: is ratio of pipe and float radii,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[m]:: is mass (<<iso80000-4>>) of the body,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid,
+stem:[rho_\"b\"]:: is mass density (<<iso80000-4>>) of the body, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """In general use, this value is multiplied by stem:[1.042].
+
+See also the Archimedes number (<<t11-6.12>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <gravity>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.35-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_3"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.35 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.35" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.35-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.35-0 ;
+  skos:definition """relation between viscous forces and gravity forces for particles falling in a fluid, expressed by
+
+stem:[Stk_3 = v sf(ii(v)) // (gl^2)]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>) of particles,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>), and
+stem:[l]:: is length (<<iso80000-3>>) of fall
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stokes number <drag>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stk_4"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.36" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.36-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.36-0 ;
+  skos:definition """quotient of drag force and internal friction forces for particles dragged in a fluid
+
+stem:[Stk_4=F_\"D\"//(eta v l)]; where
+
+stem:[F_\"D\"]:: is drag force (<<iso80000-4>>),
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[v]:: is speed (<<iso80000-3>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Laplace number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.37-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Suratman number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.37-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "La"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.37-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Su"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.37 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.37" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.37-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.37-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.37-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.37-1 ;
+  skos:definition """relation between capillary forces and viscous forces when characterizing free surface flow, expressed by
+
+stem:[La = Su = gamma p l // eta^2]; where
+
+stem:[gamma]:: is surface tension (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """The Laplace number is also the ratio of surface tension to momentum transfer, especially dissipation, inside a fluid.
+
+The Laplace number is also given by
+
+stem:[La = Su = 1//Oh^2 = Re^2//We]; where
+
+stem:[Oh]:: is the Ohnesorge number (<<t11-7.4>>),
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>), and
+stem:[We]:: is the Weber number (<<t11-4.5>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Blake number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.38-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bl"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.38 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.38" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.38-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.38-0 ;
+  skos:definition """relation between inertial forces and viscous forces in a porous material, expressed by
+
+stem:[Bl = (vpl)/(eta(1-epsilon))]; where
+
+stem:[v]:: is speed (<<iso80000-3>>) of the fluid,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[l]:: is characteristic length (<<iso80000-3>>) defined as the volume of a particle divided by its surface area,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the fluid, and
+stem:[epsilon]:: is porosity of the material (=void fraction)
+"""@en ;
+  skos:note """The Blake number can be interpreted as a Reynolds number for flow in porous material."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sommerfeld number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "So"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.39-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Sm"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.39" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.39-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.39-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.39-1 ;
+  skos:definition """relation between viscous force and load force in a lubrication boundary, expressed by
+
+stem:[So = (eta n)/p (r/c)^2]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>) of the lubricant,
+stem:[n]:: is rotational frequency (<<iso80000-3>>),
+stem:[p]:: is mean bearing pressure (<<iso80000-4>>),
+stem:[r]:: is radius (<<iso80000-3>>) of the shaft, and
+stem:[c]:: is radial distance (<<iso80000-3>>) between rotating shaft and annulus
+"""@en ;
+  skos:note """Sometimes the inverse of this number is wrongly used."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Taylor number <momentum transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.40-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.40 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.40" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.40-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.40-0 ;
+  skos:definition """relation between centrifugal force and viscous force of a rotating shaft, expressed by
+
+stem:[Ta = 4 omega^2 l^4 // sf(ii(v))^2]; where
+
+stem:[omega]:: is angular velocity (<<iso80000-3>>) of rotation,
+stem:[l]:: is length (<<iso80000-3>>) perpendicular to the rotation axis, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """Sometimes the square root of this quantity is wrongly used.
+
+The Taylor number for a rotating shaft relative to an annulus is given by
+
+stem:[Ta_\"a\" = (omega//sf(ii(v)))^2 ra^3]; where
+
+stem:[omega]:: is angular velocity (<<iso80000-3>>) of the shaft,
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>),
+stem:[r = (r_2+r_1)//2]:: is mean radius (<<iso80000-3>>) of the annulus, and
+stem:[a = (r_2-r_1)]:: is width of the annulus, where
+stem:[r_1]::: is inner radius of the annulus, and
+stem:[r_2]::: is outer radius of the annulus.
+
+Sometimes the square root of this quantity is used; this use is deprecated.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Galilei number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.41-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ga"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.41 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.41" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.41-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.41-0 ;
+  skos:definition """relation between gravitational force and viscous force in fluid films flowing over walls, expressed by
+
+stem:[Ga = gl^3 // sf(ii(v))^2]; where
+
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>),
+stem:[l]:: is characteristic length (<<iso80000-3>>), and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>) of the fluid
+"""@en ;
+  skos:note """The Galilei number is also given by
+
+stem:[Ga = Re^2 * Ri] or +
+stem:[Ga = Re^2 // Fr^2]; where
+
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>),
+stem:[Ri]:: is the Richardson number (<<t11-4.30>>), and
+stem:[Fr]:: is the Froude number (<<t11-4.3>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .
+
+isoiec80000:term-t11-4.42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Womersley number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.42-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Wo"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.42-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.42 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.42" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.42-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.42-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.42-1 ;
+  skos:definition """relation between inertial forces and viscous forces in oscillating flows of fluids in pipes, expressed by
+
+stem:[Wo = R sqrt(omega//sf(ii(v)))]; where
+
+stem:[R]:: is (effective) radius (<<iso80000-3>>) of the pipe,
+stem:[omega]:: is angular frequency (<<iso80000-3>>) of oscillations, and
+stem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)
+"""@en ;
+  skos:note """The Womersley number is used for pulsating flows e.g. in blood flow."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

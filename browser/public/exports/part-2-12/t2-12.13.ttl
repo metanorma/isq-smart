@@ -1,0 +1,23 @@
+isoiec80000:term-t2-12.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "definite integrals"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.13-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f &#x2223;_a^b"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-12.13-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(...,u,...)&#x2223;_(u=a)^(u=b)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.13 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.13" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.13-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.13-1 ;
+  skos:definition """stem:[f(b)-f(a)] +
+stem:[f(...,b,...)-f(...,a,...)]
+"""@en ;
+  skos:note """This notation is used mainly when evaluating definite integrals."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

@@ -1,0 +1,23 @@
+isoiec80000:term-t10-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "radiant energy <ionizing radiation>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-45-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "R"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-45 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-45" ;
+  skosxl:prefLabel isoiec80000:term-t10-45-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-45-0 ;
+  skos:definition """mean energy (<<iso80000-5>>), excluding rest energy (<<t10-3>>), of the particles that are emitted, transferred, or received"""@en ;
+  skos:note """For particles of energy stem:[E] (excluding rest energy), the radiant energy, stem:[R], is equal to the product stem:[N*E] where stem:[N] is the number of the particles that are emitted, transferred, or received
+
+The distributions, stem:[N_\"E\"] and stem:[R_\"E\"], of the particle number and the radiant energy with respect to energy are given by stem:[N_\"E\" = \"d\"N//\"d\"E] and +
+stem:[R_\"E\" = \"d\"R//\"d\"E], respectively, where stem:[\"d\"N] is the number of particles with energy between stem:[E] and stem:[E+\"d\"E], and stem:[\"d\"R] is their radiant energy. The two distributions are related by stem:[R_\"E\" = E*N_\"E\"].
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

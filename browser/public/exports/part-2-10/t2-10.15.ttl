@@ -1,0 +1,16 @@
+isoiec80000:term-t2-10.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "supremum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-10.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sup \"M"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-10.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-10.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-10.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-10.15-0 ;
+  skos:definition """supremum of stem:[M]"""@en ;
+  skos:note """Smallest upper bound of a non-empty set of numbers bounded from above."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-10 .

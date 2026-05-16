@@ -1,0 +1,29 @@
+isoiec80000:term-t6-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Poynting vector"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(S))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-34" ;
+  skosxl:prefLabel isoiec80000:term-t6-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-34-0 ;
+  skos:definition """vector quantity given by the vector product
+
+[stem%unnumbered]
+++++
+bb(ii(S)) = bb(ii(E)) xx bb(ii(H))
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>) and stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>)
+"""@en ;
+  skos:note """The Poynting vector depends on the position.
+
+See <<iec60050-121,locality:item=\"121-11-66\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^-3 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

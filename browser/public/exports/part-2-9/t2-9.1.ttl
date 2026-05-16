@@ -1,0 +1,16 @@
+isoiec80000:term-t2-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "straight line"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-9.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"AB\" &#8741; \"CD\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-9.1 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-9.1" ;
+  skosxl:prefLabel isoiec80000:term-t2-9.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-9.1-0 ;
+  skos:definition """the straight line stem:[\"AB\"] is parallel to the straight line stem:[\"CD\"]"""@en ;
+  skos:note """It is written stem:[\"g\" &#8741; \"h\"] if stem:[\"g\"] and stem:[\"h\"] are the straight lines determined by the points stem:[\"A\"] and stem:[\"B\"], and the points stem:[\"C\"] and stem:[\"D\"], respectively."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-9 .

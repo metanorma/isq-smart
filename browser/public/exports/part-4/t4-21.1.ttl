@@ -1,0 +1,28 @@
+isoiec80000:term-t4-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "second axial moment of area"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-21.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "I_\"a\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-21.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-21.1" ;
+  skosxl:prefLabel isoiec80000:term-t4-21.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-21.1-0 ;
+  skos:definition """geometrical characteristic of a shape of a body equal to:
+
+stem:[I_\"a\" = &#8748;_\"M\" r_\"Q\"^2 \"d\"A]
+
+where stem:[\"M\"] is the two-dimensional domain of the cross-section of a
+plane and considered body, stem:[r_\"Q\"] is radial distance (<<iso80000-3>>)
+from a stem:[\"Q\"]-axis in the plane of the surface considered and stem:[A]
+is area (<<iso80000-3>>)
+"""@en ;
+  skos:note """This quantity is often referred to wrongly as \"moment of inertia\" (<<t4-7>>).
+
+The subscript, stem:[\"a\"], may be omitted when there is no risk of confusion.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^4 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

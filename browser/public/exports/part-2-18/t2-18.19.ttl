@@ -1,0 +1,21 @@
+isoiec80000:term-t2-18.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "tensor of second order"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sf(bb(ii(T)))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t2-18.19-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "vec(vec T)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.19 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.19" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.19-1 ;
+  skos:definition """tensor stem:[sf(bb(ii(T))] of the second order"""@en ;
+  skos:note """Two arrows above the letter symbol can be used instead of bold face sans serif type to indicate a tensor of the second order."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

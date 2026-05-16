@@ -1,0 +1,21 @@
+isoiec80000:term-t2-15.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "signum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-15.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sgn \"z"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-15.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-15.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-15.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-15.7-0 ;
+  skos:definition """signum stem:[z]"""@en ;
+  skos:note """stem:[\"sgn \"z = z // abs(z) = \"exp \"(\"i arg \"z)] (stem:[z != 0])
+
+stem:[\"sgn \"z = 0] for stem:[z = 0]
+
+See also item <<t2-10.13>>. Sometimes stem:[\"sgn \"0] is left undefined.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-15 .

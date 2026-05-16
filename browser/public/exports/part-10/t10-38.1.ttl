@@ -1,0 +1,24 @@
+isoiec80000:term-t10-38.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-38.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-38.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-38.1" ;
+  skosxl:prefLabel isoiec80000:term-t10-38.1-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-38.1-0 ;
+  skos:definition """for a specified target entity and for a specified reaction or process produced by incident charged or uncharged particles of a given type and energy, the quotient of the mean number of such reactions or processes and the incident-particle fluence (<<t10-43>>)"""@en ;
+  skos:note """The type of process is indicated by subscripts, e.g. absorption cross section stem:[sigma_\"a\"], scattering cross section stem:[sigma_\"s\"], fission cross section stem:[sigma_\"f\"].
+
+[stem%unnumbered]
+++++
+1 \" barn (b)\" = 10^(-28) \"unitsml(m^2)\"
+++++
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-stem:["b"] ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

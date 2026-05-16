@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "luminous efficacy of radiation <specified photometric condition>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.1-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "K",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-11.1",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-11.1",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-11.1-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-11.1-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "quotient of luminous flux (<<t7-13>>) and the corresponding radiant flux (<<t7-4.1>>) for a specified photometric condition",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Luminous efficacy of radiation for photopic vision is expressed by\n\n[stem%unnumbered]\n++++\nK = (Phi_\"v\")/(Phi_\"e\")\n++++\n\nwhere stem:[Phi_\"v\"] is luminous flux (<<t7-13>>) and stem:[Phi_\"e\"] is radiant flux (<<t7-4.1>>).\n\nFor scotopic and mesopic vision see <<cls-0.4>> and <<cls-0.5>>.\n\nSymbols for different photometric conditions:\n\nstem:[K], <for photopic vision>; stem:[K'], <for scotopic vision>; stem:[K_(\"mes\";m)], <for mesopic vision>; stem:[K_(10)], <for the CIE 10&deg; photopic photometric observer>; stem:[K_\"M\"], <for the CIE 1988 modified 2&deg; spectral luminous efficiency function for photopic vision>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-lm/W"
+        },
+        {
+          "@id": "isoiec80000:unit-cd*sr*kg^(-1)*m^(-2)*s^3"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

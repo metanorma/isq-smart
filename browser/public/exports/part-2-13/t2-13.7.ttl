@@ -1,0 +1,19 @@
+isoiec80000:term-t2-13.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "binary logarithm"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-13.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"lb \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-13.7 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-13.7" ;
+  skosxl:prefLabel isoiec80000:term-t2-13.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-13.7-0 ;
+  skos:definition """binary logarithm of stem:[x]"""@en ;
+  skos:note """stem:[\"lb \"x = \"log\"_2 x]
+
+See remark to <<t2-13.5>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-13 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t3-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "rotation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t3-16-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "N"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t3-16 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "3-16" ;
+  skosxl:prefLabel isoiec80000:term-t3-16-0 ;
+  skosxl:altLabel isoiec80000:sym-t3-16-0 ;
+  skos:definition """number of revolutions"""@en ;
+  skos:note """stem:[N] is the number (not necessarily an integer) of revolutions, for example, of a rotating body about a given axis. Its value is given by:
+
+[stem%unnumbered]
+++++
+N = varphi/(2pi)
+++++
+
+where stem:[varphi] denotes the measure of rotational displacement (<<t3-6>>).
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-3 .

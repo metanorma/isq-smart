@@ -1,0 +1,35 @@
+isoiec80000:term-t6-22.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "magnetic flux"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-22.1-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Phi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-22.1 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-22.1" ;
+  skosxl:prefLabel isoiec80000:term-t6-22.1-0 ;
+  skosxl:altLabel isoiec80000:term-t6-22.1-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-22.1-0 ;
+  skos:definition """scalar quantity given by the integral
+
+[stem%unnumbered]
+++++
+Phi = int_\"S\" bb(ii(B))*e_\"n\" \"d\"A
+++++
+
+over a surface stem:[\"S\"], where stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>) and stem:[e_\"n\" \"d\"A] is a vector surface element (<<iso80000-3>>)
+"""@en ;
+  skos:note """Magnetic flux can also be given by the line integral of the magnetic vector potential stem:[A], (<<t6-32>>) over a closed curve stem:[\"C\"] which is the border of area stem:[\"S\"]:
+
+[stem%unnumbered]
+++++
+Phi = oint_\"C\" A \"d\"r
+++++
+
+See <<iec60050-121,locality:item=\"121-11-21\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Wb ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*A^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

@@ -1,0 +1,21 @@
+isoiec80000:term-t2-14.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "hyperbolic sine"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-14.14-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"sinh \"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-14.14 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-14.14" ;
+  skosxl:prefLabel isoiec80000:term-t2-14.14-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-14.14-0 ;
+  skos:definition """hyperbolic sine of stem:[x]"""@en ;
+  skos:note """stem:[\"sinh \"x = (\"e\"^x-\"e\"^(-x))/2]
+
+stem:[\"sinh \"x = x + x^3//3! + ...]
+
+stem:[\"sh \"x] should be avoided.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-14 .

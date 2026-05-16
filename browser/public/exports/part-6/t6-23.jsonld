@@ -1,0 +1,98 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-23-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "magnetic moment",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-23-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "magnetic area moment",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-23-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "m",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t6-23",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "6-23",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-23-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t6-23-1"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t6-23-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "additive vector quantity, for a quasi-infinitesimal (see <<iec60050-121,locality:item=\"121-11-06\">>) planar loop given by\n\n[stem%unnumbered]\n++++\nm = I e_\"n\" A\n++++\n\nwhere stem:[I] is the electric current (<<t6-1>>) in a loop, stem:[e_\"n\"] is a unit vector perpendicular to the planar surface stem:[\"S\"] enclosed by the loop, and stem:[A] is the area (<<iso80000-3>>) in the loop\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "A magnetic moment is associated with systems of charged particles, such as atoms, molecules, atomic nuclei, nucleons. It can be considered as a product of the motion of charged particles and the magnetic moments of these particles.\n\nMagnetic moment is also an intrinsic property of any charged elementary particle with half-integer spin (e.g. an electron, a neutron or a quark).\n\nThe magnetic moment of a substance within a domain is the vector sum of the magnetic moments of all entities contained in the domain.\n\nSee <<iec60050-121,locality:item=\"121-11-49\";and!locality:item=\"121-11-50\">>.\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-A*m^2"
+        },
+        {
+          "@id": "isoiec80000:unit-m^2*A"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-6"
+      }
+    }
+  ]
+}

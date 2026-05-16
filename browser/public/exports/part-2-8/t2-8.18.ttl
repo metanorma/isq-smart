@@ -1,0 +1,21 @@
+isoiec80000:term-t2-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "congruent to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-8.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "n -= k \" mod \" m"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-8.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-8.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-8.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-8.18-0 ;
+  skos:definition """stem:[n] is congruent to stem:[k] modulo stem:[m]"""@en ;
+  skos:note """For integers stem:[n], stem:[k] and stem:[m]:
+
+stem:[m &#x2223; (n - k)]
+
+This concept of number theory must not be confused with identity of an equation, mentioned in <<t2-8.1>>, column 4.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-8 .

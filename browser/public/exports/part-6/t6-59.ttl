@@ -1,0 +1,32 @@
+isoiec80000:term-t6-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "complex power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-59-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ul S"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-59 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-59" ;
+  skosxl:prefLabel isoiec80000:term-t6-59-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-59-0 ;
+  skos:definition """quantity given by the product of voltage phasor stem:[ul U] (<<t6-50>>) and the complex conjugate of the electric current phasor stem:[ul I] (<<t6-49>>):
+
+[stem%unnumbered]
+++++
+ul S = ul U ul I
+++++
+"""@en ;
+  skos:note """[stem%unnumbered]
+++++
+ul S = P + \"j\"Q
+++++
+
+where stem:[P] is active power (<<t6-56>>) and stem:[Q] is reactive power (<<t6-60>>)
+
+See <<iec60050-131,locality:item=\"131-11-39\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

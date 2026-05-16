@@ -1,0 +1,16 @@
+isoiec80000:term-t9-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "angle of optical rotation"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "alpha"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-47 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-47" ;
+  skosxl:prefLabel isoiec80000:term-t9-47-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-47-0 ;
+  skos:definition """angle through which plane-polarized light is rotated clockwise, as seen when facing the light source, in passing through an optically active medium"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-rad ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

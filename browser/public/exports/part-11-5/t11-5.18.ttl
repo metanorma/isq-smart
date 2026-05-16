@@ -1,0 +1,29 @@
+isoiec80000:term-t11-5.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pomerantsev number <heat transfer>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Po"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.18-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Pov"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.18 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.18" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.18-1 ;
+  skos:definition """relation between heat generated in a body and conducted heat in the body, expressed by
+
+stem:[Po = Q_\"m\" l^2 // (lambda Delta T)]; where
+
+stem:[Q_\"m\"]:: is (constant) volumic heat generation rate,
+stem:[l]:: is characteristic length (<<iso80000-3>>),
+stem:[lambda]:: is thermal conductivity (<<iso80000-5>>), and
+stem:[Delta T = T_\"m\" - T_0]:: is difference of thermodynamic temperature (<<iso80000-5>>) between that of the medium (stem:[T_\"m\"]) and the initial temperature of the body (stem:[T_0])
+"""@en ;
+  skos:note """Similar numbers are known for areic, lineic and point sources of heat, each with decreasing power of length stem:[l] respectively."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

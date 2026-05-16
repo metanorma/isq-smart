@@ -1,0 +1,32 @@
+isoiec80000:term-t13-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "mean transinformation content"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-36-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-36 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-36" ;
+  skosxl:prefLabel isoiec80000:term-t13-36-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-36-0 ;
+  skos:definition """stem:[T(X,Y) = sum_{i=1}^n sum_{j=1}^m p(x_i,y_j) T(x_i,y_j)]
+
+for the sets stem:[X = {x_1,...,x_n}],
+stem:[Y = {y_1,...,y_m}],
+
+where stem:[p(x_i,y_j)] is the joint probability of
+events stem:[x_i] and stem:[y_j], and stem:[T(x_i,y_j)] is their
+transinformation content (<<t13-35,item 13-35>>)
+"""@en ;
+  skos:note """In practice, the unit \"shannon per character\" is
+generally used, and sometimes the units \"hartley per
+character\" and \"natural unit per character\".
+
+See <<iec60050-171,droploc%locality:item=\"171-07-27\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Sh ;
+  isoiec80000:hasUnit isoiec80000:unit-Hart ;
+  isoiec80000:hasUnit isoiec80000:unit-nat ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

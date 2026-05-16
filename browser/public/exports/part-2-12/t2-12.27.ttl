@@ -1,0 +1,19 @@
+isoiec80000:term-t2-12.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cauchy principal value"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.27-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "&#x2A0D;_(-oo)^(+oo) f(x)\"d\"x"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.27 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.27" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.27-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.27-0 ;
+  skos:definition """Cauchy principal value of the integral of stem:[f]"""@en ;
+  skos:note """stem:[lim_(a -> oo) &#x2A0D;_{-a}^{+a} f(x)\"d\"x]
+
+See <<t2-12.26>>.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

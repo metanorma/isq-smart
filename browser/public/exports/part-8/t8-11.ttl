@@ -1,0 +1,25 @@
+isoiec80000:term-t8-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sound exposure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "E"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-11" ;
+  skosxl:prefLabel isoiec80000:term-t8-11-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-11-0 ;
+  skos:definition """time-integrated squared sound pressure (<<t8-2.2>>)"""@en ;
+  skos:note """In formula form:
+
+stem:[E = int_(t_1)^(t_2) p^2 \"d\"t] where stem:[t_1] and stem:[t_2] are the starting and ending times for the integral and stem:[p] is sound pressure (<<t8-2.2>>).
+
+In airborne acoustics, the sound pressure is frequency-weighted and frequency-band-limited. If frequency weightings as specified in <<iec61672-1>> are applied, this should be indicated by appropriate subscripts to the symbol stem:[E].
+
+In underwater acoustics, the term \"sound exposure\" indicates an unweighted quantity unless indicated otherwise.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa^2*s ;
+  isoiec80000:hasUnit isoiec80000:unit-kg^2*m^(-2)*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

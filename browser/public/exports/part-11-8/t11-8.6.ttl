@@ -1,0 +1,36 @@
+isoiec80000:term-t11-8.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Cowling number <magnetism>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-8.6-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Euler magnetic number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-8.6-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Co"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-8.6 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-8.6" ;
+  skosxl:prefLabel isoiec80000:term-t11-8.6-0 ;
+  skosxl:altLabel isoiec80000:term-t11-8.6-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-8.6-0 ;
+  skos:definition """quotient of magnetic and kinematic energy density in a plasma, expressed by
+
+stem:[Co = B^2 // (mu rho v^2)]; where
+
+stem:[B]:: is magnetic flux density (<<iec80000-6>>),
+stem:[mu]:: is magnetic permeability (<<iec80000-6>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Cowling number also represents the ratio of magnetic to dynamic pressure.
+
+This quantity is equal to the square of the inverse of the Alfvén number.
+
+This quantity is often called the second Cowling number, stem:[Co_2].
+
+The first Cowling number is then defined as stem:[Co_1 = Co * Rm]; where stem:[Rm] is the Reynolds magnetic number (<<t11-8.1>>).
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-8 .

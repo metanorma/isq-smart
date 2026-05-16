@@ -1,0 +1,29 @@
+isoiec80000:term-t6-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "electromagnetic energy density"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-33-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "w"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-33 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-33" ;
+  skosxl:prefLabel isoiec80000:term-t6-33-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-33-0 ;
+  skos:definition """scalar quantity given by the sum of scalar products:
+
+[stem%unnumbered]
+++++
+w = (1//2)(bb(ii(E)) * bb(ii(D)) + bb(ii(B)) * bb(ii(H)))
+++++
+
+where stem:[bb(ii(E))] is electric field strength (<<t6-10>>), stem:[bb(ii(D))] is electric flux density (<<t6-12>>), stem:[bb(ii(B))] is magnetic flux density (<<t6-21>>), and stem:[bb(ii(H))] is magnetic field strength (<<t6-25>>)
+"""@en ;
+  skos:note """Electromagnetic energy is a special kind of energy (<<iso80000-5>>). The electromagnetic energy density depends on position.
+
+See <<iec60050-121,locality:item=\"121-11-65\">>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/m^3 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

@@ -1,0 +1,36 @@
+isoiec80000:term-t5-12.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Helmholtz energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t5-12.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "specific Helmholtz function"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-12.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "a"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-12.4-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-12.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-12.4" ;
+  skosxl:prefLabel isoiec80000:term-t5-12.4-0 ;
+  skosxl:altLabel isoiec80000:term-t5-12.4-1 ;
+  skosxl:altLabel isoiec80000:sym-t5-12.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-12.4-1 ;
+  skos:definition """quotient of Helmholtz energy and mass:
+
+[stem%unnumbered]
+++++
+a = A/m
+++++
+
+where stem:[A] is Helmholtz energy (<<t5-20.4>>) and stem:[m] is mass (<<iso80000-4>>)
+"""@en ;
+  skos:note """The name specific Helmholtz free energy is also used. However, this term is not recommended."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/kg ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t10-69-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lethargy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-69-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "u"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-69 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-69" ;
+  skosxl:prefLabel isoiec80000:term-t10-69-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-69-0 ;
+  skos:definition """for a neutron of kinetic energy stem:[E] (<<iso80000-4>>):
+
+[stem%unnumbered]
+++++
+u = \"ln\"(E_0//E),
+++++
+
+where stem:[E_0] is a reference energy
+"""@en ;
+  skos:note """Lethargy is also referred to as logarithmic energy decrement."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

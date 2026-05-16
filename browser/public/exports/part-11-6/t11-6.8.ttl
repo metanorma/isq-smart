@@ -1,0 +1,22 @@
+isoiec80000:term-t11-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Atwood number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "At"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.8" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.8-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.8-0 ;
+  skos:definition """scaled density difference of heavier and lighter fluids, expressed by
+
+stem:[At = (rho_1 - rho_2)/(rho_1 + rho_2)]; where
+
+stem:[rho_1]:: is density of heavier fluid, and
+stem:[rho_2]:: is density of lighter fluid
+"""@en ;
+  skos:note """The Atwood number is used in the study of hydrodynamic instabilities in density stratified flows."""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

@@ -1,0 +1,23 @@
+isoiec80000:term-t11-6.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "capillary number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-6.19-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ca"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-6.19 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-6.19" ;
+  skosxl:prefLabel isoiec80000:term-t11-6.19-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-6.19-0 ;
+  skos:definition """quotient of gravitational forces and capillary forces for fluids in narrow pipes, expressed by
+
+stem:[Ca = d^2 rho g//gamma]; where
+
+stem:[d]:: is diameter (<<iso80000-3>>) of the pipe,
+stem:[rho]:: is mass density (<<iso80000-4>>) of the fluid,
+stem:[g]:: is acceleration of free fall (<<iso80000-3>>), and
+stem:[gamma]:: is surface tension (<<iso80000-4>>) of the fluid
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-6 .

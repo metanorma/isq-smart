@@ -1,0 +1,30 @@
+isoiec80000:term-t5-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "density of heat flow rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t5-8-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t5-8-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "varphi"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t5-8 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "5-8" ;
+  skosxl:prefLabel isoiec80000:term-t5-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-8-0 ;
+  skosxl:altLabel isoiec80000:sym-t5-8-1 ;
+  skos:definition """quotient of heat flow rate and area:
+
+[stem%unnumbered]
+++++
+q = (dot Q)/A
+++++
+
+where stem:[dot Q] is heat flow rate (<<t5-7>>) and stem:[A] is area (<<iso80000-3>>) of a given surface
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-5 .

@@ -1,0 +1,26 @@
+isoiec80000:term-t4-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "gauge pressure"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t4-14.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "p_\"e\""@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t4-14.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "4-14.2" ;
+  skosxl:prefLabel isoiec80000:term-t4-14.2-0 ;
+  skosxl:altLabel isoiec80000:sym-t4-14.2-0 ;
+  skos:definition """pressure stem:[p] (<<t4-14.1>>) decremented by ambient pressure
+stem:[p_\"amb\"]:
+
+stem:[p_\"e\" = p - p_\"amb\"]
+"""@en ;
+  skos:note """Often, stem:[p_\"amb\"] is chosen as a standard pressure.
+
+Gauge pressure is positive or negative.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-Pa ;
+  isoiec80000:hasUnit isoiec80000:unit-N*m^(-2) ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^(-1)*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-4 .

@@ -1,0 +1,19 @@
+isoiec80000:term-t2-18.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "d'Alembertian"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.18-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "square"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.18 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.18" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.18-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.18-0 ;
+  skos:definition """d'Alembertian"""@en ;
+  skos:note """stem:[square = (del^2)/(del x^2) + (del^2)/(del y^2) + (del^2)/(del z^2) - 1/(c^2) (del^2)/(del t^2)]
+
+where the independent variable stem:[t] is time (<<iso80000-3>>) and stem:[c] is the speed (<<iso80000-3>>) of light
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

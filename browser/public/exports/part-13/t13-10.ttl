@@ -1,0 +1,38 @@
+isoiec80000:term-t13-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "equivalent binary storage capacity"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t13-10-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "M_e"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t13-10 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "13-10" ;
+  skosxl:prefLabel isoiec80000:term-t13-10-0 ;
+  skosxl:altLabel isoiec80000:sym-t13-10-0 ;
+  skos:definition """stem:[M_e = \"lb\"\\ n]
+
+where stem:[n] is the number of possible states
+of the given device
+"""@en ;
+  skos:note """For the unit one, see the <<intro>>.
+
+The minimum storage capacity of a bit-organized
+storage device which would contain the amount of
+data in the given storage device is equal to the
+smallest integer greater than or equal to the
+equivalent binary storage capacity.
+
+When used to express a storage capacity or an
+equivalent binary storage capacity, the bit may be
+combined with SI prefixes or prefixes for binary
+multiples (see <<sec_4>>).
+
+In this context, \"bit\" is a special name as well as
+symbol for the coherent unit one. For the unit one,
+see the <<intro>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  isoiec80000:hasUnit isoiec80000:unit-bit ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-13 .

@@ -1,0 +1,23 @@
+isoiec80000:term-t6-51.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "impedance of vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t6-51.2-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "wave impedance in vacuum"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-51.2-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Z_0"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-51.2 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-51.2" ;
+  skosxl:prefLabel isoiec80000:term-t6-51.2-0 ;
+  skosxl:altLabel isoiec80000:term-t6-51.2-1 ;
+  skosxl:altLabel isoiec80000:sym-t6-51.2-0 ;
+  skos:definition """scalar quantity given by the quotient of the magnitude of the electric field strength (<<t6-10>>) and that of the magnetic field strength (<<t6-25>>) of electromagnetic waves in vacuum"""@en ;
+  skos:note """The impedance of vacuum is equal to stem:[c_0*mu_0]. This quantity is considered to be constant in time."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-V/A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3)*A^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

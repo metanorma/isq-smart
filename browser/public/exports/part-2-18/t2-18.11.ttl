@@ -1,0 +1,23 @@
+isoiec80000:term-t2-18.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "scalar product of vectors"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-18.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "bb(ii(a)) * bb(ii(b))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-18.11 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-18.11" ;
+  skosxl:prefLabel isoiec80000:term-t2-18.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-18.11-0 ;
+  skos:definition """scalar product of stem:[bb(ii(a))] and stem:[bb(ii(b))]"""@en ;
+  skos:note """stem:[bb(ii(a)) * bb(ii(b)) = a_xb_x + a_yb_y + a_zb_z]
+
+stem:[bb(ii(a)) * bb(ii(a)) = sum_i a_i b_i]
+
+stem:[bb(ii(a)) * bb(ii(a)) = bb(ii(a))^2 = abs(bb(ii(a)))^2 = a^2]
+
+In special fields, stem:[(bb(ii(a)), bb(ii(b)))] or stem:[< a, b >] is also used.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-18 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t2-12.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "order comparable with or inferior to"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "f(x) = \"O\"(g(x))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.15 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.15" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.15-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.15-0 ;
+  skos:definition """stem:[f(x)] is upper case stem:[\"O\"] of stem:[g(x)],
+
+stem:[abs(f(x)//g(x))] is bounded from above in the limit implied by the context,
+
+stem:[f(x)] is of the order comparable with or inferior to stem:[g(x)]
+"""@en ;
+  skos:note """The symbol \"=\" here is used for historical reasons and does not have the meaning of equality, because transitivity does not apply.
+
+[example]
+stem:[\"sin\" x=\"O\"(x)], when stem:[x -> 0]
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

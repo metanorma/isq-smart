@@ -1,0 +1,34 @@
+isoiec80000:term-t11-7.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ohnesorge number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-7.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Oh"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-7.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-7.4" ;
+  skosxl:prefLabel isoiec80000:term-t11-7.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-7.4-0 ;
+  skos:definition """relation between viscous force and the square root of the product of inertia force and capillary force for atomization of liquids, expressed by
+
+stem:[Oh = eta/(sqrt(gamma rho l))]; where
+
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>),
+stem:[gamma]:: is surface tension (<<iso80000-4>>),
+stem:[rho]:: is mass density (<<iso80000-4>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Ohnesorge number is also given by
+
+stem:[Oh = sqrt(We)//Re]; where
+
+stem:[We]:: is the Weber number (<<t11-4.5>>), and
+stem:[Re]:: is the Reynolds number (<<t11-4.1>>).
+
+See also Laplace number (<<t11-4.37>>).
+
+The characteristic length typically is the drop diameter.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-7 .

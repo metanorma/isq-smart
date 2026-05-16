@@ -1,0 +1,25 @@
+isoiec80000:term-t9-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "standard absolute activity <in a solution>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-26-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "lambda_\"B\"^(&#8854;)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-26 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-26" ;
+  skosxl:prefLabel isoiec80000:term-t9-26-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-26-0 ;
+  skos:definition """for a solute stem:[\"B\"] in a solution:
+
+[stem%unnumbered]
+++++
+lambda_\"B\"^(&#8854;) = \"lim\"_(sum b_\"B\" -> 0) [lambda_\"B\" ((p^(&#8854;))b^(&#8854;))/b_\"B\"]
+++++
+
+where stem:[sum] denotes summation over all solutes, stem:[p^(&#8854;)] is a standard pressure (<<iso80000-4>>), stem:[b^(&#8854;)] is standard molality, and stem:[b_\"B\"] is the molality of substance stem:[\"B\"] (<<t9-15>>)
+"""@en ;
+  skos:note """This quantity is a function of temperature only. It especially applies to a dilute liquid solution. The standard pressure is stem:[10^5 \"unitsml(Pa)\"]."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

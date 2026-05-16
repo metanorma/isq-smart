@@ -1,0 +1,25 @@
+isoiec80000:term-t6-60-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reactive power"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t6-60-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t6-60 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "6-60" ;
+  skosxl:prefLabel isoiec80000:term-t6-60-0 ;
+  skosxl:altLabel isoiec80000:sym-t6-60-0 ;
+  skos:definition """scalar quantity given by the imaginary part of complex power stem:[ul S] (<<t6-59>>);
+
+[stem%unnumbered]
+++++
+Q = \"Im \" ul S
+++++
+"""@en ;
+  skos:note """See <<iec60050-131,locality:item=\"131-11-44\">>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-var ;
+  isoiec80000:hasUnit isoiec80000:unit-V*A ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-6 .

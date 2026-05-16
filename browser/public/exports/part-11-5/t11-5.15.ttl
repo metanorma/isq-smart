@@ -1,0 +1,27 @@
+isoiec80000:term-t11-5.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Eckert number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-5.15-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Dulong number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.15-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ec"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.15 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.15" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.15-0 ;
+  skosxl:altLabel isoiec80000:term-t11-5.15-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.15-0 ;
+  skos:definition """relation between the kinetic energy of a flow and its enthalpy change in fluid dynamics exhibiting dissipation, expressed by
+
+stem:[Ec = v^2 // (c_p Delta T)]; where
+
+stem:[v]:: is characteristic speed (<<iso80000-3>>),
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>) of the flow, and
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) due to dissipation (by friction)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

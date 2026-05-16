@@ -1,0 +1,33 @@
+isoiec80000:term-t11-4.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bingham number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:term-t11-4.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "plasticity number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bm"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-4.17-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Bn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.17" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.17-0 ;
+  skosxl:altLabel isoiec80000:term-t11-4.17-1 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.17-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.17-1 ;
+  skos:definition """quotient of yield stress and viscous stress in a viscous material for flow of viscoplastic material in channels, expressed by
+
+stem:[Bm = (tau d)/(eta v)]; where
+
+stem:[tau]:: is shear stress (<<iso80000-4>>),
+stem:[d]:: is characteristic diameter (<<iso80000-3>>), e.g. effective channel width,
+stem:[eta]:: is dynamic viscosity (<<iso80000-4>>), and
+stem:[v]:: is speed (<<iso80000-3>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

@@ -1,0 +1,25 @@
+isoiec80000:term-t12-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "structure factor"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t12-5.4-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "F(h,k,l)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t12-5.4 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "12-5.4" ;
+  skosxl:prefLabel isoiec80000:term-t12-5.4-0 ;
+  skosxl:altLabel isoiec80000:sym-t12-5.4-0 ;
+  skos:definition """quantity given by:
+
+[stem%unnumbered]
+++++
+F(h,k,l) = sum_(n=1)^N f_n \"exp\" [2pi \"i\" (hx_n + ky_n + lz_n)]
+++++
+
+where stem:[f_n] is the atomic scattering factor (<<t12-5.3>>) for atom stem:[n], stem:[x_n], stem:[y_n], stem:[z_n] are fractional coordinates of its position, stem:[N] is the total number of atoms in the unit cell and stem:[h], stem:[k], stem:[l] are the Miller indices
+"""@en ;
+  skos:note """For the Miller indices stem:[h], stem:[k], stem:[l], see <<annexA>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-1 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-12 .

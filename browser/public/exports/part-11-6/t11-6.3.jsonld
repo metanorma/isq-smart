@@ -1,0 +1,73 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Grashof number <mass transfer>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.3-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Gr**",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t11-6.3",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "11-6.3",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t11-6.3-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t11-6.3-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "relation between buoyancy forces and viscous forces in natural convection of fluids, expressed by\n\nstem:[Gr** = l^3 g beta Delta x // sf(ii(v))^2]; where\n\nstem:[l]:: is characteristic length (<<iso80000-3>>),\nstem:[g]:: is acceleration of free fall (<<iso80000-3>>)\nstem:[beta = -(1//rho)(del rho // del x)_(T,p)], where::\nstem:[rho]::: is mass density (<<iso80000-4>>) of the fluid, and\nstem:[x]::: is amount-of-substance fraction (<<iso80000-9>>),\nstem:[Delta x]:: is difference of amount-of-substance fraction (<<iso80000-9>>) along length stem:[l], and\nstem:[sf(ii(v))]:: is kinematic viscosity (<<iso80000-4>>)\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "Instead of \"amount-of-substance fraction\" the \"amount-of-substance concentration\" (<<iso80000-9>>) is used also.\n\nCompare with <<t11-4.4>>, the Grashof number.\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-11-6"
+      }
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-26.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "tristimulus values for the CIE 1964 standard colorimetric observer",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-26.2-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "X_(10), Y_(10), Z_(10)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t7-26.2",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "7-26.2",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t7-26.2-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t7-26.2-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "amounts of the three reference colour stimuli in the CIE 1964 standard colorimetric system, required to match the colour of the stimulus considered",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "For a given colour stimulus described by the colour stimulus function stem:[varphi_lambda(lambda)] of a radiometric quantity,\n\n[stem%unnumbered]\n++++\nX_(10) = k int_0^(oo) varphi_lambda(lambda) bar x_(10) (lambda) \"d\"lambda\n++++\n\n[stem%unnumbered]\n++++\nY_(10) = k int_0^(oo) varphi_lambda(lambda) bar y_(10) (lambda) \"d\"lambda\n++++\n\n[stem%unnumbered]\n++++\nZ_(10) = k int_0^(oo) varphi_lambda(lambda) bar z_(10) (lambda) \"d\"lambda\n++++\n\nwhere stem:[bar x_(10)(lambda)], stem:[bar y_(10)(lambda)], stem:[bar z_(10)(lambda)] are the CIE colour-matching functions for the CIE 1964 standard colorimetric observer (10&deg; observer) (<<t7-27.2>>).\n\nFor sources, stem:[k] may be chosen as stem:[k = K_(10)] where stem:[K_(10)] is the maximum luminous efficacy (<<t7-11.3>>) of the CIE 1964 standard colorimetric observer so that stem:[Y_(10) = L_(10)] and the unit of stem:[X], stem:[Y], stem:[Z] is [stem:[\"unitsml(cd*m^(-2))\"]].\n\nFor object colours, stem:[varphi_lambda(lambda)] is given by one of the three products\n\n[stem%unnumbered]\n++++\nvarphi_lambda (lambda) = S_lambda (lambda) * {(rho(lambda)),(tau(lambda)),(beta(lambda)):}\n++++\n\nwhere stem:[S_lambda(lambda)] is the relative spectral distribution of a quantity characterizing the source illuminating the object, stem:[rho(lambda)] is the spectral reflectance, stem:[tau(lambda)] is the spectral transmittance, stem:[beta(lambda)] is the spectral radiance factor, and stem:[k] is chosen to be\n\n[stem%unnumbered]\n++++\nk = 100 // int_0^(oo) S_lambda (lambda) bar y (lambda) \"d\"lambda\n++++\n\nIntegral limits can be confined depending on the spectral sensitivity of the detectors used as a sensor. In this case, the unit of stem:[X], stem:[Y], stem:[Z] is [1].\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-stem:[\"see Remark\"]"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-7"
+      }
+    }
+  ]
+}

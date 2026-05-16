@@ -1,0 +1,34 @@
+isoiec80000:term-t9-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "affinity of a chemical reaction"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t9-30-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "A"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t9-30 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "9-30" ;
+  skosxl:prefLabel isoiec80000:term-t9-30-0 ;
+  skosxl:altLabel isoiec80000:sym-t9-30-0 ;
+  skos:definition """negative of the sum over all substances stem:[\"B\"] of products of stoichiometric number stem:[nu_\"B\"] of substance stem:[\"B\"] (<<t9-29>>) and chemical potential stem:[mu_\"B\"] of substance stem:[\"B\"] (<<t9-17>>):
+
+[stem%unnumbered]
+++++
+A = - sum nu_\"B\" mu_\"B\"
+++++
+"""@en ;
+  skos:note """The affinity of a reaction is a measure of the \"driving force\" of the reaction. When it is positive, the reaction goes spontaneously from reactants to products, and when it is negative, the reaction goes in the opposite direction. Another way to write the definition is:
+
+[stem%unnumbered]
+++++
+A = (del G// del xi)_(p,T)
+++++
+
+where stem:[G] is Gibbs energy (<<iso80000-5>>) and stem:[xi] is the extent of the reaction (<<t9-31>>).
+
+Note that stem:[nu_\"B\"] is negative for reactants and positive for products.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-J/mol ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2)*mol^(-1) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-9 .

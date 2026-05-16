@@ -1,0 +1,90 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-18.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "Cartesian coordinates of tensor",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-18.20-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "T_(x x), T_(xy), ..., T_(zz)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-18.20-1",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "T_(11), T_(12), ..., T_(33)",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t2-18.20",
+      "@type": [
+        "isoiec80000:MathConcept",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "2-18.20",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t2-18.20-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-18.20-0"
+        },
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t2-18.20-1"
+        }
+      ],
+      "skos:definition": {
+        "@value": "Cartesian coordinates of tensor stem:[sf(bb(ii(T)))], +\nCartesian components of tensor stem:[sf(bb(ii(T)))]\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The scalars stem:[T_(x x), T_(xy), ..., T_(zz)] in the representation\n\nstem:[sf(bb(ii(T))) = T_(x x) e_x e_x + T_(xy) e_x e_y + ... + T_(zz) e_z e_z]\n\nof the tensor stem:[bb(ii(T))] by the base tensors\n\nstem:[e_x e_x, e_x e_y, ..., e_z e_z].\n\nstem:[T_(x x) e_x e_x, T_(xy) e_x e_y, ..., T_(zz) e_z e_z], are the component tensors.\n\nIf it is clear from the context which are the base vectors, the tensor can be written\n\nstem:[sf(bb(ii(T))) = ([T_(x x), T_(xy), T_(xz)\\],[T_(yx), T_(yy), T_(yz)\\],[T_(zx), T_(zy), T_(zz)\\]) ].\n",
+        "@language": "en"
+      },
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-2-18"
+      }
+    }
+  ]
+}

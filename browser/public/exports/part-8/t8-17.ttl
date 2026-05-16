@@ -1,0 +1,17 @@
+isoiec80000:term-t8-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "reverberation time"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t8-17-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "T"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t8-17 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "8-17" ;
+  skosxl:prefLabel isoiec80000:term-t8-17-0 ;
+  skosxl:altLabel isoiec80000:sym-t8-17-0 ;
+  skos:definition """time duration (<<iso80000-3>>) required for the space-averaged sound energy density (<<t8-7>>) to decrease to stem:[10^(-6)] of its initial value (i.e. for its level to decrease by stem:[60 \" dB\"]) after the source emission has stopped"""@en ;
+  skos:note """The reverberation time can be evaluated based on a dynamic range smaller than stem:[60 \" dB\"] and extrapolated to a decay time of stem:[60 \" dB\"]. It is then labelled accordingly stem:[T_n], where stem:[n] is the dynamic range in stem:[\"dB\"]. See also <<iso3382-1>>."""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-s ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-8 .

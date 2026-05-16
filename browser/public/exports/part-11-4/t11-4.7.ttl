@@ -1,0 +1,25 @@
+isoiec80000:term-t11-4.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Knudsen number"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-4.7-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Kn"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-4.7 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-4.7" ;
+  skosxl:prefLabel isoiec80000:term-t11-4.7-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-4.7-0 ;
+  skos:definition """quotient of free path length of a particle and a characteristic length, expressed by
+
+stem:[Kn = lambda // l]; where
+
+stem:[lambda]:: is mean free path (<<iso80000-9>>), and
+stem:[l]:: is characteristic length (<<iso80000-3>>)
+"""@en ;
+  skos:note """The Knudsen number is a measure to estimate whether the gas in flow behaves like a continuum.
+
+The characteristic length, stem:[l], can be a characteristic size of the gas flow region like a pipe diameter.
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-4 .

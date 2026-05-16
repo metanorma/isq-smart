@@ -1,0 +1,81 @@
+{
+  "@context": {
+    "smart": "https://w3id.org/standards/smart/ontologies/core/",
+    "isoiec80000": "https://w3id.org/standards/isoiec80000/ontologies/core/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "skosxl": "http://www.w3.org/2008/05/skos-xl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-88-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "exposure <ionizing radiation>",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:fullForm"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-88-0",
+      "@type": [
+        "smart:Term",
+        "skosxl:Label"
+      ],
+      "skosxl:literalForm": {
+        "@value": "X",
+        "@language": "en"
+      },
+      "smart:hasTermFormType": {
+        "@id": "smart:symbol"
+      }
+    },
+    {
+      "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/t10-88",
+      "@type": [
+        "isoiec80000:Quantity",
+        "smart:TermEntry"
+      ],
+      "dcterms:identifier": "10-88",
+      "skosxl:prefLabel": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/term-t10-88-0"
+      },
+      "skosxl:altLabel": [
+        {
+          "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/sym-t10-88-0"
+        }
+      ],
+      "skos:definition": {
+        "@value": "for X- or gamma radiation the differential quotient of stem:[q] with respect to stem:[m], where stem:[q] is the absolute value of the mean total electric charge of the ions of one sign produced when all the electrons and positrons liberated or created by photons incident on an element of dry air with mass stem:[m] (<<iso80000-4>>) are completely stopped in dry air:\n\n[stem%unnumbered]\n++++\nX = (\"d\"q)/(\"d\"m)\n++++\n",
+        "@language": "en"
+      },
+      "skos:note": {
+        "@value": "The ionization produced by electrons emitted in atomic or molecular relaxation is included in stem:[\"d\"q]. The ionization due to photons emitted by radiative processes (i.e. bremsstrahlung and fluorescence photons) is not included in stem:[\"d\"q].\n\nThis quantity should not be confused with the quantity photon exposure (<<iso80000-7>>), radiation exposure (<<iso80000-7>>), or the quantity luminous exposure (<<iso80000-7>>).\n\nIt can be convenient to refer to a value of exposure in free space or at a point inside a material different from air, e.g. to the exposure at a point inside a water phantom.\n\nThe exposure is related to the air kerma, stem:[K_\"a\"], (see <<t10-86.1>>) by:\n\n[stem%unnumbered]\n++++\nX = (e(1-g))/W K_\"a\",\n++++\n\nwhere stem:[e] is the elementary charge (<<iso80000-1>>), stem:[W] the average energy loss per elementary charge produced (<<t10-60>>), and stem:[g] is the fraction of the kinetic energy of liberated charged particles that is lost in radiative processes.\n\nIn report 85a of the ICRU a definition with an equivalent meaning is given as:\n\nThe exposure, stem:[X], is the quotient of stem:[\"d\"q] by stem:[\"d\"m], where stem:[\"d\"q] is the absolute value of the mean total charge of the ions of one sign produced when all the electrons and positrons liberated or created by photons incident on a mass stem:[\"d\"m] of dry air are completely stopped in dry air:\n\n[stem%unnumbered]\n++++\nX = (\"d\"q)/(\"d\"m).\n++++\n",
+        "@language": "en"
+      },
+      "isoiec80000:hasUnit": [
+        {
+          "@id": "isoiec80000:unit-C/kg"
+        },
+        {
+          "@id": "isoiec80000:unit-kg^(-1)*s*A"
+        }
+      ],
+      "smart:hasBindingnessType": {
+        "@id": "smart:normative"
+      },
+      "dcterms:isPartOf": {
+        "@id": "https://w3id.org/standards/isoiec80000/ontologies/core/part-10"
+      }
+    }
+  ]
+}

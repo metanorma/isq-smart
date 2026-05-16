@@ -1,0 +1,22 @@
+isoiec80000:term-t10-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "beta disintegration energy"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-34-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Q_beta"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-34 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-34" ;
+  skosxl:prefLabel isoiec80000:term-t10-34-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-34-0 ;
+  skos:definition """sum of the maximum beta-particle kinetic energy (<<t10-33>>) and the recoil energy (<<iso80000-5>>) of the atom produced in a reference frame in which the emitting nucleus is at rest before its disintegration"""@en ;
+  skos:note """For positron emitters, the energy for the production of the annihilation radiation created in the combination of an electron with the positron is part of the beta disintegration energy.
+
+The ground-state beta disintegration energy, stem:[Q_(beta,0)], also includes the energy of any nuclear transitions that take place in the daughter product.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-eV ;
+  isoiec80000:hasUnit isoiec80000:unit-J ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*m^2*s^(-2) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

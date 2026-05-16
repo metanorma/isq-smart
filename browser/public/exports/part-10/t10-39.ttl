@@ -1,0 +1,27 @@
+isoiec80000:term-t10-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "direction distribution of cross section <atomic physics>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-39-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "sigma_(ii(Omega))"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-39 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-39" ;
+  skosxl:prefLabel isoiec80000:term-t10-39-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-39-0 ;
+  skos:definition """differential quotient of stem:[sigma] with respect to stem:[ii(Omega)], where stem:[sigma] is the cross section (<<t10-38.1>>) for ejecting or scattering a particle into a specified direction, and stem:[ii(Omega)] is the solid angle (<<iso80000-3>>) around that direction:
+
+[stem%unnumbered]
+++++
+sigma_(ii(Omega)) = \"d\"sigma // \"d\"ii(Omega)
+++++
+"""@en ;
+  skos:note """Quantities listed under <<t10-39>>, <<t10-40>> and <<t10-41>> are sometimes called differential cross sections.
+
+The type of interaction needs to be specified.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2*sr^(-1) ;
+  isoiec80000:hasUnit isoiec80000:unit-m^2 ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .

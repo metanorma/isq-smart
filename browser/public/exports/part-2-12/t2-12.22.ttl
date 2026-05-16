@@ -1,0 +1,16 @@
+isoiec80000:term-t2-12.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "total differential"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t2-12.22-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "\"d\"f"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t2-12.22 a isoiec80000:MathConcept, smart:TermEntry ;
+  dcterms:identifier "2-12.22" ;
+  skosxl:prefLabel isoiec80000:term-t2-12.22-0 ;
+  skosxl:altLabel isoiec80000:sym-t2-12.22-0 ;
+  skos:definition """total differential of stem:[f]"""@en ;
+  skos:note """stem:[\"d\"f(x,y,...) = (del f)/(del x) \"d\"x + (del f)/(del y) \"d\"y + ...]"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-2-12 .

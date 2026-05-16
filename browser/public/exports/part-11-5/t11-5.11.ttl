@@ -1,0 +1,27 @@
+isoiec80000:term-t11-5.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stefan number <phase transition>"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t11-5.11-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Ste"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:sym-t11-5.11-1 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "Stf"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t11-5.11 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "11-5.11" ;
+  skosxl:prefLabel isoiec80000:term-t11-5.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.11-0 ;
+  skosxl:altLabel isoiec80000:sym-t11-5.11-1 ;
+  skos:definition """relation between heat content and latent heat content in a binary mixture undergoing a phase transition, expressed by
+
+stem:[Ste = c_p Delta T // Q]; where
+
+stem:[c_p]:: is specific heat capacity at constant pressure (<<iso80000-5>>),
+stem:[Delta T]:: is difference of thermodynamic temperature stem:[T] (<<iso80000-5>>) between the phases, and
+stem:[Q]:: is quotient of latent heat of phase transition (<<iso80000-5>>) and mass (<<iso80000-4>>)
+"""@en ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-11-5 .

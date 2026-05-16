@@ -1,0 +1,34 @@
+isoiec80000:term-t10-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "energy fluence rate"@en ;
+  smart:hasTermFormType smart:fullForm .
+
+isoiec80000:sym-t10-47-0 a smart:Term, skosxl:Label ;
+  skosxl:literalForm "ii(dot Psi)"@en ;
+  smart:hasTermFormType smart:symbol .
+
+isoiec80000:t10-47 a isoiec80000:Quantity, smart:TermEntry ;
+  dcterms:identifier "10-47" ;
+  skosxl:prefLabel isoiec80000:term-t10-47-0 ;
+  skosxl:altLabel isoiec80000:sym-t10-47-0 ;
+  skos:definition """differential quotient of the energy fluence stem:[ii(Psi)] (<<t10-46>>) with respect to time (<<iso80000-3>>):
+
+[stem%unnumbered]
+++++
+ii(dot Psi) = (\"d\"ii(Psi))/(\"d\"t)
+++++
+"""@en ;
+  skos:note """In report 85a of the ICRU a definition with an equivalent meaning is given as:
+
+The energy-fluence rate, stem:[ii(dot Psi)], is the quotient of stem:[\"d\"ii(Psi)] by stem:[\"d\"t], where stem:[\"d\"ii(Psi)] is the increment of the energy fluence in the time interval stem:[\"d\"t]:
+
+[stem%unnumbered]
+++++
+ii(dot Psi) = (\"d\"ii(Psi))/(\"d\"t)
+++++
+
+See also <<cls-0.3>>.
+"""@en ;
+  isoiec80000:hasUnit isoiec80000:unit-W/m^2 ;
+  isoiec80000:hasUnit isoiec80000:unit-kg*s^(-3) ;
+  smart:hasBindingnessType smart:normative ;
+  dcterms:isPartOf isoiec80000:part-10 .
