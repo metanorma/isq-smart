@@ -1,0 +1,46 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix smart:    <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix oa:      <http://www.w3.org/ns/oa#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ex:      <https://example.org/> .
+@prefix publication-type: <https://w3id.org/standards/smart/taxonomies/publication-type/> .
+@prefix bindingness-type: <https://w3id.org/standards/smart/taxonomies/bindingness-type/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix publication-component-type: <https://w3id.org/standards/smart/taxonomies/publication-component-type/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+
+
+ex:annotation_1
+    a oa:Annotation ;
+    oa:hasBody ex:provision_1 ;
+    oa:hasTarget ex:content_fragment_1 .
+
+ex:provision_1
+    a smart:Provision ;
+    dcterms:isPartOf ex:iso_std_iso_9000_ed_2_v2 ;
+    smart:hasBindingnessType bindingness-type:normative ;
+    dcat:distribution ex:content_fragment_1.
+   
+
+ex:iso_std_iso_9000_ed_2_v2
+    a smart:PublicationDocument ;
+    smart:hasPublicationType publication-type:standard.
+
+ex:content_fragment_1
+    a oa:SpecificResource, dcat:Distribution ;
+    oa:hasSource ex:iso_std_iso_9000_ed_2_v2 ;
+    oa:hasSelector ex:selector_1 ;
+    dcat:mediaType "text/plain"^^xsd:string ;
+    smart:hasPublicationComponentType publication-component-type:textual ;
+    dcat:byteSize "5120";
+    spdx:checksum [
+        a spdx:Checksum ;
+        spdx:algorithm <http://spdx.org/rdf/terms#checksumAlgorithm_sha256> ;
+        spdx:checksumValue "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd"
+    ];
+    rdf:value "Lorem ipsum"@en .
+
+ex:selector_1
+    a oa:XPathSelector ;
+    rdf:value "/standard/body/sec[4]/sec[1]/p[1]/text()" .

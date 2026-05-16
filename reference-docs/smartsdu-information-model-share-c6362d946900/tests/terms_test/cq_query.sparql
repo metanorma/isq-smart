@@ -1,0 +1,35 @@
+PREFIX ex: <https://example.org#>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX skosxl: <http://www.w3.org/2008/05/skos-xl#>
+PREFIX smart: <https://w3id.org/standards/smart/ontologies/core/>
+
+# CQ: How do I refer to technical concept X in french?
+
+SELECT ?concept ?definition ?term ?language ?term_type ?term_form ?term_pos ?used_in_country
+WHERE {
+    VALUES ?concept { ex:concept_x }
+    VALUES ?language { "en" }
+    
+    VALUES (?has_label ?term_type) {
+        (skosxl:prefLabel "Preferred term")
+        (skosxl:altLabel "Admitted term")
+        (ex:deprecatedLabel "Deprecated term")
+    }
+    
+    ?concept rdf:type smart:TermEntry ;
+             ?has_label ?label ;
+    		 skos:definition ?definition.
+   	
+    ?label rdf:type smart:Term ;
+           skosxl:literalForm ?term ;
+           smart:hasTermForm ?term_form ;
+           smart:isPartOfSpeech ?term_pos .
+    
+    FILTER(LANG(?term) = ?language)
+    FILTER(LANG(?definition) = ?language)
+    
+    OPTIONAL {
+        ?label smart:usedInCountry ?used_in_country .
+    }
+} ORDER BY ?term

@@ -1,0 +1,354 @@
+@prefix : <https://w3id.org/standards/smart/ontologies/tbx#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/standards/smart/ontologies/tbx#> .
+
+<https://w3id.org/standards/smart/ontologies/tbx#> rdf:type owl:Ontology ;
+                                        owl:deprecated "true"^^xsd:boolean ;
+                                        skos:editorialNote "The TBX ontology has been replaced by the introduction of a simpler model for terminology that uses the SKOS and SKOS-XL standards. The latter are official W3C recommendations and are expected to facilitate interoperability." ;
+                                        dcterms:created "2024-06-20"^^xsd:date ;
+                                        dcterms:creator "ISO/IEC" ;
+                                        dcterms:description "This ontology describes some elements defined in the TBX (TermBase eXchange) ISO 30042 standard, a system for exchanging terminological data."@en ;
+                                        dcterms:modified "2024-06-21"^^xsd:date ;
+                                        dcterms:license <https://creativecommons.org/licenses/by-sa/4.0>
+                                        dcterms:publisher <https://www.iec.ch> ;
+                                        dcterms:publisher <https://www.iso.org> ;
+                                        dcterms:title "The TermBase eXchange (TBX) ISO 30042 Standard Ontology"@en ;
+                                        vann:preferredNamespacePrefix "tbx" ;
+                                        rdfs:label "Ontology for the TermBase eXchange (TBX) standard"@en ;
+                                        rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx" ;
+                                        owl:versionInfo "2.0.0-0.4.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#definition
+rdfs:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://w3id.org/standards/smart/ontologies/tbx#admittedTerm
+:admittedTerm rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf :term ;
+              rdfs:domain :TermEntry ;
+              rdfs:range :Term ;
+              rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+              rdfs:label "admitted term"@en ;
+              rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_normativeAuthorization.html#normativeAuthorization" ;
+              skos:definition "An admitted term (or designation) is synonymous with the preferred term, but is considered by the standardizing committee to be a less desirable term than the preferred term. An admitted term is an acceptable term that has no negative connotations or other negative properties that would qualify it as a deprecated term. Admitted terms are often commonly-used synonyms of standardized (preferred) terms. If there are several admitted terms, include them in the entry in the order of preference. Admitted terms can occur in the body of the standard, but the preferred term should be used more frequently."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#deprecatedTerm
+:deprecatedTerm rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf :term ;
+                rdfs:domain :TermEntry ;
+                rdfs:range :Term ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "deprecated term"@en ;
+                rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_normativeAuthorization.html#normativeAuthorization" ;
+                skos:definition "A deprecated term (or designation) is synonymous with the preferred term, but is rated as undesired by the standards committee. Deprecated terms include obsolete terms, superseded terms, archaic terms, scientific-technical slang, ambiguous terms, terms with negative connotations, terms which are culturally-specific or used by a restricted user group within the target community, and any term that does not facilitate effective, clear communication. Deprecated terms and designations should not be used in the body of the standard."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#entailedTerm
+:entailedTerm rdf:type owl:ObjectProperty ;
+              rdfs:domain :TermEntry ;
+              rdfs:range :Term ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "entailed term"@en ;
+              rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_entailedTerm.html#entailedTerm" ;
+              skos:definition "The entailedTerm element encloses a term, found in the content of a text element such as definition or example, that is defined elsewhere in the document, or in another document. Use the optional target attribute to point to an entry in the same document, and xtarget to point to an entry in another document."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#partOfSpeech
+:partOfSpeech rdf:type owl:ObjectProperty ;
+              rdfs:domain :Term ;
+              rdfs:range :PartOfSpeech ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "part of speech"@en ;
+              rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_partOfSpeech.html#partOfSpeech" ;
+              skos:definition "The partOfSpeech is a category assigned to a word based on its grammatical and semantic properties. For example: noun, verb, or adjective. It is sometimes called \"grammatical category\" or \"word class.\" Only one value is permitted for a term in a given entry. A part of speech must be specified for each term."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#preferredTerm
+:preferredTerm rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf :term ;
+               rdfs:domain :TermEntry ;
+               rdfs:range :Term ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "preferred term"@en ;
+               rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_normativeAuthorization.html#normativeAuthorization" ;
+               skos:definition "An indicator that the associated term (or other designation) is the primary designation for the concept described in the entry. If there is only one designation in the entry, it is automatically the preferred term and there is no need to mark it as such by using this element. It is recommended that the preferred term fulfills the criteria described in Clause 6.2.1 of ISO 10241-1 - Terminological entries in standards -- Part 1: General requirements and examples of presentation. If the selection of more than one preferred term is unavoidable, enter the preferred terms in the order of preference. Ideally, among all the terms in an entry, only the preferred term should be used in the body of the standard."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#source
+:source rdf:type owl:ObjectProperty ;
+        rdfs:domain :TermEntry ;
+        rdfs:label "source"@en ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_source.html#source" ;
+        skos:definition "According to ISO 10241-1, if a terminological entry, language section, term, definition, non-verbal representation (such as a symbol) or example has been taken from another standard, or another authoritative source, the source should be indicated. Enter the name of the source document in the tbx:source element. If the text taken from the source was modified in any way, this should be indicated in an accompanying note. The data or data category to which the source applies may be also be indicated in a note, for instance, to specify that the source applies to an example or to the definition."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#term
+:term rdf:type owl:ObjectProperty ;
+      rdfs:domain :TermEntry ;
+      rdfs:range :Term ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "term"@en ;
+      skos:definition "An <abstract> parent object property to regroup features of admintted, deprecated, and preferred term properties."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#termType
+:termType rdf:type owl:ObjectProperty ;
+          rdfs:domain :Term ;
+          rdfs:range :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "term type"@en ;
+          rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_termType.html#termType" ;
+          skos:definition "The termType data category identifies if a term is of a specific sub-type such as an acronym or a symbol. Each term can have only one term type. This data category is contained in tig and should follow the grammatical data categories (part of speech, gender, number)."@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/standards/smart/ontologies/tbx#definition
+:definition rdf:type owl:DatatypeProperty ;
+            rdfs:domain :TermEntry ;
+            rdfs:range xsd:string ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "definition"@en ;
+            rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_definition.html#definition" ;
+            skos:definition """A definition is a verbal description of the concept. Follow the principles in ISO 704 - Terminology work - Principles and methods for the style of writing definitions. Each entry must have one, and only one, definition.
+
+A definition can contain a term which is defined elsewhere in the standard. Such terms are called \"entailed terms\" and they must be enclosed in the entailedTerm element so that a link will be generated to point to the location where the definition of that term can be found. A definition can also contain lists, tables, other special markup, and certain symbols (those that can be expressed in a markup language such as MathML or via characters accessible from the keyboard)."""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#designation
+:designation rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Term ;
+             rdfs:range xsd:string ;
+             rdfs:label "designation"@en ;
+             rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_term.html#term" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/standards/smart/ontologies/tbx#PartOfSpeech
+:PartOfSpeech rdf:type owl:Class ;
+              owl:equivalentClass [ rdf:type owl:Class ;
+                                    owl:oneOf ( :Adjective
+                                                :Adverb
+                                                :Noun
+                                                :Verb
+                                              )
+                                  ] ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "Part of Speech"@en ;
+              rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_partOfSpeech.html#partOfSpeech" ;
+              skos:definition "The part of speech is a category assigned to a word based on its grammatical and semantic properties. For example: noun, verb, or adjective. It is sometimes called \"grammatical category\" or \"word class.\" A part of speech must be specified for each term."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Term
+:Term rdf:type owl:Class ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "Term"@en ;
+      rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_term.html#term" ,
+                   "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_tig.html#tig" ;
+      skos:definition "The term encloses a representation of a concept by a sign which denotes it. This sign can be a \"term\", a symbol, or a graphic. In glossaries and other terminology resources, designations are primarily \"terms\", which is why the element tbx:term is used."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#TermEntry
+:TermEntry rdf:type owl:Class ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "Term Entry"@en ;
+           rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_termEntry.html#termEntry" ;
+           skos:definition "The term entry element is the root element of a terminological entry. It contains all the elements, and their attributes, that describe a concept and all the terms that denote that concept, in all languages."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#TermType
+:TermType rdf:type owl:Class ;
+          owl:equivalentClass [ rdf:type owl:Class ;
+                                owl:oneOf ( :Abbreviation
+                                            :Acronym
+                                            :Equation
+                                            :Formula
+                                            :FullForm
+                                            :Symbol
+                                            :Variant
+                                          )
+                              ] ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source. See rdfs:seeAlso."@en ;
+    rdfs:label "Term Type"@en ;
+          rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_termType.html#termType" ;
+          skos:definition "The term type data category identifies if a term is of a specific sub-type such as an acronym or a symbol. Each term can have only one term type. The term type data category is recommended when there are several terms (synonyms) and they vary by virtue of one being an abbreviation or variant of the main term, for example."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Abbreviation
+:Abbreviation rdf:type owl:NamedIndividual ,
+                       :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Abbreviation"@en ;
+              skos:definition "An abbreviated form of a term that is formed by omitting letters from the full form, for example: \"vol\" for \"volume\"."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Acronym
+:Acronym rdf:type owl:NamedIndividual ,
+                  :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Acronym"@en ;
+         skos:definition "An abbreviated form of a term that is made up of the initial letters of components of its full form, for example, \"NDA\" for \"non-disclosure agreement\"."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Adjective
+:Adjective rdf:type owl:NamedIndividual ,
+                    :PartOfSpeech ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Adjective"@en ;
+           skos:definition "Part of speech of words that evoke properties of nouns, such as \"big\" and \"glossy\"."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Adverb
+:Adverb rdf:type owl:NamedIndividual ,
+                 :PartOfSpeech ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Adverb"@en ;
+        skos:definition "Part of speech of words that evoke the mode of action of the verb, for instance, \"completely\" and \"normally\"."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Equation
+:Equation rdf:type owl:NamedIndividual ,
+                   :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Equation"@en ;
+          skos:definition "An expression used to represent a concept based on a statement that two mathematical expressions are, for instance, equal as identified by the equal sign (=), or assigned to one another by a similar sign."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Formula
+:Formula rdf:type owl:NamedIndividual ,
+                  :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Formula"@en ;
+         skos:definition "Figures, symbols or the like used to express a concept briefly, such as a mathematical or chemical formula."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#FullForm
+:FullForm rdf:type owl:NamedIndividual ,
+                   :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Full Form"@en ;
+          skos:definition "The complete presentation of a term for which there is an abbreviated form or an acronym. If a term has no abbreviation or acronym documented in the entry, there is no need to indicate the full form."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Noun
+:Noun rdf:type owl:NamedIndividual ,
+               :PartOfSpeech ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Noun"@en ;
+      skos:definition "Part of speech of words that designate a person, place, action, property or thing etc."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Symbol
+:Symbol rdf:type owl:NamedIndividual ,
+                 :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Symbol"@en ;
+        skos:definition "A designation of a concept by letters, numerals, pictograms or any combination thereof."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Variant
+:Variant rdf:type owl:NamedIndividual ,
+                  :TermType ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Variant"@en ;
+         skos:definition "One of the alternate forms of a term, due to, differences in spelling, hyphenation, capitalization, spacing, and so forth."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/tbx#Verb
+:Verb rdf:type owl:NamedIndividual ,
+               :PartOfSpeech ;
+    rdfs:comment "The skos:definition text was copied from the TBX schema source which remains the authoritative source."@en ;
+    rdfs:label "Verb"@en ;
+      skos:definition "Part of speech of words that evoke an action, state, or occurrence, and forming the main part of the predicate of a sentence, such as \"manage\", \"perform\", and \"assemble\"."@en .
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers (:Adjective :Adverb :Noun :Verb)
+] .
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers (:Abbreviation :Acronym :Equation :Formula :FullForm :Symbol :Variant)
+] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi

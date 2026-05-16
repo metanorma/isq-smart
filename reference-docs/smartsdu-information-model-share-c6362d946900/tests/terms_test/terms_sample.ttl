@@ -1,0 +1,51 @@
+@prefix ex:     <https://example.org#> .
+@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix term-form-type: <https://w3id.org/standards/smart/taxonomies/term-form-type/> .
+@prefix part-of-speech-type: <https://w3id.org/standards/smart/taxonomies/part-of-speech-type/> .
+
+
+ex:concept_x
+    a smart:TermEntry, skos:Concept ;
+    skosxl:prefLabel ex:label_1, ex:label_3 ;
+    skosxl:altLabel  ex:label_2, ex:label_4 ;
+    skos:definition "use of a product, process or service in accordance with the specifications, instructions and information provided by the manufacturer"@en ;
+    skos:scopeNote "intended use should not be confused with normal use. While both include the concept of use as intended by the manufacturer, intended use focuses on the medical purpose while normal use incorporates not only the medical purpose, but maintenance, service, transport, etc. as well"@en ;
+    prov:qualifiedDerivation [
+        a prov:Derivation ;
+        prov:entity ex:concept_y ;
+        skos:changeNote "urn:iec:std:iso:14971:2000-12:::#con-2.5 ISO&#160;14971:2000, definition 2.5"
+    ] .
+
+ex:label_1
+    a smart:Term, skosxl:Label ;
+    skosxl:literalForm "intended use"@en ;
+    smart:hasTermForm    term-form-type:fullForm ;
+    smart:usedInCountry "GB", "US" ;
+    smart:isPartOfSpeech part-of-speech-type:noun .
+
+ex:label_2
+    a smart:Term, skosxl:Label ;
+    skosxl:literalForm "intended purpose"@en ;
+    smart:hasTermForm    term-form-type:fullForm ;
+    smart:usedInCountry "GB", "US" ;
+    smart:isPartOfSpeech part-of-speech-type:noun .
+
+ex:label_3
+    a smart:Term, skosxl:Label ;
+    skosxl:literalForm "utilisation prévue"@fr ;
+    smart:hasTermForm    term-form-type:fullForm ;
+    smart:usedInCountry "FR" ;
+    smart:isPartOfSpeech part-of-speech-type:noun .
+
+ex:label_4
+    a smart:Term, skosxl:Label ;
+    skosxl:literalForm "finalité prévue"@fr ;
+    smart:hasTermForm    term-form-type:fullForm ;
+    smart:usedInCountry "FR" ;
+    smart:isPartOfSpeech part-of-speech-type:noun .
+
+ex:concept_y
+    a smart:TermEntry, skos:Concept .

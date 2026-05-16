@@ -1,0 +1,35 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX smart: <https://w3id.org/standards/smart/ontologies/core/>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX ex: <https://example.org/>
+PREFIX oa: <http://www.w3.org/ns/oa#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX spdx: <http://spdx.org/rdf/terms#> 
+
+# CQ1: From which identified fragment in the authoritative file is the Provision derived?
+# CQ2: Is the extracted content within the core ontology congruous with the original?
+
+SELECT ?provision (?standard AS ?authoritative_file) ?fragment_selector_type ?fragment_selector ?checksum_match
+WHERE {
+
+    # CQ1
+
+    VALUES ?provision { ex:provision_1 }
+    VALUES ?externally_extracted_content_checksum { "a9a66978f378456c818fb8a3e7c6ad3d2c83e62724ccbdea7b36253fb8df5edd" }
+
+    ?annotation a oa:Annotation ;
+                oa:hasBody ?provision ;
+                oa:hasTarget ?specific_resource .
+
+    ?specific_resource a oa:SpecificResource ;
+                      oa:hasSelector ?selector ;
+                      oa:hasSource ?standard ;
+                      spdx:checksum/spdx:algorithm ?checksum_algorithm ;
+                      spdx:checksum/spdx:checksumValue ?checksum .
+    
+        ?selector a ?fragment_selector_type ;
+              rdf:value ?fragment_selector  .
+
+    # Compare checksums (CQ2)
+    BIND((?checksum = ?externally_extracted_content_checksum) AS ?checksum_match) . 
+}

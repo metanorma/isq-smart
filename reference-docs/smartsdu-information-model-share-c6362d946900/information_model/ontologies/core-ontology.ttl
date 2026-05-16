@@ -1,0 +1,525 @@
+@prefix : <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tbx: <https://w3id.org/standards/smart/ontologies/tbx#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix skosxl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@base <https://w3id.org/standards/smart/ontologies/core/> .
+
+<https://w3id.org/standards/smart/ontologies/core/> rdf:type owl:Ontology ;
+                                                     dcterms:description "Core Ontology for representing (SMART) content of standard as per the ISO/IEC Directives Part 2. Example of SMART content are Provisions such as Requirement, Recommendation, Permission"@en ;
+                                                     dcterms:license <https://creativecommons.org/licenses/by-sa/4.0> ;
+                                                     dcterms:publisher <https://www.iec.ch> ,
+                                                                       <https://www.iso.org> ;
+                                                     dcterms:title "Core Ontology for representing (SMART) content of standard as per the ISO/IEC Directives Part 2"@en ;
+                                                     vann:preferredNamespacePrefix "smart" ;
+                                                     rdfs:label "Core Ontology for representing (SMART) content of standard as per the ISO/IEC Directives Part 2"@en ;
+                                                     owl:versionInfo "2.0.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/terms/created
+dcterms:created rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/creator
+dcterms:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/description
+dcterms:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/isReplacedBy
+dcterms:isReplacedBy rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/license
+dcterms:license rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/modified
+dcterms:modified rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/publisher
+dcterms:publisher rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/terms/title
+dcterms:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#altLabel
+skos:altLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#changeNote
+skos:changeNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#definition
+skos:definition rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#editorialNote
+skos:editorialNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#example
+skos:example rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#historyNote
+skos:historyNote rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#inScheme
+skos:inScheme rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#notation
+skos:notation rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#note
+skos:note rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2004/02/skos/core#scopeNote
+skos:scopeNote rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.w3.org/2001/XMLSchema#date
+xsd:date rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/dc/terms/hasPart
+dcterms:hasPart rdf:type owl:ObjectProperty ;
+                owl:inverseOf dcterms:isPartOf .
+
+
+###  http://purl.org/dc/terms/isPartOf
+dcterms:isPartOf rdf:type owl:ObjectProperty .
+
+
+###  http://purl.org/dc/terms/references
+dcterms:references rdf:type owl:ObjectProperty ;
+                   rdfs:label "references"@en ;
+                   skos:definition "A related resource that is referenced, cited, or otherwise pointed to by the described resource."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/deprecatedLabel
+smart:deprecatedLabel rdf:type owl:ObjectProperty ;
+                      rdfs:label "deprecated label"@en ;
+                      skos:prefLabel "deprecated label"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasBindingnessType
+smart:hasBindingnessType rdf:type owl:ObjectProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain [ rdf:type owl:Class ;
+                                       owl:unionOf ( smart:Clause
+                                                     smart:Provision
+                                                     smart:ProvisionSupplement
+                                                     smart:TermEntry
+                                                   )
+                                     ] ;
+                         rdfs:range smart:BindingnessType ;
+                         dcterms:created "2022-06-05"^^xsd:date ;
+                         dcterms:creator "The IEC SG12 SIM group" ;
+                         rdfs:label "has bindingness type"@en ;
+                         skos:definition "Define the Bindingness Type of a Provision, or of a ProvisionSet (Clause), or a Term Entry"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasPartOfSpeechType
+smart:hasPartOfSpeechType rdf:type owl:ObjectProperty ;
+                          rdfs:domain smart:Term ;
+                          rdfs:range smart:PartOfSpeechType ;
+                          rdfs:label "has part of speech type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasProvisionType
+smart:hasProvisionType rdf:type owl:ObjectProperty ;
+                       rdfs:domain smart:Provision ;
+                       rdfs:range smart:ProvisionType ;
+                       rdfs:label "has provision type"@en ;
+                       skos:definition "Associating a Provision with categories such as governing or assertional"@en ;
+                       skos:prefLabel "has provision type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasPublicationComponentType
+smart:hasPublicationComponentType rdf:type owl:ObjectProperty ;
+                                  rdfs:domain [ rdf:type owl:Class ;
+                                                owl:unionOf ( smart:Provision
+                                                              smart:ProvisionSupplement
+                                                            )
+                                              ] ;
+                                  rdfs:range smart:PublicationComponentType ;
+                                  rdfs:label "has publication component type"@en ;
+                                  skos:prefLabel "has publication component type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasPublicationType
+smart:hasPublicationType rdf:type owl:ObjectProperty ;
+                         rdfs:domain smart:PublicationDocument ;
+                         rdfs:range smart:PublicationDocumentType ;
+                         rdfs:label "has publication type"@en ;
+                         skos:prefLabel "has publication type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasSupplement
+smart:hasSupplement rdf:type owl:ObjectProperty ;
+                    rdfs:domain smart:Provision ;
+                    rdfs:range smart:ProvisionSupplement ;
+                    dcterms:created "2022-06-05"^^xsd:date ;
+                    dcterms:creator "The IEC SG12 SIM group" ;
+                    rdfs:label "has supplement"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasSupplementType
+smart:hasSupplementType rdf:type owl:ObjectProperty ;
+                        rdfs:domain smart:ProvisionSupplement ;
+                        rdfs:range smart:ProvisionSupplementType ;
+                        rdfs:label "has supplement type"@en ;
+                        skos:definition "Relates a Provision Supplement with its category."@en ;
+                        skos:prefLabel "has supplement type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/hasTermFormType
+smart:hasTermFormType rdf:type owl:ObjectProperty ;
+                      rdfs:domain smart:Term ;
+                      rdfs:range smart:TermFormType ;
+                      rdfs:label "has term form type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/isSuccessorOf
+smart:isSuccessorOf rdf:type owl:ObjectProperty ;
+                    rdfs:subPropertyOf owl:topObjectProperty ;
+                    dcterms:created "2022-06-05"^^xsd:date ;
+                    dcterms:creator "The IEC SG12 SIM group" ;
+                    rdfs:label "is successor of"@en ;
+                    skos:definition "An entity is the successor, i.e. immediately after in order, to another one"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  https://w3id.org/standards/smart/ontologies/core/pronunciation
+smart:pronunciation rdf:type owl:DatatypeProperty ;
+                    rdfs:domain smart:Term ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "pronunciation"@en ;
+                    rdfs:seeAlso "https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-26-18" ,
+                                 "https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor234" .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/usedInCountry
+smart:usedInCountry rdf:type owl:DatatypeProperty ;
+                    rdfs:domain smart:Term ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "A term can be different in different countries, even if these countries all use the same language (e.g. “car boot” → UK, “car trunk” → US)."@en ,
+                                 "The country codes should comply with ISO 3166 (https://www.iso.org/iso-3166-country-codes.html). The alpha-2 country codes should be used."@en ;
+                    rdfs:label "used in country"@en ;
+                    rdfs:seeAlso "https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-26-18" ,
+                                 "https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor234" ;
+                    skos:example "GB" ,
+                                 "GR" ,
+                                 "IT" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/standards/smart/ontologies/core/Activity
+smart:Activity rdf:type owl:Class ;
+               rdfs:label "Activity"@en ;
+               rdfs:seeAlso <https://www.w3.org/ns/prov#Activity> ;
+               skos:prefLabel "Activity"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Agent
+smart:Agent rdf:type owl:Class ;
+            rdfs:label "Agent" ;
+            rdfs:seeAlso <https://www.w3.org/ns/prov#Agent> ;
+            skos:prefLabel "Agent"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/BindingnessType
+smart:BindingnessType rdf:type owl:Class ;
+                      dcterms:created "2022-06-05"^^xsd:date ;
+                      dcterms:creator "The IEC SG12 SIM group" ;
+                      rdfs:label "Bindingness Type"@en ;
+                      skos:definition "The degree to which an element in a given standard is mandatory to follow or not"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Capability
+smart:Capability rdf:type owl:Class ;
+                 rdfs:subClassOf smart:Provision ;
+                 rdfs:label "Capability"@en ;
+                 rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-20> ,
+                              <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor035> ;
+                 skos:definition "Expression, in the content of a document, that conveys the ability, fitness, or quality necessary to do or achieve a specified thing"@en ;
+                 skos:prefLabel "Capability"@en ;
+                 skos:scopeNote """Capability is expressed using the verbal forms specified in Table 6 of directives part 2:
+* https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor093
+* https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-17-6"""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Clause
+smart:Clause rdf:type owl:Class ;
+             rdfs:subClassOf smart:ProvisionSet ;
+             rdfs:label "Clause"@en ;
+             rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-32-5> ,
+                          <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor310> ;
+             skos:definition "Clauses and subclauses serve as the basic components in the subdivision of the content of a document."@en ;
+             skos:scopeNote "This Clause class covers subclauses"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Entity
+smart:Entity rdf:type owl:Class ;
+             rdfs:label "Entity"@en ;
+             rdfs:seeAlso <https://www.w3.org/ns/prov#Entity> ;
+             skos:prefLabel "Entity"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/ExternalConstraint
+smart:ExternalConstraint rdf:type owl:Class ;
+                         rdfs:subClassOf smart:Provision ;
+                         rdfs:label "External Constraint"@en ;
+                         rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-21> ,
+                                      <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor036> ;
+                         skos:definition "Constraint or obligation on the user of the document (e.g. laws of nature or particular conditions existing in some countries or regions) that is not stated as a provision of the document"@en ;
+                         skos:prefLabel "External Constraint"@en ;
+                         skos:scopeNote """* External constraints are referred to using the verbal form specified in Table 7 of directives part 2:
+   * https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-17-7
+   * https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor094
+* Use of the word “must” does not imply that the external constraint referred to is a requirement of the document."""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Instruction
+smart:Instruction rdf:type owl:Class ;
+                  rdfs:subClassOf smart:Provision ;
+                  rdfs:label "Instruction"@en ;
+                  rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-14> ,
+                               <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor029> ;
+                  skos:definition "Provision that conveys an action to be performed"@en ;
+                  skos:prefLabel "Instruction"@en ;
+                  skos:scopeNote "Instructions are expressed in the imperative mood"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Organization
+smart:Organization rdf:type owl:Class ;
+                   rdfs:subClassOf smart:Agent ;
+                   rdfs:label "Organization"@en ;
+                   rdfs:seeAlso <https://www.w3.org/ns/prov#Organization> ;
+                   skos:prefLabel "Organization"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/PartOfSpeechType
+smart:PartOfSpeechType rdf:type owl:Class ;
+                       rdfs:label "Part-of-speech Type"@en ;
+                       skos:prefLabel "Part-of-speech Type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Permission
+smart:Permission rdf:type owl:Class ;
+                 rdfs:subClassOf smart:Provision ;
+                 rdfs:label "Permission"@en ;
+                 rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-18> ,
+                              <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor033> ;
+                 skos:definition "Expression, in the content of a document, that conveys consent or liberty (or opportunity) to do something"@en ;
+                 skos:prefLabel "Permission"@en ;
+                 skos:scopeNote """Permissions are expressed using the verbal forms specified in Table 5 of directives part 2:
+* https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-17-5
+* https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor088"""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Possibility
+smart:Possibility rdf:type owl:Class ;
+                  rdfs:subClassOf smart:Provision ;
+                  rdfs:label "Possibility"@en ;
+                  rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-19> ,
+                               <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor034> ;
+                  skos:definition "Expression, in the content of a document, that conveys expected or conceivable material, physical or causal outcome"@en ;
+                  skos:prefLabel "Possibility"@en ;
+                  skos:scopeNote """Possibility is expressed using the verbal forms specified in Table 6 of directives part 2:
+* https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor093
+* https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-17-6"""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Provision
+smart:Provision rdf:type owl:Class ;
+                rdfs:subClassOf smart:Entity ;
+                rdfs:label "Provision"@en ;
+                rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-14> ,
+                             <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor029> ;
+                skos:definition "Expression in the content of a normative document that takes the form of a statement, an instruction, a recommendation or a requirement"@en ;
+                skos:example "Statement, Instruction, Recommendation or a Requirement"@en ;
+                skos:prefLabel "Provision"@en ;
+                skos:scopeNote "These types of provision are distinguished by the form of wording they employ; e.g. instructions are expressed in the imperative mood, recommendations by the use of the auxiliary “should” and requirements by the use of the auxiliary “shall”."@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/ProvisionSet
+smart:ProvisionSet rdf:type owl:Class ;
+                   rdfs:subClassOf smart:Entity ;
+                   dcterms:created "2022-06-05"^^xsd:date ;
+                   dcterms:creator "The IEC SG12 SIM group" ;
+                   rdfs:label "Provision Set"@en ;
+                   skos:definition "Collection of provisions, sorted or unsorted, forming a group which can be identified and addressed as such"@en ;
+                   skos:prefLabel "Provision Set"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/ProvisionSupplement
+smart:ProvisionSupplement rdf:type owl:Class ;
+                          rdfs:subClassOf smart:Entity ;
+                          dcterms:created "2022-06-05"^^xsd:date ;
+                          dcterms:creator "The IEC SG12 SIM group" ;
+                          rdfs:label "Provision Supplement"@en ;
+                          skos:definition "An entity that supplies a provision with extended, supportive information"@en ;
+                          skos:prefLabel "Provision Supplement"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/ProvisionSupplementType
+smart:ProvisionSupplementType rdf:type owl:Class ;
+                              rdfs:label "Provision Supplement Type"@en ;
+                              skos:definition "The taxonomy of Provision Supplement Types"@en ;
+                              skos:prefLabel "Provision Supplement Type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/ProvisionType
+smart:ProvisionType rdf:type owl:Class ;
+                    rdfs:label "Provision Type"@en ;
+                    skos:definition "Taxonomy of Provision Types such as: governing or assertional."@en ;
+                    skos:prefLabel "Provision Type"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/PublicationComponentType
+smart:PublicationComponentType rdf:type owl:Class ;
+                               rdfs:label "Publication Component Type"@en ;
+                               skos:definition "Types of components in a Publication content (e.g table, textual, figure, code)"@en ;
+                               skos:example "table, textual, figure, code, mathematicalFormula"@en ;
+                               skos:prefLabel "Publication Component Type" .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/PublicationDocument
+smart:PublicationDocument rdf:type owl:Class ;
+                          rdfs:subClassOf smart:Entity ;
+                          rdfs:label "Publication Document"@en ;
+                          rdfs:seeAlso "https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-0" ,
+                                       "https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor011" ;
+                          skos:altLabel "Document"@en ;
+                          skos:definition "Draft or Publication from standardization orgnization."@en ;
+                          skos:example "International Standards, Technical Specifications, Publicly Available Specifications, Technical Reports and Guides"@en ;
+                          skos:prefLabel "Publication Document"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/PublicationDocumentType
+smart:PublicationDocumentType rdf:type owl:Class ;
+                              rdfs:label "Publication Document Type"@en ;
+                              rdfs:seeAlso <https://www.iec.ch/publications> ,
+                                           <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-24> ,
+                                           <https://www.iso.org/deliverables-all.html> ,
+                                           <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor009> ;
+                              skos:definition "Types of documents from standardization orgnization (e.g Standard, Technical Report, Publicly Available Specification, International Standard from IEC and ISO)"@en ;
+                              skos:example "Standard, Technical Report, Publicly Available Specification, International Standard"@en ;
+                              skos:prefLabel "Publication Document Type" .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Recommendation
+smart:Recommendation rdf:type owl:Class ;
+                     rdfs:subClassOf smart:Provision ;
+                     rdfs:label "Recommendation"@en ;
+                     rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-17> ,
+                                  <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor032> ;
+                     skos:definition "Expression, in the content of a document, that conveys a suggested possible choice or course of action deemed to be particularly suitable without necessarily mentioning or excluding others"@en ;
+                     skos:prefLabel "Recommendation"@en ;
+                     skos:scopeNote """* Recommendations are expressed using the verbal forms specified in Table 4 or directives part 2:
+   * https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-17-4
+   * https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor087
+* In the negative form, a recommendation is the expression that a suggested possible choice or course of action is not preferred but it is not prohibited."""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Requirement
+smart:Requirement rdf:type owl:Class ;
+                  rdfs:subClassOf smart:Provision ;
+                  rdfs:label "Requirement"@en ;
+                  rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-16> ,
+                               <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor031> ;
+                  skos:definition "Expression, in the content of a document, that conveys objectively verifiable criteria to be fulfilled and from which no deviation is permitted if conformance with the document is to be claimed"@en ;
+                  skos:prefLabel "Requirement" ;
+                  skos:scopeNote """Requirements are expressed using the verbal forms specified in Table 3 of the directives part 2: 
+* https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-17-2
+* https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor084"""@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Statement
+smart:Statement rdf:type owl:Class ;
+                rdfs:subClassOf smart:Provision ;
+                rdfs:label "Statement"@en ;
+                rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-13-15> ,
+                             <https://www.iso.org/sites/directives/current/part2/index.xhtml#_idTextAnchor030> ;
+                skos:definition "Expression, in the content of a document, that conveys information"@en ;
+                skos:prefLabel "Statement" .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/Term
+smart:Term rdf:type owl:Class ;
+           rdfs:subClassOf smart:Entity ;
+           rdfs:label "Term"@en ;
+           rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-26-4> ;
+           skos:definition "Denotation of a concept in a specific language. This denotation can correspond to the preferred term, alternate term or deprecated term of a TermEntry."@en ;
+           skos:prefLabel "Term"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/TermEntry
+smart:TermEntry rdf:type owl:Class ;
+                rdfs:subClassOf smart:Entity ;
+                rdfs:label "Term Entry"@en ;
+                rdfs:seeAlso <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-26-17> ,
+                             <https://www.iec.ch/standards-development/isoiec-directives-part-2#article-header-id-5617-16terms-and-definitions> ,
+                             <https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_termEntry.html#termEntry> ;
+                skos:definition "The term entry element is the root element of a terminological entry. It contains all the elements, and their attributes, that describe a concept and all the terms that denote that concept, in all languages."@en ;
+                skos:editorialNote "Note to entry and Example to be implemented with skos."@en ;
+                skos:prefLabel "Term Entry"@en .
+
+
+###  https://w3id.org/standards/smart/ontologies/core/TermFormType
+smart:TermFormType rdf:type owl:Class ;
+                   rdfs:label "Term Form Type"@en ;
+                   skos:definition "The term form type identifies if a term is of a specific sub-type such as an acronym or a symbol. Each term can have only one term form type. The term type data category is recommended when there are several terms (synonyms) and they vary by virtue of one being an abbreviation or variant of the main term, for example."@en ;
+                   skos:prefLabel "Term Form Type"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
