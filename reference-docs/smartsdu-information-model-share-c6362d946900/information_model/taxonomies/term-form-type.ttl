@@ -1,0 +1,78 @@
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix term-form-type: <https://w3id.org/standards/smart/taxonomies/term-form-type/> .
+
+
+term-form-type: rdf:type skos:ConceptScheme ;
+              dcterms:description "The Term Form type Taxonomy defines categories denoting the form of a term."@en ;
+              dcterms:license <https://creativecommons.org/licenses/by-sa/4.0> ;
+              dcterms:publisher <https://www.iec.ch> ,
+                                <https://www.iso.org> ;
+              rdfs:label "Term Form Type Taxonomy"@en ;
+              skos:hasTopConcept term-form-type:abbreviation,
+                                 term-form-type:acronym,
+                                 term-form-type:equation,
+                                 term-form-type:formula,
+                                 term-form-type:fullForm,
+                                 term-form-type:symbol,
+                                 term-form-type:variant ;
+              rdfs:seeAlso "https://www.iso.org/schema/nisosts/v0.2/doc/tbx/ISO-TBX_xsd_Element_tbx_termType.html" ;
+              owl:versionInfo "2.0.0" .
+
+
+term-form-type:abbreviation rdf:type smart:TermFormType, skos:Concept ;
+                          skos:topConceptOf term-form-type: ;
+                          skos:inScheme term-form-type: ;
+                          rdfs:label "Abbreviation"@en ;
+                          skos:prefLabel "Abbreviation"@en ;
+                          skos:definition "An abbreviated form of a term that is formed by omitting letters from the full form, for example: \"vol\" for \"volume\"."@en .
+
+term-form-type:acronym rdf:type smart:TermFormType, skos:Concept ;
+                     skos:topConceptOf term-form-type: ;
+                     skos:inScheme term-form-type: ;
+                     rdfs:label "Acronym"@en ;
+                     skos:prefLabel "Acronym"@en ;
+                     skos:definition "An abbreviated form of a term that is made up of the initial letters of components of its full form, for example, \"NDA\" for \"non-disclosure agreement\"."@en .
+
+term-form-type:equation rdf:type smart:TermFormType, skos:Concept ;
+                      skos:topConceptOf term-form-type: ;
+                      skos:inScheme term-form-type: ;
+                      rdfs:label "Equation"@en ;
+                      skos:prefLabel "Equation"@en ;
+                      skos:definition "An expression used to represent a concept based on a statement that two mathematical expressions are, for instance, equal as identified by the equal sign (=), or assigned to one another by a similar sign."@en .
+
+term-form-type:formula rdf:type smart:TermFormType, skos:Concept ;
+                     skos:topConceptOf term-form-type: ;
+                     skos:inScheme term-form-type: ;
+                     rdfs:label "Formula"@en ;
+                     skos:prefLabel "Formula"@en ;
+                     skos:definition "Figures, symbols or the like used to express a concept briefly, such as a mathematical or chemical formula."@en .
+
+term-form-type:fullForm rdf:type smart:TermFormType, skos:Concept ;
+                      skos:topConceptOf term-form-type: ;
+                      skos:inScheme term-form-type: ;
+                      rdfs:label "Full Form"@en ;
+                      skos:prefLabel "Full Form"@en ;
+                      skos:definition "The complete presentation of a term for which there is an abbreviated form or an acronym. If a term has no abbreviation or acronym documented in the entry, there is no need to indicate the full form."@en .
+
+term-form-type:symbol rdf:type smart:TermFormType, skos:Concept ;
+                    skos:topConceptOf term-form-type: ;
+                    skos:inScheme term-form-type: ;
+                    rdfs:label "Symbol"@en ;
+                    skos:prefLabel "Symbol"@en ;
+                    skos:definition "A designation of a concept by letters, numerals, pictograms or any combination thereof."@en .
+
+term-form-type:variant rdf:type smart:TermFormType, skos:Concept ;
+                     skos:topConceptOf term-form-type: ;
+                     skos:inScheme term-form-type: ;
+                     rdfs:label "Variant"@en ;
+                     skos:prefLabel "Variant"@en ;
+                     skos:definition "One of the alternate forms of a term, due to, differences in spelling, hyphenation, capitalization, spacing, and so forth."@en .
