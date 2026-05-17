@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { getAllParts, partUrl } from '../data/PartRegistry'
-import { partEntryCount, loadPartEntries } from '../data/index'
+import { loadPartEntries } from '../data/index'
+import { getAllParts } from '../data/PartRegistry'
 import { jsonLdToTurtle } from '../data/jsonld'
 import { useToast } from '../composables/useToast'
 
@@ -139,7 +139,13 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
 
       <!-- URN schemes -->
       <div>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-4">URN Identifier Schemes</h2>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">URN Identifier Schemes</h2>
+          <router-link to="/reference/urn-patterns" class="inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+            Full reference
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </router-link>
+        </div>
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
           ISO and IEC use different URN schemes for referencing standard content. ISO follows RFC 5141; IEC uses its own internal scheme with date-based edition identifiers.
         </p>
@@ -288,29 +294,6 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
               Information model annotations from the SmartSDU Core Ontology for machine-readable standards.
             </p>
           </div>
-        </div>
-      </div>
-
-      <!-- Parts overview -->
-      <div>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">Parts Overview</h2>
-        <div class="grid sm:grid-cols-2 gap-2">
-          <router-link
-            v-for="part in getAllParts()"
-            :key="part.partKey"
-            :to="partUrl(part.partKey)"
-            class="group flex items-center gap-3 px-4 py-3 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
-          >
-            <span class="text-lg leading-none">{{ part.icon }}</span>
-            <div class="min-w-0 flex-1">
-              <div class="text-xs font-semibold text-slate-700 dark:text-slate-300 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Part {{ part.partKey }}</div>
-              <div class="text-[11px] text-slate-500 dark:text-slate-400 truncate">{{ part.title }}</div>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-[10px] text-slate-400 dark:text-slate-500 font-mono tabular-nums">{{ partEntryCount(part.partKey) }}</span>
-              <svg class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 group-hover:translate-x-0.5 transition-all" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-            </div>
-          </router-link>
         </div>
       </div>
 
