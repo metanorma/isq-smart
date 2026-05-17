@@ -18,7 +18,6 @@ module SmartSdu
   autoload :Term, "#{__dir__}/smart_sdu/term"
   autoload :TermEntry, "#{__dir__}/smart_sdu/term_entry"
   autoload :PublicationDocument, "#{__dir__}/smart_sdu/publication_document"
-  autoload :IsoIec80000, "#{__dir__}/smart_sdu/isoiec80000"
   autoload :Taxonomy, "#{__dir__}/smart_sdu/taxonomy"
   autoload :Rdf, "#{__dir__}/smart_sdu/rdf"
 end

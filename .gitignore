@@ -3,10 +3,10 @@ browser/node_modules/
 browser/dist/
 browser/src/data/generated/
 
-# Ruby
-*.gem
-.bundle/
-vendor/
+# Ruby (all gems)
+**/vendor/
+**/*.gem
+**/.bundle/
 
 # OS
 .DS_Store
