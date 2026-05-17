@@ -4,6 +4,7 @@ source "https://rubygems.org"
 
 gemspec
 
+gem "smart_sdu", path: "../smart-sdu"
 gem "rdf-turtle", "~> 3.3"
 gem "rake"
 gem "rspec"

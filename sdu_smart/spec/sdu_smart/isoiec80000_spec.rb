@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
-RSpec.describe SmartSdu::IsoIec80000 do
+require "spec_helper"
+
+RSpec.describe SduSmart do
   describe "Quantity" do
-    it "inherits from TermEntry" do
-      expect(SmartSdu::IsoIec80000::Quantity < SmartSdu::TermEntry).to be true
+    it "inherits from SmartSdu::TermEntry" do
+      expect(SduSmart::Quantity < SmartSdu::TermEntry).to be true
     end
 
     it "generates Turtle with isoiec80000:Quantity type" do
-      q = SmartSdu::IsoIec80000::Quantity.new(
+      q = SduSmart::Quantity.new(
         id: "t3-1.1",
         identifier: "3-1.1",
         pref_label: "length",
@@ -29,7 +31,7 @@ RSpec.describe SmartSdu::IsoIec80000 do
     end
 
     it "generates JSON-LD" do
-      q = SmartSdu::IsoIec80000::Quantity.new(
+      q = SduSmart::Quantity.new(
         id: "t3-1.1",
         identifier: "3-1.1",
         pref_label: "length",
@@ -45,12 +47,12 @@ RSpec.describe SmartSdu::IsoIec80000 do
   end
 
   describe "Unit" do
-    it "inherits from TermEntry" do
-      expect(SmartSdu::IsoIec80000::Unit < SmartSdu::TermEntry).to be true
+    it "inherits from SmartSdu::TermEntry" do
+      expect(SduSmart::Unit < SmartSdu::TermEntry).to be true
     end
 
     it "generates Turtle with isoiec80000:Unit type" do
-      u = SmartSdu::IsoIec80000::Unit.new(
+      u = SduSmart::Unit.new(
         id: "unit-m",
         pref_label: "metre",
         notation: ["m"],
@@ -63,7 +65,7 @@ RSpec.describe SmartSdu::IsoIec80000 do
     end
 
     it "generates JSON-LD" do
-      u = SmartSdu::IsoIec80000::Unit.new(
+      u = SduSmart::Unit.new(
         id: "unit-m",
         pref_label: "metre",
         notation: ["m"],
@@ -75,12 +77,12 @@ RSpec.describe SmartSdu::IsoIec80000 do
   end
 
   describe "MathConcept" do
-    it "inherits from TermEntry" do
-      expect(SmartSdu::IsoIec80000::MathConcept < SmartSdu::TermEntry).to be true
+    it "inherits from SmartSdu::TermEntry" do
+      expect(SduSmart::MathConcept < SmartSdu::TermEntry).to be true
     end
 
     it "generates Turtle with isoiec80000:MathConcept type" do
-      mc = SmartSdu::IsoIec80000::MathConcept.new(
+      mc = SduSmart::MathConcept.new(
         id: "t2-1.1",
         identifier: "2-1.1",
         pref_label: "number",
@@ -94,7 +96,7 @@ RSpec.describe SmartSdu::IsoIec80000 do
     end
 
     it "generates JSON-LD" do
-      mc = SmartSdu::IsoIec80000::MathConcept.new(
+      mc = SduSmart::MathConcept.new(
         id: "t2-1.1",
         pref_label: "number",
         definition: "object of thought",
@@ -104,7 +106,7 @@ RSpec.describe SmartSdu::IsoIec80000 do
     end
   end
 
-  describe "JSON-LD on existing classes" do
+  describe "JSON-LD interop with SmartSdu core" do
     it "PublicationDocument generates JSON-LD" do
       doc = SmartSdu::PublicationDocument.new(
         id: "iso-80000-1",
