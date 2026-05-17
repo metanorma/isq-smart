@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
-echo "=== Ruby specs ==="
-cd "$root"
+echo "=== smart-sdu specs ==="
+cd "$root/smart-sdu"
+bundle exec rspec "$@"
+echo ""
+echo "=== sdu_smart specs ==="
+cd "$root/sdu_smart"
 bundle exec rspec "$@"
 echo ""
 echo "=== Frontend type check ==="

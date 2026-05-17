@@ -5,8 +5,9 @@ require "json"
 require "fileutils"
 
 namespace :export do
-  EXPORT_DIR = File.join(__dir__, "..", "..", "browser", "public", "exports")
-  DATASET_DIR = File.join(__dir__, "..", "..", "..", "iso-iec-80000", "sources", "dataset")
+  ROOT = File.join(__dir__, "..", "..", "..")
+  EXPORT_DIR = ENV.fetch("ISQ_EXPORT_DIR", File.join(ROOT, "browser", "public", "exports"))
+  DATASET_DIR = ENV.fetch("ISQ_DATASET_DIR", File.join(ROOT, "iso-iec-80000", "sources", "dataset"))
 
   PART_TITLES = {
     "3" => "Space and Time", "4" => "Mechanics", "5" => "Thermodynamics",
@@ -246,7 +247,7 @@ namespace :export do
 
   desc "Generate TTL and JSON-LD exports for all entries"
   task :all do
-    require "smart_sdu"
+    require "sdu_smart"
 
     FileUtils.rm_rf(EXPORT_DIR)
     FileUtils.mkdir_p(EXPORT_DIR)

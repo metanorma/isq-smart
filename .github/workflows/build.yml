@@ -7,9 +7,20 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  ruby:
     runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
+          bundler-cache: true
+          working-directory: smart-sdu
+      - name: smart-sdu specs
+        run: cd smart-sdu && bundle install && bundle exec rspec
 
+  browser:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -19,8 +30,7 @@ jobs:
           repository: metanorma/iso-iec-80000
           path: ../iso-iec-80000
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
@@ -35,8 +45,7 @@ jobs:
       - name: Build
         run: cd browser && npm run build
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: dist
           path: browser/dist

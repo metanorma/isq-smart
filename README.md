@@ -7,7 +7,7 @@ Monorepo for the SmartSDU Core Ontology and the ISO/IEC 80000 browser.
 ```
 sdu-smart/
   smart-sdu/        Core SmartSDU ontology gem (Entity, Provision, TermEntry…)
-  isq/              ISO/IEC 80000 domain gem (Quantity, Unit, MathConcept) + RDF exports
+  sdu_smart/        ISO/IEC 80000 domain gem (Quantity, Unit, MathConcept) + RDF exports
   browser/          Vue.js static site — the ISQ browser
   reference-docs/   SmartSDU information model reference (OWL, SHACL, SKOS)
   .github/          CI workflows
