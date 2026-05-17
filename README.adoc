@@ -58,7 +58,7 @@ digraph {
     style=dashed
     color="#cbd5e1"
     smart_sdu [label="smart-sdu\nCore ontology gem" fillcolor="#fce7f3"]
-    isq_gem [label="isq\n80000 domain gem" fillcolor="#fce7f3"]
+    isq_gem [label="sdu_smart\n80000 domain gem" fillcolor="#fce7f3"]
     rake [label="rake export:all\n→ TTL + JSON-LD" fillcolor="#fce7f3"]
   }
 
@@ -114,8 +114,8 @@ The browser has **no runtime API**. Everything is compiled at build time:
   RDF namespace modules (`smart:`, `isoiec80000:`).
   SKOS taxonomy instances.
 
-| `isq/`
-| ISO/IEC 80000 domain gem.
+| `sdu_smart/`
+| ISO/IEC 80000 domain gem (`SduSmart` module).
   Extends `SmartSdu::TermEntry` with `Quantity`, `Unit`, `MathConcept`.
   Contains the `rake export:all` task that generates per-part TTL and JSON-LD
   files into `browser/public/exports/`.
@@ -150,9 +150,9 @@ Entity
 │   └── ExternalConstraint
 ├── ProvisionSet → Clause
 ├── ProvisionSupplement
-├── TermEntry ←── Quantity (isq gem)
-│            ←── Unit (isq gem)
-│            ←── MathConcept (isq gem)
+├── TermEntry ←── Quantity (sdu_smart gem)
+│            ←── Unit (sdu_smart gem)
+│            ←── MathConcept (sdu_smart gem)
 ├── Term
 ├── PublicationDocument
 ├── Agent → Organization
@@ -198,7 +198,7 @@ Entity
 | `cd browser && npm run dev` | Start Vite dev server with HMR
 | `cd browser && npm run build` | Type-check + production build to `dist/`
 | `cd smart-sdu && bundle exec rspec` | Run core ontology specs
-| `cd isq && bundle exec rake export:all` | Generate TTL/JSON-LD exports
+| `cd sdu_smart && bundle exec rake export:all` | Generate TTL/JSON-LD exports
 |===
 
 == Deployment

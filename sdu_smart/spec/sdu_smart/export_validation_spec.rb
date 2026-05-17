@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
+require "spec_helper"
+
 RSpec.describe "Export validation" do
-  let(:export_dir) { File.join(__dir__, "..", "..", "browser", "public", "exports") }
+  let(:export_dir) { File.join(__dir__, "..", "..", "..", "browser", "public", "exports") }
   let(:ttl_file) { File.join(export_dir, "iso80000-all.ttl") }
   let(:jsonld_file) { File.join(export_dir, "iso80000-all.jsonld") }
 
