@@ -1,0 +1,232 @@
+= ISO/IEC 80000 — International System of Quantities
+:toc: left
+:toclevels: 3
+
+== Overview
+
+This monorepo produces the **ISQ Browser** — a static web application for browsing the
+https://www.iso.org/standard/30669.html[ISO/IEC 80000] series of international standards
+defining quantities, units of measurement, and mathematical notation.
+
+The browser is built as a fully static SPA with no backend. All data is compiled into
+JavaScript bundles at build time from YAML and Turtle sources.
+
+== Architecture
+
+[graphviz, architecture, svg]
+----
+digraph {
+  rankdir=LR
+  node [shape=box, style=filled, fillcolor="#f8fafc", fontname="Inter", fontsize=11]
+  edge [color="#94a3b8", fontsize=9]
+
+  subgraph cluster_sources {
+    label="External Data Sources"
+    style=dashed
+    color="#cbd5e1"
+    iso_yaml [label="iso-iec-80000\nYAML dataset" fillcolor="#ede9fe"]
+    unitsml [label="UnitsML\nunitsdb YAML" fillcolor="#ede9fe"]
+    turtle [label="SmartSDU\nOWL/SHACL TTL" fillcolor="#ede9fe"]
+    adoc [label="AsciiDoc\nprovision sections" fillcolor="#ede9fe"]
+  }
+
+  subgraph cluster_build {
+    label="Build Pipeline (Vite plugins)"
+    style=dashed
+    color="#cbd5e1"
+    yaml_plugin [label="yaml-data\nplugin" fillcolor="#dcfce7"]
+    onto_plugin [label="ontology-data\nplugin" fillcolor="#dcfce7"]
+  }
+
+  subgraph cluster_output {
+    label="Generated TypeScript"
+    style=dashed
+    color="#cbd5e1"
+    gen [label="src/data/generated/\n~40 .ts modules" fillcolor="#fef3c7"]
+  }
+
+  subgraph cluster_app {
+    label="Vue.js SPA (browser/)"
+    style=dashed
+    color="#cbd5e1"
+    pages [label="Pages\nquantities · math · units\ndimensions · ontology" fillcolor="#dbeafe"]
+    components [label="Components\nMathRenderer · Charts\nLanguageToggle" fillcolor="#dbeafe"]
+  }
+
+  subgraph cluster_ruby {
+    label="Ruby Gems"
+    style=dashed
+    color="#cbd5e1"
+    smart_sdu [label="smart-sdu\nCore ontology gem" fillcolor="#fce7f3"]
+    isq_gem [label="isq\n80000 domain gem" fillcolor="#fce7f3"]
+    rake [label="rake export:all\n→ TTL + JSON-LD" fillcolor="#fce7f3"]
+  }
+
+  iso_yaml -> yaml_plugin
+  unitsml -> yaml_plugin
+  adoc -> yaml_plugin
+  turtle -> onto_plugin
+  yaml_plugin -> gen
+  onto_plugin -> gen
+  gen -> pages
+  pages -> components
+
+  smart_sdu -> isq_gem [label="depends on"]
+  iso_yaml -> rake [label="reads"]
+  isq_gem -> rake [label="provides classes"]
+  rake -> exports [label="writes"]
+  exports [label="public/exports/\nTTL + JSON-LD" fillcolor="#fef3c7"]
+}
+----
+
+== Data flow
+
+The browser has **no runtime API**. Everything is compiled at build time:
+
+. **YAML sources** (`iso-iec-80000/sources/dataset/*.yaml`) contain raw entry data —
+  quantities with units, math notation symbols, designations, definitions.
+
+. The **Vite `yaml-data` plugin** (in `browser/vite.config.ts`) reads these YAML files
+  and generates ~40 TypeScript modules into `browser/src/data/generated/`:
+  * `part-*.ts` — per-part entry data, math caches, bilingual text
+  * `meta.ts` — part metadata (titles, icons, accent colors)
+  * `domain-index.ts` — lightweight summaries for listing pages
+  * `unitsdb.ts` — UnitsML dimensional analysis database
+  * `ontology.ts` — parsed OWL entities from Turtle files
+  * `xref-map.ts` / `reverse-xref.ts` — cross-reference indexes
+
+. The **Vite `ontology-data` plugin** reads Turtle files from `public/ontologies/`
+  and the SmartSDU reference model, producing the ontology browser data.
+
+. **Vue Router** lazy-loads per-part data on navigation — only the part the user visits
+  is loaded.
+
+== Repository structure
+
+[cols="1,4"]
+|===
+| Directory | Description
+
+| `smart-sdu/`
+| Core SmartSDU ontology Ruby gem.
+  Defines base classes: `Entity`, `Provision` (and subtypes),
+  `TermEntry`, `PublicationDocument`, `Agent`, `Activity`.
+  RDF namespace modules (`smart:`, `isoiec80000:`).
+  SKOS taxonomy instances.
+
+| `isq/`
+| ISO/IEC 80000 domain gem.
+  Extends `SmartSdu::TermEntry` with `Quantity`, `Unit`, `MathConcept`.
+  Contains the `rake export:all` task that generates per-part TTL and JSON-LD
+  files into `browser/public/exports/`.
+
+| `browser/`
+| Vue.js 3 + TypeScript + Tailwind CSS v4 static site.
+  Vite plugins generate data at build time.
+  ~30 page components, ~20 reusable components.
+
+| `reference-docs/`
+| SmartSDU information model reference material.
+  OWL ontology, SHACL shapes, SKOS taxonomies in Turtle format.
+  Competency questions and test data.
+
+|===
+
+== Class hierarchy
+
+=== SmartSDU Core (`smart-sdu` gem)
+
+[source]
+----
+Entity
+├── Provision (abstract)
+│   ├── Statement
+│   ├── Instruction
+│   ├── Requirement
+│   ├── Recommendation
+│   ├── Permission
+│   ├── Capability
+│   ├── Possibility
+│   └── ExternalConstraint
+├── ProvisionSet → Clause
+├── ProvisionSupplement
+├── TermEntry ←── Quantity (isq gem)
+│            ←── Unit (isq gem)
+│            ←── MathConcept (isq gem)
+├── Term
+├── PublicationDocument
+├── Agent → Organization
+└── Activity
+----
+
+=== RDF namespaces
+
+[cols="1,3"]
+|===
+| Prefix | IRI
+| `smart:` | `https://w3id.org/standards/smart/ontologies/core/`
+| `isoiec80000:` | `https://w3id.org/standards/isoiec80000/ontologies/core/`
+|===
+
+== Browser routing
+
+[cols="2,3"]
+|===
+| Route | Page
+| `/` | Index — overview, domain cards, entry distribution chart
+| `/quantities` | Quantities domain — searchable listing of all quantity entries
+| `/quantities/part-:part` | Part listing — entries for one part (e.g. Part 4: Mechanics)
+| `/quantities/part-:part/:id` | Entry detail — single quantity with definition, units, remarks
+| `/math` | Mathematical notation domain
+| `/math/part-:part/:id` | Math entry detail
+| `/units` | Units browser (UnitsML database)
+| `/units/:slug` | Unit detail page
+| `/dimensions` | Dimensional analysis browser
+| `/documents` | Publications listing
+| `/documents/part-:part` | Part document (scope, publisher, store link)
+| `/ontology` | OWL ontology browser — classes, properties, SHACL shapes
+| `/ontology/:slug` | Ontology entity detail
+| `/reference` | Technical reference (URN patterns, identifier schemes)
+| `/about` | Project background, timeline, ecosystem
+|===
+
+== Commands
+
+[cols="2,3"]
+|===
+| Command | Description
+| `cd browser && npm run dev` | Start Vite dev server with HMR
+| `cd browser && npm run build` | Type-check + production build to `dist/`
+| `cd smart-sdu && bundle exec rspec` | Run core ontology specs
+| `cd isq && bundle exec rake export:all` | Generate TTL/JSON-LD exports
+|===
+
+== Deployment
+
+The build produces a fully static site in `browser/dist/`.
+
+[IMPORTANT]
+====
+Configure the host to redirect all paths to `index.html` for client-side routing.
+The app uses `createWebHistory()` (HTML5 history mode).
+====
+
+=== Netlify
+
+* **Build command**: `cd browser && npm install && npm run build`
+* **Publish directory**: `browser/dist`
+
+=== GitHub Pages
+
+Push `browser/dist/` contents to the `gh-pages` branch.
+
+== CI
+
+The GHA workflow (`.github/workflows/build.yml`) runs on push/PR to `main`:
+
+. Checkouts this repo
+. Checkouts the `iso-iec-80000` data repo as a sibling
+. Installs Node dependencies
+. Runs `vue-tsc --noEmit` (type check)
+. Runs `vite build` (production build)
+. Uploads `dist/` as an artifact
