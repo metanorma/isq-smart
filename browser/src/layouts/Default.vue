@@ -49,11 +49,7 @@ function isActive(path: string): boolean {
         <div class="flex items-center h-14">
           <!-- Logo -->
           <router-link to="/" class="flex items-center gap-3 group">
-            <div class="flex items-center gap-2">
-              <img src="/img/logo-iso.svg" alt="ISO" class="h-7 w-auto rounded-md" />
-              <span class="text-slate-300 dark:text-dark-500 text-xs">&amp;</span>
-              <img src="/img/logo-iec.svg" alt="IEC" class="h-7 w-auto rounded-md" />
-            </div>
+            <img src="/img/logo-isq.svg" alt="ISQ" class="h-8 w-auto rounded" />
             <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors hidden xl:inline tracking-tight">International System of Quantities</span>
             <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors xl:hidden tracking-tight">ISQ</span>
           </router-link>
