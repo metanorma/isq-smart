@@ -161,11 +161,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
       <section class="border-b border-slate-200/60 dark:border-dark-600/60 bg-slate-50/30 dark:bg-dark-800/30">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div class="flex items-center gap-2 text-xs text-slate-400">
-            <router-link to="/" class="hover:text-brand-600 transition-colors">Home</router-link>
+            <router-link to="/" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</router-link>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-            <router-link :to="domainRoute === 'math' ? '/math' : '/quantities'" class="hover:text-brand-600 transition-colors">{{ domainRoute === 'math' ? 'Math' : 'Quantities' }}</router-link>
+            <router-link :to="domainRoute === 'math' ? '/math' : '/quantities'" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">{{ domainRoute === 'math' ? 'Math' : 'Quantities' }}</router-link>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-            <router-link :to="partUrl(partParam)" class="hover:text-brand-600 transition-colors flex items-center gap-1.5">
+            <router-link :to="partUrl(partParam)" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors flex items-center gap-1.5">
               <PartIcon v-if="meta" :part="meta" size="sm" class="!w-5 !h-5 !text-[10px] !rounded" />
               {{ meta && meta.parentPart ? `Part ${meta.parentPart} §${partParam.split('-')[1]}` : `Part ${partParam}` }}
             </router-link>
@@ -179,11 +179,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
       <section v-if="meta" class="border-b border-slate-200/40 dark:border-dark-600/40" :style="accentHeaderBg(meta)">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5">
           <div class="flex items-center gap-3">
-            <router-link :to="partUrl(partParam)" class="group flex items-center gap-2.5 text-xs text-slate-500 hover:text-brand-600 transition-colors">
+            <router-link :to="partUrl(partParam)" class="group flex items-center gap-2.5 text-xs text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
               <PartIcon :part="meta" size="sm" class="!w-7 !h-7 !text-sm !rounded-lg" />
               <span>
-                <span class="font-semibold text-slate-700 group-hover:text-brand-600 transition-colors">{{ meta.parentPart ? `Part ${meta.parentPart} §${partParam.split('-')[1]}` : `Part ${partParam}` }}: {{ meta.title }}</span>
-                <span class="text-slate-400 mx-1">·</span>
+                <span class="font-semibold text-slate-700 dark:text-slate-300 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ meta.parentPart ? `Part ${meta.parentPart} §${partParam.split('-')[1]}` : `Part ${partParam}` }}: {{ meta.title }}</span>
+                <span class="text-slate-400 dark:text-slate-500 mx-1">·</span>
                 <span class="tabular-nums">{{ getPartEntryCount(partParam) }} entries</span>
               </span>
             </router-link>
@@ -195,11 +195,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
       <section v-if="loading || !entry" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="animate-pulse space-y-8">
           <div class="flex items-center gap-3">
-            <div class="w-20 h-8 bg-slate-100 rounded-lg" />
-            <div class="h-8 bg-slate-100 rounded w-2/3" />
+            <div class="w-20 h-8 bg-slate-100 dark:bg-dark-700 rounded-lg" />
+            <div class="h-8 bg-slate-100 dark:bg-dark-700 rounded w-2/3" />
           </div>
-          <div class="h-28 bg-slate-100 rounded-2xl" />
-          <div class="h-20 bg-slate-100 rounded-2xl w-1/2" />
+          <div class="h-28 bg-slate-100 dark:bg-dark-700 rounded-2xl" />
+          <div class="h-20 bg-slate-100 dark:bg-dark-700 rounded-2xl w-1/2" />
         </div>
       </section>
 
@@ -212,14 +212,14 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
         <!-- Top bar -->
         <div class="flex items-center gap-3 mb-8">
           <LanguageToggle v-if="bilingual" v-model="lang" />
-          <span class="text-xs text-slate-400 ml-auto font-mono tabular-nums">{{ siblings.idx }} / {{ siblings.total }}</span>
+          <span class="text-xs text-slate-400 dark:text-slate-500 ml-auto font-mono tabular-nums">{{ siblings.idx }} / {{ siblings.total }}</span>
         </div>
 
         <!-- In this section -->
         <div v-if="sectionEntries.length > 1" class="mb-8 -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
           <div class="flex items-center gap-2 mb-2">
-            <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.12em]">Section {{ sectionLabel }}</span>
-            <span class="text-[10px] text-slate-300 tabular-nums">{{ sectionEntries.length }} entries</span>
+            <span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.12em]">Section {{ sectionLabel }}</span>
+            <span class="text-[10px] text-slate-300 dark:text-slate-600 tabular-nums">{{ sectionEntries.length }} entries</span>
           </div>
           <div class="flex gap-1.5 overflow-x-auto no-scrollbar pb-1">
             <router-link
@@ -229,7 +229,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               class="flex-shrink-0 flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs border transition-all"
               :class="se.id === entry.id
                 ? 'bg-brand-600 text-white border-brand-500 shadow-sm'
-                : 'bg-white text-slate-500 border-slate-200 hover:border-brand-200 hover:text-brand-600'"
+                : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400'"
             >
               <span class="font-mono font-medium">{{ se.num }}</span>
               <span class="max-w-[120px] truncate hidden sm:inline">{{ getText(se, activeLang()) }}</span>
@@ -240,7 +240,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
         <!-- Header -->
         <header class="mb-10">
           <div class="flex items-start gap-4 flex-wrap">
-            <span class="font-mono text-sm font-bold text-brand-700 bg-brand-50 border border-brand-100/60 px-3 py-1.5 rounded-lg mt-1">{{ entry.num }}</span>
+            <span class="font-mono text-sm font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 border border-brand-100/60 dark:border-brand-800/40 px-3 py-1.5 rounded-lg mt-1">{{ entry.num }}</span>
             <div class="min-w-0 flex-1">
               <template v-if="showBoth() && getText(entry, 'fr') && getText(entry, 'en') !== getText(entry, 'fr')">
                 <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1">
@@ -267,16 +267,16 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
           <div v-if="entry.designations.length > 1 || bilingual" class="mt-6">
             <div class="flex items-center gap-3 mb-3">
               <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.15em]">Designations</span>
-              <div class="flex-1 h-px bg-slate-200/60" />
+              <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
             </div>
             <div class="flex flex-wrap gap-2">
-              <div v-for="(des, i) in entry.designations" :key="i" class="px-3 py-2 rounded-lg border border-slate-200/60 bg-white text-sm">
+              <div v-for="(des, i) in entry.designations" :key="i" class="px-3 py-2 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 text-sm">
                 <div v-if="des.designation.en" class="flex items-baseline gap-2">
-                  <span class="text-[10px] font-semibold text-brand-600 uppercase bg-brand-50 px-1.5 py-0.5 rounded flex-shrink-0">EN</span>
+                  <span class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 uppercase bg-brand-50 dark:bg-brand-950/40 px-1.5 py-0.5 rounded flex-shrink-0">EN</span>
                   <span class="text-slate-800 dark:text-slate-200">{{ des.designation.en.text }}</span>
                 </div>
                 <div v-if="des.designation.fr" class="flex items-baseline gap-2 mt-1">
-                  <span class="text-[10px] font-semibold text-amber-600 uppercase bg-amber-50 px-1.5 py-0.5 rounded flex-shrink-0">FR</span>
+                  <span class="text-[10px] font-semibold text-amber-600 dark:text-amber-400 uppercase bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded flex-shrink-0">FR</span>
                   <span class="text-slate-800 dark:text-slate-200">{{ des.designation.fr.text }}</span>
                 </div>
               </div>
@@ -287,17 +287,17 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
           <div v-if="entry.symbols?.length" class="mt-8">
             <div class="flex items-center gap-3 mb-4">
               <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.15em]">Symbol</span>
-              <div class="flex-1 h-px bg-slate-200/60" />
+              <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
             </div>
-            <div class="relative rounded-2xl border border-slate-200/50 overflow-hidden group/symbol">
+            <div class="relative rounded-2xl border border-slate-200/50 dark:border-dark-600/50 overflow-hidden group/symbol">
               <div class="absolute inset-0 pointer-events-none" :style="showcasePattern()" />
-              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-200/30 group-hover/symbol:ring-brand-200/40 transition-all duration-500 pointer-events-none" />
-              <div class="bg-gradient-to-br from-slate-50/80 via-white to-slate-50/50 p-6 sm:p-8">
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-slate-200/30 dark:ring-dark-600/30 group-hover/symbol:ring-brand-200/40 dark:group-hover/symbol:ring-brand-700/40 transition-all duration-500 pointer-events-none" />
+              <div class="bg-gradient-to-br from-slate-50/80 dark:from-dark-800/80 via-white dark:via-dark-800 to-slate-50/50 dark:to-dark-800/80 p-6 sm:p-8">
                 <div class="relative flex items-center justify-center gap-5 sm:gap-8 flex-wrap">
                   <div
                     v-for="(sym, i) in entry.symbols"
                     :key="i"
-                    class="symbol-card px-7 sm:px-10 py-4 sm:py-5 rounded-xl bg-white border border-slate-200/50 text-2xl sm:text-3xl shadow-sm hover:shadow-lg transition-all duration-300"
+                    class="symbol-card px-7 sm:px-10 py-4 sm:py-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/50 dark:border-dark-600/50 text-2xl sm:text-3xl shadow-sm hover:shadow-lg transition-all duration-300"
                     :style="symbolGlow()"
                   >
                     <MathRenderer :expression="sym" :cache="mathCache" />
@@ -311,13 +311,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-[0.15em] mb-3">Notation systems</div>
               <div class="grid gap-2">
                 <div v-for="(sym, i) in entry.symbols" :key="i" class="flex items-baseline gap-4 px-4 py-2 rounded-lg bg-slate-50/70 dark:bg-dark-800/70 border border-slate-200/50 dark:border-dark-600/50 text-sm">
-                  <div class="flex-shrink-0 w-20 text-[10px] font-semibold text-slate-400 uppercase tracking-wider">AsciiMath</div>
-                  <code class="font-mono text-slate-700 text-[13px]">{{ sym }}</code>
+                  <div class="flex-shrink-0 w-20 text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">AsciiMath</div>
+                  <code class="font-mono text-slate-700 dark:text-slate-300 text-[13px]">{{ sym }}</code>
                 </div>
                 <template v-for="(sym, i) in entry.symbols" :key="'l'+i">
                   <div v-if="latexCache[sym]" class="flex items-baseline gap-4 px-4 py-2 rounded-lg bg-slate-50/70 dark:bg-dark-800/70 border border-slate-200/50 dark:border-dark-600/50 text-sm">
-                    <div class="flex-shrink-0 w-20 text-[10px] font-semibold text-slate-400 uppercase tracking-wider">LaTeX</div>
-                    <code class="font-mono text-slate-700 text-[13px]">{{ latexCache[sym] }}</code>
+                    <div class="flex-shrink-0 w-20 text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">LaTeX</div>
+                    <code class="font-mono text-slate-700 dark:text-slate-300 text-[13px]">{{ latexCache[sym] }}</code>
                   </div>
                 </template>
               </div>
@@ -331,20 +331,20 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.351.026.622.31.802.677L12 21l2.652-5.227c.18-.366.451-.65.802-.677a42.377 42.377 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z"/></svg>
             Definition
           </h2>
-          <div class="relative rounded-2xl bg-white border border-slate-200/60 overflow-hidden shadow-sm group/def">
+          <div class="relative rounded-2xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden shadow-sm group/def">
             <div class="absolute left-0 inset-y-0 w-1.5 transition-all duration-300 group-hover/def:w-2" :style="defAccent()" />
             <div class="p-6 sm:p-8 pl-7 sm:pl-9">
               <div v-if="showBoth() && entry.def?.fr" class="grid sm:grid-cols-2 gap-8">
                 <div>
                   <div class="text-[10px] font-semibold text-brand-600 uppercase tracking-[0.12em] mb-2.5">EN</div>
-                  <div class="text-slate-700 leading-relaxed text-[15px] sm:text-base" v-html="def(entry, 'en')" @click="handleDefClick" />
+                  <div class="text-slate-700 dark:text-slate-300 leading-relaxed text-[15px] sm:text-base" v-html="def(entry, 'en')" @click="handleDefClick" />
                 </div>
-                <div class="sm:border-l sm:pl-8 sm:border-slate-200/60">
+                <div class="sm:border-l sm:pl-8 sm:border-slate-200/60 dark:sm:border-dark-600/60">
                   <div class="text-[10px] font-semibold text-amber-600 uppercase tracking-[0.12em] mb-2.5">FR</div>
-                  <div class="text-slate-700 leading-relaxed text-[15px] sm:text-base" v-html="def(entry, 'fr')" @click="handleDefClick" />
+                  <div class="text-slate-700 dark:text-slate-300 leading-relaxed text-[15px] sm:text-base" v-html="def(entry, 'fr')" @click="handleDefClick" />
                 </div>
               </div>
-              <div v-else class="text-slate-700 leading-relaxed text-[15px] sm:text-base" v-html="def(entry, activeLang())" @click="handleDefClick" />
+              <div v-else class="text-slate-700 dark:text-slate-300 leading-relaxed text-[15px] sm:text-base" v-html="def(entry, activeLang())" @click="handleDefClick" />
             </div>
           </div>
         </div>
@@ -360,13 +360,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               v-for="(unit, i) in entry.units"
               :key="i"
               :to="unitLink(unit.en)"
-              class="group/unit flex items-center gap-5 p-5 rounded-xl bg-white border border-slate-200/60 hover:border-brand-200 hover:shadow-sm transition-all"
+              class="group/unit flex items-center gap-5 p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
             >
               <div class="font-mono text-brand-700 text-xl sm:text-2xl font-medium min-w-[4rem] text-center px-3 py-2 rounded-lg bg-brand-50/50 border border-brand-100/40 group-hover/unit:bg-brand-100/60 transition-colors">
                 {{ unit.symbol?.join(' ') ?? '—' }}
               </div>
               <div class="min-w-0">
-                <div class="text-sm font-medium text-slate-800 group-hover/unit:text-brand-600 transition-colors">{{ showBoth() && unit.fr ? `${unit.en} / ${unit.fr}` : (unit[activeLang()] ?? unit.en) }}</div>
+                <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover/unit:text-brand-600 dark:group-hover/unit:text-brand-400 transition-colors">{{ showBoth() && unit.fr ? `${unit.en} / ${unit.fr}` : (unit[activeLang()] ?? unit.en) }}</div>
                 <div class="text-xs text-slate-400 mt-0.5">
                   <span class="text-brand-500">View related quantities →</span>
                 </div>
@@ -410,7 +410,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               v-for="ref in referencedBy"
               :key="ref.id"
               :to="ref.href"
-              class="group flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200/60 bg-white hover:border-brand-200 hover:shadow-sm transition-all text-sm"
+              class="group flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all text-sm"
             >
               <span class="font-medium text-slate-700 group-hover:text-brand-600 transition-colors">{{ ref.name }}</span>
             </router-link>
@@ -421,22 +421,22 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
         <EntryOntologyPanel :entry="entry" :part-param="partParam" />
 
         <!-- Sibling navigation -->
-        <nav class="mt-16 pt-8 border-t border-slate-200/60">
+        <nav class="mt-16 pt-8 border-t border-slate-200/60 dark:border-dark-600/60">
           <div class="hidden sm:flex items-center justify-center gap-3 text-[10px] text-slate-300 mb-4">
-            <span class="flex items-center gap-1"><kbd class="bg-slate-100 px-1.5 py-0.5 rounded font-mono border border-slate-200">k</kbd> Previous</span>
-            <span class="flex items-center gap-1"><kbd class="bg-slate-100 px-1.5 py-0.5 rounded font-mono border border-slate-200">j</kbd> Next</span>
-            <span class="flex items-center gap-1"><kbd class="bg-slate-100 px-1.5 py-0.5 rounded font-mono border border-slate-200">esc</kbd> Back to part</span>
+            <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-700 px-1.5 py-0.5 rounded font-mono border border-slate-200 dark:border-dark-600">k</kbd> Previous</span>
+            <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-700 px-1.5 py-0.5 rounded font-mono border border-slate-200 dark:border-dark-600">j</kbd> Next</span>
+            <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-700 px-1.5 py-0.5 rounded font-mono border border-slate-200 dark:border-dark-600">esc</kbd> Back to part</span>
           </div>
           <div class="flex items-center justify-between gap-4">
             <router-link
               v-if="siblings.prev"
               :to="`${partUrl(partParam)}/${siblings.prev.id}`"
-              class="group flex items-center gap-3 px-5 py-4 rounded-xl border border-slate-200/70 bg-white hover:border-brand-200 hover:shadow-sm transition-all max-w-[45%]"
+              class="group flex items-center gap-3 px-5 py-4 rounded-xl border border-slate-200/70 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all max-w-[45%]"
             >
-              <svg class="w-4 h-4 text-slate-300 group-hover:text-brand-500 transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
+              <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
               <div class="min-w-0">
-                <div class="font-mono text-xs text-slate-500 group-hover:text-brand-600 transition-colors">{{ siblings.prev.num }}</div>
-                <div class="hidden sm:block truncate text-xs text-slate-400 group-hover:text-brand-500 transition-colors mt-0.5">{{ getText(siblings.prev, activeLang()) }}</div>
+                <div class="font-mono text-xs text-slate-500 dark:text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ siblings.prev.num }}</div>
+                <div class="hidden sm:block truncate text-xs text-slate-400 dark:text-slate-500 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors mt-0.5">{{ getText(siblings.prev, activeLang()) }}</div>
               </div>
             </router-link>
             <div v-else />
@@ -444,13 +444,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
             <router-link
               v-if="siblings.next"
               :to="`${partUrl(partParam)}/${siblings.next.id}`"
-              class="group flex items-center gap-3 px-5 py-4 rounded-xl border border-slate-200/70 bg-white hover:border-brand-200 hover:shadow-sm transition-all text-right max-w-[45%]"
+              class="group flex items-center gap-3 px-5 py-4 rounded-xl border border-slate-200/70 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all text-right max-w-[45%]"
             >
               <div class="min-w-0">
-                <div class="font-mono text-xs text-slate-500 group-hover:text-brand-600 transition-colors">{{ siblings.next.num }}</div>
-                <div class="hidden sm:block truncate text-xs text-slate-400 group-hover:text-brand-500 transition-colors mt-0.5">{{ getText(siblings.next, activeLang()) }}</div>
+                <div class="font-mono text-xs text-slate-500 dark:text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ siblings.next.num }}</div>
+                <div class="hidden sm:block truncate text-xs text-slate-400 dark:text-slate-500 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors mt-0.5">{{ getText(siblings.next, activeLang()) }}</div>
               </div>
-              <svg class="w-4 h-4 text-slate-300 group-hover:text-brand-500 transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+              <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             </router-link>
             <div v-else />
           </div>
@@ -461,8 +461,8 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
     </template>
 
     <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-      <h1 class="text-2xl font-bold text-slate-900 heading-serif">Entry not found</h1>
-      <p class="mt-2 text-slate-500 text-sm">No entry with ID "{{ idParam }}" in Part {{ partParam }}.</p>
+      <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 heading-serif">Entry not found</h1>
+      <p class="mt-2 text-slate-500 dark:text-slate-400 text-sm">No entry with ID "{{ idParam }}" in Part {{ partParam }}.</p>
       <router-link :to="partUrl(partParam)" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
         Back to Part {{ partParam }}
       </router-link>

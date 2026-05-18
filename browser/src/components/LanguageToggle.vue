@@ -8,7 +8,7 @@ const opts: { key: 'en' | 'fr' | 'both'; label: string }[] = [
 </script>
 
 <template>
-  <div class="inline-flex rounded-xl border border-slate-200 bg-white p-0.5 shadow-sm">
+  <div class="inline-flex rounded-xl border border-slate-200 dark:border-dark-600/60 bg-white dark:bg-dark-800 p-0.5 shadow-sm">
     <button
       v-for="o in opts"
       :key="o.key"

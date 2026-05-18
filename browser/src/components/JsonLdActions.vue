@@ -35,9 +35,12 @@ function downloadTurtle() {
 
 function viewJsonLd() {
   const json = JSON.stringify(props.data, null, 2)
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches
   const w = window.open('', '_blank')
   if (w) {
-    w.document.write(`<pre style="font-family:monospace;font-size:13px;padding:2rem;background:#f8fafc;min-height:100vh;margin:0">${json.replace(/</g, '&lt;')}</pre>`)
+    const bg = dark ? '#0f1219' : '#f8fafc'
+    const fg = dark ? '#e2e8f0' : '#1e293b'
+    w.document.write(`<pre style="font-family:monospace;font-size:13px;padding:2rem;background:${bg};color:${fg};min-height:100vh;margin:0">${json.replace(/</g, '&lt;')}</pre>`)
     w.document.title = props.filename
   }
 }

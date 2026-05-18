@@ -86,7 +86,6 @@ const totalTerms = computed(() => docs.value.reduce((s, d) => s + d.termCount, 0
 <template>
   <div>
     <!-- Hero -->
-    <!-- Hero -->
     <section class="relative overflow-hidden bg-gradient-to-br from-sky-950 via-brand-900 to-indigo-950">
       <div class="absolute inset-0 hero-pattern" />
       <div class="grain-overlay absolute inset-0" />
@@ -130,23 +129,23 @@ const totalTerms = computed(() => docs.value.reduce((s, d) => s + d.termCount, 0
           v-for="doc in docs"
           :key="doc.partKey"
           :to="doc.link"
-          class="group flex items-center gap-5 px-5 py-4 rounded-xl border border-slate-200/60 bg-white hover:border-brand-200 hover:shadow-sm transition-all"
+          class="group flex items-center gap-5 px-5 py-4 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
         >
-          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-50 flex items-center justify-center text-brand-600 text-sm font-bold">
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center text-brand-600 dark:text-brand-400 text-sm font-bold">
             {{ doc.partKey }}
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
-              <span class="text-sm font-semibold text-slate-900 group-hover:text-brand-600 transition-colors">{{ doc.title }}</span>
-              <span class="text-[10px] font-medium text-slate-400 bg-slate-50 px-2 py-0.5 rounded">{{ doc.publisher }}</span>
+              <span class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ doc.title }}</span>
+              <span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-dark-700 px-2 py-0.5 rounded">{{ doc.publisher }}</span>
             </div>
-            <div class="mt-1 flex gap-4 text-xs text-slate-400">
+            <div class="mt-1 flex gap-4 text-xs text-slate-400 dark:text-slate-500">
               <span v-if="doc.edition">Edition {{ doc.edition }}</span>
               <span>{{ doc.clauseCount }} clauses</span>
               <span>{{ doc.termCount }} entries</span>
             </div>
           </div>
-          <svg class="w-4 h-4 text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
         </router-link>
       </div>
     </section>

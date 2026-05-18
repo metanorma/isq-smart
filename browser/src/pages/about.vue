@@ -91,7 +91,7 @@ const ecosystem = [
 function accentCardBg(accent: string) {
   const map: Record<string, string> = {
     brand: 'bg-brand-50 text-brand-600', iec: 'bg-iec-50 text-iec-600',
-    violet: 'bg-violet-50 text-violet-600', slate: 'bg-slate-100 text-slate-500',
+    violet: 'bg-violet-50 text-violet-600', slate: 'bg-slate-100 dark:bg-dark-700 text-slate-500 dark:text-slate-400',
   }
   return map[accent] || map.slate
 }

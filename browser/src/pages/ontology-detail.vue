@@ -324,15 +324,15 @@ const parentOntologyEntity = computed(() => {
     </div>
 
     <!-- Tab bar -->
-    <div class="flex gap-1 p-1 rounded-lg bg-slate-100/80 border border-slate-200/60 w-fit">
+    <div class="flex gap-1 p-1 rounded-lg bg-slate-100/80 dark:bg-dark-700/80 border border-slate-200/60 dark:border-dark-600/60 w-fit">
       <button @click="detailTab = 'overview'"
         class="px-3 py-1.5 rounded-md text-xs font-medium transition-all"
-        :class="detailTab === 'overview' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
+        :class="detailTab === 'overview' ? 'bg-white dark:bg-dark-800 text-slate-800 dark:text-slate-100 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'">
         Overview
       </button>
       <button @click="detailTab = 'rdf'"
         class="px-3 py-1.5 rounded-md text-xs font-medium transition-all"
-        :class="detailTab === 'rdf' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
+        :class="detailTab === 'rdf' ? 'bg-white dark:bg-dark-800 text-slate-800 dark:text-slate-100 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300'">
         RDF Source
       </button>
     </div>
@@ -341,37 +341,37 @@ const parentOntologyEntity = computed(() => {
     <!-- OVERVIEW TAB                                                   -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <template v-if="detailTab === 'overview'">
-      <div class="bg-white border rounded-lg p-4">
+      <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">URI</h3>
         <code class="text-sm break-all">{{ entity.uri }}</code>
       </div>
 
-      <div class="bg-white border rounded-lg p-4">
+      <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Qualified Name</h3>
         <code class="text-sm">{{ entity.qname }}</code>
       </div>
 
-      <div v-if="entity.description" class="bg-white border rounded-lg p-4">
+      <div v-if="entity.description" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Definition</h3>
         <p class="text-gray-700 whitespace-pre-line">{{ entity.description }}</p>
       </div>
 
-      <div v-if="entity.scopeNote" class="bg-white border rounded-lg p-4">
+      <div v-if="entity.scopeNote" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Scope Note</h3>
         <p class="text-gray-700 whitespace-pre-line">{{ entity.scopeNote }}</p>
       </div>
 
-      <div v-if="entity.example" class="bg-white border rounded-lg p-4">
+      <div v-if="entity.example" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Example</h3>
         <p class="text-gray-700">{{ entity.example }}</p>
       </div>
 
-      <div v-if="entity.altLabel" class="bg-white border rounded-lg p-4">
+      <div v-if="entity.altLabel" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Alternative Label</h3>
         <p class="text-gray-700">{{ entity.altLabel }}</p>
       </div>
 
-      <div v-if="entity.seeAlso?.length" class="bg-white border rounded-lg p-4">
+      <div v-if="entity.seeAlso?.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">See Also</h3>
         <ul class="space-y-1">
           <li v-for="link in entity.seeAlso" :key="link">
@@ -383,7 +383,7 @@ const parentOntologyEntity = computed(() => {
       <!-- ─── Class-specific ────────────────────────────────────────── -->
       <template v-if="entity.type === 'class'">
         <!-- Tree diagram -->
-        <div class="bg-white border rounded-lg p-4">
+        <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Hierarchy</h3>
           <div class="font-mono text-xs space-y-0.5">
             <!-- Ancestors (reversed, root first) -->
@@ -408,14 +408,14 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Inherited properties -->
-        <div v-if="inferredProperties.length" class="bg-white border rounded-lg p-4">
+        <div v-if="inferredProperties.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
             Inherited Properties ({{ inferredProperties.length }})
           </h3>
           <p class="text-xs text-slate-400 mb-3">Properties inherited from ancestor classes.</p>
           <div class="flex flex-wrap gap-1.5">
             <router-link v-for="p in inferredProperties" :key="p.qname" :to="`/ontology/${p.slug}`"
-              class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 bg-slate-50/50 text-slate-600 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+              class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full" :class="typeMeta[p.type]?.colorDot || 'bg-slate-300'"></span>
               {{ p.qname }}
             </router-link>
@@ -423,14 +423,14 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Grouped usage table (Ontospy-style) -->
-        <div v-if="groupedUsage.length" class="bg-white border rounded-lg p-4">
+        <div v-if="groupedUsage.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Properties by Class ({{ relatedProperties.domain.length }})
           </h3>
           <div class="space-y-4">
             <div v-for="group in groupedUsage" :key="group.source.qname">
               <div class="flex items-center gap-2 mb-2">
-                <span class="text-xs font-semibold text-slate-700">From</span>
+                <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">From</span>
                 <router-link :to="`/ontology/${group.source.slug}`" class="text-xs font-mono text-blue-600 hover:underline">{{ group.source.qname }}</router-link>
                 <span class="text-[10px] text-slate-400">({{ group.props.length }})</span>
               </div>
@@ -445,15 +445,15 @@ const parentOntologyEntity = computed(() => {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr v-for="p in group.props" :key="p.qname" class="border-b border-slate-100/60 last:border-0">
+                    <tr v-for="p in group.props" :key="p.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0">
                       <td class="px-3 py-1.5">
                         <router-link :to="`/ontology/${p.slug}`" class="text-green-700 hover:underline font-medium">{{ p.qname }}</router-link>
                       </td>
-                      <td class="px-3 py-1.5 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
+                      <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-xs truncate">{{ p.description || '—' }}</td>
                       <td class="px-3 py-1.5">
                         <template v-for="(r, i) in p.range" :key="r">
                           <router-link v-if="linkTo(r)" :to="linkTo(r)" class="text-blue-600 hover:underline">{{ r }}</router-link>
-                          <span v-else class="text-slate-600">{{ r }}</span>
+                          <span v-else class="text-slate-600 dark:text-slate-400">{{ r }}</span>
                           <span v-if="i < p.range!.length - 1">, </span>
                         </template>
                         <span v-if="!p.range?.length" class="text-slate-400">—</span>
@@ -470,7 +470,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Direct subclasses -->
-        <div v-if="subclasses.length" class="bg-white border rounded-lg p-4">
+        <div v-if="subclasses.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Direct Subclasses ({{ subclasses.length }})</h3>
           <ul class="space-y-1">
             <li v-for="sc in subclasses" :key="sc.qname">
@@ -481,7 +481,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- All descendants -->
-        <div v-if="allDescendants.length > subclasses.length" class="bg-white border rounded-lg p-4">
+        <div v-if="allDescendants.length > subclasses.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">All Descendants ({{ allDescendants.length }})</h3>
           <ul class="space-y-1">
             <li v-for="d in allDescendants" :key="d.qname">
@@ -492,7 +492,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- SHACL Shapes targeting this class -->
-        <div v-if="targetingShapes.length" class="bg-white border rounded-lg p-4">
+        <div v-if="targetingShapes.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             SHACL Constraints ({{ targetingShapes.length }})
           </h3>
@@ -513,7 +513,7 @@ const parentOntologyEntity = computed(() => {
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(c, i) in s.constraints" :key="i" class="border-b border-slate-100/60 last:border-0">
+                  <tr v-for="(c, i) in s.constraints" :key="i" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0">
                     <td class="px-3 py-1.5">
                       <router-link v-if="linkTo(c.path)" :to="linkTo(c.path)" class="text-blue-600 hover:underline">{{ c.path }}</router-link>
                       <span v-else class="font-mono">{{ c.path }}</span>
@@ -535,7 +535,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Range usage -->
-        <div v-if="relatedProperties.range.length" class="bg-white border rounded-lg p-4">
+        <div v-if="relatedProperties.range.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">In Range Of</h3>
           <ul class="space-y-1">
             <li v-for="p in relatedProperties.range" :key="p.qname">
@@ -545,11 +545,11 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Instances -->
-        <div v-if="instances.length" class="bg-white border rounded-lg p-4">
+        <div v-if="instances.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Instances ({{ instances.length }})</h3>
           <div class="flex flex-wrap gap-1.5">
             <router-link v-for="inst in instances" :key="inst.qname" :to="`/ontology/${inst.slug}`"
-              class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 bg-slate-50/50 text-slate-600 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+              class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full" :class="typeMeta[inst.type]?.colorDot || 'bg-slate-300'"></span>
               {{ inst.label }}
             </router-link>
@@ -559,7 +559,7 @@ const parentOntologyEntity = computed(() => {
 
       <!-- ─── Property-specific ─────────────────────────────────────── -->
       <template v-if="entity.type === 'objectProperty' || entity.type === 'datatypeProperty'">
-        <div class="bg-white border rounded-lg p-4">
+        <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Property Characteristics</h3>
           <table class="w-full text-sm">
             <tr v-if="entity.domain?.length">
@@ -592,25 +592,25 @@ const parentOntologyEntity = computed(() => {
 
       <!-- ─── Shape-specific ────────────────────────────────────────── -->
       <template v-if="entity.type === 'shape'">
-        <div v-if="entity.targetClass" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.targetClass" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Class</h3>
           <router-link v-if="linkTo(entity.targetClass)" :to="linkTo(entity.targetClass)" class="text-blue-600 hover:underline">{{ entity.targetClass }}</router-link>
           <span v-else class="text-gray-700">{{ entity.targetClass }}</span>
         </div>
 
-        <div v-if="entity.targetSubjectsOf" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.targetSubjectsOf" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Subjects Of</h3>
           <router-link v-if="linkTo(entity.targetSubjectsOf)" :to="linkTo(entity.targetSubjectsOf)" class="text-blue-600 hover:underline">{{ entity.targetSubjectsOf }}</router-link>
           <span v-else class="text-gray-700">{{ entity.targetSubjectsOf }}</span>
         </div>
 
-        <div v-if="entity.targetObjectsOf" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.targetObjectsOf" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Objects Of</h3>
           <router-link v-if="linkTo(entity.targetObjectsOf)" :to="linkTo(entity.targetObjectsOf)" class="text-blue-600 hover:underline">{{ entity.targetObjectsOf }}</router-link>
           <span v-else class="text-gray-700">{{ entity.targetObjectsOf }}</span>
         </div>
 
-        <div v-if="entity.constraints?.length" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.constraints?.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
             Shape Properties ({{ entity.constraints.length }})
           </h3>
@@ -649,11 +649,11 @@ const parentOntologyEntity = computed(() => {
 
       <!-- ─── Concept-specific ──────────────────────────────────────── -->
       <template v-if="entity.type === 'concept'">
-        <div v-if="entity.scheme" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.scheme" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Concept Scheme</h3>
           <router-link :to="linkTo(entity.scheme)" class="text-blue-600 hover:underline">{{ entity.scheme }}</router-link>
         </div>
-        <div v-if="entity.instanceOf?.length" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.instanceOf?.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Instance Of</h3>
           <ul class="space-y-1">
             <li v-for="t of entity.instanceOf" :key="t">
@@ -662,7 +662,7 @@ const parentOntologyEntity = computed(() => {
             </li>
           </ul>
         </div>
-        <div v-if="conceptShapes.length" class="bg-white border rounded-lg p-4">
+        <div v-if="conceptShapes.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Related Shapes</h3>
           <ul class="space-y-1">
             <li v-for="s in conceptShapes" :key="s.qname">
@@ -674,7 +674,7 @@ const parentOntologyEntity = computed(() => {
 
       <!-- ─── Concept Scheme-specific ────────────────────────────────── -->
       <template v-if="entity.type === 'conceptScheme'">
-        <div v-if="schemeConcepts.length" class="bg-white border rounded-lg p-4">
+        <div v-if="schemeConcepts.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Concepts ({{ schemeConcepts.length }})</h3>
           <ul class="space-y-1">
             <li v-for="c in schemeConcepts" :key="c.qname">
@@ -687,7 +687,7 @@ const parentOntologyEntity = computed(() => {
 
       <!-- ─── Individual-specific ────────────────────────────────────── -->
       <template v-if="entity.type === 'individual'">
-        <div v-if="entity.instanceOf?.length" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.instanceOf?.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Instance Of</h3>
           <ul class="space-y-1">
             <li v-for="t of entity.instanceOf" :key="t">
@@ -700,11 +700,11 @@ const parentOntologyEntity = computed(() => {
 
       <!-- ─── Ontology-specific ──────────────────────────────────────── -->
       <template v-if="entity.type === 'ontology'">
-        <div v-if="entity.version" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.version" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Version</h3>
           <p class="text-gray-700">{{ entity.version }}</p>
         </div>
-        <div v-if="entity.imports?.length" class="bg-white border rounded-lg p-4">
+        <div v-if="entity.imports?.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Imports</h3>
           <ul class="space-y-1">
             <li v-for="imp of entity.imports" :key="imp">
@@ -715,13 +715,13 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Namespace URI -->
-        <div class="bg-white border rounded-lg p-4">
+        <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Namespace URI</h3>
           <code class="text-sm break-all">{{ ontologyNs?.uri || entity.uri }}</code>
         </div>
 
         <!-- Metrics -->
-        <div class="bg-white border rounded-lg p-4">
+        <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Entity Summary</h3>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <div class="px-3 py-2 rounded-lg bg-blue-50/50 border border-blue-200/40 text-center">
@@ -744,7 +744,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Classes -->
-        <div v-if="ontologyClasses.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyClasses.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Classes ({{ ontologyClasses.length }})
           </h3>
@@ -758,11 +758,11 @@ const parentOntologyEntity = computed(() => {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="c in ontologyClasses" :key="c.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+                <tr v-for="c in ontologyClasses" :key="c.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-3 py-1.5">
                     <router-link :to="`/ontology/${c.slug}`" class="text-brand-600 hover:underline font-medium">{{ c.qname }}</router-link>
                   </td>
-                  <td class="px-3 py-1.5 text-slate-600 max-w-sm truncate">{{ c.description || '—' }}</td>
+                  <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-sm truncate">{{ c.description || '—' }}</td>
                   <td class="px-3 py-1.5">
                     <router-link v-if="c.parent && linkTo(c.parent)" :to="linkTo(c.parent)" class="text-blue-600 hover:underline">{{ c.parent }}</router-link>
                     <span v-else-if="c.parent">{{ c.parent }}</span>
@@ -775,7 +775,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Object Properties -->
-        <div v-if="ontologyObjProps.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyObjProps.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Object Properties ({{ ontologyObjProps.length }})
           </h3>
@@ -790,11 +790,11 @@ const parentOntologyEntity = computed(() => {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="p in ontologyObjProps" :key="p.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+                <tr v-for="p in ontologyObjProps" :key="p.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-3 py-1.5">
                     <router-link :to="`/ontology/${p.slug}`" class="text-green-700 hover:underline font-medium">{{ p.qname }}</router-link>
                   </td>
-                  <td class="px-3 py-1.5 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
+                  <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-xs truncate">{{ p.description || '—' }}</td>
                   <td class="px-3 py-1.5">
                     <template v-for="(d, i) in p.domain" :key="d">
                       <router-link v-if="linkTo(d)" :to="linkTo(d)" class="text-blue-600 hover:underline">{{ d }}</router-link>
@@ -818,7 +818,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Datatype Properties -->
-        <div v-if="ontologyDtProps.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyDtProps.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Datatype Properties ({{ ontologyDtProps.length }})
           </h3>
@@ -833,11 +833,11 @@ const parentOntologyEntity = computed(() => {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="p in ontologyDtProps" :key="p.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+                <tr v-for="p in ontologyDtProps" :key="p.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-3 py-1.5">
                     <router-link :to="`/ontology/${p.slug}`" class="text-lime-700 hover:underline font-medium">{{ p.qname }}</router-link>
                   </td>
-                  <td class="px-3 py-1.5 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
+                  <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-xs truncate">{{ p.description || '—' }}</td>
                   <td class="px-3 py-1.5">
                     <template v-for="(d, i) in p.domain" :key="d">
                       <router-link v-if="linkTo(d)" :to="linkTo(d)" class="text-blue-600 hover:underline">{{ d }}</router-link>
@@ -854,20 +854,20 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Annotation Properties -->
-        <div v-if="ontologyAnnProps.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyAnnProps.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Annotation Properties ({{ ontologyAnnProps.length }})
           </h3>
           <div class="flex flex-wrap gap-1.5">
             <router-link v-for="p in ontologyAnnProps" :key="p.qname" :to="`/ontology/${p.slug}`"
-              class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 bg-slate-50/50 text-slate-600 hover:border-amber-200 hover:text-amber-600 transition-colors">
+              class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors">
               {{ p.qname }}
             </router-link>
           </div>
         </div>
 
         <!-- SHACL Shapes -->
-        <div v-if="ontologyShapes.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyShapes.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             SHACL Shapes ({{ ontologyShapes.length }})
           </h3>
@@ -881,7 +881,7 @@ const parentOntologyEntity = computed(() => {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="s in ontologyShapes" :key="s.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+                <tr v-for="s in ontologyShapes" :key="s.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-3 py-1.5">
                     <router-link :to="`/ontology/${s.slug}`" class="text-purple-700 hover:underline font-medium">{{ s.qname }}</router-link>
                   </td>
@@ -898,7 +898,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Concept Schemes -->
-        <div v-if="ontologyConceptSchemes.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyConceptSchemes.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Concept Schemes ({{ ontologyConceptSchemes.length }})
           </h3>
@@ -911,7 +911,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- SKOS Concepts -->
-        <div v-if="ontologyConcepts.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyConcepts.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             SKOS Concepts ({{ ontologyConcepts.length }})
           </h3>
@@ -925,12 +925,12 @@ const parentOntologyEntity = computed(() => {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="c in ontologyConcepts" :key="c.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+                <tr v-for="c in ontologyConcepts" :key="c.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-3 py-1.5">
                     <router-link :to="`/ontology/${c.slug}`" class="text-teal-700 hover:underline font-medium">{{ c.label }}</router-link>
                     <code class="ml-1 text-[9px] text-slate-400">{{ c.qname }}</code>
                   </td>
-                  <td class="px-3 py-1.5 text-slate-600 max-w-sm truncate">{{ c.description || '—' }}</td>
+                  <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-sm truncate">{{ c.description || '—' }}</td>
                   <td class="px-3 py-1.5">
                     <template v-for="(t, i) in c.instanceOf" :key="t">
                       <router-link v-if="linkTo(t)" :to="linkTo(t)" class="text-blue-600 hover:underline">{{ t }}</router-link>
@@ -945,7 +945,7 @@ const parentOntologyEntity = computed(() => {
         </div>
 
         <!-- Named Individuals -->
-        <div v-if="ontologyIndividuals.length" class="bg-white border rounded-lg p-4">
+        <div v-if="ontologyIndividuals.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
           <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
             Named Individuals ({{ ontologyIndividuals.length }})
           </h3>
@@ -958,7 +958,7 @@ const parentOntologyEntity = computed(() => {
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="ind in ontologyIndividuals" :key="ind.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+                <tr v-for="ind in ontologyIndividuals" :key="ind.qname" class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-3 py-1.5">
                     <router-link :to="`/ontology/${ind.slug}`" class="text-brand-600 hover:underline font-medium">{{ ind.label }}</router-link>
                     <code class="ml-1 text-[9px] text-slate-400">{{ ind.qname }}</code>
@@ -978,7 +978,7 @@ const parentOntologyEntity = computed(() => {
       </template>
 
       <!-- Where Used (all entity types) -->
-      <div v-if="whereUsed.length" class="bg-white border rounded-lg p-4">
+      <div v-if="whereUsed.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
         <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Where Used ({{ whereUsed.length }})</h3>
         <ul class="space-y-1">
           <li v-for="wu in whereUsed" :key="`${wu.entity.qname}-${wu.context}`">
@@ -993,22 +993,22 @@ const parentOntologyEntity = computed(() => {
     <!-- RDF SOURCE TAB                                                 -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <template v-if="detailTab === 'rdf'">
-      <div class="bg-white border rounded-lg p-4 space-y-3">
+      <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4 space-y-3">
         <div class="flex items-center justify-between">
-          <div class="flex gap-1 p-1 rounded-lg bg-slate-100 border border-slate-200/60">
+          <div class="flex gap-1 p-1 rounded-lg bg-slate-100 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
             <button @click="rdfFormat = 'turtle'"
               class="px-3 py-1.5 rounded-md text-xs font-medium transition-all"
-              :class="rdfFormat === 'turtle' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
+              :class="rdfFormat === 'turtle' ? 'bg-white dark:bg-dark-700 text-slate-800 dark:text-slate-200 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'">
               Turtle
             </button>
             <button @click="rdfFormat = 'jsonld'"
               class="px-3 py-1.5 rounded-md text-xs font-medium transition-all"
-              :class="rdfFormat === 'jsonld' ? 'bg-white text-slate-800 shadow-sm' : 'text-slate-500 hover:text-slate-700'">
+              :class="rdfFormat === 'jsonld' ? 'bg-white dark:bg-dark-700 text-slate-800 dark:text-slate-200 shadow-sm' : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'">
               JSON-LD
             </button>
           </div>
           <button @click="handleDownload(rdfFormat)"
-            class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 border border-slate-200/60 text-slate-600 hover:bg-slate-200 transition-colors">
+            class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-dark-600 transition-colors">
             Download .{{ rdfFormat === 'turtle' ? 'ttl' : 'jsonld' }}
           </button>
         </div>
