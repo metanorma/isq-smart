@@ -49,7 +49,7 @@ interface SearchDoc {
 let docs: SearchDoc[] = []
 let buildPromise: Promise<void> | null = null
 
-export interface SearchResult {
+interface SearchResult {
   entry: Entry
   partMeta: PartMeta
   matchField: string
@@ -86,7 +86,7 @@ export const searchOpen = ref(false)
 export const searchQuery = ref('')
 export const searchDomain = ref<'all' | 'quantities' | 'math'>('all')
 export const searchResults = shallowRef<SearchResult[]>([])
-export const searchLoading = ref(false)
+const searchLoading = ref(false)
 
 // ═══════════════════════════════════════════════════════════════
 // Public operations

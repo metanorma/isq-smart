@@ -29,21 +29,6 @@ const routes: RouteRecordRaw[] = [
     ],
   },
 
-  // Legacy redirects
-  { path: '/about/part-:part', redirect: to => `/documents/part-${to.params.part}` },
-  { path: '/part-2', redirect: '/math' },
-  { path: '/part-2/:id', redirect: '/math' },
-  { path: '/part-3', redirect: '/quantities/part-3' },
-  { path: '/part-4', redirect: '/quantities/part-4' },
-  { path: '/part-5', redirect: '/quantities/part-5' },
-  { path: '/part-6', redirect: '/quantities/part-6' },
-  { path: '/part-7', redirect: '/quantities/part-7' },
-  { path: '/part-8', redirect: '/quantities/part-8' },
-  { path: '/part-9', redirect: '/quantities/part-9' },
-  { path: '/part-10', redirect: '/quantities/part-10' },
-  { path: '/part-11', redirect: '/quantities' },
-  { path: '/part-12', redirect: '/quantities/part-12' },
-  { path: '/part-13', redirect: '/quantities/part-13' },
 ]
 
 const router = createRouter({

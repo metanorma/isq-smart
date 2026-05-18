@@ -56,46 +56,11 @@ const Urn = {
 }
 
 export const partUrn = Urn.part
-export const partUrnFr = Urn.partBilingual
 export const entryUrn = Urn.entry
-export const entryUrnFr = (entry: Entry, partKey: string, edition: string) =>
-  `${Urn.partBilingual(partKey, edition)}:term:${entry.num}`
 
 // ═══════════════════════════════════════════════════════════════
 // JSON-LD context — UnitsML vocabulary
 // ═══════════════════════════════════════════════════════════════
-
-export const UNITSML_CONTEXT = {
-  '@context': {
-    '@vocab': 'https://unitsml.org/ns/',
-    iso: 'https://iso80000.org/ns/',
-    id: '@id', type: '@type',
-    schema_version: 'schema_version',
-    identifiers: { '@id': 'identifiers', '@container': '@set' },
-    names: { '@id': 'names', '@container': '@set' },
-    symbols: { '@id': 'symbols', '@container': '@set' },
-    value: 'value', lang: 'lang', short: 'short', root: 'root',
-    quantity_type: 'quantity_type', dimensionless: 'dimensionless',
-    scale_reference: 'scale_reference',
-    unit_system_reference: { '@id': 'unit_system_reference', '@container': '@set' },
-    dimension_reference: 'dimension_reference',
-    quantity_references: { '@id': 'quantity_references', '@container': '@set' },
-    root_units: { '@id': 'root_units', '@container': '@set' },
-    power: 'power', base: 'base', unit_reference: 'unit_reference',
-    prefix_reference: 'prefix_reference',
-    references: { '@id': 'references', '@container': '@set' },
-    latex: 'latex', unicode: 'unicode', ascii: 'ascii', html: 'html', mathml: 'mathml',
-    uri: { '@id': 'uri', '@type': '@id' }, authority: 'authority',
-    properties: 'properties', continuous: 'continuous', ordered: 'ordered',
-    logarithmic: 'logarithmic', interval: 'interval', ratio: 'ratio',
-    length: 'length', mass: 'mass', time: 'time',
-    electric_current: 'electric_current',
-    thermodynamic_temperature: 'thermodynamic_temperature',
-    amount_of_substance: 'amount_of_substance',
-    luminous_intensity: 'luminous_intensity',
-    plane_angle: 'plane_angle', symbol: 'symbol', acceptable: 'acceptable',
-  },
-} as const
 
 // ═══════════════════════════════════════════════════════════════
 // JSON-LD entry serialization
@@ -157,22 +122,6 @@ function serializeEntry(entry: Entry, partKey: string, edition: string): Record<
 // ═══════════════════════════════════════════════════════════════
 // Public JSON-LD generators
 // ═══════════════════════════════════════════════════════════════
-
-export function generatePartJsonLd(meta: PartMeta, edition: string, entries: Entry[]) {
-  return {
-    '@context': '/ns/unitsml.jsonld',
-    '@type': 'iso:Part',
-    '@id': `https://iso80000.org/part/${meta.partKey}/${edition}`,
-    'iso:urn': Urn.part(meta.partKey, edition),
-    'iso:part': meta.partKey,
-    'iso:domain': meta.domain,
-    'iso:edition': edition,
-    'iso:title': meta.title,
-    'iso:description': meta.description,
-    'iso:entryCount': entries.length,
-    'iso:entries': { '@list': entries.map(e => serializeEntry(e, meta.partKey, edition)) },
-  }
-}
 
 export function generateEntryJsonLd(entry: Entry, meta: PartMeta, edition: string) {
   const base = serializeEntry(entry, meta.partKey, edition)
