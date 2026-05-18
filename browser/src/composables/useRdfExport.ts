@@ -34,7 +34,7 @@ function localFor(qname: string): string {
 }
 
 function nsUri(prefix: string): string {
-  return ontologyPrefixes.find(p => p.prefix === prefix)?.uri || ''
+  return ontologyPrefixes.find((p: { prefix: string }) => p.prefix === prefix)?.uri || ''
 }
 
 export function toTurtle(entity: Entity): string {

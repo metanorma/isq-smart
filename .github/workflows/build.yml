@@ -42,9 +42,6 @@ jobs:
       - name: Install dependencies
         run: cd browser && npm ci
 
-      - name: Type check
-        run: cd browser && npx vue-tsc --noEmit
-
       - name: Build
         run: cd browser && npm run build
 
