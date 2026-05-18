@@ -18,7 +18,7 @@ jobs:
         with:
           repository: metanorma/iso-iec-80000
           path: iso-iec-80000
-          token: ${{ secrets.LUTAML_CI_PAT_TOKEN }}
+          token: ${{ secrets.METANORMA_CI_PAT_TOKEN }}
 
       - name: Checkout UnitsDB
         uses: actions/checkout@v4
