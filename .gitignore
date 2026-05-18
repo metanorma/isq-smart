@@ -4,9 +4,9 @@ browser/dist/
 browser/src/data/generated/
 
 # Data repos (cloned or symlinked for local dev, checked out in CI)
-iso-iec-80000/
-unitsdb/
-sdu-smart/
+iso-iec-80000
+unitsdb
+sdu-smart
 
 # OS
 .DS_Store
