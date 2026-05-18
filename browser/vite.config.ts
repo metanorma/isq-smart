@@ -114,16 +114,19 @@ interface ParsedClause {
   provisionCount: number
 }
 
-// ── Data source paths ──
-const isoIec80000Dir = resolve(__dirname, '../../iso-iec-80000')
-const unitsmlDir = resolve(__dirname, '../../../unitsml/unitsdb')
-const referenceDocsDir = resolve(__dirname, '../reference-docs')
+// ── Data source paths (env-var configurable, defaults to subdirectories of repo root) ──
+//   For CI: repos are checked out as workspace subdirectories (GHA can't go above workspace)
+//   For local dev: clone or symlink as subdirectories, or set env vars to sibling paths
+const repoRoot = resolve(__dirname, '..')
+const isoIec80000Dir = resolve(repoRoot, process.env.ISO_80000_DIR || 'iso-iec-80000')
+const unitsdbDir = resolve(repoRoot, process.env.UNITSDB_DIR || 'unitsdb')
+const sduSmartDir = resolve(repoRoot, process.env.SDU_SMART_DIR || 'sdu-smart')
 
 const datasetDir = resolve(isoIec80000Dir, 'sources/dataset')
 const sourcesDir = resolve(isoIec80000Dir, 'sources')
 const generatedDir = resolve(__dirname, 'src/data/generated')
 const ontologySrcDir = resolve(__dirname, 'public/ontologies')
-const ontologyRefDir = resolve(referenceDocsDir, 'smartsdu-information-model-share-c6362d946900/information_model')
+const ontologyRefDir = resolve(sduSmartDir, 'reference-docs/smartsdu-information-model-share-c6362d946900/information_model')
 
 const PART_TITLES: Record<string, string> = {
   '1': 'General', '2': 'Mathematics', '3': 'Space and time',
@@ -545,7 +548,7 @@ function yamlDataPlugin(): Plugin {
     for (const u of isoUnits) routes.add(`/units/${u.slug}`)
 
     // ── Enrich units with UnitsML identifiers ──
-    const unitsmlUnitsPath = resolve(unitsmlDir, 'units.yaml')
+    const unitsmlUnitsPath = resolve(unitsdbDir, 'units.yaml')
     if (existsSync(unitsmlUnitsPath)) {
       const rawUnitsmlUnits = (yaml.load(readFileSync(unitsmlUnitsPath, 'utf-8')) as any).units as any[]
       const unitsByNameKey = new Map<string, any>()
@@ -653,8 +656,8 @@ function yamlDataPlugin(): Plugin {
     }
 
     let physicalDimensions: any[] = []
-    const unitsmlDimsPath = resolve(unitsmlDir, 'dimensions.yaml')
-    const unitsmlQuantitiesPath = resolve(unitsmlDir, 'quantities.yaml')
+    const unitsmlDimsPath = resolve(unitsdbDir, 'dimensions.yaml')
+    const unitsmlQuantitiesPath = resolve(unitsdbDir, 'quantities.yaml')
 
     if (existsSync(unitsmlDimsPath) && existsSync(unitsmlQuantitiesPath)) {
       const rawDims = (yaml.load(readFileSync(unitsmlDimsPath, 'utf-8')) as any).dimensions as UnitsmlDimension[]

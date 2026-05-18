@@ -3,10 +3,10 @@ browser/node_modules/
 browser/dist/
 browser/src/data/generated/
 
-# Ruby (all gems)
-**/vendor/
-**/*.gem
-**/.bundle/
+# Data repos (cloned or symlinked for local dev, checked out in CI)
+iso-iec-80000/
+unitsdb/
+sdu-smart/
 
 # OS
 .DS_Store
