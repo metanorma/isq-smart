@@ -173,11 +173,11 @@ const propertyTable = computed(() => {
         <router-link
           v-if="entryClassEntity"
           :to="`/ontology/${entryClassEntity.slug}`"
-          class="px-2 py-0.5 rounded bg-brand-50 text-brand-700 border border-brand-100/60 hover:bg-brand-100 transition-colors"
+          class="px-2 py-0.5 rounded bg-brand-50 dark:bg-brand-950/40 text-brand-700 dark:text-brand-400 border border-brand-100/60 dark:border-brand-800/40 hover:bg-brand-100 dark:hover:bg-brand-900/50 transition-colors"
         >{{ entryClassQname }}</router-link>
         <router-link
           to="/ontology/smart-TermEntry"
-          class="px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-100/60 hover:bg-emerald-100 transition-colors"
+          class="px-2 py-0.5 rounded bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400 border border-emerald-100/60 dark:border-emerald-800/40 hover:bg-emerald-100 dark:hover:bg-emerald-900/50 transition-colors"
         >smart:TermEntry</router-link>
       </div>
     </h2>
@@ -185,9 +185,9 @@ const propertyTable = computed(() => {
     <!-- Content -->
     <div class="space-y-4">
       <!-- Class hierarchy -->
-      <div class="rounded-xl border border-slate-200/60 bg-white overflow-hidden">
-        <div class="px-4 py-2.5 bg-slate-50/80 border-b border-slate-200/60">
-          <h3 class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.12em]">Class Hierarchy</h3>
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
+        <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60">
+          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Class Hierarchy</h3>
         </div>
         <div class="p-4">
           <div class="flex items-center gap-1.5 flex-wrap font-mono text-xs">
@@ -195,32 +195,32 @@ const propertyTable = computed(() => {
               <router-link
                 v-if="i < fullHierarchy.length - 1"
                 :to="`/ontology/${cls.slug}`"
-                class="text-brand-600 hover:underline"
+                class="text-brand-600 dark:text-brand-400 hover:underline"
               >{{ cls.qname }}</router-link>
-              <span v-else class="font-bold text-slate-900 px-1.5 py-0.5 rounded bg-brand-50 border border-brand-100/60">{{ cls.qname }}</span>
+              <span v-else class="font-bold text-slate-900 dark:text-slate-100 px-1.5 py-0.5 rounded bg-brand-50 dark:bg-brand-900/40 border border-brand-100/60 dark:border-brand-700/60">{{ cls.qname }}</span>
               <svg v-if="i < fullHierarchy.length - 1" class="w-3 h-3 text-slate-300 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             </template>
           </div>
-          <p v-if="entryClassEntity?.description" class="mt-2 text-xs text-slate-500 leading-relaxed">{{ entryClassEntity.description }}</p>
+          <p v-if="entryClassEntity?.description" class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{{ entryClassEntity.description }}</p>
         </div>
       </div>
 
       <!-- Instance URI -->
-      <div class="rounded-xl border border-slate-200/60 bg-white overflow-hidden">
-        <div class="px-4 py-2.5 bg-slate-50/80 border-b border-slate-200/60">
-          <h3 class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.12em]">Instance IRI</h3>
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
+        <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60">
+          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Instance IRI</h3>
         </div>
         <div class="p-4">
-          <code class="text-xs text-brand-700 bg-brand-50/50 px-2 py-1 rounded break-all">isoiec80000:{{ entry.id }}</code>
+          <code class="text-xs text-brand-700 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/30 px-2 py-1 rounded break-all">isoiec80000:{{ entry.id }}</code>
         </div>
       </div>
 
       <!-- Properties table -->
-      <div class="rounded-xl border border-slate-200/60 bg-white overflow-hidden">
-        <div class="px-4 py-2.5 bg-slate-50/80 border-b border-slate-200/60 flex items-center justify-between">
-          <h3 class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.12em]">Properties</h3>
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
+        <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60 flex items-center justify-between">
+          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Properties</h3>
           <div class="flex items-center gap-1.5">
-            <span v-for="shape in shapes" :key="shape.qname" class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 border border-purple-100/60">
+            <span v-for="shape in shapes" :key="shape.qname" class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 border border-purple-100/60 dark:border-purple-800/40">
               <router-link :to="`/ontology/${shape.slug}`" class="hover:underline" @click.stop>{{ shape.qname }}</router-link>
             </span>
           </div>
@@ -228,16 +228,16 @@ const propertyTable = computed(() => {
         <div class="overflow-x-auto">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-slate-50/50 border-b border-slate-200/60">
-                <th class="text-left px-4 py-2 font-semibold text-slate-500 w-48">Property</th>
-                <th class="text-left px-4 py-2 font-semibold text-slate-500">Value</th>
+              <tr class="bg-slate-50/50 dark:bg-dark-700/50 border-b border-slate-200/60 dark:border-dark-600/60">
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 dark:text-slate-400 w-48">Property</th>
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 dark:text-slate-400">Value</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="row in propertyTable" :key="row.path" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/30 transition-colors">
+              <tr v-for="row in propertyTable" :key="row.path" class="border-b border-slate-100/60 dark:border-dark-700/40 last:border-0 hover:bg-slate-50/30 dark:hover:bg-dark-700/30 transition-colors">
                 <td class="px-4 py-2">
-                  <router-link v-if="row.pathSlug" :to="`/ontology/${row.pathSlug}`" class="font-mono text-brand-600 hover:underline">{{ row.path }}</router-link>
-                  <span v-else class="font-mono text-slate-600">{{ row.path }}</span>
+                  <router-link v-if="row.pathSlug" :to="`/ontology/${row.pathSlug}`" class="font-mono text-brand-600 dark:text-brand-400 hover:underline">{{ row.path }}</router-link>
+                  <span v-else class="font-mono text-slate-600 dark:text-slate-400">{{ row.path }}</span>
                 </td>
                 <td class="px-4 py-2">
                   <div class="flex flex-wrap gap-1.5">
@@ -245,9 +245,9 @@ const propertyTable = computed(() => {
                       <router-link
                         v-if="v.link"
                         :to="v.link"
-                        class="px-1.5 py-0.5 rounded bg-slate-50 border border-slate-200/60 hover:border-brand-200 hover:text-brand-600 transition-colors"
+                        class="px-1.5 py-0.5 rounded bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
                       >{{ v.label }}</router-link>
-                      <span v-else class="text-slate-600">{{ v.label }}</span>
+                      <span v-else class="text-slate-600 dark:text-slate-400">{{ v.label }}</span>
                     </template>
                   </div>
                 </td>
@@ -258,9 +258,9 @@ const propertyTable = computed(() => {
       </div>
 
       <!-- Related entities -->
-      <div class="rounded-xl border border-slate-200/60 bg-white overflow-hidden">
-        <div class="px-4 py-2.5 bg-slate-50/80 border-b border-slate-200/60">
-          <h3 class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.12em]">Related Entities</h3>
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
+        <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60">
+          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Related Entities</h3>
         </div>
         <div class="p-4 flex flex-wrap gap-2">
           <!-- SHACL Shape -->
@@ -268,7 +268,7 @@ const propertyTable = computed(() => {
             v-for="shape in shapes"
             :key="shape.qname"
             :to="`/ontology/${shape.slug}`"
-            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-purple-300 bg-purple-100 text-purple-800 hover:bg-purple-200 transition-colors inline-flex items-center gap-1.5"
+            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-purple-300 dark:border-purple-700 bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/60 transition-colors inline-flex items-center gap-1.5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
             {{ shape.qname }}
@@ -277,7 +277,7 @@ const propertyTable = computed(() => {
           <router-link
             v-if="partIndividual"
             :to="`/ontology/${partIndividual.slug}`"
-            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-amber-300 bg-amber-100 text-amber-800 hover:bg-amber-200 transition-colors inline-flex items-center gap-1.5"
+            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-amber-300 dark:border-amber-700 bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 hover:bg-amber-200 dark:hover:bg-amber-900/60 transition-colors inline-flex items-center gap-1.5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span>
             {{ partIndividual.qname }}
@@ -286,7 +286,7 @@ const propertyTable = computed(() => {
           <router-link
             v-if="entry._tag === 'quantity'"
             to="/ontology/isoiec80000-Unit"
-            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-teal-300 bg-teal-100 text-teal-800 hover:bg-teal-200 transition-colors inline-flex items-center gap-1.5"
+            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-teal-300 dark:border-teal-700 bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-300 hover:bg-teal-200 dark:hover:bg-teal-900/60 transition-colors inline-flex items-center gap-1.5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span>
             isoiec80000:Unit
@@ -294,7 +294,7 @@ const propertyTable = computed(() => {
           <!-- TermEntry class -->
           <router-link
             to="/ontology/smart-TermEntry"
-            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-emerald-300 bg-emerald-100 text-emerald-800 hover:bg-emerald-200 transition-colors inline-flex items-center gap-1.5"
+            class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-emerald-300 dark:border-emerald-700 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/60 transition-colors inline-flex items-center gap-1.5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             smart:TermEntry

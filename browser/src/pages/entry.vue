@@ -123,7 +123,7 @@ function heroGlow() {
 }
 
 function defAccent() {
-  if (!meta.value) return { background: accentGradient({ accent: 'blue' } as any) }
+  if (!meta.value) return { background: accentGradient({ accent: 'blue', partKey: '0', domain: 'quantities', title: '', description: '', icon: '' }) }
   return { background: accentGradient(meta.value, 160) }
 }
 
@@ -366,7 +366,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
                 {{ unit.symbol?.join(' ') ?? '—' }}
               </div>
               <div class="min-w-0">
-                <div class="text-sm font-medium text-slate-800 group-hover/unit:text-brand-600 transition-colors">{{ showBoth() && (unit as any).fr ? `${(unit as any).en} / ${(unit as any).fr}` : ((unit as any)[activeLang()] ?? unit.en) }}</div>
+                <div class="text-sm font-medium text-slate-800 group-hover/unit:text-brand-600 transition-colors">{{ showBoth() && unit.fr ? `${unit.en} / ${unit.fr}` : (unit[activeLang()] ?? unit.en) }}</div>
                 <div class="text-xs text-slate-400 mt-0.5">
                   <span class="text-brand-500">View related quantities →</span>
                 </div>

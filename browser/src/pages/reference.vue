@@ -41,7 +41,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
   let mime: string
 
   if (format === 'turtle') {
-    content = jsonLdToTurtle(context as any)
+    content = jsonLdToTurtle(context as Record<string, unknown>)
     filename = 'iso80000-entries.ttl'
     mime = 'text/turtle'
   } else {
