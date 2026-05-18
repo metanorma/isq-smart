@@ -28,26 +28,46 @@ JavaScript bundles at build time from YAML and Turtle sources.
 
 == Quick start
 
+.Prerequisites
+* Node.js 22+
+* Git
+
+. Clone this repo:
++
 [source,bash]
 ----
+git clone https://github.com/metanorma/isq-smart.git
 cd isq-smart
-
-# Clone data repos (needed at build time)
-git clone https://github.com/metanorma/iso-iec-80000.git
-git clone https://github.com/unitsml/unitsdb.git
-git clone https://github.com/metanorma/sdu-smart.git
-
-# Start dev server
-cd browser
-npm install
-npm run dev          # → http://localhost:5173
 ----
 
-Data repo paths default to subdirectories of the repo root. Override with env vars:
+. Clone the three data repos into the repo root:
++
+[source,bash]
+----
+git clone https://github.com/metanorma/iso-iec-80000.git    # YAML source data (private repo)
+git clone https://github.com/unitsml/unitsdb.git             # UnitsML units/dimensions
+git clone https://github.com/metanorma/sdu-smart.git         # SmartSDU TTL (ontology browser)
+----
++
+[NOTE]
+====
+`metanorma/iso-iec-80000` is a private repo — you need access to the Metanorma organization.
 
+If you keep data repos elsewhere, set env vars to point to them:
+====
++
 [source,bash]
 ----
 ISO_80000_DIR=../iso-iec-80000 UNITSDB_DIR=../unitsdb SDU_SMART_DIR=../sdu-smart npm run dev
+----
+
+. Install and run:
++
+[source,bash]
+----
+cd browser
+npm install
+npm run dev          # → http://localhost:5173
 ----
 
 == Architecture
@@ -62,7 +82,7 @@ Three GitHub repositories provide raw data:
 |===
 | Repository | Default path | Used for
 
-| https://github.com/metanorma/iso-iec-80000[`iso-iec-80000`]
+| https://github.com/metanorma/iso-iec-80000[`iso-iec-80000`] (private)
 | `iso-iec-80000/`
 | YAML datasets: quantity entries, math notation, designations, definitions, units
 
@@ -283,7 +303,7 @@ Entity (sdu-smart gem)
 | Start Vite dev server with HMR
 
 | `cd browser && npm run build`
-| Type-check + production build to `dist/`
+| Production build to `dist/`
 
 | `bin/check`
 | Frontend type-check
@@ -299,11 +319,6 @@ Configure the host to redirect all paths to `index.html` for client-side routing
 The app uses `createWebHistory()` (HTML5 history mode).
 ====
 
-=== Netlify
-
-* **Build command**: `cd browser && npm install && npm run build`
-* **Publish directory**: `browser/dist`
-
 === GitHub Pages
 
 Push `browser/dist/` contents to the `gh-pages` branch.
@@ -316,6 +331,5 @@ The GHA workflow (`.github/workflows/build.yml`) runs on push/PR to `main`:
 . Checkouts the three data repos as workspace subdirectories:
   `iso-iec-80000`, `unitsdb`, `sdu-smart`
 . Installs Node dependencies
-. Runs `vue-tsc --noEmit` (type check)
 . Runs `vite build` (production build)
 . Uploads `dist/` as an artifact
