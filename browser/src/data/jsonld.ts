@@ -47,7 +47,7 @@ const Urn = {
     return `urn:iso:std:iso:80000:-${basePart(partKey)}:ed-${edNum}:en,fr`
   },
 
-  entry(entry: Entry, partKey: string, edition: string): string {
+  entry(entry: { num: string }, partKey: string, edition: string): string {
     if (isIecPart(partKey)) {
       return `${Urn.part(partKey, edition)}${entry.num}`
     }

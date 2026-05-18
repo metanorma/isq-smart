@@ -195,10 +195,10 @@ const marqueeItems = computed(() => {
           v-for="r in recent.slice(0, 8)"
           :key="r.id"
           :to="r.href"
-          class="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200/60 bg-white hover:border-brand-200 hover:shadow-sm transition-all text-sm"
+          class="group flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all text-sm"
         >
           <span class="font-mono text-[11px] text-brand-600 bg-brand-50 px-1.5 py-0.5 rounded">{{ r.num }}</span>
-          <span class="text-slate-600 group-hover:text-brand-600 transition-colors">{{ r.name }}</span>
+          <span class="text-slate-600 dark:text-slate-300 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ r.name }}</span>
         </router-link>
       </div>
     </section>
@@ -209,35 +209,35 @@ const marqueeItems = computed(() => {
         <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
           <div>
             <div class="flex items-center gap-2 mb-3">
-              <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-brand-600">
+              <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
               </div>
-              <h3 class="text-sm font-bold text-slate-900 heading-serif">What is it?</h3>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">What is it?</h3>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              ISO 80000 &amp; IEC 80000 are the international standards that define <strong class="text-slate-800">quantities</strong>, <strong class="text-slate-800">units of measurement</strong>, and <strong class="text-slate-800">mathematical notation</strong> used across science, engineering, and commerce worldwide.
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              ISO 80000 &amp; IEC 80000 are the international standards that define <strong class="text-slate-800 dark:text-slate-100">quantities</strong>, <strong class="text-slate-800 dark:text-slate-100">units of measurement</strong>, and <strong class="text-slate-800 dark:text-slate-100">mathematical notation</strong> used across science, engineering, and commerce worldwide.
             </p>
           </div>
           <div>
             <div class="flex items-center gap-2 mb-3">
-              <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-brand-600">
+              <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
               </div>
-              <h3 class="text-sm font-bold text-slate-900 heading-serif">How to use</h3>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">How to use</h3>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Browse by domain or part, search across all entries with <kbd class="text-[10px] bg-slate-200 px-1 py-0.5 rounded font-mono">/</kbd>, navigate entries with arrow keys. Every entry has exportable citations and linked data.
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Browse by domain or part, search across all entries with <kbd class="text-[10px] bg-slate-200 dark:bg-dark-700 px-1 py-0.5 rounded font-mono">/</kbd>, navigate entries with arrow keys. Every entry has exportable citations and linked data.
             </p>
           </div>
           <div>
             <div class="flex items-center gap-2 mb-3">
-              <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-brand-600">
+              <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
               </div>
-              <h3 class="text-sm font-bold text-slate-900 heading-serif">Linked data</h3>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">Linked data</h3>
             </div>
-            <p class="text-sm text-slate-600 leading-relaxed">
-              Each entry includes <strong class="text-slate-800">JSON-LD</strong> structured data, RFC&nbsp;5141 URN identifiers, and machine-readable exports in BibTeX, RIS, and RDF&nbsp;Turtle formats.
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+              Each entry includes <strong class="text-slate-800 dark:text-slate-100">JSON-LD</strong> structured data, RFC&nbsp;5141 URN identifiers, and machine-readable exports in BibTeX, RIS, and RDF&nbsp;Turtle formats.
             </p>
           </div>
         </div>
@@ -251,7 +251,7 @@ const marqueeItems = computed(() => {
           v-for="d in domains"
           :key="d.key"
           :to="d.path"
-          class="card-lift group block rounded-2xl border border-slate-200/80 bg-white overflow-hidden relative"
+          class="card-lift group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 overflow-hidden relative"
         >
           <div class="h-1 bg-gradient-to-r" :class="d.key === 'quantities' ? 'from-brand-500 to-brand-600' : 'from-violet-500 to-violet-600'" />
           <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" :class="d.key === 'quantities' ? 'bg-gradient-to-br from-brand-50/20 to-transparent' : 'bg-gradient-to-br from-violet-50/20 to-transparent'" />
@@ -259,12 +259,12 @@ const marqueeItems = computed(() => {
             <div class="flex items-center gap-4">
               <div class="text-3xl">{{ d.icon }}</div>
               <div class="min-w-0">
-                <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors heading-serif">{{ d.label }}</h3>
-                <p class="mt-1 text-xs text-slate-500 leading-relaxed line-clamp-2">{{ d.description }}</p>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">{{ d.label }}</h3>
+                <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">{{ d.description }}</p>
                 <div class="mt-2 flex items-center gap-3 text-xs">
-                  <span class="text-slate-600 font-semibold">{{ d.key === 'quantities' ? parts.length : mathParts.length }} parts</span>
+                  <span class="text-slate-600 dark:text-slate-300 font-semibold">{{ d.key === 'quantities' ? parts.length : mathParts.length }} parts</span>
                   <span class="text-slate-300">&middot;</span>
-                  <span class="text-slate-600 font-semibold tabular-nums">{{ (d.key === 'quantities' ? quantitiesCount : mathCount).toLocaleString() }} entries</span>
+                  <span class="text-slate-600 dark:text-slate-300 font-semibold tabular-nums">{{ (d.key === 'quantities' ? quantitiesCount : mathCount).toLocaleString() }} entries</span>
                 </div>
               </div>
             </div>
@@ -276,8 +276,8 @@ const marqueeItems = computed(() => {
     <!-- Quantities distribution -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 scroll-reveal">
       <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-slate-900 tracking-tight heading-serif">Entry Distribution</h2>
-        <span class="text-xs text-slate-400 tabular-nums">{{ quantitiesCount.toLocaleString() }} total</span>
+        <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Entry Distribution</h2>
+        <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ quantitiesCount.toLocaleString() }} total</span>
       </div>
       <div class="space-y-1.5">
         <router-link
@@ -308,7 +308,7 @@ const marqueeItems = computed(() => {
               >{{ partEntryCount(part.partKey) }}</span>
             </div>
           </div>
-          <span class="text-xs text-slate-400 truncate max-w-[140px] hidden sm:block group-hover:text-slate-600 transition-colors">{{ part.title }}</span>
+          <span class="text-xs text-slate-400 dark:text-slate-500 truncate max-w-[140px] hidden sm:block group-hover:text-slate-600 transition-colors">{{ part.title }}</span>
         </router-link>
       </div>
     </section>
@@ -317,8 +317,8 @@ const marqueeItems = computed(() => {
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 scroll-reveal">
       <div class="flex items-center justify-between mb-4">
         <div>
-          <h2 class="text-xl font-bold text-slate-900 tracking-tight heading-serif">Quantities &amp; Units</h2>
-          <p class="mt-0.5 text-slate-500 text-xs">Parts 3–13 — physical quantities and their measurement units</p>
+          <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Quantities &amp; Units</h2>
+          <p class="mt-0.5 text-slate-500 dark:text-slate-400 text-xs">Parts 3–13 — physical quantities and their measurement units</p>
         </div>
         <router-link to="/quantities" class="hidden sm:flex items-center gap-1.5 text-xs text-brand-600 hover:text-brand-700 font-medium transition-colors">
           Browse all
@@ -330,15 +330,15 @@ const marqueeItems = computed(() => {
           v-for="part in mainQtyParts"
           :key="part.partKey"
           :to="partUrl(part.partKey)"
-          class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-slate-200/60 bg-white hover:border-brand-200 hover:shadow-sm transition-all"
+          class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
         >
           <span class="text-base flex-shrink-0">{{ part.icon }}</span>
           <div class="min-w-0">
             <div class="flex items-center gap-1">
-              <span class="text-xs font-semibold text-slate-800 group-hover:text-brand-600 transition-colors">{{ part.partKey }}</span>
+              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ part.partKey }}</span>
               <span v-if="isBilingual(part.partKey)" class="text-[8px] font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-1 py-px rounded leading-none">FR</span>
             </div>
-            <div class="text-[10px] text-slate-500 truncate leading-tight">{{ part.title }}</div>
+            <div class="text-[10px] text-slate-500 dark:text-slate-400 truncate leading-tight">{{ part.title }}</div>
           </div>
         </router-link>
       </div>
@@ -347,7 +347,7 @@ const marqueeItems = computed(() => {
     <!-- Math parts -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
       <div class="flex items-center gap-2 mb-4">
-        <h2 class="text-xl font-bold text-slate-900 tracking-tight heading-serif">Mathematical Notation</h2>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Mathematical Notation</h2>
         <span class="text-xs text-slate-400 tabular-nums">{{ mathParts.length }} parts</span>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
@@ -355,12 +355,12 @@ const marqueeItems = computed(() => {
           v-for="part in mathParts"
           :key="part.partKey"
           :to="partUrl(part.partKey)"
-          class="group flex flex-col px-3 py-2.5 rounded-lg border border-slate-200/60 bg-white hover:border-violet-200 hover:shadow-sm transition-all text-center"
+          class="group flex flex-col px-3 py-2.5 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-violet-200 dark:hover:border-violet-700 hover:shadow-sm transition-all text-center"
         >
-          <div class="text-sm font-semibold text-slate-900 group-hover:text-violet-600 transition-colors">
+          <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
             {{ part.partKey }}
           </div>
-          <div class="text-[11px] text-slate-500 mt-0.5 truncate">{{ part.title }}</div>
+          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">{{ part.title }}</div>
         </router-link>
       </div>
     </section>
@@ -368,14 +368,14 @@ const marqueeItems = computed(() => {
     <!-- Semantic Layer -->
     <section class="border-t border-slate-200/50 dark:border-dark-600/50 bg-slate-50/30 dark:bg-dark-800/30">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="text-lg font-bold text-slate-900 tracking-tight heading-serif mb-6">Semantic Layer</h2>
+        <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">Semantic Layer</h2>
         <div class="grid sm:grid-cols-2 gap-6">
-          <router-link to="/documents" class="group block rounded-2xl border border-slate-200/80 bg-white p-6 hover:border-brand-200 hover:shadow-sm transition-all">
+          <router-link to="/documents" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-iec-100 flex items-center justify-center text-iec-600 text-sm font-bold">{{ totalDocs }}</div>
-              <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors heading-serif">Documents</h3>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Documents</h3>
             </div>
-            <p class="text-sm text-slate-500">ISO &amp; IEC 80000 parts with clauses, terms, and document structure.</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">ISO &amp; IEC 80000 parts with clauses, terms, and document structure.</p>
             <div class="mt-3 flex flex-wrap gap-2">
               <div v-for="doc in publicationDocuments.slice(0, 4)" :key="doc.id" class="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600">
                 {{ doc.partKey }}
@@ -384,12 +384,12 @@ const marqueeItems = computed(() => {
             </div>
           </router-link>
 
-          <router-link to="/ontology" class="group block rounded-2xl border border-slate-200/80 bg-white p-6 hover:border-brand-200 hover:shadow-sm transition-all">
+          <router-link to="/ontology" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-brand-600 text-sm">OWL</div>
-              <h3 class="text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors heading-serif">Ontology</h3>
+              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Ontology</h3>
             </div>
-            <p class="text-sm text-slate-500">Classes, properties, SHACL shapes, and SKOS concepts for ISO &amp; IEC 80000 quantities, units, and mathematical notation.</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">Classes, properties, SHACL shapes, and SKOS concepts for ISO &amp; IEC 80000 quantities, units, and mathematical notation.</p>
           </router-link>
         </div>
       </div>

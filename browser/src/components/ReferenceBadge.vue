@@ -14,7 +14,7 @@ const props = defineProps<{
 
 const urn = computed(() => {
   if (!props.edition) return ''
-  if (props.entryNum) return entryUrn({ num: props.entryNum } as any, props.part, props.edition)
+  if (props.entryNum) return entryUrn({ num: props.entryNum }, props.part, props.edition)
   return partUrn(props.part, props.edition)
 })
 
