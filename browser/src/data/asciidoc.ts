@@ -8,21 +8,6 @@
 const BLOCK_STEM = /\[stem%unnumbered\]\n\+{4}\n([\s\S]*?)\n\+{4}/g
 const INLINE_STEM = /stem:\[([^\]]+)\]/g
 const ANY_XREF = /<<([^>]+)>>/g
-
-/** Extract all math expressions (inline + block) from text for build-time rendering. */
-export function collectMathExpressions(text: string): string[] {
-  const exprs: string[] = []
-
-  let m: RegExpExecArray | null
-  const blockRe = new RegExp(BLOCK_STEM.source, BLOCK_STEM.flags)
-  while ((m = blockRe.exec(text)) !== null) exprs.push(m[1].trim())
-
-  const inlineRe = new RegExp(INLINE_STEM.source, INLINE_STEM.flags)
-  while ((m = inlineRe.exec(text)) !== null) exprs.push(m[1])
-
-  return exprs
-}
-
 /** Render Metanorma AsciiDoc text to HTML. */
 export function render(text: string, mathCache: Record<string, string>, xrefs?: Record<string, { href?: string; name: string }>): string {
   if (!text) return ''

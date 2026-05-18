@@ -86,17 +86,6 @@ export interface ClauseData {
   parentId: string
 }
 
-export interface PublicationDocumentData {
-  id: string
-  partKey: string
-  title: string
-  edition: string
-  publicationType: string
-  publisher: string
-  clauseCount: number
-  termCount: number
-}
-
 export interface DocumentSection {
   id: string
   partKey: string

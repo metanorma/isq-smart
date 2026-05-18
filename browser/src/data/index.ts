@@ -103,10 +103,6 @@ export function getText(entry: Entry, lang: Lang | 'both'): string {
   return EntryModel.name(entry, lang)
 }
 
-export function processStem(text: string, cache: Record<string, string>): string {
-  return renderStem(text, cache)
-}
-
 export function getDefinition(entry: Entry, lang: Lang | 'both', cache: Record<string, string>): string {
   return EntryModel.definition(entry, lang, cache)
 }
@@ -140,7 +136,7 @@ function getSubKeys(partKey: string): string[] {
   return Object.keys(partSummaries).filter(k => k.startsWith(prefix))
 }
 
-export const DataLoader = {
+const DataLoader = {
   async loadPart(partKey: PartKey): Promise<PartData> {
     const directKey = `./generated/part-${partKey}.ts`
     const loader = partModules[directKey]
@@ -190,7 +186,7 @@ export async function loadPartEntries(partKey: PartKey): Promise<PartData> {
 // PartMetaStore — generated metadata access
 // ═══════════════════════════════════════════════════════════════
 
-export const PartMetaStore = {
+const PartMetaStore = {
   availableParts(): PartKey[] {
     return Object.keys(partSummaries).sort(sortPartKey)
   },
@@ -229,16 +225,8 @@ export function isBilingual(partKey: PartKey): boolean {
   return PartMetaStore.isBilingual(partKey)
 }
 
-export function getPartDomain(partKey: PartKey): Domain | undefined {
-  return PartMetaStore.domain(partKey)
-}
-
 export function getPartEditions(partKey: PartKey): string[] {
   return PartMetaStore.editions(partKey)
-}
-
-export async function getAllEntries(): Promise<Entry[]> {
-  return DataLoader.loadAll()
 }
 
 export { partSummaries }
