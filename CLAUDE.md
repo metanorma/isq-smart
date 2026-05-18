@@ -4,55 +4,47 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Purpose
 
-This monorepo produces the **ISQ Browser** — a static SPA for browsing ISO/IEC 80000 quantities, units, and mathematical notation. It also builds Ruby gems for the SmartSDU Core Ontology and the ISO/IEC 80000 domain.
+This repo produces the **ISQ Browser** — a static SPA for browsing ISO/IEC 80000 quantities, units, and mathematical notation.
+
+The Ruby gems live in their own repositories:
+- **sdu-smart** — https://github.com/metanorma/sdu-smart (`SduSmart` module)
+- **isq** — https://github.com/metanorma/isq (`Isq` module)
 
 ## Repository Layout
 
 | Directory | Description |
 |---|---|
-| `smart-sdu/` | Core SmartSDU ontology gem (`SmartSdu` module) — Entity, Provision, TermEntry, Taxonomy, RDF namespaces |
-| `sdu_smart/` | ISO/IEC 80000 domain gem (`SduSmart` module) — Quantity, Unit, MathConcept extending SmartSdu::TermEntry. Contains `rake export:all` for TTL/JSON-LD generation |
 | `browser/` | Vue.js 3 + TypeScript + Tailwind CSS v4 static site. Vite plugins generate data at build time |
-| `reference-docs/` | SmartSDU information model reference (OWL, SHACL, SKOS in Turtle) |
-| `bin/` | Dev scripts: `bin/check` (all specs + type-check), `bin/export` (rake export:all) |
+| `bin/` | Dev scripts: `bin/check` (type-check), `bin/dev`, `bin/build` |
 
 ## Commands
 
 ```bash
 cd browser && npm run dev          # Vite dev server → http://localhost:5173
 cd browser && npm run build        # vue-tsc + vite build
-cd smart-sdu && bundle exec rspec  # Core ontology specs
-cd sdu_smart && bundle exec rspec  # Domain gem specs
-bin/check                          # All specs + frontend type-check
-bin/export                         # Generate TTL/JSON-LD exports
+bin/check                          # Frontend type-check
 ```
 
-Requires the `iso-iec-80000` sibling repo for YAML source data:
+## External Data Repos
+
+The browser reads raw data files from three GitHub repos at build time. Clone or symlink them inside this repo:
+
 ```bash
-cd .. && git clone https://github.com/metanorma/iso-iec-80000.git && cd sdu-smart/browser
+cd isq-smart
+git clone https://github.com/metanorma/iso-iec-80000.git    # YAML source data
+git clone https://github.com/unitsml/unitsdb.git             # UnitsML units/dimensions
+git clone https://github.com/metanorma/sdu-smart.git         # SmartSDU TTL (ontology browser)
 ```
 
-## Ruby Gem Architecture
+Paths are configurable via env vars (defaults assume these directories exist at repo root):
 
-### smart-sdu (core)
+| Env var | Default | Source |
+|---|---|---|
+| `ISO_80000_DIR` | `iso-iec-80000` | `metanorma/iso-iec-80000` |
+| `UNITSDB_DIR` | `unitsdb` | `unitsml/unitsdb` |
+| `SDU_SMART_DIR` | `sdu-smart` | `metanorma/sdu-smart` |
 
-Base classes inheriting from `Lutaml::Model::Serializable`:
-- `SmartSdu::Entity` → base
-- `SmartSdu::TermEntry` → entries in terminology (extended by sdu_smart)
-- `SmartSdu::Term` → skosxl label instances
-- `SmartSdu::PublicationDocument` → document metadata
-- `SmartSdu::Taxonomy` → SKOS concept instances (BindingnessType, TermFormType, etc.)
-
-### sdu_smart (domain)
-
-Extends core with ISO/IEC 80000-specific classes:
-- `SduSmart::Quantity` < `SmartSdu::TermEntry` — has identifier, pref_label, definition, note, has_unit
-- `SduSmart::Unit` < `SmartSdu::TermEntry` — has pref_label, notation
-- `SduSmart::MathConcept` < `SmartSdu::TermEntry` — has identifier, pref_label, definition, note
-
-RDF namespaces: `smart:` → core ontology, `isoiec80000:` → 80000 domain.
-
-Export task (`sdu_smart/lib/tasks/export.rake`) reads YAML from `iso-iec-80000/sources/dataset/` and writes TTL/JSON-LD to `browser/public/exports/`. Paths configurable via `ISQ_DATASET_DIR` and `ISQ_EXPORT_DIR` env vars.
+CI (GHA) checks out all three repos as workspace subdirectories automatically.
 
 ## Browser Architecture
 
@@ -60,10 +52,13 @@ Export task (`sdu_smart/lib/tasks/export.rake`) reads YAML from `iso-iec-80000/s
 - **Pages**: Lazy-loaded per-part data via Vue Router. Key pages: quantities listing, math notation, units browser, dimensions, ontology browser, documents
 - **Routing**: Uses `createWebHistory()` — host must redirect all paths to `index.html`
 
-### Reference Architecture
+### Data flow
 
-The ontology information model is in `reference-docs/smartsdu-information-model-share-c6362d946900/`. Core classes, taxonomy instances, SHACL constraints, and object properties are defined in Turtle files under `information_model/`.
+- YAML sources (`iso-iec-80000/sources/dataset/*.yaml`) → Vite `yaml-data` plugin → TypeScript modules
+- SmartSDU Turtle files (`sdu-smart/reference-docs/`) + ISO 80000 Turtle files (`public/ontologies/`) → Vite `ontology-data` plugin → ontology browser data
+- UnitsML YAML files (`unitsdb/*.yaml`) → Vite `yaml-data` plugin → units and dimensions pages
+- Vue Router lazy-loads per-part data on navigation
 
-The `lutaml-model` framework is at `/Users/mulgogi/src/lutaml/lutaml-model/` — supports serialization to JSON, XML, YAML, TOML, JSON-LD, and Turtle.
+### RDF exports
 
-Follow the `../sts-ruby/` pattern: `Lutaml::Model::Serializable` subclasses, `attribute` definitions, `xml do` mapping blocks, autoload pattern.
+The `rake export:all` task in the isq gem generates static RDF files (TTL/JSON-LD) served from `public/exports/`. These are **downloadable files only** — the browser does not consume them at build or runtime. JSON-LD/Turtle downloads on entry pages are generated client-side.
