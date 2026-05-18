@@ -26,7 +26,7 @@ const meta = computed<PartMeta | undefined>(() => {
 })
 const entryCount = computed(() => partEntryCount(props.part))
 const browseUrl = computed(() => {
-  const url = partUrl(props.part as any)
+  const url = partUrl(props.part)
   if (url !== '/') return url
   return meta.value?.domain === 'math' ? '/math' : '/quantities'
 })
