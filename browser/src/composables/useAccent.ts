@@ -32,7 +32,7 @@ function hexOpacity(opacity: number): string {
   return Math.round(opacity * 255).toString(16).padStart(2, '0')
 }
 
-export const AccentPalette = {
+const AccentPalette = {
   colors(part: PartMeta) {
     const p = resolve(part)
     return { from: p.from, to: p.to }
