@@ -138,16 +138,16 @@ function hl(text: string): string {
             v-for="part in parts"
             :key="part.partKey"
             :to="partUrl(part.partKey)"
-            class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white border border-slate-200/60 hover:border-brand-200 hover:shadow-sm transition-all"
+            class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
           >
             <span class="text-base">{{ part.icon }}</span>
             <div class="min-w-0">
               <div class="flex items-center gap-1">
-                <span class="text-xs font-semibold text-slate-800 group-hover:text-brand-600 transition-colors">{{ part.parentPart ? `§${part.partKey.split('-')[1]}` : part.partKey }}</span>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ part.parentPart ? `§${part.partKey.split('-')[1]}` : part.partKey }}</span>
                 <span v-if="isBilingual(part.partKey)" class="text-[8px] font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-1 py-px rounded leading-none">FR</span>
               </div>
-              <div class="text-[10px] text-slate-500 truncate">{{ part.title }}</div>
-              <div class="text-[9px] text-slate-400 tabular-nums">{{ getPartEntryCount(part.partKey) }} entries</div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400 truncate">{{ part.title }}</div>
+              <div class="text-[9px] text-slate-400 dark:text-slate-500 tabular-nums">{{ getPartEntryCount(part.partKey) }} entries</div>
             </div>
           </router-link>
         </div>
@@ -159,23 +159,23 @@ function hl(text: string): string {
           <div class="flex items-center gap-3 py-3">
             <div class="relative flex-1 min-w-[180px] max-w-md">
               <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <input v-model="searchQuery" type="text" placeholder="Search by name, symbol, unit..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 bg-slate-50/50 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 focus:bg-white transition-all" />
+              <input v-model="searchQuery" type="text" placeholder="Search by name, symbol, unit..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-slate-50/50 dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 focus:bg-white dark:focus:bg-dark-700 transition-all" />
             </div>
             <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0">
               <button
                 @click="selectedPart = ''"
                 class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all"
-                :class="!selectedPart ? 'bg-brand-600 text-white border-brand-500' : 'bg-white text-slate-500 border-slate-200 hover:border-brand-200'"
+                :class="!selectedPart ? 'bg-brand-600 text-white border-brand-500' : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700'"
               >All</button>
               <button
                 v-for="part in parts"
                 :key="part.partKey"
                 @click="selectedPart = part.partKey"
                 class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all"
-                :class="selectedPart === part.partKey ? 'bg-brand-600 text-white border-brand-500' : 'bg-white text-slate-500 border-slate-200 hover:border-brand-200'"
+                :class="selectedPart === part.partKey ? 'bg-brand-600 text-white border-brand-500' : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700'"
               >{{ part.parentPart ? `§${part.partKey.split('-')[1]}` : part.partKey }}</button>
             </div>
-            <button v-if="searchQuery || selectedPart" @click="showAll" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors" title="Clear filters">
+            <button v-if="searchQuery || selectedPart" @click="showAll" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:bg-dark-700 transition-colors" title="Clear filters">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
             </button>
             <span class="text-xs text-slate-400 tabular-nums ml-auto hidden sm:block">{{ filtered.length }} entries</span>
@@ -188,30 +188,30 @@ function hl(text: string): string {
         <!-- Notable entries -->
         <div v-if="isBrowsing && notableEntries.length" class="mb-8">
           <div class="flex items-center gap-2 mb-3">
-            <h3 class="text-xs font-bold text-slate-900 heading-serif">Notable entries</h3>
-            <div class="flex-1 h-px bg-slate-200/60" />
-            <span class="text-[10px] text-slate-400">{{ notableEntries.length }} highlighted</span>
+            <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 heading-serif">Notable entries</h3>
+            <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
+            <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ notableEntries.length }} highlighted</span>
           </div>
           <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
             <router-link
               v-for="item in notableEntries"
               :key="item.i"
               :to="entryUrl(item.p, item.i)"
-              class="group flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200/60 bg-white hover:border-brand-200 hover:shadow-sm transition-all"
+              class="group flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
             >
               <span class="font-mono text-[11px] font-semibold text-brand-700 bg-brand-50/80 px-2 py-0.5 rounded flex-shrink-0">{{ item.n }}</span>
               <div class="min-w-0">
-                <span class="text-sm font-medium text-slate-800 group-hover:text-brand-600 transition-colors truncate block">{{ item.t }}</span>
-                <span class="text-[10px] text-slate-400">{{ item.p }}<span v-if="item.u.length"> &middot; {{ item.u[0] }}</span></span>
+                <span class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate block">{{ item.t }}</span>
+                <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ item.p }}<span v-if="item.u.length"> &middot; {{ item.u[0] }}</span></span>
               </div>
             </router-link>
           </div>
         </div>
 
         <div v-if="isBrowsing" class="flex items-center gap-2 mb-3">
-          <h3 class="text-xs font-bold text-slate-900 heading-serif">All entries</h3>
-          <div class="flex-1 h-px bg-slate-200/60" />
-          <span class="text-[10px] text-slate-400 tabular-nums">{{ filtered.length }}</span>
+          <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 heading-serif">All entries</h3>
+          <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
+          <span class="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums">{{ filtered.length }}</span>
         </div>
 
         <!-- Empty state -->
@@ -226,13 +226,13 @@ function hl(text: string): string {
             v-for="item in visibleEntries"
             :key="item.i"
             :to="entryUrl(item.p, item.i)"
-            class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent hover:bg-white transition-colors"
+            class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent dark:border-transparent hover:bg-white dark:hover:bg-dark-800/80 transition-colors"
           >
             <div class="flex-shrink-0 w-16">
-              <span class="font-mono text-[11px] font-semibold text-brand-700 bg-brand-50/80 px-2 py-0.5 rounded" v-html="hl(item.n)" />
+              <span class="font-mono text-[11px] font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded" v-html="hl(item.n)" />
             </div>
             <div class="flex-1 min-w-0 flex items-center gap-3">
-              <span class="font-medium text-slate-800 text-sm group-hover:text-brand-600 transition-colors truncate" v-html="hl(item.t)" />
+              <span class="font-medium text-slate-800 dark:text-slate-200 text-sm group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate" v-html="hl(item.t)" />
               <template v-if="item.s.length">
                 <span class="text-slate-200 hidden sm:inline">|</span>
                 <span class="hidden sm:inline-flex items-center gap-1 text-sm text-slate-500">
@@ -256,7 +256,7 @@ function hl(text: string): string {
 
         <!-- Show more -->
         <div v-if="hasMore" class="mt-6 text-center">
-          <button @click="showCount += 60" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 bg-white text-slate-700 text-sm font-medium hover:border-brand-200 hover:text-brand-600 transition-all">
+          <button @click="showCount += 60" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-all">
             Show more
             <span class="text-xs text-slate-400">({{ filtered.length - showCount }} remaining)</span>
           </button>
@@ -265,7 +265,7 @@ function hl(text: string): string {
     </template>
 
     <div v-else class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
-      <h1 class="text-2xl font-bold text-slate-900 heading-serif">Domain not found</h1>
+      <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 heading-serif">Domain not found</h1>
       <router-link to="/" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
         Back to Home
       </router-link>
