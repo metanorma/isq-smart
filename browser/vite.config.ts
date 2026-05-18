@@ -128,6 +128,17 @@ const generatedDir = resolve(__dirname, 'src/data/generated')
 const ontologySrcDir = resolve(__dirname, 'public/ontologies')
 const ontologyRefDir = resolve(sduSmartDir, 'reference-docs/smartsdu-information-model-share-c6362d946900/information_model')
 
+const missingRepos: string[] = []
+if (!existsSync(isoIec80000Dir)) missingRepos.push('metanorma/iso-iec-80000')
+if (!existsSync(unitsdbDir)) missingRepos.push('unitsml/unitsdb')
+if (!existsSync(sduSmartDir)) missingRepos.push('metanorma/sdu-smart')
+if (missingRepos.length) {
+  console.error(`\n[isq-smart] Missing data repos. Clone them into the repo root:\n`)
+  for (const repo of missingRepos) console.error(`  git clone https://github.com/${repo}.git`)
+  console.error(`\n  Or set env vars: ISO_80000_DIR, UNITSDB_DIR, SDU_SMART_DIR\n`)
+  process.exit(1)
+}
+
 const PART_TITLES: Record<string, string> = {
   '1': 'General', '2': 'Mathematics', '3': 'Space and time',
   '4': 'Mechanics', '5': 'Thermodynamics', '6': 'Electromagnetism',

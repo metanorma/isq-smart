@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
+    "predev": "test -d node_modules || { echo 'Run npm install first'; exit 1; }",
     "dev": "vite",
     "build": "vite build",
     "build:check": "vite build && vue-tsc -b",
