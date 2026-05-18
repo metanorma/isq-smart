@@ -29,21 +29,21 @@ const hasChildren = computed(() => children.value.length > 0)
 const isExpanded = computed(() => props.expandedNodes.has(props.entity.qname))
 
 function badgeColor(e: Entity) {
-  if (e.ontology === 'smart') return 'bg-emerald-50 text-emerald-600'
-  if (e.ontology === 'isoiec80000') return 'bg-brand-50 text-brand-600'
-  return 'bg-slate-100 text-slate-600'
+  if (e.ontology === 'smart') return 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400'
+  if (e.ontology === 'isoiec80000') return 'bg-brand-50 dark:bg-brand-950/30 text-brand-600 dark:text-brand-400'
+  return 'bg-slate-100 dark:bg-dark-700 text-slate-600 dark:text-slate-400'
 }
 </script>
 
 <template>
   <div>
     <div class="flex items-center gap-1.5" :style="{ paddingLeft: `${depth * 1.25}rem` }">
-      <button v-if="hasChildren" @click="emit('toggle', entity.qname)" class="w-4 h-4 flex items-center justify-center text-slate-400 hover:text-slate-600 flex-shrink-0">
+      <button v-if="hasChildren" @click="emit('toggle', entity.qname)" class="w-4 h-4 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 flex-shrink-0">
         <span v-if="isExpanded">▼</span><span v-else>▶</span>
       </button>
-      <span v-else class="w-4 h-4 flex items-center justify-center text-slate-200 flex-shrink-0">●</span>
-      <span v-if="depth > 0" class="text-slate-300">└</span>
-      <router-link :to="`/ontology/${entity.slug}`" class="text-brand-600 hover:text-brand-700 hover:underline">{{ entity.label }}</router-link>
+      <span v-else class="w-4 h-4 flex items-center justify-center text-slate-200 dark:text-dark-600 flex-shrink-0">●</span>
+      <span v-if="depth > 0" class="text-slate-300 dark:text-dark-600">└</span>
+      <router-link :to="`/ontology/${entity.slug}`" class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 hover:underline">{{ entity.label }}</router-link>
       <span class="text-[9px] px-1.5 py-0.5 rounded flex-shrink-0" :class="badgeColor(entity)">{{ entity.ontology }}</span>
     </div>
     <template v-if="isExpanded">

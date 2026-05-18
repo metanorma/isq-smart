@@ -284,7 +284,7 @@ const marqueeItems = computed(() => {
           v-for="part in mainQtyParts"
           :key="part.partKey"
           :to="partUrl(part.partKey)"
-          class="group flex items-center gap-3 px-2 py-1.5 -mx-2 rounded-lg hover:bg-slate-50/80 transition-colors"
+          class="group flex items-center gap-3 px-2 py-1.5 -mx-2 rounded-lg hover:bg-slate-50/80 dark:hover:bg-dark-700/50 transition-colors"
         >
           <span class="w-7 text-right text-xs text-slate-400 font-medium group-hover:text-slate-600 transition-colors flex-shrink-0">{{ part.icon }}</span>
           <div class="flex-1 min-w-0">
@@ -348,7 +348,7 @@ const marqueeItems = computed(() => {
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
       <div class="flex items-center gap-2 mb-4">
         <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Mathematical Notation</h2>
-        <span class="text-xs text-slate-400 tabular-nums">{{ mathParts.length }} parts</span>
+        <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ mathParts.length }} parts</span>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
         <router-link
@@ -377,10 +377,10 @@ const marqueeItems = computed(() => {
             </div>
             <p class="text-sm text-slate-500 dark:text-slate-400">ISO &amp; IEC 80000 parts with clauses, terms, and document structure.</p>
             <div class="mt-3 flex flex-wrap gap-2">
-              <div v-for="doc in publicationDocuments.slice(0, 4)" :key="doc.id" class="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 text-slate-600">
+              <div v-for="doc in publicationDocuments.slice(0, 4)" :key="doc.id" class="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-600 dark:text-slate-400">
                 {{ doc.partKey }}
               </div>
-              <span v-if="publicationDocuments.length > 4" class="text-[10px] text-slate-400">+{{ publicationDocuments.length - 4 }}</span>
+              <span v-if="publicationDocuments.length > 4" class="text-[10px] text-slate-400 dark:text-slate-500">+{{ publicationDocuments.length - 4 }}</span>
             </div>
           </router-link>
 

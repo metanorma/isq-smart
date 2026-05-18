@@ -318,7 +318,7 @@ onMounted(() => {
       </div>
       <div class="relative max-w-xs flex-1" v-if="['classes', 'properties', 'az', 'shapes', 'individuals', 'skos'].includes(section)">
         <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-        <input v-model="filter" type="text" placeholder="Filter entities..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all" />
+        <input v-model="filter" type="text" placeholder="Filter entities..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all" />
       </div>
     </div>
 
@@ -327,15 +327,15 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'overview'" class="mt-8 space-y-6">
       <!-- Primary ontology card -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-2 mb-3">
           <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600">isoiec80000</span>
-          <h2 class="text-lg font-bold text-slate-900 heading-serif">{{ primaryOntology.title }}</h2>
+          <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">{{ primaryOntology.title }}</h2>
         </div>
         <div class="space-y-2 text-sm">
           <div>
             <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">URI</span>
-            <code class="block mt-0.5 text-xs text-slate-700 font-mono break-all">{{ primaryOntology.uri }}</code>
+            <code class="block mt-0.5 text-xs text-slate-700 dark:text-slate-300 font-mono break-all">{{ primaryOntology.uri }}</code>
           </div>
           <div>
             <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Description</span>
@@ -344,7 +344,7 @@ onMounted(() => {
           <div class="flex gap-6">
             <div>
               <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Version</span>
-              <code class="text-xs text-slate-700 font-mono">{{ primaryOntology.version }}</code>
+              <code class="text-xs text-slate-700 dark:text-slate-300 font-mono">{{ primaryOntology.version }}</code>
             </div>
             <div v-if="importedOntologies.length">
               <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Imports</span>
@@ -365,10 +365,10 @@ onMounted(() => {
           <div class="space-y-2">
             <router-link v-for="imp in importedOntologies" :key="imp.prefix"
               :to="`/ontology/${allEntities.find(e => e.type === 'ontology' && e.ontology === imp.prefix)?.slug}`"
-              class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 border border-slate-200/60 hover:bg-slate-100/80 transition-colors">
+              class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 hover:bg-slate-100/80 dark:hover:bg-dark-600 transition-colors">
               <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600">{{ imp.prefix }}</span>
               <div>
-                <span class="text-sm text-slate-700">{{ imp.title }}</span>
+                <span class="text-sm text-slate-700 dark:text-slate-200">{{ imp.title }}</span>
                 <span class="text-xs text-slate-400 ml-2">v{{ imp.version }}</span>
               </div>
               <span class="text-xs text-slate-400 ml-auto truncate max-w-xs">{{ imp.description }}</span>
@@ -378,10 +378,10 @@ onMounted(() => {
       </div>
 
       <!-- Metrics -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
-          <div v-for="(t, idx) in ['class', 'objectProperty', 'shape', 'concept']" :key="t" class="px-4 py-3 rounded-xl bg-slate-50 border border-slate-200/60 text-center">
-            <div class="text-2xl font-bold text-slate-900">{{ countBy(t, 'all') }}</div>
+          <div v-for="(t, idx) in ['class', 'objectProperty', 'shape', 'concept']" :key="t" class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 text-center">
+            <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ countBy(t, 'all') }}</div>
             <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">{{ typeMeta[t]?.label || t }}</div>
           </div>
         </div>
@@ -410,19 +410,19 @@ onMounted(() => {
       </div>
 
       <!-- Namespaces -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-4">Namespace Declarations</h3>
         <div class="overflow-x-auto rounded-lg border border-slate-200/60">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">PREFIX</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">URI</th>
               </tr>
             </thead>
             <tbody>
               <tr v-for="ns in ontologyPrefixes" :key="ns.prefix" class="border-b border-slate-100/60 last:border-0">
-                <td class="px-3 py-2"><span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">{{ ns.prefix || ':' }}</span></td>
+                <td class="px-3 py-2"><span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix || ':' }}</span></td>
                 <td class="px-3 py-2 font-mono text-slate-600 break-all">{{ ns.uri }}</td>
               </tr>
             </tbody>
@@ -431,8 +431,8 @@ onMounted(() => {
       </div>
 
       <!-- Imported / utilized vocabularies -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-        <h2 class="text-lg font-bold text-slate-900 heading-serif mb-1">Utilized Vocabularies</h2>
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif mb-1">Utilized Vocabularies</h2>
         <p class="text-sm text-slate-500 mb-4">Ontologies and vocabularies referenced by the ISO &amp; IEC 80000 domain ontology.</p>
         <div class="space-y-3">
           <!-- Imported ontologies -->
@@ -441,17 +441,17 @@ onMounted(() => {
             class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-emerald-50/40 border border-emerald-200/40 hover:bg-emerald-50/70 transition-colors">
             <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 flex-shrink-0 mt-0.5">{{ imp.prefix }}</span>
             <div class="min-w-0">
-              <div class="text-sm font-medium text-slate-800">{{ imp.title }}</div>
+              <div class="text-sm font-medium text-slate-800 dark:text-slate-200">{{ imp.title }}</div>
               <code class="text-[10px] text-slate-500 font-mono break-all">{{ imp.uri }}</code>
               <p class="text-xs text-slate-500 mt-1">{{ imp.description }}</p>
             </div>
           </router-link>
           <!-- External namespace groups (non-ontology, non-primary namespaces) -->
           <div v-for="ns in namespaceGroups.filter(g => !ontologyNamespaces.find(n => n.prefix === g.prefix))" :key="ns.prefix"
-            class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-slate-50 border border-slate-200/60">
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700 flex-shrink-0 mt-0.5 font-mono">{{ ns.prefix }}</span>
+            class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 flex-shrink-0 mt-0.5 font-mono">{{ ns.prefix }}</span>
             <div class="min-w-0">
-              <div class="text-sm font-medium text-slate-800">{{ ns.prefix }} ({{ ns.entities.length }} entities)</div>
+              <div class="text-sm font-medium text-slate-800 dark:text-slate-200">{{ ns.prefix }} ({{ ns.entities.length }} entities)</div>
               <code class="text-[10px] text-slate-500 font-mono break-all">{{ ns.uri }}</code>
             </div>
           </div>
@@ -459,7 +459,7 @@ onMounted(() => {
       </div>
 
       <!-- Class hierarchy tree (recursive expandable) -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center justify-between mb-4">
           <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Class Hierarchy Tree</h3>
           <div class="flex gap-2">
@@ -483,15 +483,15 @@ onMounted(() => {
     <!-- NAMESPACES                                                            -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'namespaces'" class="mt-8 space-y-4">
-      <div v-for="ns in namespaceGroups" :key="ns.prefix" class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div v-for="ns in namespaceGroups" :key="ns.prefix" class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 text-slate-700 font-mono">{{ ns.prefix }}</span>
+          <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix }}</span>
           <code class="text-xs text-slate-500 font-mono break-all">{{ ns.uri }}</code>
           <span class="ml-auto text-xs text-slate-400">{{ ns.entities.length }} entities</span>
         </div>
         <div class="flex flex-wrap gap-1.5">
           <router-link v-for="e in ns.entities" :key="e.qname" :to="`/ontology/${e.slug}`"
-            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 bg-slate-50/50 text-slate-600 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
             <span class="w-1.5 h-1.5 rounded-full" :class="typeMeta[e.type]?.colorDot || 'bg-slate-300'"></span>
             {{ e.label }}
           </router-link>
@@ -503,13 +503,13 @@ onMounted(() => {
     <!-- ENTITIES A-Z                                                          -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'az'" class="mt-8 space-y-6">
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-4">All Entities ({{ allEntities.length }})</h3>
         <div class="flex flex-wrap gap-1.5">
           <router-link v-for="e in [...allEntities].sort((a, b) => a.label.localeCompare(b.label))"
             :key="e.qname"
             :to="`/ontology/${e.slug}`"
-            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 bg-slate-50/50 text-slate-600 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
+            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
           >
             <span class="w-1.5 h-1.5 rounded-full" :class="typeMeta[e.type]?.colorDot || 'bg-slate-300'"></span>
             {{ e.label }}
@@ -522,10 +522,10 @@ onMounted(() => {
     <!-- CLASSES                                                               -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'classes'" class="mt-8 space-y-4">
-      <div class="rounded-2xl border border-slate-200/80 bg-white overflow-hidden">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 overflow-hidden">
         <table class="w-full text-sm">
           <thead>
-            <tr class="bg-slate-50/80 border-b border-slate-200/60">
+            <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
               <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Class</th>
               <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Description</th>
               <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Parent</th>
@@ -533,7 +533,7 @@ onMounted(() => {
             </tr>
           </thead>
           <tbody>
-            <tr v-for="c in classes" :key="c.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+            <tr v-for="c in classes" :key="c.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
               <td class="px-4 py-2">
                 <router-link :to="`/ontology/${c.slug}`" class="text-brand-600 hover:underline font-medium">{{ c.qname }}</router-link>
               </td>
@@ -556,12 +556,12 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'properties'" class="mt-8 space-y-4">
       <!-- Object properties -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-        <h3 class="text-sm font-bold text-slate-700 mb-3">Object Properties ({{ objProps.length }})</h3>
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">Object Properties ({{ objProps.length }})</h3>
         <div class="overflow-x-auto rounded-lg border border-slate-200/60">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Domain</th>
@@ -570,7 +570,7 @@ onMounted(() => {
               </tr>
             </thead>
             <tbody>
-              <tr v-for="p in objProps" :key="p.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+              <tr v-for="p in objProps" :key="p.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                 <td class="px-3 py-2"><router-link :to="`/ontology/${p.slug}`" class="text-green-700 hover:underline font-medium">{{ p.qname }}</router-link></td>
                 <td class="px-3 py-2 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
                 <td class="px-3 py-2">
@@ -595,12 +595,12 @@ onMounted(() => {
       </div>
 
       <!-- Datatype properties -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-        <h3 class="text-sm font-bold text-slate-700 mb-3">Datatype Properties ({{ dtProps.length }})</h3>
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">Datatype Properties ({{ dtProps.length }})</h3>
         <div class="overflow-x-auto rounded-lg border border-slate-200/60">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Domain</th>
@@ -608,7 +608,7 @@ onMounted(() => {
               </tr>
             </thead>
             <tbody>
-              <tr v-for="p in dtProps" :key="p.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+              <tr v-for="p in dtProps" :key="p.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                 <td class="px-3 py-2"><router-link :to="`/ontology/${p.slug}`" class="text-lime-700 hover:underline font-medium">{{ p.qname }}</router-link></td>
                 <td class="px-3 py-2 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
                 <td class="px-3 py-2">
@@ -626,11 +626,11 @@ onMounted(() => {
       </div>
 
       <!-- Annotation properties -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-        <h3 class="text-sm font-bold text-slate-700 mb-3">Annotation Properties ({{ annProps.length }})</h3>
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">Annotation Properties ({{ annProps.length }})</h3>
         <div class="flex flex-wrap gap-1.5">
           <router-link v-for="p in annProps" :key="p.qname" :to="`/ontology/${p.slug}`"
-            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 bg-slate-50/50 text-slate-600 hover:border-amber-200 hover:text-amber-600 transition-colors">
+            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors">
             {{ p.qname }}
           </router-link>
         </div>
@@ -641,23 +641,23 @@ onMounted(() => {
     <!-- SKOS                                                                  -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'skos'" class="mt-8 space-y-6">
-      <div v-for="scheme in conceptSchemes" :key="scheme.qname" class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div v-for="scheme in conceptSchemes" :key="scheme.qname" class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-2 mb-3">
           <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-600">Scheme</span>
-          <h3 class="text-sm font-bold text-slate-800">{{ scheme.label }}</h3>
+          <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200">{{ scheme.label }}</h3>
         </div>
         <code class="text-xs text-slate-500 block mb-3">{{ scheme.uri }}</code>
         <div class="overflow-x-auto rounded-lg border border-slate-200/60">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Concept</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Instance Of</th>
               </tr>
             </thead>
             <tbody>
-              <tr v-for="c in allEntities.filter(e => e.type === 'concept' && e.scheme === scheme.qname)" :key="c.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+              <tr v-for="c in allEntities.filter(e => e.type === 'concept' && e.scheme === scheme.qname)" :key="c.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                 <td class="px-3 py-2">
                   <router-link :to="`/ontology/${c.slug}`" class="text-teal-700 hover:underline font-medium">{{ c.label }}</router-link>
                   <code class="ml-1 text-[9px] text-slate-400">{{ c.qname }}</code>
@@ -680,7 +680,7 @@ onMounted(() => {
     <!-- SHAPES                                                                -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'shapes'" class="mt-8 space-y-4">
-      <div v-for="s in shapes" :key="s.qname" class="rounded-2xl border border-slate-200/80 bg-white p-6">
+      <div v-for="s in shapes" :key="s.qname" class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-2 mb-2">
           <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-purple-50 text-purple-600">Shape</span>
           <router-link :to="`/ontology/${s.slug}`" class="text-sm font-bold text-brand-600 hover:underline">{{ s.qname }}</router-link>
@@ -694,7 +694,7 @@ onMounted(() => {
         <div v-if="s.constraints?.length" class="overflow-x-auto rounded-lg border border-slate-200/60">
           <table class="w-full text-xs">
             <thead>
-              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
                 <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
                 <th class="text-center px-3 py-2 font-semibold text-slate-500">Min</th>
                 <th class="text-center px-3 py-2 font-semibold text-slate-500">Max</th>
@@ -727,17 +727,17 @@ onMounted(() => {
     <!-- INDIVIDUALS                                                           -->
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'individuals'" class="mt-8 space-y-4">
-      <div class="rounded-2xl border border-slate-200/80 bg-white overflow-hidden">
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 overflow-hidden">
         <table class="w-full text-sm">
           <thead>
-            <tr class="bg-slate-50/80 border-b border-slate-200/60">
+            <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
               <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Individual</th>
               <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Instance Of</th>
               <th class="text-center px-4 py-2 font-semibold text-slate-500 text-xs">Ontology</th>
             </tr>
           </thead>
           <tbody>
-            <tr v-for="ind in individuals" :key="ind.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50">
+            <tr v-for="ind in individuals" :key="ind.qname" class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
               <td class="px-4 py-2">
                 <router-link :to="`/ontology/${ind.slug}`" class="text-brand-600 hover:underline font-medium">{{ ind.label }}</router-link>
                 <code class="ml-1 text-[9px] text-slate-400">{{ ind.qname }}</code>
@@ -762,31 +762,31 @@ onMounted(() => {
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-if="section === 'statistics'" class="mt-8 space-y-6">
       <!-- Entity type bar chart -->
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-        <h3 class="text-sm font-bold text-slate-700 mb-4">Entity Distribution</h3>
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Entity Distribution</h3>
         <div class="h-64">
           <canvas ref="typeChartRef"></canvas>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-3">
-          <div v-for="(meta, type) in typeMeta" :key="type" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 border border-slate-200/60">
+          <div v-for="(meta, type) in typeMeta" :key="type" class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
             <span class="w-2.5 h-2.5 rounded-full flex-shrink-0" :class="meta.colorDot"></span>
-            <span class="text-xs text-slate-700">{{ meta.label }}</span>
-            <span class="ml-auto text-sm font-bold text-slate-900 tabular-nums">{{ allEntities.filter(e => e.type === type).length }}</span>
+            <span class="text-xs text-slate-700 dark:text-slate-300">{{ meta.label }}</span>
+            <span class="ml-auto text-sm font-bold text-slate-900 dark:text-slate-100 tabular-nums">{{ allEntities.filter(e => e.type === type).length }}</span>
           </div>
         </div>
       </div>
 
       <!-- Ontology breakdown doughnut -->
       <div class="grid sm:grid-cols-2 gap-6">
-        <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-          <h3 class="text-sm font-bold text-slate-700 mb-4">Ontology Breakdown</h3>
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Ontology Breakdown</h3>
           <div class="h-56">
             <canvas ref="ontoChartRef"></canvas>
           </div>
         </div>
 
-        <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-          <h3 class="text-sm font-bold text-slate-700 mb-4">Summary</h3>
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Summary</h3>
           <div class="space-y-3">
             <div v-for="onto in ontologyNamespaces" :key="onto.prefix"
               class="px-4 py-3 rounded-xl border"
@@ -794,19 +794,19 @@ onMounted(() => {
               <div class="text-2xl font-bold" :class="onto.color === 'emerald' ? 'text-emerald-700' : 'text-brand-700'">{{ allEntities.filter(e => e.ontology === onto.prefix).length }}</div>
               <div class="text-[10px] font-semibold uppercase tracking-wider mt-1" :class="onto.color === 'emerald' ? 'text-emerald-600' : 'text-brand-600'">{{ onto.title }}</div>
             </div>
-            <div class="px-4 py-3 rounded-xl bg-slate-50 border border-slate-200/60">
-              <div class="text-2xl font-bold text-slate-900">{{ allEntities.length }}</div>
+            <div class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ allEntities.length }}</div>
               <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Total Entities</div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="rounded-2xl border border-slate-200/80 bg-white p-6">
-        <h3 class="text-sm font-bold text-slate-700 mb-4">Namespaces Used ({{ ontologyPrefixes.length }})</h3>
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Namespaces Used ({{ ontologyPrefixes.length }})</h3>
         <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
-          <div v-for="ns in ontologyPrefixes" :key="ns.prefix" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 border border-slate-200/60">
-            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-200 text-slate-700 font-mono">{{ ns.prefix || ':' }}</span>
+          <div v-for="ns in ontologyPrefixes" :key="ns.prefix" class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix || ':' }}</span>
             <span class="text-xs text-slate-500 font-mono truncate">{{ ns.uri }}</span>
           </div>
         </div>
