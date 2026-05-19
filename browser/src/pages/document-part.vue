@@ -40,6 +40,7 @@ const publisherBadge = computed(() => {
 </script>
 
 <template>
+  <div>
   <div v-if="intro && meta">
     <!-- Hero -->
     <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-navy-950">
@@ -178,5 +179,6 @@ const publisherBadge = computed(() => {
     <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">Part Not Found</h1>
     <p class="text-slate-500 dark:text-slate-400 text-sm mb-6">No introduction is available for this part yet.</p>
     <router-link to="/about" class="text-brand-600 dark:text-brand-400 text-sm font-medium hover:text-brand-700 dark:hover:text-brand-300">Back to Documents</router-link>
+  </div>
   </div>
 </template>
