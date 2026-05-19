@@ -277,6 +277,7 @@ const parentOntologyEntity = computed(() => {
 </script>
 
 <template>
+  <div>
   <div v-if="!entity" class="p-8 text-center text-gray-500">
     <p class="text-xl">Entity not found</p>
     <p class="mt-2">No entity with slug "{{ slug }}"</p>
@@ -1015,5 +1016,6 @@ const parentOntologyEntity = computed(() => {
         <pre class="bg-slate-900 text-green-300 text-xs p-4 rounded-lg overflow-x-auto whitespace-pre-wrap"><code>{{ rdfFormat === 'turtle' ? turtleCode : jsonldCode }}</code></pre>
       </div>
     </template>
+  </div>
   </div>
 </template>
