@@ -250,6 +250,7 @@ onMounted(() => {
 </script>
 
 <template>
+  <div>
   <!-- Hero -->
   <section class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950">
     <div class="absolute inset-0 hero-pattern" />
@@ -814,4 +815,5 @@ onMounted(() => {
     </div>
 
   </section>
+  </div>
 </template>

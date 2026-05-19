@@ -57,6 +57,7 @@ const partGroups = computed<PartGroup[]>(() => {
 </script>
 
 <template>
+  <div>
   <div v-if="unit">
     <section class="relative overflow-hidden border-b border-slate-200/60 dark:border-dark-600/60 bg-gradient-to-b from-slate-50/80 dark:from-dark-900/80 to-white dark:to-dark-950">
       <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/[0.04] dark:bg-teal-500/[0.02] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4" />
@@ -139,5 +140,6 @@ const partGroups = computed<PartGroup[]>(() => {
     <router-link to="/units" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
       Back to Units
     </router-link>
+  </div>
   </div>
 </template>
