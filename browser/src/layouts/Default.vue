@@ -3,6 +3,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { useTheme } from '../composables/useTheme'
 import { openSearch } from '../composables/useSearch'
+import IsqLogo from '../components/IsqLogo.vue'
 import SiteFooter from '../components/SiteFooter.vue'
 import BackToTop from '../components/BackToTop.vue'
 import AppToast from '../components/AppToast.vue'
@@ -10,7 +11,7 @@ import GlobalSearch from '../components/GlobalSearch.vue'
 import SearchHint from '../components/SearchHint.vue'
 
 const route = useRoute()
-const { isDark, toggle } = useTheme()
+const { toggle } = useTheme()
 const mobileOpen = ref(false)
 const scrolled = ref(false)
 
@@ -49,9 +50,9 @@ function isActive(path: string): boolean {
         <div class="flex items-center h-14">
           <!-- Logo -->
           <router-link to="/" class="flex items-center gap-3 group">
-            <img src="/img/logo-isq.svg" alt="ISQ" class="h-8 w-auto rounded" />
-            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors hidden xl:inline tracking-tight">International System of Quantities</span>
-            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors xl:hidden tracking-tight">ISQ</span>
+            <IsqLogo class="h-8 w-auto" />
+            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors hidden min-[1200px]:inline tracking-tight">International System of Quantities</span>
+            <span class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors min-[1200px]:hidden tracking-tight">ISQ</span>
           </router-link>
 
           <!-- Right side (pinned right) -->
