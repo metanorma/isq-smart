@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getPartsByDomain } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
-
+import IsqLogo from '../components/IsqLogo.vue'
 const qtyParts = getPartsByDomain('quantities')
 const mathParts = getPartsByDomain('math')
 
@@ -116,12 +116,6 @@ function accentCardBg(accent: string) {
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
           </div>
 
-          <div class="flex items-center gap-3 mb-6">
-            <img src="/img/logo-iso.svg" alt="ISO" class="h-8 w-auto rounded opacity-90" />
-            <span class="text-white/30 text-xs">&amp;</span>
-            <img src="/img/logo-iec.svg" alt="IEC" class="h-8 w-auto rounded opacity-90" />
-          </div>
-
           <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight heading-serif leading-[1.1]">
             About ISO 80000 &amp; IEC 80000
           </h1>
@@ -134,6 +128,105 @@ function accentCardBg(accent: string) {
         </div>
       </div>
       <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10" />
+    </section>
+
+    <!-- The ISQ Emblem -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-14">
+          <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-brand-500 mb-2">Identity</p>
+          <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The ISQ Emblem</h2>
+          <p class="text-slate-500 dark:text-slate-400 text-sm max-w-lg mx-auto mt-3 leading-relaxed">Two organizations, one system — fused into a single identity.</p>
+        </div>
+
+        <!-- Fusion composition -->
+        <div class="relative max-w-xl mx-auto mb-16">
+          <!-- ISQ Logo centered above -->
+          <div class="flex justify-center mb-6">
+            <IsqLogo class="h-28 sm:h-32 w-auto drop-shadow-xl rounded-xl" />
+          </div>
+
+          <!-- Vertical connector to fusion bar -->
+          <div class="flex justify-center mb-5">
+            <div class="w-px h-6 bg-gradient-to-b from-violet-400/50 to-violet-400/0" />
+          </div>
+
+          <!-- Horizontal fusion diagram: ISO ─── spectrum ─── IEC -->
+          <div class="flex items-center">
+            <!-- ISO node -->
+            <div class="flex flex-col items-center gap-2 flex-shrink-0">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100/60 dark:from-red-950/40 dark:to-red-900/20 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center shadow-sm">
+                <img src="/img/logo-iso.svg" alt="ISO" class="h-7 w-auto" />
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-red-500 dark:text-red-400">ISO</span>
+            </div>
+
+            <!-- Gradient spectrum bar -->
+            <div class="flex-1 mx-3 relative flex items-center">
+              <div class="w-full h-[3px] rounded-full bg-gradient-to-r from-red-400 via-violet-500 to-blue-500 dark:from-red-500 dark:via-violet-500 dark:to-blue-500" />
+              <div class="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.5)] border-2 border-white dark:border-dark-900 animate-pulse" />
+            </div>
+
+            <!-- IEC node -->
+            <div class="flex flex-col items-center gap-2 flex-shrink-0">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/60 dark:from-blue-950/40 dark:to-blue-900/20 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center shadow-sm">
+                <img src="/img/logo-iec.svg" alt="IEC" class="h-7 w-auto" />
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-blue-500 dark:text-blue-400">IEC</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explanation cards -->
+        <div class="grid sm:grid-cols-3 gap-5">
+          <!-- Left Half -->
+          <div class="relative p-5 pt-6 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden hover:shadow-sm hover:-translate-y-px transition-all">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-red-400 to-red-500" />
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center overflow-hidden">
+                <img src="/img/logo-iso.svg" alt="ISO" class="h-4 w-auto" />
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Left Half</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              The left portion carries the typographic weight and crimson palette of
+              <a href="https://www.iso.org" target="_blank" rel="noopener" class="text-red-600 dark:text-red-400 hover:underline">ISO</a>'s
+              visual identity — the bold red representing international standardization since 1947.
+            </p>
+          </div>
+
+          <!-- The Fusion -->
+          <div class="relative p-5 pt-6 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden hover:shadow-sm hover:-translate-y-px transition-all">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-red-400 via-violet-500 to-blue-500" />
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-red-50 to-blue-50 dark:from-red-950/30 dark:to-blue-950/30 border border-violet-200/60 dark:border-violet-800/40 flex items-center justify-center">
+                <span class="text-violet-600 dark:text-violet-400 text-[10px] font-bold">ISQ</span>
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">The Fusion</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Where crimson meets cobalt, violet emerges — ISO and IEC merged into one system.
+              The continuous gradient represents coverage of <em>all</em> quantities across every domain of science and engineering.
+            </p>
+          </div>
+
+          <!-- Right Half -->
+          <div class="relative p-5 pt-6 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden hover:shadow-sm hover:-translate-y-px transition-all">
+            <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-400 to-blue-500" />
+            <div class="flex items-center gap-2.5 mb-3">
+              <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center overflow-hidden">
+                <img src="/img/logo-iec.svg" alt="IEC" class="h-4 w-auto" />
+              </div>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Right Half</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              The right portion adopts the deep blue of
+              <a href="https://www.iec.ch" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">IEC</a>'s
+              branding — the blue of electrotechnology, representing the IEC's domain since 1906.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- The Need -->
