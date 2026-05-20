@@ -11,7 +11,7 @@ import GlobalSearch from '../components/GlobalSearch.vue'
 import SearchHint from '../components/SearchHint.vue'
 
 const route = useRoute()
-const { toggle } = useTheme()
+const { toggle, isDark } = useTheme()
 const mobileOpen = ref(false)
 const scrolled = ref(false)
 
