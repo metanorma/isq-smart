@@ -8,7 +8,7 @@ const { show: showToast } = useToast()
 
 async function downloadDataset(format: 'jsonld' | 'turtle') {
   const parts = getAllParts().filter(p => !p.parentPart && !p.partKey.includes('-'))
-  const allEntries: any[] = []
+  const allEntries: Record<string, string>[] = []
   for (const part of parts) {
     try {
       const data = await loadPartEntries(part.partKey)

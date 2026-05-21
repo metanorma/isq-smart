@@ -22,7 +22,7 @@ const meta = computed(() => doc.value ? getPartMeta(doc.value.partKey) : undefin
           <div class="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
             <router-link to="/" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</router-link>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-            <router-link to="/ontology" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">SMART Model</router-link>
+            <router-link to="/documents" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Documents</router-link>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             <router-link to="/documents" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Documents</router-link>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>

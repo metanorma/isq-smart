@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ISO 80000 &amp; IEC 80000 — Quantities and Units</title>
+    <title>ISQ Browser — ISO/IEC 80000 Quantities and Units</title>
+    <meta name="description" content="Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser." />
+    <meta property="og:title" content="ISQ Browser — ISO/IEC 80000 Quantities and Units" />
+    <meta property="og:description" content="Interactive browser for the ISO/IEC 80000 series — quantities, units, dimensions, mathematical notation, and ontology." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
+  <body class="antialiased">
+    <script>document.documentElement.classList.toggle('dark', localStorage.theme === 'dark' || (!localStorage.theme && matchMedia('(prefers-color-scheme:dark)').matches))</script>
     <div id="app"></div>
     <script type="module" src="/src/main.ts"></script>
   </body>
