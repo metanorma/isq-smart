@@ -16,7 +16,7 @@ onMounted(() => {
 const filtered = computed(() => {
   if (!searchQuery.value.trim()) return units
   const q = searchQuery.value.toLowerCase()
-  return units.filter((u: any) => {
+  return units.filter(u => {
     const nameStr = u.name.toLowerCase()
     const symStr = u.symbols.join(' ').toLowerCase()
     return nameStr.includes(q) || symStr.includes(q)

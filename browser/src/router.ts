@@ -28,7 +28,7 @@ const routes: RouteRecordRaw[] = [
       { path: ':slug', component: () => import('./pages/ontology-detail.vue'), props: true },
     ],
   },
-
+  { path: '/:pathMatch(.*)*', component: () => import('./pages/not-found.vue') },
 ]
 
 const router = createRouter({
