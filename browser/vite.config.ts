@@ -496,9 +496,13 @@ function yamlDataPlugin(): Plugin {
     const { clauses: docClauses } = discoverAllProvisions()
 
     writeFileSync(
+      resolve(generatedDir, 'iso80000-terms.ts'),
+      `export const termEntries = ${JSON.stringify(iso80000Data.termEntries)}\n`,
+    )
+
+    writeFileSync(
       resolve(generatedDir, 'iso80000.ts'),
       `import type { DocumentClauseData } from '../types'\n`
-      + `export const termEntries = ${JSON.stringify(iso80000Data.termEntries)}\n`
       + `export const clauses = ${JSON.stringify(iso80000Data.clauses)}\n`
       + `export const publicationDocuments = ${JSON.stringify(iso80000Data.publicationDocuments)}\n`
       + `export const documentClauses = ${JSON.stringify(docClauses)} as DocumentClauseData[]\n`,
@@ -1298,4 +1302,7 @@ function ontologyDataPlugin(): Plugin {
 
 export default defineConfig({
   plugins: [vue(), tailwindcss(), yamlDataPlugin(), ontologyDataPlugin()],
+  build: {
+    sourcemap: true,
+  },
 })

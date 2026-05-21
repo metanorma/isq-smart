@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { publicationDocuments, clauses, termEntries } from '../data/generated/iso80000'
+import { publicationDocuments, clauses } from '../data/generated/iso80000'
+import { termEntries } from '../data/generated/iso80000-terms'
 import type { ClauseData, TermEntryData } from '../data/types'
 import { getPartMeta, partUrl } from '../data/PartRegistry'
 
