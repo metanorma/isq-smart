@@ -62,7 +62,7 @@ const typeColors: Record<string, string> = {
         <router-link
           v-for="section in partSections"
           :key="section.id"
-          :to="`/documents/${partKey}/${section.id}`"
+          :to="`/documents/${partKey}/sections/${section.id}`"
           class="group flex items-center gap-4 px-4 py-3 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
         >
           <span class="text-xs font-medium px-2 py-0.5 rounded" :class="typeColors[section.clauseType] ?? 'bg-slate-50 text-slate-600'">
