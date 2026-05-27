@@ -1,12 +1,10 @@
 import type { Entry, PartMeta, QuantityEntry } from './types'
+import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entryQname } from './ontologyConfig'
+import { publisherOf } from './PartRegistry'
 
 // ═══════════════════════════════════════════════════════════════
 // URN module — encapsulated URN generation (RFC 5141)
 // ═══════════════════════════════════════════════════════════════
-
-const ISO_PARTS = new Set(['2', '3', '4', '5', '7', '8', '9', '10', '12',
-  '2-5', '2-6', '2-7', '2-8', '2-9', '2-10', '2-11', '2-12', '2-13', '2-14', '2-15', '2-16', '2-17', '2-18', '2-19', '2-20',
-  '11-4', '11-5', '11-6', '11-7', '11-8', '11-9'])
 
 const YEAR_TO_ED: Record<string, string> = {
   '2019': '2', '2020': '1', '2022': '1',
@@ -17,11 +15,7 @@ const IEC_ED_DATES: Record<string, string> = {
 }
 
 function isIecPart(partKey: string): boolean {
-  return !ISO_PARTS.has(partKey)
-}
-
-export function publisherOf(partKey: string): string {
-  return isIecPart(partKey) ? 'IEC' : 'ISO'
+  return publisherOf(partKey) === 'IEC'
 }
 
 function basePart(partKey: string): string {
@@ -59,64 +53,70 @@ export const partUrn = Urn.part
 export const entryUrn = Urn.entry
 
 // ═══════════════════════════════════════════════════════════════
-// JSON-LD context — UnitsML vocabulary
+// JSON-LD entry serialization — uses ontology vocabulary
 // ═══════════════════════════════════════════════════════════════
 
-// ═══════════════════════════════════════════════════════════════
-// JSON-LD entry serialization
-// ═══════════════════════════════════════════════════════════════
-
-type EntrySerializer = (entry: Entry, partKey: string, edition: string) => Record<string, unknown>
+const jsonLdContext = {
+  [NS.core.prefix]: NS.core.uri,
+  [NS.smart.prefix]: NS.smart.uri,
+  dcterms: 'http://purl.org/dc/terms/',
+  skos: 'http://www.w3.org/2004/02/skos/core#',
+  skosxl: 'http://www.w3.org/2008/05/skos-xl#',
+  rdf: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#',
+  rdfs: 'http://www.w3.org/2000/01/rdf-schema#',
+  owl: 'http://www.w3.org/2002/07/owl#',
+  'bindingness-type': 'https://w3id.org/standards/smart/ontologies/core/taxonomies/bindingness-type/',
+} as const
 
 const sharedFields = (entry: Entry): Record<string, unknown> => ({
-  'iso:num': entry.num,
-  'iso:designations': entry.designations.map(d => ({
-    '@type': 'iso:Designation',
-    ...(d.designation.en ? { 'iso:text_en': d.designation.en.text, 'iso:index_as_en': d.designation.en.index_as } : {}),
-    ...(d.designation.fr ? { 'iso:text_fr': d.designation.fr.text, 'iso:index_as_fr': d.designation.fr.index_as } : {}),
-  })),
-  'iso:def': { 'iso:en': entry.def.en, ...(entry.def.fr ? { 'iso:fr': entry.def.fr } : {}) },
+  [ONTOLOGY_PROPERTIES.rdfType]: [tagToClass(entry._tag), ONTOLOGY_CLASSES.TermEntry],
+  [ONTOLOGY_PROPERTIES.identifier]: entry.num,
+  [ONTOLOGY_PROPERTIES.prefLabel]: entry.designations[0]?.designation.en?.text
+    ? { '@value': entry.designations[0].designation.en.text, '@language': 'en' }
+    : undefined,
+  [ONTOLOGY_PROPERTIES.altLabel]: [
+    ...entry.designations.slice(1).map(d => d.designation.en?.text).filter(Boolean).map(t => ({ '@value': t, '@language': 'en' })),
+    ...(entry.symbols?.map(s => ({ '@value': s, '@language': 'en' })) ?? []),
+  ],
+  [ONTOLOGY_PROPERTIES.definition]: entry.def?.en ? { '@value': entry.def.en, '@language': 'en' } : undefined,
 })
 
-const quantitySerializer: EntrySerializer = (entry, partKey, edition) => {
+const quantitySerializer = (entry: Entry, partKey: string, edition: string): Record<string, unknown> => {
   const r: Record<string, unknown> = {
-    '@type': 'iso:QuantityEntry',
-    '@id': `https://iso80000.org/entry/${entry.id}`,
-    'iso:urn': Urn.entry(entry, partKey, edition),
+    '@id': entryQname(entry.id),
     ...sharedFields(entry),
+    [ONTOLOGY_PROPERTIES.hasBindingnessType]: 'bindingness-type:normative',
+    [ONTOLOGY_PROPERTIES.isPartOf]: { '@id': partQname(partKey) },
   }
-  if (entry.symbols?.length) r['iso:symbols'] = entry.symbols
   if ((entry as QuantityEntry).units?.length) {
-    r['iso:units'] = (entry as QuantityEntry).units!.map(u => ({
-      '@type': 'iso:Unit',
-      'iso:name_en': u.en, ...(u.fr ? { 'iso:name_fr': u.fr } : {}), 'iso:symbol': u.symbol,
+    r[ONTOLOGY_PROPERTIES.hasUnit] = (entry as QuantityEntry).units!.map(u => ({
+      '@type': ONTOLOGY_CLASSES.Unit,
+      'skos:notation': u.symbol,
+      [ONTOLOGY_PROPERTIES.prefLabel]: u.en ? { '@value': u.en, '@language': 'en' } : undefined,
     }))
   }
-  if (entry.remarks?.en) r['iso:remarks'] = { 'iso:en': entry.remarks.en, ...(entry.remarks.fr ? { 'iso:fr': entry.remarks.fr } : {}) }
-  return r
-}
-
-const mathSerializer: EntrySerializer = (entry, partKey, edition) => {
-  const r: Record<string, unknown> = {
-    '@type': 'iso:MathEntry',
-    '@id': `https://iso80000.org/entry/${entry.id}`,
-    'iso:urn': Urn.entry(entry, partKey, edition),
-    ...sharedFields(entry),
+  if (entry.remarks?.en) {
+    r[ONTOLOGY_PROPERTIES.note] = { '@value': entry.remarks.en, '@language': 'en' }
   }
-  if (entry.symbols?.length) r['iso:symbols'] = entry.symbols
-  if (entry.remarks?.en) r['iso:remarks'] = { 'iso:en': entry.remarks.en, ...(entry.remarks.fr ? { 'iso:fr': entry.remarks.fr } : {}) }
   return r
 }
 
-const serializers: Record<string, EntrySerializer> = {
+const mathSerializer = (entry: Entry, partKey: string, edition: string): Record<string, unknown> => {
+  const r: Record<string, unknown> = {
+    '@id': entryQname(entry.id),
+    ...sharedFields(entry),
+    [ONTOLOGY_PROPERTIES.hasBindingnessType]: 'bindingness-type:normative',
+    [ONTOLOGY_PROPERTIES.isPartOf]: { '@id': partQname(partKey) },
+  }
+  if (entry.remarks?.en) {
+    r[ONTOLOGY_PROPERTIES.note] = { '@value': entry.remarks.en, '@language': 'en' }
+  }
+  return r
+}
+
+const serializers: Record<string, (entry: Entry, partKey: string, edition: string) => Record<string, unknown>> = {
   quantity: quantitySerializer,
   math: mathSerializer,
-}
-
-function serializeEntry(entry: Entry, partKey: string, edition: string): Record<string, unknown> {
-  const serializer = serializers[entry._tag]
-  if (!serializer) throw new Error(`No JSON-LD serializer for entry type: ${entry._tag}`)
-  return serializer(entry, partKey, edition)
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -124,32 +124,25 @@ function serializeEntry(entry: Entry, partKey: string, edition: string): Record<
 // ═══════════════════════════════════════════════════════════════
 
 export function generateEntryJsonLd(entry: Entry, meta: PartMeta, edition: string) {
-  const base = serializeEntry(entry, meta.partKey, edition)
+  const serializer = serializers[entry._tag]
+  const data = serializer(entry, meta.partKey, edition)
   return {
-    '@context': '/ns/unitsml.jsonld',
-    ...base,
-    'iso:partOf': {
-      '@type': 'iso:Part',
-      '@id': `https://iso80000.org/part/${meta.partKey}/${edition}`,
-      'iso:urn': Urn.part(meta.partKey, edition),
-      'iso:title': meta.title,
-    },
+    '@context': jsonLdContext,
+    ...data,
+    'iso:urn': Urn.entry(entry, meta.partKey, edition),
   }
 }
 
 export function generateIndexJsonLd(parts: PartMeta[]) {
   return {
-    '@context': '/ns/unitsml.jsonld',
-    '@type': 'iso:PartCollection',
-    '@id': 'https://iso80000.org/parts',
-    'iso:parts': parts.map(p => ({
-      '@type': 'iso:Part',
-      '@id': `https://iso80000.org/part/${p.partKey}`,
-      'iso:urn': isIecPart(p.partKey) ? `urn:iec:std:iec:80000-${p.partKey}` : `urn:iso:std:iso:80000:-${p.partKey}`,
-      'iso:part': p.partKey,
-      'iso:domain': p.domain,
-      'iso:title': p.title,
-      'iso:description': p.description,
+    '@context': jsonLdContext,
+    '@type': 'skos:Collection',
+    '@id': 'https://w3id.org/standards/isq/parts',
+    'skos:member': parts.map(p => ({
+      '@id': partQname(p.partKey),
+      [ONTOLOGY_PROPERTIES.identifier]: p.partKey,
+      [ONTOLOGY_PROPERTIES.prefLabel]: { '@value': p.title, '@language': 'en' },
+      'skos:note': { '@value': p.description, '@language': 'en' },
     })),
   }
 }
@@ -169,7 +162,7 @@ function ttlObject(value: unknown): string {
   if (typeof value === 'string') {
     if (value.startsWith('https://') || value.startsWith('urn:'))
       return `<${value}>`
-    if (value.startsWith('iso:'))
+    if (value.startsWith('isq:') || value.startsWith('smart:') || value.startsWith('dcterms:') || value.startsWith('skos:') || value.startsWith('rdf:') || value.startsWith('rdfs:') || value.startsWith('bindingness-type:'))
       return value
     return `"${escapeTurtle(value)}"`
   }
@@ -177,7 +170,7 @@ function ttlObject(value: unknown): string {
   if (typeof value === 'object' && value !== null) {
     const entries = Object.entries(value as Record<string, unknown>)
       .filter(([k]) => k !== '@type')
-      .map(([k, v]) => `${k.startsWith('iso:') ? k : `iso:${k}`} ${ttlObject(v)}`)
+      .map(([k, v]) => `${k.startsWith('isq:') || k.startsWith('smart:') || k.startsWith('dcterms:') || k.startsWith('skos:') || k.startsWith('rdf:') ? k : `isq:${k}`} ${ttlObject(v)}`)
       .join(' ;\n    ')
     return `[\n    ${entries}\n  ]`
   }
@@ -186,17 +179,18 @@ function ttlObject(value: unknown): string {
 
 export function jsonLdToTurtle(data: Record<string, unknown>): string {
   const lines: string[] = [
-    '@prefix iso:   <https://iso80000.org/ns/> .',
-    '@prefix unitsml: <https://unitsml.org/ns/> .',
-    '@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .',
+    `@prefix isq:    <${NS.core.uri}> .`,
+    `@prefix smart:  <${NS.smart.uri}> .`,
+    '@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .',
     '@prefix dcterms: <http://purl.org/dc/terms/> .',
-    '@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .',
+    '@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .',
     '',
   ]
 
   const subject = data['@id'] as string
-  const type = (data['@type'] as string) || 'iso:Entry'
-  const triples: string[] = [`  a ${type} ;`]
+  const types = data['@type'] as string | string[]
+  const typeStr = Array.isArray(types) ? types.join(', ') : (types || 'isq:Entry')
+  const triples: string[] = [`  a ${typeStr} ;`]
 
   const skip = new Set(['@context', '@id', '@type'])
   for (const [key, value] of Object.entries(data)) {

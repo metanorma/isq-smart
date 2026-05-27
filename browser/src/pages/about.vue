@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { getPartsByDomain } from '../data/PartRegistry'
+import { getPartsByDomain, publisherOf } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
 import IsqLogo from '../components/IsqLogo.vue'
 const qtyParts = getPartsByDomain('quantities')
 const mathParts = getPartsByDomain('math')
-
-function publisher(partKey: string): 'ISO' | 'IEC' {
-  const base = partKey.split('-')[0]
-  return base === '6' || base === '13' ? 'IEC' : 'ISO'
-}
 
 const audiences = [
   { icon: '🔬', title: 'Scientists & Researchers', desc: 'Canonical definitions for publishing unambiguous results and peer-reviewed papers.' },
@@ -318,13 +313,13 @@ function accentCardBg(accent: string) {
           :key="p.partKey"
           :to="`/quantities/part-${p.partKey}`"
           class="group relative p-4 rounded-xl border transition-all hover:shadow-sm"
-          :class="publisher(p.partKey) === 'IEC'
+          :class="publisherOf(p.partKey) === 'IEC'
             ? 'bg-teal-50/30 dark:bg-teal-950/20 border-teal-200/50 dark:border-teal-800/40 hover:border-teal-300 dark:hover:border-teal-700'
             : 'bg-brand-50/30 dark:bg-brand-950/20 border-brand-200/50 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700'"
         >
           <div class="text-lg mb-1.5">{{ p.icon }}</div>
-          <div class="text-[10px] font-bold uppercase tracking-wider mb-1" :class="publisher(p.partKey) === 'IEC' ? 'text-teal-500 dark:text-teal-400' : 'text-brand-500 dark:text-brand-400'">
-            {{ publisher(p.partKey) }}
+          <div class="text-[10px] font-bold uppercase tracking-wider mb-1" :class="publisherOf(p.partKey) === 'IEC' ? 'text-teal-500 dark:text-teal-400' : 'text-brand-500 dark:text-brand-400'">
+            {{ publisherOf(p.partKey) }}
           </div>
           <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Part {{ p.partKey }}</div>
           <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">{{ p.title }}</div>

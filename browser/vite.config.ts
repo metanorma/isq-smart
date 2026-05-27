@@ -810,8 +810,8 @@ function yamlDataPlugin(): Plugin {
       }
     }
     for (const [num, title] of Object.entries(PART_TITLES)) {
-      xrefData[`iso80000-${num}`] = { href: `/about/part-${num}`, name: `ISO 80000-${num}: ${title}` }
-      xrefData[`iec80000-${num}`] = { href: `/about/part-${num}`, name: `IEC 80000-${num}: ${title}` }
+      xrefData[`iso80000-${num}`] = { href: `/documents/part-${num}`, name: `ISO 80000-${num}: ${title}` }
+      xrefData[`iec80000-${num}`] = { href: `/documents/part-${num}`, name: `IEC 80000-${num}: ${title}` }
     }
     writeFileSync(
       resolve(generatedDir, 'xref-map.ts'),
@@ -924,8 +924,8 @@ function ontologyDataPlugin(): Plugin {
       resolve(refDir, 'schemas/shacl/annotation-ontology.shacl.ttl'),
       resolve(refDir, 'schemas/shacl/terminology-model.shacl.ttl'),
       ...readdirSync(resolve(refDir, 'taxonomies')).filter(f => f.endsWith('.ttl')).map(f => resolve(refDir, 'taxonomies', f)),
-      resolve(ontoDir, 'isoiec80000.ttl'),
-      resolve(ontoDir, 'isoiec80000.shacl.ttl'),
+      resolve(ontoDir, 'isq.ttl'),
+      resolve(ontoDir, 'isq.shacl.ttl'),
     ]
 
     // Manually extract @prefix declarations from TTL content
@@ -941,9 +941,9 @@ function ontologyDataPlugin(): Plugin {
         const prefix = m[1]
         const uri = m[2]
         // Skip empty prefix — prefer named prefix for same namespace
-        if (prefix === '' && allPrefixes['isoiec80000'] === uri) continue
-        if (prefix === '' && uri.includes('isoiec80000')) {
-          allPrefixes['isoiec80000'] = uri
+        if (prefix === '' && allPrefixes['isq'] === uri) continue
+        if (prefix === '' && uri.includes('isq')) {
+          allPrefixes['isq'] = uri
           continue
         }
         allPrefixes[prefix] = uri
@@ -997,7 +997,7 @@ function ontologyDataPlugin(): Plugin {
     const SKOS = 'http://www.w3.org/2004/02/skos/core#'
     const SH = 'http://www.w3.org/ns/shacl#'
     const SMART = 'https://w3id.org/standards/smart/ontologies/core/'
-    const ISO = 'https://w3id.org/standards/isoiec80000/ontologies/core/'
+    const ISO = 'https://w3id.org/standards/isq/ontologies/core/'
 
     function getObjects(subject: any, predicateUri: string): string[] {
       return store.getObjects(subject, predicateUri, null).map(o => o.value)
@@ -1017,7 +1017,7 @@ function ontologyDataPlugin(): Plugin {
       if (subjectUri.startsWith('_:')) continue // skip blank nodes
       if (!qname.includes(':')) continue // skip unresolvable URIs
 
-      const ontology = subjectUri.startsWith(ISO) ? 'isoiec80000'
+      const ontology = subjectUri.startsWith(ISO) ? 'isq'
         : subjectUri.startsWith(SMART) ? 'smart'
         : 'external'
 
@@ -1081,12 +1081,34 @@ function ontologyDataPlugin(): Plugin {
         const propertyQuads = store.getQuads(subjectUri, SH + 'property', null, null)
         const constraints: any[] = []
         for (const pq of propertyQuads) {
-          const bnTerm = pq.object  // Keep the actual Term for store lookups
-          const path = getFirst(bnTerm, SH + 'path')
-          if (!path) continue
-          const c: any = { path: compact(path) }
-          // Skip if path is a blank node reference
-          if (c.path === path) continue
+          const bnTerm = pq.object
+          const pathTerms = store.getObjects(bnTerm, SH + 'path', null)
+          if (!pathTerms.length) continue
+          const pathTerm = pathTerms[0]
+          let path: string
+          // Handle RDF list paths like ( skosxl:prefLabel skosxl:literalForm )
+          const listItems = store.getQuads(pathTerm, RDF + 'first', null, null)
+          if (listItems.length) {
+            const items: string[] = []
+            let listNode: any = pathTerm
+            let safety = 20
+            while (safety-- > 0 && listNode) {
+              const firsts = store.getObjects(listNode, RDF + 'first', null)
+              if (firsts.length) items.push(compact(firsts[0].value))
+              const rests = store.getObjects(listNode, RDF + 'rest', null)
+              if (rests.length && rests[0].value !== RDF + 'nil') {
+                listNode = rests[0]
+              } else {
+                break
+              }
+            }
+            path = items.join(' / ')
+          } else {
+            path = compact(pathTerm.value)
+          }
+          // Skip unresolvable paths
+          if (!path.includes(':') && !path.includes('/')) continue
+          const c: any = { path }
           const minC = getFirst(bnTerm, SH + 'minCount')
           if (minC) c.minCount = parseInt(minC)
           const maxC = getFirst(bnTerm, SH + 'maxCount')
@@ -1099,6 +1121,8 @@ function ontologyDataPlugin(): Plugin {
           if (cls) c.classValue = compact(cls)
           const hv = getFirst(bnTerm, SH + 'hasValue')
           if (hv) c.hasValue = compact(hv)
+          const ul = getFirst(bnTerm, SH + 'uniqueLang')
+          if (ul === 'true') c.uniqueLang = true
           constraints.push(c)
         }
         baseEntity.constraints = constraints.length ? constraints : undefined
@@ -1120,9 +1144,12 @@ function ontologyDataPlugin(): Plugin {
         if (smartTypes.length && !qname.startsWith('rdf:') && !qname.startsWith('owl:') && !qname.startsWith('rdfs:') && !qname.startsWith('xsd:')) {
           baseEntity.type = 'individual'
           baseEntity.instanceOf = smartTypes
-          // Try to get title from dcterms:title
           const title = getFirst(subjectUri, 'http://purl.org/dc/terms/title')
           if (title) baseEntity.label = title
+          const identifier = getFirst(subjectUri, 'http://purl.org/dc/terms/identifier')
+          if (identifier) baseEntity.identifier = identifier
+          const isPartOf = getObjects(subjectUri, 'http://purl.org/dc/terms/isPartOf')
+          if (isPartOf.length) baseEntity.isPartOf = isPartOf.map(compact).filter(q => q.includes(':'))
           entities.push(baseEntity)
         }
       }
@@ -1250,9 +1277,9 @@ function ontologyDataPlugin(): Plugin {
     // Ontology namespace metadata (derived from entities)
     const ontologyNamespaces = [
       {
-        prefix: 'isoiec80000',
+        prefix: 'isq',
         uri: ISO,
-        title: 'ISO & IEC 80000 Domain Ontology',
+        title: 'ISQ Domain Ontology',
         description: 'Domain ontology for ISO & IEC 80000 — defines Quantity, Unit, and MathConcept as extensions of the SMART Core Ontology.',
         color: 'brand',
         version: entities.find((e: any) => e.type === 'ontology' && e.uri === ISO)?.version || '1.0.0',

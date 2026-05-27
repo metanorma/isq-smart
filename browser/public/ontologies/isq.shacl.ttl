@@ -5,15 +5,15 @@
 @prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
 @prefix skosxl:  <http://www.w3.org/2008/05/skos-xl#> .
 @prefix smart:   <https://w3id.org/standards/smart/ontologies/core/> .
-@prefix isoiec80000: <https://w3id.org/standards/isoiec80000/ontologies/core/> .
+@prefix isq: <https://w3id.org/standards/isq/ontologies/core/> .
 
 ##
 
-# Quantity: physical quantity, typed as isoiec80000:Quantity + smart:TermEntry
+# Quantity: physical quantity, typed as isq:Quantity + smart:TermEntry
 
-isoiec80000:QuantityShape
+isq:QuantityShape
     a sh:NodeShape ;
-    sh:targetClass isoiec80000:Quantity ;
+    sh:targetClass isq:Quantity ;
     sh:property [
         sh:path rdf:type ;
         sh:hasValue smart:TermEntry ;
@@ -47,9 +47,15 @@ isoiec80000:QuantityShape
         sh:datatype rdf:langString ;
     ] ;
     sh:property [
-        sh:path isoiec80000:hasUnit ;
+        sh:path isq:hasUnit ;
         sh:nodeKind sh:IRI ;
-        sh:class isoiec80000:Unit ;
+        sh:class isq:Unit ;
+    ] ;
+    sh:property [
+        sh:path isq:hasDimension ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:Dimension ;
+        sh:maxCount 1 ;
     ] ;
     sh:property [
         sh:path smart:hasBindingnessType ;
@@ -68,9 +74,9 @@ isoiec80000:QuantityShape
 
 # Unit: unit of measurement
 
-isoiec80000:UnitShape
+isq:UnitShape
     a sh:NodeShape ;
-    sh:targetClass isoiec80000:Unit ;
+    sh:targetClass isq:Unit ;
     sh:property [
         sh:path rdf:type ;
         sh:hasValue smart:TermEntry ;
@@ -96,11 +102,11 @@ isoiec80000:UnitShape
     ] ;
 .
 
-# MathConcept: mathematical concept, typed as isoiec80000:MathConcept + smart:TermEntry
+# MathConcept: mathematical concept, typed as isq:MathConcept + smart:TermEntry
 
-isoiec80000:MathConceptShape
+isq:MathConceptShape
     a sh:NodeShape ;
-    sh:targetClass isoiec80000:MathConcept ;
+    sh:targetClass isq:MathConcept ;
     sh:property [
         sh:path rdf:type ;
         sh:hasValue smart:TermEntry ;
@@ -175,7 +181,7 @@ smart:TermShape
 
 # PublicationDocument instances for ISO/IEC 80000 parts
 
-isoiec80000:PartDocumentShape
+isq:PartDocumentShape
     a sh:NodeShape ;
     sh:targetObjectsOf dcterms:isPartOf ;
     sh:class smart:PublicationDocument ;
@@ -207,10 +213,50 @@ isoiec80000:PartDocumentShape
 
 # hasUnit property constraint (must point to Unit)
 
-isoiec80000:HasUnitShape
+isq:HasUnitShape
     a sh:PropertyShape ;
-    sh:targetSubjectsOf isoiec80000:hasUnit ;
-    sh:path isoiec80000:hasUnit ;
+    sh:targetSubjectsOf isq:hasUnit ;
+    sh:path isq:hasUnit ;
     sh:nodeKind sh:IRI ;
-    sh:class isoiec80000:Unit ;
+    sh:class isq:Unit ;
+.
+
+# Dimension: dimensional domain grouping quantities of the same kind
+
+isq:DimensionShape
+    a sh:NodeShape ;
+    sh:targetClass isq:Dimension ;
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue smart:TermEntry ;
+        sh:minCount 2 ;
+    ] ;
+    sh:property [
+        sh:path dcterms:identifier ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# hasDimension property constraint (must point to Dimension)
+
+isq:HasDimensionShape
+    a sh:PropertyShape ;
+    sh:targetSubjectsOf isq:hasDimension ;
+    sh:path isq:hasDimension ;
+    sh:nodeKind sh:IRI ;
+    sh:class isq:Dimension ;
 .

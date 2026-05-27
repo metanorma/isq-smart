@@ -30,7 +30,7 @@ const isExpanded = computed(() => props.expandedNodes.has(props.entity.qname))
 
 function badgeColor(e: Entity) {
   if (e.ontology === 'smart') return 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400'
-  if (e.ontology === 'isoiec80000') return 'bg-brand-50 dark:bg-brand-950/30 text-brand-600 dark:text-brand-400'
+  if (e.ontology === 'isq') return 'bg-brand-50 dark:bg-brand-950/30 text-brand-600 dark:text-brand-400'
   return 'bg-slate-100 dark:bg-dark-700 text-slate-600 dark:text-slate-400'
 }
 </script>

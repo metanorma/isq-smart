@@ -358,23 +358,24 @@ a.xref:hover {
 .dark .border-b { border-bottom-color: var(--color-dark-600); }
 
 /* ─── Text ─────────────────────────────────────────────────────────────── */
-.dark .text-slate-900,
-.dark .text-gray-900 { color: #f5f0f3; }
-.dark .text-slate-800,
-.dark .text-gray-800 { color: #e0d8dc; }
-.dark .text-slate-700,
-.dark .text-gray-700 { color: #c8bec4; }
-.dark .text-slate-600,
-.dark .text-gray-600 { color: #a89ea6; }
-.dark .text-slate-500,
-.dark .text-gray-500 { color: #8a8088; }
-.dark .text-slate-400,
-.dark .text-gray-400 { color: #6e6470; }
-.dark .text-slate-300 { color: #6e6470; }
-.dark .text-slate-200 { color: #5a5058; }
+/* :not([class*="dark:"]) guard lets explicit dark:text-* utilities win */
+.dark .text-slate-900:not([class*="dark:"]),
+.dark .text-gray-900:not([class*="dark:"]) { color: #f5f0f3; }
+.dark .text-slate-800:not([class*="dark:"]),
+.dark .text-gray-800:not([class*="dark:"]) { color: #e0d8dc; }
+.dark .text-slate-700:not([class*="dark:"]),
+.dark .text-gray-700:not([class*="dark:"]) { color: #c8bec4; }
+.dark .text-slate-600:not([class*="dark:"]),
+.dark .text-gray-600:not([class*="dark:"]) { color: #a89ea6; }
+.dark .text-slate-500:not([class*="dark:"]),
+.dark .text-gray-500:not([class*="dark:"]) { color: #8a8088; }
+.dark .text-slate-400:not([class*="dark:"]),
+.dark .text-gray-400:not([class*="dark:"]) { color: #6e6470; }
+.dark .text-slate-300:not([class*="dark:"]) { color: #6e6470; }
+.dark .text-slate-200:not([class*="dark:"]) { color: #5a5058; }
 
 /* ─── Code ─────────────────────────────────────────────────────────────── */
-.dark code { color: #c8bec4; }
+.dark code:not([class*="dark:"]) { color: #c8bec4; }
 
 /* ─── Interactive states ───────────────────────────────────────────────── */
 .dark .hover\:bg-slate-50:hover,
@@ -383,10 +384,10 @@ a.xref:hover {
 .dark .hover\:bg-white:hover { background-color: var(--color-dark-700); }
 .dark .hover\:bg-slate-100\/80:hover { background-color: var(--color-dark-700); }
 .dark .hover\:bg-slate-200:hover { background-color: var(--color-dark-600); }
-.dark .hover\:text-slate-700:hover,
-.dark .hover\:text-slate-800:hover { color: #e0d8dc; }
-.dark .hover\:text-slate-600:hover { color: #c8bec4; }
-.dark .hover\:text-slate-500:hover { color: #a89ea6; }
+.dark .hover\:text-slate-700:not([class*="dark:hover\:text-"]):hover,
+.dark .hover\:text-slate-800:not([class*="dark:hover\:text-"]):hover { color: #e0d8dc; }
+.dark .hover\:text-slate-600:not([class*="dark:hover\:text-"]):hover { color: #c8bec4; }
+.dark .hover\:text-slate-500:not([class*="dark:hover\:text-"]):hover { color: #a89ea6; }
 .dark .hover\:border-brand-200:hover { border-color: var(--color-brand-700); }
 .dark .hover\:border-violet-200:hover { border-color: var(--color-violet-700); }
 
@@ -454,7 +455,7 @@ a.xref:hover {
 .dark kbd { background-color: var(--color-dark-700); border-color: var(--color-dark-600); color: #c8bec4; }
 
 /* ─── Strong / bold ───────────────────────────────────────────────────── */
-.dark strong { color: #e0d8dc; }
+.dark strong:not([class*="dark:"]) { color: #e0d8dc; }
 
 /* ─── Mark (search highlight) ─────────────────────────────────────────── */
 .dark mark { background-color: color-mix(in srgb, var(--color-amber-800) 50%, transparent); color: var(--color-amber-200); }

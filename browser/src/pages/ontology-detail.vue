@@ -23,12 +23,14 @@ interface Entity {
   targetClass?: string
   targetSubjectsOf?: string
   targetObjectsOf?: string
-  constraints?: { path: string; minCount?: number; maxCount?: number; datatype?: string; nodeKind?: string; classValue?: string; hasValue?: string }[]
+  constraints?: { path: string; minCount?: number; maxCount?: number; datatype?: string; nodeKind?: string; classValue?: string; hasValue?: string; uniqueLang?: boolean }[]
   scheme?: string
   instanceOf?: string[]
   topConcepts?: string[]
   version?: string
   imports?: string[]
+  isPartOf?: string[]
+  identifier?: string
 }
 
 const props = defineProps<{ slug?: string }>()
@@ -242,6 +244,7 @@ const whereUsed = computed(() => {
     if (e.targetObjectsOf === qn) results.push({ entity: e, context: 'targetObjectsOf' })
     if (e.scheme === qn) results.push({ entity: e, context: 'inScheme' })
     if (e.instanceOf?.includes(qn)) results.push({ entity: e, context: 'type' })
+    if (e.isPartOf?.includes(qn)) results.push({ entity: e, context: 'isPartOf' })
     for (const c of (e.constraints || [])) {
       if (c.classValue === qn) results.push({ entity: e, context: 'shape constraint class' })
       if (c.hasValue === qn) results.push({ entity: e, context: 'shape constraint hasValue' })
@@ -526,6 +529,7 @@ const parentOntologyEntity = computed(() => {
                       <router-link v-else-if="c.classValue && linkTo(c.classValue)" :to="linkTo(c.classValue)" class="text-blue-600 hover:underline">{{ c.classValue }}</router-link>
                       <span v-else-if="c.classValue">{{ c.classValue }}</span>
                       <span v-if="c.hasValue" class="text-slate-400 ml-1">= {{ c.hasValue }}</span>
+                      <span v-if="c.uniqueLang" class="text-[9px] text-amber-600 bg-amber-50 px-1 py-0.5 rounded ml-1">uniqueLang</span>
                     </td>
                     <td class="px-3 py-1.5">{{ c.nodeKind || '—' }}</td>
                   </tr>
@@ -639,6 +643,7 @@ const parentOntologyEntity = computed(() => {
                     <router-link v-else-if="c.classValue && linkTo(c.classValue)" :to="linkTo(c.classValue)" class="text-blue-600 hover:underline">{{ c.classValue }}</router-link>
                     <span v-else-if="c.classValue" class="text-gray-700">{{ c.classValue }}</span>
                     <span v-if="c.hasValue" class="text-gray-400 ml-1">= {{ c.hasValue }}</span>
+                    <span v-if="c.uniqueLang" class="text-[9px] text-amber-600 bg-amber-50 px-1 py-0.5 rounded ml-1">uniqueLang</span>
                   </td>
                   <td class="py-2 px-3">{{ c.nodeKind || '—' }}</td>
                 </tr>
@@ -694,6 +699,19 @@ const parentOntologyEntity = computed(() => {
             <li v-for="t of entity.instanceOf" :key="t">
               <router-link v-if="linkTo(t)" :to="linkTo(t)" class="text-blue-600 hover:underline">{{ t }}</router-link>
               <span v-else>{{ t }}</span>
+            </li>
+          </ul>
+        </div>
+        <div v-if="entity.identifier" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Identifier</h3>
+          <code class="text-sm">{{ entity.identifier }}</code>
+        </div>
+        <div v-if="entity.isPartOf?.length" class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+          <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Part Of</h3>
+          <ul class="space-y-1">
+            <li v-for="parent of entity.isPartOf" :key="parent">
+              <router-link v-if="linkTo(parent)" :to="linkTo(parent)" class="text-blue-600 hover:underline">{{ parent }}</router-link>
+              <span v-else>{{ parent }}</span>
             </li>
           </ul>
         </div>
