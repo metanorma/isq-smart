@@ -60,7 +60,7 @@ const namespaceGroups = computed(() => {
 type Section = 'overview' | 'namespaces' | 'az' | 'classes' | 'properties' | 'skos' | 'shapes' | 'individuals' | 'statistics'
 const section = ref<Section>('overview')
 const filter = ref('')
-const filterOntology = ref<'all' | 'smart' | 'isoiec80000'>('isoiec80000')
+const filterOntology = ref<'all' | 'smart' | 'isq'>('isq')
 
 const sections: { id: Section; label: string }[] = [
   { id: 'overview', label: 'Overview' },
@@ -145,7 +145,7 @@ function collapseAll() {
 
 function badgeColor(e: Entity) {
   if (e.ontology === 'smart') return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400'
-  if (e.ontology === 'isoiec80000') return 'bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-400'
+  if (e.ontology === 'isq') return 'bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-400'
   return 'bg-slate-100 text-slate-600 dark:bg-dark-700 dark:text-slate-400'
 }
 
@@ -206,19 +206,19 @@ async function renderCharts() {
     },
   })
 
-  const ontoLabels = ['isoiec80000', 'smart', 'external'].filter(o =>
+  const ontoLabels = ['isq', 'smart', 'external'].filter(o =>
     allEntities.some(e => e.ontology === o)
   )
   const ontoCounts = ontoLabels.map(o => allEntities.filter(e => e.ontology === o).length)
   const ontoColors = ontoLabels.map(o =>
-    o === 'isoiec80000' ? '#3b82f6' : o === 'smart' ? '#10b981' : '#94a3b8'
+    o === 'isq' ? '#3b82f6' : o === 'smart' ? '#10b981' : '#94a3b8'
   )
 
   ontoChart = new Chart(ontoChartRef.value, {
     type: 'doughnut',
     data: {
       labels: ontoLabels.map(o =>
-        o === 'isoiec80000' ? 'ISO & IEC 80000' : o === 'smart' ? 'SMART Core' : 'External'
+        o === 'isq' ? 'ISO & IEC 80000' : o === 'smart' ? 'SMART Core' : 'External'
       ),
       datasets: [{
         data: ontoCounts,
@@ -270,7 +270,7 @@ onMounted(() => {
             <div class="text-3xl mb-2">🧬</div>
             <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">ISO &amp; IEC 80000 Ontology</h1>
             <p class="mt-2 text-sm leading-relaxed max-w-xl text-emerald-300/80">
-              The isoiec80000 domain ontology extends the SMART Core Ontology with classes for quantities, units, and mathematical concepts per ISO &amp; IEC 80000.
+              The isq domain ontology extends the SMART Core Ontology with classes for quantities, units, and mathematical concepts per ISO &amp; IEC 80000.
             </p>
           </div>
           <div class="flex gap-2 ml-auto flex-shrink-0 mb-1">
@@ -301,9 +301,9 @@ onMounted(() => {
         </button>
       </div>
       <div class="flex gap-1 p-1 rounded-lg bg-slate-100/80 dark:bg-dark-700/80 border border-slate-200/60" v-if="['classes', 'properties', 'skos', 'shapes', 'individuals'].includes(section)">
-        <button @click="filterOntology = 'isoiec80000'"
+        <button @click="filterOntology = 'isq'"
           class="px-3 py-1.5 rounded-md text-[10px] font-medium transition-all"
-          :class="filterOntology === 'isoiec80000' ? 'bg-white dark:bg-dark-800 text-brand-700 dark:text-brand-400 shadow-sm dark:shadow-none' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'">
+          :class="filterOntology === 'isq' ? 'bg-white dark:bg-dark-800 text-brand-700 dark:text-brand-400 shadow-sm dark:shadow-none' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'">
           ISO &amp; IEC 80000
         </button>
         <button @click="filterOntology = 'smart'"
@@ -330,7 +330,7 @@ onMounted(() => {
       <!-- Primary ontology card -->
       <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600">isoiec80000</span>
+          <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600">isq</span>
           <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">{{ primaryOntology.title }}</h2>
         </div>
         <div class="space-y-2 text-sm">
@@ -390,11 +390,11 @@ onMounted(() => {
           <div class="px-4 py-3 rounded-xl bg-brand-50/50 border border-brand-200/40">
             <div class="text-xs font-semibold text-brand-700 mb-2">ISO &amp; IEC 80000</div>
             <div class="flex gap-3 text-xs text-slate-600">
-              <span>{{ countBy('class', 'isoiec80000') }} classes</span>
+              <span>{{ countBy('class', 'isq') }} classes</span>
               <span class="text-slate-300">·</span>
-              <span>{{ countBy('objectProperty', 'isoiec80000') }} properties</span>
+              <span>{{ countBy('objectProperty', 'isq') }} properties</span>
               <span class="text-slate-300">·</span>
-              <span>{{ countBy('shape', 'isoiec80000') }} shapes</span>
+              <span>{{ countBy('shape', 'isq') }} shapes</span>
             </div>
           </div>
           <div class="px-4 py-3 rounded-xl bg-emerald-50/50 border border-emerald-200/40">

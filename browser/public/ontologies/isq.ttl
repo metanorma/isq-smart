@@ -1,0 +1,314 @@
+@prefix : <https://w3id.org/standards/isq/ontologies/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix isq: <https://w3id.org/standards/isq/ontologies/core/> .
+@base <https://w3id.org/standards/isq/ontologies/core/> .
+
+<https://w3id.org/standards/isq/ontologies/core/> rdf:type owl:Ontology ;
+  owl:imports <https://w3id.org/standards/smart/ontologies/core/> ;
+  dcterms:title "ISO/IEC 80000 Domain Ontology"@en ;
+  dcterms:description "Extends the SmartSDU Core Ontology with domain classes for ISO/IEC 80000 quantities, units, and mathematical concepts."@en ;
+  dcterms:publisher <https://www.iso.org> , <https://www.iec.ch> ;
+  rdfs:label "ISO/IEC 80000 Domain Ontology"@en ;
+  owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Classes
+#################################################################
+
+### Quantity
+isq:Quantity rdf:type owl:Class ;
+  rdfs:subClassOf smart:TermEntry ;
+  rdfs:label "Quantity"@en ;
+  skos:definition "A physical quantity as defined in ISO/IEC 80000, with associated symbols, definitions, and units of measurement."@en ;
+  skos:prefLabel "Quantity"@en .
+
+### Unit
+isq:Unit rdf:type owl:Class ;
+  rdfs:subClassOf smart:TermEntry ;
+  rdfs:label "Unit of measurement"@en ;
+  skos:definition "A unit of measurement used to express the magnitude of a physical quantity."@en ;
+  skos:prefLabel "Unit"@en .
+
+### MathConcept
+isq:MathConcept rdf:type owl:Class ;
+  rdfs:subClassOf smart:TermEntry ;
+  rdfs:label "Mathematical concept"@en ;
+  skos:definition "A mathematical concept as defined in ISO/IEC 80000 Part 2."@en ;
+  skos:prefLabel "Mathematical concept"@en .
+
+### Dimension
+isq:Dimension rdf:type owl:Class ;
+  rdfs:subClassOf smart:TermEntry ;
+  rdfs:label "Dimension"@en ;
+  skos:definition "A dimensional domain that groups quantities sharing the same dimensional expression, relating base quantity dimensions (length, mass, time, electric current, thermodynamic temperature, amount of substance, luminous intensity)."@en ;
+  skos:prefLabel "Dimension"@en ;
+  skos:scopeNote "Each part of ISO/IEC 80000 defines quantities in a distinct dimensional domain. Quantities with the same dimension are of the same kind and can be meaningfully compared."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+### hasUnit
+isq:hasUnit rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:Quantity ;
+  rdfs:range isq:Unit ;
+  rdfs:label "has unit"@en ;
+  skos:definition "Relates a quantity to a unit of measurement used to express its magnitude."@en ;
+  skos:prefLabel "has unit"@en .
+
+### hasDimension
+isq:hasDimension rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:Quantity ;
+  rdfs:range isq:Dimension ;
+  rdfs:label "has dimension"@en ;
+  skos:definition "Relates a quantity to its dimensional domain."@en ;
+  skos:prefLabel "has dimension"@en .
+
+#################################################################
+#    Publication Document Instances
+#################################################################
+
+isq:part-1 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-1: General"@en ;
+  dcterms:identifier "ISO 80000-1" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2: Mathematics"@en ;
+  dcterms:identifier "ISO 80000-2" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-3 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-3: Space and time"@en ;
+  dcterms:identifier "ISO 80000-3" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-4 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-4: Mechanics"@en ;
+  dcterms:identifier "ISO 80000-4" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-5 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-5: Thermodynamics"@en ;
+  dcterms:identifier "ISO 80000-5" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-6 rdf:type smart:PublicationDocument ;
+  dcterms:title "IEC 80000-6: Electromagnetism"@en ;
+  dcterms:identifier "IEC 80000-6" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-7 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-7: Light"@en ;
+  dcterms:identifier "ISO 80000-7" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-8 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-8: Acoustics"@en ;
+  dcterms:identifier "ISO 80000-8" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-9 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-9: Physical chemistry and molecular physics"@en ;
+  dcterms:identifier "ISO 80000-9" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-10 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-10: Atomic and nuclear physics"@en ;
+  dcterms:identifier "ISO 80000-10" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-11 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11: Characteristic numbers"@en ;
+  dcterms:identifier "ISO 80000-11" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-12 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-12: Condensed matter physics"@en ;
+  dcterms:identifier "ISO 80000-12" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-13 rdf:type smart:PublicationDocument ;
+  dcterms:title "IEC 80000-13: Information science"@en ;
+  dcterms:identifier "IEC 80000-13" ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+#################################################################
+#    Sub-part Publication Document Instances
+#################################################################
+
+# Part 2 sub-sections (mathematical notation)
+
+isq:part-2-5 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §5: Variables, functions, and operators"@en ;
+  dcterms:identifier "ISO 80000-2 §5" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-6 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §6: Elementary geometry"@en ;
+  dcterms:identifier "ISO 80000-2 §6" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-7 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §7: Sets"@en ;
+  dcterms:identifier "ISO 80000-2 §7" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-8 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §8: Classical logic"@en ;
+  dcterms:identifier "ISO 80000-2 §8" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-9 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §9: Axiomatic theory of sets"@en ;
+  dcterms:identifier "ISO 80000-2 §9" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-10 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §10: Numbers, functions, and special sets"@en ;
+  dcterms:identifier "ISO 80000-2 §10" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-11 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §11: Constants and special functions"@en ;
+  dcterms:identifier "ISO 80000-2 §11" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-12 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §12: Number theory"@en ;
+  dcterms:identifier "ISO 80000-2 §12" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-13 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §13: Combinatorics"@en ;
+  dcterms:identifier "ISO 80000-2 §13" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-14 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §14: Functions"@en ;
+  dcterms:identifier "ISO 80000-2 §14" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-15 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §15: Combinatorial analysis"@en ;
+  dcterms:identifier "ISO 80000-2 §15" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-16 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §16: Calculus"@en ;
+  dcterms:identifier "ISO 80000-2 §16" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-17 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §17: Vectors and matrices"@en ;
+  dcterms:identifier "ISO 80000-2 §17" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-18 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §18: Coordinates and tensors"@en ;
+  dcterms:identifier "ISO 80000-2 §18" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-19 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §19: Transforms and operators"@en ;
+  dcterms:identifier "ISO 80000-2 §19" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-2-20 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-2 §20: Additional special functions"@en ;
+  dcterms:identifier "ISO 80000-2 §20" ;
+  dcterms:isPartOf isq:part-2 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+# Part 11 sub-sections (characteristic numbers)
+
+isq:part-11-4 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11 §4: Characteristic numbers in fluid dynamics"@en ;
+  dcterms:identifier "ISO 80000-11 §4" ;
+  dcterms:isPartOf isq:part-11 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-11-5 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11 §5: Heat and mass transfer numbers"@en ;
+  dcterms:identifier "ISO 80000-11 §5" ;
+  dcterms:isPartOf isq:part-11 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-11-6 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11 §6: Characteristic numbers for transport"@en ;
+  dcterms:identifier "ISO 80000-11 §6" ;
+  dcterms:isPartOf isq:part-11 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-11-7 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11 §7: MHD and plasma dynamics numbers"@en ;
+  dcterms:identifier "ISO 80000-11 §7" ;
+  dcterms:isPartOf isq:part-11 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-11-8 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11 §8: Radiation heat transfer numbers"@en ;
+  dcterms:identifier "ISO 80000-11 §8" ;
+  dcterms:isPartOf isq:part-11 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .
+
+isq:part-11-9 rdf:type smart:PublicationDocument ;
+  dcterms:title "ISO 80000-11 §9: Turbulence characteristic numbers"@en ;
+  dcterms:identifier "ISO 80000-11 §9" ;
+  dcterms:isPartOf isq:part-11 ;
+  smart:hasPublicationType smart:internationalStandard ;
+  smart:hasBindingnessType smart:normative .

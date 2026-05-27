@@ -273,124 +273,130 @@ const marqueeItems = computed(() => {
       </div>
     </section>
 
-    <!-- Quantities distribution -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 scroll-reveal">
-      <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Entry Distribution</h2>
-        <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ quantitiesCount.toLocaleString() }} total</span>
-      </div>
-      <div class="space-y-1.5">
-        <router-link
-          v-for="part in mainQtyParts"
-          :key="part.partKey"
-          :to="partUrl(part.partKey)"
-          class="group flex items-center gap-3 px-2 py-1.5 -mx-2 rounded-lg hover:bg-slate-50/80 dark:hover:bg-dark-700/50 transition-colors"
-        >
-          <span class="w-7 text-right text-xs text-slate-400 font-medium group-hover:text-slate-600 transition-colors flex-shrink-0">{{ part.icon }}</span>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2">
+    <!-- Quantities parts overview -->
+    <section class="bg-slate-50/50 dark:bg-dark-800/30 border-y border-slate-200/40 dark:border-dark-700/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 scroll-reveal">
+        <div class="flex items-center justify-between mb-5">
+          <div>
+            <div class="flex items-center gap-2.5 mb-1">
+              <span class="text-lg">📐</span>
+              <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Quantities &amp; Units</h2>
+            </div>
+            <p class="text-slate-500 dark:text-slate-400 text-xs">Parts 3–13 — physical quantities and their measurement units</p>
+          </div>
+          <router-link to="/quantities" class="hidden sm:flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+            Browse all
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </router-link>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
+          <router-link
+            v-for="part in mainQtyParts"
+            :key="part.partKey"
+            :to="partUrl(part.partKey)"
+            class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
+          >
+            <span class="text-base flex-shrink-0">{{ part.icon }}</span>
+            <div class="min-w-0">
+              <div class="flex items-center gap-1">
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ part.partKey }}</span>
+                <span v-if="isBilingual(part.partKey)" class="text-[8px] font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-1 py-px rounded leading-none">FR</span>
+              </div>
+              <div class="text-[10px] text-slate-500 dark:text-slate-400 truncate leading-tight">{{ part.title }}</div>
+            </div>
+          </router-link>
+        </div>
+
+        <!-- Entry distribution -->
+        <div class="mt-6 space-y-1.5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.12em]">Entry Distribution</span>
+          </div>
+          <div v-for="part in mainQtyParts" :key="'dist-' + part.partKey" class="flex items-center gap-2.5 group">
+            <router-link :to="partUrl(part.partKey)" class="w-12 text-[10px] font-mono font-semibold text-slate-500 dark:text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors text-right tabular-nums flex-shrink-0">{{ part.partKey }}</router-link>
+            <div class="flex-1 h-5 rounded-md overflow-hidden bg-slate-100/60 dark:bg-dark-700/40 relative">
               <div
-                class="h-5 rounded-md transition-all duration-300"
-                :class="isDark ? 'opacity-60 group-hover:opacity-80' : 'opacity-25 group-hover:opacity-40'"
+                class="h-full rounded-md transition-all duration-500 ease-out"
                 :style="{
-                  width: `${Math.max(3, (partEntryCount(part.partKey) / maxQtyCount) * 100)}%`,
-                  background: accentGradient(part),
-                  boxShadow: isDark ? `0 0 12px ${accentColors(part).from}40, 0 0 4px ${accentColors(part).from}60` : undefined,
-                  filter: isDark ? 'saturate(1.4) brightness(1.3)' : undefined,
+                  width: `${Math.max(4, (partEntryCount(part.partKey) / maxQtyCount) * 100)}%`,
+                  background: isDark
+                    ? `linear-gradient(135deg, ${accentColors(part).from}, ${accentColors(part).to})`
+                    : accentGradient(part),
+                  boxShadow: isDark
+                    ? `0 0 14px ${accentColors(part).from}40, 0 0 5px ${accentColors(part).from}60, inset 0 0 6px ${accentColors(part).from}15`
+                    : undefined,
+                  filter: isDark ? 'saturate(1.6) brightness(1.4)' : undefined,
                 }"
               />
-              <span
-                class="text-xs font-mono tabular-nums font-medium transition-colors"
-                :style="{
-                  color: accentColors(part).from,
-                  textShadow: isDark ? `0 0 8px ${accentColors(part).from}80` : undefined,
-                }"
-              >{{ partEntryCount(part.partKey) }}</span>
             </div>
+            <span
+              class="w-8 text-[10px] font-semibold tabular-nums flex-shrink-0"
+              :style="{
+                color: isDark ? accentColors(part).from : undefined,
+                textShadow: isDark ? `0 0 8px ${accentColors(part).from}60` : undefined,
+              }"
+              :class="!isDark && 'text-slate-500'"
+            >{{ partEntryCount(part.partKey) }}</span>
           </div>
-          <span class="text-xs text-slate-400 dark:text-slate-500 truncate max-w-[140px] hidden sm:block group-hover:text-slate-600 transition-colors">{{ part.title }}</span>
-        </router-link>
-      </div>
-    </section>
-
-    <!-- Quantities parts overview -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-10 scroll-reveal">
-      <div class="flex items-center justify-between mb-4">
-        <div>
-          <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Quantities &amp; Units</h2>
-          <p class="mt-0.5 text-slate-500 dark:text-slate-400 text-xs">Parts 3–13 — physical quantities and their measurement units</p>
         </div>
-        <router-link to="/quantities" class="hidden sm:flex items-center gap-1.5 text-xs text-brand-600 hover:text-brand-700 font-medium transition-colors">
-          Browse all
-          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-        </router-link>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
-        <router-link
-          v-for="part in mainQtyParts"
-          :key="part.partKey"
-          :to="partUrl(part.partKey)"
-          class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
-        >
-          <span class="text-base flex-shrink-0">{{ part.icon }}</span>
-          <div class="min-w-0">
-            <div class="flex items-center gap-1">
-              <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ part.partKey }}</span>
-              <span v-if="isBilingual(part.partKey)" class="text-[8px] font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-1 py-px rounded leading-none">FR</span>
-            </div>
-            <div class="text-[10px] text-slate-500 dark:text-slate-400 truncate leading-tight">{{ part.title }}</div>
-          </div>
-        </router-link>
       </div>
     </section>
 
-    <!-- Math parts -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-      <div class="flex items-center gap-2 mb-4">
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Mathematical Notation</h2>
-        <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ mathParts.length }} parts</span>
-      </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2">
-        <router-link
-          v-for="part in mathParts"
-          :key="part.partKey"
-          :to="partUrl(part.partKey)"
-          class="group flex flex-col px-3 py-2.5 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-violet-200 dark:hover:border-violet-700 hover:shadow-sm transition-all text-center"
-        >
-          <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
-            {{ part.partKey }}
+    <!-- Math & Semantic layers -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 scroll-reveal">
+      <div class="grid lg:grid-cols-5 gap-6 lg:gap-8">
+        <!-- Math notation -->
+        <div class="lg:col-span-3">
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-lg">∑</span>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Mathematical Notation</h2>
+            <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ mathParts.length }} parts</span>
           </div>
-          <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">{{ part.title }}</div>
-        </router-link>
-      </div>
-    </section>
-
-    <!-- Semantic Layer -->
-    <section class="border-t border-slate-200/50 dark:border-dark-600/50 bg-slate-50/30 dark:bg-dark-800/30">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">Semantic Layer</h2>
-        <div class="grid sm:grid-cols-2 gap-6">
-          <router-link to="/documents" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
-            <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 rounded-lg bg-iec-100 flex items-center justify-center text-iec-600 text-sm font-bold">{{ totalDocs }}</div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Documents</h3>
-            </div>
-            <p class="text-sm text-slate-500 dark:text-slate-400">ISO &amp; IEC 80000 parts with clauses, terms, and document structure.</p>
-            <div class="mt-3 flex flex-wrap gap-2">
-              <div v-for="doc in publicationDocuments.slice(0, 4)" :key="doc.id" class="text-[10px] font-medium px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-600 dark:text-slate-400">
-                {{ doc.partKey }}
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <router-link
+              v-for="part in mathParts"
+              :key="part.partKey"
+              :to="partUrl(part.partKey)"
+              class="group flex flex-col px-3 py-2.5 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-violet-200 dark:hover:border-violet-700 hover:shadow-sm transition-all text-center"
+            >
+              <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-violet-600 dark:group-hover:text-violet-400 transition-colors">
+                {{ part.partKey }}
               </div>
-              <span v-if="publicationDocuments.length > 4" class="text-[10px] text-slate-400 dark:text-slate-500">+{{ publicationDocuments.length - 4 }}</span>
+              <div class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5 truncate">{{ part.title }}</div>
+            </router-link>
+          </div>
+        </div>
+
+        <!-- Semantic layer sidebar -->
+        <div class="lg:col-span-2 space-y-4">
+          <h2 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em]">Semantic Layer</h2>
+          <router-link to="/documents" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-iec-100 dark:bg-iec-900/40 flex items-center justify-center text-iec-600 dark:text-iec-400 text-sm font-bold">{{ totalDocs }}</div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Documents</h3>
             </div>
+            <p class="text-sm text-slate-500 dark:text-slate-400">ISO &amp; IEC 80000 publication structure with clauses and provisions.</p>
           </router-link>
 
-          <router-link to="/ontology" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+          <router-link to="/ontology" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
-              <div class="w-8 h-8 rounded-lg bg-brand-100 flex items-center justify-center text-brand-600 text-sm">OWL</div>
-              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Ontology</h3>
+              <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 text-sm">OWL</div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Ontology</h3>
             </div>
-            <p class="text-sm text-slate-500 dark:text-slate-400">Classes, properties, SHACL shapes, and SKOS concepts for ISO &amp; IEC 80000 quantities, units, and mathematical notation.</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400">OWL classes, SHACL shapes, and SKOS concepts for the ISQ domain.</p>
           </router-link>
+
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5">
+            <div class="flex items-center gap-3 mb-2">
+              <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-sm font-bold">{{ totalUnits }}</div>
+              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 heading-serif">Units &amp; Dimensions</h3>
+            </div>
+            <p class="text-sm text-slate-500 dark:text-slate-400">{{ totalUnits }} measurement units and {{ totalDims }} dimensions from UnitsML.</p>
+            <div class="mt-3 flex gap-2">
+              <router-link to="/units" class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Browse units →</router-link>
+              <router-link to="/dimensions" class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Dimensions →</router-link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

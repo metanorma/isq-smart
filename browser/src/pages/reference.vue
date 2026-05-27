@@ -2,6 +2,7 @@
 import { loadPartEntries } from '../data/index'
 import { getAllParts } from '../data/PartRegistry'
 import { jsonLdToTurtle } from '../data/jsonld'
+import { NS, ONTOLOGY_CLASSES, tagToClass, partQname, entryQname } from '../data/ontologyConfig'
 import { useToast } from '../composables/useToast'
 
 const { show: showToast } = useToast()
@@ -14,12 +15,12 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
       const data = await loadPartEntries(part.partKey)
       for (const entry of data.entries) {
         allEntries.push({
-          '@id': `isoiec80000:${entry.id}`,
-          '@type': entry._tag === 'quantity' ? 'isoiec80000:Quantity' : 'isoiec80000:MathConcept',
+          '@id': entryQname(entry.id),
+          '@type': tagToClass(entry._tag),
           'dcterms:identifier': entry.num,
           'skosxl:prefLabel': entry.designations[0]?.designation.en?.text ?? '',
           'skos:definition': entry.def?.en ?? '',
-          'dcterms:isPartOf': `isoiec80000:part-${part.partKey}`,
+          'dcterms:isPartOf': partQname(part.partKey),
         })
       }
     } catch { /* skip missing parts */ }
@@ -27,11 +28,11 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
 
   const context = {
     '@context': {
-      '@vocab': 'https://w3id.org/standards/isoiec80000/ontologies/core/',
+      '@vocab': NS.core.uri,
       dcterms: 'http://purl.org/dc/terms/',
       skos: 'http://www.w3.org/2004/02/skos/core#',
       skosxl: 'http://www.w3.org/2008/05/skos-xl#',
-      isoiec80000: 'https://w3id.org/standards/isoiec80000/',
+      [NS.core.prefix]: 'https://w3id.org/standards/isq/',
     },
     '@graph': allEntries,
   }
@@ -246,7 +247,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
               <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">RDF Turtle</h3>
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">W3C RDF serialization for linked data.</p>
-            <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-400 overflow-x-auto whitespace-pre">@prefix isoiec80000: &lt;...&gt; .
+            <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-400 overflow-x-auto whitespace-pre">@prefix isq: &lt;...&gt; .
 @prefix smart: &lt;...&gt; .</div>
           </div>
           <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-sm transition-all">
@@ -256,7 +257,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Linked data format embedded in every page.</p>
             <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-400 overflow-x-auto whitespace-pre">{
-  "@type": "isoiec80000:Quantity",
+  "@type": "isq:Quantity",
   "dcterms:identifier": "3-1.1"
 }</div>
           </div>

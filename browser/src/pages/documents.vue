@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { publicationDocuments } from '../data/generated/iso80000'
-import { getAllParts, getPartMeta } from '../data/PartRegistry'
+import { getAllParts, getPartMeta, publisherOf } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
-import { publisherOf } from '../data/jsonld'
 
 interface DocEntry {
   partKey: string

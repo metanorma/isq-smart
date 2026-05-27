@@ -2,15 +2,19 @@ import type { Domain, PartKey, Entry, Lang, PartData } from './types'
 import { partSummaries } from './generated/meta'
 import {
   getDomains, getDomain, getPartMeta, getPartsByDomain,
-  getAllParts, partUrl, entryUrl, domainPath,
+  getAllParts, partUrl, entryUrl, domainPath, publisherOf,
+  getPartDocument, getAllDocuments, getSectionsForDocument,
 } from './PartRegistry'
+import type { PartDocument, PartSection } from './PartRegistry'
 import { render as renderAsciiDoc } from './asciidoc'
 import { xrefMap } from './generated/xref-map'
 
 export {
   getDomains, getDomain, getPartMeta, getPartsByDomain,
-  getAllParts, partUrl, entryUrl, domainPath,
+  getAllParts, partUrl, entryUrl, domainPath, publisherOf,
+  getPartDocument, getAllDocuments, getSectionsForDocument,
 }
+export type { PartDocument, PartSection }
 
 export type {
   Domain, PartKey, Entry, PartMeta, PartSummary, PartData,
@@ -137,38 +141,48 @@ function getSubKeys(partKey: string): string[] {
 }
 
 const DataLoader = {
+  _cache: new Map<PartKey, PartData>(),
+
   async loadPart(partKey: PartKey): Promise<PartData> {
+    const cached = this._cache.get(partKey)
+    if (cached) return cached
+
     const directKey = `./generated/part-${partKey}.ts`
     const loader = partModules[directKey]
+    let result: PartData
     if (loader) {
       const mod = await loader()
-      return {
+      result = {
         entries: mod.default,
         editions: mod.editions,
         bilingual: mod.bilingual,
         mathCache: mod.mathCache,
         latexCache: mod.latexCache,
       }
-    }
-    // Aggregate sub-parts
-    const entries: Entry[] = []
-    const editions: string[] = []
-    let bilingual = false
-    const mathCache: Record<string, string> = {}
-    const latexCache: Record<string, string> = {}
-    for (const subKey of getSubKeys(partKey)) {
-      const key = `./generated/part-${subKey}.ts`
-      const subLoader = partModules[key]
-      if (subLoader) {
-        const mod = await subLoader()
-        entries.push(...mod.default)
-        editions.push(...mod.editions)
-        bilingual = bilingual || mod.bilingual
-        Object.assign(mathCache, mod.mathCache)
-        Object.assign(latexCache, mod.latexCache)
+    } else {
+      // Aggregate sub-parts
+      const entries: Entry[] = []
+      const editions: string[] = []
+      let bilingual = false
+      const mathCache: Record<string, string> = {}
+      const latexCache: Record<string, string> = {}
+      for (const subKey of getSubKeys(partKey)) {
+        const key = `./generated/part-${subKey}.ts`
+        const subLoader = partModules[key]
+        if (subLoader) {
+          const mod = await subLoader()
+          entries.push(...mod.default)
+          editions.push(...mod.editions)
+          bilingual = bilingual || mod.bilingual
+          Object.assign(mathCache, mod.mathCache)
+          Object.assign(latexCache, mod.latexCache)
+        }
       }
+      result = { entries, editions: [...new Set(editions)], bilingual, mathCache, latexCache }
     }
-    return { entries, editions: [...new Set(editions)], bilingual, mathCache, latexCache }
+
+    this._cache.set(partKey, result)
+    return result
   },
 
   async loadAll(): Promise<Entry[]> {

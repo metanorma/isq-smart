@@ -44,9 +44,9 @@
         <div>
           <h3 class="text-[11px] font-semibold text-white/50 uppercase tracking-wider mb-3">Vocabulary</h3>
           <div class="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] font-mono text-[10px] leading-relaxed text-white/40">
-            <pre>@context: isoiec80000/ontologies/core
-@type:   isoiec80000:Quantity
-@id:     isoiec80000:{id}
+            <pre>@context: isq/ontologies/core
+@type:   isq:Quantity
+@id:     isq:{id}
 dcterms: urn:iso:std:iso:80000:...</pre>
           </div>
         </div>

@@ -137,7 +137,7 @@ watch(activeSlug, (slug) => {
 })
 
 function ontLabel(prefix: string) {
-  if (prefix === 'isoiec80000') return 'ISO & IEC 80000'
+  if (prefix === 'isq') return 'ISO & IEC 80000'
   if (prefix === 'smart') return 'SMART Core'
   return prefix
 }
@@ -182,7 +182,7 @@ function ontLabel(prefix: string) {
         <!-- Ontology header -->
         <button @click="toggleGroup('ont-' + group.prefix)"
           class="w-full flex items-center justify-between px-2 py-1.5 rounded-md text-[10px] font-bold uppercase tracking-wider transition-colors"
-          :class="group.prefix === 'isoiec80000'
+          :class="group.prefix === 'isq'
             ? 'text-brand-600 dark:text-brand-400 hover:bg-brand-50/80 dark:hover:bg-brand-950/30'
             : 'text-emerald-600 dark:text-emerald-400 hover:bg-emerald-50/80 dark:hover:bg-emerald-950/30'">
           <span>{{ ontLabel(group.prefix) }}</span>
