@@ -173,7 +173,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
               </div>
             </div>
             <p class="mt-3 text-[11px] text-slate-400 dark:text-slate-500 leading-relaxed">
-              Uses base part number in the part segment. The <code class="text-slate-500 dark:text-slate-400">:item:</code> fragment type is specific to ISO/IEC 80000 — RFC 5141 supports <code class="text-slate-500 dark:text-slate-400">docelement</code> for clauses, figures, and terms, but not <code class="text-slate-500 dark:text-slate-400">item</code>.
+              Uses base part number in the part segment. The <code class="text-slate-500 dark:text-slate-400">:item:</code> fragment type is specific to the ISO 80000 &amp; IEC 80000 series — RFC 5141 supports <code class="text-slate-500 dark:text-slate-400">docelement</code> for clauses, figures, and terms, but not <code class="text-slate-500 dark:text-slate-400">item</code>.
             </p>
           </div>
 
