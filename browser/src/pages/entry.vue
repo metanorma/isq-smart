@@ -366,7 +366,13 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               class="group/unit flex items-center gap-5 p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
             >
               <div class="font-mono text-brand-700 text-xl sm:text-2xl font-medium min-w-[4rem] text-center px-3 py-2 rounded-lg bg-brand-50/50 border border-brand-100/40 group-hover/unit:bg-brand-100/60 transition-colors">
-                {{ unit.symbol?.join(' ') ?? '—' }}
+                <template v-if="unit.symbol?.length">
+                  <template v-for="(usym, ui) in unit.symbol" :key="ui">
+                    <MathRenderer :expression="usym" :cache="mathCache" />
+                    <span v-if="ui < unit.symbol.length - 1" class="text-brand-400 mx-1">·</span>
+                  </template>
+                </template>
+                <span v-else>—</span>
               </div>
               <div class="min-w-0">
                 <div class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover/unit:text-brand-600 dark:group-hover/unit:text-brand-400 transition-colors">{{ showBoth() && unit.fr ? `${unit.en} / ${unit.fr}` : (unit[activeLang()] ?? unit.en) }}</div>
