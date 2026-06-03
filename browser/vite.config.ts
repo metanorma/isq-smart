@@ -159,6 +159,7 @@ const MathCollector = {
     const exprs = new Set<string>()
     const stemRe = /stem:\[([^\]]+)\]/g
     const blockRe = /\[stem%unnumbered\]\n\+{4}\n([\s\S]*?)\n\+{4}/g
+    const stemWrap = /^stem:\[([^\]]+)\]$/
 
     const collectFrom = (obj: Record<string, string | undefined> | undefined) => {
       if (!obj) return
@@ -173,7 +174,10 @@ const MathCollector = {
     }
 
     for (const entry of entries) {
-      entry.symbols?.forEach(s => exprs.add(s))
+      entry.symbols?.forEach(s => {
+        const unwrapped = s.replace(stemWrap, '$1')
+        exprs.add(unwrapped)
+      })
       collectFrom(entry.def as unknown as Record<string, string | undefined>)
       if (entry.remarks) collectFrom(entry.remarks as unknown as Record<string, string | undefined>)
     }
@@ -219,9 +223,15 @@ const PartWriter = {
     routes: Set<string>,
   ) {
     const tag = domain === 'quantities' ? 'quantity' : 'math'
+    const STEM_WRAP = /^stem:\[([^\]]+)\]$/
     const entries = rawEntries.map(e => {
       const { part, ...rest } = e
-      return { _tag: tag, partKey: part.toString(), ...rest }
+      return {
+        _tag: tag,
+        partKey: part.toString(),
+        ...rest,
+        symbols: rest.symbols?.map(s => s.replace(STEM_WRAP, '$1')),
+      }
     })
 
     const editions = [...new Set(rawEntries.map(e => e.edition?.toString()).filter((v): v is string => Boolean(v)))]

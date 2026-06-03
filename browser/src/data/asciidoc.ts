@@ -46,6 +46,16 @@ export function render(text: string, mathCache: Record<string, string>, xrefs?: 
     .join('')
 }
 
+/** Render inline stem:[expr] in designation/name text to MathML. */
+export function renderInline(text: string, mathCache: Record<string, string>): string {
+  if (!text) return ''
+  return text.replace(new RegExp(INLINE_STEM.source, INLINE_STEM.flags), (_, expr) => {
+    const mathml = mathCache[expr]
+    if (mathml) return mathml
+    return `<code class="math-inline">${esc(expr)}</code>`
+  })
+}
+
 function toDisplay(mathml: string): string {
   return mathml.replace(/display="inline"/g, 'display="block"')
 }

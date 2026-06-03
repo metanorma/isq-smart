@@ -3,6 +3,7 @@ node_modules/
 browser/node_modules/
 browser/dist/
 browser/src/data/generated/
+.vite/
 
 # Data repos (cloned or symlinked for local dev, checked out in CI)
 iso-iec-80000
