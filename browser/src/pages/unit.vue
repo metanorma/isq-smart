@@ -3,6 +3,8 @@ import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { units } from '../data/generated/unitsdb'
 import { getPartMeta, partUrl, entryUrl } from '../data/PartRegistry'
+import { symbolCache } from '../data/generated/domain-index'
+import MathRenderer from '../components/MathRenderer.vue'
 import UnitOntologyPanel from '../components/UnitOntologyPanel.vue'
 
 const route = useRoute()
@@ -71,7 +73,7 @@ const partGroups = computed<PartGroup[]>(() => {
         </div>
 
         <div class="flex items-center gap-4">
-          <span class="font-mono text-2xl font-semibold text-teal-700 dark:text-teal-400 bg-teal-50/60 dark:bg-teal-950/40 px-4 py-2 rounded-xl">{{ unit.symbols[0] || '—' }}</span>
+          <span class="font-mono text-2xl font-semibold text-teal-700 dark:text-teal-400 bg-teal-50/60 dark:bg-teal-950/40 px-4 py-2 rounded-xl inline-flex items-center justify-center"><MathRenderer v-if="symbolCache[unit.symbols[0]]" :expression="unit.symbols[0]" :cache="symbolCache" /><template v-else>{{ unit.symbols[0] || '—' }}</template></span>
           <div>
             <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">{{ unit.name }}</h1>
             <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
@@ -80,7 +82,7 @@ const partGroups = computed<PartGroup[]>(() => {
               <span>Parts {{ unit.parts.join(', ') }}</span>
               <template v-if="unit.symbols.length > 1">
                 <span class="text-slate-300 dark:text-slate-600">&middot;</span>
-                <span class="font-mono">Also: {{ unit.symbols.slice(1).join(', ') }}</span>
+                <span class="inline-flex items-center gap-1">Also: <template v-for="(s, si) in unit.symbols.slice(1)" :key="si"><MathRenderer v-if="symbolCache[s]" :expression="s" :cache="symbolCache" /><template v-else>{{ s }}</template><span v-if="si < unit.symbols.length - 2" class="text-slate-300">, </span></template></span>
               </template>
             </div>
           </div>
