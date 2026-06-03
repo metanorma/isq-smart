@@ -249,7 +249,9 @@ export function partEntryCount(partKey: PartKey): number {
 }
 
 export function getPartEntryCount(partKey: PartKey): number {
-  return PartMetaStore.entryCount(partKey)
+  const direct = partSummaries[partKey]?.count
+  if (direct != null) return direct
+  return getSubKeys(partKey).reduce((s, k) => s + (partSummaries[k]?.count ?? 0), 0)
 }
 
 export function isBilingual(partKey: PartKey): boolean {
@@ -257,7 +259,13 @@ export function isBilingual(partKey: PartKey): boolean {
 }
 
 export function getPartEditions(partKey: PartKey): string[] {
-  return PartMetaStore.editions(partKey)
+  const direct = partSummaries[partKey]?.editions
+  if (direct?.length) return direct
+  const editions = new Set<string>()
+  for (const k of getSubKeys(partKey)) {
+    for (const e of partSummaries[k]?.editions ?? []) editions.add(e)
+  }
+  return [...editions]
 }
 
 export { partSummaries }

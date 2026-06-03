@@ -95,10 +95,11 @@ describe('getSectionsForDocument', () => {
     expect(getSectionsForDocument('2')).toHaveLength(0)
   })
 
-  it('returns 6 sections for Part 11', () => {
+  it('returns 1 section for Part 11 (sections are data-internal, not separate parts)', () => {
     const sections = getSectionsForDocument('11')
-    expect(sections).toHaveLength(6)
-    expect(sections.map(s => s.partKey)).toEqual(['11-4', '11-5', '11-6', '11-7', '11-8', '11-9'])
+    expect(sections).toHaveLength(1)
+    expect(sections[0].partKey).toBe('11')
+    expect(sections[0].parentDocument).toBe('11')
   })
 
   it('returns single section for leaf parts', () => {
