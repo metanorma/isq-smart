@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
-import { getPartMeta, getPartEntryCount, isBilingual, getPartEditions, getText, getUnitName, getUnitSymbols, entryUrl, loadPartEntries, EntryModel } from '../data/index'
+import { getPartMeta, getPartEntryCount, isBilingual, getPartEditions, getText, getPlainName, getUnitName, getUnitSymbols, entryUrl, loadPartEntries, EntryModel } from '../data/index'
 import MathRenderer from '../components/MathRenderer.vue'
 import LanguageToggle from '../components/LanguageToggle.vue'
 import ReferenceBadge from '../components/ReferenceBadge.vue'
@@ -188,7 +188,7 @@ function hl(text: string): string {
                   </div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 flex-wrap">
-                      <span class="font-medium text-slate-900 dark:text-slate-100 text-sm group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" v-html="hl(getText(entry, lang))" />
+                      <span class="font-medium text-slate-900 dark:text-slate-100 text-sm group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" v-html="hl(getPlainName(entry, lang))" />
                       <template v-if="entry.symbols?.length">
                         <span v-for="(sym, i) in entry.symbols" :key="i" class="inline-flex items-center text-sm text-slate-500">
                           <MathRenderer :expression="sym" :cache="mathCache" />

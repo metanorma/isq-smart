@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import { computed, ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
-import { getPartMeta, isBilingual, getPartEditions, getPartEntryCount, getText, getDefinition, getRemarks, partUrl, loadPartEntries, EntryModel } from '../data/index'
+import { getPartMeta, isBilingual, getPartEditions, getPartEntryCount, getText, getRenderedText, getDefinition, getRemarks, partUrl, loadPartEntries, EntryModel } from '../data/index'
 import { generateEntryJsonLd } from '../data/jsonld'
+import { renderInline } from '../data/asciidoc'
 import { reverseXref } from '../data/generated/reverse-xref'
 import { xrefMap } from '../data/generated/xref-map'
 import { units } from '../data/generated/unitsdb'
@@ -103,6 +104,8 @@ function def(e: Entry, l: 'en' | 'fr' = 'en') { return getDefinition(e, l, mathC
 function rem(e: Entry, l: 'en' | 'fr' = 'en') { return getRemarks(e, l, mathCache.value) }
 function showBoth() { return bilingual.value && lang.value === 'both' }
 function activeLang(): 'en' | 'fr' { return lang.value === 'both' ? 'en' : lang.value }
+function renderedName(e: Entry, l: 'en' | 'fr' | 'both' = 'en') { return getRenderedText(e, l, mathCache.value) }
+function desText(text: string) { return renderInline(text, mathCache.value) }
 
 function handleDefClick(e: MouseEvent) {
   const link = (e.target as HTMLElement).closest('a.xref')
@@ -244,11 +247,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
             <div class="min-w-0 flex-1">
               <template v-if="showBoth() && getText(entry, 'fr') && getText(entry, 'en') !== getText(entry, 'fr')">
                 <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1">
-                  <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight">{{ getText(entry, 'en') }}</h1>
-                  <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight">{{ getText(entry, 'fr') }}</h1>
+                  <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight" v-html="renderedName(entry, 'en')" />
+                  <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight" v-html="renderedName(entry, 'fr')" />
                 </div>
               </template>
-              <h1 v-else class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight">{{ getText(entry, activeLang()) }}</h1>
+              <h1 v-else class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight" v-html="renderedName(entry, activeLang())" />
             </div>
           </div>
 
@@ -273,11 +276,11 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               <div v-for="(des, i) in entry.designations" :key="i" class="px-3 py-2 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 text-sm">
                 <div v-if="des.designation.en" class="flex items-baseline gap-2">
                   <span class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 uppercase bg-brand-50 dark:bg-brand-950/40 px-1.5 py-0.5 rounded flex-shrink-0">EN</span>
-                  <span class="text-slate-800 dark:text-slate-200">{{ des.designation.en.text }}</span>
+                  <span class="text-slate-800 dark:text-slate-200" v-html="desText(des.designation.en.text)" />
                 </div>
                 <div v-if="des.designation.fr" class="flex items-baseline gap-2 mt-1">
                   <span class="text-[10px] font-semibold text-amber-600 dark:text-amber-400 uppercase bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded flex-shrink-0">FR</span>
-                  <span class="text-slate-800 dark:text-slate-200">{{ des.designation.fr.text }}</span>
+                  <span class="text-slate-800 dark:text-slate-200" v-html="desText(des.designation.fr.text)" />
                 </div>
               </div>
             </div>

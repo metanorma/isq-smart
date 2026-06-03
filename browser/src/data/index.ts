@@ -6,7 +6,7 @@ import {
   getPartDocument, getAllDocuments, getSectionsForDocument,
 } from './PartRegistry'
 import type { PartDocument, PartSection } from './PartRegistry'
-import { render as renderAsciiDoc } from './asciidoc'
+import { render as renderAsciiDoc, renderInline } from './asciidoc'
 import { xrefMap } from './generated/xref-map'
 
 export {
@@ -50,6 +50,11 @@ export const EntryModel = {
     }
     return entry.designations
       .map(d => d.designation[lang]?.text).filter(Boolean).join(', ')
+  },
+
+  renderedName(entry: Entry, lang: Lang | 'both', cache: Record<string, string>): string {
+    const plain = this.name(entry, lang)
+    return renderInline(plain, cache)
   },
 
   definition(entry: Entry, lang: Lang | 'both', cache: Record<string, string>): string {
@@ -97,6 +102,10 @@ export const EntryModel = {
     if (raw.length <= maxLen) return raw
     return raw.slice(0, maxLen).replace(/\s\S*$/, '…')
   },
+
+  plainName(entry: Entry, lang: Lang | 'both'): string {
+    return this.name(entry, lang).replace(/stem:\[([^\]]+)\]/g, (_, expr) => expr.replace(/^"|"$/g, ''))
+  },
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -105,6 +114,10 @@ export const EntryModel = {
 
 export function getText(entry: Entry, lang: Lang | 'both'): string {
   return EntryModel.name(entry, lang)
+}
+
+export function getRenderedText(entry: Entry, lang: Lang | 'both', cache: Record<string, string>): string {
+  return EntryModel.renderedName(entry, lang, cache)
 }
 
 export function getDefinition(entry: Entry, lang: Lang | 'both', cache: Record<string, string>): string {
@@ -121,6 +134,10 @@ export function getUnitName(entry: Entry, lang: Lang | 'both'): string {
 
 export function getUnitSymbols(entry: Entry): string[] {
   return EntryModel.unitSymbols(entry)
+}
+
+export function getPlainName(entry: Entry, lang: Lang | 'both'): string {
+  return EntryModel.plainName(entry, lang)
 }
 
 // ═══════════════════════════════════════════════════════════════
