@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import { physicalDimensions } from '../data/generated/physical-dimensions'
 import { entryUrl } from '../data/PartRegistry'
 import { quantitiesIndex, symbolCache } from '../data/generated/domain-index'
+import MathRenderer from '../components/MathRenderer.vue'
 import DimensionOntologyPanel from '../components/DimensionOntologyPanel.vue'
 
 const route = useRoute()
@@ -155,7 +156,7 @@ const isoEntries = computed(() => {
               <span class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors truncate block">{{ entry.name }}</span>
               <span class="text-[10px] text-slate-400 dark:text-slate-500">
                 Part {{ entry.part }}
-                <template v-if="entry.unitSymbols.length"> &middot; {{ entry.unitSymbols.join(', ') }}</template>
+                <template v-if="entry.unitSymbols.length"> &middot; <template v-for="(us, usi) in entry.unitSymbols" :key="usi"><MathRenderer v-if="symbolCache[us]" :expression="us" :cache="symbolCache" /><span v-else class="font-mono">{{ us }}</span><span v-if="usi < entry.unitSymbols.length - 1">, </span></template></template>
               </span>
             </div>
           </router-link>

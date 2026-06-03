@@ -5,6 +5,8 @@ const isDark = ref(stored === 'dark' || (!stored && typeof window !== 'undefined
 
 function apply(dark: boolean) {
   document.documentElement.classList.toggle('dark', dark)
+  const meta = document.querySelector('meta[name="theme-color"]')
+  if (meta) meta.setAttribute('content', dark ? '#160a12' : '#E30613')
 }
 
 if (typeof document !== 'undefined') {
