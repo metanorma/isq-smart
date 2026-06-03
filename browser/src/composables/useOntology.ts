@@ -47,6 +47,16 @@ const entityMap = new Map<string, OntEntity>(
   (ontologyEntities as readonly OntEntity[]).map(e => [e.qname, e])
 )
 
+// Pre-index shapes by targetClass for O(1) lookup
+const shapesByTarget = new Map<string, OntEntity[]>()
+for (const e of ontologyEntities as readonly OntEntity[]) {
+  if (e.type === 'shape' && e.targetClass) {
+    let list = shapesByTarget.get(e.targetClass)
+    if (!list) { list = []; shapesByTarget.set(e.targetClass, list) }
+    list.push(e)
+  }
+}
+
 export function findByQname(qname: string): OntEntity | undefined {
   return entityMap.get(qname)
 }
@@ -80,9 +90,7 @@ export function useClassHierarchy(classQname: MaybeRef<string>) {
 
   const shapes = computed(() => {
     const target = unref(classQname)
-    return (ontologyEntities as readonly OntEntity[]).filter(
-      e => e.type === 'shape' && e.targetClass === target
-    )
+    return shapesByTarget.get(target) ?? []
   })
 
   return { classEntity, ancestors, fullHierarchy, shapes }

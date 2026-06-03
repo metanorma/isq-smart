@@ -14,17 +14,13 @@ const IEC_ED_DATES: Record<string, string> = {
   '6': '2022-11', '13': '2025-02',
 }
 
-function isIecPart(partKey: string): boolean {
-  return publisherOf(partKey) === 'IEC'
-}
-
 function basePart(partKey: string): string {
   return partKey.includes('-') ? partKey.split('-')[0] : partKey
 }
 
 const Urn = {
   part(partKey: string, edition: string): string {
-    if (isIecPart(partKey)) {
+    if (publisherOf(partKey) === 'IEC') {
       const edDate = IEC_ED_DATES[partKey] || edition
       return `urn:iec:std:iec:80000-${partKey}:${edDate}:::`
     }
@@ -33,7 +29,7 @@ const Urn = {
   },
 
   partBilingual(partKey: string, edition: string): string {
-    if (isIecPart(partKey)) {
+    if (publisherOf(partKey) === 'IEC') {
       const edDate = IEC_ED_DATES[partKey] || edition
       return `urn:iec:std:iec:80000-${partKey}:${edDate}:::`
     }
@@ -42,7 +38,7 @@ const Urn = {
   },
 
   entry(entry: { num: string }, partKey: string, edition: string): string {
-    if (isIecPart(partKey)) {
+    if (publisherOf(partKey) === 'IEC') {
       return `${Urn.part(partKey, edition)}${entry.num}`
     }
     return `${Urn.part(partKey, edition)}:item:${entry.num}`
@@ -158,11 +154,23 @@ function escapeTurtle(str: string): string {
     .replace(/\t/g, '\\t')
 }
 
+// ── TTL prefix recognition (derived from context, not hardcoded) ──
+
+const TTL_KNOWN_PREFIXES = new Set(
+  Object.keys(jsonLdContext).filter(k => k !== 'bindingness-type')
+)
+
+function isKnownTtlPrefix(key: string): boolean {
+  const colon = key.indexOf(':')
+  if (colon < 0) return false
+  return TTL_KNOWN_PREFIXES.has(key.slice(0, colon))
+}
+
 function ttlObject(value: unknown): string {
   if (typeof value === 'string') {
     if (value.startsWith('https://') || value.startsWith('urn:'))
       return `<${value}>`
-    if (value.startsWith('isq:') || value.startsWith('smart:') || value.startsWith('dcterms:') || value.startsWith('skos:') || value.startsWith('rdf:') || value.startsWith('rdfs:') || value.startsWith('bindingness-type:'))
+    if (isKnownTtlPrefix(value))
       return value
     return `"${escapeTurtle(value)}"`
   }
@@ -170,7 +178,7 @@ function ttlObject(value: unknown): string {
   if (typeof value === 'object' && value !== null) {
     const entries = Object.entries(value as Record<string, unknown>)
       .filter(([k]) => k !== '@type')
-      .map(([k, v]) => `${k.startsWith('isq:') || k.startsWith('smart:') || k.startsWith('dcterms:') || k.startsWith('skos:') || k.startsWith('rdf:') ? k : `isq:${k}`} ${ttlObject(v)}`)
+      .map(([k, v]) => `${isKnownTtlPrefix(k) ? k : `${NS.core.prefix}:${k}`} ${ttlObject(v)}`)
       .join(' ;\n    ')
     return `[\n    ${entries}\n  ]`
   }
@@ -218,15 +226,21 @@ export function jsonLdToTurtle(data: Record<string, unknown>): string {
 
 // ── Citation generators ──
 
+const PUBLISHER_NAMES: Record<string, string> = {
+  ISO: 'International Organization for Standardization',
+  IEC: 'International Electrotechnical Commission',
+} as const
+
 export function generateBibTeX(entry: Entry, meta: PartMeta, edition: string): string {
   const edNum = edition.replace(/^.*?(\d+).*$/, '$1') || '1'
   const name = entry.designations[0]?.designation.en?.text ?? entry.num
   const key = `iso80000-${meta.partKey}-${edNum}-${entry.num.replace(/[^a-zA-Z0-9]/g, '-')}`
+  const publisher = PUBLISHER_NAMES[publisherOf(meta.partKey)] ?? PUBLISHER_NAMES.ISO
   return [
     `@standard{${key},`,
     `  title = {ISO 80000-${meta.partKey}:${edNum} -- ${meta.title}},`,
     `  entry = {${entry.num} ${name}},`,
-    `  organization = {International Organization for Standardization},`,
+    `  organization = {${publisher}},`,
     `  year = {${edNum}},`,
     `  url = {https://iso80000.org/quantities/part-${meta.partKey}/${entry.id}}`,
     `}`,
@@ -236,16 +250,18 @@ export function generateBibTeX(entry: Entry, meta: PartMeta, edition: string): s
 export function generateChicago(entry: Entry, meta: PartMeta, edition: string): string {
   const edNum = edition.replace(/^.*?(\d+).*$/, '$1') || '1'
   const name = entry.designations[0]?.designation.en?.text ?? entry.num
-  return `ISO 80000-${meta.partKey}:${edNum}, entry ${entry.num}, "${name}." International Organization for Standardization.`
+  const publisher = PUBLISHER_NAMES[publisherOf(meta.partKey)] ?? PUBLISHER_NAMES.ISO
+  return `ISO 80000-${meta.partKey}:${edNum}, entry ${entry.num}, "${name}." ${publisher}.`
 }
 
 export function generateRis(entry: Entry, meta: PartMeta, edition: string): string {
   const edNum = edition.replace(/^.*?(\d+).*$/, '$1') || '1'
   const name = entry.designations[0]?.designation.en?.text ?? entry.num
+  const publisher = PUBLISHER_NAMES[publisherOf(meta.partKey)] ?? PUBLISHER_NAMES.ISO
   return [
     'TY  - STD',
     `TI  - ISO 80000-${meta.partKey}:${edNum} -- ${meta.title}, entry ${entry.num}: ${name}`,
-    `PB  - International Organization for Standardization`,
+    `PB  - ${publisher}`,
     `PY  - ${edNum}`,
     `UR  - https://iso80000.org/quantities/part-${meta.partKey}/${entry.id}`,
     'ER  - ',
