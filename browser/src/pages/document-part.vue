@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SiteConfig } from '../site.config'
 import { computed } from 'vue'
 import { getPartDocument, getAllDocuments, publisherOf, getPartMeta, getSectionsForDocument } from '../data/PartRegistry'
 import { partUrl, partEntryCount } from '../data/index'
@@ -117,8 +118,8 @@ const allDocs = computed(() => getAllDocuments())
         <div class="p-6 rounded-2xl border" :class="publisher === 'IEC' ? 'bg-red-50/30 dark:bg-red-950/10 border-red-200/50 dark:border-red-800/30' : 'bg-brand-50/30 dark:bg-brand-950/10 border-brand-200/50 dark:border-brand-800/30'">
           <div class="flex items-start gap-4">
             <div class="flex-shrink-0">
-              <img v-if="publisher === 'IEC'" src="/img/logo-iec.svg" alt="IEC" class="h-10 w-auto rounded" />
-              <img v-else src="/img/logo-iso.svg" alt="ISO" class="h-10 w-auto rounded" />
+              <img v-if="publisher === 'IEC'" :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-10 w-auto rounded" />
+              <img v-else :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-10 w-auto rounded" />
             </div>
             <div class="min-w-0 flex-1">
               <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif mb-1">Obtain the Standard</h2>

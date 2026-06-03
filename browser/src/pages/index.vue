@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SiteConfig } from '../site.config'
 import { computed, ref, onMounted } from 'vue'
 import { getDomains, getPartsByDomain, partUrl, entryUrl } from '../data/PartRegistry'
 import { partEntryCount, isBilingual } from '../data/index'
@@ -109,9 +110,9 @@ const marqueeItems = computed(() => {
           <div class="lg:col-span-3 page-enter">
             <!-- Logos -->
             <div class="flex items-center gap-3 mb-6">
-              <img src="/img/logo-iso.svg" alt="ISO" class="h-7 w-auto rounded opacity-90" />
+              <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-7 w-auto rounded opacity-90" />
               <span class="text-white/30 text-xs">&amp;</span>
-              <img src="/img/logo-iec.svg" alt="IEC" class="h-7 w-auto rounded opacity-90" />
+              <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-7 w-auto rounded opacity-90" />
             </div>
 
             <h1 class="text-5xl sm:text-6xl font-bold text-white tracking-tight leading-[1.1] heading-serif">

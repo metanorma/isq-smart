@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SiteConfig } from '../site.config'
 import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { physicalDimensions } from '../data/generated/physical-dimensions'
@@ -63,13 +64,13 @@ const isoEntries = computed(() => {
 
             <div class="flex items-end gap-5 flex-wrap">
               <a href="https://www.unitsml.org" target="_blank" rel="noopener" class="group flex-shrink-0">
-                <img src="/img/unitsml-symbol.svg" alt="UnitsML" class="h-10 w-auto" />
+                <img :src="SiteConfig.asset('/img/unitsml-symbol.svg')" alt="UnitsML" class="h-10 w-auto" />
               </a>
               <div>
                 <div class="flex items-center gap-3">
                   <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">{{ dim.name }}</h1>
                   <a href="https://www.unitsml.org" target="_blank" rel="noopener" class="group">
-                    <img src="/img/unitsml-text.svg" alt="UnitsML" class="h-4 w-auto brightness-0 invert" />
+                    <img :src="SiteConfig.asset('/img/unitsml-text.svg')" alt="UnitsML" class="h-4 w-auto brightness-0 invert" />
                   </a>
                 </div>
                 <p class="mt-1 text-sm text-indigo-300/60">

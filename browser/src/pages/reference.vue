@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { SiteConfig } from '../site.config'
 import { loadPartEntries } from '../data/index'
 import { getAllParts } from '../data/PartRegistry'
 import { jsonLdToTurtle } from '../data/jsonld'
@@ -154,7 +155,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
           <!-- ISO URN -->
           <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-brand-200/50 dark:border-brand-800/40">
             <div class="flex items-center gap-2 mb-4">
-              <img src="/img/logo-iso.svg" alt="ISO" class="h-5 w-auto" />
+              <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-5 w-auto" />
               <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">RFC 5141 URN</span>
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Example: ISO 80000-3, Item 3-1.1</p>
@@ -179,7 +180,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
           <!-- IEC URN -->
           <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-teal-200/50 dark:border-teal-800/40">
             <div class="flex items-center gap-2 mb-4">
-              <img src="/img/logo-iec.svg" alt="IEC" class="h-5 w-auto" />
+              <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-5 w-auto" />
               <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">IEC Internal URN</span>
             </div>
             <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Example: IEC 80000-6, Item 6-42.1</p>

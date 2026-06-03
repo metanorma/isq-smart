@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { SiteConfig } from '../site.config'
+</script>
+
 <template>
   <footer class="mt-auto relative bg-brand-950">
     <div class="h-px bg-gradient-to-r from-transparent via-brand-500/40 to-transparent" />
@@ -7,9 +11,9 @@
         <!-- Brand -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-2 mb-4">
-            <img src="/img/logo-iso.svg" alt="ISO" class="h-6 w-auto rounded opacity-90" />
+            <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-6 w-auto rounded opacity-90" />
             <span class="text-white/30 text-xs">+</span>
-            <img src="/img/logo-iec.svg" alt="IEC" class="h-6 w-auto rounded opacity-90" />
+            <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-6 w-auto rounded opacity-90" />
           </div>
           <p class="text-xs text-white/40 leading-relaxed max-w-xs">
             ISO 80000 &amp; IEC 80000 — the international standards for quantities, units, and mathematical notation.

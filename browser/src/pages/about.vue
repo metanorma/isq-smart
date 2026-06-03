@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getPartsByDomain, publisherOf } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
+import { SiteConfig } from '../site.config'
 import IsqLogo from '../components/IsqLogo.vue'
 const qtyParts = getPartsByDomain('quantities')
 const mathParts = getPartsByDomain('math')
@@ -57,29 +58,29 @@ const timeline = [
 ]
 
 function publisherLogo(pub: string): string {
-  if (pub === 'BIPM') return '/img/logo-bipm.svg'
-  if (pub === 'IEC') return '/img/logo-iec.svg'
-  return '/img/logo-iso.svg'
+  if (pub === 'BIPM') return SiteConfig.asset('/img/logo-bipm.svg')
+  if (pub === 'IEC') return SiteConfig.asset('/img/logo-iec.svg')
+  return SiteConfig.asset('/img/logo-iso.svg')
 }
 
 const ecosystem = [
-  { name: 'BIPM SI Brochure', url: 'https://www.bipm.org/en/publications/si-brochure', logo: '/img/logo-bipm.svg', accent: 'brand',
+  { name: 'BIPM SI Brochure', url: 'https://www.bipm.org/en/publications/si-brochure', logo: SiteConfig.asset('/img/logo-bipm.svg'), accent: 'brand',
     desc: 'The definitive reference for the International System of Units. Normative reference for 80000 — the seven SI base units that 80000 builds upon.' },
-  { name: 'IEC 60050 (IEV)', url: 'https://www.electropedia.org', logo: '/img/logo-iec.svg', accent: 'brand',
+  { name: 'IEC 60050 (IEV)', url: 'https://www.electropedia.org', logo: SiteConfig.asset('/img/logo-iec.svg'), accent: 'brand',
     desc: 'International Electrotechnical Vocabulary — a comprehensive multilingual terminology database, heavily cited in IEC-published parts (6, 13).' },
-  { name: 'ISO/IEC Guide 99 (VIM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: '/img/logo-bipm.svg', accent: 'brand',
+  { name: 'ISO/IEC Guide 99 (VIM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: SiteConfig.asset('/img/logo-bipm.svg'), accent: 'brand',
     desc: 'International Vocabulary of Metrology — normative reference for 80000, defining core concepts like quantity, unit, and measurement.' },
   { name: 'NIST SP 811', url: 'https://www.nist.gov/pml/special-publication-811', logo: '', accent: 'brand',
     desc: 'Guide for SI usage in the United States. Bridges international standards and US practice.' },
-  { name: 'QUDT', url: 'https://qudt.org', logo: '/img/logo-qudt.svg', accent: 'violet',
+  { name: 'QUDT', url: 'https://qudt.org', logo: SiteConfig.asset('/img/logo-qudt.svg'), accent: 'violet',
     desc: 'RDF-based vocabulary for quantities, units, and dimensions as linked data. Cross-referenced in UnitsDB.' },
-  { name: 'UCUM', url: 'https://ucum.org', logo: '/img/logo-ucum.svg', accent: 'violet',
+  { name: 'UCUM', url: 'https://ucum.org', logo: SiteConfig.asset('/img/logo-ucum.svg'), accent: 'violet',
     desc: 'Unified Code for Units of Measure — a coding system used primarily in healthcare and life sciences.' },
   { name: 'Metanorma', url: 'https://www.metanorma.org', logo: '', accent: 'slate',
     desc: 'Document authoring toolchain that integrates UnitsML markup into standards documents via AsciiDoc with unitsml() calls.' },
   { name: 'CODATA', url: 'https://codata.org', logo: '', accent: 'slate',
     desc: 'Committee on Data for Science and Technology — maintains internationally recommended values of fundamental physical constants, referenced in 80000.' },
-  { name: 'ISO/IEC Guide 98 (GUM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: '/img/logo-bipm.svg', accent: 'slate',
+  { name: 'ISO/IEC Guide 98 (GUM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: SiteConfig.asset('/img/logo-bipm.svg'), accent: 'slate',
     desc: 'Guide to the Expression of Uncertainty in Measurement — referenced in the 80000 bibliography as the companion standard for measurement uncertainty.' },
 ]
 
@@ -151,7 +152,7 @@ function accentCardBg(accent: string) {
             <!-- ISO node -->
             <div class="flex flex-col items-center gap-2 flex-shrink-0">
               <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100/60 dark:from-red-950/40 dark:to-red-900/20 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center shadow-sm">
-                <img src="/img/logo-iso.svg" alt="ISO" class="h-7 w-auto" />
+                <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-7 w-auto" />
               </div>
               <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-red-500 dark:text-red-400">ISO</span>
             </div>
@@ -165,7 +166,7 @@ function accentCardBg(accent: string) {
             <!-- IEC node -->
             <div class="flex flex-col items-center gap-2 flex-shrink-0">
               <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/60 dark:from-blue-950/40 dark:to-blue-900/20 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center shadow-sm">
-                <img src="/img/logo-iec.svg" alt="IEC" class="h-7 w-auto" />
+                <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-7 w-auto" />
               </div>
               <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-blue-500 dark:text-blue-400">IEC</span>
             </div>
@@ -179,7 +180,7 @@ function accentCardBg(accent: string) {
             <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-red-400 to-red-500" />
             <div class="flex items-center gap-2.5 mb-3">
               <div class="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center overflow-hidden">
-                <img src="/img/logo-iso.svg" alt="ISO" class="h-4 w-auto" />
+                <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-4 w-auto" />
               </div>
               <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Left Half</h3>
             </div>
@@ -210,7 +211,7 @@ function accentCardBg(accent: string) {
             <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-400 to-blue-500" />
             <div class="flex items-center gap-2.5 mb-3">
               <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center overflow-hidden">
-                <img src="/img/logo-iec.svg" alt="IEC" class="h-4 w-auto" />
+                <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-4 w-auto" />
               </div>
               <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Right Half</h3>
             </div>
@@ -276,9 +277,9 @@ function accentCardBg(accent: string) {
         <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
           <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 text-center">
             <div class="flex items-center justify-center gap-1.5 mb-3">
-              <img src="/img/logo-iso.svg" alt="ISO" class="h-5 w-auto" />
+              <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-5 w-auto" />
               <span class="text-slate-300 dark:text-slate-600 text-[10px]">+</span>
-              <img src="/img/logo-iec.svg" alt="IEC" class="h-5 w-auto" />
+              <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-5 w-auto" />
             </div>
             <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Joint ISO &amp; IEC Standard</div>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Developed jointly by ISO/TC 12 and IEC/TC 25</p>
@@ -449,9 +450,9 @@ function accentCardBg(accent: string) {
           <div class="relative flex flex-col sm:flex-row gap-6">
             <div class="flex-shrink-0 flex items-center gap-3">
               <div class="w-16 h-16 rounded-2xl bg-white dark:bg-teal-900/30 border border-teal-200/60 dark:border-teal-800/40 flex items-center justify-center shadow-sm">
-                <img src="/img/unitsml-symbol.svg" alt="UnitsML" class="w-9 h-9" />
+                <img :src="SiteConfig.asset('/img/unitsml-symbol.svg')" alt="UnitsML" class="w-9 h-9" />
               </div>
-              <img src="/img/unitsml-text.svg" alt="UnitsML" class="h-6 w-auto hidden sm:block" />
+              <img :src="SiteConfig.asset('/img/unitsml-text.svg')" alt="UnitsML" class="h-6 w-auto hidden sm:block" />
             </div>
             <div class="min-w-0 flex-1">
               <div class="flex items-center gap-2 mb-1">
