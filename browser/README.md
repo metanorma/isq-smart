@@ -1,8 +1,19 @@
-# ISO/IEC 80000 Browser
+# ISQ SMART System
 
-A static Vue.js application for browsing the [ISO/IEC 80000](https://www.iso.org/standard/30669.html) series of international standards — quantities, units of measurement, and mathematical notation.
+A static Vue.js application for browsing the **ISO 80000 & IEC 80000** series of international standards — quantities, units of measurement, and mathematical notation.
 
 The site is built as a fully static SPA with no backend. All data is compiled into JavaScript bundles at build time from YAML sources.
+
+## Naming Convention
+
+The 80000 series is **NOT** published as "ISO/IEC 80000". Individual parts are published separately by ISO or IEC. Use one of these forms:
+
+- **"ISO 80000 & IEC 80000"** — when referring to the full series
+- **"ISO|IEC 80000 series"** — when referring to the series as a collective
+- **"ISQ"** — short form for the International System of Quantities
+- **"ISO 80000-{part}"** or **"IEC 80000-{part}"** — when citing a specific part (use the actual publisher)
+
+**NEVER** use "ISO/IEC 80000" (implies a dual-logo publication, which is incorrect) or bare "80000" without a prefix.
 
 ## Quick start
 

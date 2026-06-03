@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue'
+
+defineProps<{ mobile?: boolean }>()
 import { useRoute } from 'vue-router'
 import { ontologyEntities, ontologyTypeMeta, ontologyImportChain, ontologyNamespaces } from '../data/generated/ontology'
 import { useOntologySidebar } from '../composables/useOntologySidebar'
@@ -144,7 +146,7 @@ function ontLabel(prefix: string) {
 </script>
 
 <template>
-  <aside class="w-64 flex-shrink-0 border-r border-slate-200/60 dark:border-dark-600/60 bg-white/50 dark:bg-dark-900/50 overflow-y-auto h-[calc(100vh-3.5rem)] sticky top-14">
+  <aside :class="mobile ? 'w-full h-full' : 'w-64 flex-shrink-0 border-r border-slate-200/60 dark:border-dark-600/60 bg-white/50 dark:bg-dark-900/50 overflow-y-auto h-[calc(100vh-3.5rem)] sticky top-14'">
     <div class="p-3 space-y-2">
       <div class="relative">
         <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>

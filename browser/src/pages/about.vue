@@ -10,7 +10,7 @@ const audiences = [
   { icon: '🔬', title: 'Scientists & Researchers', desc: 'Canonical definitions for publishing unambiguous results and peer-reviewed papers.' },
   { icon: '⚙️', title: 'Engineers', desc: 'Consistent notation for specifications, calculations, and cross-disciplinary communication.' },
   { icon: '📏', title: 'Metrologists', desc: 'The ISQ and SI framework underlying measurement traceability and calibration.' },
-  { icon: '📋', title: 'Standards Developers', desc: 'The "standard of standards" — every ISO and IEC technical committee references 80000 for notation.' },
+  { icon: '📋', title: 'Standards Developers', desc: 'The "standard of standards" — every ISO and IEC technical committee references the ISO 80000 & IEC 80000 series for notation.' },
   { icon: '🎓', title: 'Educators', desc: 'The vocabulary used in physics, chemistry, and engineering textbooks worldwide.' },
   { icon: '💻', title: 'Software & Data', desc: 'Unambiguous unit and quantity definitions for databases, simulations, and data exchange.' },
 ]
@@ -48,7 +48,7 @@ const concepts = [
 const timeline = [
   { year: '1950s', label: 'IEC 60027 series begins — letter symbols for electrical technology', publisher: 'IEC', era: 'predecessor' },
   { year: '1960s', label: 'ISO 31 series begins — 14 parts covering quantities and units across the physical sciences', publisher: 'ISO', era: 'predecessor' },
-  { year: '2006', label: 'First 80000 parts published, harmonizing ISO 31 and IEC 60027 into one series', publisher: 'ISO & IEC', era: 'launch' },
+  { year: '2006', label: 'First ISO 80000 & IEC 80000 parts published, harmonizing ISO 31 and IEC 60027 into one series', publisher: 'ISO & IEC', era: 'launch' },
   { year: '2009', label: 'Part 1 (General) first edition — formally establishes ISQ terminology', publisher: 'ISO' },
   { year: '2019', label: 'SI redefinition — kilogram, ampere, kelvin, mole defined by fundamental constants', publisher: 'BIPM', highlight: true },
   { year: '2019', label: 'Parts 2–5, 7, 9–10 revised — updated definitions aligned with the new SI', publisher: 'ISO' },
@@ -65,11 +65,11 @@ function publisherLogo(pub: string): string {
 
 const ecosystem = [
   { name: 'BIPM SI Brochure', url: 'https://www.bipm.org/en/publications/si-brochure', logo: SiteConfig.asset('/img/logo-bipm.svg'), accent: 'brand',
-    desc: 'The definitive reference for the International System of Units. Normative reference for 80000 — the seven SI base units that 80000 builds upon.' },
+    desc: 'The definitive reference for the International System of Units. Normative reference for the ISO 80000 & IEC 80000 series — the seven SI base units that the series builds upon.' },
   { name: 'IEC 60050 (IEV)', url: 'https://www.electropedia.org', logo: SiteConfig.asset('/img/logo-iec.svg'), accent: 'brand',
     desc: 'International Electrotechnical Vocabulary — a comprehensive multilingual terminology database, heavily cited in IEC-published parts (6, 13).' },
   { name: 'ISO/IEC Guide 99 (VIM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: SiteConfig.asset('/img/logo-bipm.svg'), accent: 'brand',
-    desc: 'International Vocabulary of Metrology — normative reference for 80000, defining core concepts like quantity, unit, and measurement.' },
+    desc: 'International Vocabulary of Metrology — normative reference for the ISO 80000 & IEC 80000 series, defining core concepts like quantity, unit, and measurement.' },
   { name: 'NIST SP 811', url: 'https://www.nist.gov/pml/special-publication-811', logo: '', accent: 'brand',
     desc: 'Guide for SI usage in the United States. Bridges international standards and US practice.' },
   { name: 'QUDT', url: 'https://qudt.org', logo: SiteConfig.asset('/img/logo-qudt.svg'), accent: 'violet',
@@ -79,9 +79,9 @@ const ecosystem = [
   { name: 'Metanorma', url: 'https://www.metanorma.org', logo: '', accent: 'slate',
     desc: 'Document authoring toolchain that integrates UnitsML markup into standards documents via AsciiDoc with unitsml() calls.' },
   { name: 'CODATA', url: 'https://codata.org', logo: '', accent: 'slate',
-    desc: 'Committee on Data for Science and Technology — maintains internationally recommended values of fundamental physical constants, referenced in 80000.' },
+    desc: 'Committee on Data for Science and Technology — maintains internationally recommended values of fundamental physical constants, referenced in the ISO 80000 & IEC 80000 series.' },
   { name: 'ISO/IEC Guide 98 (GUM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: SiteConfig.asset('/img/logo-bipm.svg'), accent: 'slate',
-    desc: 'Guide to the Expression of Uncertainty in Measurement — referenced in the 80000 bibliography as the companion standard for measurement uncertainty.' },
+    desc: 'Guide to the Expression of Uncertainty in Measurement — referenced in the ISO 80000 & IEC 80000 series bibliography as the companion standard for measurement uncertainty.' },
 ]
 
 function accentCardBg(accent: string) {
@@ -96,14 +96,16 @@ function accentCardBg(accent: string) {
 <template>
   <div>
     <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-navy-950">
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-[#351a38] to-iec-900">
       <div class="absolute inset-0 hero-pattern" />
       <div class="grain-overlay absolute inset-0" />
       <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-iec-500/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
 
       <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-brand-400/20" />
       <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10" />
       <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]" />
+      <div class="hero-float-5 absolute top-[60%] left-[15%] w-2 h-2 rounded-full bg-iec-400/15" />
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
         <div class="max-w-3xl page-enter">
@@ -257,7 +259,7 @@ function accentCardBg(accent: string) {
       </div>
       <div class="mt-8 rounded-2xl bg-slate-50 dark:bg-dark-800/50 border border-slate-200/60 dark:border-dark-600/60 p-6 sm:p-8">
         <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed italic">
-          The set of all quantities and their interrelationships is effectively infinite and constantly expanding as new fields of science and technology emerge. 80000 provides a curated selection of the most commonly used quantities — and any quantity not listed can still be handled correctly as long as it relates to those that are.
+          The set of all quantities and their interrelationships is effectively infinite and constantly expanding as new fields of science and technology emerge. The ISO 80000 & IEC 80000 series provides a curated selection of the most commonly used quantities — and any quantity not listed can still be handled correctly as long as it relates to those that are.
         </p>
       </div>
     </section>
@@ -290,7 +292,7 @@ function accentCardBg(accent: string) {
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">International System of Quantities — the framework underlying the SI</p>
           </div>
           <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 text-center">
-            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-dark-700 px-2 py-1 rounded inline-block mb-3">ISO 31 → 80000</div>
+            <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-dark-700 px-2 py-1 rounded inline-block mb-3">ISO 31 → ISO 80000 &amp; IEC 80000</div>
             <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Harmonized Successor</div>
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Replaces ISO 31 (14 parts) and portions of IEC 60027</p>
           </div>
@@ -343,7 +345,7 @@ function accentCardBg(accent: string) {
           <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-brand-500 mb-2">Audience</p>
           <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Who It's For</h2>
           <p class="text-slate-500 dark:text-slate-400 text-sm max-w-2xl mx-auto mt-2">
-            Every ISO and IEC standard that involves physical quantities uses 80000 notation. The standard's reach extends far beyond any single discipline — it is the shared language of measurement.
+            Every ISO and IEC standard that involves physical quantities uses ISO 80000 & IEC 80000 notation. The series' reach extends far beyond any single discipline — it is the shared language of measurement.
           </p>
         </div>
         <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
@@ -464,7 +466,7 @@ function accentCardBg(accent: string) {
                 <span class="hidden sm:inline">&amp; UnitsDB</span>
               </h3>
               <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">
-                Machine-readable models for unambiguously encoding scientific units in XML. UnitsDB provides a comprehensive YAML database of 700+ units and 180+ quantities, listing ISO 80000 as a primary data source.
+                Machine-readable models for unambiguously encoding scientific units in XML. UnitsDB provides a comprehensive YAML database of 700+ units and 180+ quantities, listing the ISO 80000 & IEC 80000 series as a primary data source.
               </p>
               <div class="mt-3 flex items-center gap-2 text-xs text-teal-600 dark:text-teal-400 font-medium">
                 <span>Visit unitsml.org</span>

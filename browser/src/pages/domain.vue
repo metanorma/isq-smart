@@ -81,10 +81,11 @@ function hl(text: string): string {
   <div>
     <template v-if="domain">
       <!-- Domain hero -->
-      <section class="relative overflow-hidden" :class="isMath ? 'bg-gradient-to-br from-violet-950 via-violet-900 to-indigo-950' : 'bg-gradient-to-br from-brand-950 via-brand-900 to-navy-950'">
+      <section class="relative overflow-hidden" :class="isMath ? 'bg-gradient-to-br from-violet-950 via-violet-900 to-indigo-950' : 'bg-gradient-to-br from-brand-950 via-[#351a38] to-iec-900'">
         <div class="absolute inset-0 hero-pattern" />
         <div class="grain-overlay absolute inset-0" />
         <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" :class="isMath ? 'bg-violet-500/10' : 'bg-brand-500/10'" />
+        <div v-if="!isMath" class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-iec-500/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
 
         <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full" :class="isMath ? 'bg-violet-400/20' : 'bg-brand-400/20'" />
         <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10" />
@@ -156,12 +157,12 @@ function hl(text: string): string {
       <!-- Sticky search bar -->
       <section class="sticky top-14 z-20 bg-white/95 dark:bg-dark-900/95 backdrop-blur-xl border-b border-slate-200/60 dark:border-dark-600/60 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex items-center gap-3 py-3">
+          <div class="flex items-center gap-3 py-3 flex-wrap">
             <div class="relative flex-1 min-w-[180px] max-w-md">
               <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
               <input v-model="searchQuery" type="text" placeholder="Search by name, symbol, unit..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-slate-50/50 dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 focus:bg-white dark:focus:bg-dark-700 transition-all" />
             </div>
-            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0">
+            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0 max-sm:w-full max-sm:overflow-x-scroll max-sm:-mx-4 max-sm:px-4">
               <button
                 @click="selectedPart = ''"
                 class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all"

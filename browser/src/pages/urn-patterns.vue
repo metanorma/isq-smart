@@ -135,6 +135,88 @@
       </div>
     </section>
 
+    <!-- ISQ URNs for Units and Dimensions -->
+    <section class="mb-12">
+      <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4">ISQ Units &amp; Dimensions</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+        Units and dimensions from UnitsDB are identified using dual URNs — one in the ISO namespace, one in the IEC namespace — both incorporating the UnitsML identifier. This ensures every entity is addressable regardless of which publisher's URN scheme a consumer expects.
+      </p>
+
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-900 overflow-hidden mb-4">
+        <div class="px-5 py-3 bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+          <h3 class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.12em]">Unit URNs</h3>
+        </div>
+        <div class="p-5 space-y-4">
+          <div>
+            <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-1">ISO style</div>
+            <code class="text-sm font-mono text-brand-700 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/20 px-3 py-2 rounded-lg break-all block">urn:iso:std:iso:80000:unit:{unitsml_id}</code>
+            <div class="mt-2">
+              <code class="text-sm font-mono text-slate-700 dark:text-slate-300 break-all block">urn:iso:std:iso:80000:unit:u:meter</code>
+              <p class="text-xs text-slate-400 mt-1">The metre</p>
+            </div>
+          </div>
+          <div>
+            <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-1">IEC style</div>
+            <code class="text-sm font-mono text-teal-700 dark:text-teal-400 bg-teal-50/50 dark:bg-teal-950/20 px-3 py-2 rounded-lg break-all block">urn:iec:std:iec:80000:unit:{unitsml_id}</code>
+            <div class="mt-2">
+              <code class="text-sm font-mono text-slate-700 dark:text-slate-300 break-all block">urn:iec:std:iec:80000:unit:u:meter</code>
+              <p class="text-xs text-slate-400 mt-1">The metre (IEC namespace)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-900 overflow-hidden">
+        <div class="px-5 py-3 bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+          <h3 class="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.12em]">Dimension URNs</h3>
+        </div>
+        <div class="p-5 space-y-4">
+          <div>
+            <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-1">ISO style</div>
+            <code class="text-sm font-mono text-brand-700 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/20 px-3 py-2 rounded-lg break-all block">urn:iso:std:iso:80000:dim:{unitsml_id}</code>
+            <div class="mt-2">
+              <code class="text-sm font-mono text-slate-700 dark:text-slate-300 break-all block">urn:iso:std:iso:80000:dim:d:length</code>
+              <p class="text-xs text-slate-400 mt-1">The length dimension (L)</p>
+            </div>
+          </div>
+          <div>
+            <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-1">IEC style</div>
+            <code class="text-sm font-mono text-teal-700 dark:text-teal-400 bg-teal-50/50 dark:bg-teal-950/20 px-3 py-2 rounded-lg break-all block">urn:iec:std:iec:80000:dim:{unitsml_id}</code>
+            <div class="mt-2">
+              <code class="text-sm font-mono text-slate-700 dark:text-slate-300 break-all block">urn:iec:std:iec:80000:dim:d:length</code>
+              <p class="text-xs text-slate-400 mt-1">The length dimension (IEC namespace)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dual URN for entries -->
+    <section class="mb-12">
+      <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4">Dual URN for Entries</h2>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-4">
+        Every quantity and math entry in the ISQ carries two URNs — one in the ISO namespace and one in the IEC namespace — regardless of which organization published the specific part. This reflects the unified nature of the ISO 80000 &amp; IEC 80000 series.
+      </p>
+
+      <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-900 overflow-hidden">
+        <div class="p-5 space-y-4">
+          <div>
+            <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-1">ISO style</div>
+            <code class="text-sm font-mono text-brand-700 dark:text-brand-400 bg-brand-50/50 dark:bg-brand-950/20 px-3 py-2 rounded-lg break-all block">urn:iso:std:iso:80000:-{part}:ed-{edition}:en:item:{num}</code>
+          </div>
+          <div>
+            <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-1">IEC style</div>
+            <code class="text-sm font-mono text-teal-700 dark:text-teal-400 bg-teal-50/50 dark:bg-teal-950/20 px-3 py-2 rounded-lg break-all block">urn:iec:std:iec:80000-{part}:{edDate}:::item:{num}</code>
+          </div>
+          <div class="mt-3 pt-3 border-t border-slate-100 dark:border-dark-700/50">
+            <div class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider mb-2">Example — length (t3-1.1)</div>
+            <code class="text-xs font-mono text-brand-700 dark:text-brand-400 break-all block">urn:iso:std:iso:80000:-3:ed-2:en:item:3-1.1</code>
+            <code class="text-xs font-mono text-teal-700 dark:text-teal-400 break-all block mt-1">urn:iec:std:iec:80000-3:2019:::item:3-1.1</code>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Edition mapping -->
     <section class="mb-12">
       <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-4">Edition Mapping</h2>

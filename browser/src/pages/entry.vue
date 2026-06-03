@@ -2,7 +2,7 @@
 import { computed, ref, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { getPartMeta, isBilingual, getPartEditions, getPartEntryCount, getText, getRenderedText, getDefinition, getRemarks, partUrl, loadPartEntries, EntryModel } from '../data/index'
-import { generateEntryJsonLd } from '../data/jsonld'
+import { generateEntryJsonLd, entryDualUrn } from '../data/jsonld'
 import { renderInline } from '../data/asciidoc'
 import { reverseXref } from '../data/generated/reverse-xref'
 import { xrefMap } from '../data/generated/xref-map'
@@ -62,6 +62,10 @@ watch(entry, (e) => {
 
 const jsonLdData = computed(() =>
   entry.value && meta.value ? generateEntryJsonLd(entry.value, meta.value, edition.value) : null
+)
+
+const dualUrn = computed(() =>
+  entry.value && meta.value ? entryDualUrn(entry.value, partParam.value, edition.value) : null
 )
 
 const siblings = computed(() => {
@@ -264,6 +268,21 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
           <!-- Citation builder -->
           <div class="mt-3">
             <CitationBuilder :entry="entry" :meta="meta" :edition="edition" />
+          </div>
+
+          <!-- ISQ URNs -->
+          <div v-if="dualUrn" class="mt-4 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-800/50 p-3">
+            <div class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">ISQ Identifiers</div>
+            <div class="grid sm:grid-cols-2 gap-2">
+              <div>
+                <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-0.5">ISO</div>
+                <code class="text-[11px] font-mono text-slate-600 dark:text-slate-400 break-all block bg-white dark:bg-dark-700 px-2 py-1.5 rounded">{{ dualUrn.iso }}</code>
+              </div>
+              <div>
+                <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-0.5">IEC</div>
+                <code class="text-[11px] font-mono text-slate-600 dark:text-slate-400 break-all block bg-white dark:bg-dark-700 px-2 py-1.5 rounded">{{ dualUrn.iec }}</code>
+              </div>
+            </div>
           </div>
 
           <!-- Designations -->

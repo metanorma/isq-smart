@@ -14,6 +14,7 @@ export {
   getAllParts, partUrl, entryUrl, domainPath, publisherOf,
   getPartDocument, getAllDocuments, getSectionsForDocument,
 }
+export { unitUrns, dimensionUrns, entryDualUrn, partUrn, entryUrn } from './jsonld'
 export type { PartDocument, PartSection }
 
 export type {
@@ -98,7 +99,16 @@ export const EntryModel = {
   shortDef(entry: Entry, maxLen = 140, lang: Lang | 'both' = 'en'): string {
     const l = lang === 'both' ? 'en' : lang
     const defObj = entry.def as unknown as Record<string, string | undefined>
-    const raw = (defObj[l] ?? defObj['en'] ?? entry.def.en ?? '').replace(/stem:\[([^\]]+)\]/g, '$1')
+    const raw = (defObj[l] ?? defObj['en'] ?? entry.def.en ?? '')
+      .replace(/\[stem[^\]]*\]\n\+{4}\n[\s\S]*?\+{4}\n?/g, '')
+      .replace(/stem:\[([^\]]+)\]\s*::\s*/g, '') // stem + AsciiDoc desc list
+      .replace(/stem:\[([^\]]+)\]/g, '')
+      .replace(/<<([^>,>]+)(?:,[^>]*)?>>/g, '$1')
+      .replace(/::\s*/g, ' ')
+      .replace(/\n/g, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+    if (!raw) return ''
     if (raw.length <= maxLen) return raw
     return raw.slice(0, maxLen).replace(/\s\S*$/, '…')
   },

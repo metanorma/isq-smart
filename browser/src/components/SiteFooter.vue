@@ -4,7 +4,7 @@ import { SiteConfig } from '../site.config'
 
 <template>
   <footer class="mt-auto relative bg-brand-950">
-    <div class="h-px bg-gradient-to-r from-transparent via-brand-500/40 to-transparent" />
+    <div class="h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent" />
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
       <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -39,8 +39,8 @@ import { SiteConfig } from '../site.config'
           <ul class="space-y-2 text-xs">
             <li><a href="https://unitsml.org" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsML.org</a></li>
             <li><a href="https://unitsml.org/schemas/" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsDB Schemas</a></li>
-            <li><span class="text-white/50">RFC 5141 URN identifiers</span></li>
-            <li><span class="text-white/50">JSON-LD + RDF/Turtle vocabulary</span></li>
+            <li><router-link to="/reference/urn-patterns" class="text-white/50 hover:text-brand-300 transition-colors">ISO-IEC URN identifiers</router-link></li>
+            <li><router-link to="/ontology" class="text-white/50 hover:text-brand-300 transition-colors">JSON-LD + RDF/Turtle vocabulary</router-link></li>
           </ul>
         </div>
 

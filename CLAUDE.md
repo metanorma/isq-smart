@@ -4,7 +4,20 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Purpose
 
-This repo produces the **ISQ Browser** — a static SPA for browsing ISO/IEC 80000 quantities, units, and mathematical notation.
+This repo produces the **ISQ Browser** — a static SPA for browsing the ISO 80000 & IEC 80000 series of quantities, units, and mathematical notation.
+
+## Naming Convention: ISO 80000 & IEC 80000
+
+The 80000 series is **NOT** published as "ISO/IEC 80000". Individual parts are published separately by ISO or IEC. Use one of these forms:
+
+- **"ISO 80000 & IEC 80000"** — when referring to the full series
+- **"ISO|IEC 80000 series"** — when referring to the series as a collective
+- **"ISQ"** — short form for the International System of Quantities
+- **"ISO 80000-{part}"** or **"IEC 80000-{part}"** — when citing a specific part (use the actual publisher)
+
+**NEVER** use:
+- "ISO/IEC 80000" — this implies a dual-logo publication, which is incorrect
+- Bare "80000" without prefix — always say "ISO 80000" or "IEC 80000" or "the ISO 80000 & IEC 80000 series"
 
 The Ruby gems live in their own repositories:
 - **sdu-smart** — https://github.com/metanorma/sdu-smart (`SduSmart` module)
