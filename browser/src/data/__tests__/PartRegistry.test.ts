@@ -48,10 +48,10 @@ describe('publisherOf', () => {
 // ── Part document model ──
 
 describe('getPartDocument', () => {
-  it('returns document metadata for known parts', () => {
-    const doc = getPartDocument('2')
+  it('returns document metadata for ISO parts', () => {
+    const doc = getPartDocument('3')
     expect(doc).toBeDefined()
-    expect(doc!.title).toBe('Mathematical Signs and Symbols')
+    expect(doc!.title).toBe('Space and Time')
     expect(doc!.publisher).toBe('ISO')
     expect(doc!.edition).toContain('2019')
     expect(doc!.scope).toBeTruthy()
@@ -70,7 +70,11 @@ describe('getPartDocument', () => {
     expect(getPartDocument('99')).toBeUndefined()
   })
 
-  it('all documents have required fields', () => {
+  it('excludes configured parts', () => {
+    expect(getPartDocument('2')).toBeUndefined()
+  })
+
+  it('all visible documents have required fields', () => {
     const docs = getAllDocuments()
     for (const doc of docs) {
       expect(doc.partKey).toBeTruthy()
@@ -87,11 +91,8 @@ describe('getPartDocument', () => {
 // ── Part sections ──
 
 describe('getSectionsForDocument', () => {
-  it('returns 16 sections for Part 2', () => {
-    const sections = getSectionsForDocument('2')
-    expect(sections).toHaveLength(16)
-    expect(sections[0].partKey).toBe('2-5')
-    expect(sections[15].partKey).toBe('2-20')
+  it('excludes sections for excluded parts', () => {
+    expect(getSectionsForDocument('2')).toHaveLength(0)
   })
 
   it('returns 6 sections for Part 11', () => {
@@ -119,12 +120,8 @@ describe('getPartMeta', () => {
     expect(meta!.title).toBe('Space and Time')
   })
 
-  it('finds sub-sections', () => {
-    const meta = getPartMeta('2-5')
-    expect(meta).toBeDefined()
-    expect(meta!.partKey).toBe('2-5')
-    expect(meta!.domain).toBe('math')
-    expect(meta!.parentPart).toBe('2')
+  it('excludes configured sub-sections', () => {
+    expect(getPartMeta('2-5')).toBeUndefined()
   })
 
   it('falls back to base part for unknown sub-keys', () => {
@@ -137,10 +134,9 @@ describe('getPartMeta', () => {
 // ── Domain grouping ──
 
 describe('getPartsByDomain', () => {
-  it('returns math parts for math domain', () => {
+  it('excludes math domain when all math parts are excluded', () => {
     const parts = getPartsByDomain('math')
-    expect(parts.length).toBe(16) // 2-5 through 2-20
-    expect(parts.every(p => p.domain === 'math')).toBe(true)
+    expect(parts).toHaveLength(0)
   })
 
   it('returns quantity parts for quantities domain', () => {
@@ -158,9 +154,8 @@ describe('partUrl', () => {
     expect(partUrl('4')).toBe('/quantities/part-4')
   })
 
-  it('generates math URLs', () => {
-    expect(partUrl('2-5')).toBe('/math/part-2-5')
-    expect(partUrl('2-20')).toBe('/math/part-2-20')
+  it('returns root for excluded parts', () => {
+    expect(partUrl('2-5')).toBe('/')
   })
 
   it('returns root for unknown parts', () => {
@@ -171,7 +166,6 @@ describe('partUrl', () => {
 describe('entryUrl', () => {
   it('generates full entry URLs', () => {
     expect(entryUrl('3', 't3-1')).toBe('/quantities/part-3/t3-1')
-    expect(entryUrl('2-5', 't2-5.1')).toBe('/math/part-2-5/t2-5.1')
   })
 })
 
