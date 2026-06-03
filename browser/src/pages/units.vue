@@ -173,12 +173,12 @@ const partGroups = computed<PartGroup[]>(() => {
         >
           <div class="flex items-start gap-4">
             <div class="flex-shrink-0 w-24 text-center pt-0.5">
-              <span class="font-mono text-base font-medium text-teal-700 dark:text-teal-400 bg-teal-50/60 dark:bg-teal-950/40 px-2.5 py-1 rounded-lg">{{ unit.symbols[0] || '—' }}</span>
+              <span class="font-mono text-base font-medium text-teal-700 dark:text-teal-400 bg-teal-50/60 dark:bg-teal-950/40 px-2.5 py-1 rounded-lg inline-flex items-center justify-center"><MathRenderer v-if="symbolCache[unit.symbols[0]]" :expression="unit.symbols[0]" :cache="symbolCache" /><template v-else>{{ unit.symbols[0] || '—' }}</template></span>
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2">
                 <span class="font-semibold text-slate-800 dark:text-slate-200 text-sm">{{ unit.name }}</span>
-                <span v-if="unit.symbols.length > 1" class="text-xs text-slate-400 dark:text-slate-500 font-mono">{{ unit.symbols.slice(1).join(', ') }}</span>
+                <span v-if="unit.symbols.length > 1" class="text-xs text-slate-400 dark:text-slate-500 inline-flex items-center gap-1"><template v-for="(s, si) in unit.symbols.slice(1)" :key="si"><MathRenderer v-if="symbolCache[s]" :expression="s" :cache="symbolCache" /><template v-else>{{ s }}</template><span v-if="si < unit.symbols.length - 2" class="text-slate-300">, </span></template></span>
               </div>
               <div class="mt-1 flex items-center gap-3 text-xs text-slate-400 dark:text-slate-500">
                 <span>{{ unit.quantityCount }} quantities</span>
