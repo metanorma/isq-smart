@@ -178,6 +178,7 @@ const MathCollector = {
         const unwrapped = s.replace(stemWrap, '$1')
         exprs.add(unwrapped)
       })
+      entry.units?.forEach(u => u.symbol?.forEach(s => exprs.add(s.replace(stemWrap, '$1'))))
       collectFrom(entry.def as unknown as Record<string, string | undefined>)
       if (entry.remarks) collectFrom(entry.remarks as unknown as Record<string, string | undefined>)
     }
@@ -875,6 +876,8 @@ function yamlDataPlugin(): Plugin {
     )
 
     // ── Lightweight domain index for fast browsing ──
+    const STEM_WRAP_RE = /^stem:\[([^\]]+)\]$/
+    const STEM_INLINE_RE = /stem:\[([^\]]+)\]/g
     const qIndex: DomainEntry[] = []
     const mIndex: DomainEntry[] = []
     for (const e of allEntries) {
@@ -882,22 +885,24 @@ function yamlDataPlugin(): Plugin {
       const item: DomainEntry = {
         i: e.id,
         n: e.num,
-        t: e.designations[0]?.designation.en?.text ?? '',
-        s: e.symbols ?? [],
-        u: (e.units ?? []).flatMap(u => u.symbol ?? []),
+        t: (e.designations[0]?.designation.en?.text ?? '').replace(STEM_INLINE_RE, (_, expr) => expr.replace(/^"|"$/g, '')),
+        s: (e.symbols ?? []).map(s => s.replace(STEM_WRAP_RE, '$1')),
+        u: (e.units ?? []).flatMap(u => (u.symbol ?? []).map(s => s.replace(STEM_WRAP_RE, '$1'))),
         p: pk,
       }
       if (pk.startsWith('2-')) mIndex.push(item)
       else qIndex.push(item)
     }
 
-    // Collect unique symbols for domain-level MathML cache
+    // Collect unique symbols and unit symbols for domain-level MathML cache
     const allSymbols = new Set<string>()
+    const allUnitSymbols = new Set<string>()
     for (const e of allEntries) {
-      e.symbols?.forEach(s => allSymbols.add(s))
+      e.symbols?.forEach(s => allSymbols.add(s.replace(STEM_WRAP_RE, '$1')))
+      e.units?.forEach(u => u.symbol?.forEach(s => allUnitSymbols.add(s.replace(STEM_WRAP_RE, '$1'))))
     }
     const symbolCache: Record<string, string> = {}
-    for (const sym of allSymbols) {
+    for (const sym of [...allSymbols, ...allUnitSymbols]) {
       if (globalMathCache[sym]) symbolCache[sym] = globalMathCache[sym]
     }
 

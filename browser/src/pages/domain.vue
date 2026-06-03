@@ -202,7 +202,7 @@ function hl(text: string): string {
               <span class="font-mono text-[11px] font-semibold text-brand-700 bg-brand-50/80 px-2 py-0.5 rounded flex-shrink-0">{{ item.n }}</span>
               <div class="min-w-0">
                 <span class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate block">{{ item.t }}</span>
-                <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ item.p }}<span v-if="item.u.length"> &middot; {{ item.u[0] }}</span></span>
+                <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ item.p }}<template v-if="item.u.length"> &middot; <MathRenderer v-if="symbolCache[item.u[0]]" :expression="item.u[0]" :cache="symbolCache" /><span v-else>{{ item.u[0] }}</span></template></span>
               </div>
             </router-link>
           </div>
@@ -245,7 +245,13 @@ function hl(text: string): string {
             </div>
             <div class="flex-shrink-0 hidden sm:flex items-center gap-2 text-xs text-slate-400">
               <template v-if="item.u.length">
-                <span class="font-mono text-brand-600 font-medium" v-html="hl(item.u.join(', '))" />
+                <span class="font-mono text-brand-600 font-medium inline-flex items-center gap-1">
+                  <template v-for="(usym, ui) in item.u" :key="ui">
+                    <MathRenderer v-if="symbolCache[usym]" :expression="usym" :cache="symbolCache" />
+                    <span v-else v-html="hl(usym)" />
+                    <span v-if="ui < item.u.length - 1" class="text-slate-300">, </span>
+                  </template>
+                </span>
                 <span class="text-slate-200">&middot;</span>
               </template>
               <span class="text-[10px] uppercase tracking-wider font-medium" :class="isMath ? 'text-violet-500/70' : 'text-brand-500/70'">{{ isMath && item.p.includes('-') ? `§${item.p.split('-')[1]}` : item.p }}</span>

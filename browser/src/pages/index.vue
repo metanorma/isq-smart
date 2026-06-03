@@ -5,8 +5,9 @@ import { getDomains, getPartsByDomain, partUrl, entryUrl } from '../data/PartReg
 import { partEntryCount, isBilingual } from '../data/index'
 import { publicationDocuments } from '../data/generated/iso80000'
 import { units, dimensions } from '../data/generated/unitsdb'
-import { quantitiesIndex } from '../data/generated/domain-index'
+import { quantitiesIndex, symbolCache } from '../data/generated/domain-index'
 import { generateIndexJsonLd } from '../data/jsonld'
+import MathRenderer from '../components/MathRenderer.vue'
 import { accentGradient, accentColors } from '../composables/useAccent'
 import JsonLd from '../components/JsonLd.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
@@ -158,7 +159,7 @@ const marqueeItems = computed(() => {
                 >
                   <span class="font-mono text-[10px] font-semibold text-brand-300/80 bg-white/[0.06] px-1.5 py-0.5 rounded flex-shrink-0">{{ entry.n }}</span>
                   <span class="text-sm text-white/80 group-hover:text-white transition-colors truncate flex-1">{{ entry.t }}</span>
-                  <span v-if="entry.u.length" class="font-mono text-xs text-brand-300/60 flex-shrink-0">{{ entry.u[0] }}</span>
+                  <span v-if="entry.u.length" class="font-mono text-xs text-brand-300/60 flex-shrink-0"><MathRenderer v-if="symbolCache[entry.u[0]]" :expression="entry.u[0]" :cache="symbolCache" /><span v-else>{{ entry.u[0] }}</span></span>
                 </router-link>
               </div>
               <router-link to="/quantities" class="block px-4 py-2.5 text-[11px] text-brand-300/50 hover:text-brand-200 transition-colors border-t border-white/[0.06]">
