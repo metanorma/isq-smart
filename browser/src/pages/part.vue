@@ -70,7 +70,7 @@ const sections = computed<SectionGroup[]>(() => {
   return groups
 })
 
-const hasSections = computed(() => sections.value.length > 1)
+const hasSections = computed(() => sections.value.some(s => s.entries.length > 1))
 
 function heroGlow() {
   return meta.value ? accentGlow(meta.value, 0.12, 140) : {}
@@ -87,15 +87,8 @@ function sectionAccentStyle() {
   return { background: accentGradient(meta.value, 120) }
 }
 
-function unitLabel(entry: Entry): string {
-  if (entry._tag !== 'quantity') return ''
-  const names = getUnitName(entry, lang.value)
-  const syms = getUnitSymbols(entry)
-  if (!names && !syms.length) return ''
-  const parts = []
-  if (syms.length) parts.push(syms.join(', '))
-  if (names && names !== syms.join(', ')) parts.push(names)
-  return parts.join(' · ')
+function stripStem(text: string): string {
+  return text.replace(/stem:\[([^\]]+)\]/g, (_, expr) => expr.replace(/^"|"$/g, ''))
 }
 
 function hl(text: string): string {
@@ -196,9 +189,16 @@ function hl(text: string): string {
                         </span>
                       </template>
                     </div>
-                    <div class="mt-0.5 flex items-center gap-2 text-xs text-slate-400">
-                      <template v-if="unitLabel(entry)">
-                        <span class="font-mono text-brand-600 font-medium">{{ unitLabel(entry) }}</span>
+                    <div class="mt-0.5 flex items-center gap-1.5 text-xs text-slate-400 flex-wrap">
+                      <template v-if="entry._tag === 'quantity' && getUnitSymbols(entry).length">
+                        <template v-for="(us, usi) in getUnitSymbols(entry)" :key="usi">
+                          <MathRenderer :expression="stripStem(us)" :cache="mathCache" class="text-brand-600 font-medium" />
+                          <span v-if="usi < getUnitSymbols(entry).length - 1" class="text-slate-300">,</span>
+                        </template>
+                        <template v-if="getUnitName(entry, lang)">
+                          <span class="text-slate-300 dark:text-slate-600">&middot;</span>
+                          <span class="truncate">{{ getUnitName(entry, lang) }}</span>
+                        </template>
                       </template>
                     </div>
                     <div v-if="entry.def?.en || entry.def?.fr" class="mt-0.5 text-xs text-slate-400 dark:text-slate-500 truncate">{{ EntryModel.shortDef(entry, 140, lang) }}</div>

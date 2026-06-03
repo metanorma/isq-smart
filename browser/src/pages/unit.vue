@@ -6,6 +6,7 @@ import { getPartMeta, partUrl, entryUrl } from '../data/PartRegistry'
 import { symbolCache } from '../data/generated/domain-index'
 import MathRenderer from '../components/MathRenderer.vue'
 import UnitOntologyPanel from '../components/UnitOntologyPanel.vue'
+import { unitUrns } from '../data/jsonld'
 
 const route = useRoute()
 const slugParam = computed(() => route.params.slug as string)
@@ -21,6 +22,7 @@ interface EnrichedUnit {
 }
 
 const unit = computed(() => units.find(u => u.slug === slugParam.value) as EnrichedUnit | undefined)
+const urns = computed(() => unitUrns(unit.value?.unitsmlId))
 
 const filter = ref('')
 
@@ -75,7 +77,13 @@ const partGroups = computed<PartGroup[]>(() => {
         <div class="flex items-center gap-4">
           <span class="font-mono text-2xl font-semibold text-teal-700 dark:text-teal-400 bg-teal-50/60 dark:bg-teal-950/40 px-4 py-2 rounded-xl inline-flex items-center justify-center"><MathRenderer v-if="symbolCache[unit.symbols[0]]" :expression="unit.symbols[0]" :cache="symbolCache" /><template v-else>{{ unit.symbols[0] || '—' }}</template></span>
           <div>
-            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">{{ unit.name }}</h1>
+            <div class="flex items-center gap-3">
+              <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">{{ unit.name }}</h1>
+              <a v-if="unit.unitsmlId" :href="`https://unitsml.org/unitsdb/units/${unit.unitsmlId}`" target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/30 text-teal-700 dark:text-teal-400 border border-teal-200/60 dark:border-teal-800/60 hover:bg-teal-100 dark:hover:bg-teal-950/50 transition-colors">
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                UnitsML
+              </a>
+            </div>
             <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
               <span>{{ unit.quantityCount }} quantities</span>
               <span class="text-slate-300 dark:text-slate-600">&middot;</span>
@@ -98,6 +106,21 @@ const partGroups = computed<PartGroup[]>(() => {
     </section>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <!-- ISQ URNs -->
+      <div v-if="urns" class="mb-8 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-900 p-5">
+        <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">ISQ Identifiers</h3>
+        <div class="grid sm:grid-cols-2 gap-3">
+          <div>
+            <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-1">ISO URN</div>
+            <code class="text-xs font-mono text-slate-700 dark:text-slate-300 break-all block bg-brand-50/50 dark:bg-brand-950/20 px-3 py-2 rounded-lg">{{ urns.iso }}</code>
+          </div>
+          <div>
+            <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-1">IEC URN</div>
+            <code class="text-xs font-mono text-slate-700 dark:text-slate-300 break-all block bg-teal-50/50 dark:bg-teal-950/20 px-3 py-2 rounded-lg">{{ urns.iec }}</code>
+          </div>
+        </div>
+      </div>
+
       <!-- Ontology panel -->
       <UnitOntologyPanel :unit="unit" />
 

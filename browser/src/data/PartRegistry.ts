@@ -186,7 +186,7 @@ export function getPartsByDomain(domain: Domain): PartMeta[] {
 }
 
 export function partUrl(partKey: PartKey): string {
-  const meta = partMap.get(partKey)
+  const meta = getPartMeta(partKey)
   if (!meta) return '/'
   return `${meta.domain === 'math' ? '/math' : '/quantities'}/part-${meta.partKey}`
 }

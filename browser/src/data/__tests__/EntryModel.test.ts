@@ -218,9 +218,19 @@ describe('EntryModel.shortDef', () => {
     expect(short).toMatch(/…$/)
   })
 
-  it('strips stem markup', () => {
+  it('strips stem markup entirely from preview', () => {
     const entry = makeQuantity({ def: { en: 'value is stem:[x^2] plus stem:[y]' } })
-    expect(EntryModel.shortDef(entry)).toBe('value is x^2 plus y')
+    expect(EntryModel.shortDef(entry)).toBe('value is plus')
+  })
+
+  it('strips AsciiDoc stem blocks from preview', () => {
+    const entry = makeQuantity({ def: { en: '[stem%unnumbered]\n++++\nH = 1//n\n++++\n\nwhere n is the number of states' } })
+    expect(EntryModel.shortDef(entry)).toBe('where n is the number of states')
+  })
+
+  it('returns empty when definition is only formulas', () => {
+    const entry = makeQuantity({ def: { en: 'stem:[H(X) = sum_{i=1}^n p(X_i) I(X_i)]' } })
+    expect(EntryModel.shortDef(entry)).toBe('')
   })
 
   it('respects lang parameter', () => {

@@ -17,6 +17,21 @@ const palettes: Record<string, { from: string; to: string }> = {
 
 const DEFAULT = palettes.blue
 
+const neonPalettes: Record<string, { from: string; to: string }> = {
+  violet:  { from: '#a78bfa', to: '#8b5cf6' },
+  sky:     { from: '#38bdf8', to: '#0ea5e9' },
+  slate:   { from: '#94a3b8', to: '#64748b' },
+  orange:  { from: '#fb923c', to: '#f97316' },
+  amber:   { from: '#fbbf24', to: '#f59e0b' },
+  yellow:  { from: '#facc15', to: '#eab308' },
+  teal:    { from: '#2dd4bf', to: '#14b8a6' },
+  emerald: { from: '#34d399', to: '#10b981' },
+  cyan:    { from: '#22d3ee', to: '#06b6d4' },
+  indigo:  { from: '#818cf8', to: '#6366f1' },
+  rose:    { from: '#fb7185', to: '#f43f5e' },
+  blue:    { from: '#60a5fa', to: '#3b82f6' },
+}
+
 function resolve(part: PartMeta) {
   return palettes[part.accent ?? 'blue'] ?? DEFAULT
 }
@@ -56,6 +71,10 @@ const AccentPalette = {
   hoverTint(part: PartMeta): string {
     return `${AccentPalette.colors(part).from}08`
   },
+}
+
+export function neonColors(part: PartMeta) {
+  return neonPalettes[part.accent ?? 'blue'] ?? neonPalettes.blue
 }
 
 export function accentColors(part: PartMeta) { return AccentPalette.colors(part) }

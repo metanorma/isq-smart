@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { SiteConfig } from '../site.config'
 import { computed } from 'vue'
 import { publicationDocuments } from '../data/generated/iso80000'
-import { getAllParts, getPartMeta, publisherOf } from '../data/PartRegistry'
+import { getAllParts, getPartMeta, getPartDocument, publisherOf } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
 
 interface DocEntry {
@@ -19,19 +20,17 @@ interface DocEntry {
 const docs = computed(() => {
   const topDocs = new Map<string, DocEntry>()
 
-  // Add publicationDocuments with top-level (numeric-only) partKeys
   for (const d of publicationDocuments) {
     if (/^\d+$/.test(d.partKey)) {
       topDocs.set(d.partKey, { ...d, link: `/documents/part-${d.partKey}` })
     }
   }
 
-  // Ensure all top-level parts from PartRegistry are represented
   for (const part of getAllParts()) {
     if (part.parentPart) continue
-    // Skip sections (Part 2) and sub-parts (Part 11)
     if (part.partKey.includes('-')) continue
     if (!topDocs.has(part.partKey)) {
+      const doc = getPartDocument(part.partKey)
       topDocs.set(part.partKey, {
         partKey: part.partKey,
         title: part.title,
@@ -41,11 +40,11 @@ const docs = computed(() => {
         termCount: partEntryCount(part.partKey),
         id: `iso80000-${part.partKey}`,
         link: `/documents/part-${part.partKey}`,
+        edition: doc?.edition,
       })
     }
   }
 
-  // Add parent documents for sections/sub-parts (Part 2, Part 11) if not already present
   const parentParts = new Set<string>()
   for (const part of getAllParts()) {
     if (part.parentPart) parentParts.add(part.parentPart)
@@ -54,11 +53,10 @@ const docs = computed(() => {
   for (const pk of parentParts) {
     if (topDocs.has(pk)) continue
     const partMeta = getPartMeta(pk)
-    // Aggregate term counts from all sub-parts
     const subParts = getAllParts().filter(p => p.parentPart === pk || p.partKey.startsWith(pk + '-'))
     const totalTerms = subParts.reduce((s, p) => s + partEntryCount(p.partKey), 0)
-    const domain = subParts[0]?.domain === 'math' ? '/math' : '/quantities'
     const knownTitles: Record<string, string> = { '2': 'Mathematical Notation', '11': 'Characteristic Numbers' }
+    const doc = getPartDocument(pk)
     topDocs.set(pk, {
       partKey: pk,
       title: partMeta?.title || knownTitles[pk] || `Part ${pk}`,
@@ -68,10 +66,10 @@ const docs = computed(() => {
       termCount: totalTerms,
       id: `iso80000-${pk}`,
       link: `/documents/part-${pk}`,
+      edition: doc?.edition,
     })
   }
 
-  // Sort by part key numerically
   return [...topDocs.values()].sort((a, b) => {
     const na = parseInt(a.partKey, 10)
     const nb = parseInt(b.partKey, 10)
@@ -128,19 +126,33 @@ const totalTerms = computed(() => docs.value.reduce((s, d) => s + d.termCount, 0
           v-for="doc in docs"
           :key="doc.partKey"
           :to="doc.link"
-          class="group flex items-center gap-5 px-5 py-4 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
+          class="group flex items-center gap-5 px-5 py-4 rounded-xl border bg-white dark:bg-dark-800 hover:shadow-sm transition-all"
+          :class="doc.publisher === 'IEC'
+            ? 'border-iec-200/60 dark:border-iec-800/40 hover:border-iec-300 dark:hover:border-iec-700'
+            : 'border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700'"
         >
-          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-950/50 flex items-center justify-center text-brand-600 dark:text-brand-400 text-sm font-bold">
-            {{ doc.partKey }}
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center"
+            :class="doc.publisher === 'IEC'
+              ? 'bg-iec-50 dark:bg-iec-950/50 border border-iec-200/60 dark:border-iec-800/40'
+              : 'bg-brand-50 dark:bg-brand-950/50 border border-brand-200/60 dark:border-brand-800/40'"
+          >
+            <img
+              :src="SiteConfig.asset(doc.publisher === 'IEC' ? '/img/logo-iec.svg' : '/img/logo-iso.svg')"
+              :alt="doc.publisher"
+              class="h-5 w-auto"
+            />
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
               <span class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ doc.title }}</span>
-              <span class="text-[10px] font-medium text-slate-400 dark:text-slate-500 bg-slate-50 dark:bg-dark-700 px-2 py-0.5 rounded">{{ doc.publisher }}</span>
+              <span class="text-[10px] font-medium px-1.5 py-0.5 rounded"
+                :class="doc.publisher === 'IEC'
+                  ? 'text-iec-600 dark:text-iec-400 bg-iec-50 dark:bg-iec-950/40 border border-iec-200/60 dark:border-iec-800/40'
+                  : 'text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-dark-700'"
+              >{{ doc.publisher }}</span>
             </div>
             <div class="mt-1 flex gap-4 text-xs text-slate-400 dark:text-slate-500">
               <span v-if="doc.edition">Edition {{ doc.edition }}</span>
-              <span>{{ doc.clauseCount }} clauses</span>
               <span>{{ doc.termCount }} entries</span>
             </div>
           </div>

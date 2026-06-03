@@ -8,7 +8,7 @@ import { units, dimensions } from '../data/generated/unitsdb'
 import { quantitiesIndex, symbolCache } from '../data/generated/domain-index'
 import { generateIndexJsonLd } from '../data/jsonld'
 import MathRenderer from '../components/MathRenderer.vue'
-import { accentGradient, accentColors } from '../composables/useAccent'
+import { accentGradient, accentColors, neonColors } from '../composables/useAccent'
 import JsonLd from '../components/JsonLd.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
 import { useTheme } from '../composables/useTheme'
@@ -97,14 +97,16 @@ const marqueeItems = computed(() => {
 <template>
   <div>
     <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-brand-900 to-navy-950">
+    <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-[#351a38] to-iec-900">
       <div class="absolute inset-0 hero-pattern" />
       <div class="grain-overlay absolute inset-0" />
       <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3" />
+      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-iec-500/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4" />
 
       <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-brand-400/20" />
       <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10" />
       <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]" />
+      <div class="hero-float-5 absolute top-[60%] left-[15%] w-2 h-2 rounded-full bg-iec-400/15" />
 
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-32">
         <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
@@ -116,8 +118,8 @@ const marqueeItems = computed(() => {
               <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-7 w-auto rounded opacity-90" />
             </div>
 
-            <h1 class="text-5xl sm:text-6xl font-bold text-white tracking-tight leading-[1.1] heading-serif">
-              ISO&nbsp;&amp;&nbsp;IEC&nbsp;80000
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] heading-serif">
+              International System of Quantities
             </h1>
             <p class="mt-2 text-xl text-brand-200/90 font-medium heading-serif">Quantities and Units</p>
             <p class="mt-3 text-sm sm:text-base text-brand-300/60 leading-relaxed max-w-xl">
@@ -233,7 +235,7 @@ const marqueeItems = computed(() => {
           </div>
           <div>
             <div class="flex items-center gap-2 mb-3">
-              <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400">
+              <div class="w-8 h-8 rounded-lg bg-iec-100 dark:bg-iec-900/40 flex items-center justify-center text-iec-600 dark:text-iec-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
               </div>
               <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">Linked data</h3>
@@ -255,8 +257,8 @@ const marqueeItems = computed(() => {
           :to="d.path"
           class="card-lift group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 overflow-hidden relative"
         >
-          <div class="h-1 bg-gradient-to-r" :class="d.key === 'quantities' ? 'from-brand-500 to-brand-600' : 'from-violet-500 to-violet-600'" />
-          <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" :class="d.key === 'quantities' ? 'bg-gradient-to-br from-brand-50/20 to-transparent' : 'bg-gradient-to-br from-violet-50/20 to-transparent'" />
+          <div class="h-1 bg-gradient-to-r" :class="d.key === 'quantities' ? 'from-brand-500 to-iec-600' : 'from-violet-500 to-violet-600'" />
+          <div class="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300" :class="d.key === 'quantities' ? 'bg-gradient-to-br from-brand-50/15 via-purple-50/10 to-iec-50/15' : 'bg-gradient-to-br from-violet-50/20 to-transparent'" />
           <div class="relative p-6">
             <div class="flex items-center gap-4">
               <div class="text-3xl">{{ d.icon }}</div>
@@ -276,7 +278,7 @@ const marqueeItems = computed(() => {
     </section>
 
     <!-- Quantities parts overview -->
-    <section class="bg-slate-50/50 dark:bg-dark-800/30 border-y border-slate-200/40 dark:border-dark-700/40">
+    <section class="bg-slate-50/50 dark:bg-dark-800/50 border-y border-slate-200/40 dark:border-dark-600/40">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 scroll-reveal">
         <div class="flex items-center justify-between mb-5">
           <div>
@@ -322,20 +324,19 @@ const marqueeItems = computed(() => {
                 :style="{
                   width: `${Math.max(4, (partEntryCount(part.partKey) / maxQtyCount) * 100)}%`,
                   background: isDark
-                    ? `linear-gradient(135deg, ${accentColors(part).from}, ${accentColors(part).to})`
+                    ? `linear-gradient(135deg, ${neonColors(part).from}, ${neonColors(part).to})`
                     : accentGradient(part),
                   boxShadow: isDark
-                    ? `0 0 14px ${accentColors(part).from}40, 0 0 5px ${accentColors(part).from}60, inset 0 0 6px ${accentColors(part).from}15`
+                    ? `0 0 16px ${neonColors(part).from}50, 0 0 6px ${neonColors(part).from}70, inset 0 0 8px ${neonColors(part).from}20`
                     : undefined,
-                  filter: isDark ? 'saturate(1.6) brightness(1.4)' : undefined,
                 }"
               />
             </div>
             <span
               class="w-8 text-[10px] font-semibold tabular-nums flex-shrink-0"
               :style="{
-                color: isDark ? accentColors(part).from : undefined,
-                textShadow: isDark ? `0 0 8px ${accentColors(part).from}60` : undefined,
+                color: isDark ? neonColors(part).from : undefined,
+                textShadow: isDark ? `0 0 10px ${neonColors(part).from}70` : undefined,
               }"
               :class="!isDark && 'text-slate-500'"
             >{{ partEntryCount(part.partKey) }}</span>

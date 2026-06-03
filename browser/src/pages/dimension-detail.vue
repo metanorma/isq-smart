@@ -7,11 +7,13 @@ import { entryUrl } from '../data/PartRegistry'
 import { quantitiesIndex, symbolCache } from '../data/generated/domain-index'
 import MathRenderer from '../components/MathRenderer.vue'
 import DimensionOntologyPanel from '../components/DimensionOntologyPanel.vue'
+import { dimensionUrns } from '../data/jsonld'
 
 const route = useRoute()
 const slug = computed(() => route.params.part as string)
 
 const dim = computed(() => physicalDimensions.find(d => d.slug === slug.value))
+const urns = computed(() => dimensionUrns(dim.value?.unitsmlId))
 
 const BASE_DIM_META: Record<string, { name: string; color: string }> = {
   L: { name: 'Length', color: 'sky' },
@@ -82,13 +84,18 @@ const isoEntries = computed(() => {
                   <span v-else class="text-emerald-300/80 ml-1">dimensionless</span>
                   <span class="mx-1.5 text-indigo-400/30">&middot;</span>
                   <span class="font-mono">{{ dim.unitsmlId }}</span>
+                  <span class="mx-1.5 text-indigo-400/30">&middot;</span>
+                  <a :href="`https://unitsml.org/unitsdb/dimensions/${dim.unitsmlId}`" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-200 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    UnitsML
+                  </a>
                 </p>
               </div>
 
               <div class="flex gap-2 ml-auto flex-shrink-0 mb-1">
                 <div v-if="dim.isoEntries.length" class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
                   <span class="text-lg font-bold text-white heading-serif tabular-nums">{{ dim.isoEntries.length }}</span>
-                  <span class="text-xs ml-1 text-indigo-300/70">ISO 80000</span>
+                  <span class="text-xs ml-1 text-indigo-300/70">ISQ</span>
                 </div>
                 <div v-if="dim.isoUnitSlugs.length" class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
                   <span class="text-lg font-bold text-white heading-serif tabular-nums">{{ dim.isoUnitSlugs.length }}</span>
@@ -134,13 +141,28 @@ const isoEntries = computed(() => {
 
       <!-- Ontology panel -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <!-- ISQ URNs -->
+        <div v-if="urns" class="mb-6 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-900 p-5">
+          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">ISQ Identifiers</h3>
+          <div class="grid sm:grid-cols-2 gap-3">
+            <div>
+              <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-1">ISO URN</div>
+              <code class="text-xs font-mono text-slate-700 dark:text-slate-300 break-all block bg-brand-50/50 dark:bg-brand-950/20 px-3 py-2 rounded-lg">{{ urns.iso }}</code>
+            </div>
+            <div>
+              <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-1">IEC URN</div>
+              <code class="text-xs font-mono text-slate-700 dark:text-slate-300 break-all block bg-teal-50/50 dark:bg-teal-950/20 px-3 py-2 rounded-lg">{{ urns.iec }}</code>
+            </div>
+          </div>
+        </div>
+
         <DimensionOntologyPanel :dim="dim" />
       </section>
 
       <!-- Linked ISO 80000 quantities -->
       <section v-if="isoEntries.length" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         <div class="flex items-center gap-2 mb-4">
-          <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">ISO 80000 quantities with this dimension</h3>
+          <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 uppercase tracking-wider">ISO 80000 &amp; IEC 80000 quantities with this dimension</h3>
           <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-600/60" />
           <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ isoEntries.length }} quantit{{ isoEntries.length === 1 ? 'y' : 'ies' }}</span>
         </div>

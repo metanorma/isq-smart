@@ -49,6 +49,36 @@ export const partUrn = Urn.part
 export const entryUrn = Urn.entry
 
 // ═══════════════════════════════════════════════════════════════
+// ISQ URNs — dual ISO/IEC identifiers for all ISQ entities
+// ═══════════════════════════════════════════════════════════════
+
+export function unitUrns(unitsmlId: string | undefined): { iso: string; iec: string } | null {
+  if (!unitsmlId) return null
+  return {
+    iso: `urn:iso:std:iso:80000:unit:${unitsmlId}`,
+    iec: `urn:iec:std:iec:80000:unit:${unitsmlId}`,
+  }
+}
+
+export function dimensionUrns(unitsmlId: string | undefined): { iso: string; iec: string } | null {
+  if (!unitsmlId) return null
+  return {
+    iso: `urn:iso:std:iso:80000:dim:${unitsmlId}`,
+    iec: `urn:iec:std:iec:80000:dim:${unitsmlId}`,
+  }
+}
+
+export function entryDualUrn(entry: { num: string }, partKey: string, edition: string): { iso: string; iec: string } {
+  const bp = basePart(partKey)
+  const edNum = YEAR_TO_ED[edition] || edition.replace(/^.*?(\d+).*$/, '$1') || '1'
+  const edDate = IEC_ED_DATES[bp] || `${edition}`
+  return {
+    iso: `urn:iso:std:iso:80000:-${bp}:ed-${edNum}:en:item:${entry.num}`,
+    iec: `urn:iec:std:iec:80000-${bp}:${edDate}:::item:${entry.num}`,
+  }
+}
+
+// ═══════════════════════════════════════════════════════════════
 // JSON-LD entry serialization — uses ontology vocabulary
 // ═══════════════════════════════════════════════════════════════
 

@@ -58,7 +58,7 @@ const withIsoCount = physicalDimensions.filter(d => d.isoEntries.length > 0).len
               </div>
               <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
                 <span class="text-lg font-bold text-white heading-serif tabular-nums">{{ withIsoCount }}</span>
-                <span class="text-xs ml-1 text-indigo-300/70">linked to ISO 80000</span>
+                <span class="text-xs ml-1 text-indigo-300/70">linked to ISQ</span>
               </div>
             </div>
           </div>
@@ -107,15 +107,13 @@ const withIsoCount = physicalDimensions.filter(d => d.isoEntries.length > 0).len
             </div>
             <div class="flex items-center gap-2 mt-0.5 text-xs text-slate-400 dark:text-slate-500">
               <span class="font-mono">{{ dim.unitsmlId }}</span>
-              <template v-if="dim.isoEntries.length">
-                <span>&middot;</span>
-                <span class="text-indigo-600 dark:text-indigo-400 font-medium">{{ dim.isoEntries.length }} ISO 80000 quantit{{ dim.isoEntries.length === 1 ? 'y' : 'ies' }}</span>
-              </template>
-              <template v-if="dim.isoUnitSlugs.length">
-                <span>&middot;</span>
-                <span>{{ dim.isoUnitSlugs.length }} unit{{ dim.isoUnitSlugs.length === 1 ? '' : 's' }}</span>
-              </template>
             </div>
+          </div>
+
+          <!-- Stats — right-aligned -->
+          <div class="hidden sm:flex items-center gap-3 flex-shrink-0 text-xs">
+            <span v-if="dim.isoEntries.length" class="text-indigo-600 dark:text-indigo-400 font-medium">{{ dim.isoEntries.length }} ISQ quantit{{ dim.isoEntries.length === 1 ? 'y' : 'ies' }}</span>
+            <span v-if="dim.isoUnitSlugs.length" class="text-slate-500 dark:text-slate-400">{{ dim.isoUnitSlugs.length }} unit{{ dim.isoUnitSlugs.length === 1 ? '' : 's' }}</span>
           </div>
 
           <!-- Vector breakdown -->
