@@ -1,4 +1,5 @@
 import type { Domain, DomainInfo, PartMeta, PartKey } from './types'
+import { SiteConfig } from '../site.config'
 
 // ── Publisher determination (single source of truth) ──
 
@@ -72,18 +73,7 @@ const DOCUMENTS: readonly PartDocument[] = [
   { partKey: '13', title: 'Information Science and Technology',      publisher: 'IEC', edition: '2025 (2nd)', scope: 'Names, symbols, and definitions for quantities and units used in information science and technology — information content, entropy, transfer rates, storage capacity, and prefixes for binary multiples.', highlights: ['One of two IEC-published parts — explicitly bilingual (English and French)', 'Defines binary prefixes: kibi (Ki), mebi (Mi), gibi (Gi), tebi (Ti), pebi (Pi), exbi (Ei), zebi (Zi), yobi (Yi)', 'Second edition adds robi (Ri) for 2⁹⁰ and quebi (Qi) for 2¹⁰⁰, matching the new SI prefixes ronna and quetta adopted at the 2022 CGPM', 'Succeeds subclauses 3.8 and 3.9 of IEC 60027-2:2005, the earlier standard for letter symbols in electrical technology'], bilingual: true, storeUrl: 'https://webstore.iec.ch/publication/87379' },
 ]
 
-const documentMap = new Map(DOCUMENTS.map(d => [d.partKey, d]))
-
-export function getPartDocument(partKey: string): PartDocument | undefined {
-  return documentMap.get(partKey)
-}
-
-export function getAllDocuments(): readonly PartDocument[] {
-  return DOCUMENTS
-}
-
 // ── Part sections (entry groups within a document) ──
-// These produce the PartMeta entries used by routing and display.
 
 const SECTIONS: readonly PartSection[] = [
   // ── Quantities (Parts 3–13) ──
@@ -123,11 +113,20 @@ const SECTIONS: readonly PartSection[] = [
   { partKey: '2-20', parentDocument: '2', title: 'Special Functions II',    description: 'Additional special functions',                  icon: '𝝨', accent: 'violet' },
 ]
 
+// ── Filter by site configuration ──
+
+const VISIBLE_DOCUMENTS = DOCUMENTS.filter(d => !SiteConfig.isExcluded(d.partKey))
+const VISIBLE_SECTIONS = SECTIONS.filter(
+  s => !SiteConfig.isExcluded(s.partKey) && !SiteConfig.isExcluded(s.parentDocument),
+)
+
 // ── Derive PartMeta from PartSection (+ document metadata) ──
 // PartMeta is the interface consumed by routing and display components.
 
+const docLookup = new Map(DOCUMENTS.map(d => [d.partKey, d]))
+
 function sectionToPartMeta(s: PartSection): PartMeta {
-  const doc = documentMap.get(s.parentDocument)
+  const doc = docLookup.get(s.parentDocument)
   const domain: Domain = s.parentDocument === '2' ? 'math' : 'quantities'
   return {
     domain,
@@ -141,8 +140,9 @@ function sectionToPartMeta(s: PartSection): PartMeta {
   }
 }
 
-const PARTS: readonly PartMeta[] = SECTIONS.map(sectionToPartMeta)
+const PARTS: readonly PartMeta[] = VISIBLE_SECTIONS.map(sectionToPartMeta)
 const partMap = new Map(PARTS.map(p => [p.partKey, p]))
+const documentMap = new Map(VISIBLE_DOCUMENTS.map(d => [d.partKey, d]))
 
 // Pre-compute domain groups for O(1) lookup
 const partsByDomainMap = new Map<Domain, PartMeta[]>()
@@ -161,8 +161,17 @@ function basePartKey(partKey: string): string {
 
 // ── Public API ──
 
+export function getPartDocument(partKey: string): PartDocument | undefined {
+  return documentMap.get(partKey)
+}
+
+export function getAllDocuments(): readonly PartDocument[] {
+  return VISIBLE_DOCUMENTS
+}
+
 export function getDomains(): DomainInfo[] {
-  return [...DOMAINS]
+  const activeDomains = new Set(PARTS.map(p => p.domain))
+  return DOMAINS.filter(d => activeDomains.has(d.key))
 }
 
 export function getDomain(key: Domain): DomainInfo | undefined {
@@ -196,5 +205,5 @@ export function domainPath(domain: Domain): string {
 }
 
 export function getSectionsForDocument(docKey: string): PartSection[] {
-  return SECTIONS.filter(s => s.parentDocument === docKey)
+  return VISIBLE_SECTIONS.filter(s => s.parentDocument === docKey)
 }

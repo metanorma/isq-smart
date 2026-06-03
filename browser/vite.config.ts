@@ -1,9 +1,10 @@
 import { defineConfig, type Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import tailwindcss from '@tailwindcss/vite'
-import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync, unlinkSync } from 'node:fs'
 import { resolve } from 'node:path'
 import yaml from 'js-yaml'
+import { SiteConfig } from './src/site.config'
 
 // ── Domain index: lightweight entry summary for fast domain browsing ──
 
@@ -113,6 +114,10 @@ interface ParsedClause {
   parentId: string
   provisionCount: number
 }
+
+// ── Build-time part exclusion (delegates to site.config.ts) ──
+
+const isExcluded = SiteConfig.isExcluded
 
 // ── Data source paths (env-var configurable, defaults to subdirectories of repo root) ──
 //   For CI: repos are checked out as workspace subdirectories (GHA can't go above workspace)
@@ -306,6 +311,7 @@ function discoverAllProvisions(): {
     const match = dirName.match(/(?:iso|iec)-80000-(\d+)/)
     if (!match) continue
     const partKey = match[1]
+    if (isExcluded(partKey)) continue
 
     const possibleSections = [
       resolve(dirPath, 'sections'),
@@ -362,6 +368,7 @@ function discoverDocumentSections(): DocumentSection[] {
     const match = dirName.match(/(?:iso|iec)-80000-(\d+)/)
     if (!match) continue
     const partKey = match[1]
+    if (isExcluded(partKey)) continue
 
     // Find sections directory (may be in en/ or root)
     const possibleSections = [
@@ -461,7 +468,7 @@ function yamlDataPlugin(): Plugin {
 
   async function generateFiles() {
     const rawData = loadAllData()
-    const allEntries = [...rawData.quantities, ...rawData.math]
+    const allEntries = [...rawData.quantities, ...rawData.math].filter(e => !isExcluded(e.part.toString()))
 
     // Render all math expressions via Plurimath
     const allExprs = MathCollector.collect(allEntries)
@@ -471,26 +478,38 @@ function yamlDataPlugin(): Plugin {
 
     if (!existsSync(generatedDir)) mkdirSync(generatedDir, { recursive: true })
 
+    // Clean stale generated files (e.g. excluded parts from previous builds)
+    for (const f of readdirSync(generatedDir)) {
+      if (f.endsWith('.ts')) {
+        const match = f.match(/^part-(.+)\.ts$/)
+        if (match && isExcluded(match[1])) {
+          unlinkSync(resolve(generatedDir, f))
+        }
+      }
+    }
+
     // Discover document sections
     const docSections = discoverDocumentSections()
 
     // Per-part data files with mathCache/latexCache/editions/bilingual
     const summaries: Record<string, { domain: string; count: number; bilingual: boolean; editions: string[] }> = {}
-    const routes = new Set<string>(['/', '/quantities', '/math', '/reference', '/units', '/dimensions', '/smartsdu'])
+    const routes = new Set<string>(['/', '/quantities', '/reference', '/units', '/dimensions', '/smartsdu'])
 
-    const qParts = PartWriter.sortKeys(new Set(rawData.quantities.map(e => e.part.toString())))
+    const qParts = PartWriter.sortKeys(new Set(rawData.quantities.map(e => e.part.toString()))).filter(pk => !isExcluded(pk))
     for (const pk of qParts) {
       const partEntries = rawData.quantities.filter(e => e.part.toString() === pk)
       const partExprs = MathCollector.collect(partEntries)
       PartWriter.write(pk, 'quantities', partEntries, globalMathCache, globalLatexCache, partExprs, summaries, routes)
     }
 
-    const mParts = PartWriter.sortKeys(new Set(rawData.math.map(e => e.part.toString())))
+    const mParts = PartWriter.sortKeys(new Set(rawData.math.map(e => e.part.toString()))).filter(pk => !isExcluded(pk))
     for (const pk of mParts) {
       const partEntries = rawData.math.filter(e => e.part.toString() === pk)
       const partExprs = MathCollector.collect(partEntries)
       PartWriter.write(pk, 'math', partEntries, globalMathCache, globalLatexCache, partExprs, summaries, routes)
     }
+
+    if (mParts.length) routes.add('/math')
 
     // ISO/IEC 80000 instance data (quantities, documents)
     const { clauses: docClauses } = discoverAllProvisions()
@@ -1328,6 +1347,7 @@ function ontologyDataPlugin(): Plugin {
 }
 
 export default defineConfig({
+  base: SiteConfig.basePath,
   plugins: [vue(), tailwindcss(), yamlDataPlugin(), ontologyDataPlugin()],
   build: {
     sourcemap: true,

@@ -1,4 +1,5 @@
 import { type RouteRecordRaw, createRouter, createWebHistory } from 'vue-router'
+import { SiteConfig } from './site.config'
 
 const routes: RouteRecordRaw[] = [
   { path: '/', component: () => import('./pages/index.vue') },
@@ -32,7 +33,7 @@ const routes: RouteRecordRaw[] = [
 ]
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(SiteConfig.basePath),
   routes,
 })
 

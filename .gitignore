@@ -1,4 +1,5 @@
 # Browser
+node_modules/
 browser/node_modules/
 browser/dist/
 browser/src/data/generated/
