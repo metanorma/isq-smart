@@ -85,13 +85,8 @@ const SECTIONS: readonly PartSection[] = [
   { partKey: '8',    parentDocument: '8',  title: 'Acoustics',              description: 'Sound pressure, intensity, power',              icon: '🔊', accent: 'teal' },
   { partKey: '9',    parentDocument: '9',  title: 'Physical Chemistry',     description: 'Atomic and molecular physics',                  icon: '⚗', accent: 'emerald' },
   { partKey: '10',   parentDocument: '10', title: 'Atomic and Nuclear',     description: 'Nuclear reactions, ionizing radiation',         icon: '⚛', accent: 'cyan' },
-  { partKey: '11-4', parentDocument: '11', title: 'Dynamic Similarity',     description: 'Characteristic numbers in fluid dynamics',      icon: 'π', accent: 'indigo' },
-  { partKey: '11-5', parentDocument: '11', title: 'Heat & Mass Transfer',   description: 'Heat and mass transfer numbers',               icon: 'π', accent: 'indigo' },
-  { partKey: '11-6', parentDocument: '11', title: 'Transport Properties',   description: 'Characteristic numbers for transport',          icon: 'π', accent: 'indigo' },
-  { partKey: '11-7', parentDocument: '11', title: 'Magnetohydrodynamics',   description: 'MHD and plasma dynamics numbers',              icon: 'π', accent: 'indigo' },
-  { partKey: '11-8', parentDocument: '11', title: 'Radiation Transfer',     description: 'Radiation heat transfer numbers',               icon: 'π', accent: 'indigo' },
-  { partKey: '11-9', parentDocument: '11', title: 'Turbulence',             description: 'Turbulence characteristic numbers',             icon: 'π', accent: 'indigo' },
-  { partKey: '12',   parentDocument: '12', title: 'Condensed Matter',       description: 'Solid state physics quantities',                icon: '💎', accent: 'rose' },
+  { partKey: '11',   parentDocument: '11', title: 'Characteristic Numbers',  description: 'Dimensionless numbers for transport phenomena', icon: 'π', accent: 'indigo' },
+  { partKey: '12',   parentDocument: '12', title: 'Condensed Matter',        description: 'Solid state physics quantities',                icon: '💎', accent: 'rose' },
   { partKey: '13',   parentDocument: '13', title: 'Information Science',    description: 'Information content and entropy',               icon: 'ℹ', accent: 'blue' },
 
   // ── Mathematical Notation (Part 2, sections 2-5 through 2-20) ──
