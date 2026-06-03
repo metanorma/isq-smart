@@ -31,7 +31,7 @@ const concepts = [
     items: [
       { label: 'Dimension expression', detail: 'dim(Q) = L^α · M^β · T^γ · I^δ · Θ^ε · N^ζ · J^η' },
       { label: 'Same dimension = same kind', detail: 'Quantities sharing a dimension can be meaningfully compared' },
-      { label: 'Dimension one', detail: 'Exponents all zero — 80000 recommends explicit units (rad, m/m) to avoid ambiguity' },
+      { label: 'Dimension one', detail: 'Exponents all zero — the ISO 80000 & IEC 80000 series recommends explicit units (rad, m/m) to avoid ambiguity' },
     ]
   },
   {

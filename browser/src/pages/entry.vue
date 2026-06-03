@@ -110,6 +110,9 @@ function showBoth() { return bilingual.value && lang.value === 'both' }
 function activeLang(): 'en' | 'fr' { return lang.value === 'both' ? 'en' : lang.value }
 function renderedName(e: Entry, l: 'en' | 'fr' | 'both' = 'en') { return getRenderedText(e, l, mathCache.value) }
 function desText(text: string) { return renderInline(text, mathCache.value) }
+function stripStem(text: string): string {
+  return text.replace(/stem:\[([^\]]+)\]/g, (_, expr) => expr.replace(/^"|"$/g, ''))
+}
 
 function handleDefClick(e: MouseEvent) {
   const link = (e.target as HTMLElement).closest('a.xref')
@@ -387,7 +390,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               <div class="font-mono text-brand-700 text-xl sm:text-2xl font-medium min-w-[4rem] text-center px-3 py-2 rounded-lg bg-brand-50/50 border border-brand-100/40 group-hover/unit:bg-brand-100/60 transition-colors">
                 <template v-if="unit.symbol?.length">
                   <template v-for="(usym, ui) in unit.symbol" :key="ui">
-                    <MathRenderer :expression="usym" :cache="mathCache" />
+                    <MathRenderer :expression="stripStem(usym)" :cache="mathCache" />
                     <span v-if="ui < unit.symbol.length - 1" class="text-brand-400 mx-1">·</span>
                   </template>
                 </template>
