@@ -58,7 +58,7 @@ export function entryQname(entryId: string): string {
 }
 
 export function unitQname(unitSlug: string): string {
-  return `${NS.core.prefix}:unit-${unitSlug}`
+  return `${NS.core.prefix}:unit:${unitSlug}`
 }
 
 // ── Badge color mapping per ontology class ──

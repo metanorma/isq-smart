@@ -25,16 +25,6 @@ const searchQuery = ref('')
 const selectedPart = ref('')
 const showCount = ref(60)
 
-const notableIds = new Set([
-  't3-1.1', 't4-1', 't5-1.1', 't6-1.1', 't8-1.1', 't9-1', 't9-2', 't10-1.1', 't13-2',
-  't2-5.1', 't2-5.2', 't2-5.3',
-])
-
-const notableEntries = computed(() => {
-  if (isMath.value) return []
-  return index.value.filter(e => notableIds.has(e.i)).slice(0, 12)
-})
-
 const isBrowsing = computed(() => !searchQuery.value.trim() && !selectedPart.value)
 
 const filtered = computed(() => {
@@ -186,29 +176,6 @@ function hl(text: string): string {
 
       <!-- Entries -->
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <!-- Notable entries -->
-        <div v-if="isBrowsing && notableEntries.length" class="mb-8">
-          <div class="flex items-center gap-2 mb-3">
-            <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 heading-serif">Notable entries</h3>
-            <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
-            <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ notableEntries.length }} highlighted</span>
-          </div>
-          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-2">
-            <router-link
-              v-for="item in notableEntries"
-              :key="item.i"
-              :to="entryUrl(item.p, item.i)"
-              class="group flex items-center gap-3 px-4 py-3 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all"
-            >
-              <span class="font-mono text-[11px] font-semibold text-brand-700 bg-brand-50/80 px-2 py-0.5 rounded flex-shrink-0">{{ item.n }}</span>
-              <div class="min-w-0">
-                <span class="text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate block">{{ item.t }}</span>
-                <span class="text-[10px] text-slate-400 dark:text-slate-500">{{ item.p }}<template v-if="item.u.length"> &middot; <MathRenderer v-if="symbolCache[item.u[0]]" :expression="item.u[0]" :cache="symbolCache" /><span v-else>{{ item.u[0] }}</span></template></span>
-              </div>
-            </router-link>
-          </div>
-        </div>
-
         <div v-if="isBrowsing" class="flex items-center gap-2 mb-3">
           <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 heading-serif">All entries</h3>
           <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
