@@ -5,6 +5,13 @@ import { publicationDocuments } from '../data/generated/iso80000'
 import { getAllParts, getPartMeta, getPartDocument, publisherOf } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
 
+function pubId(doc: { partKey: string; publisher: string; edition?: string }): string {
+  if (!doc.edition) return ''
+  const year = doc.edition.replace(/^(\d+).*$/, '$1')
+  const prefix = doc.publisher === 'IEC' ? 'IEC' : 'ISO'
+  return `${prefix} 80000-${doc.partKey}:${year}`
+}
+
 interface DocEntry {
   partKey: string
   title: string
@@ -144,15 +151,15 @@ const totalTerms = computed(() => docs.value.reduce((s, d) => s + d.termCount, 0
           </div>
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
-              <span class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ doc.title }}</span>
+              <span v-if="pubId(doc)" class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">{{ pubId(doc) }}</span>
               <span class="text-[10px] font-medium px-1.5 py-0.5 rounded"
                 :class="doc.publisher === 'IEC'
                   ? 'text-iec-600 dark:text-iec-400 bg-iec-50 dark:bg-iec-950/40 border border-iec-200/60 dark:border-iec-800/40'
                   : 'text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-dark-700'"
               >{{ doc.publisher }}</span>
             </div>
+            <div class="mt-0.5 text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ doc.title }}</div>
             <div class="mt-1 flex gap-4 text-xs text-slate-400 dark:text-slate-500">
-              <span v-if="doc.edition">Edition {{ doc.edition }}</span>
               <span>{{ doc.termCount }} entries</span>
             </div>
           </div>

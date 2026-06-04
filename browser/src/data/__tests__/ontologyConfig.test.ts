@@ -69,6 +69,6 @@ describe('qname constructors', () => {
   })
 
   it('unitQname constructs correct qnames', () => {
-    expect(unitQname('metre')).toBe('isq:unit-metre')
+    expect(unitQname('metre')).toBe('isq:unit:metre')
   })
 })

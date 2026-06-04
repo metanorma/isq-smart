@@ -5,9 +5,8 @@ import { getDomains, getPartsByDomain, partUrl, entryUrl } from '../data/PartReg
 import { partEntryCount, isBilingual } from '../data/index'
 import { publicationDocuments } from '../data/generated/iso80000'
 import { units, dimensions } from '../data/generated/unitsdb'
-import { quantitiesIndex, symbolCache } from '../data/generated/domain-index'
+import { quantitiesIndex } from '../data/generated/domain-index'
 import { generateIndexJsonLd } from '../data/jsonld'
-import MathRenderer from '../components/MathRenderer.vue'
 import { accentGradient, accentColors, neonColors } from '../composables/useAccent'
 import JsonLd from '../components/JsonLd.vue'
 import { useScrollReveal } from '../composables/useScrollReveal'
@@ -79,10 +78,47 @@ onMounted(() => {
 
 const jsonLdData = computed(() => generateIndexJsonLd([...parts, ...mathParts]))
 
-// Featured entries — hand-picked interesting quantities across parts
-const featured = computed(() => {
-  const ids = new Set(['t3-1.1', 't4-1.1', 't5-1.1', 't6-1.1', 't8-1.1', 't10-1.1', 't13-2'])
-  return quantitiesIndex.filter(e => ids.has(e.i)).slice(0, 7)
+interface FeaturedItem {
+  type: 'quantity' | 'unit' | 'dimension'
+  badge: string
+  name: string
+  detail: string
+  link: string
+}
+
+const featured = computed<FeaturedItem[]>(() => {
+  const qtyById = new Map(quantitiesIndex.map(e => [e.i, e]))
+  const unitBySlug = new Map(units.map(u => [u.slug, u]))
+  const dimByPart = new Map(dimensions.map(d => [d.partKey, d]))
+  const partMeta = (pk: string) => {
+    const p = parts.find(pp => pp.partKey === pk)
+    return p?.title ?? ''
+  }
+
+  const items: FeaturedItem[] = []
+
+  const q1 = qtyById.get('t3-1.1')
+  if (q1) items.push({ type: 'quantity', badge: q1.n, name: q1.t, detail: q1.u[0] ?? '', link: entryUrl(q1.p, q1.i) })
+
+  const u1 = unitBySlug.get('metre')
+  if (u1) items.push({ type: 'unit', badge: u1.symbols[0] ?? 'm', name: u1.name, detail: `${u1.quantityCount} quantities`, link: `/units/${u1.slug}` })
+
+  const q2 = qtyById.get('t4-1')
+  if (q2) items.push({ type: 'quantity', badge: q2.n, name: q2.t, detail: q2.u[0] ?? '', link: entryUrl(q2.p, q2.i) })
+
+  const u2 = unitBySlug.get('kelvin')
+  if (u2) items.push({ type: 'unit', badge: u2.symbols[0] ?? 'K', name: u2.name, detail: `${u2.quantityCount} quantities`, link: `/units/${u2.slug}` })
+
+  const q3 = qtyById.get('t6-1')
+  if (q3) items.push({ type: 'quantity', badge: q3.n, name: q3.t, detail: q3.u[0] ?? '', link: entryUrl(q3.p, q3.i) })
+
+  const u3 = unitBySlug.get('ampere')
+  if (u3) items.push({ type: 'unit', badge: u3.symbols[0] ?? 'A', name: u3.name, detail: `${u3.quantityCount} quantities`, link: `/units/${u3.slug}` })
+
+  const d1 = dimByPart.get('4')
+  if (d1) items.push({ type: 'dimension', badge: '4', name: partMeta('4') || 'Mechanics', detail: `${d1.count} entries`, link: '/dimensions/part-4' })
+
+  return items
 })
 
 const marqueeItems = computed(() => {
@@ -150,23 +186,38 @@ const marqueeItems = computed(() => {
           <div class="lg:col-span-2 page-enter" style="animation-delay: 0.1s">
             <div class="rounded-2xl bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm overflow-hidden">
               <div class="px-4 py-3 border-b border-white/[0.06]">
-                <span class="text-[10px] font-semibold text-white/40 uppercase tracking-wider">Featured entries</span>
+                <span class="text-[10px] font-semibold text-white/40 uppercase tracking-wider">Explore</span>
               </div>
               <div class="divide-y divide-white/[0.04]">
                 <router-link
-                  v-for="entry in featured"
-                  :key="entry.i"
-                  :to="entryUrl(entry.p, entry.i)"
+                  v-for="item in featured"
+                  :key="item.link"
+                  :to="item.link"
                   class="group flex items-center gap-3 px-4 py-2.5 hover:bg-white/[0.06] transition-colors"
                 >
-                  <span class="font-mono text-[10px] font-semibold text-brand-300/80 bg-white/[0.06] px-1.5 py-0.5 rounded flex-shrink-0">{{ entry.n }}</span>
-                  <span class="text-sm text-white/80 group-hover:text-white transition-colors truncate flex-1">{{ entry.t }}</span>
-                  <span v-if="entry.u.length" class="font-mono text-xs text-brand-300/60 flex-shrink-0"><MathRenderer v-if="symbolCache[entry.u[0]]" :expression="entry.u[0]" :cache="symbolCache" /><span v-else>{{ entry.u[0] }}</span></span>
+                  <span
+                    class="font-mono text-[10px] font-bold px-1.5 py-0.5 rounded flex-shrink-0 min-w-[2rem] text-center"
+                    :class="{
+                      'text-brand-300/90 bg-brand-500/15': item.type === 'quantity',
+                      'text-teal-300/90 bg-teal-500/15': item.type === 'unit',
+                      'text-amber-300/90 bg-amber-500/15': item.type === 'dimension',
+                    }"
+                  >{{ item.badge }}</span>
+                  <span class="text-sm text-white/80 group-hover:text-white transition-colors truncate flex-1">{{ item.name }}</span>
+                  <span class="text-xs flex-shrink-0"
+                    :class="{
+                      'text-brand-300/50': item.type === 'quantity',
+                      'text-teal-300/50': item.type === 'unit',
+                      'text-amber-300/50': item.type === 'dimension',
+                    }"
+                  >{{ item.detail }}</span>
                 </router-link>
               </div>
-              <router-link to="/quantities" class="block px-4 py-2.5 text-[11px] text-brand-300/50 hover:text-brand-200 transition-colors border-t border-white/[0.06]">
-                View all {{ quantitiesCount.toLocaleString() }} entries →
-              </router-link>
+              <div class="flex border-t border-white/[0.06] divide-x divide-white/[0.06]">
+                <router-link to="/quantities" class="flex-1 px-3 py-2 text-[10px] text-brand-300/50 hover:text-brand-200 transition-colors text-center">{{ quantitiesCount }} quantities</router-link>
+                <router-link to="/units" class="flex-1 px-3 py-2 text-[10px] text-teal-300/50 hover:text-teal-200 transition-colors text-center">{{ totalUnits }} units</router-link>
+                <router-link to="/dimensions" class="flex-1 px-3 py-2 text-[10px] text-amber-300/50 hover:text-amber-200 transition-colors text-center">{{ totalDims }} dimensions</router-link>
+              </div>
             </div>
           </div>
         </div>

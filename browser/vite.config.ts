@@ -188,13 +188,43 @@ const MathCollector = {
   async render(exprs: Set<string>): Promise<{ mathml: Record<string, string>; latex: Record<string, string> }> {
     const mathml: Record<string, string> = {}
     const latex: Record<string, string> = {}
+
     const decodeEntities = (s: string) => s.replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
+
+    const ASCIIMATH_KNOWN = new Set([
+      'sin', 'cos', 'tan', 'csc', 'sec', 'cot', 'sinh', 'cosh', 'tanh',
+      'log', 'ln', 'exp', 'det', 'mod', 'gcd', 'lcm', 'min', 'max',
+      'abs', 'ceil', 'floor', 'norm', 'sqrt', 'root', 'sum', 'prod', 'int', 'oint',
+      'del', 'grad', 'sub', 'sup', 'deg', 'oo',
+      'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'varepsilon', 'zeta', 'eta',
+      'theta', 'vartheta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi',
+      'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'varphi',
+      'chi', 'psi', 'omega', 'Gamma', 'Delta', 'Theta', 'Lambda', 'Xi',
+      'Pi', 'Sigma', 'Upsilon', 'Phi', 'Psi', 'Omega',
+      'bb', 'ii', 'sf', 'tt', 'fr', 'cc', 'hat', 'bar', 'vec', 'dot', 'ddot', 'tilde', 'ul', 'rm',
+    ])
+
+    function quoteMultiLetter(expr: string): string {
+      const quoted: string[] = []
+      let result = expr.replace(/"([^"]*)"/g, (m) => {
+        quoted.push(m)
+        return `\x00${quoted.length - 1}\x00`
+      })
+      result = result.replace(/([a-zA-Z]{2,})/g, (m) => {
+        if (ASCIIMATH_KNOWN.has(m)) return m
+        return `"${m}"`
+      })
+      result = result.replace(/\x00(\d+)\x00/g, (_, i) => quoted[parseInt(i)])
+      return result
+    }
+
     try {
       const { default: Plurimath } = await import('@plurimath/plurimath')
       for (const expr of exprs) {
         try {
           const decoded = decodeEntities(expr)
-          const f = new Plurimath(decoded, 'asciimath')
+          const preprocessed = quoteMultiLetter(decoded)
+          const f = new Plurimath(preprocessed, 'asciimath')
           mathml[expr] = f.toMathml().replace('display="block"', 'display="inline"')
           latex[expr] = f.toLatex()
         } catch { mathml[expr] = ''; latex[expr] = '' }

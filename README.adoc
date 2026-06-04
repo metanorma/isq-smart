@@ -1,11 +1,11 @@
-= ISO/IEC 80000 — International System of Quantities Browser
+= ISO 80000 & IEC 80000 — International System of Quantities Browser
 :toc: left
 :toclevels: 3
 
 == Overview
 
 The **ISQ Browser** is a static web application for browsing the
-https://www.iso.org/standard/30669.html[ISO/IEC 80000] series of international standards
+https://www.iso.org/standard/30669.html[ISO 80000 & IEC 80000] series of international standards
 defining quantities, units of measurement, and mathematical notation.
 
 The browser is built as a fully static SPA with no backend. All data is compiled into
@@ -23,7 +23,7 @@ JavaScript bundles at build time from YAML and Turtle sources.
 
 | https://github.com/metanorma/isq[`metanorma/isq`]
 | `isq`
-| ISO/IEC 80000 domain — Quantity, Unit, MathConcept. Rake export task for TTL/JSON-LD
+| ISO 80000 & IEC 80000 domain — Quantity, Unit, MathConcept. Rake export task for TTL/JSON-LD
 |===
 
 == Quick start
