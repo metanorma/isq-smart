@@ -335,3 +335,13 @@ The GHA workflow (`.github/workflows/build.yml`) runs on push/PR to `main`:
 . Installs Node dependencies
 . Runs `vite build` (production build)
 . Uploads `dist/` as an artifact
+
+== Copyright and license
+
+Content copyright to its respective owners.
+
+The International System of Quantities, its math notation and quantity/units: copyright ISO and IEC.
+
+UnitsML: copyright UnitsML project.
+
+ISQ System and code: copyright Ribose.
