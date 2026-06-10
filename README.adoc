@@ -2,6 +2,8 @@
 :toc: left
 :toclevels: 3
 
+image:https://img.shields.io/badge/site-live-brightgreen?logo=github&label=metanorma.github.io%2Fisq--smart[Live site,link=https://metanorma.github.io/isq-smart/]
+
 == Overview
 
 The **ISQ Browser** is a static web application for browsing the
