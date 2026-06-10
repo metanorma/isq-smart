@@ -3,12 +3,16 @@ import {
   generateEntryJsonLd,
   generateIndexJsonLd,
   jsonLdToTurtle,
+} from '../../data/serialization'
+import {
   generateBibTeX,
   generateChicago,
   generateRis,
+} from '../../data/citation'
+import {
   partUrn,
   entryUrn,
-} from '../../data/jsonld'
+} from '../../data/urn'
 import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES } from '../../data/ontologyConfig'
 import type { Entry, QuantityEntry, PartMeta } from '../../data/types'
 

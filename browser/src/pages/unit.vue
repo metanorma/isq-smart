@@ -6,7 +6,7 @@ import { getPartMeta, partUrl, entryUrl } from '../data/PartRegistry'
 import { symbolCache } from '../data/generated/domain-index'
 import MathRenderer from '../components/MathRenderer.vue'
 import UnitOntologyPanel from '../components/UnitOntologyPanel.vue'
-import { unitUrns } from '../data/jsonld'
+import { unitUrns } from '../data/urn'
 
 const route = useRoute()
 const slugParam = computed(() => route.params.slug as string)

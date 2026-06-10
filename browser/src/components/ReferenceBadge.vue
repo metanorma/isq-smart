@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import { partUrn, entryUrn } from '../data/jsonld'
+import { partUrn, entryUrn } from '../data/urn'
 import { useToast } from '../composables/useToast'
 
 const toast = useToast()

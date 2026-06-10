@@ -3,8 +3,9 @@ import { computed, ref } from 'vue'
 import type { Entry, PartMeta } from '../data/types'
 import {
   generateBibTeX, generateChicago, generateRis,
-  generateEntryJsonLd, jsonLdToTurtle, entryUrn,
-} from '../data/jsonld'
+} from '../data/citation'
+import { entryUrn } from '../data/urn'
+import { generateEntryJsonLd, jsonLdToTurtle } from '../data/serialization'
 import { entryUrl } from '../data'
 import { useToast } from '../composables/useToast'
 

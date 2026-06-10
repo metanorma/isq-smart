@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import { computed, ref, watch, onMounted, onUnmounted } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
-import { getPartMeta, isBilingual, getPartEditions, getPartEntryCount, getText, getRenderedText, getDefinition, getRemarks, partUrl, loadPartEntries, EntryModel } from '../data/index'
-import { generateEntryJsonLd, entryDualUrn } from '../data/jsonld'
-import { renderInline } from '../data/asciidoc'
-import { reverseXref } from '../data/generated/reverse-xref'
-import { xrefMap } from '../data/generated/xref-map'
-import { units } from '../data/generated/unitsdb'
+import { computed } from 'vue'
+import { partUrl, EntryModel, getPartEntryCount } from '../data/index'
 import MathRenderer from '../components/MathRenderer.vue'
 import LanguageToggle from '../components/LanguageToggle.vue'
 import JsonLd from '../components/JsonLd.vue'
@@ -16,111 +10,20 @@ import CitationBuilder from '../components/CitationBuilder.vue'
 import PartIcon from '../components/PartIcon.vue'
 import EntryOntologyPanel from '../components/EntryOntologyPanel.vue'
 import { accentGlow, accentGradient, accentColors, accentHeaderBg } from '../composables/useAccent'
-import { useRecentEntries } from '../composables/useRecentEntries'
-import type { Entry } from '../data/types'
+import { useEntryPage } from '../composables/useEntryPage'
 
-const route = useRoute()
-const router = useRouter()
-const { track: trackRecent } = useRecentEntries()
-const partParam = computed(() => route.params.part as string)
-const idParam = computed(() => route.params.id as string)
-const domainRoute = computed(() =>
-  route.path.startsWith('/math') ? 'math' : 'quantities'
-)
+const {
+  partParam, idParam, domainRoute,
+  meta, bilingual, editions, edition,
+  entries, mathCache, latexCache, loading, initialPromise,
+  lang, entry, jsonLdData, dualUrn,
+  siblings, sectionEntries, sectionLabel,
+  referencedBy, unitLink,
+  def, rem, showBoth, activeLang, renderedName, desText, stripStem,
+  handleDefClick,
+} = useEntryPage()
 
-const meta = computed(() => getPartMeta(partParam.value))
-const bilingual = computed(() => isBilingual(partParam.value))
-const editions = computed(() => getPartEditions(partParam.value))
-const edition = computed(() => editions.value.join(', '))
-
-const entries = ref<Entry[]>([])
-const mathCache = ref<Record<string, string>>({})
-const latexCache = ref<Record<string, string>>({})
-const loading = ref(false)
-
-const initialData = await loadPartEntries(partParam.value)
-entries.value = initialData.entries
-mathCache.value = initialData.mathCache
-latexCache.value = initialData.latexCache
-
-watch(partParam, async (newPart) => {
-  loading.value = true
-  const data = await loadPartEntries(newPart)
-  entries.value = data.entries
-  mathCache.value = data.mathCache
-  latexCache.value = data.latexCache
-  loading.value = false
-})
-
-const lang = ref<'en' | 'fr' | 'both'>('en')
-
-const entry = computed(() => entries.value.find(e => e.id === idParam.value))
-
-watch(entry, (e) => {
-  if (e) trackRecent(e, partParam.value)
-}, { immediate: true })
-
-const jsonLdData = computed(() =>
-  entry.value && meta.value ? generateEntryJsonLd(entry.value, meta.value, edition.value) : null
-)
-
-const dualUrn = computed(() =>
-  entry.value && meta.value ? entryDualUrn(entry.value, partParam.value, edition.value) : null
-)
-
-const siblings = computed(() => {
-  const idx = entries.value.findIndex(e => e.id === idParam.value)
-  return {
-    prev: idx > 0 ? entries.value[idx - 1] : null,
-    next: idx < entries.value.length - 1 ? entries.value[idx + 1] : null,
-    idx: idx + 1,
-    total: entries.value.length,
-  }
-})
-
-const sectionEntries = computed(() => {
-  if (!entry.value) return []
-  const group = EntryModel.sectionGroup(entry.value)
-  return entries.value.filter(e => EntryModel.sectionGroup(e) === group)
-})
-
-const sectionLabel = computed(() =>
-  entry.value ? EntryModel.sectionGroup(entry.value) : ''
-)
-
-const referencedBy = computed(() => {
-  if (!entry.value) return []
-  const ids = reverseXref[entry.value.id]
-  if (!ids) return []
-  return ids.map((id: string) => {
-    const ref = xrefMap[id]
-    return ref ? { id, name: ref.name, href: ref.href } : null
-  }).filter(Boolean) as { id: string; name: string; href: string }[]
-})
-
-const unitSlugMap = new Map(units.map(u => [u.name, u.slug]))
-function unitLink(name: string): string {
-  const slug = unitSlugMap.get(name)
-  return slug ? `/units/${slug}` : `/units?q=${encodeURIComponent(name)}`
-}
-
-function def(e: Entry, l: 'en' | 'fr' = 'en') { return getDefinition(e, l, mathCache.value) }
-function rem(e: Entry, l: 'en' | 'fr' = 'en') { return getRemarks(e, l, mathCache.value) }
-function showBoth() { return bilingual.value && lang.value === 'both' }
-function activeLang(): 'en' | 'fr' { return lang.value === 'both' ? 'en' : lang.value }
-function renderedName(e: Entry, l: 'en' | 'fr' | 'both' = 'en') { return getRenderedText(e, l, mathCache.value) }
-function desText(text: string) { return renderInline(text, mathCache.value) }
-function stripStem(text: string): string {
-  return text.replace(/stem:\[([^\]]+)\]/g, (_, expr) => expr.replace(/^"|"$/g, ''))
-}
-
-function handleDefClick(e: MouseEvent) {
-  const link = (e.target as HTMLElement).closest('a.xref')
-  if (link) {
-    e.preventDefault()
-    router.push((link as HTMLAnchorElement).getAttribute('href')!)
-  }
-}
+await initialPromise
 
 function symbolGlow() {
   if (!meta.value) return {}
@@ -145,23 +48,6 @@ function showcasePattern() {
     backgroundSize: '24px 24px',
   }
 }
-
-function onKeyDown(e: KeyboardEvent) {
-  if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return
-  if (e.key === 'k' && siblings.value.prev) {
-    e.preventDefault()
-    router.push(`${partUrl(partParam.value)}/${siblings.value.prev.id}`)
-  } else if (e.key === 'j' && siblings.value.next) {
-    e.preventDefault()
-    router.push(`${partUrl(partParam.value)}/${siblings.value.next.id}`)
-  } else if (e.key === 'Escape') {
-    e.preventDefault()
-    router.push(partUrl(partParam.value))
-  }
-}
-
-onMounted(() => window.addEventListener('keydown', onKeyDown))
-onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
 </script>
 
 <template>
@@ -242,7 +128,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
                 : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400'"
             >
               <span class="font-mono font-medium">{{ se.num }}</span>
-              <span class="max-w-[120px] truncate hidden sm:inline">{{ getText(se, activeLang()) }}</span>
+              <span class="max-w-[120px] truncate hidden sm:inline">{{ EntryModel.name(se, activeLang()) }}</span>
             </router-link>
           </div>
         </div>
@@ -252,7 +138,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
           <div class="flex items-start gap-4 flex-wrap">
             <span class="font-mono text-sm font-bold text-brand-700 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 border border-brand-100/60 dark:border-brand-800/40 px-3 py-1.5 rounded-lg mt-1">{{ entry.num }}</span>
             <div class="min-w-0 flex-1">
-              <template v-if="showBoth() && getText(entry, 'fr') && getText(entry, 'en') !== getText(entry, 'fr')">
+              <template v-if="showBoth() && EntryModel.name(entry, 'fr') && EntryModel.name(entry, 'en') !== EntryModel.name(entry, 'fr')">
                 <div class="grid sm:grid-cols-2 gap-x-6 gap-y-1">
                   <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight" v-html="renderedName(entry, 'en')" />
                   <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif leading-tight" v-html="renderedName(entry, 'fr')" />
@@ -467,7 +353,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
               <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
               <div class="min-w-0">
                 <div class="font-mono text-xs text-slate-500 dark:text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ siblings.prev.num }}</div>
-                <div class="hidden sm:block truncate text-xs text-slate-400 dark:text-slate-500 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors mt-0.5">{{ getText(siblings.prev, activeLang()) }}</div>
+                <div class="hidden sm:block truncate text-xs text-slate-400 dark:text-slate-500 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors mt-0.5">{{ EntryModel.name(siblings.prev, activeLang()) }}</div>
               </div>
             </router-link>
             <div v-else />
@@ -479,7 +365,7 @@ onUnmounted(() => window.removeEventListener('keydown', onKeyDown))
             >
               <div class="min-w-0">
                 <div class="font-mono text-xs text-slate-500 dark:text-slate-400 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{{ siblings.next.num }}</div>
-                <div class="hidden sm:block truncate text-xs text-slate-400 dark:text-slate-500 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors mt-0.5">{{ getText(siblings.next, activeLang()) }}</div>
+                <div class="hidden sm:block truncate text-xs text-slate-400 dark:text-slate-500 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors mt-0.5">{{ EntryModel.name(siblings.next, activeLang()) }}</div>
               </div>
               <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 transition-colors flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             </router-link>

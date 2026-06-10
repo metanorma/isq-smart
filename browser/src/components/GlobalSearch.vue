@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { watch, nextTick, ref } from 'vue'
 import { searchOpen, searchQuery, searchDomain, searchResults, performSearch, closeSearch, matchLabel } from '../composables/useSearch'
+import type { SearchResult } from '../composables/useSearch'
 import { entryUrl } from '../data'
 
 const input = ref<HTMLInputElement>()
@@ -37,7 +38,7 @@ function onKey(e: KeyboardEvent) {
   } else if (e.key === 'Enter' && activeIndex.value >= 0 && searchResults.value[activeIndex.value]) {
     e.preventDefault()
     const r = searchResults.value[activeIndex.value]
-    window.location.href = entryUrl(r.entry.partKey, r.entry.id)
+    window.location.href = entryUrl(r.partKey, r.id)
     closeSearch()
   }
 }
@@ -51,8 +52,8 @@ function highlight(text: string, query: string): string {
   return text.replace(re, '<mark class="bg-amber-200/80 dark:bg-amber-700/50 text-amber-900 dark:text-amber-200 rounded-sm px-0.5 -mx-0.5">$1</mark>')
 }
 
-function getEntryName(entry: typeof searchResults.value[number]): string {
-  return entry.entry.designations[0]?.designation.en?.text ?? entry.entry.num
+function getEntryName(r: SearchResult): string {
+  return r.name || r.num
 }
 </script>
 
@@ -93,17 +94,17 @@ function getEntryName(entry: typeof searchResults.value[number]): string {
             </div>
             <p class="sm:hidden text-xs">Type to search across all entries</p>
           </div>
-          <div v-for="(r, idx) in searchResults" :key="r.entry.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
-            <router-link :to="entryUrl(r.entry.partKey, r.entry.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
-              <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-[11px] font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partMeta.domain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.entry.partKey }}</span>
+          <div v-for="(r, idx) in searchResults" :key="r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
+            <router-link :to="entryUrl(r.partKey, r.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
+              <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-[11px] font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partDomain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.partKey }}</span>
               <div class="min-w-0 flex-1">
                 <div class="text-sm font-medium text-slate-800 dark:text-slate-200 truncate" :class="{ 'text-brand-700 dark:text-brand-400': idx === activeIndex }" v-html="highlight(getEntryName(r), searchQuery)" />
                 <div class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
-                  <span class="font-mono text-brand-600 dark:text-brand-400 font-medium" v-html="highlight(r.entry.num, searchQuery)" />
+                  <span class="font-mono text-brand-600 dark:text-brand-400 font-medium" v-html="highlight(r.num, searchQuery)" />
                   <span class="text-slate-300 dark:text-slate-600">&middot;</span>
-                  <span class="text-[10px] font-semibold uppercase tracking-wider" :class="r.partMeta.domain === 'math' ? 'text-violet-500 dark:text-violet-400' : 'text-brand-500 dark:text-brand-400'">{{ r.partMeta.domain }}</span>
+                  <span class="text-[10px] font-semibold uppercase tracking-wider" :class="r.partDomain === 'math' ? 'text-violet-500 dark:text-violet-400' : 'text-brand-500 dark:text-brand-400'">{{ r.partDomain }}</span>
                   <span class="text-slate-300 dark:text-slate-600">&middot;</span>
-                  <span>{{ r.partMeta.title }}</span>
+                  <span>{{ r.partTitle }}</span>
                   <template v-if="r.matchField">
                     <span class="text-slate-300 dark:text-slate-600">&middot;</span>
                     <span class="text-[10px] font-medium text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 px-1.5 py-0.5 rounded border border-amber-200/60 dark:border-amber-700/40">in {{ matchLabel(r.matchField) }}</span>

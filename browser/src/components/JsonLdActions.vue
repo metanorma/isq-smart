@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { jsonLdToTurtle } from '../data/jsonld'
+import { jsonLdToTurtle } from '../data/serialization'
 import { useToast } from '../composables/useToast'
 
 const toast = useToast()

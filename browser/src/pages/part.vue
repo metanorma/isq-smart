@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 import { useRoute } from 'vue-router'
-import { getPartMeta, getPartEntryCount, isBilingual, getPartEditions, getText, getPlainName, getUnitName, getUnitSymbols, entryUrl, loadPartEntries, EntryModel } from '../data/index'
+import { getPartMeta, getPartEntryCount, isBilingual, getPartEditions, entryUrl, EntryModel } from '../data/index'
 import MathRenderer from '../components/MathRenderer.vue'
 import LanguageToggle from '../components/LanguageToggle.vue'
 import ReferenceBadge from '../components/ReferenceBadge.vue'
 import JsonLdActions from '../components/JsonLdActions.vue'
 import PartIcon from '../components/PartIcon.vue'
 import { accentGlow, accentColors, accentGradient, accentHeaderBg } from '../composables/useAccent'
+import { usePartData } from '../composables/usePartData'
 import type { Entry } from '../data/types'
 
 const route = useRoute()
@@ -20,21 +21,8 @@ const bilingual = computed(() => isBilingual(part.value))
 const editions = computed(() => getPartEditions(part.value))
 const edition = computed(() => editions.value.join(', '))
 
-const entries = ref<Entry[]>([])
-const mathCache = ref<Record<string, string>>({})
-const loading = ref(false)
-
-const initialData = await loadPartEntries(part.value)
-entries.value = initialData.entries
-mathCache.value = initialData.mathCache
-
-watch(part, async (newPart) => {
-  loading.value = true
-  const data = await loadPartEntries(newPart)
-  entries.value = data.entries
-  mathCache.value = data.mathCache
-  loading.value = false
-})
+const { entries, mathCache, loading, initialPromise } = usePartData(part)
+await initialPromise
 
 const lang = ref<'en' | 'fr' | 'both'>('en')
 const filter = ref('')
@@ -43,7 +31,7 @@ const filtered = computed(() => {
   if (!filter.value.trim()) return entries.value
   const q = filter.value.toLowerCase()
   return entries.value.filter(e => {
-    const name = getText(e, lang.value).toLowerCase()
+    const name = EntryModel.name(e, lang.value).toLowerCase()
     const syms = (e.symbols ?? []).join(' ').toLowerCase()
     const def = (e.def.en ?? '').toLowerCase()
     return name.includes(q) || syms.includes(q) || def.includes(q) || e.num.includes(q)
@@ -164,7 +152,7 @@ function hl(text: string): string {
           <template v-for="(section, si) in sections" :key="section.prefix">
             <div v-if="hasSections" class="flex items-center gap-3 mt-6 mb-2" :class="si === 0 ? 'mt-0' : ''">
               <span class="font-mono text-[11px] font-bold px-2.5 py-1 rounded-md text-white shadow-sm" :style="sectionAccentStyle()">{{ section.prefix }}</span>
-              <span class="text-xs text-slate-400 dark:text-slate-500 truncate">{{ getText(section.entries[0], lang) }}</span>
+              <span class="text-xs text-slate-400 dark:text-slate-500 truncate">{{ EntryModel.name(section.entries[0], lang) }}</span>
               <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
               <span class="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums font-medium">{{ section.entries.length }}</span>
             </div>
@@ -181,7 +169,7 @@ function hl(text: string): string {
                   </div>
                   <div class="flex-1 min-w-0">
                     <div class="flex items-center gap-2 flex-wrap">
-                      <span class="font-medium text-slate-900 dark:text-slate-100 text-sm group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" v-html="hl(getPlainName(entry, lang))" />
+                      <span class="font-medium text-slate-900 dark:text-slate-100 text-sm group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" v-html="hl(EntryModel.plainName(entry, lang))" />
                       <template v-if="entry.symbols?.length">
                         <span v-for="(sym, i) in entry.symbols" :key="i" class="inline-flex items-center text-sm text-slate-500">
                           <MathRenderer :expression="sym" :cache="mathCache" />
@@ -190,14 +178,14 @@ function hl(text: string): string {
                       </template>
                     </div>
                     <div class="mt-0.5 flex items-center gap-1.5 text-xs text-slate-400 flex-wrap">
-                      <template v-if="entry._tag === 'quantity' && getUnitSymbols(entry).length">
-                        <template v-for="(us, usi) in getUnitSymbols(entry)" :key="usi">
+                      <template v-if="entry._tag === 'quantity' && EntryModel.unitSymbols(entry).length">
+                        <template v-for="(us, usi) in EntryModel.unitSymbols(entry)" :key="usi">
                           <MathRenderer :expression="stripStem(us)" :cache="mathCache" class="text-brand-600 font-medium" />
-                          <span v-if="usi < getUnitSymbols(entry).length - 1" class="text-slate-300">,</span>
+                          <span v-if="usi < EntryModel.unitSymbols(entry).length - 1" class="text-slate-300">,</span>
                         </template>
-                        <template v-if="getUnitName(entry, lang)">
+                        <template v-if="EntryModel.unitName(entry, lang)">
                           <span class="text-slate-300 dark:text-slate-600">&middot;</span>
-                          <span class="truncate">{{ getUnitName(entry, lang) }}</span>
+                          <span class="truncate">{{ EntryModel.unitName(entry, lang) }}</span>
                         </template>
                       </template>
                     </div>
