@@ -7,7 +7,7 @@ import { entryUrl } from '../data/PartRegistry'
 import { quantitiesIndex, symbolCache } from '../data/generated/domain-index'
 import MathRenderer from '../components/MathRenderer.vue'
 import DimensionOntologyPanel from '../components/DimensionOntologyPanel.vue'
-import { dimensionUrns } from '../data/jsonld'
+import { dimensionUrns } from '../data/urn'
 
 const route = useRoute()
 const slug = computed(() => route.params.part as string)

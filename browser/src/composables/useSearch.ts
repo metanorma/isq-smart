@@ -1,10 +1,20 @@
 import { ref, shallowRef } from 'vue'
-import { loadPartEntries, getPartMeta, getAvailableParts } from '../data/index'
-import type { Entry, PartMeta } from '../data/types'
+import { getPartMeta } from '../data/PartRegistry'
+import { quantitiesIndex, mathIndex } from '../data/generated/domain-index'
 
 // ═══════════════════════════════════════════════════════════════
-// Search helpers
+// Search types
 // ═══════════════════════════════════════════════════════════════
+
+interface IndexItem {
+  i: string   // id
+  n: string   // num
+  t: string   // title/name
+  s: string[] // symbols
+  u: string[] // unit symbols
+  p: string   // partKey
+  d: string   // definition text
+}
 
 const MATCH_LABELS: Record<string, string> = {
   number: 'Number',
@@ -14,68 +24,36 @@ const MATCH_LABELS: Record<string, string> = {
   unit: 'Unit',
 }
 
-function detectMatchField(query: string, entry: Entry): string {
+function detectMatchField(query: string, item: IndexItem): string {
   const q = query.toLowerCase()
-  if (entry.num.toLowerCase().includes(q)) return 'number'
-  const nameEn = (entry.designations[0]?.designation.en?.text ?? '').toLowerCase()
-  if (nameEn.includes(q)) return 'name'
-  if (entry.symbols?.some(s => s.toLowerCase().includes(q))) return 'symbol'
-  if (entry.def.en?.toLowerCase().includes(q) || entry.def.fr?.toLowerCase().includes(q)) return 'definition'
-  if (entry._tag === 'quantity' && entry.units?.some(u =>
-    u.en?.toLowerCase().includes(q) || u.symbol?.some(s => s.toLowerCase().includes(q))
-  )) return 'unit'
+  if (item.n.toLowerCase().includes(q)) return 'number'
+  if (item.t.toLowerCase().includes(q)) return 'name'
+  if (item.s.some(s => s.toLowerCase().includes(q))) return 'symbol'
+  if (item.d.toLowerCase().includes(q)) return 'definition'
+  if (item.u.some(u => u.toLowerCase().includes(q))) return 'unit'
   return ''
 }
 
-function buildDocumentText(entry: Entry): string {
-  const names = entry.designations
-    .flatMap(d => [d.designation.en?.text, d.designation.fr?.text].filter(Boolean))
-    .join(' ')
-  const syms = (entry.symbols ?? []).join(' ')
-  const def = [entry.def.en, entry.def.fr].filter(Boolean).join(' ')
-  const units = entry._tag === 'quantity'
-    ? entry.units?.map(u => `${u.en} ${u.fr ?? ''} ${(u.symbol ?? []).join(' ')}`).join(' ') ?? ''
-    : ''
-  return `${names} ${syms} ${def} ${units} ${entry.num}`
+function searchableText(item: IndexItem): string {
+  return `${item.t} ${item.s.join(' ')} ${item.u.join(' ')} ${item.d ?? ''} ${item.n}`.toLowerCase()
 }
 
-// Simple client-side search index (no flexsearch dependency)
-interface SearchDoc {
-  entry: Entry
-  partMeta: PartMeta
-  text: string
-}
+// Build a combined, pre-indexed list from build-time data
+const allItems: (IndexItem & { _searchText: string })[] = [
+  ...quantitiesIndex,
+  ...mathIndex,
+].map(item => ({ ...item, d: (item as any).d ?? '', _searchText: searchableText(item as IndexItem) }))
 
-let docs: SearchDoc[] = []
-let buildPromise: Promise<void> | null = null
-
-interface SearchResult {
-  entry: Entry
-  partMeta: PartMeta
+export interface SearchResult {
+  id: string
+  num: string
+  name: string
+  symbols: string[]
+  unitSymbols: string[]
+  partKey: string
+  partTitle: string
+  partDomain: string
   matchField: string
-}
-
-async function buildIndex() {
-  if (docs.length > 0) return
-  if (buildPromise) { await buildPromise; return }
-
-  buildPromise = (async () => {
-    const partKeys = getAvailableParts()
-    const allEntries: SearchDoc[] = []
-
-    for (const partKey of partKeys) {
-      const meta = getPartMeta(partKey)
-      if (!meta) continue
-      const data = await loadPartEntries(partKey)
-      for (const entry of data.entries) {
-        allEntries.push({ entry, partMeta: meta, text: buildDocumentText(entry).toLowerCase() })
-      }
-    }
-
-    docs = allEntries
-  })()
-
-  await buildPromise
 }
 
 // ═══════════════════════════════════════════════════════════════
@@ -86,32 +64,35 @@ export const searchOpen = ref(false)
 export const searchQuery = ref('')
 export const searchDomain = ref<'all' | 'quantities' | 'math'>('all')
 export const searchResults = shallowRef<SearchResult[]>([])
-const searchLoading = ref(false)
 
 // ═══════════════════════════════════════════════════════════════
 // Public operations
 // ═══════════════════════════════════════════════════════════════
 
-export async function performSearch(query: string) {
+export function performSearch(query: string) {
   if (!query.trim()) { searchResults.value = []; return }
-  searchLoading.value = true
-  await buildIndex()
   const q = query.toLowerCase()
   const domain = searchDomain.value
-  const results = docs
-    .filter(d => d.text.includes(q))
-    .slice(0, 30)
-    .map(d => ({
-      entry: d.entry,
-      partMeta: d.partMeta,
-      matchField: detectMatchField(query, d.entry),
-    }))
-    .filter((r): r is SearchResult => {
-      if (domain !== 'all' && r.partMeta.domain !== domain) return false
-      return true
+  const results: SearchResult[] = []
+  for (const item of allItems) {
+    if (!item._searchText.includes(q)) continue
+    const meta = getPartMeta(item.p)
+    if (!meta) continue
+    if (domain !== 'all' && meta.domain !== domain) continue
+    results.push({
+      id: item.i,
+      num: item.n,
+      name: item.t,
+      symbols: item.s,
+      unitSymbols: item.u,
+      partKey: item.p,
+      partTitle: meta.title,
+      partDomain: meta.domain,
+      matchField: detectMatchField(query, item),
     })
+    if (results.length >= 30) break
+  }
   searchResults.value = results
-  searchLoading.value = false
 }
 
 export function matchLabel(field: string): string { return MATCH_LABELS[field] ?? '' }

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { SiteConfig } from '../site.config'
-import { loadPartEntries } from '../data/index'
+import { DataLoader } from '../data/DataLoader'
 import { getAllParts } from '../data/PartRegistry'
-import { jsonLdToTurtle } from '../data/jsonld'
+import { jsonLdToTurtle } from '../data/serialization'
 import { NS, ONTOLOGY_CLASSES, tagToClass, partQname, entryQname } from '../data/ontologyConfig'
 import { useToast } from '../composables/useToast'
 
@@ -13,7 +13,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
   const allEntries: Record<string, string>[] = []
   for (const part of parts) {
     try {
-      const data = await loadPartEntries(part.partKey)
+      const data = await DataLoader.loadPart(part.partKey)
       for (const entry of data.entries) {
         allEntries.push({
           '@id': entryQname(entry.id),
