@@ -497,6 +497,61 @@ function accentCardBg(accent: string) {
       </div>
     </section>
 
+    <!-- Provided by -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-10">
+        <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-brand-500 mb-2">Stewardship</p>
+        <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Provided by</h2>
+        <p class="text-slate-500 dark:text-slate-400 text-sm max-w-2xl mx-auto mt-2">
+          This information service is provided by the ISO technical committee responsible for the standard.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+        <a href="https://www.iso.org/committee/46202.html" target="_blank" rel="noopener" class="group p-6 rounded-2xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-red-200 dark:hover:border-red-800 hover:shadow-sm transition-all">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-50 to-red-100/60 dark:from-red-950/40 dark:to-red-900/20 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center flex-shrink-0">
+              <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-7 w-auto" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors heading-serif">ISO/TC&nbsp;12</h3>
+              <p class="text-xs font-semibold text-red-500 dark:text-red-400 mt-0.5">Quantities and units</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
+                The ISO technical committee responsible for the international standard on quantities and units. ISO/TC 12 develops and maintains the ISO&nbsp;80000 parts covering physics, chemistry, and the broader physical sciences.
+              </p>
+              <div class="mt-3 inline-flex items-center gap-1 text-xs text-red-600 dark:text-red-400 font-medium">
+                <span>iso.org/committee/46202</span>
+                <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="https://www.iec.ch/dyn/www/f?p=103:7:528830564991517::::FSP_ORG_ID,FSP_LANG_ID:1215,25" target="_blank" rel="noopener" class="group p-6 rounded-2xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-sm transition-all">
+          <div class="flex items-start gap-4">
+            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100/60 dark:from-blue-950/40 dark:to-blue-900/20 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center flex-shrink-0">
+              <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-7 w-auto" />
+            </div>
+            <div class="min-w-0 flex-1">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors heading-serif">IEC/TC&nbsp;25</h3>
+              <p class="text-xs font-semibold text-blue-500 dark:text-blue-400 mt-0.5">Quantities and units</p>
+              <p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">
+                The IEC technical committee with the same name and scope. IEC/TC&nbsp;25 develops and maintains the IEC&nbsp;80000 parts covering electrotechnology (Part&nbsp;6) and information science and technology (Part&nbsp;13).
+              </p>
+              <div class="mt-3 inline-flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400 font-medium">
+                <span>iec.ch &mdash; TC&nbsp;25</span>
+                <svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <p class="text-xs text-slate-400 dark:text-slate-500 text-center mt-6">
+        Content copyright &copy; ISO and IEC. All rights reserved. This site provides independently developed, machine-readable views of the published standard.
+      </p>
+    </section>
+
     <!-- CTA -->
     <section class="border-t border-slate-200/60 dark:border-dark-600/60 bg-slate-50/30 dark:bg-dark-900/30">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">

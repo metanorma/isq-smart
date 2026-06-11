@@ -59,7 +59,7 @@ dcterms: urn:iso:std:iso:80000:...</pre>
       <!-- Bottom bar -->
       <div class="mt-10 pt-6 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3">
         <span class="text-[11px] text-white/25">Content copyright &copy; ISO and IEC. All rights reserved.</span>
-        <span class="text-[11px] text-white/25">Service provided by Ribose. UnitsML data used with permission.</span>
+        <span class="text-[11px] text-white/25">An information service of <a href="https://www.iso.org/committee/46202.html" target="_blank" rel="noopener" class="hover:text-white/50 transition-colors">ISO/TC&nbsp;12</a> &amp; <a href="https://www.iec.ch/dyn/www/f?p=103:7:528830564991517::::FSP_ORG_ID,FSP_LANG_ID:1215,25" target="_blank" rel="noopener" class="hover:text-white/50 transition-colors">IEC/TC&nbsp;25</a>, developed by Ribose.</span>
       </div>
     </div>
   </footer>
