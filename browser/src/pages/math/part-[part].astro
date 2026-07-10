@@ -1,0 +1,23 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import PartPage from '../../components/pages/PartPage.vue'
+import { getPartsByDomain, getPartMeta } from '../../data/index'
+
+export function getStaticPaths() {
+  return getPartsByDomain('math')
+    .map(part => ({
+      params: { part: part.partKey },
+      props: { partKey: part.partKey },
+    }))
+}
+
+const { partKey } = Astro.props
+const meta = getPartMeta(partKey)
+---
+
+<DefaultLayout
+  title={`Part ${partKey} — ${meta?.title ?? 'Math'} | ISQ Browser`}
+  description={meta?.description ?? ''}
+>
+  <PartPage part={partKey} />
+</DefaultLayout>

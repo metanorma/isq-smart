@@ -3,7 +3,10 @@ node_modules/
 browser/node_modules/
 browser/dist/
 browser/src/data/generated/
+browser/.astro/
+browser/src/pages-vue-backup/
 .vite/
+.astro/
 
 # Data repos (cloned or symlinked for local dev, checked out in CI)
 iso-iec-80000
@@ -24,3 +27,4 @@ Thumbs.db
 
 # Working notes
 TODO*
+!TODO.astro/

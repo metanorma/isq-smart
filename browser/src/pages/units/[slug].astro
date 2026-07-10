@@ -1,0 +1,20 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import UnitPage from '../../components/pages/UnitPage.vue'
+import { units } from '../../data/generated/unitsdb'
+
+export function getStaticPaths() {
+  return units
+    .filter(u => u.slug)
+    .map(unit => ({
+      params: { slug: unit.slug },
+      props: { slug: unit.slug },
+    }))
+}
+
+const { slug } = Astro.props
+---
+
+<DefaultLayout title={`Unit: ${slug} | ISQ Browser`}>
+  <UnitPage slug={slug} />
+</DefaultLayout>

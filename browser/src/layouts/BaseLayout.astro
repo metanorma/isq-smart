@@ -1,0 +1,51 @@
+---
+import '../styles/main.css'
+
+interface Props {
+  title?: string
+  description?: string
+  pathname?: string
+}
+
+const {
+  title = 'ISQ Browser — ISO 80000 & IEC 80000 Quantities and Units',
+  description = 'Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser.',
+  pathname = Astro.url.pathname,
+} = Astro.props
+
+const base = import.meta.env.BASE_URL
+const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
+
+const ogTitle = title.split('—')[0].trim()
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href={asset('/favicon-96x96.png')} sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href={asset('/favicon.svg')} />
+  <link rel="shortcut icon" href={asset('/favicon.ico')} />
+  <link rel="apple-touch-icon" sizes="180x180" href={asset('/apple-touch-icon.png')} />
+  <link rel="manifest" href={asset('/site.webmanifest')} />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <meta property="og:title" content={ogTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="theme-color" content="#E30613" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script is:inline>
+    const _d = localStorage.theme === 'dark' || (!localStorage.theme && matchMedia('(prefers-color-scheme:dark)').matches);
+    document.documentElement.classList.toggle('dark', _d);
+    document.querySelector('meta[name="theme-color"]').content = _d ? '#160a12' : '#E30613';
+  </script>
+</head>
+<body class="antialiased">
+  <slot />
+</body>
+</html>

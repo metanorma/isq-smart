@@ -1,0 +1,20 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import DimensionDetailPage from '../../components/pages/DimensionDetailPage.vue'
+import { physicalDimensions } from '../../data/generated/physical-dimensions'
+
+export function getStaticPaths() {
+  return physicalDimensions
+    .filter(d => d.slug)
+    .map(dim => ({
+      params: { part: dim.slug },
+      props: { part: dim.slug },
+    }))
+}
+
+const { part } = Astro.props
+---
+
+<DefaultLayout title={`Dimension: ${part} | ISQ Browser`}>
+  <DimensionDetailPage part={part} />
+</DefaultLayout>

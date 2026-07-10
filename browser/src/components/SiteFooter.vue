@@ -24,12 +24,12 @@ import { SiteConfig } from '../site.config'
         <div>
           <h3 class="text-[11px] font-semibold text-white/50 uppercase tracking-wider mb-3">Browse</h3>
           <ul class="space-y-2 text-xs">
-            <li><router-link to="/quantities" class="text-white/50 hover:text-brand-300 transition-colors">Quantities and Units</router-link></li>
-            <li><router-link to="/math" class="text-white/50 hover:text-brand-300 transition-colors">Mathematical Notation</router-link></li>
-            <li><router-link to="/units" class="text-white/50 hover:text-brand-300 transition-colors">Units Database</router-link></li>
-            <li><router-link to="/dimensions" class="text-white/50 hover:text-brand-300 transition-colors">Dimensions</router-link></li>
-            <li><router-link to="/about" class="text-white/50 hover:text-brand-300 transition-colors">About the Standard</router-link></li>
-            <li><router-link to="/reference" class="text-white/50 hover:text-brand-300 transition-colors">API &amp; Reference</router-link></li>
+            <li><a href="/quantities" class="text-white/50 hover:text-brand-300 transition-colors">Quantities and Units</a></li>
+            <li><a href="/math" class="text-white/50 hover:text-brand-300 transition-colors">Mathematical Notation</a></li>
+            <li><a href="/units" class="text-white/50 hover:text-brand-300 transition-colors">Units Database</a></li>
+            <li><a href="/dimensions" class="text-white/50 hover:text-brand-300 transition-colors">Dimensions</a></li>
+            <li><a href="/about" class="text-white/50 hover:text-brand-300 transition-colors">About the Standard</a></li>
+            <li><a href="/reference" class="text-white/50 hover:text-brand-300 transition-colors">API &amp; Reference</a></li>
           </ul>
         </div>
 
@@ -39,8 +39,8 @@ import { SiteConfig } from '../site.config'
           <ul class="space-y-2 text-xs">
             <li><a href="https://unitsml.org" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsML.org</a></li>
             <li><a href="https://unitsml.org/schemas/" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsDB Schemas</a></li>
-            <li><router-link to="/reference/urn-patterns" class="text-white/50 hover:text-brand-300 transition-colors">ISO-IEC URN identifiers</router-link></li>
-            <li><router-link to="/ontology" class="text-white/50 hover:text-brand-300 transition-colors">JSON-LD + RDF/Turtle vocabulary</router-link></li>
+            <li><a href="/reference/urn-patterns" class="text-white/50 hover:text-brand-300 transition-colors">ISO-IEC URN identifiers</a></li>
+            <li><a href="/ontology" class="text-white/50 hover:text-brand-300 transition-colors">JSON-LD + RDF/Turtle vocabulary</a></li>
           </ul>
         </div>
 
