@@ -31,11 +31,11 @@ defineProps<{
         <div class="p-4">
           <div class="flex items-center gap-1.5 flex-wrap font-mono text-xs">
             <template v-for="(cls, i) in hierarchy" :key="cls.qname">
-              <router-link
+              <a
                 v-if="i < hierarchy.length - 1"
-                :to="`/ontology/${cls.slug}`"
+                :href="`/ontology/${cls.slug}`"
                 class="text-brand-600 dark:text-brand-400 hover:underline"
-              >{{ cls.qname }}</router-link>
+              >{{ cls.qname }}</a>
               <span v-else class="font-bold text-slate-900 dark:text-slate-100 px-1.5 py-0.5 rounded" :class="instanceColor">{{ cls.qname }}</span>
               <svg v-if="i < hierarchy.length - 1" class="w-3 h-3 text-slate-300 dark:text-slate-600 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             </template>
@@ -62,7 +62,7 @@ defineProps<{
           <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Properties</h3>
           <div class="flex items-center gap-1.5">
             <span v-for="shape in shapes" :key="shape.qname" class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 border border-purple-100/60 dark:border-purple-800/40">
-              <router-link :to="`/ontology/${shape.slug}`" class="hover:underline" @click.stop>{{ shape.qname }}</router-link>
+              <a :href="`/ontology/${shape.slug}`" class="hover:underline" @click.stop>{{ shape.qname }}</a>
             </span>
           </div>
         </div>
@@ -77,7 +77,7 @@ defineProps<{
             <tbody>
               <tr v-for="row in propertyTable" :key="row.path" class="border-b border-slate-100/60 dark:border-dark-700/40 last:border-0 hover:bg-slate-50/30 dark:hover:bg-dark-700/30 transition-colors">
                 <td class="px-4 py-2">
-                  <router-link v-if="row.pathSlug" :to="`/ontology/${row.pathSlug}`" class="font-mono text-brand-600 dark:text-brand-400 hover:underline">{{ row.path }}</router-link>
+                  <a v-if="row.pathSlug" :href="`/ontology/${row.pathSlug}`" class="font-mono text-brand-600 dark:text-brand-400 hover:underline">{{ row.path }}</a>
                   <span v-else class="font-mono text-slate-600 dark:text-slate-400">{{ row.path }}</span>
                 </td>
                 <td class="px-4 py-2">
@@ -87,11 +87,11 @@ defineProps<{
                         {{ v.label.length > 80 ? v.label.slice(0, 77) + '…' : v.label }}
                         <svg class="w-2.5 h-2.5 flex-shrink-0 opacity-40" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                       </a>
-                      <router-link
+                      <a
                         v-else-if="v.link"
-                        :to="v.link"
+                        :href="v.link"
                         class="px-1.5 py-0.5 rounded bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
-                      >{{ v.label }}</router-link>
+                      >{{ v.label }}</a>
                       <span v-else class="text-slate-600 dark:text-slate-400">{{ v.label }}</span>
                     </template>
                   </div>
@@ -109,26 +109,26 @@ defineProps<{
         </div>
         <div class="p-4 flex flex-wrap gap-2">
           <!-- SHACL Shapes -->
-          <router-link
+          <a
             v-for="shape in shapes"
             :key="shape.qname"
-            :to="`/ontology/${shape.slug}`"
+            :href="`/ontology/${shape.slug}`"
             class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-purple-300 dark:border-purple-700 bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/60 transition-colors inline-flex items-center gap-1.5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
             {{ shape.qname }}
-          </router-link>
+          </a>
           <!-- Dynamic related entities -->
-          <router-link
+          <a
             v-for="rel in related"
             :key="rel.qname"
-            :to="rel.link ?? `/ontology/${rel.slug}`"
+            :href="rel.link ?? `/ontology/${rel.slug}`"
             class="text-xs font-medium px-2.5 py-1.5 rounded-lg border transition-colors inline-flex items-center gap-1.5"
             :class="[relatedBadgeColor(rel.qname).border, relatedBadgeColor(rel.qname).bg, relatedBadgeColor(rel.qname).text, 'hover:opacity-80']"
           >
             <span class="w-1.5 h-1.5 rounded-full" :class="relatedBadgeColor(rel.qname).dot"></span>
             {{ rel.qname }}
-          </router-link>
+          </a>
         </div>
       </div>
     </div>

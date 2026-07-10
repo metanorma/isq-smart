@@ -164,9 +164,9 @@ function ontLabel(prefix: string) {
       <div class="px-2 py-1.5 text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
         {{ searchResults.length }} result{{ searchResults.length !== 1 ? 's' : '' }}
       </div>
-      <router-link
+      <a
         v-for="e in searchResults" :key="e.qname"
-        :to="`/ontology/${e.slug}`"
+        :href="`/ontology/${e.slug}`"
         class="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs transition-colors"
         :class="activeSlug === e.slug
           ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium'
@@ -175,7 +175,7 @@ function ontLabel(prefix: string) {
         <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" :class="typeMeta[e.type]?.colorDot || 'bg-slate-300'"></span>
         <span class="truncate">{{ e.type === 'ontology' ? e.qname.replace(':', '') : e.label }}</span>
         <span class="ml-auto text-[9px] text-slate-400 dark:text-slate-600 flex-shrink-0">{{ e.ontology }}</span>
-      </router-link>
+      </a>
     </div>
 
     <!-- Hierarchical grouping by ontology -->
@@ -193,8 +193,8 @@ function ontLabel(prefix: string) {
 
         <div v-if="!isCollapsed('ont-' + group.prefix)">
           <!-- Ontology entity link -->
-          <router-link v-if="group.ontEntity"
-            :to="`/ontology/${group.ontEntity.slug}`"
+          <a v-if="group.ontEntity"
+            :href="`/ontology/${group.ontEntity.slug}`"
             class="flex items-center gap-1.5 px-3 py-1 rounded-md text-xs transition-colors ml-1"
             :class="activeSlug === group.ontEntity.slug
               ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium'
@@ -202,7 +202,7 @@ function ontLabel(prefix: string) {
           >
             <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" :class="typeMeta.ontology?.colorDot || 'bg-slate-300'"></span>
             <span class="truncate italic">{{ group.ontEntity.qname.replace(':', '') }}</span>
-          </router-link>
+          </a>
 
           <!-- Type subgroups -->
           <div v-for="tg in group.typeGroups" :key="tg.key" class="ml-1">
@@ -215,9 +215,9 @@ function ontLabel(prefix: string) {
               </span>
             </button>
             <div v-if="!isCollapsed(group.prefix + '-' + tg.key)" class="space-y-0.5 mt-0.5">
-              <router-link
+              <a
                 v-for="e in tg.entities" :key="e.qname"
-                :to="`/ontology/${e.slug}`"
+                :href="`/ontology/${e.slug}`"
                 class="flex items-center gap-1.5 px-2 py-1 rounded-md text-xs transition-colors ml-2"
                 :class="activeSlug === e.slug
                   ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium'
@@ -225,7 +225,7 @@ function ontLabel(prefix: string) {
               >
                 <span class="w-1.5 h-1.5 rounded-full flex-shrink-0" :class="typeMeta[e.type]?.colorDot || 'bg-slate-300'"></span>
                 <span class="truncate">{{ e.label }}</span>
-              </router-link>
+              </a>
             </div>
           </div>
         </div>
