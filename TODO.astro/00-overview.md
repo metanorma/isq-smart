@@ -1,68 +1,44 @@
-# Astro Migration — Architecture & Strategy
+# Remaining Tasks — Full Astro 7 Migration Cleanup
 
-## Target Stack
-- **Astro 7** — host framework, file-based routing, static-first SSR
-- **Vite 8** — bundled with Astro, runs all plugins
-- **Tailwind CSS 4** — via `@tailwindcss/vite` plugin
-- **Vue 3** — via `@astrojs/vue`, interactive islands only
+## Audit Findings (2026-07-11)
 
-## Architectural Principles
-1. **OCP** — pages open for extension via props/frontmatter, closed for modification
-2. **DRY** — shared patterns extracted to layouts and components
-3. **MECE** — each concern lives in exactly one place (data, layout, island, page)
-4. **Model-driven** — data layer (PartRegistry, EntryModel) is the single source of truth
-5. **Encapsulation** — Vue islands receive data as props, never access route/router directly
-6. **Single source of truth** — `SiteConfig` for config, `PartRegistry` for part metadata
+### Type Safety
+- `citation.test.ts:63` — error: assigning to readonly `designations` property
+- `EntryModel.test.ts:3` — unused `Entry` import
+- `PartRegistry.test.ts:5` — unused `getAllParts` import
+- `tsconfig.json` doesn't extend `astro/tsconfigs/strictest`, missing `.astro` includes
 
-## Layer Architecture
+### DRY Violations
+- `asset()` helper duplicated in every .astro page (12+ copies) and Vue components
+- Scroll-reveal inline script duplicated in index.astro and other pages
+- Count-up animation inline in index.astro
 
-```
-Layer 1: Build-time data generation
-  build/stages/*.ts → src/data/generated/*.ts (auto-generated)
+### Dead Code
+- `OntologySidebar.vue` — not imported by any page (agent inlined sidebar)
+- `SiteHeader.vue` — replaced by static HTML in DefaultLayout.astro
+- `JsonLd.vue` — replaced by inline `<script type="application/ld+json">` in pages
+- `useEntry.ts` — was used by deleted EntryPage.vue
+- `usePartData.ts` — was used by deleted PartPage.vue
+- `useOntologySidebar.ts` — used only by dead OntologySidebar.vue
+- `SiteConfig.asset()` — replaced by `import.meta.env.BASE_URL` pattern
 
-Layer 2: Data access (single source of truth)
-  src/data/PartRegistry.ts    — part metadata, domains, documents
-  src/data/EntryModel.ts      — entry model with methods
-  src/data/DataLoader.ts      — lazy part loading
-  src/data/urn.ts             — URN generation
-  src/data/citation.ts        — citation generation
-  src/data/serialization.ts   — JSON-LD/Turtle serialization
+### Organization
+- `PartEntryList.vue` in `islands/` subdirectory, all other islands flat — inconsistent
+- `bin/check` uses `vue-tsc` (uninstalled) — should use `astro check`
+- `bin/dev`, `bin/build` may reference old Vite commands
 
-Layer 3: Astro layouts (static HTML shell)
-  BaseLayout.astro      — HTML, meta, fonts, dark-mode flash prevention
-  DefaultLayout.astro   — header (static), footer, island slots
-  OntologyLayout.astro  — ontology browser chrome
+### Missing Tests
+- No tests for new islands: EntryBrowser, UnitBrowser, DimensionBrowser, PartEntryList
+- No tests for: RecentEntries, ThemeToggle, MobileNav, DatasetDownload
+- No tests for remaining composables: useSearch, useTheme, useRdfExport
+- No tests for build plugins: yaml-data-plugin, ontology-data-plugin
 
-Layer 4: Astro pages (native .astro templates)
-  Static:   index, about, reference, 404
-  Listing:  quantities, math, units, dimensions, documents, ontology
-  Detail:   part, entry, unit, dimension, document, ontology-detail
-
-Layer 5: Vue islands (interactive only, hydrated client-side)
-  Header:     ThemeToggle, MobileNav, GlobalSearch, SearchHint
-  UI:         BackToTop, AppToast, RecentEntries
-  Content:    MathRenderer, CitationBuilder
-  Ontology:   OntologySidebar, EntryOntologyPanel, UnitOntologyPanel,
-              DimensionOntologyPanel, ClassTreeNode, OntologyPanelLayout
-
-Layer 6: Static .astro components (no JavaScript)
-  IsqLogo.astro, PartIcon.astro, ReferenceBadge.astro
-```
-
-## Hydration Strategy
-| Directive | Components |
-|-----------|-----------|
-| `client:load` | ThemeToggle, MobileNav, SearchHint |
-| `client:idle` | GlobalSearch, AppToast, RecentEntries, CitationBuilder, Ontology* |
-| `client:visible` | BackToTop, MathRenderer |
-
-## Migration Status
-- ✅ Astro config, base path (dev: `/`, build: `/isq-smart/`)
-- ✅ BaseLayout.astro, DefaultLayout.astro (static header HTML)
-- ✅ ThemeToggle, MobileNav, RecentEntries islands
-- ✅ GlobalSearch updated (listens for `open-search` event)
-- ✅ index.astro rewritten as native .astro (not wrapper)
-- ⬜ All other pages still use wrapper approach — must rewrite as native .astro
-- ⬜ Delete wrapper components (src/components/pages/)
-- ⬜ Remove vue-router dependency
-- ⬜ Comprehensive specs
+## TODO Index
+- `01-shared-utilities.md` — Extract DRY utilities (asset, scroll-reveal, nav config)
+- `02-type-safety.md` — Fix TS errors, update tsconfig for Astro
+- `03-dead-code-removal.md` — Delete unused components, composables, methods
+- `04-component-organization.md` — Consistent island structure
+- `05-scripts-config.md` — Fix bin scripts, package.json, CLAUDE.md
+- `06-specs.md` — Comprehensive test coverage
+- `07-performance.md` — Audit hydration, bundle sizes
+- `08-documentation.md` — Update CLAUDE.md, README, TODO status

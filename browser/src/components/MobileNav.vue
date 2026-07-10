@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 
 const props = defineProps<{
-  links: { to: string; label: string }[]
+  links: readonly { to: string; label: string }[]
   activePath: string
 }>()
 

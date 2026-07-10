@@ -3,7 +3,6 @@ import vue from '@astrojs/vue'
 import tailwindcss from '@tailwindcss/vite'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { SiteConfig } from './src/site.config'
 import { yamlDataPlugin } from './build/yaml-data-plugin'
 import { ontologyDataPlugin } from './build/ontology-data-plugin'
 import type { BuildPaths } from './build/types'
@@ -37,9 +36,10 @@ if (missingRepos.length) {
 }
 
 const isDev = process.argv.slice(2).includes('dev')
+const BUILD_BASE_PATH = '/isq-smart/'
 
 export default defineConfig({
-  base: isDev ? '/' : SiteConfig.basePath,
+  base: isDev ? '/' : BUILD_BASE_PATH,
   output: 'static',
   integrations: [vue()],
   vite: {

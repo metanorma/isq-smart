@@ -32,8 +32,6 @@ interface Entity {
   identifier?: string
 }
 
-const base = import.meta.env.BASE_URL
-const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
 
 const allEntities = ontologyEntities as readonly Entity[]
 const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
@@ -41,7 +39,7 @@ const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: stri
 // Ontology structure (data-driven)
 const primaryQname = Object.keys(ontologyImportChain)[0]
 const primaryOntology = ontologyNamespaces.find(n => n.prefix === primaryQname?.split(':')[0])!
-const importedQnames: readonly string[] = (ontologyImportChain as Record<string, { imports: string[] }>)[primaryQname]?.imports ?? []
+const importedQnames: readonly string[] = (ontologyImportChain as unknown as Record<string, { imports: string[] }>)[primaryQname]?.imports ?? []
 const importedOntologies = importedQnames.map(iq => ontologyNamespaces.find(n => n.prefix === iq.split(':')[0])!).filter(Boolean)
 
 // Namespace grouping: group all entities by their prefix

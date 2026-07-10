@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 root="$(cd "$(dirname "$0")/.." && pwd)"
-echo "=== Frontend type check ==="
+echo "=== Astro type check ==="
 cd "$root/browser"
-npx vue-tsc --noEmit
+npx astro check

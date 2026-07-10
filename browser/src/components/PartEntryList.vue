@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import MathRenderer from '../MathRenderer.vue'
-import LanguageToggle from '../LanguageToggle.vue'
-import ReferenceBadge from '../ReferenceBadge.vue'
-import { entryUrl, EntryModel } from '../../data/index'
-import type { Entry, Lang } from '../../data/types'
+import MathRenderer from './MathRenderer.vue'
+import LanguageToggle from './LanguageToggle.vue'
+import ReferenceBadge from './ReferenceBadge.vue'
+import { entryUrl, EntryModel } from '../data/index'
+import type { Entry, Lang } from '../data/types'
 
 const props = defineProps<{
   entries: Entry[]

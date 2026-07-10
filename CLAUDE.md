@@ -27,15 +27,16 @@ The Ruby gems live in their own repositories:
 
 | Directory | Description |
 |---|---|
-| `browser/` | Vue.js 3 + TypeScript + Tailwind CSS v4 static site. Vite plugins generate data at build time |
-| `bin/` | Dev scripts: `bin/check` (type-check), `bin/dev`, `bin/build` |
+| `browser/` | Astro 7 + Vue 3 (islands) + TypeScript + Tailwind CSS v4 static site. Vite plugins generate data at build time |
+| `bin/` | Dev scripts: `bin/check` (astro check), `bin/dev`, `bin/build` |
 
 ## Commands
 
 ```bash
-cd browser && npm run dev          # Vite dev server → http://localhost:5173
-cd browser && npm run build        # vue-tsc + vite build
-bin/check                          # Frontend type-check
+cd browser && npm run dev          # Astro dev server → http://localhost:4321
+cd browser && npm run build        # astro build
+cd browser && npm run build:check  # astro build && astro check
+bin/check                          # Type check (astro check)
 ```
 
 ## External Data Repos
@@ -61,16 +62,18 @@ CI (GHA) checks out all three repos as workspace subdirectories automatically.
 
 ## Browser Architecture
 
+- **Framework**: Astro 7 with file-based routing. Vue 3 components used as hydrated islands for interactive parts only.
 - **Build-time data pipeline**: Two Vite plugins (`yaml-data`, `ontology-data`) read YAML/Turtle sources and generate ~40 TypeScript modules into `src/data/generated/`
-- **Pages**: Lazy-loaded per-part data via Vue Router. Key pages: quantities listing, math notation, units browser, dimensions, ontology browser, documents
-- **Routing**: Uses `createWebHistory()` — host must redirect all paths to `index.html`
+- **Pages**: Native `.astro` templates with data fetched in frontmatter. Dynamic routes use `getStaticPaths()`. Vue islands hydrate with `client:load`, `client:idle`, or `client:visible` directives.
+- **Routing**: File-based — each `.astro` file in `src/pages/` maps to a URL. No client-side router (MPA model).
 
 ### Data flow
 
 - YAML sources (`iso-iec-80000/sources/dataset/*.yaml`) → Vite `yaml-data` plugin → TypeScript modules
 - SmartSDU Turtle files (`sdu-smart/reference-docs/`) + ISO 80000 Turtle files (`public/ontologies/`) → Vite `ontology-data` plugin → ontology browser data
 - UnitsML YAML files (`unitsdb/*.yaml`) → Vite `yaml-data` plugin → units and dimensions pages
-- Vue Router lazy-loads per-part data on navigation
+- Astro pages fetch data in frontmatter at build time → static HTML output
+- Vue islands receive data as props, hydrate client-side for interactivity
 
 ### RDF exports
 

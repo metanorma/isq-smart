@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { EntryModel } from '../index'
-import type { Entry, QuantityEntry, MathEntry } from '../types'
+import type { QuantityEntry, MathEntry } from '../types'
 
 // ── Test fixtures ──
 
