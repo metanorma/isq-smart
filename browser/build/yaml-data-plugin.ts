@@ -63,17 +63,6 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
         return
       }
 
-      if (isBuild && metaExists) {
-        try {
-          console.log('[yaml-data] Generating data files...')
-          await generateFiles()
-          console.log('[yaml-data] Done')
-        } catch (e) {
-          console.warn(`[yaml-data] Regeneration failed (${(e as Error).message}), using cached data`)
-        }
-        return
-      }
-
       console.log('[yaml-data] Generating data files...')
       await generateFiles()
       console.log('[yaml-data] Done')
