@@ -1,7 +1,36 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import OntologyDetailPage from '../../components/pages/OntologyDetailPage.vue'
-import { ontologyEntities } from '../../data/generated/ontology'
+import { ontologyEntities, ontologyTypeMeta, ontologyPrefixes, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
+import { toTurtle, toJsonLd } from '../../composables/useRdfExport'
+
+interface Entity {
+  uri: string
+  qname: string
+  slug: string
+  label: string
+  description: string
+  ontology: string
+  type: string
+  scopeNote?: string
+  example?: string
+  altLabel?: string
+  seeAlso?: string[]
+  parent?: string
+  domain?: string[]
+  range?: string[]
+  functional?: boolean
+  targetClass?: string
+  targetSubjectsOf?: string
+  targetObjectsOf?: string
+  constraints?: { path: string; minCount?: number; maxCount?: number; datatype?: string; nodeKind?: string; classValue?: string; hasValue?: string; uniqueLang?: boolean }[]
+  scheme?: string
+  instanceOf?: string[]
+  topConcepts?: string[]
+  version?: string
+  imports?: string[]
+  isPartOf?: string[]
+  identifier?: string
+}
 
 export function getStaticPaths() {
   return ontologyEntities
@@ -13,8 +42,1167 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.props
+
+const base = import.meta.env.BASE_URL
+const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
+
+const allEntities = ontologyEntities as readonly Entity[]
+const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
+
+const entity = allEntities.find(e => e.slug === slug)
+
+function findByQname(qname: string): Entity | undefined {
+  return allEntities.find(e => e.qname === qname)
+}
+
+function linkTo(qname: string) {
+  const e = findByQname(qname)
+  if (e) return `/ontology/${e.slug}`
+  return ''
+}
+
+function badgeColor(e: Entity) {
+  if (e.ontology === 'smart') return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400'
+  if (e.ontology === 'isq') return 'bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-400'
+  return 'bg-slate-100 text-slate-600 dark:bg-dark-700 dark:text-slate-400'
+}
+
+// Pre-compute all derived data
+const parentOntologyEntity = entity && entity.type !== 'ontology'
+  ? allEntities.find(e => e.type === 'ontology' && e.ontology === entity.ontology)
+  : null
+
+// Prev/next navigation
+const siblings = (() => {
+  if (!entity) return { prev: undefined as Entity | undefined, next: undefined as Entity | undefined }
+  const sameType = allEntities
+    .filter(e => e.type === entity.type && e.ontology !== 'external')
+    .sort((a, b) => a.label.localeCompare(b.label))
+  const idx = sameType.findIndex(e => e.qname === entity.qname)
+  return {
+    prev: idx > 0 ? sameType[idx - 1] : undefined,
+    next: idx < sameType.length - 1 ? sameType[idx + 1] : undefined,
+  }
+})()
+
+// Class features
+const subclasses = entity && entity.type === 'class'
+  ? allEntities.filter(e => e.type === 'class' && e.parent === entity.qname)
+  : []
+
+const allDescendants = (() => {
+  if (!entity || entity.type !== 'class') return []
+  const result: Entity[] = []
+  const queue = [entity.qname]
+  const seen = new Set<string>()
+  while (queue.length) {
+    const qn = queue.shift()!
+    if (seen.has(qn)) continue
+    seen.add(qn)
+    const children = allEntities.filter(e => e.type === 'class' && e.parent === qn)
+    for (const c of children) {
+      result.push(c)
+      queue.push(c.qname)
+    }
+  }
+  return result
+})()
+
+const targetingShapes = entity && entity.type === 'class'
+  ? allEntities.filter(e => e.type === 'shape' && e.targetClass === entity.qname)
+  : []
+
+const ancestors = (() => {
+  if (!entity || entity.type !== 'class') return []
+  const chain: Entity[] = []
+  let current = entity
+  let safety = 20
+  while (safety-- > 0) {
+    const pq = current.parent
+    if (!pq) break
+    const p = findByQname(pq)
+    if (!p) break
+    chain.push(p)
+    current = p
+  }
+  return chain
+})()
+
+// Inferred properties: properties whose domain includes any ancestor
+const inferredProperties = (() => {
+  if (!entity || entity.type !== 'class') return []
+  const ancestorQnames = ancestors.map(a => a.qname)
+  const allQnames = [entity.qname, ...ancestorQnames]
+  const props = allEntities.filter(e =>
+    (e.type === 'objectProperty' || e.type === 'datatypeProperty' || e.type === 'annotationProperty') &&
+    e.domain?.some(d => allQnames.includes(d))
+  )
+  return props.filter(p => !p.domain?.includes(entity.qname))
+})()
+
+// Grouped usage: properties grouped by which ancestor (or self) they belong to
+const groupedUsage = (() => {
+  if (!entity || entity.type !== 'class') return []
+  const chain = [entity, ...ancestors]
+  return chain
+    .map(cls => {
+      const clsProps = allEntities.filter(e =>
+        (e.type === 'objectProperty' || e.type === 'datatypeProperty' || e.type === 'annotationProperty') &&
+        e.domain?.includes(cls.qname)
+      )
+      return { source: cls, props: clsProps }
+    })
+    .filter(g => g.props.length > 0)
+})()
+
+// Instances
+const instances = entity && entity.type === 'class'
+  ? allEntities.filter(e => e.type === 'individual' && e.instanceOf?.includes(entity.qname))
+  : []
+
+// Properties that use this class in domain/range
+const relatedProperties = (() => {
+  if (!entity || entity.type !== 'class') return { domain: [] as Entity[], range: [] as Entity[] }
+  const qn = entity.qname
+  return {
+    domain: allEntities.filter(e =>
+      (e.type === 'objectProperty' || e.type === 'datatypeProperty' || e.type === 'annotationProperty') &&
+      e.domain?.includes(qn)
+    ),
+    range: allEntities.filter(e =>
+      (e.type === 'objectProperty' || e.type === 'datatypeProperty') &&
+      e.range?.includes(qn)
+    ),
+  }
+})()
+
+// SKOS features
+const schemeConcepts = entity && entity.type === 'conceptScheme'
+  ? allEntities.filter(e => e.type === 'concept' && e.scheme === entity.qname)
+  : []
+
+const conceptShapes = (() => {
+  if (!entity || entity.type !== 'concept') return []
+  const io = entity.instanceOf || []
+  return allEntities.filter(e => e.type === 'shape' && io.includes(e.targetClass || ''))
+})()
+
+// Ontology-specific
+const ontologyPrefix = entity ? entity.qname.split(':')[0] : ''
+const ontologyNs = ontologyNamespaces.find(n => n.prefix === ontologyPrefix)
+
+const ontologyClasses = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'class' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyObjProps = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'objectProperty' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyDtProps = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'datatypeProperty' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyAnnProps = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'annotationProperty' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyShapes = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'shape' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyConcepts = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'concept' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyConceptSchemes = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'conceptScheme' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+const ontologyIndividuals = entity && entity.type === 'ontology'
+  ? allEntities.filter(e => e.type === 'individual' && e.qname.startsWith(ontologyPrefix + ':'))
+  : []
+
+// Where used
+const whereUsed = (() => {
+  if (!entity) return []
+  const qn = entity.qname
+  const results: { entity: Entity; context: string }[] = []
+  for (const e of allEntities) {
+    if (e.qname === qn) continue
+    if (e.parent === qn) results.push({ entity: e, context: 'subClassOf' })
+    if (e.domain?.includes(qn)) results.push({ entity: e, context: 'domain' })
+    if (e.range?.includes(qn)) results.push({ entity: e, context: 'range' })
+    if (e.targetClass === qn) results.push({ entity: e, context: 'targetClass' })
+    if (e.targetSubjectsOf === qn) results.push({ entity: e, context: 'targetSubjectsOf' })
+    if (e.targetObjectsOf === qn) results.push({ entity: e, context: 'targetObjectsOf' })
+    if (e.scheme === qn) results.push({ entity: e, context: 'inScheme' })
+    if (e.instanceOf?.includes(qn)) results.push({ entity: e, context: 'type' })
+    if (e.isPartOf?.includes(qn)) results.push({ entity: e, context: 'isPartOf' })
+    for (const c of (e.constraints || [])) {
+      if (c.classValue === qn) results.push({ entity: e, context: 'shape constraint class' })
+      if (c.hasValue === qn) results.push({ entity: e, context: 'shape constraint hasValue' })
+    }
+  }
+  return results
+})()
+
+// RDF export (pre-computed)
+const turtleCode = entity ? toTurtle(entity) : ''
+const jsonldCode = entity ? toJsonLd(entity) : ''
+
+function truncate(s: string, n: number) {
+  return s.length > n ? s.slice(0, n) + '…' : s
+}
 ---
 
 <DefaultLayout title={`Ontology: ${slug} | ISQ Browser`}>
-  <OntologyDetailPage slug={slug} />
+  <div>
+    {!entity ? (
+      <div class="p-8 text-center text-gray-500">
+        <p class="text-xl">Entity not found</p>
+        <p class="mt-2">No entity with slug "{slug}"</p>
+        <a href="/ontology" class="text-blue-600 hover:underline mt-4 inline-block">
+          Back to Ontology
+        </a>
+      </div>
+    ) : (
+      <div class="max-w-5xl mx-auto p-6 space-y-6">
+        <!-- Breadcrumb + prev/next -->
+        <div class="flex items-center justify-between">
+          <nav class="flex items-center gap-2 text-sm text-gray-500">
+            <a href="/ontology" class="hover:text-blue-600">Ontology</a>
+            <span>/</span>
+            {parentOntologyEntity ? (
+              <Fragment>
+                <a href={`/ontology/${parentOntologyEntity.slug}`} class="hover:text-blue-600">{entity.ontology}</a>
+                <span>/</span>
+              </Fragment>
+            ) : null}
+            <span class="text-gray-900 font-medium">{entity.label}</span>
+          </nav>
+          <div class="flex items-center gap-3 text-xs">
+            {siblings.prev ? (
+              <a href={`/ontology/${siblings.prev.slug}`} class="flex items-center gap-1 text-slate-500 hover:text-brand-600 transition-colors">
+                <span>←</span> {siblings.prev.label}
+              </a>
+            ) : (
+              <span class="text-slate-300">←</span>
+            )}
+            {siblings.next ? (
+              <a href={`/ontology/${siblings.next.slug}`} class="flex items-center gap-1 text-slate-500 hover:text-brand-600 transition-colors">
+                {siblings.next.label} <span>→</span>
+              </a>
+            ) : (
+              <span class="text-slate-300">→</span>
+            )}
+          </div>
+        </div>
+
+        <div>
+          <h1 class="text-2xl font-bold text-gray-900">{entity.label}</h1>
+          <div class="flex items-center gap-2 mt-1">
+            <span class={`inline-block px-2 py-0.5 rounded text-xs font-medium ${typeMeta[entity.type]?.color || 'bg-gray-100 text-gray-800'}`}>
+              {typeMeta[entity.type]?.label || entity.type}
+            </span>
+            {entity.ontology !== 'external' && (
+              <span class={`inline-block px-2 py-0.5 rounded text-xs font-medium ${entity.ontology === 'smart' ? 'bg-emerald-50 text-emerald-600' : 'bg-brand-50 text-brand-600'}`}>
+                {entity.ontology}
+              </span>
+            )}
+            <code class="text-xs text-slate-400">{entity.qname}</code>
+          </div>
+        </div>
+
+        <!-- Tab bar -->
+        <div class="flex gap-1 p-1 rounded-lg bg-slate-100/80 dark:bg-dark-700/80 border border-slate-200/60 dark:border-dark-600/60 w-fit">
+          <button data-detail-tab="overview" class="px-3 py-1.5 rounded-md text-xs font-medium transition-all bg-white dark:bg-dark-800 text-slate-800 dark:text-slate-100 shadow-sm">
+            Overview
+          </button>
+          <button data-detail-tab="rdf" class="px-3 py-1.5 rounded-md text-xs font-medium transition-all text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300">
+            RDF Source
+          </button>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- OVERVIEW TAB                                                   -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <div data-detail-section="overview" class="space-y-6">
+          <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">URI</h3>
+            <code class="text-sm break-all">{entity.uri}</code>
+          </div>
+
+          <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+            <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Qualified Name</h3>
+            <code class="text-sm">{entity.qname}</code>
+          </div>
+
+          {entity.description && (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Definition</h3>
+              <p class="text-gray-700 whitespace-pre-line">{entity.description}</p>
+            </div>
+          )}
+
+          {entity.scopeNote && (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Scope Note</h3>
+              <p class="text-gray-700 whitespace-pre-line">{entity.scopeNote}</p>
+            </div>
+          )}
+
+          {entity.example && (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Example</h3>
+              <p class="text-gray-700">{entity.example}</p>
+            </div>
+          )}
+
+          {entity.altLabel && (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Alternative Label</h3>
+              <p class="text-gray-700">{entity.altLabel}</p>
+            </div>
+          )}
+
+          {entity.seeAlso?.length ? (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">See Also</h3>
+              <ul class="space-y-1">
+                {entity.seeAlso.map((link) => (
+                  <li>
+                    <a href={link} target="_blank" rel="noopener" class="text-blue-600 hover:underline text-sm break-all">{link}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : null}
+
+          {/* ─── Class-specific ────────────────────────────────────────── */}
+          {entity.type === 'class' && (
+            <Fragment>
+              {/* Tree diagram */}
+              <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Hierarchy</h3>
+                <div class="font-mono text-xs space-y-0.5">
+                  {/* Ancestors (reversed, root first) */}
+                  {[...ancestors].reverse().map((a, i) => (
+                    <div style={`padding-left: ${i * 1.5}rem`} class="flex items-center gap-1.5 text-slate-400">
+                      <span class="w-4 text-center">└</span>
+                      <a href={`/ontology/${a.slug}`} class="hover:text-blue-600 hover:underline">{a.qname}</a>
+                    </div>
+                  ))}
+                  {/* Self (highlighted) */}
+                  <div style={`padding-left: ${ancestors.length * 1.5}rem`} class="flex items-center gap-1.5 py-1 px-2 -mx-2 rounded bg-brand-50/50 border border-brand-200/30">
+                    <span class="w-4 text-center font-bold text-brand-500">★</span>
+                    <span class="text-brand-700 font-bold">{entity.qname}</span>
+                  </div>
+                  {/* Children */}
+                  {subclasses.map((sc) => (
+                    <div style={`padding-left: ${(ancestors.length + 1) * 1.5}rem`} class="flex items-center gap-1.5">
+                      <span class="w-4 text-center text-slate-300">└</span>
+                      <a href={`/ontology/${sc.slug}`} class="text-blue-600 hover:underline">{sc.qname}</a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Inherited properties */}
+              {inferredProperties.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                    Inherited Properties ({inferredProperties.length})
+                  </h3>
+                  <p class="text-xs text-slate-400 mb-3">Properties inherited from ancestor classes.</p>
+                  <div class="flex flex-wrap gap-1.5">
+                    {inferredProperties.map((p) => (
+                      <a href={`/ontology/${p.slug}`} class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+                        <span class={`w-1.5 h-1.5 rounded-full ${typeMeta[p.type]?.colorDot || 'bg-slate-300'}`}></span>
+                        {p.qname}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Grouped usage table (Ontospy-style) */}
+              {groupedUsage.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Properties by Class ({relatedProperties.domain.length})
+                  </h3>
+                  <div class="space-y-4">
+                    {groupedUsage.map((group) => (
+                      <div>
+                        <div class="flex items-center gap-2 mb-2">
+                          <span class="text-xs font-semibold text-slate-700 dark:text-slate-300">From</span>
+                          <a href={`/ontology/${group.source.slug}`} class="text-xs font-mono text-blue-600 hover:underline">{group.source.qname}</a>
+                          <span class="text-[10px] text-slate-400">({group.props.length})</span>
+                        </div>
+                        <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                          <table class="w-full text-xs">
+                            <thead>
+                              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                                <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Property</th>
+                                <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Description</th>
+                                <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Range</th>
+                                <th class="text-center px-3 py-1.5 font-semibold text-slate-500">Type</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {group.props.map((p) => (
+                                <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0">
+                                  <td class="px-3 py-1.5">
+                                    <a href={`/ontology/${p.slug}`} class="text-green-700 hover:underline font-medium">{p.qname}</a>
+                                  </td>
+                                  <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-xs truncate">{p.description || '—'}</td>
+                                  <td class="px-3 py-1.5">
+                                    {p.range?.length ? p.range.map((r, i) => (
+                                      <Fragment>
+                                        {linkTo(r) ? <a href={linkTo(r)} class="text-blue-600 hover:underline">{r}</a> : <span class="text-slate-600 dark:text-slate-400">{r}</span>}
+                                        {i < p.range!.length - 1 && <span>, </span>}
+                                      </Fragment>
+                                    )) : <span class="text-slate-400">—</span>}
+                                  </td>
+                                  <td class="px-3 py-1.5 text-center">
+                                    <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${typeMeta[p.type]?.color || 'bg-slate-100 text-slate-600'}`}>{typeMeta[p.type]?.label || p.type}</span>
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* Direct subclasses */}
+              {subclasses.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Direct Subclasses ({subclasses.length})</h3>
+                  <ul class="space-y-1">
+                    {subclasses.map((sc) => (
+                      <li>
+                        <a href={`/ontology/${sc.slug}`} class="text-blue-600 hover:underline">{sc.qname}</a>
+                        {sc.description && <span class="text-gray-400 text-sm ml-2">— {truncate(sc.description, 80)}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* All descendants */}
+              {allDescendants.length > subclasses.length && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">All Descendants ({allDescendants.length})</h3>
+                  <ul class="space-y-1">
+                    {allDescendants.map((d) => (
+                      <li>
+                        <a href={`/ontology/${d.slug}`} class="text-blue-600 hover:underline">{d.qname}</a>
+                        {d.description && <span class="text-gray-400 text-sm ml-2">— {truncate(d.description, 60)}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* SHACL Shapes targeting this class */}
+              {targetingShapes.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    SHACL Constraints ({targetingShapes.length})
+                  </h3>
+                  {targetingShapes.map((s) => (
+                    <div class="mb-4 last:mb-0">
+                      <div class="flex items-center gap-2 mb-2">
+                        <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-purple-50 text-purple-600">Shape</span>
+                        <a href={`/ontology/${s.slug}`} class="text-sm font-bold text-brand-600 hover:underline">{s.qname}</a>
+                      </div>
+                      {s.constraints?.length ? (
+                        <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                          <table class="w-full text-xs">
+                            <thead>
+                              <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                                <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Property</th>
+                                <th class="text-center px-3 py-1.5 font-semibold text-slate-500">Min</th>
+                                <th class="text-center px-3 py-1.5 font-semibold text-slate-500">Max</th>
+                                <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Type / Class</th>
+                                <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Node Kind</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {s.constraints.map((c, i) => (
+                                <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0">
+                                  <td class="px-3 py-1.5">
+                                    {linkTo(c.path) ? <a href={linkTo(c.path)} class="text-blue-600 hover:underline">{c.path}</a> : <span class="font-mono">{c.path}</span>}
+                                  </td>
+                                  <td class="px-3 py-1.5 text-center">{c.minCount ?? '—'}</td>
+                                  <td class="px-3 py-1.5 text-center">{c.maxCount ?? '—'}</td>
+                                  <td class="px-3 py-1.5">
+                                    {c.datatype && <span class="italic">{c.datatype}</span>}
+                                    {!c.datatype && c.classValue && linkTo(c.classValue) && <a href={linkTo(c.classValue)} class="text-blue-600 hover:underline">{c.classValue}</a>}
+                                    {!c.datatype && c.classValue && !linkTo(c.classValue) && <span>{c.classValue}</span>}
+                                    {c.hasValue && <span class="text-slate-400 ml-1">= {c.hasValue}</span>}
+                                    {c.uniqueLang && <span class="text-[9px] text-amber-600 bg-amber-50 px-1 py-0.5 rounded ml-1">uniqueLang</span>}
+                                  </td>
+                                  <td class="px-3 py-1.5">{c.nodeKind || '—'}</td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      ) : null}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {/* Range usage */}
+              {relatedProperties.range.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">In Range Of</h3>
+                  <ul class="space-y-1">
+                    {relatedProperties.range.map((p) => (
+                      <li>
+                        <a href={`/ontology/${p.slug}`} class="text-blue-600 hover:underline">{p.qname}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* Instances */}
+              {instances.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Instances ({instances.length})</h3>
+                  <div class="flex flex-wrap gap-1.5">
+                    {instances.map((inst) => (
+                      <a href={`/ontology/${inst.slug}`} class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1">
+                        <span class={`w-1.5 h-1.5 rounded-full ${typeMeta[inst.type]?.colorDot || 'bg-slate-300'}`}></span>
+                        {inst.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </Fragment>
+          )}
+
+          {/* ─── Property-specific ─────────────────────────────────────── */}
+          {(entity.type === 'objectProperty' || entity.type === 'datatypeProperty') && (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Property Characteristics</h3>
+              <table class="w-full text-sm">
+                {entity.domain?.length ? (
+                  <tr>
+                    <td class="py-1 pr-4 font-medium text-gray-600 align-top w-32">Domain</td>
+                    <td>
+                      {entity.domain.map((d, i) => (
+                        <Fragment>
+                          {linkTo(d) ? <a href={linkTo(d)} class="text-blue-600 hover:underline">{d}</a> : <span class="text-gray-700">{d}</span>}
+                          {i < entity.domain!.length - 1 && <span>, </span>}
+                        </Fragment>
+                      ))}
+                    </td>
+                  </tr>
+                ) : null}
+                {entity.range?.length ? (
+                  <tr>
+                    <td class="py-1 pr-4 font-medium text-gray-600 align-top w-32">Range</td>
+                    <td>
+                      {entity.range.map((r, i) => (
+                        <Fragment>
+                          {linkTo(r) ? <a href={linkTo(r)} class="text-blue-600 hover:underline">{r}</a> : <span class="text-gray-700">{r}</span>}
+                          {i < entity.range!.length - 1 && <span>, </span>}
+                        </Fragment>
+                      ))}
+                    </td>
+                  </tr>
+                ) : null}
+                {entity.type === 'objectProperty' && (
+                  <tr>
+                    <td class="py-1 pr-4 font-medium text-gray-600 w-32">Functional</td>
+                    <td>{entity.functional ? 'Yes' : 'No'}</td>
+                  </tr>
+                )}
+              </table>
+            </div>
+          )}
+
+          {/* ─── Shape-specific ────────────────────────────────────────── */}
+          {entity.type === 'shape' && (
+            <Fragment>
+              {entity.targetClass && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Class</h3>
+                  {linkTo(entity.targetClass) ? <a href={linkTo(entity.targetClass)} class="text-blue-600 hover:underline">{entity.targetClass}</a> : <span class="text-gray-700">{entity.targetClass}</span>}
+                </div>
+              )}
+
+              {entity.targetSubjectsOf && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Subjects Of</h3>
+                  {linkTo(entity.targetSubjectsOf) ? <a href={linkTo(entity.targetSubjectsOf)} class="text-blue-600 hover:underline">{entity.targetSubjectsOf}</a> : <span class="text-gray-700">{entity.targetSubjectsOf}</span>}
+                </div>
+              )}
+
+              {entity.targetObjectsOf && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Objects Of</h3>
+                  {linkTo(entity.targetObjectsOf) ? <a href={linkTo(entity.targetObjectsOf)} class="text-blue-600 hover:underline">{entity.targetObjectsOf}</a> : <span class="text-gray-700">{entity.targetObjectsOf}</span>}
+                </div>
+              )}
+
+              {entity.constraints?.length ? (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                    Shape Properties ({entity.constraints.length})
+                  </h3>
+                  <div class="overflow-x-auto">
+                    <table class="w-full text-sm border-collapse">
+                      <thead>
+                        <tr class="border-b bg-gray-50">
+                          <th class="text-left py-2 px-3 font-semibold text-gray-600">Property</th>
+                          <th class="text-center py-2 px-3 font-semibold text-gray-600">Min</th>
+                          <th class="text-center py-2 px-3 font-semibold text-gray-600">Max</th>
+                          <th class="text-left py-2 px-3 font-semibold text-gray-600">Type / Class</th>
+                          <th class="text-left py-2 px-3 font-semibold text-gray-600">Node Kind</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {entity.constraints.map((c, i) => (
+                          <tr class="border-b last:border-b-0">
+                            <td class="py-2 px-3">
+                              {linkTo(c.path) ? <a href={linkTo(c.path)} class="text-blue-600 hover:underline">{c.path}</a> : <span class="text-gray-700">{c.path}</span>}
+                            </td>
+                            <td class="py-2 px-3 text-center">{c.minCount ?? '—'}</td>
+                            <td class="py-2 px-3 text-center">{c.maxCount ?? '—'}</td>
+                            <td class="py-2 px-3">
+                              {c.datatype && <span class="italic">{c.datatype}</span>}
+                              {!c.datatype && c.classValue && linkTo(c.classValue) && <a href={linkTo(c.classValue)} class="text-blue-600 hover:underline">{c.classValue}</a>}
+                              {!c.datatype && c.classValue && !linkTo(c.classValue) && <span class="text-gray-700">{c.classValue}</span>}
+                              {c.hasValue && <span class="text-gray-400 ml-1">= {c.hasValue}</span>}
+                              {c.uniqueLang && <span class="text-[9px] text-amber-600 bg-amber-50 px-1 py-0.5 rounded ml-1">uniqueLang</span>}
+                            </td>
+                            <td class="py-2 px-3">{c.nodeKind || '—'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              ) : null}
+            </Fragment>
+          )}
+
+          {/* ─── Concept-specific ──────────────────────────────────────── */}
+          {entity.type === 'concept' && (
+            <Fragment>
+              {entity.scheme && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Concept Scheme</h3>
+                  <a href={linkTo(entity.scheme)} class="text-blue-600 hover:underline">{entity.scheme}</a>
+                </div>
+              )}
+              {entity.instanceOf?.length ? (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Instance Of</h3>
+                  <ul class="space-y-1">
+                    {entity.instanceOf.map((t) => (
+                      <li>
+                        {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              {conceptShapes.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Related Shapes</h3>
+                  <ul class="space-y-1">
+                    {conceptShapes.map((s) => (
+                      <li>
+                        <a href={`/ontology/${s.slug}`} class="text-blue-600 hover:underline">{s.qname}</a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </Fragment>
+          )}
+
+          {/* ─── Concept Scheme-specific ────────────────────────────────── */}
+          {entity.type === 'conceptScheme' && (
+            <Fragment>
+              {schemeConcepts.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Concepts ({schemeConcepts.length})</h3>
+                  <ul class="space-y-1">
+                    {schemeConcepts.map((c) => (
+                      <li>
+                        <a href={`/ontology/${c.slug}`} class="text-blue-600 hover:underline">{c.qname}</a>
+                        {c.description && <span class="text-gray-400 text-sm ml-2">— {truncate(c.description, 60)}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </Fragment>
+          )}
+
+          {/* ─── Individual-specific ────────────────────────────────────── */}
+          {entity.type === 'individual' && (
+            <Fragment>
+              {entity.instanceOf?.length ? (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Instance Of</h3>
+                  <ul class="space-y-1">
+                    {entity.instanceOf.map((t) => (
+                      <li>
+                        {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+              {entity.identifier && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Identifier</h3>
+                  <code class="text-sm">{entity.identifier}</code>
+                </div>
+              )}
+              {entity.isPartOf?.length ? (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Part Of</h3>
+                  <ul class="space-y-1">
+                    {entity.isPartOf.map((parent) => (
+                      <li>
+                        {linkTo(parent) ? <a href={linkTo(parent)} class="text-blue-600 hover:underline">{parent}</a> : <span>{parent}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+            </Fragment>
+          )}
+
+          {/* ─── Ontology-specific ──────────────────────────────────────── */}
+          {entity.type === 'ontology' && (
+            <Fragment>
+              {entity.version && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Version</h3>
+                  <p class="text-gray-700">{entity.version}</p>
+                </div>
+              )}
+              {entity.imports?.length ? (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Imports</h3>
+                  <ul class="space-y-1">
+                    {entity.imports.map((imp) => (
+                      <li>
+                        {linkTo(imp) ? <a href={linkTo(imp)} class="text-blue-600 hover:underline">{imp}</a> : <span class="text-gray-700">{imp}</span>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {/* Namespace URI */}
+              <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Namespace URI</h3>
+                <code class="text-sm break-all">{ontologyNs?.uri || entity.uri}</code>
+              </div>
+
+              {/* Metrics */}
+              <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">Entity Summary</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  <div class="px-3 py-2 rounded-lg bg-blue-50/50 border border-blue-200/40 text-center">
+                    <div class="text-xl font-bold text-blue-700">{ontologyClasses.length}</div>
+                    <div class="text-[10px] font-semibold text-blue-500 uppercase tracking-wider">Classes</div>
+                  </div>
+                  <div class="px-3 py-2 rounded-lg bg-green-50/50 border border-green-200/40 text-center">
+                    <div class="text-xl font-bold text-green-700">{ontologyObjProps.length + ontologyDtProps.length}</div>
+                    <div class="text-[10px] font-semibold text-green-500 uppercase tracking-wider">Properties</div>
+                  </div>
+                  <div class="px-3 py-2 rounded-lg bg-purple-50/50 border border-purple-200/40 text-center">
+                    <div class="text-xl font-bold text-purple-700">{ontologyShapes.length}</div>
+                    <div class="text-[10px] font-semibold text-purple-500 uppercase tracking-wider">Shapes</div>
+                  </div>
+                  <div class="px-3 py-2 rounded-lg bg-orange-50/50 border border-orange-200/40 text-center">
+                    <div class="text-xl font-bold text-orange-700">{ontologyIndividuals.length}</div>
+                    <div class="text-[10px] font-semibold text-orange-500 uppercase tracking-wider">Individuals</div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Classes */}
+              {ontologyClasses.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Classes ({ontologyClasses.length})
+                  </h3>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                    <table class="w-full text-xs">
+                      <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Class</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Description</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Parent</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ontologyClasses.map((c) => (
+                          <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                            <td class="px-3 py-1.5">
+                              <a href={`/ontology/${c.slug}`} class="text-brand-600 hover:underline font-medium">{c.qname}</a>
+                            </td>
+                            <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-sm truncate">{c.description || '—'}</td>
+                            <td class="px-3 py-1.5">
+                              {c.parent && linkTo(c.parent) ? <a href={linkTo(c.parent)} class="text-blue-600 hover:underline">{c.parent}</a>
+                                : c.parent ? <span>{c.parent}</span>
+                                : <span class="text-slate-400">—</span>}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Object Properties */}
+              {ontologyObjProps.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Object Properties ({ontologyObjProps.length})
+                  </h3>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                    <table class="w-full text-xs">
+                      <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Property</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Description</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Domain</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Range</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ontologyObjProps.map((p) => (
+                          <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                            <td class="px-3 py-1.5">
+                              <a href={`/ontology/${p.slug}`} class="text-green-700 hover:underline font-medium">{p.qname}</a>
+                            </td>
+                            <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-xs truncate">{p.description || '—'}</td>
+                            <td class="px-3 py-1.5">
+                              {p.domain?.length ? p.domain.map((d, i) => (
+                                <Fragment>
+                                  {linkTo(d) ? <a href={linkTo(d)} class="text-blue-600 hover:underline">{d}</a> : <span>{d}</span>}
+                                  {i < p.domain!.length - 1 && <span>, </span>}
+                                </Fragment>
+                              )) : <span class="text-slate-400">—</span>}
+                            </td>
+                            <td class="px-3 py-1.5">
+                              {p.range?.length ? p.range.map((r, i) => (
+                                <Fragment>
+                                  {linkTo(r) ? <a href={linkTo(r)} class="text-blue-600 hover:underline">{r}</a> : <span>{r}</span>}
+                                  {i < p.range!.length - 1 && <span>, </span>}
+                                </Fragment>
+                              )) : <span class="text-slate-400">—</span>}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Datatype Properties */}
+              {ontologyDtProps.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Datatype Properties ({ontologyDtProps.length})
+                  </h3>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                    <table class="w-full text-xs">
+                      <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Property</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Description</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Domain</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Range</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ontologyDtProps.map((p) => (
+                          <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                            <td class="px-3 py-1.5">
+                              <a href={`/ontology/${p.slug}`} class="text-lime-700 hover:underline font-medium">{p.qname}</a>
+                            </td>
+                            <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-xs truncate">{p.description || '—'}</td>
+                            <td class="px-3 py-1.5">
+                              {p.domain?.length ? p.domain.map((d, i) => (
+                                <Fragment>
+                                  {linkTo(d) ? <a href={linkTo(d)} class="text-blue-600 hover:underline">{d}</a> : <span>{d}</span>}
+                                  {i < p.domain!.length - 1 && <span>, </span>}
+                                </Fragment>
+                              )) : <span class="text-slate-400">—</span>}
+                            </td>
+                            <td class="px-3 py-1.5 font-mono text-slate-500">{p.range?.join(', ') || '—'}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Annotation Properties */}
+              {ontologyAnnProps.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Annotation Properties ({ontologyAnnProps.length})
+                  </h3>
+                  <div class="flex flex-wrap gap-1.5">
+                    {ontologyAnnProps.map((p) => (
+                      <a href={`/ontology/${p.slug}`} class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors">
+                        {p.qname}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* SHACL Shapes */}
+              {ontologyShapes.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    SHACL Shapes ({ontologyShapes.length})
+                  </h3>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                    <table class="w-full text-xs">
+                      <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Shape</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Target</th>
+                          <th class="text-center px-3 py-1.5 font-semibold text-slate-500">Constraints</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ontologyShapes.map((s) => (
+                          <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                            <td class="px-3 py-1.5">
+                              <a href={`/ontology/${s.slug}`} class="text-purple-700 hover:underline font-medium">{s.qname}</a>
+                            </td>
+                            <td class="px-3 py-1.5">
+                              {s.targetClass && linkTo(s.targetClass) ? <a href={linkTo(s.targetClass)} class="text-blue-600 hover:underline">{s.targetClass}</a>
+                                : s.targetClass ? <span>{s.targetClass}</span>
+                                : <span class="text-slate-400">—</span>}
+                            </td>
+                            <td class="px-3 py-1.5 text-center tabular-nums">{s.constraints?.length || 0}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Concept Schemes */}
+              {ontologyConceptSchemes.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Concept Schemes ({ontologyConceptSchemes.length})
+                  </h3>
+                  <div class="flex flex-wrap gap-1.5">
+                    {ontologyConceptSchemes.map((s) => (
+                      <a href={`/ontology/${s.slug}`} class="text-[10px] font-medium px-2 py-1 rounded-lg border border-cyan-200/60 bg-cyan-50/50 text-cyan-700 hover:border-cyan-300 hover:text-cyan-800 transition-colors">
+                        {s.qname}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {/* SKOS Concepts */}
+              {ontologyConcepts.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    SKOS Concepts ({ontologyConcepts.length})
+                  </h3>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                    <table class="w-full text-xs">
+                      <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Concept</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Description</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Instance Of</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ontologyConcepts.map((c) => (
+                          <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                            <td class="px-3 py-1.5">
+                              <a href={`/ontology/${c.slug}`} class="text-teal-700 hover:underline font-medium">{c.label}</a>
+                              <code class="ml-1 text-[9px] text-slate-400">{c.qname}</code>
+                            </td>
+                            <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-sm truncate">{c.description || '—'}</td>
+                            <td class="px-3 py-1.5">
+                              {c.instanceOf?.length ? c.instanceOf.map((t, i) => (
+                                <Fragment>
+                                  {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                                  {i < c.instanceOf!.length - 1 && <span>, </span>}
+                                </Fragment>
+                              )) : null}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+
+              {/* Named Individuals */}
+              {ontologyIndividuals.length > 0 && (
+                <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+                  <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-3">
+                    Named Individuals ({ontologyIndividuals.length})
+                  </h3>
+                  <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                    <table class="w-full text-xs">
+                      <thead>
+                        <tr class="bg-slate-50/80 border-b border-slate-200/60">
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Individual</th>
+                          <th class="text-left px-3 py-1.5 font-semibold text-slate-500">Instance Of</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ontologyIndividuals.map((ind) => (
+                          <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                            <td class="px-3 py-1.5">
+                              <a href={`/ontology/${ind.slug}`} class="text-brand-600 hover:underline font-medium">{ind.label}</a>
+                              <code class="ml-1 text-[9px] text-slate-400">{ind.qname}</code>
+                            </td>
+                            <td class="px-3 py-1.5">
+                              {ind.instanceOf?.length ? ind.instanceOf.map((t, i) => (
+                                <Fragment>
+                                  {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                                  {i < ind.instanceOf!.length - 1 && <span>, </span>}
+                                </Fragment>
+                              )) : null}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              )}
+            </Fragment>
+          )}
+
+          {/* Where Used (all entity types) */}
+          {whereUsed.length > 0 && (
+            <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
+              <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Where Used ({whereUsed.length})</h3>
+              <ul class="space-y-1">
+                {whereUsed.map((wu) => (
+                  <li>
+                    <a href={`/ontology/${wu.entity.slug}`} class="text-blue-600 hover:underline">{wu.entity.qname}</a>
+                    <span class="text-gray-400 text-xs ml-2">via {wu.context}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
+
+        {/* ═══════════════════════════════════════════════════════════════ */}
+        {/* RDF SOURCE TAB                                                 */}
+        {/* ═══════════════════════════════════════════════════════════════ */}
+        <div data-detail-section="rdf" class="hidden">
+          <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex gap-1 p-1 rounded-lg bg-slate-100 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+                <button data-rdf-format="turtle" class="px-3 py-1.5 rounded-md text-xs font-medium transition-all bg-white dark:bg-dark-700 text-slate-800 dark:text-slate-200 shadow-sm">
+                  Turtle
+                </button>
+                <button data-rdf-format="jsonld" class="px-3 py-1.5 rounded-md text-xs font-medium transition-all text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200">
+                  JSON-LD
+                </button>
+              </div>
+              <button id="rdf-download" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-slate-100 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-dark-600 transition-colors">
+                Download .ttl
+              </button>
+            </div>
+            <pre class="bg-slate-900 text-green-300 text-xs p-4 rounded-lg overflow-x-auto whitespace-pre-wrap"><code id="rdf-output" data-turtle={turtleCode} data-jsonld={jsonldCode}>{turtleCode}</code></pre>
+          </div>
+        </div>
+      </div>
+    )}
+
+  </div>
+
+  <script define:vars={{ slug }}>
+    // Detail tab switching
+    const detailTabs = document.querySelectorAll('[data-detail-tab]')
+    const detailSections = document.querySelectorAll('[data-detail-section]')
+
+    detailTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.getAttribute('data-detail-tab')!
+        detailTabs.forEach(t => {
+          t.classList.remove('bg-white', 'dark:bg-dark-800', 'text-slate-800', 'dark:text-slate-100', 'shadow-sm')
+          t.classList.add('text-slate-500', 'dark:text-slate-400', 'hover:text-slate-700', 'dark:hover:text-slate-300')
+        })
+        tab.classList.add('bg-white', 'dark:bg-dark-800', 'text-slate-800', 'dark:text-slate-100', 'shadow-sm')
+        tab.classList.remove('text-slate-500', 'dark:text-slate-400', 'hover:text-slate-700', 'dark:hover:text-slate-300')
+        detailSections.forEach(s => {
+          if (s.getAttribute('data-detail-section') === target) {
+            s.classList.remove('hidden')
+          } else {
+            s.classList.add('hidden')
+          }
+        })
+      })
+    })
+
+    // RDF format toggle
+    const rdfFormatBtns = document.querySelectorAll('[data-rdf-format]')
+    const rdfOutput = document.getElementById('rdf-output')
+    const downloadBtn = document.getElementById('rdf-download')
+    let currentFormat = 'turtle'
+
+    rdfFormatBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentFormat = btn.getAttribute('data-rdf-format')!
+        rdfFormatBtns.forEach(b => {
+          b.classList.remove('bg-white', 'dark:bg-dark-700', 'text-slate-800', 'dark:text-slate-200', 'shadow-sm')
+          b.classList.add('text-slate-500', 'dark:text-slate-400', 'hover:text-slate-700', 'dark:hover:text-slate-200')
+        })
+        btn.classList.add('bg-white', 'dark:bg-dark-700', 'text-slate-800', 'dark:text-slate-200', 'shadow-sm')
+        btn.classList.remove('text-slate-500', 'dark:text-slate-400', 'hover:text-slate-700', 'dark:hover:text-slate-200')
+        if (rdfOutput) {
+          rdfOutput.textContent = currentFormat === 'turtle' ? rdfOutput.dataset.turtle : rdfOutput.dataset.jsonld
+        }
+        if (downloadBtn) {
+          downloadBtn.textContent = `Download .${currentFormat === 'turtle' ? 'ttl' : 'jsonld'}`
+        }
+      })
+    })
+
+    // RDF download
+    downloadBtn?.addEventListener('click', () => {
+      if (!rdfOutput) return
+      const content = currentFormat === 'turtle' ? rdfOutput.dataset.turtle : rdfOutput.dataset.jsonld
+      const ext = currentFormat === 'turtle' ? 'ttl' : 'jsonld'
+      const mime = currentFormat === 'turtle' ? 'text/turtle' : 'application/ld+json'
+      const blob = new Blob([content], { type: mime })
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${slug}.${ext}`
+      a.click()
+      URL.revokeObjectURL(url)
+    })
+  </script>
 </DefaultLayout>

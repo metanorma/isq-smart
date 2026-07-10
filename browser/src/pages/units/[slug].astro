@@ -1,7 +1,14 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import UnitPage from '../../components/pages/UnitPage.vue'
+import MathRenderer from '../../components/MathRenderer.vue'
+import UnitOntologyPanel from '../../components/UnitOntologyPanel.vue'
 import { units } from '../../data/generated/unitsdb'
+import { getPartMeta, partUrl, entryUrl } from '../../data/PartRegistry'
+import { symbolCache } from '../../data/generated/domain-index'
+import { unitUrns } from '../../data/urn'
+
+const base = import.meta.env.BASE_URL
+const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
 
 export function getStaticPaths() {
   return units
@@ -13,8 +20,197 @@ export function getStaticPaths() {
 }
 
 const { slug } = Astro.props
+
+const unit = units.find(u => u.slug === slug)
+const urns = unit ? unitUrns(unit.unitsmlId) : null
+
+interface PartGroup {
+  partKey: string
+  meta: ReturnType<typeof getPartMeta>
+  quantities: typeof unit.quantities
+}
+
+const partGroups: PartGroup[] = unit ? (() => {
+  const map = new Map<string, typeof unit.quantities>()
+  for (const eq of unit.quantities) {
+    if (!map.has(eq.part)) map.set(eq.part, [])
+    map.get(eq.part)!.push(eq)
+  }
+  return Array.from(map.entries()).map(([pk, qs]) => ({
+    partKey: pk,
+    meta: getPartMeta(pk),
+    quantities: qs,
+  })).sort((a, b) => {
+    const pa = a.partKey.includes('-') ? a.partKey.split('-').map(Number) : [Number(a.partKey), 0]
+    const pb = b.partKey.includes('-') ? b.partKey.split('-').map(Number) : [Number(b.partKey), 0]
+    return pa[0] !== pb[0] ? pa[0] - pb[0] : pa[1] - pb[1]
+  })
+})() : []
 ---
 
 <DefaultLayout title={`Unit: ${slug} | ISQ Browser`}>
-  <UnitPage slug={slug} />
+  {unit ? (
+    <div>
+      <section class="relative overflow-hidden border-b border-slate-200/60 dark:border-dark-600/60 bg-gradient-to-b from-slate-50/80 dark:from-dark-900/80 to-white dark:to-dark-950">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-teal-500/[0.04] dark:bg-teal-500/[0.02] rounded-full blur-[100px] -translate-y-1/3 translate-x-1/4" />
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 page-enter">
+          <div class="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500 mb-6">
+            <a href="/" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <a href="/units" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Units</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-slate-600 dark:text-slate-400 font-medium">{unit.name}</span>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <span class="font-mono text-2xl font-semibold text-teal-700 dark:text-teal-400 bg-teal-50/60 dark:bg-teal-950/40 px-4 py-2 rounded-xl inline-flex items-center justify-center">
+              {symbolCache[unit.symbols[0]] ? (
+                <MathRenderer client:visible expression={unit.symbols[0]} cache={symbolCache} />
+              ) : (
+                unit.symbols[0] || '—'
+              )}
+            </span>
+            <div>
+              <div class="flex items-center gap-3">
+                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">{unit.name}</h1>
+                {unit.unitsmlId && (
+                  <a href={`https://unitsml.org/unitsdb/units/${unit.unitsmlId}`} target="_blank" rel="noopener" class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium bg-teal-50 dark:bg-teal-950/30 text-teal-700 dark:text-teal-400 border border-teal-200/60 dark:border-teal-800/60 hover:bg-teal-100 dark:hover:bg-teal-950/50 transition-colors">
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                    UnitsML
+                  </a>
+                )}
+              </div>
+              <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-400 dark:text-slate-500">
+                <span>{unit.quantityCount} quantities</span>
+                <span class="text-slate-300 dark:text-slate-600">&middot;</span>
+                <span>Parts {unit.parts.join(', ')}</span>
+                {unit.symbols.length > 1 && (
+                  <>
+                    <span class="text-slate-300 dark:text-slate-600">&middot;</span>
+                    <span class="inline-flex items-center gap-1">Also:
+                      {unit.symbols.slice(1).map((s, si) => (
+                        <>
+                          {symbolCache[s] ? (
+                            <MathRenderer client:visible expression={s} cache={symbolCache} />
+                          ) : (
+                            <span>{s}</span>
+                          )}
+                          {si < unit.symbols.length - 2 && <span class="text-slate-300">, </span>}
+                        </>
+                      ))}
+                    </span>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-6 flex flex-wrap items-center gap-3">
+            <div class="relative flex-1 min-w-[200px] max-w-sm">
+              <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+              <input id="unit-filter" type="text" placeholder="Filter quantities..." class="w-full pl-9 pr-3 py-2 text-sm rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-teal-500/20 focus:border-teal-400 transition-all shadow-sm" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {urns && (
+          <div class="mb-8 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-900 p-5">
+            <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-3">ISQ Identifiers</h3>
+            <div class="grid sm:grid-cols-2 gap-3">
+              <div>
+                <div class="text-[10px] font-semibold text-brand-600 dark:text-brand-400 mb-1">ISO URN</div>
+                <code class="text-xs font-mono text-slate-700 dark:text-slate-300 break-all block bg-brand-50/50 dark:bg-brand-950/20 px-3 py-2 rounded-lg">{urns.iso}</code>
+              </div>
+              <div>
+                <div class="text-[10px] font-semibold text-teal-600 dark:text-teal-400 mb-1">IEC URN</div>
+                <code class="text-xs font-mono text-slate-700 dark:text-slate-300 break-all block bg-teal-50/50 dark:bg-teal-950/20 px-3 py-2 rounded-lg">{urns.iec}</code>
+              </div>
+            </div>
+          </div>
+        )}
+
+        <UnitOntologyPanel client:idle unit={unit} />
+
+        <div id="no-results" class="py-16 text-center" style="display: none;">
+          <p class="text-slate-500 dark:text-slate-400 text-sm">No quantities match your filter</p>
+        </div>
+
+        <div id="quantity-groups" class="space-y-6">
+          {partGroups.map((group) => (
+            <div class="part-group" data-part={group.partKey}>
+              <div class="flex items-center gap-3 mb-3">
+                <a href={partUrl(group.partKey)} class="flex items-center gap-2 group">
+                  <span class="text-base">{group.meta?.icon ?? '📐'}</span>
+                  <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Part {group.partKey}: {group.meta?.title}</h3>
+                </a>
+                <span class="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums group-count">{group.quantities.length} quantities</span>
+                <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
+              </div>
+
+              <div class="grid gap-px">
+                {group.quantities.map((eq) => (
+                  <a
+                    href={entryUrl(eq.part, eq.id)}
+                    class="group flex items-center gap-3 px-4 py-2.5 sm:px-5 sm:py-3 bg-white dark:bg-dark-900 hover:bg-slate-50/50 dark:hover:bg-dark-700 transition-colors first:rounded-t-lg last:rounded-b-lg quantity-item"
+                    data-name={eq.name.toLowerCase()}
+                    data-num={eq.num}
+                  >
+                    <span class="font-mono text-[11px] font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded flex-shrink-0">{eq.num}</span>
+                    <span class="flex-1 text-sm font-medium text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate">{eq.name}</span>
+                    <svg class="w-3.5 h-3.5 text-slate-300 dark:text-slate-600 group-hover:text-brand-500 dark:group-hover:text-brand-400 group-hover:translate-x-0.5 transition-all flex-shrink-0 hidden sm:block" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-6 text-center text-xs text-slate-400 dark:text-slate-500">
+          <span id="filtered-count">{unit.quantities.length}</span> of {unit.quantities.length} quantities
+        </div>
+      </section>
+    </div>
+  ) : (
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 heading-serif">Unit Not Found</h1>
+      <a href="/units" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
+        Back to Units
+      </a>
+    </div>
+  )}
 </DefaultLayout>
+
+<script>
+  const input = document.getElementById('unit-filter') as HTMLInputElement | null
+  if (input) {
+    const items = document.querySelectorAll<HTMLElement>('.quantity-item')
+    const groups = document.querySelectorAll<HTMLElement>('.part-group')
+    const noResults = document.getElementById('no-results')
+    const filteredCount = document.getElementById('filtered-count')
+    const groupsContainer = document.getElementById('quantity-groups')
+    const total = items.length
+
+    input.addEventListener('input', () => {
+      const q = input.value.trim().toLowerCase()
+      let visible = 0
+      items.forEach(item => {
+        const name = item.dataset.name || ''
+        const num = item.dataset.num || ''
+        const match = !q || name.includes(q) || num.includes(q)
+        item.style.display = match ? '' : 'none'
+        if (match) visible++
+      })
+      groups.forEach(group => {
+        const visibleInGroup = group.querySelectorAll('.quantity-item:not([style*="display: none"])').length
+        group.style.display = visibleInGroup > 0 ? '' : 'none'
+        const countEl = group.querySelector('.group-count')
+        if (countEl) countEl.textContent = `${visibleInGroup} quantities`
+      })
+      if (noResults) noResults.style.display = visible === 0 ? 'block' : 'none'
+      if (groupsContainer) groupsContainer.style.display = visible === 0 ? 'none' : ''
+      if (filteredCount) filteredCount.textContent = String(visible)
+    })
+  }
+</script>

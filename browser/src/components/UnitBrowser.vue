@@ -1,24 +1,37 @@
 <script setup lang="ts">
-import { ref, computed, onMounted } from 'vue'
-import { useRoute } from 'vue-router'
-import { units } from '../../data/generated/unitsdb'
-import { partUrl, entryUrl, getPartMeta } from '../../data/PartRegistry'
-import { symbolCache } from '../../data/generated/domain-index'
-import MathRenderer from '../MathRenderer.vue'
+import { ref, computed } from 'vue'
+import { partUrl, entryUrl, getPartMeta } from '../data/PartRegistry'
+import { symbolCache } from '../data/generated/domain-index'
+import MathRenderer from './MathRenderer.vue'
 
-const route = useRoute()
-const searchQuery = ref('')
+interface SampleQuantity {
+  id: string
+  num: string
+  name: string
+  part: string
+}
+
+interface Unit {
+  slug: string
+  name: string
+  symbols: string[]
+  quantityCount: number
+  parts: string[]
+  sampleQuantities: SampleQuantity[]
+}
+
+const props = defineProps<{
+  units: Unit[]
+  initialQuery?: string
+}>()
+
+const searchQuery = ref(props.initialQuery ?? '')
 const groupByPart = ref(false)
 
-onMounted(() => {
-  const q = route.query.q as string
-  if (q) searchQuery.value = q
-})
-
 const filtered = computed(() => {
-  if (!searchQuery.value.trim()) return units
+  if (!searchQuery.value.trim()) return props.units
   const q = searchQuery.value.toLowerCase()
-  return units.filter(u => {
+  return props.units.filter(u => {
     const nameStr = u.name.toLowerCase()
     const symStr = u.symbols.join(' ').toLowerCase()
     return nameStr.includes(q) || symStr.includes(q)
@@ -28,12 +41,12 @@ const filtered = computed(() => {
 interface PartGroup {
   partKey: string
   meta: ReturnType<typeof getPartMeta>
-  units: typeof units
+  units: Unit[]
 }
 
 const partGroups = computed<PartGroup[]>(() => {
   if (!groupByPart.value) return []
-  const map = new Map<string, typeof units>()
+  const map = new Map<string, Unit[]>()
   for (const u of filtered.value) {
     const pk = u.parts[0]
     if (!map.has(pk)) map.set(pk, [])
@@ -54,40 +67,6 @@ const partGroups = computed<PartGroup[]>(() => {
 
 <template>
   <div>
-    <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-teal-950 via-teal-900 to-cyan-950">
-      <div class="absolute inset-0 hero-pattern" />
-      <div class="grain-overlay absolute inset-0" />
-      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-teal-500/10" />
-      <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-teal-400/20" />
-      <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10" />
-      <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]" />
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-        <div class="max-w-3xl page-enter">
-          <div class="flex items-center gap-2 text-xs text-teal-300/60 mb-5">
-            <a href="/" class="hover:text-teal-200 transition-colors">Home</a>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-          </div>
-          <div class="flex items-end gap-5 flex-wrap">
-            <div>
-              <div class="text-3xl mb-2">📏</div>
-              <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Units</h1>
-              <p class="mt-2 text-sm leading-relaxed max-w-xl text-teal-300/80">
-                {{ units.length }} measurement units from ISO 80000 &amp; IEC 80000. Each unit is linked to the quantities it measures.
-              </p>
-            </div>
-            <div class="flex gap-2 ml-auto flex-shrink-0 mb-1">
-              <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
-                <span class="text-lg font-bold text-white heading-serif tabular-nums">{{ units.length }}</span>
-                <span class="text-xs ml-1 text-teal-300/70">units</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10" />
-    </section>
-
     <!-- Search bar -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 relative z-20 mb-6">
       <div class="flex flex-wrap items-center gap-3">

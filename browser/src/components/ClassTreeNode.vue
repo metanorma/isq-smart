@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount, watch } from 'vue'
 
 interface Entity {
   qname: string
@@ -14,31 +14,66 @@ const props = defineProps<{
   entity: Entity
   depth: number
   allClasses: readonly Entity[]
-  expandedNodes: Set<string>
+  expandedNodes?: Set<string>
 }>()
 
-const emit = defineEmits<{
-  toggle: [qname: string]
-}>()
+const internalExpanded = ref(new Set<string>(props.expandedNodes ? [...props.expandedNodes] : []))
+
+watch(() => props.expandedNodes, (val) => {
+  if (val) internalExpanded.value = new Set([...val])
+}, { deep: true })
 
 const children = computed(() =>
   props.allClasses.filter(c => c.parent === props.entity.qname)
 )
 
 const hasChildren = computed(() => children.value.length > 0)
-const isExpanded = computed(() => props.expandedNodes.has(props.entity.qname))
+const isExpanded = computed(() => internalExpanded.value.has(props.entity.qname))
+
+function toggle() {
+  const s = new Set(internalExpanded.value)
+  if (s.has(props.entity.qname)) s.delete(props.entity.qname)
+  else s.add(props.entity.qname)
+  internalExpanded.value = s
+}
 
 function badgeColor(e: Entity) {
   if (e.ontology === 'smart') return 'bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400'
   if (e.ontology === 'isq') return 'bg-brand-50 dark:bg-brand-950/30 text-brand-600 dark:text-brand-400'
   return 'bg-slate-100 dark:bg-dark-700 text-slate-600 dark:text-slate-400'
 }
+
+// Listen for expand-all / collapse-all events from parent
+function handleExpandAll() {
+  const s = new Set<string>()
+  for (const c of props.allClasses) {
+    if (props.allClasses.some(cc => cc.parent === c.qname)) s.add(c.qname)
+  }
+  internalExpanded.value = s
+}
+
+function handleCollapseAll() {
+  internalExpanded.value = new Set()
+}
+
+let rootEl: HTMLElement | null = null
+
+onMounted(() => {
+  rootEl = document.getElementById('class-tree-root')
+  rootEl?.addEventListener('expand-all', handleExpandAll)
+  rootEl?.addEventListener('collapse-all', handleCollapseAll)
+})
+
+onBeforeUnmount(() => {
+  rootEl?.removeEventListener('expand-all', handleExpandAll)
+  rootEl?.removeEventListener('collapse-all', handleCollapseAll)
+})
 </script>
 
 <template>
   <div>
     <div class="flex items-center gap-1.5" :style="{ paddingLeft: `${depth * 1.25}rem` }">
-      <button v-if="hasChildren" @click="emit('toggle', entity.qname)" class="w-4 h-4 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 flex-shrink-0">
+      <button v-if="hasChildren" @click="toggle" class="w-4 h-4 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 flex-shrink-0">
         <span v-if="isExpanded">▼</span><span v-else>▶</span>
       </button>
       <span v-else class="w-4 h-4 flex items-center justify-center text-slate-200 dark:text-dark-600 flex-shrink-0">●</span>
@@ -51,8 +86,7 @@ function badgeColor(e: Entity) {
         v-for="child in children" :key="child.qname"
         :entity="child" :depth="depth + 1"
         :all-classes="allClasses"
-        :expanded-nodes="expandedNodes"
-        @toggle="emit('toggle', $event)" />
+        :expanded-nodes="internalExpanded" />
     </template>
   </div>
 </template>

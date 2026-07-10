@@ -1,7 +1,886 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import Page from '../../components/pages/OntologyPage.vue'
+import ClassTreeNode from '../../components/ClassTreeNode.vue'
+import { ontologyEntities, ontologyPrefixes, ontologyTypeMeta, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
+
+interface Entity {
+  uri: string
+  qname: string
+  slug: string
+  label: string
+  description: string
+  ontology: string
+  type: string
+  scopeNote?: string
+  example?: string
+  altLabel?: string
+  seeAlso?: string[]
+  parent?: string
+  domain?: string[]
+  range?: string[]
+  functional?: boolean
+  targetClass?: string
+  targetSubjectsOf?: string
+  targetObjectsOf?: string
+  constraints?: { path: string; minCount?: number; maxCount?: number; datatype?: string; nodeKind?: string; classValue?: string; hasValue?: string; uniqueLang?: boolean }[]
+  scheme?: string
+  instanceOf?: string[]
+  topConcepts?: string[]
+  version?: string
+  imports?: string[]
+  isPartOf?: string[]
+  identifier?: string
+}
+
+const base = import.meta.env.BASE_URL
+const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
+
+const allEntities = ontologyEntities as readonly Entity[]
+const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
+
+// Ontology structure (data-driven)
+const primaryQname = Object.keys(ontologyImportChain)[0]
+const primaryOntology = ontologyNamespaces.find(n => n.prefix === primaryQname?.split(':')[0])!
+const importedQnames: readonly string[] = (ontologyImportChain as Record<string, { imports: string[] }>)[primaryQname]?.imports ?? []
+const importedOntologies = importedQnames.map(iq => ontologyNamespaces.find(n => n.prefix === iq.split(':')[0])!).filter(Boolean)
+
+// Namespace grouping: group all entities by their prefix
+const namespaceGroups = (() => {
+  const groups = new Map<string, { prefix: string; uri: string; entities: Entity[] }>()
+  for (const ns of ontologyPrefixes) {
+    const pfx = ns.prefix
+    const entities = allEntities.filter(e => e.qname.startsWith(pfx + ':'))
+    if (entities.length > 0) {
+      groups.set(pfx, { prefix: pfx, uri: ns.uri, entities })
+    }
+  }
+  return [...groups.values()].sort((a, b) => b.entities.length - a.entities.length)
+})()
+
+// Entity lists
+const allClasses = allEntities.filter(e => e.type === 'class' && e.ontology !== 'external')
+const classes = allEntities.filter(e => e.type === 'class')
+const objProps = allEntities.filter(e => e.type === 'objectProperty')
+const dtProps = allEntities.filter(e => e.type === 'datatypeProperty')
+const annProps = allEntities.filter(e => e.type === 'annotationProperty')
+const shapes = allEntities.filter(e => e.type === 'shape')
+const concepts = allEntities.filter(e => e.type === 'concept')
+const conceptSchemes = allEntities.filter(e => e.type === 'conceptScheme')
+const individuals = allEntities.filter(e => e.type === 'individual')
+const ontologies = allEntities.filter(e => e.type === 'ontology')
+
+function countBy(type: string, ontology: string) {
+  return allEntities.filter(e => e.type === type && (ontology === 'all' || e.ontology === ontology)).length
+}
+
+function badgeColor(e: Entity) {
+  if (e.ontology === 'smart') return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400'
+  if (e.ontology === 'isq') return 'bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-400'
+  return 'bg-slate-100 text-slate-600 dark:bg-dark-700 dark:text-slate-400'
+}
+
+function ontologySlug(prefix: string) {
+  return allEntities.find(e => e.type === 'ontology' && e.ontology === prefix)?.slug
+}
+
+const rootClasses = allClasses.filter(c => !c.parent)
+function childrenOf(parentQname: string) {
+  return allClasses.filter(c => c.parent === parentQname)
+}
+function hasChildren(qname: string) {
+  return allClasses.some(c => c.parent === qname)
+}
+
+const sections = [
+  { id: 'overview', label: 'Overview' },
+  { id: 'namespaces', label: 'Namespaces' },
+  { id: 'az', label: 'Entities A-Z' },
+  { id: 'classes', label: 'Classes' },
+  { id: 'properties', label: 'Properties' },
+  { id: 'skos', label: 'SKOS' },
+  { id: 'shapes', label: 'Shapes' },
+  { id: 'individuals', label: 'Individuals' },
+  { id: 'statistics', label: 'Statistics' },
+]
+
+const filterableSections = ['classes', 'properties', 'az', 'shapes', 'individuals', 'skos']
+const ontologyFilterSections = ['classes', 'properties', 'skos', 'shapes', 'individuals']
+
+// Chart data (for the statistics Vue island)
+const chartTypes = Object.keys(ontologyTypeMeta).filter(t => allEntities.some(e => e.type === t))
+const chartTypeCounts = chartTypes.map(t => allEntities.filter(e => e.type === t).length)
+const chartTypeLabels = chartTypes.map(t => typeMeta[t]?.label || t)
+const chartColors: Record<string, string> = {
+  class: '#3b82f6',
+  objectProperty: '#22c55e',
+  datatypeProperty: '#84cc16',
+  annotationProperty: '#f59e0b',
+  shape: '#a855f7',
+  concept: '#14b8a6',
+  conceptScheme: '#06b6d4',
+  individual: '#f97316',
+  ontology: '#6366f1',
+  external: '#94a3b8',
+}
+const chartTypeColors = chartTypes.map(t => chartColors[t] || '#94a3b8')
+
+const ontoLabels = ['isq', 'smart', 'external'].filter(o => allEntities.some(e => e.ontology === o))
+const ontoCounts = ontoLabels.map(o => allEntities.filter(e => e.ontology === o).length)
+const ontoColors = ontoLabels.map(o => o === 'isq' ? '#3b82f6' : o === 'smart' ? '#10b981' : '#94a3b8')
+const ontoDisplayLabels = ontoLabels.map(o => o === 'isq' ? 'ISO & IEC 80000' : o === 'smart' ? 'SMART Core' : 'External')
+
+// All expanded class nodes for the expand-all default
+const allExpandable = allClasses.filter(c => hasChildren(c.qname)).map(c => c.qname)
 ---
+
 <DefaultLayout title="Ontology Browser — ISQ Browser" description="Explore the ISQ and SMART ontology classes, properties, and shapes.">
-  <Page client:load  />
+  <div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-emerald-500/10"></div>
+      <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-emerald-400/20"></div>
+      <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10"></div>
+      <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="max-w-3xl page-enter">
+          <div class="flex items-center gap-2 text-xs text-emerald-300/60 mb-5">
+            <a href="/" class="hover:text-emerald-200 transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="flex items-end gap-5 flex-wrap">
+            <div>
+              <div class="text-3xl mb-2">🧬</div>
+              <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">ISO &amp; IEC 80000 Ontology</h1>
+              <p class="mt-2 text-sm leading-relaxed max-w-xl text-emerald-300/80">
+                The isq domain ontology extends the SMART Core Ontology with classes for quantities, units, and mathematical concepts per ISO &amp; IEC 80000.
+              </p>
+            </div>
+            <div class="flex gap-2 ml-auto flex-shrink-0 mb-1">
+              <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
+                <span class="text-lg font-bold text-white heading-serif tabular-nums">{allEntities.length}</span>
+                <span class="text-xs ml-1 text-emerald-300/70">entities</span>
+              </div>
+              <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
+                <span class="text-lg font-bold text-white heading-serif tabular-nums">{allClasses.length}</span>
+                <span class="text-xs ml-1 text-emerald-300/70">classes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <!-- Section navigation tabs -->
+      <div class="mt-6 flex flex-wrap gap-3 items-center">
+        <div class="flex gap-0.5 p-1 rounded-xl bg-slate-100/80 dark:bg-dark-700/80 border border-slate-200/60" id="section-tabs">
+          {sections.map((s) => (
+            <button data-section-btn={s.id} class={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${s.id === 'overview' ? 'bg-white dark:bg-dark-800 text-slate-800 dark:text-slate-100 shadow-sm dark:shadow-none' : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300'}`}>{s.label}</button>
+          ))}
+        </div>
+        <div class="flex gap-1 p-1 rounded-lg bg-slate-100/80 dark:bg-dark-700/80 border border-slate-200/60 ontology-filter hidden" id="ontology-filter">
+          <button data-ontology-filter="isq" class="px-3 py-1.5 rounded-md text-[10px] font-medium transition-all bg-white dark:bg-dark-800 text-brand-700 dark:text-brand-400 shadow-sm dark:shadow-none">ISO &amp; IEC 80000</button>
+          <button data-ontology-filter="smart" class="px-3 py-1.5 rounded-md text-[10px] font-medium transition-all text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">SMART Core</button>
+          <button data-ontology-filter="all" class="px-3 py-1.5 rounded-md text-[10px] font-medium transition-all text-slate-500 hover:text-slate-700 dark:hover:text-slate-300">All</button>
+        </div>
+        <div class="relative max-w-xs flex-1 hidden" id="filter-wrapper">
+          <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <input id="entity-filter" type="text" placeholder="Filter entities..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all" />
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- OVERVIEW                                                              -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="overview" class="mt-8 space-y-6">
+        <!-- Primary ontology card -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600">isq</span>
+            <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">{primaryOntology.title}</h2>
+          </div>
+          <div class="space-y-2 text-sm">
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">URI</span>
+              <code class="block mt-0.5 text-xs text-slate-700 dark:text-slate-300 font-mono break-all">{primaryOntology.uri}</code>
+            </div>
+            <div>
+              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Description</span>
+              <p class="mt-0.5 text-slate-600">{primaryOntology.description}</p>
+            </div>
+            <div class="flex gap-6">
+              <div>
+                <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Version</span>
+                <code class="text-xs text-slate-700 dark:text-slate-300 font-mono">{primaryOntology.version}</code>
+              </div>
+              {importedOntologies.length > 0 && (
+                <div>
+                  <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Imports</span>
+                  <div class="flex gap-1.5 mt-0.5">
+                    {importedOntologies.map((imp) => (
+                      <a href={`/ontology/${ontologySlug(imp.prefix)}`} class="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-mono hover:bg-emerald-100 hover:text-emerald-800 transition-colors">
+                        {imp.prefix}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+          {importedOntologies.length > 0 && (
+            <div class="mt-4 pt-4 border-t border-slate-100">
+              <div class="flex items-center gap-2 mb-2">
+                <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Imported Ontolog{importedOntologies.length > 1 ? 'ies' : 'y'}</span>
+              </div>
+              <div class="space-y-2">
+                {importedOntologies.map((imp) => (
+                  <a href={`/ontology/${ontologySlug(imp.prefix)}`} class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 hover:bg-slate-100/80 dark:hover:bg-dark-600 transition-colors">
+                    <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600">{imp.prefix}</span>
+                    <div>
+                      <span class="text-sm text-slate-700 dark:text-slate-200">{imp.title}</span>
+                      <span class="text-xs text-slate-400 ml-2">v{imp.version}</span>
+                    </div>
+                    <span class="text-xs text-slate-400 ml-auto truncate max-w-xs">{imp.description}</span>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        <!-- Metrics -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
+            {['class', 'objectProperty', 'shape', 'concept'].map((t) => (
+              <div class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 text-center">
+                <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{countBy(t, 'all')}</div>
+                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">{typeMeta[t]?.label || t}</div>
+              </div>
+            ))}
+          </div>
+          <div class="mt-4 grid sm:grid-cols-2 gap-4">
+            <div class="px-4 py-3 rounded-xl bg-brand-50/50 border border-brand-200/40">
+              <div class="text-xs font-semibold text-brand-700 mb-2">ISO &amp; IEC 80000</div>
+              <div class="flex gap-3 text-xs text-slate-600">
+                <span>{countBy('class', 'isq')} classes</span>
+                <span class="text-slate-300">·</span>
+                <span>{countBy('objectProperty', 'isq')} properties</span>
+                <span class="text-slate-300">·</span>
+                <span>{countBy('shape', 'isq')} shapes</span>
+              </div>
+            </div>
+            <div class="px-4 py-3 rounded-xl bg-emerald-50/50 border border-emerald-200/40">
+              <div class="text-xs font-semibold text-emerald-700 mb-2">SMART Core</div>
+              <div class="flex gap-3 text-xs text-slate-600">
+                <span>{countBy('class', 'smart')} classes</span>
+                <span class="text-slate-300">·</span>
+                <span>{countBy('objectProperty', 'smart') + countBy('datatypeProperty', 'smart')} properties</span>
+                <span class="text-slate-300">·</span>
+                <span>{countBy('shape', 'smart')} shapes</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Namespaces -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-4">Namespace Declarations</h3>
+          <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">PREFIX</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">URI</th>
+                </tr>
+              </thead>
+              <tbody>
+                {ontologyPrefixes.map((ns) => (
+                  <tr class="border-b border-slate-100/60 last:border-0">
+                    <td class="px-3 py-2"><span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{ns.prefix || ':'}</span></td>
+                    <td class="px-3 py-2 font-mono text-slate-600 break-all">{ns.uri}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Imported / utilized vocabularies -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif mb-1">Utilized Vocabularies</h2>
+          <p class="text-sm text-slate-500 mb-4">Ontologies and vocabularies referenced by the ISO &amp; IEC 80000 domain ontology.</p>
+          <div class="space-y-3">
+            {importedOntologies.map((imp) => (
+              <a href={`/ontology/${ontologySlug(imp.prefix)}`} class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-emerald-50/40 border border-emerald-200/40 hover:bg-emerald-50/70 transition-colors">
+                <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 flex-shrink-0 mt-0.5">{imp.prefix}</span>
+                <div class="min-w-0">
+                  <div class="text-sm font-medium text-slate-800 dark:text-slate-200">{imp.title}</div>
+                  <code class="text-[10px] text-slate-500 font-mono break-all">{imp.uri}</code>
+                  <p class="text-xs text-slate-500 mt-1">{imp.description}</p>
+                </div>
+              </a>
+            ))}
+            {namespaceGroups
+              .filter(g => !ontologyNamespaces.find(n => n.prefix === g.prefix))
+              .map((ns) => (
+                <div class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+                  <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 flex-shrink-0 mt-0.5 font-mono">{ns.prefix}</span>
+                  <div class="min-w-0">
+                    <div class="text-sm font-medium text-slate-800 dark:text-slate-200">{ns.prefix} ({ns.entities.length} entities)</div>
+                    <code class="text-[10px] text-slate-500 font-mono break-all">{ns.uri}</code>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+
+        <!-- Class hierarchy tree (interactive Vue island) -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Class Hierarchy Tree</h3>
+            <div class="flex gap-2">
+              <button id="expand-all-btn" class="text-[10px] text-slate-500 hover:text-slate-700 font-medium">Expand all</button>
+              <button id="collapse-all-btn" class="text-[10px] text-slate-500 hover:text-slate-700 font-medium">Collapse all</button>
+            </div>
+          </div>
+          <div class="font-mono text-xs space-y-0.5" id="class-tree-root" data-expandable={JSON.stringify(allExpandable)}>
+            {rootClasses.map((root) => (
+              <ClassTreeNode client:idle entity={root} depth={0} allClasses={allClasses} expandedNodes={new Set<string>()} />
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- NAMESPACES                                                            -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="namespaces" class="mt-8 space-y-4 hidden">
+        {namespaceGroups.map((ns) => (
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{ns.prefix}</span>
+              <code class="text-xs text-slate-500 font-mono break-all">{ns.uri}</code>
+              <span class="ml-auto text-xs text-slate-400">{ns.entities.length} entities</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              {ns.entities.map((e) => (
+                <a href={`/ontology/${e.slug}`} class={`text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1 filter-entity`} data-label={e.label.toLowerCase()} data-qname={e.qname.toLowerCase()} data-ontology={e.ontology}>
+                  <span class={`w-1.5 h-1.5 rounded-full ${typeMeta[e.type]?.colorDot || 'bg-slate-300'}`}></span>
+                  {e.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- ENTITIES A-Z                                                          -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="az" class="mt-8 space-y-6 hidden">
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-4">All Entities ({allEntities.length})</h3>
+          <div class="flex flex-wrap gap-1.5">
+            {[...allEntities].sort((a, b) => a.label.localeCompare(b.label)).map((e) => (
+              <a href={`/ontology/${e.slug}`} class={`text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1 filter-entity`} data-label={e.label.toLowerCase()} data-qname={e.qname.toLowerCase()} data-ontology={e.ontology}>
+                <span class={`w-1.5 h-1.5 rounded-full ${typeMeta[e.type]?.colorDot || 'bg-slate-300'}`}></span>
+                {e.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- CLASSES                                                               -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="classes" class="mt-8 space-y-4 hidden">
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Class</th>
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Description</th>
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Parent</th>
+                <th class="text-center px-4 py-2 font-semibold text-slate-500 text-xs">Ontology</th>
+              </tr>
+            </thead>
+            <tbody>
+              {classes.map((c) => (
+                <tr class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50 filter-entity" data-label={c.label.toLowerCase()} data-qname={c.qname.toLowerCase()} data-ontology={c.ontology}>
+                  <td class="px-4 py-2">
+                    <a href={`/ontology/${c.slug}`} class="text-brand-600 hover:underline font-medium">{c.qname}</a>
+                  </td>
+                  <td class="px-4 py-2 text-slate-600 max-w-md truncate">{c.description || '—'}</td>
+                  <td class="px-4 py-2">
+                    {c.parent ? (
+                      <a href={`/ontology/${allEntities.find(e => e.qname === c.parent)?.slug}`} class="text-blue-600 hover:underline text-xs">{c.parent}</a>
+                    ) : (
+                      <span class="text-slate-400">—</span>
+                    )}
+                  </td>
+                  <td class="px-4 py-2 text-center">
+                    <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(c)}`}>{c.ontology}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- PROPERTIES                                                            -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="properties" class="mt-8 space-y-4 hidden">
+        <!-- Object properties -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">Object Properties ({objProps.length})</h3>
+          <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Domain</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Range</th>
+                  <th class="text-center px-3 py-2 font-semibold text-slate-500">Ont.</th>
+                </tr>
+              </thead>
+              <tbody>
+                {objProps.map((p) => (
+                  <tr class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50 filter-entity" data-label={p.label.toLowerCase()} data-qname={p.qname.toLowerCase()} data-ontology={p.ontology}>
+                    <td class="px-3 py-2"><a href={`/ontology/${p.slug}`} class="text-green-700 hover:underline font-medium">{p.qname}</a></td>
+                    <td class="px-3 py-2 text-slate-600 max-w-xs truncate">{p.description || '—'}</td>
+                    <td class="px-3 py-2">
+                      {p.domain?.length ? p.domain.map((d, i) => (
+                        <Fragment>
+                          <a href={`/ontology/${allEntities.find(e => e.qname === d)?.slug}`} class="text-blue-600 hover:underline">{d}</a>
+                          {i < p.domain!.length - 1 && <span>, </span>}
+                        </Fragment>
+                      )) : <span class="text-slate-400">—</span>}
+                    </td>
+                    <td class="px-3 py-2">
+                      {p.range?.length ? p.range.map((r, i) => (
+                        <Fragment>
+                          <a href={`/ontology/${allEntities.find(e => e.qname === r)?.slug}`} class="text-blue-600 hover:underline">{r}</a>
+                          {i < p.range!.length - 1 && <span>, </span>}
+                        </Fragment>
+                      )) : <span class="text-slate-400">—</span>}
+                    </td>
+                    <td class="px-3 py-2 text-center"><span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(p)}`}>{p.ontology}</span></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Datatype properties -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">Datatype Properties ({dtProps.length})</h3>
+          <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+            <table class="w-full text-xs">
+              <thead>
+                <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Domain</th>
+                  <th class="text-left px-3 py-2 font-semibold text-slate-500">Range</th>
+                </tr>
+              </thead>
+              <tbody>
+                {dtProps.map((p) => (
+                  <tr class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50 filter-entity" data-label={p.label.toLowerCase()} data-qname={p.qname.toLowerCase()} data-ontology={p.ontology}>
+                    <td class="px-3 py-2"><a href={`/ontology/${p.slug}`} class="text-lime-700 hover:underline font-medium">{p.qname}</a></td>
+                    <td class="px-3 py-2 text-slate-600 max-w-xs truncate">{p.description || '—'}</td>
+                    <td class="px-3 py-2">
+                      {p.domain?.length ? p.domain.map((d, i) => (
+                        <Fragment>
+                          <a href={`/ontology/${allEntities.find(e => e.qname === d)?.slug}`} class="text-blue-600 hover:underline">{d}</a>
+                          {i < p.domain!.length - 1 && <span>, </span>}
+                        </Fragment>
+                      )) : <span class="text-slate-400">—</span>}
+                    </td>
+                    <td class="px-3 py-2 font-mono text-slate-500">{p.range?.join(', ') || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Annotation properties -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-3">Annotation Properties ({annProps.length})</h3>
+          <div class="flex flex-wrap gap-1.5">
+            {annProps.map((p) => (
+              <a href={`/ontology/${p.slug}`} class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors">
+                {p.qname}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- SKOS                                                                  -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="skos" class="mt-8 space-y-6 hidden">
+        {conceptSchemes.map((scheme) => (
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-600">Scheme</span>
+              <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200">{scheme.label}</h3>
+            </div>
+            <code class="text-xs text-slate-500 block mb-3">{scheme.uri}</code>
+            <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+              <table class="w-full text-xs">
+                <thead>
+                  <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                    <th class="text-left px-3 py-2 font-semibold text-slate-500">Concept</th>
+                    <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
+                    <th class="text-left px-3 py-2 font-semibold text-slate-500">Instance Of</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {allEntities.filter(e => e.type === 'concept' && e.scheme === scheme.qname).map((c) => (
+                    <tr class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                      <td class="px-3 py-2">
+                        <a href={`/ontology/${c.slug}`} class="text-teal-700 hover:underline font-medium">{c.label}</a>
+                        <code class="ml-1 text-[9px] text-slate-400">{c.qname}</code>
+                      </td>
+                      <td class="px-3 py-2 text-slate-600 max-w-sm">{c.description || '—'}</td>
+                      <td class="px-3 py-2">
+                        {c.instanceOf?.length ? c.instanceOf.map((t, i) => (
+                          <Fragment>
+                            <a href={`/ontology/${allEntities.find(e => e.qname === t)?.slug}`} class="text-blue-600 hover:underline">{t}</a>
+                            {i < c.instanceOf!.length - 1 && <span>, </span>}
+                          </Fragment>
+                        )) : null}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- SHAPES                                                                -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="shapes" class="mt-8 space-y-4 hidden">
+        {shapes.map((s) => (
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6 filter-entity" data-label={s.label.toLowerCase()} data-qname={s.qname.toLowerCase()} data-ontology={s.ontology}>
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-purple-50 text-purple-600">Shape</span>
+              <a href={`/ontology/${s.slug}`} class="text-sm font-bold text-brand-600 hover:underline">{s.qname}</a>
+              <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(s)}`}>{s.ontology}</span>
+            </div>
+            <div class="text-xs text-slate-500 mb-3">
+              {s.targetClass && <span>Target: <a href={`/ontology/${allEntities.find(e => e.qname === s.targetClass)?.slug}`} class="text-blue-600 hover:underline">{s.targetClass}</a></span>}
+              {s.targetSubjectsOf && <span>Subjects of: <a href={`/ontology/${allEntities.find(e => e.qname === s.targetSubjectsOf)?.slug}`} class="text-blue-600 hover:underline">{s.targetSubjectsOf}</a></span>}
+              {s.targetObjectsOf && <span>Objects of: {s.targetObjectsOf}</span>}
+            </div>
+            {s.constraints?.length ? (
+              <div class="overflow-x-auto rounded-lg border border-slate-200/60">
+                <table class="w-full text-xs">
+                  <thead>
+                    <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                      <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
+                      <th class="text-center px-3 py-2 font-semibold text-slate-500">Min</th>
+                      <th class="text-center px-3 py-2 font-semibold text-slate-500">Max</th>
+                      <th class="text-left px-3 py-2 font-semibold text-slate-500">Type / Class</th>
+                      <th class="text-left px-3 py-2 font-semibold text-slate-500">Node Kind</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {s.constraints.map((c, i) => (
+                      <tr class="border-b border-slate-100/60 last:border-0">
+                        <td class="px-3 py-2">
+                          {allEntities.find(e => e.qname === c.path) ? (
+                            <a href={`/ontology/${allEntities.find(e => e.qname === c.path)!.slug}`} class="text-blue-600 hover:underline">{c.path}</a>
+                          ) : (
+                            <span class="font-mono">{c.path}</span>
+                          )}
+                        </td>
+                        <td class="px-3 py-2 text-center">{c.minCount ?? '—'}</td>
+                        <td class="px-3 py-2 text-center">{c.maxCount ?? '—'}</td>
+                        <td class="px-3 py-2">
+                          {c.datatype && <span class="italic">{c.datatype}</span>}
+                          {!c.datatype && c.classValue && (
+                            <a href={`/ontology/${allEntities.find(e => e.qname === c.classValue)?.slug}`} class="text-blue-600 hover:underline">{c.classValue}</a>
+                          )}
+                          {c.hasValue && <span class="text-slate-400 ml-1">= {c.hasValue}</span>}
+                        </td>
+                        <td class="px-3 py-2">{c.nodeKind || '—'}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : null}
+          </div>
+        ))}
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- INDIVIDUALS                                                           -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="individuals" class="mt-8 space-y-4 hidden">
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 overflow-hidden">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Individual</th>
+                <th class="text-left px-4 py-2 font-semibold text-slate-500 text-xs">Instance Of</th>
+                <th class="text-center px-4 py-2 font-semibold text-slate-500 text-xs">Ontology</th>
+              </tr>
+            </thead>
+            <tbody>
+              {individuals.map((ind) => (
+                <tr class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50 filter-entity" data-label={ind.label.toLowerCase()} data-qname={ind.qname.toLowerCase()} data-ontology={ind.ontology}>
+                  <td class="px-4 py-2">
+                    <a href={`/ontology/${ind.slug}`} class="text-brand-600 hover:underline font-medium">{ind.label}</a>
+                    <code class="ml-1 text-[9px] text-slate-400">{ind.qname}</code>
+                  </td>
+                  <td class="px-4 py-2">
+                    {ind.instanceOf?.length ? ind.instanceOf.map((t, i) => (
+                      <Fragment>
+                        <a href={`/ontology/${allEntities.find(e => e.qname === t)?.slug}`} class="text-blue-600 hover:underline">{t}</a>
+                        {i < ind.instanceOf!.length - 1 && <span>, </span>}
+                      </Fragment>
+                    )) : null}
+                  </td>
+                  <td class="px-4 py-2 text-center">
+                    <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(ind)}`}>{ind.ontology}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <!-- STATISTICS                                                            -->
+      <!-- ═══════════════════════════════════════════════════════════════════════ -->
+      <div data-section="statistics" class="mt-8 space-y-6 hidden">
+        <!-- Entity type bar chart (loaded lazily via client script) -->
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Entity Distribution</h3>
+          <div class="h-64">
+            <canvas id="type-chart" data-types={JSON.stringify(chartTypeLabels)} data-counts={JSON.stringify(chartTypeCounts)} data-colors={JSON.stringify(chartTypeColors)}></canvas>
+          </div>
+          <div class="mt-4 grid sm:grid-cols-2 gap-3">
+            {Object.entries(typeMeta).map(([type, meta]) => (
+              <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+                <span class={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${meta.colorDot}`}></span>
+                <span class="text-xs text-slate-700 dark:text-slate-300">{meta.label}</span>
+                <span class="ml-auto text-sm font-bold text-slate-900 dark:text-slate-100 tabular-nums">{allEntities.filter(e => e.type === type).length}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <!-- Ontology breakdown doughnut -->
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+            <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Ontology Breakdown</h3>
+            <div class="h-56">
+              <canvas id="onto-chart" data-labels={JSON.stringify(ontoDisplayLabels)} data-counts={JSON.stringify(ontoCounts)} data-colors={JSON.stringify(ontoColors)}></canvas>
+            </div>
+          </div>
+
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+            <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Summary</h3>
+            <div class="space-y-3">
+              {ontologyNamespaces.map((onto) => (
+                <div class={`px-4 py-3 rounded-xl border ${onto.color === 'emerald' ? 'bg-emerald-50/50 border-emerald-200/40' : 'bg-brand-50/50 border-brand-200/40'}`}>
+                  <div class={`text-2xl font-bold ${onto.color === 'emerald' ? 'text-emerald-700' : 'text-brand-700'}`}>{allEntities.filter(e => e.ontology === onto.prefix).length}</div>
+                  <div class={`text-[10px] font-semibold uppercase tracking-wider mt-1 ${onto.color === 'emerald' ? 'text-emerald-600' : 'text-brand-600'}`}>{onto.title}</div>
+                </div>
+              ))}
+              <div class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+                <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{allEntities.length}</div>
+                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Total Entities</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h3 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Namespaces Used ({ontologyPrefixes.length})</h3>
+          <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-2">
+            {ontologyPrefixes.map((ns) => (
+              <div class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+                <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{ns.prefix || ':'}</span>
+                <span class="text-xs text-slate-500 font-mono truncate">{ns.uri}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+  <script>
+    // Tab switching
+    const tabs = document.querySelectorAll('[data-section-btn]')
+    const sections = document.querySelectorAll('[data-section]')
+    const filterWrapper = document.getElementById('filter-wrapper')
+    const ontologyFilter = document.getElementById('ontology-filter')
+    const filterableSections = ['classes', 'properties', 'az', 'shapes', 'individuals', 'skos']
+    const ontologyFilterSections = ['classes', 'properties', 'skos', 'shapes', 'individuals']
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-section-btn')!
+        // Update tab styles
+        tabs.forEach(t => {
+          t.classList.remove('bg-white', 'dark:bg-dark-800', 'text-slate-800', 'dark:text-slate-100', 'shadow-sm', 'dark:shadow-none')
+          t.classList.add('text-slate-500', 'hover:text-slate-700', 'dark:hover:text-slate-300')
+        })
+        btn.classList.add('bg-white', 'dark:bg-dark-800', 'text-slate-800', 'dark:text-slate-100', 'shadow-sm', 'dark:shadow-none')
+        btn.classList.remove('text-slate-500', 'hover:text-slate-700', 'dark:hover:text-slate-300')
+        // Show/hide sections
+        sections.forEach(s => {
+          if (s.getAttribute('data-section') === target) {
+            s.classList.remove('hidden')
+          } else {
+            s.classList.add('hidden')
+          }
+        })
+        // Show/hide filter input
+        if (filterWrapper) {
+          filterableSections.includes(target) ? filterWrapper.classList.remove('hidden') : filterWrapper.classList.add('hidden')
+        }
+        // Show/hide ontology filter
+        if (ontologyFilter) {
+          ontologyFilterSections.includes(target) ? ontologyFilter.classList.remove('hidden') : ontologyFilter.classList.add('hidden')
+        }
+        // Lazy-load charts when statistics tab is opened
+        if (target === 'statistics') loadCharts()
+      })
+    })
+
+    // Entity filter
+    const filterInput = document.getElementById('entity-filter') as HTMLInputElement | null
+    filterInput?.addEventListener('input', () => {
+      const q = filterInput.value.toLowerCase()
+      document.querySelectorAll('.filter-entity').forEach(el => {
+        const label = el.getAttribute('data-label') || ''
+        const qname = el.getAttribute('data-qname') || ''
+        const visible = !q || label.includes(q) || qname.includes(q)
+        ;(el as HTMLElement).style.display = visible ? '' : 'none'
+      })
+    })
+
+    // Ontology filter
+    let currentOntologyFilter = 'all'
+    document.querySelectorAll('[data-ontology-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        currentOntologyFilter = btn.getAttribute('data-ontology-filter')!
+        // Update button styles
+        document.querySelectorAll('[data-ontology-filter]').forEach(b => {
+          b.classList.remove('bg-white', 'dark:bg-dark-800', 'shadow-sm', 'dark:shadow-none',
+            'text-brand-700', 'dark:text-brand-400', 'text-emerald-700', 'dark:text-emerald-400',
+            'text-slate-800', 'dark:text-slate-100')
+          b.classList.add('text-slate-500', 'hover:text-slate-700', 'dark:hover:text-slate-300')
+        })
+        const activeClasses: Record<string, string[]> = {
+          isq: ['bg-white', 'dark:bg-dark-800', 'text-brand-700', 'dark:text-brand-400', 'shadow-sm', 'dark:shadow-none'],
+          smart: ['bg-white', 'dark:bg-dark-800', 'text-emerald-700', 'dark:text-emerald-400', 'shadow-sm', 'dark:shadow-none'],
+          all: ['bg-white', 'dark:bg-dark-800', 'text-slate-800', 'dark:text-slate-100', 'shadow-sm', 'dark:shadow-none'],
+        }
+        activeClasses[currentOntologyFilter].forEach(c => btn.classList.add(c))
+        btn.classList.remove('text-slate-500', 'hover:text-slate-700', 'dark:hover:text-slate-300')
+        // Filter entities
+        document.querySelectorAll('.filter-entity').forEach(el => {
+          const ontology = el.getAttribute('data-ontology') || ''
+          const visible = currentOntologyFilter === 'all' || ontology === currentOntologyFilter
+          ;(el as HTMLElement).style.display = visible ? '' : 'none'
+        })
+      })
+    })
+
+    // Class tree expand/collapse all
+    const expandAllBtn = document.getElementById('expand-all-btn')
+    const collapseAllBtn = document.getElementById('collapse-all-btn')
+    const treeRoot = document.getElementById('class-tree-root')
+    expandAllBtn?.addEventListener('click', () => {
+      treeRoot?.dispatchEvent(new CustomEvent('expand-all'))
+    })
+    collapseAllBtn?.addEventListener('click', () => {
+      treeRoot?.dispatchEvent(new CustomEvent('collapse-all'))
+    })
+
+    // Lazy chart loading
+    let chartsLoaded = false
+    async function loadCharts() {
+      if (chartsLoaded) return
+      chartsLoaded = true
+      const typeCanvas = document.getElementById('type-chart') as HTMLCanvasElement | null
+      const ontoCanvas = document.getElementById('onto-chart') as HTMLCanvasElement | null
+      if (!typeCanvas || !ontoCanvas) return
+      const { Chart, registerables } = await import('chart.js')
+      Chart.register(...registerables)
+      const isDark = document.documentElement.classList.contains('dark')
+
+      const typeLabels = JSON.parse(typeCanvas.dataset.types || '[]')
+      const typeCounts = JSON.parse(typeCanvas.dataset.counts || '[]')
+      const typeColors = JSON.parse(typeCanvas.dataset.colors || '[]')
+      new Chart(typeCanvas, {
+        type: 'bar',
+        data: {
+          labels: typeLabels,
+          datasets: [{
+            data: typeCounts,
+            backgroundColor: typeColors.map((c: string) => c + (isDark ? '66' : '33')),
+            borderColor: typeColors.map((c: string) => isDark ? c + 'cc' : c),
+            borderWidth: 1.5,
+            borderRadius: 6,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: { legend: { display: false } },
+          scales: {
+            y: { beginAtZero: true, ticks: { stepSize: 5, color: isDark ? '#a89ea6' : '#64748b' } },
+            x: { ticks: { font: { size: 10 }, color: isDark ? '#a89ea6' : '#64748b' } },
+          },
+        },
+      })
+
+      const ontoLabels = JSON.parse(ontoCanvas.dataset.labels || '[]')
+      const ontoCounts = JSON.parse(ontoCanvas.dataset.counts || '[]')
+      const ontoColors = JSON.parse(ontoCanvas.dataset.colors || '[]')
+      new Chart(ontoCanvas, {
+        type: 'doughnut',
+        data: {
+          labels: ontoLabels,
+          datasets: [{
+            data: ontoCounts,
+            backgroundColor: ontoColors.map((c: string) => c + (isDark ? 'bb' : '99')),
+            borderColor: isDark ? '#1e0f18' : '#fff',
+            borderWidth: 2,
+          }],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 16, color: isDark ? '#a89ea6' : '#374151' } },
+          },
+        },
+      })
+    }
+  </script>
 </DefaultLayout>

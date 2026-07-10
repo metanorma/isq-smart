@@ -1,23 +1,102 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
-import PartPage from '../../components/pages/PartPage.vue'
-import { getPartsByDomain, getPartMeta } from '../../data/index'
+import PartIcon from '../../components/PartIcon.vue'
+import PartEntryList from '../../components/islands/PartEntryList.vue'
+import {
+  getPartsByDomain, getPartMeta, getPartEntryCount, isBilingual, getPartEditions,
+} from '../../data/index'
+import { DataLoader } from '../../data/DataLoader'
+import { accentGlow, accentColors, accentGradient, accentHeaderBg } from '../../composables/useAccent'
+import type { Entry } from '../../data/types'
 
-export function getStaticPaths() {
-  return getPartsByDomain('math')
-    .map(part => ({
-      params: { part: part.partKey },
-      props: { partKey: part.partKey },
-    }))
+export async function getStaticPaths() {
+  const parts = getPartsByDomain('math')
+  const paths = []
+  for (const p of parts) {
+    const data = await DataLoader.loadPart(p.partKey)
+    // Deduplicate by entry ID — keep last (latest edition) when multiple editions exist
+    const byId = new Map<string, Entry>()
+    for (const entry of data.entries) byId.set(entry.id, entry)
+    paths.push({
+      params: { part: p.partKey },
+      props: {
+        partKey: p.partKey,
+        entries: [...byId.values()],
+        mathCache: data.mathCache,
+      },
+    })
+  }
+  return paths
 }
 
-const { partKey } = Astro.props
+const { partKey, entries, mathCache } = Astro.props
 const meta = getPartMeta(partKey)
+
+if (!meta) {
+  return Astro.redirect('/')
+}
+
+const bilingual = isBilingual(partKey)
+const editions = getPartEditions(partKey)
+const edition = editions.join(', ')
+
+const heroGlow = accentGlow(meta, 0.12, 140)
+const patternColor = accentColors(meta).from + '08'
+const sectionAccentStyle = `background: ${accentGradient(meta, 120)}`
+const headerBg = accentHeaderBg(meta)
 ---
 
 <DefaultLayout
-  title={`Part ${partKey} — ${meta?.title ?? 'Math'} | ISQ Browser`}
-  description={meta?.description ?? ''}
+  title={`Part ${partKey} — ${meta.title} | ISQ Browser`}
+  description={meta.description}
 >
-  <PartPage part={partKey} />
+  <div>
+    <!-- Part header (static) -->
+    <section class="relative overflow-hidden border-b border-slate-200/60 dark:border-dark-600/60" style={headerBg}>
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none" style={`background: ${heroGlow.background}`} />
+      <div class="absolute inset-0 pointer-events-none part-hero-pattern" style={`--accent-grid: ${patternColor}`} />
+
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 page-enter">
+        <div class="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500 mb-4">
+          <a href="/" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          <a href="/math" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Math</a>
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          <span class="text-slate-600 dark:text-slate-300 font-medium">
+            {meta.parentPart ? `Part ${meta.parentPart} §${partKey.split('-')[1]}` : `Part ${partKey}`}
+          </span>
+        </div>
+
+        <div class="flex items-start gap-4">
+          <PartIcon part={meta} size="lg" />
+          <div class="min-w-0">
+            <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">
+              {meta.parentPart
+                ? `Part ${meta.parentPart} §${partKey.split('-')[1]}: ${meta.title}`
+                : `Part ${partKey}: ${meta.title}`}
+            </h1>
+            <p class="mt-1 text-slate-500 dark:text-slate-400 text-sm">{meta.description}</p>
+            <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+              <span class="text-slate-500 dark:text-slate-400">{getPartEntryCount(partKey)} entries</span>
+              {edition && <span class="text-slate-400 dark:text-slate-500">&middot; Edition {edition}</span>}
+              {bilingual && <span class="text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/80 px-2 py-0.5 rounded-full">FR</span>}
+              <a href={`/documents/part-${partKey.split('-')[0]}`} class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+                &rarr; About {meta.parentPart ? `Part ${meta.parentPart}` : 'this part'}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive filter + entry list (island) -->
+    <PartEntryList client:idle
+      entries={entries}
+      partKey={partKey}
+      mathCache={mathCache}
+      bilingual={bilingual}
+      metaTitle={meta.title}
+      sectionAccentStyle={sectionAccentStyle}
+    />
+  </div>
 </DefaultLayout>

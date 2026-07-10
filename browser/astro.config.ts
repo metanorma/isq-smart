@@ -36,8 +36,10 @@ if (missingRepos.length) {
   process.exit(1)
 }
 
+const isDev = process.argv.slice(2).includes('dev')
+
 export default defineConfig({
-  base: SiteConfig.basePath,
+  base: isDev ? '/' : SiteConfig.basePath,
   output: 'static',
   integrations: [vue()],
   vite: {
