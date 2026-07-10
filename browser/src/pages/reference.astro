@@ -1,7 +1,271 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
-import Page from '../components/pages/ReferencePage.vue'
+import DatasetDownload from '../components/DatasetDownload.vue'
+
+const base = import.meta.env.BASE_URL
+const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
 ---
-<DefaultLayout title="API & Reference — ISQ Browser" description="Reference documentation for the ISQ Browser API, URN patterns, and linked data.">
-  <Page client:load  />
+
+<DefaultLayout
+  title="API & Reference — ISQ Browser"
+  description="Reference documentation for the ISQ Browser API, URN patterns, and linked data."
+>
+  <div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-blue-950">
+      <div class="absolute inset-0 hero-pattern" />
+      <div class="grain-overlay absolute inset-0" />
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-indigo-500/10" />
+      <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-indigo-400/20" />
+      <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10" />
+      <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]" />
+      <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="max-w-3xl page-enter">
+          <div class="flex items-center gap-2 text-xs text-indigo-300/60 mb-5">
+            <a href="/" class="hover:text-indigo-200 transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </div>
+          <div class="text-3xl mb-2">📖</div>
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Reference</h1>
+          <p class="mt-2 text-sm leading-relaxed max-w-xl text-indigo-300/80">
+            How to cite, export, and programmatically access the ISO 80000 &amp; IEC 80000 entries. Every page includes machine-readable JSON-LD, and entries can be exported as RDF Turtle.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10" />
+    </section>
+
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+      <!-- URL patterns -->
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">URL Patterns</h2>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="group p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/40 flex items-center justify-center">
+                <svg class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6z"/></svg>
+              </div>
+              <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Domain</div>
+            </div>
+            <code class="text-sm font-mono text-slate-700 dark:text-slate-300">/quantities</code>
+            <span class="text-slate-400 dark:text-slate-500 mx-2 text-xs">or</span>
+            <code class="text-sm font-mono text-slate-700 dark:text-slate-300">/math</code>
+            <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Browse all parts within a domain.</p>
+          </div>
+          <div class="group p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/40 flex items-center justify-center">
+                <svg class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+              </div>
+              <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Part</div>
+            </div>
+            <code class="text-sm font-mono text-slate-700 dark:text-slate-300">/quantities/part-3</code>
+            <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">List all entries in a part.</p>
+          </div>
+          <div class="group p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/40 flex items-center justify-center">
+                <svg class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12H9.75m3 0h.008v.008H12V12.75zm-3 0h.008v.008H9V12.75z"/></svg>
+              </div>
+              <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Entry</div>
+            </div>
+            <code class="text-sm font-mono text-slate-700 dark:text-slate-300">/quantities/part-3/t3-1.1</code>
+            <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Individual entry with full definition, units, and JSON-LD.</p>
+          </div>
+          <div class="group p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-3">
+              <div class="w-7 h-7 rounded-lg bg-brand-50 dark:bg-brand-950/40 flex items-center justify-center">
+                <svg class="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/></svg>
+              </div>
+              <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase tracking-wider">Unit</div>
+            </div>
+            <code class="text-sm font-mono text-slate-700 dark:text-slate-300">/units/metre</code>
+            <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">Unit detail with all linked quantities.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- URN schemes -->
+      <div>
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">URN Identifier Schemes</h2>
+          <a href="/reference/urn-patterns" class="inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+            Full reference
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          ISO and IEC use different URN schemes for referencing standard content. ISO follows RFC 5141; IEC uses its own internal scheme with date-based edition identifiers.
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <!-- ISO URN -->
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-brand-200/50 dark:border-brand-800/40">
+            <div class="flex items-center gap-2 mb-4">
+              <img src={asset('/img/logo-iso.svg')} alt="ISO" class="h-5 w-auto" />
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400">RFC 5141 URN</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Example: ISO 80000-3, Item 3-1.1</p>
+            <div class="px-3 py-2.5 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-emerald-400 overflow-x-auto">
+              urn:iso:std:iso:80000:-3:ed-2:en:item:3-1.1
+            </div>
+            <div class="mt-4 space-y-2">
+              <div class="flex items-baseline gap-2 text-xs">
+                <span class="text-[10px] font-mono text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 px-1.5 py-0.5 rounded flex-shrink-0">Part</span>
+                <code class="text-slate-600 dark:text-slate-400">urn:iso:std:iso:80000:-3:ed-2:en</code>
+              </div>
+              <div class="flex items-baseline gap-2 text-xs">
+                <span class="text-[10px] font-mono text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 px-1.5 py-0.5 rounded flex-shrink-0">Entry</span>
+                <code class="text-slate-600 dark:text-slate-400">…:item:3-1.1</code>
+              </div>
+            </div>
+            <p class="mt-3 text-[11px] text-slate-400 dark:text-slate-500 leading-relaxed">
+              Uses base part number in the part segment. The <code class="text-slate-500 dark:text-slate-400">:item:</code> fragment type is specific to the ISO 80000 &amp; IEC 80000 series — RFC 5141 supports <code class="text-slate-500 dark:text-slate-400">docelement</code> for clauses, figures, and terms, but not <code class="text-slate-500 dark:text-slate-400">item</code>.
+            </p>
+          </div>
+
+          <!-- IEC URN -->
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-teal-200/50 dark:border-teal-800/40">
+            <div class="flex items-center gap-2 mb-4">
+              <img src={asset('/img/logo-iec.svg')} alt="IEC" class="h-5 w-auto" />
+              <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400">IEC Internal URN</span>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Example: IEC 80000-6, Item 6-42.1</p>
+            <div class="space-y-2">
+              <div>
+                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Database form (used here)</div>
+                <div class="px-3 py-2.5 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-emerald-400 overflow-x-auto">
+                  urn:iec:std:iec:80000-6-42.1:2022-11:::
+                </div>
+              </div>
+              <div>
+                <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1">Component form</div>
+                <div class="px-3 py-2.5 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-500 overflow-x-auto">
+                  urn:iec:std:iec:80000-6:2022-11:::#item-6-42.1
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 space-y-2">
+              <div class="flex items-baseline gap-2 text-xs">
+                <span class="text-[10px] font-mono text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 px-1.5 py-0.5 rounded flex-shrink-0">Part</span>
+                <code class="text-slate-600 dark:text-slate-400">urn:iec:std:iec:80000-6:2022-11:::</code>
+              </div>
+              <div class="flex items-baseline gap-2 text-xs">
+                <span class="text-[10px] font-mono text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-950/40 px-1.5 py-0.5 rounded flex-shrink-0">Entry</span>
+                <code class="text-slate-600 dark:text-slate-400">urn:iec:std:iec:80000-6-42.1:2022-11:::</code>
+              </div>
+            </div>
+            <p class="mt-3 text-[11px] text-slate-400 dark:text-slate-500 leading-relaxed">
+              IEC uses a date-based edition identifier (e.g. <code class="text-slate-500 dark:text-slate-400">2022-11</code>). The database form embeds the item number directly in the namespace path rather than as a fragment.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Citation formats -->
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">Citation Formats</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-6">
+          Every entry page provides citation and export options:
+        </p>
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-amber-400" />
+              <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">URN</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Stable URN identifier (ISO RFC 5141 or IEC scheme).</p>
+            <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-emerald-400 overflow-x-auto">
+              urn:iso:std:iso:80000:-3:ed-2:en:item:3-1.1
+            </div>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-brand-400" />
+              <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">BibTeX</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Standard bibliographic format for LaTeX papers.</p>
+            <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-400 overflow-x-auto whitespace-pre">@standard{"{iso80000-3-2019-3-1-1,"}
+  title = {"{ISO 80000-3},"}
+  year = {"{2019}}"}</div>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-violet-400" />
+              <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">RDF Turtle</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">W3C RDF serialization for linked data.</p>
+            <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-400 overflow-x-auto whitespace-pre">@prefix isq: &lt;...&gt; .
+@prefix smart: &lt;...&gt; .</div>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-amber-200 dark:hover:border-amber-700 hover:shadow-sm transition-all">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-2 h-2 rounded-full bg-teal-400" />
+              <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200">JSON-LD</h3>
+            </div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Linked data format embedded in every page.</p>
+            <div class="mt-3 px-3 py-2 rounded-lg bg-slate-900 dark:bg-dark-700 font-mono text-[11px] text-slate-400 overflow-x-auto whitespace-pre">{"{"}
+  "@type": "isq:Quantity",
+  "dcterms:identifier": "3-1.1"
+{"}"}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Data sources -->
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">Data Sources</h2>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="w-9 h-9 rounded-lg bg-brand-50 dark:bg-brand-950/40 flex items-center justify-center mb-3">
+              <svg class="w-4.5 h-4.5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+            </div>
+            <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">ISO 80000 &amp; IEC 80000</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Quantities, units, and definitions from the official dataset. Content copyright &copy; ISO and IEC.
+            </p>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="w-9 h-9 rounded-lg bg-violet-50 dark:bg-violet-950/40 flex items-center justify-center mb-3">
+              <svg class="w-4.5 h-4.5 text-violet-600 dark:text-violet-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/></svg>
+            </div>
+            <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">UnitsDB &amp; UnitsML</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Cross-referenced units database providing symbol mapping and quantity-unit relationships.
+            </p>
+          </div>
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="w-9 h-9 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 flex items-center justify-center mb-3">
+              <svg class="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
+            </div>
+            <h3 class="text-sm font-semibold text-slate-800 dark:text-slate-200 mb-1">SMART Ontology</h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+              Information model annotations from the SmartSDU Core Ontology for machine-readable standards.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dataset Downloads -->
+      <div>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-4">Dataset Downloads</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Download the complete ISO &amp; IEC 80000 entry dataset in machine-readable linked data formats for semantic web consumption.</p>
+        <DatasetDownload client:idle />
+      </div>
+
+      <!-- Copyright -->
+      <div class="pt-8 border-t border-slate-200/60 dark:border-dark-600/60">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-6">Copyright &amp; Attribution</h2>
+        <div class="p-5 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/40 dark:border-amber-800/30 text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          <p>
+            Content from the ISO 80000 &amp; IEC 80000 series is copyright &copy; ISO and IEC. All rights reserved.
+            This browser is provided for reference purposes. For the authoritative text of the standard,
+            please consult the official ISO and IEC publications.
+          </p>
+          <p class="mt-2">
+            Browser &copy; 2025&ndash;2026. Data sourced from ISO 80000 &amp; IEC 80000 datasets and UnitsDB.
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
 </DefaultLayout>

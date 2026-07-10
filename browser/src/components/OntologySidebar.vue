@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 
-defineProps<{ mobile?: boolean }>()
-import { useRoute } from 'vue-router'
+const props = defineProps<{ mobile?: boolean; activeSlug?: string }>()
 import { ontologyEntities, ontologyTypeMeta, ontologyImportChain, ontologyNamespaces } from '../data/generated/ontology'
 import { useOntologySidebar } from '../composables/useOntologySidebar'
 
@@ -15,7 +14,6 @@ interface Entity {
   parent?: string
 }
 
-const route = useRoute()
 const allEntities = ontologyEntities as readonly Entity[]
 const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
 
@@ -122,12 +120,10 @@ function isCollapsed(key: string) {
   return collapsed.value.has(key)
 }
 
-const activeSlug = computed(() => {
-  const slug = route.params.slug as string | undefined
-  return slug || ''
-})
+const activeSlug = computed(() => props.activeSlug || '')
 
-watch(activeSlug, (slug) => {
+onMounted(() => {
+  const slug = props.activeSlug
   if (!slug) return
   const entity = allEntities.find(e => e.slug === slug)
   if (!entity) return

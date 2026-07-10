@@ -1,72 +1,41 @@
 <script setup lang="ts">
-import { SiteConfig } from '../../site.config'
 import { ref, computed } from 'vue'
-import { physicalDimensions } from '../../data/generated/physical-dimensions'
+
+interface DimVector { base: string; power: number }
+interface IsoEntry { id: string; num: string; name: string; part: string }
+interface PhysicalDimension {
+  nistId: string
+  unitsmlId: string
+  slug: string
+  name: string
+  shortName: string
+  dimensionless: boolean
+  vector: DimVector[]
+  vectorNotation: string
+  isoEntries: IsoEntry[]
+  isoUnitSlugs: string[]
+}
+
+const props = defineProps<{
+  dimensions: PhysicalDimension[]
+}>()
 
 const searchQuery = ref('')
 
 const filtered = computed(() => {
-  if (!searchQuery.value.trim()) return physicalDimensions
+  if (!searchQuery.value.trim()) return props.dimensions
   const q = searchQuery.value.toLowerCase()
-  return physicalDimensions.filter(d =>
+  return props.dimensions.filter(d =>
     d.name.toLowerCase().includes(q) ||
     d.shortName.includes(q) ||
     d.vectorNotation.toLowerCase().includes(q) ||
     d.unitsmlId.toLowerCase().includes(q)
   )
 })
-
-const dimlessCount = physicalDimensions.filter(d => d.dimensionless).length
-const withIsoCount = physicalDimensions.filter(d => d.isoEntries.length > 0).length
 </script>
 
 <template>
   <div>
-    <!-- Hero -->
-    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-950">
-      <div class="absolute inset-0 hero-pattern" />
-      <div class="grain-overlay absolute inset-0" />
-      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-indigo-500/10" />
-      <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-indigo-400/20" />
-      <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10" />
-      <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]" />
-      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
-        <div class="max-w-3xl page-enter">
-          <div class="flex items-center gap-2 text-xs text-indigo-300/60 mb-5">
-            <a href="/" class="hover:text-indigo-200 transition-colors">Home</a>
-            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-          </div>
-          <div class="flex items-end gap-5 flex-wrap">
-            <a href="https://www.unitsml.org" target="_blank" rel="noopener" class="group flex-shrink-0">
-              <img :src="SiteConfig.asset('/img/unitsml-symbol.svg')" alt="UnitsML" class="h-10 w-auto" />
-            </a>
-            <div>
-              <div class="flex items-center gap-3">
-                <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Dimensions</h1>
-                <a href="https://www.unitsml.org" target="_blank" rel="noopener" class="group">
-                  <img :src="SiteConfig.asset('/img/unitsml-text.svg')" alt="UnitsML" class="h-4 w-auto brightness-0 invert" />
-                </a>
-              </div>
-              <p class="mt-2 text-sm leading-relaxed max-w-xl text-indigo-300/80">
-                {{ physicalDimensions.length }} dimensional vectors. Each dimension defines a physical quantity's composition in base SI dimensions — length (L), mass (M), time (T), electric current (I), temperature (Θ), amount of substance (N), and luminous intensity (J).
-              </p>
-            </div>
-            <div class="flex gap-2 ml-auto flex-shrink-0 mb-1">
-              <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
-                <span class="text-lg font-bold text-white heading-serif tabular-nums">{{ physicalDimensions.length }}</span>
-                <span class="text-xs ml-1 text-indigo-300/70">dimensions</span>
-              </div>
-              <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
-                <span class="text-lg font-bold text-white heading-serif tabular-nums">{{ withIsoCount }}</span>
-                <span class="text-xs ml-1 text-indigo-300/70">linked to ISQ</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10" />
-    </section>
-
     <!-- Search bar -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 relative z-20 mb-6">
       <div class="relative max-w-sm">

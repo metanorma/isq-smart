@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { SiteConfig } from '../site.config'
+const base = import.meta.env.BASE_URL
+const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
 </script>
 
 <template>
@@ -11,9 +12,9 @@ import { SiteConfig } from '../site.config'
         <!-- Brand -->
         <div class="lg:col-span-1">
           <div class="flex items-center gap-2 mb-4">
-            <img :src="SiteConfig.asset('/img/logo-iso.svg')" alt="ISO" class="h-6 w-auto rounded opacity-90" />
+            <img :src="asset('/img/logo-iso.svg')" alt="ISO" class="h-6 w-auto rounded opacity-90" />
             <span class="text-white/30 text-xs">+</span>
-            <img :src="SiteConfig.asset('/img/logo-iec.svg')" alt="IEC" class="h-6 w-auto rounded opacity-90" />
+            <img :src="asset('/img/logo-iec.svg')" alt="IEC" class="h-6 w-auto rounded opacity-90" />
           </div>
           <p class="text-xs text-white/40 leading-relaxed max-w-xs">
             ISO 80000 &amp; IEC 80000 — the international standards for quantities, units, and mathematical notation.

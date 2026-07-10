@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { watch, nextTick, ref } from 'vue'
-import { searchOpen, searchQuery, searchDomain, searchResults, performSearch, closeSearch, matchLabel } from '../composables/useSearch'
+import { watch, nextTick, ref, onMounted, onUnmounted } from 'vue'
+import { searchOpen, searchQuery, searchDomain, searchResults, performSearch, closeSearch, matchLabel, openSearch } from '../composables/useSearch'
 import type { SearchResult } from '../composables/useSearch'
 import { entryUrl } from '../data'
 
@@ -12,6 +12,10 @@ const domainOpts: { key: 'all' | 'quantities' | 'math'; label: string }[] = [
   { key: 'math', label: 'Math' },
 ]
 const activeIndex = ref(-1)
+
+function onOpenEvent() { openSearch() }
+onMounted(() => window.addEventListener('open-search', onOpenEvent))
+onUnmounted(() => window.removeEventListener('open-search', onOpenEvent))
 
 watch(searchOpen, async (v) => {
   if (v) {
