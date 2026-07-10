@@ -1,0 +1,18 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import DocumentDetailPage from '../../components/pages/DocumentDetailPage.vue'
+import { getAllDocuments } from '../../data/index'
+
+export function getStaticPaths() {
+  return getAllDocuments().map(doc => ({
+    params: { id: doc.partKey },
+    props: { id: doc.partKey },
+  }))
+}
+
+const { id } = Astro.props
+---
+
+<DefaultLayout title={`Document ${id} | ISQ Browser`}>
+  <DocumentDetailPage id={id} />
+</DefaultLayout>

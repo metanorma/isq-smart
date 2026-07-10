@@ -1,0 +1,27 @@
+---
+import DefaultLayout from '../../../layouts/DefaultLayout.astro'
+import EntryPage from '../../../components/pages/EntryPage.vue'
+import { getPartsByDomain, getPartMeta } from '../../../data/index'
+import { DataLoader } from '../../../data/DataLoader'
+
+export async function getStaticPaths() {
+  const parts = getPartsByDomain('math')
+  const paths = []
+  for (const p of parts) {
+    const data = await DataLoader.loadPart(p.partKey)
+    for (const entry of data.entries) {
+      paths.push({
+        params: { part: p.partKey, id: entry.id },
+        props: { partKey: p.partKey, entryId: entry.id },
+      })
+    }
+  }
+  return paths
+}
+
+const { partKey, entryId } = Astro.props
+---
+
+<DefaultLayout title={`Entry ${entryId} — Part ${partKey} | ISQ Browser`}>
+  <EntryPage part={partKey} id={entryId} />
+</DefaultLayout>

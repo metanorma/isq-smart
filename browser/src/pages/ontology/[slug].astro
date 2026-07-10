@@ -1,0 +1,20 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import OntologyDetailPage from '../../components/pages/OntologyDetailPage.vue'
+import { ontologyEntities } from '../../data/generated/ontology'
+
+export function getStaticPaths() {
+  return ontologyEntities
+    .filter(e => e.slug && /^[a-zA-Z0-9_-]+$/.test(e.slug))
+    .map(entity => ({
+      params: { slug: entity.slug },
+      props: { slug: entity.slug },
+    }))
+}
+
+const { slug } = Astro.props
+---
+
+<DefaultLayout title={`Ontology: ${slug} | ISQ Browser`}>
+  <OntologyDetailPage slug={slug} />
+</DefaultLayout>

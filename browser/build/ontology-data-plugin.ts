@@ -398,6 +398,17 @@ export function ontologyDataPlugin(paths: BuildPaths): Plugin {
         return
       }
 
+      if (isBuild && exists) {
+        try {
+          console.log('[ontology-data] Generating ontology data...')
+          await generateOntologyData()
+          console.log('[ontology-data] Done')
+        } catch (e) {
+          console.warn(`[ontology-data] Regeneration failed (${(e as Error).message}), using cached data`)
+        }
+        return
+      }
+
       console.log('[ontology-data] Generating ontology data...')
       await generateOntologyData()
       console.log('[ontology-data] Done')
