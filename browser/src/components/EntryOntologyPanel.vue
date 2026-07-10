@@ -159,13 +159,13 @@ const headerBadges = computed(() => {
   >
     <template #header-badges>
       <div class="flex items-center gap-1.5 ml-1 normal-case tracking-normal text-xs font-medium">
-        <router-link
+        <a
           v-for="badge in headerBadges"
           :key="badge.qname"
-          :to="`/ontology/${badge.slug}`"
+          :href="`/ontology/${badge.slug}`"
           class="px-2 py-0.5 rounded hover:opacity-80 transition-colors"
           :class="badge.colorClass"
-        >{{ badge.qname }}</router-link>
+        >{{ badge.qname }}</a>
       </div>
     </template>
     <template #instance-iri>

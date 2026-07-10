@@ -95,7 +95,7 @@ function getEntryName(r: SearchResult): string {
             <p class="sm:hidden text-xs">Type to search across all entries</p>
           </div>
           <div v-for="(r, idx) in searchResults" :key="r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
-            <router-link :to="entryUrl(r.partKey, r.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
+            <a :href="entryUrl(r.partKey, r.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
               <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-[11px] font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partDomain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.partKey }}</span>
               <div class="min-w-0 flex-1">
                 <div class="text-sm font-medium text-slate-800 dark:text-slate-200 truncate" :class="{ 'text-brand-700 dark:text-brand-400': idx === activeIndex }" v-html="highlight(getEntryName(r), searchQuery)" />
@@ -111,7 +111,7 @@ function getEntryName(r: SearchResult): string {
                   </template>
                 </div>
               </div>
-            </router-link>
+            </a>
           </div>
         </div>
       </div>

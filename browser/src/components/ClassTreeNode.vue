@@ -43,7 +43,7 @@ function badgeColor(e: Entity) {
       </button>
       <span v-else class="w-4 h-4 flex items-center justify-center text-slate-200 dark:text-dark-600 flex-shrink-0">●</span>
       <span v-if="depth > 0" class="text-slate-300 dark:text-dark-600">└</span>
-      <router-link :to="`/ontology/${entity.slug}`" class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 hover:underline">{{ entity.label }}</router-link>
+      <a :href="`/ontology/${entity.slug}`" class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 hover:underline">{{ entity.label }}</a>
       <span class="text-[9px] px-1.5 py-0.5 rounded flex-shrink-0" :class="badgeColor(entity)">{{ entity.ontology }}</span>
     </div>
     <template v-if="isExpanded">

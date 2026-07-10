@@ -140,11 +140,11 @@ const related = computed(() => {
   >
     <template #header-badges>
       <div class="flex items-center gap-1.5 ml-1 normal-case tracking-normal text-xs font-medium">
-        <router-link
+        <a
           v-if="classEntity"
-          :to="`/ontology/${classEntity.slug}`"
+          :href="`/ontology/${classEntity.slug}`"
           class="px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-950/40 text-teal-700 dark:text-teal-400 border border-teal-100/60 dark:border-teal-800/40 hover:bg-teal-100 dark:hover:bg-teal-950/60 transition-colors"
-        >{{ classQname }}</router-link>
+        >{{ classQname }}</a>
       </div>
     </template>
     <template #instance-iri>
