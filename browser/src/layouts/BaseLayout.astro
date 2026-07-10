@@ -1,5 +1,6 @@
 ---
 import '../styles/main.css'
+import { asset } from '../lib/asset'
 
 interface Props {
   title?: string
@@ -12,9 +13,6 @@ const {
   description = 'Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser.',
   pathname = Astro.url.pathname,
 } = Astro.props
-
-const base = import.meta.env.BASE_URL
-const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
 
 const ogTitle = title.split('—')[0].trim()
 ---

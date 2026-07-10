@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const base = import.meta.env.BASE_URL
-const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
+import { asset } from '../lib/asset'
 </script>
 
 <template>

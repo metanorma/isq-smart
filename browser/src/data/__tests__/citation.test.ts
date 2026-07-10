@@ -59,8 +59,15 @@ describe('generateBibTeX', () => {
   })
 
   it('falls back to entry num when designation is missing', () => {
-    const e = mkEntry({ id: '4-1', num: '4-1' })
-    e.designations = []
+    const e: Entry = {
+      _tag: 'quantity' as const,
+      partKey: '3',
+      edition: '2019',
+      id: '4-1',
+      num: '4-1',
+      designations: [],
+      def: { en: 'x' },
+    }
     const out = generateBibTeX(e, isoMeta, '2019')
     expect(out).toContain('entry = {4-1 4-1}')
   })

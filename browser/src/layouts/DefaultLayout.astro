@@ -8,25 +8,10 @@ import GlobalSearch from '../components/GlobalSearch.vue'
 import SearchHint from '../components/SearchHint.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
 import MobileNav from '../components/MobileNav.vue'
+import { coreLinks, secondaryLinks, navLinks, isActive } from '../lib/nav'
 
 const pathname = Astro.url.pathname
-const base = import.meta.env.BASE_URL
-const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
-
-const coreLinks = [
-  { to: '/quantities', label: 'Quantities' },
-  { to: '/math', label: 'Math' },
-  { to: '/units', label: 'Units' },
-  { to: '/dimensions', label: 'Dimensions' },
-]
-const secondaryLinks = [
-  { to: '/documents', label: 'Publications' },
-  { to: '/ontology', label: 'Ontology' },
-  { to: '/reference', label: 'Reference' },
-  { to: '/about', label: 'About' },
-]
-
-const isActive = (path: string) => pathname === path || pathname.startsWith(path + '/')
+const isActivePath = (path: string) => isActive(pathname, path)
 ---
 
 <BaseLayout title={Astro.props.title} description={Astro.props.description}>
@@ -52,19 +37,19 @@ const isActive = (path: string) => pathname === path || pathname.startsWith(path
 
             <nav class="hidden md:flex items-center gap-1">
               {coreLinks.map((link) => (
-                <a href={link.to} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActive(link.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{link.label}</a>
+                <a href={link.to} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActivePath(link.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{link.label}</a>
               ))}
             </nav>
 
             <nav class="hidden lg:flex items-center gap-1">
               {secondaryLinks.map((link) => (
-                <a href={link.to} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActive(link.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{link.label}</a>
+                <a href={link.to} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActivePath(link.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{link.label}</a>
               ))}
             </nav>
 
             <ThemeToggle client:load />
 
-            <MobileNav client:load links={[...coreLinks, ...secondaryLinks]} activePath={pathname} />
+            <MobileNav client:load links={navLinks} activePath={pathname} />
           </div>
         </div>
       </div>

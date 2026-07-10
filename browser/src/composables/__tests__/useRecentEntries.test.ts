@@ -54,8 +54,15 @@ describe('useRecentEntries.track', () => {
 
   it('falls back to id when designation text is missing', () => {
     const { recent, track } = useRecentEntries()
-    const e = mkEntry('4-9', '4-9')
-    e.designations = []
+    const e: Entry = {
+      _tag: 'quantity' as const,
+      partKey: '3',
+      edition: '2019',
+      id: '4-9',
+      num: '4-9',
+      designations: [],
+      def: { en: 'x' },
+    }
     track(e, '3')
     expect(recent.value[0]!.name).toBe('4-9')
   })

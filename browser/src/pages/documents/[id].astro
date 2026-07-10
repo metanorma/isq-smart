@@ -4,6 +4,7 @@ import { publicationDocuments, clauses } from '../../data/generated/iso80000'
 import { termEntries } from '../../data/generated/iso80000-terms'
 import type { ClauseData, TermEntryData } from '../../data/types'
 import { getPartMeta, getPartDocument, partUrl, publisherOf, getAllDocuments } from '../../data/PartRegistry'
+import { asset } from '../../lib/asset'
 
 export function getStaticPaths() {
   return getAllDocuments().map(doc => ({
@@ -14,8 +15,6 @@ export function getStaticPaths() {
 
 const { id } = Astro.props
 
-const base = import.meta.env.BASE_URL
-const asset = (path: string) => (base + path.replace(/^\//, '')).replace(/\/\//g, '/')
 
 const doc = publicationDocuments.find(d => d.id === id)
 const docClauses = doc ? clauses.filter((c: ClauseData) => c.parentId === id) : []

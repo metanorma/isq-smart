@@ -1,13 +1,19 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import PartIcon from '../../components/PartIcon.vue'
-import PartEntryList from '../../components/islands/PartEntryList.vue'
+import PartEntryList from '../../components/PartEntryList.vue'
 import {
   getPartsByDomain, getPartMeta, getPartEntryCount, isBilingual, getPartEditions,
 } from '../../data/index'
 import { DataLoader } from '../../data/DataLoader'
 import { accentGlow, accentColors, accentGradient, accentHeaderBg } from '../../composables/useAccent'
 import type { Entry } from '../../data/types'
+
+interface Props {
+  partKey: string
+  entries: Entry[]
+  mathCache: Record<string, string>
+}
 
 export async function getStaticPaths() {
   const parts = getPartsByDomain('math')
@@ -68,7 +74,7 @@ const headerBg = accentHeaderBg(meta)
         </div>
 
         <div class="flex items-start gap-4">
-          <PartIcon part={meta} size="lg" />
+          <PartIcon meta={meta} size="lg" />
           <div class="min-w-0">
             <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">
               {meta.parentPart
