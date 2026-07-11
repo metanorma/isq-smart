@@ -23,6 +23,7 @@
     "@tailwindcss/vite": "^4.2.4",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.12.2",
+    "@vue/test-utils": "^2.4.11",
     "astro": "^7.0.7",
     "happy-dom": "^20.10.6",
     "n3": "^2.0.3",
