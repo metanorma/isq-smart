@@ -1,0 +1,29 @@
+---
+interface Crumb {
+  label: string
+  href?: string
+}
+interface Props {
+  items: Crumb[]
+  variant?: 'light' | 'dark'
+}
+const { items, variant = 'dark' } = Astro.props
+const color = variant === 'light' ? 'text-slate-400 dark:text-slate-500' : 'text-brand-300/60'
+---
+
+{items.length > 0 && (
+  <div class={`flex items-center gap-2 text-xs ${color} mb-5`}>
+    {items.map((item, i) => (
+      <>
+        {item.href ? (
+          <a href={item.href} class="hover:text-brand-200 transition-colors">{item.label}</a>
+        ) : (
+          <span>{item.label}</span>
+        )}
+        {i < items.length - 1 && (
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+        )}
+      </>
+    ))}
+  </div>
+)}
