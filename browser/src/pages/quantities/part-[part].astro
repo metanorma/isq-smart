@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
 import PartIcon from '../../components/PartIcon.vue'
 import PartEntryList from '../../components/PartEntryList.vue'
 import {
@@ -50,6 +51,7 @@ const heroGlow = accentGlow(meta, 0.12, 140)
 const patternColor = accentColors(meta).from + '08'
 const sectionAccentStyle = `background: ${accentGradient(meta, 120)}`
 const headerBg = accentHeaderBg(meta)
+const partLabel = meta.parentPart ? `Part ${meta.parentPart} §${partKey.split('-')[1]}` : `Part ${partKey}`
 ---
 
 <DefaultLayout
@@ -63,15 +65,14 @@ const headerBg = accentHeaderBg(meta)
       <div class="absolute inset-0 pointer-events-none part-hero-pattern" style={`--accent-grid: ${patternColor}`} />
 
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 page-enter">
-        <div class="flex items-center gap-2 text-xs text-slate-400 dark:text-slate-500 mb-4">
-          <a href="/" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Home</a>
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-          <a href="/quantities" class="hover:text-brand-600 dark:hover:text-brand-400 transition-colors">Quantities</a>
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-          <span class="text-slate-600 dark:text-slate-300 font-medium">
-            {meta.parentPart ? `Part ${meta.parentPart} §${partKey.split('-')[1]}` : `Part ${partKey}`}
-          </span>
-        </div>
+        <Breadcrumb
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Quantities', href: '/quantities' },
+            { label: partLabel },
+          ]}
+          variant="light"
+        />
 
         <div class="flex items-start gap-4">
           <PartIcon meta={meta} size="lg" />
