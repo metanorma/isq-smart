@@ -20,7 +20,7 @@ const totalEntries = parts.reduce((sum, p) => sum + getPartEntryCount(p.partKey)
       title={domain.label}
       description={domain.description}
       stats={[
-        { value: parts.length, label: 'parts' },
+        { value: parts.length, label: 'subparts' },
         { value: totalEntries.toLocaleString(), label: 'entries' },
       ]}
     />
