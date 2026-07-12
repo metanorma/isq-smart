@@ -2,6 +2,7 @@ import { writeFileSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import yaml from 'js-yaml'
 import type { RawEntry } from '../types'
+import type { BuildContext } from '../buildContext'
 
 interface IsoUnit {
   slug: string
@@ -50,15 +51,15 @@ function superscript(n: number): string {
 export function buildDimensions(
   isoUnits: IsoUnit[],
   unitsdbDir: string,
-  routes: Set<string>,
+  ctx: BuildContext,
   generatedDir: string,
-): void {
+): IsoUnit[] {
   const unitsmlDimsPath = resolve(unitsdbDir, 'dimensions.yaml')
   const unitsmlQuantitiesPath = resolve(unitsdbDir, 'quantities.yaml')
 
   if (!existsSync(unitsmlDimsPath) || !existsSync(unitsmlQuantitiesPath)) {
     writeFileSync(resolve(generatedDir, 'physical-dimensions.ts'), 'export const physicalDimensions = []\n')
-    return
+    return isoUnits
   }
 
   const rawDims = (yaml.load(readFileSync(unitsmlDimsPath, 'utf-8')) as any).dimensions as UnitsmlDimension[]
@@ -148,7 +149,7 @@ export function buildDimensions(
     return a.name.localeCompare(b.name)
   })
 
-  for (const d of physicalDimensions) routes.add(`/dimensions/${d.slug}`)
+  for (const d of physicalDimensions) ctx.routes.add(`/dimensions/${d.slug}`)
 
   const dimByUnitSlug = new Map<string, { unitsmlId: string; slug: string }>()
   for (const d of physicalDimensions) {
@@ -156,6 +157,11 @@ export function buildDimensions(
       if (!dimByUnitSlug.has(us)) dimByUnitSlug.set(us, { unitsmlId: d.unitsmlId, slug: d.slug })
     }
   }
+
+  // Intentional in-place enrichment: attach dimensionRef/dimensionSlug to each
+  // unit so the units page can link to its physical dimension. This mutates
+  // the IsoUnit objects returned by buildUnits so callers see the enrichment
+  // without reassigning. We only set the field if not already present.
   for (const u of isoUnits) {
     const dim = dimByUnitSlug.get(u.slug)
     if (dim) {
@@ -167,4 +173,6 @@ export function buildDimensions(
     resolve(generatedDir, 'physical-dimensions.ts'),
     `export const physicalDimensions = ${JSON.stringify(physicalDimensions)}\n`,
   )
+
+  return isoUnits
 }

@@ -3,6 +3,7 @@ import { resolve } from 'node:path'
 import yaml from 'js-yaml'
 import { comparePartKeys } from '../../src/data/partKey'
 import type { RawEntry } from '../types'
+import type { BuildContext } from '../buildContext'
 
 interface IsoUnit {
   slug: string
@@ -26,7 +27,7 @@ interface IsoUnit {
 export function buildUnits(
   qData: RawEntry[],
   unitsdbDir: string,
-  routes: Set<string>,
+  ctx: BuildContext,
   generatedDir: string,
 ): IsoUnit[] {
   const unitsByName = new Map<string, { name: string; symbols: Set<string>; quantities: { id: string; num: string; name: string; part: string }[]; parts: Set<string> }>()
@@ -60,7 +61,7 @@ export function buildUnits(
     }
   })
 
-  for (const u of isoUnits) routes.add(`/units/${u.slug}`)
+  for (const u of isoUnits) ctx.routes.add(`/units/${u.slug}`)
 
   const unitsmlUnitsPath = resolve(unitsdbDir, 'units.yaml')
   if (existsSync(unitsmlUnitsPath)) {

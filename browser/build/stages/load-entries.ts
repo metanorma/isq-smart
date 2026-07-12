@@ -1,10 +1,8 @@
-import { readFileSync, existsSync } from 'node:fs'
+import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import yaml from 'js-yaml'
-import { SiteConfig } from '../../src/site.config'
-import type { RawEntry, BuildPaths } from '../types'
-
-const isExcluded = SiteConfig.isExcluded
+import type { RawEntry } from '../types'
+import type { BuildContext } from '../buildContext'
 
 export function loadEntries(datasetDir: string): { quantities: RawEntry[]; math: RawEntry[] } {
   const load = (file: string) =>
@@ -12,6 +10,9 @@ export function loadEntries(datasetDir: string): { quantities: RawEntry[]; math:
   return { quantities: load('quantities.yaml'), math: load('math.yaml') }
 }
 
-export function filterEntries(raw: { quantities: RawEntry[]; math: RawEntry[] }): RawEntry[] {
-  return [...raw.quantities, ...raw.math].filter(e => !isExcluded(e.part.toString()))
+export function filterEntries(
+  raw: { quantities: RawEntry[]; math: RawEntry[] },
+  ctx: BuildContext,
+): RawEntry[] {
+  return [...raw.quantities, ...raw.math].filter(e => !ctx.isExcluded(e.part.toString()))
 }

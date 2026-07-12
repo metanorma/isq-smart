@@ -3,6 +3,7 @@ import { writeFileSync, existsSync, mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { MathCollector } from './math-collector'
 import type { BuildPaths } from './types'
+import { createBuildContext } from './buildContext'
 import { loadEntries, filterEntries } from './stages/load-entries'
 import { buildParts } from './stages/build-parts'
 import { buildXrefs } from './stages/build-xrefs'
@@ -16,20 +17,21 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
 
   async function generateFiles() {
     const raw = loadEntries(paths.datasetDir)
-    const allEntries = filterEntries(raw)
+    const ctx = createBuildContext(paths)
+    const allEntries = filterEntries(raw, ctx)
 
     const allExprs = MathCollector.collect(allEntries)
     const { mathml: globalMathCache, latex: globalLatexCache } = await MathCollector.render(allExprs)
 
     if (!existsSync(generatedDir)) mkdirSync(generatedDir, { recursive: true })
 
-    const { summaries, routes } = buildParts(raw, globalMathCache, globalLatexCache, generatedDir)
+    const { summaries } = buildParts(raw, globalMathCache, globalLatexCache, generatedDir, ctx)
 
-    buildDocuments(allEntries, sourcesDir, generatedDir)
+    buildDocuments(allEntries, sourcesDir, generatedDir, ctx)
 
-    const isoUnits = buildUnits(raw.quantities, unitsdbDir, routes, generatedDir)
+    const isoUnits = buildUnits(raw.quantities, unitsdbDir, ctx, generatedDir)
 
-    buildDimensions(isoUnits, unitsdbDir, routes, generatedDir)
+    buildDimensions(isoUnits, unitsdbDir, ctx, generatedDir)
 
     writeFileSync(
       resolve(generatedDir, 'meta.ts'),
@@ -39,7 +41,7 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
 
     writeFileSync(
       resolve(generatedDir, 'routes.ts'),
-      `export const allRoutes: string[] = ${JSON.stringify([...routes].sort())}\n`,
+      `export const allRoutes: string[] = ${JSON.stringify([...ctx.routes].sort())}\n`,
     )
 
     buildXrefs(allEntries, generatedDir)
@@ -69,4 +71,3 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
     },
   }
 }
-

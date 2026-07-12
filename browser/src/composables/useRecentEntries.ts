@@ -1,5 +1,6 @@
 import { ref, watch } from 'vue'
 import type { Entry } from '../data/types'
+import { entryUrl } from '../data/PartRegistry'
 
 const STORAGE_KEY = 'recent-entries'
 const MAX = 12
@@ -29,13 +30,12 @@ recent.value = load()
 
 export function useRecentEntries() {
   function track(entry: Entry, partKey: string) {
-    const href = partKey.startsWith('2-') ? `/math/part-${partKey}/${entry.id}` : `/quantities/part-${partKey}/${entry.id}`
     const item: RecentEntry = {
       id: entry.id,
       num: entry.num,
       name: entry.designations[0]?.designation.en?.text ?? entry.id,
       partKey,
-      href,
+      href: entryUrl(partKey, entry.id),
       ts: Date.now(),
     }
     const filtered = recent.value.filter(r => r.id !== entry.id)

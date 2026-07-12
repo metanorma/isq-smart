@@ -1,11 +1,9 @@
 import { writeFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { MathCollector } from '../math-collector'
-import { SiteConfig } from '../../src/site.config'
 import { sortPartKeys } from '../../src/data/partKey'
 import type { RawEntry } from '../types'
-
-const isExcluded = SiteConfig.isExcluded
+import type { BuildContext } from '../buildContext'
 
 export interface PartSummary {
   domain: string
@@ -26,7 +24,7 @@ function writePart(
   globalLatexCache: Record<string, string>,
   partExprs: Set<string>,
   summaries: Record<string, PartSummary>,
-  routes: Set<string>,
+  ctx: BuildContext,
   generatedDir: string,
 ) {
   const tag = domain === 'quantities' ? 'quantity' : 'math'
@@ -54,8 +52,8 @@ function writePart(
   summaries[partKey] = { domain, count: entries.length, bilingual, editions }
 
   const prefix = domain === 'math' ? '/math' : '/quantities'
-  routes.add(`${prefix}/part-${partKey}`)
-  for (const entry of entries) routes.add(`${prefix}/part-${partKey}/${(entry as { id: string }).id}`)
+  ctx.routes.add(`${prefix}/part-${partKey}`)
+  for (const entry of entries) ctx.routes.add(`${prefix}/part-${partKey}/${(entry as { id: string }).id}`)
 
   writeFileSync(
     resolve(generatedDir, `part-${partKey}.ts`),
@@ -73,36 +71,36 @@ export function buildParts(
   globalMathCache: Record<string, string>,
   globalLatexCache: Record<string, string>,
   generatedDir: string,
-): { summaries: Record<string, PartSummary>; routes: Set<string> } {
+  ctx: BuildContext,
+): { summaries: Record<string, PartSummary> } {
   if (!existsSync(generatedDir)) mkdirSync(generatedDir, { recursive: true })
 
   for (const f of readdirSync(generatedDir)) {
     if (f.endsWith('.ts')) {
       const match = f.match(/^part-(.+)\.ts$/)
-      if (match && isExcluded(match[1])) {
+      if (match && ctx.isExcluded(match[1])) {
         unlinkSync(resolve(generatedDir, f))
       }
     }
   }
 
   const summaries: Record<string, PartSummary> = {}
-  const routes = new Set<string>(['/', '/quantities', '/reference', '/units', '/dimensions', '/smartsdu'])
 
-  const qParts = sortKeys(new Set(raw.quantities.map(e => e.part.toString()))).filter(pk => !isExcluded(pk))
+  const qParts = sortKeys(new Set(raw.quantities.map(e => e.part.toString()))).filter(pk => !ctx.isExcluded(pk))
   for (const pk of qParts) {
     const partEntries = raw.quantities.filter(e => e.part.toString() === pk)
     const partExprs = MathCollector.collect(partEntries)
-    writePart(pk, 'quantities', partEntries, globalMathCache, globalLatexCache, partExprs, summaries, routes, generatedDir)
+    writePart(pk, 'quantities', partEntries, globalMathCache, globalLatexCache, partExprs, summaries, ctx, generatedDir)
   }
 
-  const mParts = sortKeys(new Set(raw.math.map(e => e.part.toString()))).filter(pk => !isExcluded(pk))
+  const mParts = sortKeys(new Set(raw.math.map(e => e.part.toString()))).filter(pk => !ctx.isExcluded(pk))
   for (const pk of mParts) {
     const partEntries = raw.math.filter(e => e.part.toString() === pk)
     const partExprs = MathCollector.collect(partEntries)
-    writePart(pk, 'math', partEntries, globalMathCache, globalLatexCache, partExprs, summaries, routes, generatedDir)
+    writePart(pk, 'math', partEntries, globalMathCache, globalLatexCache, partExprs, summaries, ctx, generatedDir)
   }
 
-  if (mParts.length) routes.add('/math')
+  if (mParts.length) ctx.routes.add('/math')
 
-  return { summaries, routes }
+  return { summaries }
 }
