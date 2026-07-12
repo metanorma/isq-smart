@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, toRef } from 'vue'
 import { partUrl, entryUrl, getPartMeta } from '../data/PartRegistry'
 import { symbolCache } from '../data/generated/domain-index'
+import { useLocalFilter } from '../composables/useLocalFilter'
 import MathRenderer from './MathRenderer.vue'
 
 interface SampleQuantity {
@@ -25,18 +26,13 @@ const props = defineProps<{
   initialQuery?: string
 }>()
 
-const searchQuery = ref(props.initialQuery ?? '')
-const groupByPart = ref(false)
+const { searchQuery, filtered } = useLocalFilter(
+  toRef(props, 'units'),
+  ['name', 'symbols', 'slug'],
+)
+searchQuery.value = props.initialQuery ?? ''
 
-const filtered = computed(() => {
-  if (!searchQuery.value.trim()) return props.units
-  const q = searchQuery.value.toLowerCase()
-  return props.units.filter(u => {
-    const nameStr = u.name.toLowerCase()
-    const symStr = u.symbols.join(' ').toLowerCase()
-    return nameStr.includes(q) || symStr.includes(q)
-  })
-})
+const groupByPart = ref(false)
 
 interface PartGroup {
   partKey: string

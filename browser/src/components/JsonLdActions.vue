@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { jsonLdToTurtle } from '../data/serialization'
+import { downloadFile } from '../lib/download'
 import { useToast } from '../composables/useToast'
 
 const toast = useToast()
@@ -11,25 +12,13 @@ const props = defineProps<{
 
 function downloadJsonLd() {
   const json = JSON.stringify(props.data, null, 2)
-  const blob = new Blob([json], { type: 'application/ld+json' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = props.filename
-  a.click()
-  URL.revokeObjectURL(url)
+  downloadFile(json, props.filename, 'application/ld+json')
   toast.show('JSON-LD downloaded')
 }
 
 function downloadTurtle() {
   const ttl = jsonLdToTurtle(props.data)
-  const blob = new Blob([ttl], { type: 'text/turtle' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = props.filename.replace(/\.jsonld$/, '.ttl')
-  a.click()
-  URL.revokeObjectURL(url)
+  downloadFile(ttl, props.filename.replace(/\.jsonld$/, '.ttl'), 'text/turtle')
   toast.show('Turtle downloaded')
 }
 

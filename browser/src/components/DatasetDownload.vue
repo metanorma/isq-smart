@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { DataLoader } from '../data/DataLoader'
 import { getAllParts } from '../data/PartRegistry'
+import { isSubSection } from '../data/partKey'
 import { jsonLdToTurtle } from '../data/serialization'
 import { NS, tagToClass, partQname, entryQname } from '../data/ontologyConfig'
+import { downloadFile } from '../lib/download'
 import { useToast } from '../composables/useToast'
 
 const { show: showToast } = useToast()
 
 async function downloadDataset(format: 'jsonld' | 'turtle') {
-  const parts = getAllParts().filter(p => !p.parentPart && !p.partKey.includes('-'))
+  const parts = getAllParts().filter(p => !p.parentPart && !isSubSection(p.partKey))
   const allEntries: Record<string, string>[] = []
   for (const part of parts) {
     try {
@@ -51,13 +53,7 @@ async function downloadDataset(format: 'jsonld' | 'turtle') {
     mime = 'application/ld+json'
   }
 
-  const blob = new Blob([content], { type: mime })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  a.click()
-  URL.revokeObjectURL(url)
+  downloadFile(content, filename, mime)
   showToast(`Downloaded ${filename}`)
 }
 </script>

@@ -5,6 +5,7 @@ import PartIcon from '../../components/PartIcon.vue'
 import PartEntryList from '../../components/PartEntryList.vue'
 import {
   getPartsByDomain, getPartMeta, getPartEntryCount, isBilingual, getPartEditions,
+  basePartKey, sectionLabel,
 } from '../../data/index'
 import { DataLoader } from '../../data/DataLoader'
 import { accentGlow, accentColors, accentGradient, accentHeaderBg } from '../../composables/useAccent'
@@ -51,7 +52,7 @@ const heroGlow = accentGlow(meta, 0.12, 140)
 const patternColor = accentColors(meta).from + '08'
 const sectionAccentStyle = `background: ${accentGradient(meta, 120)}`
 const headerBg = accentHeaderBg(meta)
-const partLabel = meta.parentPart ? `Part ${meta.parentPart} §${partKey.split('-')[1]}` : `Part ${partKey}`
+const partLabel = meta.parentPart ? `Part ${meta.parentPart} ${sectionLabel(partKey)}` : `Part ${partKey}`
 ---
 
 <DefaultLayout
@@ -79,7 +80,7 @@ const partLabel = meta.parentPart ? `Part ${meta.parentPart} §${partKey.split('
           <div class="min-w-0">
             <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">
               {meta.parentPart
-                ? `Part ${meta.parentPart} §${partKey.split('-')[1]}: ${meta.title}`
+                ? `Part ${meta.parentPart} ${sectionLabel(partKey)}: ${meta.title}`
                 : `Part ${partKey}: ${meta.title}`}
             </h1>
             <p class="mt-1 text-slate-500 dark:text-slate-400 text-sm">{meta.description}</p>
@@ -87,7 +88,7 @@ const partLabel = meta.parentPart ? `Part ${meta.parentPart} §${partKey.split('
               <span class="text-slate-500 dark:text-slate-400">{getPartEntryCount(partKey)} entries</span>
               {edition && <span class="text-slate-400 dark:text-slate-500">&middot; Edition {edition}</span>}
               {bilingual && <span class="text-[10px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/80 px-2 py-0.5 rounded-full">FR</span>}
-              <a href={`/documents/part-${partKey.split('-')[0]}`} class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+              <a href={`/documents/part-${basePartKey(partKey)}`} class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
                 &rarr; About {meta.parentPart ? `Part ${meta.parentPart}` : 'this part'}
               </a>
             </div>

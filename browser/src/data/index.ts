@@ -1,6 +1,11 @@
 // Pure barrel: re-exports only, no logic.
 
-export { EntryModel } from './EntryModel'
+export {
+  EntryModel,
+  entryName, entryRenderedName, entryDefinition, entryRemarks,
+  entryUnitName, entryUnitSymbols, entryHasFrench, entrySectionGroup,
+  entryShortDef, entryPlainName,
+} from './EntryModel'
 export { DataLoader, getAvailableParts, getPartEntryCount, isBilingual, getPartEditions } from './DataLoader'
 export { getPartEntryCount as partEntryCount } from './DataLoader'
 
@@ -16,6 +21,7 @@ export { generateEntryJsonLd, generateIndexJsonLd, jsonLdToTurtle } from './seri
 export { generateBibTeX, generateChicago, generateRis } from './citation'
 
 export { partSummaries } from './generated/meta'
+export { basePartKey, parsePartKey, comparePartKeys, sortPartKeys, isSubSection, sectionLabel } from './partKey'
 
 export type {
   Domain, PartKey, Entry, PartMeta, PartSummary, PartData,

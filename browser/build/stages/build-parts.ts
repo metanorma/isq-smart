@@ -2,6 +2,7 @@ import { writeFileSync, existsSync, mkdirSync, readdirSync, unlinkSync } from 'n
 import { resolve } from 'node:path'
 import { MathCollector } from '../math-collector'
 import { SiteConfig } from '../../src/site.config'
+import { sortPartKeys } from '../../src/data/partKey'
 import type { RawEntry } from '../types'
 
 const isExcluded = SiteConfig.isExcluded
@@ -14,11 +15,7 @@ export interface PartSummary {
 }
 
 function sortKeys(keys: Set<string>): string[] {
-  return Array.from(keys).sort((a, b) => {
-    const pa = a.includes('-') ? a.split('-').map(Number) : [Number(a), 0]
-    const pb = b.includes('-') ? b.split('-').map(Number) : [Number(b), 0]
-    return pa[0] !== pb[0] ? pa[0] - pb[0] : pa[1] - pb[1]
-  })
+  return sortPartKeys(Array.from(keys))
 }
 
 function writePart(

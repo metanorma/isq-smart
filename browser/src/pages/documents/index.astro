@@ -3,7 +3,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import Breadcrumb from '../../components/Breadcrumb.astro'
 import { publicationDocuments } from '../../data/generated/iso80000'
 import { getAllParts, getPartMeta, getPartDocument, publisherOf } from '../../data/PartRegistry'
-import { partEntryCount } from '../../data/index'
+import { partEntryCount, basePartKey, isSubSection } from '../../data/index'
 import { asset } from '../../lib/asset'
 
 
@@ -36,7 +36,7 @@ for (const d of publicationDocuments) {
 
 for (const part of getAllParts()) {
   if (part.parentPart) continue
-  if (part.partKey.includes('-')) continue
+  if (isSubSection(part.partKey)) continue
   if (!topDocs.has(part.partKey)) {
     const doc = getPartDocument(part.partKey)
     topDocs.set(part.partKey, {
@@ -56,7 +56,7 @@ for (const part of getAllParts()) {
 const parentParts = new Set<string>()
 for (const part of getAllParts()) {
   if (part.parentPart) parentParts.add(part.parentPart)
-  if (part.partKey.includes('-')) parentParts.add(part.partKey.split('-')[0])
+  if (isSubSection(part.partKey)) parentParts.add(basePartKey(part.partKey))
 }
 for (const pk of parentParts) {
   if (topDocs.has(pk)) continue

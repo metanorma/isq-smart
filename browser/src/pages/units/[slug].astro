@@ -5,6 +5,7 @@ import MathRenderer from '../../components/MathRenderer.vue'
 import UnitOntologyPanel from '../../components/UnitOntologyPanel.vue'
 import { units } from '../../data/generated/unitsdb'
 import { getPartMeta, partUrl, entryUrl } from '../../data/PartRegistry'
+import { comparePartKeys } from '../../data/partKey'
 import { symbolCache } from '../../data/generated/domain-index'
 import { unitUrns } from '../../data/urn'
 
@@ -42,11 +43,7 @@ const partGroups: PartGroup[] = unit ? (() => {
     partKey: pk,
     meta: getPartMeta(pk),
     quantities: qs,
-  })).sort((a, b) => {
-    const pa = a.partKey.includes('-') ? a.partKey.split('-').map(Number) : [Number(a.partKey), 0]
-    const pb = b.partKey.includes('-') ? b.partKey.split('-').map(Number) : [Number(b.partKey), 0]
-    return pa[0] !== pb[0] ? pa[0] - pb[0] : pa[1] - pb[1]
-  })
+  })).sort((a, b) => comparePartKeys(a.partKey, b.partKey))
 })() : []
 ---
 

@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, toRef } from 'vue'
 import MathRenderer from './MathRenderer.vue'
 import LanguageToggle from './LanguageToggle.vue'
 import ReferenceBadge from './ReferenceBadge.vue'
 import { entryUrl, EntryModel } from '../data/index'
+import { useLocalFilter } from '../composables/useLocalFilter'
+import { stripStem } from '../lib/text'
 import type { Entry, Lang } from '../data/types'
 
 const props = defineProps<{
@@ -15,19 +17,28 @@ const props = defineProps<{
   sectionAccentStyle: string
 }>()
 
-const filter = ref('')
 const lang = ref<'en' | 'fr' | 'both'>('en')
 
-const filtered = computed(() => {
-  if (!filter.value.trim()) return props.entries
-  const q = filter.value.toLowerCase()
-  return props.entries.filter(e => {
-    const name = EntryModel.name(e, lang.value).toLowerCase()
-    const syms = (e.symbols ?? []).join(' ').toLowerCase()
-    const def = (e.def.en ?? '').toLowerCase()
-    return name.includes(q) || syms.includes(q) || def.includes(q) || e.num.includes(q)
-  })
-})
+interface SearchableEntry extends Entry {
+  _search: string
+}
+
+const searchable = computed<SearchableEntry[]>(() =>
+  props.entries.map(e => ({
+    ...e,
+    _search: [
+      EntryModel.name(e, lang.value),
+      (e.symbols ?? []).join(' '),
+      (e.def.en ?? ''),
+      e.num,
+    ].join(' ').toLowerCase(),
+  })),
+)
+
+const { searchQuery: filter, filtered, hl } = useLocalFilter(
+  toRef(searchable),
+  ['_search'],
+)
 
 interface SectionGroup {
   prefix: string
@@ -50,17 +61,6 @@ const sections = computed<SectionGroup[]>(() => {
 })
 
 const hasSections = computed(() => sections.value.some(s => s.entries.length > 1))
-
-function stripStem(text: string): string {
-  return text.replace(/stem:\[([^\]]+)\]/g, (_, expr) => expr.replace(/^"|"$/g, ''))
-}
-
-function hl(text: string): string {
-  const q = filter.value.trim()
-  if (!q) return text
-  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  return text.replace(new RegExp(`(${escaped})`, 'gi'), '<mark class="bg-amber-200/80 text-amber-900 rounded-sm px-0.5 -mx-0.5">$1</mark>')
-}
 </script>
 
 <template>

@@ -7,6 +7,7 @@ import {
 import { entryUrn } from '../data/urn'
 import { generateEntryJsonLd, jsonLdToTurtle } from '../data/serialization'
 import { entryUrl } from '../data'
+import { downloadFile } from '../lib/download'
 import { useToast } from '../composables/useToast'
 
 const toast = useToast()
@@ -59,13 +60,7 @@ function copyContent() {
 }
 
 function downloadContent() {
-  const blob = new Blob([activeContent.value], { type: 'text/plain' })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = activeFilename.value
-  a.click()
-  URL.revokeObjectURL(url)
+  downloadFile(activeContent.value, activeFilename.value, 'text/plain')
 }
 
 const tabs = [
