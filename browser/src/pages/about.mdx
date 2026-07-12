@@ -1,0 +1,428 @@
+---
+layout: ../layouts/MdxLayout.astro
+title: "About ISO 80000 & IEC 80000 — ISQ Browser"
+description: "The international standard for quantities, units, and mathematical notation. Jointly published by ISO and IEC."
+---
+import IsqLogo from '../components/IsqLogo.vue'
+import Breadcrumb from '../components/Breadcrumb.astro'
+import SectionHead from '../components/SectionHead.astro'
+import { getPartsByDomain, publisherOf } from '../data/PartRegistry'
+import { partEntryCount } from '../data/index'
+import { asset } from '../lib/asset'
+
+export const qtyParts = getPartsByDomain('quantities')
+export const mathParts = getPartsByDomain('math')
+
+export const audiences = [
+  { icon: '🔬', title: 'Scientists & Researchers', desc: 'Canonical definitions for publishing unambiguous results and peer-reviewed papers.' },
+  { icon: '⚙️', title: 'Engineers', desc: 'Consistent notation for specifications, calculations, and cross-disciplinary communication.' },
+  { icon: '📏', title: 'Metrologists', desc: 'The ISQ and SI framework underlying measurement traceability and calibration.' },
+  { icon: '📋', title: 'Standards Developers', desc: 'The "standard of standards" — every ISO and IEC technical committee references the ISO 80000 & IEC 80000 series for notation.' },
+  { icon: '🎓', title: 'Educators', desc: 'The vocabulary used in physics, chemistry, and engineering textbooks worldwide.' },
+  { icon: '💻', title: 'Software & Data', desc: 'Unambiguous unit and quantity definitions for databases, simulations, and data exchange.' },
+]
+
+export const concepts = [
+  { title: 'Quantities', icon: '📐', items: [
+    { label: 'Base quantities', detail: 'Seven independent foundations: length, mass, time, electric current, temperature, amount of substance, luminous intensity' },
+    { label: 'Derived quantities', detail: 'All others, defined by equations relating them to base quantities' },
+    { label: 'Every measurement', detail: 'quantity value = number × unit' },
+  ]},
+  { title: 'Dimensions', icon: '🔤', items: [
+    { label: 'Dimension expression', detail: 'dim(Q) = L^α · M^β · T^γ · I^δ · Θ^ε · N^ζ · J^η' },
+    { label: 'Same dimension = same kind', detail: 'Quantities sharing a dimension can be meaningfully compared' },
+    { label: 'Dimension one', detail: 'Exponents all zero — the ISO 80000 & IEC 80000 series recommends explicit units (rad, m/m) to avoid ambiguity' },
+  ]},
+  { title: 'Units', icon: '⚖️', items: [
+    { label: 'Quantity equations', detail: 'Preferred — relate quantities directly, independent of unit choice' },
+    { label: 'Coherent systems', detail: 'Derived units require no numerical factors other than 1' },
+    { label: 'SI-first', detail: 'SI coherent units listed first, accepted non-SI and deprecated units clearly distinguished' },
+  ]},
+]
+
+export const timeline = [
+  { year: '1950s', label: 'IEC 60027 series begins — letter symbols for electrical technology', publisher: 'IEC', era: 'predecessor' },
+  { year: '1960s', label: 'ISO 31 series begins — 14 parts covering quantities and units across the physical sciences', publisher: 'ISO', era: 'predecessor' },
+  { year: '2006', label: 'First ISO 80000 & IEC 80000 parts published, harmonizing ISO 31 and IEC 60027 into one series', publisher: 'ISO & IEC', era: 'launch' },
+  { year: '2009', label: 'Part 1 (General) first edition — formally establishes ISQ terminology', publisher: 'ISO' },
+  { year: '2019', label: 'SI redefinition — kilogram, ampere, kelvin, mole defined by fundamental constants', publisher: 'BIPM', highlight: true },
+  { year: '2019', label: 'Parts 2–5, 7, 9–10 revised — updated definitions aligned with the new SI', publisher: 'ISO' },
+  { year: '2022', label: 'Part 1 second edition — restructured around concepts and terminology for the new SI', publisher: 'ISO' },
+  { year: '2022', label: 'Part 6 second edition — adds elementary charge and induced voltage, aligned with redefined SI', publisher: 'IEC' },
+  { year: '2025', label: 'Part 13 second edition — new binary prefix definitions (robi, quebi) matching SI prefixes', publisher: 'IEC' },
+]
+
+export const publisherLogo = (pub) => {
+  if (pub === 'BIPM') return asset('/img/logo-bipm.svg')
+  if (pub === 'IEC') return asset('/img/logo-iec.svg')
+  return asset('/img/logo-iso.svg')
+}
+
+export const ecosystem = [
+  { name: 'BIPM SI Brochure', url: 'https://www.bipm.org/en/publications/si-brochure', logo: asset('/img/logo-bipm.svg'), accent: 'brand', desc: 'The definitive reference for the International System of Units. Normative reference for the ISO 80000 & IEC 80000 series — the seven SI base units that the series builds upon.' },
+  { name: 'IEC 60050 (IEV)', url: 'https://www.electropedia.org', logo: asset('/img/logo-iec.svg'), accent: 'brand', desc: 'International Electrotechnical Vocabulary — a comprehensive multilingual terminology database, heavily cited in IEC-published parts (6, 13).' },
+  { name: 'ISO/IEC Guide 99 (VIM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: asset('/img/logo-bipm.svg'), accent: 'brand', desc: 'International Vocabulary of Metrology — normative reference for the ISO 80000 & IEC 80000 series, defining core concepts like quantity, unit, and measurement.' },
+  { name: 'NIST SP 811', url: 'https://www.nist.gov/pml/special-publication-811', logo: '', accent: 'brand', desc: 'Guide for SI usage in the United States. Bridges international standards and US practice.' },
+  { name: 'QUDT', url: 'https://qudt.org', logo: asset('/img/logo-qudt.svg'), accent: 'violet', desc: 'RDF-based vocabulary for quantities, units, and dimensions as linked data. Cross-referenced in UnitsDB.' },
+  { name: 'UCUM', url: 'https://ucum.org', logo: asset('/img/logo-ucum.svg'), accent: 'violet', desc: 'Unified Code for Units of Measure — a coding system used primarily in healthcare and life sciences.' },
+  { name: 'Metanorma', url: 'https://www.metanorma.org', logo: '', accent: 'slate', desc: 'Document authoring toolchain that integrates UnitsML markup into standards documents via AsciiDoc with unitsml() calls.' },
+  { name: 'CODATA', url: 'https://codata.org', logo: '', accent: 'slate', desc: 'Committee on Data for Science and Technology — maintains internationally recommended values of fundamental physical constants, referenced in the ISO 80000 & IEC 80000 series.' },
+  { name: 'ISO/IEC Guide 98 (GUM)', url: 'https://www.bipm.org/en/committees/jc/jcgm', logo: asset('/img/logo-bipm.svg'), accent: 'slate', desc: 'Guide to the Expression of Uncertainty in Measurement — referenced in the ISO 80000 & IEC 80000 series bibliography as the companion standard for measurement uncertainty.' },
+]
+
+export const accentCardBg = (accent) => {
+  const map = { brand: 'bg-brand-50 text-brand-600', iec: 'bg-iec-50 text-iec-600', violet: 'bg-violet-50 text-violet-600', slate: 'bg-slate-100 dark:bg-dark-700 text-slate-500 dark:text-slate-400' }
+  return map[accent] || map.slate
+}
+
+<div>
+  {/* Hero */}
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-[#351a38] to-iec-900">
+    <div class="absolute inset-0 hero-pattern"></div>
+    <div class="grain-overlay absolute inset-0"></div>
+    <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-brand-500/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-iec-500/10 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4"></div>
+
+    <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-brand-400/20"></div>
+    <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10"></div>
+    <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]"></div>
+    <div class="hero-float-5 absolute top-[60%] left-[15%] w-2 h-2 rounded-full bg-iec-400/15"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="max-w-3xl page-enter">
+        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About' }]} variant="dark" />
+        <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight heading-serif leading-[1.1]">About ISO 80000 & IEC 80000</h1>
+        <p class="mt-4 text-lg text-brand-200/80 heading-serif">The international standard for quantities, units, and mathematical notation</p>
+        <p class="mt-3 text-sm text-brand-300/50 leading-relaxed max-w-2xl">Jointly published by ISO and IEC, this series defines the International System of Quantities (ISQ) — the universal language of measurement used across science, engineering, and commerce worldwide.</p>
+      </div>
+    </div>
+    <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+  </section>
+
+  {/* The ISQ Emblem */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-14">
+        <SectionHead
+          eyebrow="Identity"
+          title="The ISQ Emblem"
+          subtitle="Two organizations, one system — fused into a single identity."
+        />
+      </div>
+
+      <div class="relative max-w-xl mx-auto mb-16">
+        <div class="flex justify-center mb-6"><IsqLogo class="h-28 sm:h-32 w-auto drop-shadow-xl rounded-xl" /></div>
+        <div class="flex justify-center mb-5"><div class="w-px h-6 bg-gradient-to-b from-violet-400/50 to-violet-400/0"></div></div>
+        <div class="flex items-center">
+          <div class="flex flex-col items-center gap-2 flex-shrink-0">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-red-50 to-red-100/60 dark:from-red-950/40 dark:to-red-900/20 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center shadow-sm"><img src={asset('/img/logo-iso.svg')} alt="ISO" class="h-7 w-auto" /></div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-red-500 dark:text-red-400">ISO</span>
+          </div>
+          <div class="flex-1 mx-3 relative flex items-center">
+            <div class="w-full h-[3px] rounded-full bg-gradient-to-r from-red-400 via-violet-500 to-blue-500 dark:from-red-500 dark:via-violet-500 dark:to-blue-500"></div>
+            <div class="absolute left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-violet-400 shadow-[0_0_10px_rgba(139,92,246,0.5)] border-2 border-white dark:border-dark-900 animate-pulse"></div>
+          </div>
+          <div class="flex flex-col items-center gap-2 flex-shrink-0">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/60 dark:from-blue-950/40 dark:to-blue-900/20 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center shadow-sm"><img src={asset('/img/logo-iec.svg')} alt="IEC" class="h-7 w-auto" /></div>
+            <span class="text-[10px] font-bold uppercase tracking-[0.12em] text-blue-500 dark:text-blue-400">IEC</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-3 gap-5">
+        <div class="relative p-5 pt-6 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden hover:shadow-sm hover:-translate-y-px transition-all">
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-red-400 to-red-500"></div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center overflow-hidden"><img src={asset('/img/logo-iso.svg')} alt="ISO" class="h-4 w-auto" /></div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Left Half</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">The left portion carries the typographic weight and crimson palette of <a href="https://www.iso.org" target="_blank" rel="noopener" class="text-red-600 dark:text-red-400 hover:underline">ISO</a>'s visual identity — the bold red representing international standardization since 1947.</p>
+        </div>
+
+        <div class="relative p-5 pt-6 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden hover:shadow-sm hover:-translate-y-px transition-all">
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-red-400 via-violet-500 to-blue-500"></div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-red-50 to-blue-50 dark:from-red-950/30 dark:to-blue-950/30 border border-violet-200/60 dark:border-violet-800/40 flex items-center justify-center"><span class="text-violet-600 dark:text-violet-400 text-[10px] font-bold">ISQ</span></div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">The Fusion</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Where crimson meets cobalt, violet emerges — ISO and IEC merged into one system. The continuous gradient represents coverage of <em>all</em> quantities across every domain of science and engineering.</p>
+        </div>
+
+        <div class="relative p-5 pt-6 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden hover:shadow-sm hover:-translate-y-px transition-all">
+          <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-blue-400 to-blue-500"></div>
+          <div class="flex items-center gap-2.5 mb-3">
+            <div class="w-8 h-8 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center overflow-hidden"><img src={asset('/img/logo-iec.svg')} alt="IEC" class="h-4 w-auto" /></div>
+            <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100">Right Half</h3>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">The right portion adopts the deep blue of <a href="https://www.iec.ch" target="_blank" rel="noopener" class="text-blue-600 dark:text-blue-400 hover:underline">IEC</a>'s branding — the blue of electrotechnology, representing the IEC's domain since 1906.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* The Need */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <SectionHead eyebrow="Why it exists" title="The Need for a Universal Standard" />
+    </div>
+    <div class="grid sm:grid-cols-2 gap-8 sm:gap-12">
+      <div class="p-6 rounded-2xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/40 border border-amber-200/60 dark:border-amber-800/40 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg></div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The Problem</h3>
+        </div>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">Across scientific and engineering disciplines, quantities and units are expressed in many different ways. Different symbols for the same quantity, inconsistent unit choices, and varying notation habits create friction in communication, data exchange, and collaboration. Systems of quantities can be defined in multiple self-consistent ways — which treatment to adopt is partly convention.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/50 dark:border-emerald-800/30">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 border border-emerald-200/60 dark:border-emerald-800/40 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The Standard</h3>
+        </div>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px]">ISO 80000 & IEC 80000 codify the treatment that has become nearly universally accepted across the physical sciences — the one found in most textbooks and familiar to scientists and technologists worldwide. They provide unambiguous definitions, symbols, and units so that any measurement, equation, or specification is interpreted identically regardless of who reads it.</p>
+      </div>
+    </div>
+    <div class="mt-8 rounded-2xl bg-slate-50 dark:bg-dark-800/50 border border-slate-200/60 dark:border-dark-600/60 p-6 sm:p-8">
+      <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed italic">The set of all quantities and their interrelationships is effectively infinite and constantly expanding as new fields of science and technology emerge. The ISO 80000 & IEC 80000 series provides a curated selection of the most commonly used quantities — and any quantity not listed can still be handled correctly as long as it relates to those that are.</p>
+    </div>
+  </section>
+
+  {/* What It Is */}
+  <section class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-10">
+        <SectionHead eyebrow="Overview" title="What It Is" />
+      </div>
+      <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-[15px] max-w-3xl mx-auto text-center mb-10">
+        ISO 80000 & IEC 80000 are jointly developed by <a href="https://www.iso.org/committee/46202.html" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 underline underline-offset-2 decoration-brand-300/50">ISO/TC 12</a> and <a href="https://iec.ch/dyn/www/f?p=103:7:528830564991517::::FSP_ORG_ID,FSP_LANG_ID:1215,25" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 underline underline-offset-2 decoration-brand-300/50">IEC/TC 25</a> — both named "Quantities and units." The series defines the International System of Quantities (ISQ), the system of quantities underlying the International System of Units (SI). It superseded the earlier ISO 31 and portions of IEC 60027, harmonizing two previously separate standard families into one.
+      </p>
+      <div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 text-center">
+          <div class="flex items-center justify-center gap-1.5 mb-3"><img src={asset('/img/logo-iso.svg')} alt="ISO" class="h-5 w-auto" /><span class="text-slate-300 dark:text-slate-600 text-[10px]">+</span><img src={asset('/img/logo-iec.svg')} alt="IEC" class="h-5 w-auto" /></div>
+          <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Joint ISO & IEC Standard</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Developed jointly by ISO/TC 12 and IEC/TC 25</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 text-center">
+          <div class="font-mono text-xs text-brand-600 dark:text-brand-400 bg-brand-50 dark:bg-brand-950/40 px-2 py-1 rounded inline-block mb-3">ISQ</div>
+          <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Defines the ISQ</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">International System of Quantities — the framework underlying the SI</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 text-center">
+          <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-dark-700 px-2 py-1 rounded inline-block mb-3">ISO 31 → ISO 80000 & IEC 80000</div>
+          <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">Harmonized Successor</div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Replaces ISO 31 (14 parts) and portions of IEC 60027</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Scope */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <SectionHead
+        eyebrow="Coverage"
+        title="Scope of the Series"
+        subtitle="13 parts covering all major domains of physical science, plus mathematical notation. ISO publishes Parts 1–5, 7–12; IEC publishes Parts 6 and 13."
+      />
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2.5 mb-6">
+      {[...qtyParts, ...mathParts].map((p) => (
+        <a href={`/quantities/part-${p.partKey}`} class={`group relative p-4 rounded-xl border transition-all hover:shadow-sm ${publisherOf(p.partKey) === 'IEC' ? 'bg-teal-50/30 dark:bg-teal-950/20 border-teal-200/50 dark:border-teal-800/40 hover:border-teal-300 dark:hover:border-teal-700' : 'bg-brand-50/30 dark:bg-brand-950/20 border-brand-200/50 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700'}`}>
+          <div class="text-lg mb-1.5">{p.icon}</div>
+          <div class={`text-[10px] font-bold uppercase tracking-wider mb-1 ${publisherOf(p.partKey) === 'IEC' ? 'text-teal-500 dark:text-teal-400' : 'text-brand-500 dark:text-brand-400'}`}>{publisherOf(p.partKey)}</div>
+          <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Part {p.partKey}</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">{p.title}</div>
+          <div class="text-[10px] text-slate-400 dark:text-slate-500 mt-1.5">{partEntryCount(p.partKey)} entries</div>
+        </a>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap gap-3 text-xs text-slate-400 dark:text-slate-500 justify-center">
+      <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-brand-400"></span> ISO-published</span>
+      <span class="flex items-center gap-1.5"><span class="w-2 h-2 rounded-full bg-teal-400"></span> IEC-published</span>
+      <span class="text-slate-300 dark:text-slate-600">·</span>
+      <span>Does not cover ordinal quantities or nominal properties</span>
+    </div>
+  </section>
+
+  {/* Who It's For */}
+  <section class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-10">
+        <SectionHead
+          eyebrow="Audience"
+          title="Who It's For"
+          subtitle="Every ISO and IEC standard that involves physical quantities uses ISO 80000 & IEC 80000 notation. The series' reach extends far beyond any single discipline — it is the shared language of measurement."
+        />
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {audiences.map((a) => (
+          <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+            <div class="text-2xl mb-2">{a.icon}</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100">{a.title}</div>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-1.5 leading-relaxed">{a.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Key Concepts */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <SectionHead
+        eyebrow="Foundations"
+        title="Key Concepts"
+        subtitle="Three foundational ideas underpin the entire standard."
+      />
+    </div>
+    <div class="grid sm:grid-cols-3 gap-6">
+      {concepts.map((c) => (
+        <div class="relative p-6 rounded-2xl bg-slate-50/50 dark:bg-dark-800/40 border border-slate-200/50 dark:border-dark-600/50">
+          <div class="text-2xl mb-3">{c.icon}</div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif mb-4">{c.title}</h3>
+          <div class="space-y-3">
+            {c.items.map((item) => (
+              <div>
+                <div class="text-xs font-semibold text-brand-600 dark:text-brand-400 mb-0.5">{item.label}</div>
+                <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{item.detail}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div class="mt-8 p-5 rounded-xl bg-brand-50/40 dark:bg-brand-950/30 border border-brand-200/40 dark:border-brand-800/30 text-center max-w-lg mx-auto">
+      <span class="font-mono text-sm text-brand-700 dark:text-brand-400">Q = {"{Q}"} · [Q]</span>
+      <p class="text-[10px] text-brand-600/60 dark:text-brand-400/50 mt-1">A quantity equals its numerical value times its unit (Maxwell, 1873)</p>
+    </div>
+  </section>
+
+  {/* Timeline */}
+  <section class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-12">
+        <SectionHead eyebrow="History" title="Evolution" />
+      </div>
+      <div class="relative max-w-2xl mx-auto">
+        <div class="absolute left-[23px] top-0 bottom-0 w-px bg-slate-200 dark:bg-dark-700"></div>
+        <div class="space-y-0">
+          {timeline.map((t, i) => (
+            <div class={`relative flex gap-5 ${i === 0 ? 'pb-6' : 'py-6'}`}>
+              <div class="relative z-10 flex-shrink-0">
+                <div class={`w-12 h-12 rounded-full border-2 flex items-center justify-center overflow-hidden ${t.highlight ? 'bg-amber-50 dark:bg-amber-950/60 border-amber-300 dark:border-amber-700' : t.era === 'predecessor' ? 'bg-slate-50 dark:bg-dark-700 border-slate-200 dark:border-dark-600' : t.publisher === 'BIPM' ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800' : t.publisher === 'IEC' ? 'bg-teal-50 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800' : 'bg-brand-50 dark:bg-brand-950/40 border-brand-200 dark:border-brand-800'}`}>
+                  <img src={publisherLogo(t.publisher)} alt={t.publisher} class={`w-6 h-6 object-contain ${t.era === 'predecessor' ? 'opacity-40' : ''}`} />
+                </div>
+              </div>
+              <div class={`flex-1 pt-1 min-w-0 ${t.era === 'predecessor' ? 'opacity-50' : ''}`}>
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <span class="text-sm font-mono font-bold text-slate-900 dark:text-slate-100">{t.year}</span>
+                  <span class={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${t.publisher === 'BIPM' ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400' : t.publisher === 'IEC' ? 'bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400' : 'bg-brand-50 dark:bg-brand-950/40 text-brand-600 dark:text-brand-400'}`}>{t.publisher}</span>
+                  {t.highlight && <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400">Milestone</span>}
+                  {t.era === 'predecessor' && <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-400 dark:text-slate-500">Predecessor</span>}
+                  {t.era === 'launch' && <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400">Harmonization</span>}
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{t.label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Ecosystem */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <SectionHead
+        eyebrow="Related Work"
+        title="Ecosystem"
+        subtitle="Projects and standards that build on or cross-reference ISO 80000 & IEC 80000."
+      />
+    </div>
+
+    <a href="https://unitsml.org" target="_blank" rel="noopener" class="group block mb-8">
+      <div class="relative rounded-2xl overflow-hidden border border-teal-200/60 dark:border-teal-800/40 bg-gradient-to-br from-teal-50/60 dark:from-teal-950/30 to-white dark:to-dark-900 p-6 sm:p-8 hover:shadow-lg hover:border-teal-300 dark:hover:border-teal-700 transition-all">
+        <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-teal-500/[0.04] dark:bg-teal-500/[0.02] rounded-full blur-[100px] -translate-y-1/2 translate-x-1/4"></div>
+        <div class="relative flex flex-col sm:flex-row gap-6">
+          <div class="flex-shrink-0 flex items-center gap-3">
+            <div class="w-16 h-16 rounded-2xl bg-white dark:bg-teal-900/30 border border-teal-200/60 dark:border-teal-800/40 flex items-center justify-center shadow-sm"><img src={asset('/img/unitsml-symbol.svg')} alt="UnitsML" class="w-9 h-9" /></div>
+            <img src={asset('/img/unitsml-text.svg')} alt="UnitsML" class="h-6 w-auto hidden sm:block" />
+          </div>
+          <div class="min-w-0 flex-1">
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-xs font-bold uppercase tracking-wider text-teal-600 dark:text-teal-400 bg-teal-100 dark:bg-teal-900/40 px-2 py-0.5 rounded">Featured Project</span>
+              <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-teal-50 dark:bg-teal-950/40 text-teal-500 dark:text-teal-400">Machine-Readable</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-teal-700 dark:group-hover:text-teal-400 transition-colors heading-serif"><span class="sm:hidden">UnitsML & UnitsDB</span><span class="hidden sm:inline">& UnitsDB</span></h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-2xl">Machine-readable models for unambiguously encoding scientific units in XML. UnitsDB provides a comprehensive YAML database of 700+ units and 180+ quantities, listing the ISO 80000 & IEC 80000 series as a primary data source.</p>
+            <div class="mt-3 flex items-center gap-2 text-xs text-teal-600 dark:text-teal-400 font-medium"><span>Visit unitsml.org</span><svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></div>
+          </div>
+        </div>
+      </div>
+    </a>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+      {ecosystem.map((e) => (
+        <a href={e.url} target="_blank" rel="noopener" class="group p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+          <div class="flex items-center gap-3 mb-3">
+            {e.logo ? (<div class="w-8 h-8 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-100 dark:border-dark-600 flex items-center justify-center flex-shrink-0"><img src={e.logo} alt={e.name} class="w-5 h-5 object-contain" /></div>) : (<div class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600 flex items-center justify-center flex-shrink-0"><span class="text-xs font-bold text-slate-400 dark:text-slate-500">{e.name.charAt(0)}</span></div>)}
+            <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors leading-snug">{e.name}</h4>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-3">{e.desc}</p>
+          <div class="mt-2"><span class={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${accentCardBg(e.accent)}`}>{e.accent === 'brand' || e.accent === 'iec' ? 'Normative' : 'Reference'}</span></div>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  {/* Provided by */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <SectionHead
+        eyebrow="Stewardship"
+        title="Provided by"
+        subtitle="This information service is provided by the ISO technical committee responsible for the standard."
+      />
+    </div>
+    <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
+      <a href="https://www.iso.org/committee/46202.html" target="_blank" rel="noopener" class="group p-6 rounded-2xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-red-200 dark:hover:border-red-800 hover:shadow-sm transition-all">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-red-50 to-red-100/60 dark:from-red-950/40 dark:to-red-900/20 border border-red-200/60 dark:border-red-800/40 flex items-center justify-center flex-shrink-0"><img src={asset('/img/logo-iso.svg')} alt="ISO" class="h-7 w-auto" /></div>
+          <div class="min-w-0 flex-1">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-red-600 dark:group-hover:text-red-400 transition-colors heading-serif">ISO/TC 12</h3>
+            <p class="text-xs font-semibold text-red-500 dark:text-red-400 mt-0.5">Quantities and units</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">The ISO technical committee responsible for the international standard on quantities and units. ISO/TC 12 develops and maintains the ISO 80000 parts covering physics, chemistry, and the broader physical sciences.</p>
+            <div class="mt-3 inline-flex items-center gap-1 text-xs text-red-600 dark:text-red-400 font-medium"><span>iso.org/committee/46202</span><svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></div>
+          </div>
+        </div>
+      </a>
+      <a href="https://iec.ch/dyn/www/f?p=103:7:528830564991517::::FSP_ORG_ID,FSP_LANG_ID:1215,25" target="_blank" rel="noopener" class="group p-6 rounded-2xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-blue-200 dark:hover:border-blue-800 hover:shadow-sm transition-all">
+        <div class="flex items-start gap-4">
+          <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-50 to-blue-100/60 dark:from-blue-950/40 dark:to-blue-900/20 border border-blue-200/60 dark:border-blue-800/40 flex items-center justify-center flex-shrink-0"><img src={asset('/img/logo-iec.svg')} alt="IEC" class="h-7 w-auto" /></div>
+          <div class="min-w-0 flex-1">
+            <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors heading-serif">IEC/TC 25</h3>
+            <p class="text-xs font-semibold text-blue-500 dark:text-blue-400 mt-0.5">Quantities and units</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-3 leading-relaxed">The IEC technical committee with the same name and scope. IEC/TC 25 develops and maintains the IEC 80000 parts covering electrotechnology (Part 6) and information science and technology (Part 13).</p>
+            <div class="mt-3 inline-flex items-center gap-1 text-xs text-blue-600 dark:text-blue-400 font-medium"><span>iec.ch — TC 25</span><svg class="w-3 h-3 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <p class="text-xs text-slate-400 dark:text-slate-500 text-center mt-6">Content copyright © ISO and IEC. All rights reserved. This site provides independently developed, machine-readable views of the published standard.</p>
+  </section>
+
+  {/* CTA */}
+  <section class="border-t border-slate-200/60 dark:border-dark-600/60 bg-slate-50/30 dark:bg-dark-900/30">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+      <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-4">Start Browsing</h2>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Explore the complete catalog of quantities, units, and mathematical notation.</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="/quantities" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition-colors shadow-sm shadow-brand-600/25">Browse Quantities<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></a>
+        <a href="/units" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 transition-colors">Units</a>
+        <a href="/dimensions" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 transition-colors">Dimensions</a>
+        <a href="https://www.iso.org/standard/76398.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 text-sm font-medium hover:text-slate-700 dark:hover:text-slate-300 transition-colors">ISO Store<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg></a>
+      </div>
+    </div>
+  </section>
+</div>
