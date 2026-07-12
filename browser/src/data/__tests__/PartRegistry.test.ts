@@ -69,8 +69,10 @@ describe('getPartDocument', () => {
     expect(getPartDocument('99')).toBeUndefined()
   })
 
-  it('excludes configured parts', () => {
-    expect(getPartDocument('2')).toBeUndefined()
+  it('includes Part 2 (math, now enabled)', () => {
+    const doc = getPartDocument('2')
+    expect(doc).toBeDefined()
+    expect(doc!.title).toBe('Mathematical Signs and Symbols')
   })
 
   it('all visible documents have required fields', () => {
@@ -90,8 +92,10 @@ describe('getPartDocument', () => {
 // ── Part sections ──
 
 describe('getSectionsForDocument', () => {
-  it('excludes sections for excluded parts', () => {
-    expect(getSectionsForDocument('2')).toHaveLength(0)
+  it('returns sections for Part 2 (math, now enabled)', () => {
+    const sections = getSectionsForDocument('2')
+    expect(sections.length).toBeGreaterThan(0)
+    expect(sections.every(s => s.parentDocument === '2')).toBe(true)
   })
 
   it('returns 1 section for Part 11 (sections are data-internal, not separate parts)', () => {
@@ -120,8 +124,10 @@ describe('getPartMeta', () => {
     expect(meta!.title).toBe('Space and Time')
   })
 
-  it('excludes configured sub-sections', () => {
-    expect(getPartMeta('2-5')).toBeUndefined()
+  it('finds math sub-sections (now enabled)', () => {
+    const meta = getPartMeta('2-5')
+    expect(meta).toBeDefined()
+    expect(meta!.domain).toBe('math')
   })
 
   it('falls back to base part for unknown sub-keys', () => {
@@ -134,9 +140,10 @@ describe('getPartMeta', () => {
 // ── Domain grouping ──
 
 describe('getPartsByDomain', () => {
-  it('excludes math domain when all math parts are excluded', () => {
+  it('returns math parts for math domain (now enabled)', () => {
     const parts = getPartsByDomain('math')
-    expect(parts).toHaveLength(0)
+    expect(parts.length).toBeGreaterThan(0)
+    expect(parts.every(p => p.domain === 'math')).toBe(true)
   })
 
   it('returns quantity parts for quantities domain', () => {
@@ -154,8 +161,8 @@ describe('partUrl', () => {
     expect(partUrl('4')).toBe('/quantities/part-4')
   })
 
-  it('returns root for excluded parts', () => {
-    expect(partUrl('2-5')).toBe('/')
+  it('generates math URLs for Part 2 sub-sections', () => {
+    expect(partUrl('2-5')).toBe('/math/part-2-5')
   })
 
   it('returns root for unknown parts', () => {

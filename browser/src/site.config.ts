@@ -4,7 +4,7 @@
  */
 
 /** Parts to exclude from build and runtime. Base parts exclude sub-sections (e.g. '2' excludes '2-5', '2-6', …). */
-const EXCLUDED_PARTS: readonly string[] = ['2']
+const EXCLUDED_PARTS: readonly string[] = []
 
 const excluded = new Set(EXCLUDED_PARTS)
 
