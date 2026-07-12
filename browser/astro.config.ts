@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config'
 import vue from '@astrojs/vue'
+import mdx from '@astrojs/mdx'
 import tailwindcss from '@tailwindcss/vite'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
@@ -41,7 +42,7 @@ const BUILD_BASE_PATH = '/isq-smart/'
 export default defineConfig({
   base: isDev ? '/' : BUILD_BASE_PATH,
   output: 'static',
-  integrations: [vue()],
+  integrations: [vue(), mdx()],
   vite: {
     plugins: [tailwindcss(), yamlDataPlugin(paths), ontologyDataPlugin(paths)],
   },
