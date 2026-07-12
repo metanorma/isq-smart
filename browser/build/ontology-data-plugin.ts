@@ -2,10 +2,7 @@ import type { Plugin } from 'vite'
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { Parser, Store } from 'n3'
-import { SiteConfig } from '../src/site.config'
 import type { BuildPaths } from './types'
-
-const isExcluded = SiteConfig.isExcluded
 
 export function ontologyDataPlugin(paths: BuildPaths): Plugin {
   const { ontologySrcDir: ontoDir, ontologyRefDir: refDir, generatedDir: genDir } = paths

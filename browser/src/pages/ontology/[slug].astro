@@ -1,36 +1,10 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { ontologyEntities, ontologyTypeMeta, ontologyPrefixes, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
+import { resolveOntologyEntityView, type OntologyEntityData } from '../../data/ontologyViewModel'
 import { toTurtle, toJsonLd } from '../../lib/rdf'
 
-interface Entity {
-  uri: string
-  qname: string
-  slug: string
-  label: string
-  description: string
-  ontology: string
-  type: string
-  scopeNote?: string
-  example?: string
-  altLabel?: string
-  seeAlso?: string[]
-  parent?: string
-  domain?: string[]
-  range?: string[]
-  functional?: boolean
-  targetClass?: string
-  targetSubjectsOf?: string
-  targetObjectsOf?: string
-  constraints?: { path: string; minCount?: number; maxCount?: number; datatype?: string; nodeKind?: string; classValue?: string; hasValue?: string; uniqueLang?: boolean }[]
-  scheme?: string
-  instanceOf?: string[]
-  topConcepts?: string[]
-  version?: string
-  imports?: string[]
-  isPartOf?: string[]
-  identifier?: string
-}
+type Entity = OntologyEntityData
 
 export function getStaticPaths() {
   return ontologyEntities
@@ -65,178 +39,34 @@ function badgeColor(e: Entity) {
   return 'bg-slate-100 text-slate-600 dark:bg-dark-700 dark:text-slate-400'
 }
 
-// Pre-compute all derived data
-const parentOntologyEntity = entity && entity.type !== 'ontology'
-  ? allEntities.find(e => e.type === 'ontology' && e.ontology === entity.ontology)
-  : null
+// Resolve all derived views via the indexed view model
+const view = entity ? resolveOntologyEntityView(entity, allEntities) : null
 
-// Prev/next navigation
-const siblings = (() => {
-  if (!entity) return { prev: undefined as Entity | undefined, next: undefined as Entity | undefined }
-  const sameType = allEntities
-    .filter(e => e.type === entity.type && e.ontology !== 'external')
-    .sort((a, b) => a.label.localeCompare(b.label))
-  const idx = sameType.findIndex(e => e.qname === entity.qname)
-  return {
-    prev: idx > 0 ? sameType[idx - 1] : undefined,
-    next: idx < sameType.length - 1 ? sameType[idx + 1] : undefined,
-  }
-})()
+const parentOntologyEntity = view?.parentOntologyEntity
+const siblings = view?.siblings ?? { prev: undefined, next: undefined }
+const subclasses = view?.subclasses ?? []
+const allDescendants = view?.allDescendants ?? []
+const targetingShapes = view?.targetingShapes ?? []
+const ancestors = view?.ancestors ?? []
+const inferredProperties = view?.inferredProperties ?? []
+const groupedUsage = view?.groupedUsage ?? []
+const instances = view?.instances ?? []
+const relatedProperties = view?.relatedProperties ?? { domain: [], range: [] }
+const schemeConcepts = view?.schemeConcepts ?? []
+const conceptShapes = view?.conceptShapes ?? []
+const ontologyClasses = view?.ontologyScoped.classes ?? []
+const ontologyObjProps = view?.ontologyScoped.objectProperties ?? []
+const ontologyDtProps = view?.ontologyScoped.datatypeProperties ?? []
+const ontologyAnnProps = view?.ontologyScoped.annotationProperties ?? []
+const ontologyShapes = view?.ontologyScoped.shapes ?? []
+const ontologyConcepts = view?.ontologyScoped.concepts ?? []
+const ontologyConceptSchemes = view?.ontologyScoped.conceptSchemes ?? []
+const ontologyIndividuals = view?.ontologyScoped.individuals ?? []
+const whereUsed = view?.whereUsed ?? []
 
-// Class features
-const subclasses = entity && entity.type === 'class'
-  ? allEntities.filter(e => e.type === 'class' && e.parent === entity.qname)
-  : []
-
-const allDescendants = (() => {
-  if (!entity || entity.type !== 'class') return []
-  const result: Entity[] = []
-  const queue = [entity.qname]
-  const seen = new Set<string>()
-  while (queue.length) {
-    const qn = queue.shift()!
-    if (seen.has(qn)) continue
-    seen.add(qn)
-    const children = allEntities.filter(e => e.type === 'class' && e.parent === qn)
-    for (const c of children) {
-      result.push(c)
-      queue.push(c.qname)
-    }
-  }
-  return result
-})()
-
-const targetingShapes = entity && entity.type === 'class'
-  ? allEntities.filter(e => e.type === 'shape' && e.targetClass === entity.qname)
-  : []
-
-const ancestors = (() => {
-  if (!entity || entity.type !== 'class') return []
-  const chain: Entity[] = []
-  let current = entity
-  let safety = 20
-  while (safety-- > 0) {
-    const pq = current.parent
-    if (!pq) break
-    const p = findByQname(pq)
-    if (!p) break
-    chain.push(p)
-    current = p
-  }
-  return chain
-})()
-
-// Inferred properties: properties whose domain includes any ancestor
-const inferredProperties = (() => {
-  if (!entity || entity.type !== 'class') return []
-  const ancestorQnames = ancestors.map(a => a.qname)
-  const allQnames = [entity.qname, ...ancestorQnames]
-  const props = allEntities.filter(e =>
-    (e.type === 'objectProperty' || e.type === 'datatypeProperty' || e.type === 'annotationProperty') &&
-    e.domain?.some(d => allQnames.includes(d))
-  )
-  return props.filter(p => !p.domain?.includes(entity.qname))
-})()
-
-// Grouped usage: properties grouped by which ancestor (or self) they belong to
-const groupedUsage = (() => {
-  if (!entity || entity.type !== 'class') return []
-  const chain = [entity, ...ancestors]
-  return chain
-    .map(cls => {
-      const clsProps = allEntities.filter(e =>
-        (e.type === 'objectProperty' || e.type === 'datatypeProperty' || e.type === 'annotationProperty') &&
-        e.domain?.includes(cls.qname)
-      )
-      return { source: cls, props: clsProps }
-    })
-    .filter(g => g.props.length > 0)
-})()
-
-// Instances
-const instances = entity && entity.type === 'class'
-  ? allEntities.filter(e => e.type === 'individual' && e.instanceOf?.includes(entity.qname))
-  : []
-
-// Properties that use this class in domain/range
-const relatedProperties = (() => {
-  if (!entity || entity.type !== 'class') return { domain: [] as Entity[], range: [] as Entity[] }
-  const qn = entity.qname
-  return {
-    domain: allEntities.filter(e =>
-      (e.type === 'objectProperty' || e.type === 'datatypeProperty' || e.type === 'annotationProperty') &&
-      e.domain?.includes(qn)
-    ),
-    range: allEntities.filter(e =>
-      (e.type === 'objectProperty' || e.type === 'datatypeProperty') &&
-      e.range?.includes(qn)
-    ),
-  }
-})()
-
-// SKOS features
-const schemeConcepts = entity && entity.type === 'conceptScheme'
-  ? allEntities.filter(e => e.type === 'concept' && e.scheme === entity.qname)
-  : []
-
-const conceptShapes = (() => {
-  if (!entity || entity.type !== 'concept') return []
-  const io = entity.instanceOf || []
-  return allEntities.filter(e => e.type === 'shape' && io.includes(e.targetClass || ''))
-})()
-
-// Ontology-specific
+// Ontology namespace lookup (not part of the view model — depends on ontologyNamespaces)
 const ontologyPrefix = entity ? entity.qname.split(':')[0] : ''
 const ontologyNs = ontologyNamespaces.find(n => n.prefix === ontologyPrefix)
-
-const ontologyClasses = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'class' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyObjProps = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'objectProperty' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyDtProps = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'datatypeProperty' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyAnnProps = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'annotationProperty' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyShapes = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'shape' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyConcepts = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'concept' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyConceptSchemes = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'conceptScheme' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-const ontologyIndividuals = entity && entity.type === 'ontology'
-  ? allEntities.filter(e => e.type === 'individual' && e.qname.startsWith(ontologyPrefix + ':'))
-  : []
-
-// Where used
-const whereUsed = (() => {
-  if (!entity) return []
-  const qn = entity.qname
-  const results: { entity: Entity; context: string }[] = []
-  for (const e of allEntities) {
-    if (e.qname === qn) continue
-    if (e.parent === qn) results.push({ entity: e, context: 'subClassOf' })
-    if (e.domain?.includes(qn)) results.push({ entity: e, context: 'domain' })
-    if (e.range?.includes(qn)) results.push({ entity: e, context: 'range' })
-    if (e.targetClass === qn) results.push({ entity: e, context: 'targetClass' })
-    if (e.targetSubjectsOf === qn) results.push({ entity: e, context: 'targetSubjectsOf' })
-    if (e.targetObjectsOf === qn) results.push({ entity: e, context: 'targetObjectsOf' })
-    if (e.scheme === qn) results.push({ entity: e, context: 'inScheme' })
-    if (e.instanceOf?.includes(qn)) results.push({ entity: e, context: 'type' })
-    if (e.isPartOf?.includes(qn)) results.push({ entity: e, context: 'isPartOf' })
-    for (const c of (e.constraints || [])) {
-      if (c.classValue === qn) results.push({ entity: e, context: 'shape constraint class' })
-      if (c.hasValue === qn) results.push({ entity: e, context: 'shape constraint hasValue' })
-    }
-  }
-  return results
-})()
 
 // RDF export (pre-computed)
 const turtleCode = entity ? toTurtle(entity) : ''

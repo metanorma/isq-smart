@@ -1,15 +1,7 @@
-import { writeFileSync, existsSync, readFileSync, readdirSync } from 'node:fs'
+import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import yaml from 'js-yaml'
 import type { RawEntry } from '../types'
-
-const PART_TITLES: Record<string, string> = {
-  '1': 'General', '2': 'Mathematics', '3': 'Space and time',
-  '4': 'Mechanics', '5': 'Thermodynamics', '6': 'Electromagnetism',
-  '7': 'Light', '8': 'Acoustics', '9': 'Physical chemistry and molecular physics',
-  '10': 'Atomic and nuclear physics', '11': 'Characteristic numbers',
-  '12': 'Condensed matter physics', '13': 'Information science',
-}
+import { PART_TITLES } from '../shared'
 
 export function buildXrefs(
   allEntries: RawEntry[],

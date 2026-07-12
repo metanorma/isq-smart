@@ -1,18 +1,9 @@
 import { writeFileSync, existsSync, readFileSync, readdirSync } from 'node:fs'
 import { resolve } from 'node:path'
-import { SiteConfig } from '../../src/site.config'
 import type { RawEntry, PublicationDocumentData } from '../types'
+import type { BuildContext } from '../buildContext'
+import { PART_TITLES } from '../shared'
 import type { Designation, Definition, Remark, ISO80000Unit, DocumentClauseData, DocumentSection } from '../../src/data/types'
-
-const isExcluded = SiteConfig.isExcluded
-
-const PART_TITLES: Record<string, string> = {
-  '1': 'General', '2': 'Mathematics', '3': 'Space and time',
-  '4': 'Mechanics', '5': 'Thermodynamics', '6': 'Electromagnetism',
-  '7': 'Light', '8': 'Acoustics', '9': 'Physical chemistry and molecular physics',
-  '10': 'Atomic and nuclear physics', '11': 'Characteristic numbers',
-  '12': 'Condensed matter physics', '13': 'Information science',
-}
 
 function generateIso80000Data(rawEntries: RawEntry[]): {
   termEntries: { id: string; partKey: string; num: string; designations: Designation[]; symbols?: string[]; def: Definition; units?: ISO80000Unit[]; remarks?: Remark; bindingnessType: string; publicationDocument: string }[]
@@ -117,7 +108,7 @@ function parseAdocClauses(content: string, partKey: string, filename: string): D
   return clauses
 }
 
-function discoverDocumentSections(sourcesDir: string): DocumentSection[] {
+function discoverDocumentSections(sourcesDir: string, ctx: BuildContext): DocumentSection[] {
   const sections: DocumentSection[] = []
   if (!existsSync(sourcesDir)) return sections
 
@@ -130,7 +121,7 @@ function discoverDocumentSections(sourcesDir: string): DocumentSection[] {
     const match = dirName.match(/(?:iso|iec)-80000-(\d+)/)
     if (!match) continue
     const partKey = match[1]
-    if (isExcluded(partKey)) continue
+    if (ctx.isExcluded(partKey)) continue
 
     const possibleSections = [resolve(dirPath, 'sections'), resolve(dirPath, 'en', 'sections')]
     for (const sectionsPath of possibleSections) {
@@ -154,7 +145,7 @@ function discoverDocumentSections(sourcesDir: string): DocumentSection[] {
   return sections
 }
 
-function discoverAllProvisions(sourcesDir: string): DocumentClauseData[] {
+function discoverAllProvisions(sourcesDir: string, ctx: BuildContext): DocumentClauseData[] {
   const allClauses: DocumentClauseData[] = []
   if (!existsSync(sourcesDir)) return allClauses
 
@@ -167,7 +158,7 @@ function discoverAllProvisions(sourcesDir: string): DocumentClauseData[] {
     const match = dirName.match(/(?:iso|iec)-80000-(\d+)/)
     if (!match) continue
     const partKey = match[1]
-    if (isExcluded(partKey)) continue
+    if (ctx.isExcluded(partKey)) continue
 
     const possibleSections = [resolve(dirPath, 'sections'), resolve(dirPath, 'en', 'sections')]
     for (const sectionsPath of possibleSections) {
@@ -187,10 +178,11 @@ export function buildDocuments(
   allEntries: RawEntry[],
   sourcesDir: string,
   generatedDir: string,
+  ctx: BuildContext,
 ): void {
   const iso80000Data = generateIso80000Data(allEntries)
-  const docSections = discoverDocumentSections(sourcesDir)
-  const docClauses = discoverAllProvisions(sourcesDir)
+  const docSections = discoverDocumentSections(sourcesDir, ctx)
+  const docClauses = discoverAllProvisions(sourcesDir, ctx)
 
   writeFileSync(
     resolve(generatedDir, 'iso80000-terms.ts'),

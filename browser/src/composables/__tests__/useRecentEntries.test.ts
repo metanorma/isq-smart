@@ -31,8 +31,8 @@ describe('useRecentEntries.track', () => {
 
   it('routes math-domain entries to /math/', () => {
     const { recent, track } = useRecentEntries()
-    track(mkEntry('2-1', '2-1'), '2-1')
-    expect(recent.value[0]!.href).toBe('/math/part-2-1/2-1')
+    track(mkEntry('2-5.1', '2-5.1'), '2-5')
+    expect(recent.value[0]!.href).toBe('/math/part-2-5/2-5.1')
   })
 
   it('moves a re-tracked entry to the top instead of duplicating', () => {
