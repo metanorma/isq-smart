@@ -1,6 +1,7 @@
 import { writeFileSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import yaml from 'js-yaml'
+import { comparePartKeys } from '../../src/data/partKey'
 import type { RawEntry } from '../types'
 
 interface IsoUnit {
@@ -53,11 +54,7 @@ export function buildUnits(
       name: u.name,
       symbols: Array.from(u.symbols),
       quantityCount: u.quantities.length,
-      parts: Array.from(u.parts).sort((a, b) => {
-        const pa = a.includes('-') ? a.split('-').map(Number) : [Number(a), 0]
-        const pb = b.includes('-') ? b.split('-').map(Number) : [Number(b), 0]
-        return pa[0] !== pb[0] ? pa[0] - pb[0] : pa[1] - pb[1]
-      }),
+      parts: Array.from(u.parts).sort(comparePartKeys),
       sampleQuantities: u.quantities.slice(0, 3),
       quantities: u.quantities,
     }

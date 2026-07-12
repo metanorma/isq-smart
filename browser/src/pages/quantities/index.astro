@@ -2,7 +2,7 @@
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import EntryBrowser from '../../components/EntryBrowser.vue'
 import PageHero from '../../components/PageHero.astro'
-import { getDomain, getPartsByDomain, getPartEntryCount, isBilingual, partUrl } from '../../data/index'
+import { getDomain, getPartsByDomain, getPartEntryCount, isBilingual, partUrl, sectionLabel } from '../../data/index'
 import { quantitiesIndex, symbolCache } from '../../data/generated/domain-index'
 
 const domainKey = 'quantities' as const
@@ -41,7 +41,7 @@ const totalEntries = parts.reduce((sum, p) => sum + getPartEntryCount(p.partKey)
             <span class="text-base">{part.icon}</span>
             <div class="min-w-0">
               <div class="flex items-center gap-1">
-                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{part.parentPart ? `§${part.partKey.split('-')[1]}` : part.partKey}</span>
+                <span class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">{part.parentPart ? sectionLabel(part.partKey) : part.partKey}</span>
                 {isBilingual(part.partKey) && <span class="text-[8px] font-bold text-amber-700 bg-amber-50 border border-amber-200/60 px-1 py-px rounded leading-none">FR</span>}
               </div>
               <div class="text-[10px] text-slate-500 dark:text-slate-400 truncate">{part.title}</div>

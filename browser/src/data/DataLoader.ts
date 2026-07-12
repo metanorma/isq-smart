@@ -1,5 +1,6 @@
 import type { PartKey, PartData, Entry } from './types'
 import { partSummaries } from './generated/meta'
+import { sortPartKeys } from './partKey'
 
 const partModules = import.meta.glob<{
   default: Entry[]
@@ -12,14 +13,6 @@ const partModules = import.meta.glob<{
 function getSubKeys(partKey: string): string[] {
   const prefix = partKey + '-'
   return Object.keys(partSummaries).filter(k => k.startsWith(prefix))
-}
-
-function sortPartKeys(keys: string[]): string[] {
-  return keys.sort((a, b) => {
-    const pa = a.includes('-') ? a.split('-').map(Number) : [Number(a), 0]
-    const pb = b.includes('-') ? b.split('-').map(Number) : [Number(b), 0]
-    return pa[0] !== pb[0] ? pa[0] - pb[0] : pa[1] - pb[1]
-  })
 }
 
 export const DataLoader = {

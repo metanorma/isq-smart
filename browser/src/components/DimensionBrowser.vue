@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { toRef } from 'vue'
+import { useLocalFilter } from '../composables/useLocalFilter'
 
 interface DimVector { base: string; power: number }
 interface IsoEntry { id: string; num: string; name: string; part: string }
@@ -20,18 +21,10 @@ const props = defineProps<{
   dimensions: PhysicalDimension[]
 }>()
 
-const searchQuery = ref('')
-
-const filtered = computed(() => {
-  if (!searchQuery.value.trim()) return props.dimensions
-  const q = searchQuery.value.toLowerCase()
-  return props.dimensions.filter(d =>
-    d.name.toLowerCase().includes(q) ||
-    d.shortName.includes(q) ||
-    d.vectorNotation.toLowerCase().includes(q) ||
-    d.unitsmlId.toLowerCase().includes(q)
-  )
-})
+const { searchQuery, filtered } = useLocalFilter(
+  toRef(props, 'dimensions'),
+  ['name', 'slug', 'vectorNotation'],
+)
 </script>
 
 <template>

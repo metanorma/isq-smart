@@ -1,12 +1,13 @@
 import type { Domain, DomainInfo, PartMeta, PartKey } from './types'
 import { SiteConfig } from '../site.config'
+import { basePartKey as getBasePart } from './partKey'
 
 // ── Publisher determination (single source of truth) ──
 
 const IEC_BASE_PARTS = new Set(['6', '13'])
 
 export function publisherOf(partKey: string): 'ISO' | 'IEC' {
-  const base = partKey.includes('-') ? partKey.split('-')[0] : partKey
+  const base = getBasePart(partKey)
   return IEC_BASE_PARTS.has(base) ? 'IEC' : 'ISO'
 }
 
@@ -147,11 +148,9 @@ for (const p of PARTS) {
   list.push(p)
 }
 
-function basePartKey(partKey: string): string {
+function resolveBasePartKey(partKey: string): string {
   if (partMap.has(partKey)) return partKey
-  const idx = partKey.indexOf('-')
-  if (idx > 0) return partKey.slice(0, idx)
-  return partKey
+  return getBasePart(partKey)
 }
 
 // ── Public API ──
@@ -174,7 +173,7 @@ export function getDomain(key: Domain): DomainInfo | undefined {
 }
 
 export function getPartMeta(partKey: PartKey): PartMeta | undefined {
-  return partMap.get(basePartKey(partKey))
+  return partMap.get(resolveBasePartKey(partKey))
 }
 
 export function getAllParts(): PartMeta[] {

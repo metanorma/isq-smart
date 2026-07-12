@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { computed, ref, watch } from 'vue'
+import { computed, ref } from 'vue'
 import MathRenderer from './MathRenderer.vue'
+import { useLocalFilter } from '../composables/useLocalFilter'
+import { sectionLabel } from '../data/partKey'
 import type { PartMeta, DomainEntry } from '../data/types'
 
 const props = defineProps<{
@@ -12,39 +14,22 @@ const props = defineProps<{
 
 const isMath = computed(() => props.domainKey === 'math')
 
-const searchQuery = ref('')
 const selectedPart = ref('')
-const showCount = ref(60)
 
-const filtered = computed(() => {
-  let entries = props.index
-  if (selectedPart.value) entries = entries.filter(e => e.p === selectedPart.value)
-  if (searchQuery.value.trim()) {
-    const q = searchQuery.value.toLowerCase()
-    entries = entries.filter(e =>
-      e.t.toLowerCase().includes(q) ||
-      e.s.join(' ').toLowerCase().includes(q) ||
-      e.n.includes(q) ||
-      e.u.join(' ').toLowerCase().includes(q)
-    )
-  }
-  return entries
-})
+const partFiltered = computed(() =>
+  selectedPart.value
+    ? props.index.filter(e => e.p === selectedPart.value)
+    : props.index,
+)
 
-const visibleEntries = computed(() => filtered.value.slice(0, showCount.value))
-const hasMore = computed(() => showCount.value < filtered.value.length)
+const { searchQuery, filtered, visibleItems: visibleEntries, hasMore, showMore, clear, hl } = useLocalFilter(
+  partFiltered,
+  ['t', 'n', 's', 'u'],
+)
 
-watch(selectedPart, () => { showCount.value = 60 })
-watch(searchQuery, () => { showCount.value = 60 })
-
-function showAll() { selectedPart.value = ''; searchQuery.value = '' }
-
-function hl(text: string): string {
-  const q = searchQuery.value.trim()
-  if (!q) return text
-  const escaped = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  const re = new RegExp(`(${escaped})`, 'gi')
-  return text.replace(re, '<mark class="bg-amber-200/80 text-amber-900 rounded-sm px-0.5 -mx-0.5">$1</mark>')
+function showAll() {
+  selectedPart.value = ''
+  clear()
 }
 </script>
 
@@ -60,7 +45,7 @@ function hl(text: string): string {
           </div>
           <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0 max-sm:w-full max-sm:overflow-x-scroll max-sm:-mx-4 max-sm:px-4">
             <button @click="selectedPart = ''" :class="!selectedPart ? 'bg-brand-600 text-white border-brand-500' : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700'" class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all">All</button>
-            <button v-for="part in parts" :key="part.partKey" @click="selectedPart = part.partKey" :class="selectedPart === part.partKey ? 'bg-brand-600 text-white border-brand-500' : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700'" class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all">{{ part.parentPart ? `§${part.partKey.split('-')[1]}` : part.partKey }}</button>
+            <button v-for="part in parts" :key="part.partKey" @click="selectedPart = part.partKey" :class="selectedPart === part.partKey ? 'bg-brand-600 text-white border-brand-500' : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700'" class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all">{{ part.parentPart ? sectionLabel(part.partKey) : part.partKey }}</button>
           </div>
           <button v-if="searchQuery || selectedPart" @click="showAll" class="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:bg-dark-700 transition-colors" title="Clear filters">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -111,16 +96,16 @@ function hl(text: string): string {
               </span>
               <span class="text-slate-200">·</span>
             </template>
-            <span class="text-[10px] uppercase tracking-wider font-medium" :class="isMath ? 'text-violet-500/70' : 'text-brand-500/70'">{{ isMath && item.p.includes('-') ? `§${item.p.split('-')[1]}` : item.p }}</span>
+            <span class="text-[10px] uppercase tracking-wider font-medium" :class="isMath ? 'text-violet-500/70' : 'text-brand-500/70'">{{ isMath ? sectionLabel(item.p) : item.p }}</span>
           </div>
           <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
         </a>
       </div>
 
       <div v-if="hasMore" class="mt-6 text-center">
-        <button @click="showCount += 60" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-all">
+        <button @click="showMore" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-300 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-all">
           Show more
-          <span class="text-xs text-slate-400">({{ filtered.length - showCount }} remaining)</span>
+          <span class="text-xs text-slate-400">({{ filtered.length - visibleEntries.length }} remaining)</span>
         </button>
       </div>
     </section>

@@ -1,4 +1,6 @@
 import { ontologyPrefixes } from '../data/generated/ontology'
+import { escapeTurtle, declareStandardPrefixes } from './turtle-writer'
+import { downloadFile } from './download'
 
 interface Entity {
   uri: string
@@ -62,10 +64,7 @@ export function toTurtle(entity: Entity): string {
     const uri = nsUri(pfx)
     if (uri) lines.push(`@prefix ${pfx}: <${uri}> .`)
   }
-  lines.push('@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .')
-  lines.push('@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .')
-  lines.push('@prefix owl: <http://www.w3.org/2002/07/owl#> .')
-  lines.push('@prefix skos: <http://www.w3.org/2004/02/skos/core#> .')
+  lines.push(declareStandardPrefixes())
   lines.push('')
 
   const subjects: string[] = [`${entity.qname} a`]
@@ -109,10 +108,10 @@ export function toTurtle(entity: Entity): string {
   }
 
   const predicates: string[] = []
-  predicates.push(`  rdfs:label "${entity.label}"`)
+  predicates.push(`  rdfs:label "${escapeTurtle(entity.label)}"`)
 
   if (entity.description) {
-    predicates.push(`  skos:definition "${entity.description.replace(/"/g, '\\"')}"`)
+    predicates.push(`  skos:definition "${escapeTurtle(entity.description)}"`)
   }
 
   if (entity.parent) {
@@ -148,7 +147,7 @@ export function toTurtle(entity: Entity): string {
   }
 
   if (entity.scopeNote) {
-    predicates.push(`  skos:scopeNote "${entity.scopeNote.replace(/"/g, '\\"')}"`)
+    predicates.push(`  skos:scopeNote "${escapeTurtle(entity.scopeNote)}"`)
   }
 
   if (entity.version) {
@@ -237,12 +236,4 @@ export function toJsonLd(entity: Entity): string {
   return JSON.stringify(obj, null, 2)
 }
 
-export function downloadFile(content: string, filename: string, mimeType: string) {
-  const blob = new Blob([content], { type: mimeType })
-  const url = URL.createObjectURL(blob)
-  const a = document.createElement('a')
-  a.href = url
-  a.download = filename
-  a.click()
-  URL.revokeObjectURL(url)
-}
+export { downloadFile } from './download'

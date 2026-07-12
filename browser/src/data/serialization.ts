@@ -1,6 +1,7 @@
 import type { Entry, PartMeta, QuantityEntry } from './types'
 import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entryQname } from './ontologyConfig'
 import { partUrn, entryUrn } from './urn'
+import { escapeTurtle } from '../lib/turtle-writer'
 
 const jsonLdContext = {
   [NS.core.prefix]: NS.core.uri,
@@ -90,15 +91,6 @@ export function generateIndexJsonLd(parts: PartMeta[]) {
 }
 
 // ── Turtle (TTL) serialization ──
-
-function escapeTurtle(str: string): string {
-  return str
-    .replace(/\\/g, '\\\\')
-    .replace(/"/g, '\\"')
-    .replace(/\n/g, '\\n')
-    .replace(/\r/g, '\\r')
-    .replace(/\t/g, '\\t')
-}
 
 const TTL_KNOWN_PREFIXES = new Set(
   Object.keys(jsonLdContext).filter(k => k !== 'bindingness-type')
