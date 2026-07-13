@@ -40,9 +40,9 @@ function searchableText(item: IndexItem): string {
 
 // Build a combined, pre-indexed list from build-time data
 const allItems: (IndexItem & { _searchText: string })[] = [
-  ...quantitiesIndex,
-  ...mathIndex,
-].map(item => ({ ...item, d: (item as any).d ?? '', _searchText: searchableText(item as IndexItem) }))
+  ...quantitiesIndex as IndexItem[],
+  ...mathIndex as IndexItem[],
+].map(item => ({ ...item, d: item.d ?? '', _searchText: searchableText(item) }))
 
 export interface SearchResult {
   id: string
