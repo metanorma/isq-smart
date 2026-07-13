@@ -1,6 +1,5 @@
 import type { PartKey, PartData, Entry } from './types'
 import { partSummaries } from './generated/meta'
-import { sortPartKeys } from './partKey'
 
 const partModules = import.meta.glob<{
   default: Entry[]
@@ -10,16 +9,16 @@ const partModules = import.meta.glob<{
   latexCache: Record<string, string>
 }>('./generated/part-*.ts')
 
+const cache = new Map<PartKey, PartData>()
+
 function getSubKeys(partKey: string): string[] {
   const prefix = partKey + '-'
   return Object.keys(partSummaries).filter(k => k.startsWith(prefix))
 }
 
 export const DataLoader = {
-  _cache: new Map<PartKey, PartData>(),
-
   async loadPart(partKey: PartKey): Promise<PartData> {
-    const cached = this._cache.get(partKey)
+    const cached = cache.get(partKey)
     if (cached) return cached
 
     const directKey = `./generated/part-${partKey}.ts`
@@ -55,7 +54,7 @@ export const DataLoader = {
       result = { entries, editions: [...new Set(editions)], bilingual, mathCache, latexCache }
     }
 
-    this._cache.set(partKey, result)
+    cache.set(partKey, result)
     return result
   },
 
@@ -64,30 +63,4 @@ export const DataLoader = {
     const results = await Promise.all(keys.map(pk => DataLoader.loadPart(pk)))
     return results.flatMap(r => r.entries)
   },
-}
-
-// ── Part metadata helpers (single source of truth) ──
-
-export function getAvailableParts(): string[] {
-  return sortPartKeys(Object.keys(partSummaries))
-}
-
-export function getPartEntryCount(partKey: string): number {
-  const direct = partSummaries[partKey]?.count
-  if (direct != null) return direct
-  return getSubKeys(partKey).reduce((s, k) => s + (partSummaries[k]?.count ?? 0), 0)
-}
-
-export function isBilingual(partKey: string): boolean {
-  return partSummaries[partKey]?.bilingual ?? false
-}
-
-export function getPartEditions(partKey: string): string[] {
-  const direct = partSummaries[partKey]?.editions
-  if (direct?.length) return direct
-  const editions = new Set<string>()
-  for (const k of getSubKeys(partKey)) {
-    for (const e of partSummaries[k]?.editions ?? []) editions.add(e)
-  }
-  return [...editions]
 }
