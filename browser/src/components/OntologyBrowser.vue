@@ -397,16 +397,42 @@ watch(treeExpanded, async () => {
         </div>
       </div>
 
-      <!-- Class hierarchy tree (interactive Vue island) -->
+      <!-- Class hierarchy diagram (interactive visual tree) -->
       <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Class Hierarchy Tree</h3>
-          <div class="flex gap-2">
-            <button @click="expandAll" class="text-[10px] text-slate-500 hover:text-slate-700 font-medium">Expand all</button>
-            <button @click="collapseAll" class="text-[10px] text-slate-500 hover:text-slate-700 font-medium">Collapse all</button>
+        <div class="flex items-start justify-between gap-4 mb-1 flex-wrap">
+          <div>
+            <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">Class Hierarchy</h2>
+            <p class="text-sm text-slate-500 mt-0.5">Explore the full class tree — click nodes to expand or collapse subclasses.</p>
+          </div>
+          <div class="flex gap-2 flex-shrink-0">
+            <button @click="expandAll" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200/60 dark:border-dark-600/60 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-700 hover:border-slate-300 dark:hover:border-dark-500 transition-colors font-medium">Expand all</button>
+            <button @click="collapseAll" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200/60 dark:border-dark-600/60 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-700 hover:border-slate-300 dark:hover:border-dark-500 transition-colors font-medium">Collapse all</button>
           </div>
         </div>
-        <div class="font-mono text-xs space-y-0.5" :key="expandedNodesKey">
+
+        <!-- Legend -->
+        <div class="flex flex-wrap items-center gap-4 mt-3 mb-4 pb-4 border-b border-slate-100 dark:border-dark-700">
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-sm border-l-2 border-brand-400 dark:border-brand-500 bg-brand-50/50 dark:bg-brand-950/20"></span>
+            <span class="text-[11px] text-slate-500">ISO &amp; IEC 80000 (isq)</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-sm border-l-2 border-emerald-400 dark:border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20"></span>
+            <span class="text-[11px] text-slate-500">SMART Core (smart)</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="w-3 h-3 rounded-sm border-l-2 border-slate-300 dark:border-dark-500 bg-slate-50/50 dark:bg-dark-700/40"></span>
+            <span class="text-[11px] text-slate-500">External</span>
+          </div>
+          <div class="flex items-center gap-1.5 ml-auto">
+            <span class="text-[11px] text-slate-400">{{ rootClasses.length }} root class{{ rootClasses.length > 1 ? 'es' : '' }}</span>
+            <span class="text-slate-300 dark:text-dark-600">&middot;</span>
+            <span class="text-[11px] text-slate-400">{{ allClasses.length }} total</span>
+          </div>
+        </div>
+
+        <!-- The tree -->
+        <div id="class-tree-root" class="space-y-0.5" :key="expandedNodesKey">
           <ClassTreeNode
             v-for="root in rootClasses"
             :key="root.qname"
@@ -415,6 +441,28 @@ watch(treeExpanded, async () => {
             :all-classes="allClasses"
             :expanded-nodes="treeExpanded"
           />
+        </div>
+
+        <!-- Download link -->
+        <div class="mt-5 pt-4 border-t border-slate-100 dark:border-dark-700 flex items-center gap-2 flex-wrap">
+          <a
+            :href="asset('/ontology/full.ttl')"
+            class="inline-flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/60 hover:bg-emerald-100 hover:text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800/40 dark:hover:bg-emerald-950/60 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            Download complete ontology (Turtle)
+          </a>
+          <a
+            :href="asset('/ontologies/isq.shacl.ttl')"
+            class="inline-flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg bg-slate-50 text-slate-600 border border-slate-200/60 hover:bg-slate-100 hover:text-slate-700 dark:bg-dark-700 dark:text-slate-300 dark:border-dark-600 dark:hover:bg-dark-600 transition-colors"
+          >
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+            </svg>
+            SHACL shapes (Turtle)
+          </a>
         </div>
       </div>
     </div>
