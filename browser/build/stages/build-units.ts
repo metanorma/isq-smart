@@ -4,25 +4,7 @@ import yaml from 'js-yaml'
 import { comparePartKeys } from '../../src/data/partKey'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
-
-interface IsoUnit {
-  slug: string
-  name: string
-  symbols: string[]
-  quantityCount: number
-  parts: string[]
-  sampleQuantities: { id: string; num: string; name: string; part: string }[]
-  quantities: { id: string; num: string; name: string; part: string }[]
-  nistId?: string
-  unitsmlId?: string
-  refs?: { authority: string; uri: string; type: string }[]
-  unitSystems?: string[]
-  scaleRef?: string
-  root?: boolean
-  quantityRefs?: string[]
-  dimensionRef?: string
-  dimensionSlug?: string
-}
+import type { IsoUnit, UnitsmlYaml, UnitsmlUnit } from './types'
 
 export function buildUnits(
   qData: RawEntry[],
@@ -65,25 +47,26 @@ export function buildUnits(
 
   const unitsmlUnitsPath = resolve(unitsdbDir, 'units.yaml')
   if (existsSync(unitsmlUnitsPath)) {
-    const rawUnitsmlUnits = (yaml.load(readFileSync(unitsmlUnitsPath, 'utf-8')) as any).units as any[]
-    const unitsByNameKey = new Map<string, any>()
+    const unitsmlData = yaml.load(readFileSync(unitsmlUnitsPath, 'utf-8')) as UnitsmlYaml
+    const rawUnitsmlUnits = unitsmlData.units
+    const unitsByNameKey = new Map<string, UnitsmlUnit>()
     for (const u of rawUnitsmlUnits) {
-      const enName = u.names?.find((n: any) => n.lang === 'en')?.value
+      const enName = u.names?.find(n => n.lang === 'en')?.value
       if (enName) unitsByNameKey.set(enName.toLowerCase(), u)
     }
     for (const u of isoUnits) {
       const uml = unitsByNameKey.get(u.name.toLowerCase())
       if (!uml) continue
-      const nistId = uml.identifiers?.find((i: any) => i.type === 'nist')?.id
-      const unitsmlId = uml.identifiers?.find((i: any) => i.type === 'unitsml')?.id
+      const nistId = uml.identifiers?.find(i => i.type === 'nist')?.id
+      const unitsmlId = uml.identifiers?.find(i => i.type === 'unitsml')?.id
       const refs: { authority: string; uri: string; type: string }[] = []
       for (const r of uml.references ?? []) {
         refs.push({ authority: r.authority, uri: r.uri, type: r.type })
       }
-      const unitSystems = (uml.unit_system_reference ?? []).map((r: any) => r.id ?? r.type)
+      const unitSystems = (uml.unit_system_reference ?? []).map(r => r.id ?? r.type)
       const scaleRef = uml.scale_reference?.id
       const root = !!uml.root
-      const quantityRefs = (uml.quantity_references ?? []).map((r: any) => r.id)
+      const quantityRefs = (uml.quantity_references ?? []).map(r => r.id)
       Object.assign(u, { nistId, unitsmlId, refs, unitSystems, scaleRef, root, quantityRefs })
     }
   }

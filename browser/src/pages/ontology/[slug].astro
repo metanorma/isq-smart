@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import OntologyLink from '../../components/OntologyLink.astro'
 import { ontologyEntities, ontologyTypeMeta, ontologyPrefixes, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
 import { resolveOntologyEntityView, type OntologyEntityData } from '../../data/ontologyViewModel'
 import { toTurtle, toJsonLd } from '../../lib/rdf'
@@ -22,16 +23,6 @@ const allEntities = ontologyEntities as readonly Entity[]
 const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
 
 const entity = allEntities.find(e => e.slug === slug)
-
-function findByQname(qname: string): Entity | undefined {
-  return allEntities.find(e => e.qname === qname)
-}
-
-function linkTo(qname: string) {
-  const e = findByQname(qname)
-  if (e) return `/ontology/${e.slug}`
-  return ''
-}
 
 function badgeColor(e: Entity) {
   if (e.ontology === 'smart') return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400'
@@ -281,7 +272,7 @@ function truncate(s: string, n: number) {
                                   <td class="px-3 py-1.5">
                                     {p.range?.length ? p.range.map((r, i) => (
                                       <Fragment>
-                                        {linkTo(r) ? <a href={linkTo(r)} class="text-blue-600 hover:underline">{r}</a> : <span class="text-slate-600 dark:text-slate-400">{r}</span>}
+                                        <OntologyLink qname={r} spanClass="text-slate-600 dark:text-slate-400" />
                                         {i < p.range!.length - 1 && <span>, </span>}
                                       </Fragment>
                                     )) : <span class="text-slate-400">—</span>}
@@ -358,14 +349,13 @@ function truncate(s: string, n: number) {
                               {s.constraints.map((c, i) => (
                                 <tr class="border-b border-slate-100 dark:border-dark-700/60 last:border-0">
                                   <td class="px-3 py-1.5">
-                                    {linkTo(c.path) ? <a href={linkTo(c.path)} class="text-blue-600 hover:underline">{c.path}</a> : <span class="font-mono">{c.path}</span>}
+                                    <OntologyLink qname={c.path} spanClass="font-mono" />
                                   </td>
                                   <td class="px-3 py-1.5 text-center">{c.minCount ?? '—'}</td>
                                   <td class="px-3 py-1.5 text-center">{c.maxCount ?? '—'}</td>
                                   <td class="px-3 py-1.5">
                                     {c.datatype && <span class="italic">{c.datatype}</span>}
-                                    {!c.datatype && c.classValue && linkTo(c.classValue) && <a href={linkTo(c.classValue)} class="text-blue-600 hover:underline">{c.classValue}</a>}
-                                    {!c.datatype && c.classValue && !linkTo(c.classValue) && <span>{c.classValue}</span>}
+                                    {!c.datatype && c.classValue && <OntologyLink qname={c.classValue} />}
                                     {c.hasValue && <span class="text-slate-400 ml-1">= {c.hasValue}</span>}
                                     {c.uniqueLang && <span class="text-[9px] text-amber-600 bg-amber-50 px-1 py-0.5 rounded ml-1">uniqueLang</span>}
                                   </td>
@@ -423,7 +413,7 @@ function truncate(s: string, n: number) {
                     <td>
                       {entity.domain.map((d, i) => (
                         <Fragment>
-                          {linkTo(d) ? <a href={linkTo(d)} class="text-blue-600 hover:underline">{d}</a> : <span class="text-gray-700">{d}</span>}
+                          <OntologyLink qname={d} spanClass="text-gray-700" />
                           {i < entity.domain!.length - 1 && <span>, </span>}
                         </Fragment>
                       ))}
@@ -436,7 +426,7 @@ function truncate(s: string, n: number) {
                     <td>
                       {entity.range.map((r, i) => (
                         <Fragment>
-                          {linkTo(r) ? <a href={linkTo(r)} class="text-blue-600 hover:underline">{r}</a> : <span class="text-gray-700">{r}</span>}
+                          <OntologyLink qname={r} spanClass="text-gray-700" />
                           {i < entity.range!.length - 1 && <span>, </span>}
                         </Fragment>
                       ))}
@@ -459,21 +449,21 @@ function truncate(s: string, n: number) {
               {entity.targetClass && (
                 <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
                   <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Class</h3>
-                  {linkTo(entity.targetClass) ? <a href={linkTo(entity.targetClass)} class="text-blue-600 hover:underline">{entity.targetClass}</a> : <span class="text-gray-700">{entity.targetClass}</span>}
+                  <OntologyLink qname={entity.targetClass} spanClass="text-gray-700" />
                 </div>
               )}
 
               {entity.targetSubjectsOf && (
                 <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
                   <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Subjects Of</h3>
-                  {linkTo(entity.targetSubjectsOf) ? <a href={linkTo(entity.targetSubjectsOf)} class="text-blue-600 hover:underline">{entity.targetSubjectsOf}</a> : <span class="text-gray-700">{entity.targetSubjectsOf}</span>}
+                  <OntologyLink qname={entity.targetSubjectsOf} spanClass="text-gray-700" />
                 </div>
               )}
 
               {entity.targetObjectsOf && (
                 <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
                   <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Target Objects Of</h3>
-                  {linkTo(entity.targetObjectsOf) ? <a href={linkTo(entity.targetObjectsOf)} class="text-blue-600 hover:underline">{entity.targetObjectsOf}</a> : <span class="text-gray-700">{entity.targetObjectsOf}</span>}
+                  <OntologyLink qname={entity.targetObjectsOf} spanClass="text-gray-700" />
                 </div>
               )}
 
@@ -497,14 +487,13 @@ function truncate(s: string, n: number) {
                         {entity.constraints.map((c, i) => (
                           <tr class="border-b last:border-b-0">
                             <td class="py-2 px-3">
-                              {linkTo(c.path) ? <a href={linkTo(c.path)} class="text-blue-600 hover:underline">{c.path}</a> : <span class="text-gray-700">{c.path}</span>}
+                              <OntologyLink qname={c.path} spanClass="text-gray-700" />
                             </td>
                             <td class="py-2 px-3 text-center">{c.minCount ?? '—'}</td>
                             <td class="py-2 px-3 text-center">{c.maxCount ?? '—'}</td>
                             <td class="py-2 px-3">
                               {c.datatype && <span class="italic">{c.datatype}</span>}
-                              {!c.datatype && c.classValue && linkTo(c.classValue) && <a href={linkTo(c.classValue)} class="text-blue-600 hover:underline">{c.classValue}</a>}
-                              {!c.datatype && c.classValue && !linkTo(c.classValue) && <span class="text-gray-700">{c.classValue}</span>}
+                              {!c.datatype && c.classValue && <OntologyLink qname={c.classValue} spanClass="text-gray-700" />}
                               {c.hasValue && <span class="text-gray-400 ml-1">= {c.hasValue}</span>}
                               {c.uniqueLang && <span class="text-[9px] text-amber-600 bg-amber-50 px-1 py-0.5 rounded ml-1">uniqueLang</span>}
                             </td>
@@ -525,7 +514,7 @@ function truncate(s: string, n: number) {
               {entity.scheme && (
                 <div class="bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 rounded-lg p-4">
                   <h3 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Concept Scheme</h3>
-                  <a href={linkTo(entity.scheme)} class="text-blue-600 hover:underline">{entity.scheme}</a>
+                  <OntologyLink qname={entity.scheme} />
                 </div>
               )}
               {entity.instanceOf?.length ? (
@@ -534,7 +523,7 @@ function truncate(s: string, n: number) {
                   <ul class="space-y-1">
                     {entity.instanceOf.map((t) => (
                       <li>
-                        {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                        <OntologyLink qname={t} />
                       </li>
                     ))}
                   </ul>
@@ -583,7 +572,7 @@ function truncate(s: string, n: number) {
                   <ul class="space-y-1">
                     {entity.instanceOf.map((t) => (
                       <li>
-                        {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                        <OntologyLink qname={t} />
                       </li>
                     ))}
                   </ul>
@@ -601,7 +590,7 @@ function truncate(s: string, n: number) {
                   <ul class="space-y-1">
                     {entity.isPartOf.map((parent) => (
                       <li>
-                        {linkTo(parent) ? <a href={linkTo(parent)} class="text-blue-600 hover:underline">{parent}</a> : <span>{parent}</span>}
+                        <OntologyLink qname={parent} />
                       </li>
                     ))}
                   </ul>
@@ -625,7 +614,7 @@ function truncate(s: string, n: number) {
                   <ul class="space-y-1">
                     {entity.imports.map((imp) => (
                       <li>
-                        {linkTo(imp) ? <a href={linkTo(imp)} class="text-blue-600 hover:underline">{imp}</a> : <span class="text-gray-700">{imp}</span>}
+                        <OntologyLink qname={imp} spanClass="text-gray-700" />
                       </li>
                     ))}
                   </ul>
@@ -684,9 +673,7 @@ function truncate(s: string, n: number) {
                             </td>
                             <td class="px-3 py-1.5 text-slate-600 dark:text-slate-400 max-w-sm truncate">{c.description || '—'}</td>
                             <td class="px-3 py-1.5">
-                              {c.parent && linkTo(c.parent) ? <a href={linkTo(c.parent)} class="text-blue-600 hover:underline">{c.parent}</a>
-                                : c.parent ? <span>{c.parent}</span>
-                                : <span class="text-slate-400">—</span>}
+                              {c.parent ? <OntologyLink qname={c.parent} /> : <span class="text-slate-400">—</span>}
                             </td>
                           </tr>
                         ))}
@@ -722,7 +709,7 @@ function truncate(s: string, n: number) {
                             <td class="px-3 py-1.5">
                               {p.domain?.length ? p.domain.map((d, i) => (
                                 <Fragment>
-                                  {linkTo(d) ? <a href={linkTo(d)} class="text-blue-600 hover:underline">{d}</a> : <span>{d}</span>}
+                                  <OntologyLink qname={d} />
                                   {i < p.domain!.length - 1 && <span>, </span>}
                                 </Fragment>
                               )) : <span class="text-slate-400">—</span>}
@@ -730,7 +717,7 @@ function truncate(s: string, n: number) {
                             <td class="px-3 py-1.5">
                               {p.range?.length ? p.range.map((r, i) => (
                                 <Fragment>
-                                  {linkTo(r) ? <a href={linkTo(r)} class="text-blue-600 hover:underline">{r}</a> : <span>{r}</span>}
+                                  <OntologyLink qname={r} />
                                   {i < p.range!.length - 1 && <span>, </span>}
                                 </Fragment>
                               )) : <span class="text-slate-400">—</span>}
@@ -769,7 +756,7 @@ function truncate(s: string, n: number) {
                             <td class="px-3 py-1.5">
                               {p.domain?.length ? p.domain.map((d, i) => (
                                 <Fragment>
-                                  {linkTo(d) ? <a href={linkTo(d)} class="text-blue-600 hover:underline">{d}</a> : <span>{d}</span>}
+                                  <OntologyLink qname={d} />
                                   {i < p.domain!.length - 1 && <span>, </span>}
                                 </Fragment>
                               )) : <span class="text-slate-400">—</span>}
@@ -821,9 +808,7 @@ function truncate(s: string, n: number) {
                               <a href={`/ontology/${s.slug}`} class="text-purple-700 hover:underline font-medium">{s.qname}</a>
                             </td>
                             <td class="px-3 py-1.5">
-                              {s.targetClass && linkTo(s.targetClass) ? <a href={linkTo(s.targetClass)} class="text-blue-600 hover:underline">{s.targetClass}</a>
-                                : s.targetClass ? <span>{s.targetClass}</span>
-                                : <span class="text-slate-400">—</span>}
+                              {s.targetClass ? <OntologyLink qname={s.targetClass} /> : <span class="text-slate-400">—</span>}
                             </td>
                             <td class="px-3 py-1.5 text-center tabular-nums">{s.constraints?.length || 0}</td>
                           </tr>
@@ -876,7 +861,7 @@ function truncate(s: string, n: number) {
                             <td class="px-3 py-1.5">
                               {c.instanceOf?.length ? c.instanceOf.map((t, i) => (
                                 <Fragment>
-                                  {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                                  <OntologyLink qname={t} />
                                   {i < c.instanceOf!.length - 1 && <span>, </span>}
                                 </Fragment>
                               )) : null}
@@ -913,7 +898,7 @@ function truncate(s: string, n: number) {
                             <td class="px-3 py-1.5">
                               {ind.instanceOf?.length ? ind.instanceOf.map((t, i) => (
                                 <Fragment>
-                                  {linkTo(t) ? <a href={linkTo(t)} class="text-blue-600 hover:underline">{t}</a> : <span>{t}</span>}
+                                  <OntologyLink qname={t} />
                                   {i < ind.instanceOf!.length - 1 && <span>, </span>}
                                 </Fragment>
                               )) : null}

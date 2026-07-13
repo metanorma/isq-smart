@@ -3,38 +3,7 @@ import { resolve } from 'node:path'
 import yaml from 'js-yaml'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
-
-interface IsoUnit {
-  slug: string
-  name: string
-  quantities: { id: string; num: string; name: string; part: string }[]
-  dimensionRef?: string
-  dimensionSlug?: string
-}
-
-interface UnitsmlDimension {
-  identifiers: { type: string; id: string }[]
-  names: { value: string; lang: string }[]
-  short: string
-  dimensionless?: boolean
-  length?: { power: number; symbol: string }
-  mass?: { power: number; symbol: string }
-  time?: { power: number; symbol: string }
-  electric_current?: { power: number; symbol: string }
-  thermodynamic_temperature?: { power: number; symbol: string }
-  amount_of_substance?: { power: number; symbol: string }
-  luminous_intensity?: { power: number; symbol: string }
-  plane_angle?: { power: number; symbol: string }
-  references?: { type: string; authority: string; uri: string }[]
-}
-
-interface UnitsmlQuantity {
-  dimension_reference: { type: string; id: string }
-  identifiers: { type: string; id: string }[]
-  names: { value: string; lang: string }[]
-  short: string
-  quantity_type: string
-}
+import type { IsoUnit, DimensionsYaml, QuantitiesYaml, UnitsmlDimension } from './types'
 
 const BASE_DIMS = ['length', 'mass', 'time', 'electric_current', 'thermodynamic_temperature', 'amount_of_substance', 'luminous_intensity', 'plane_angle'] as const
 const DIM_SYMBOLS: Record<string, string> = {
@@ -62,8 +31,10 @@ export function buildDimensions(
     return isoUnits
   }
 
-  const rawDims = (yaml.load(readFileSync(unitsmlDimsPath, 'utf-8')) as any).dimensions as UnitsmlDimension[]
-  const rawQuants = (yaml.load(readFileSync(unitsmlQuantitiesPath, 'utf-8')) as any).quantities as UnitsmlQuantity[]
+  const dimsData = yaml.load(readFileSync(unitsmlDimsPath, 'utf-8')) as DimensionsYaml
+  const quantsData = yaml.load(readFileSync(unitsmlQuantitiesPath, 'utf-8')) as QuantitiesYaml
+  const rawDims = dimsData.dimensions
+  const rawQuants = quantsData.quantities
 
   const isoQuantityByName = new Map<string, { id: string; num: string; name: string; part: string }[]>()
   for (const u of isoUnits) {
@@ -158,14 +129,16 @@ export function buildDimensions(
     }
   }
 
-  // Intentional in-place enrichment: attach dimensionRef/dimensionSlug to each
-  // unit so the units page can link to its physical dimension. This mutates
-  // the IsoUnit objects returned by buildUnits so callers see the enrichment
-  // without reassigning. We only set the field if not already present.
+  // In-place enrichment: the IsoUnit objects passed in from buildUnits are
+  // mutated directly so that callers (and the already-serialized unitsdb.ts)
+  // see the dimensionRef/dimensionSlug fields. We only set the fields when they
+  // are not already present, preserving any prior value. This mutation is
+  // intentional — isoUnits is the same array returned by buildUnits.
   for (const u of isoUnits) {
     const dim = dimByUnitSlug.get(u.slug)
-    if (dim) {
-      if (!u.dimensionRef) Object.assign(u, { dimensionRef: dim.unitsmlId, dimensionSlug: dim.slug })
+    if (dim && !u.dimensionRef) {
+      u.dimensionRef = dim.unitsmlId
+      u.dimensionSlug = dim.slug
     }
   }
 
