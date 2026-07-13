@@ -48,7 +48,7 @@ const isActivePath = (path: string) => isActive(pathname, path)
               ))}
             </nav>
 
-            <ThemeToggle client:load />
+            <ThemeToggle client:only="vue" />
 
             <MobileNav client:load links={navLinks} activePath={pathname} />
           </div>

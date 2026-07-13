@@ -153,7 +153,7 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
     </section>
 
     <!-- Recently viewed (client-side, needs localStorage) -->
-    <RecentEntries client:idle />
+    <RecentEntries client:only="vue" />
 
     <!-- About the standard -->
     <section class="bg-slate-50/50 dark:bg-dark-800/50 border-y border-slate-200/50 dark:border-dark-600/50">
