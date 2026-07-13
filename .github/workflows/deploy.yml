@@ -21,29 +21,29 @@ jobs:
       name: github-pages
       url: ${{ steps.build.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Checkout ISO/IEC 80000 source data
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: metanorma/iso-iec-80000
           path: iso-iec-80000
           token: ${{ secrets.METANORMA_CI_PAT_TOKEN }}
 
       - name: Checkout UnitsDB
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: unitsml/unitsdb
           path: unitsdb
 
       - name: Checkout SmartSDU reference docs
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           repository: metanorma/sdu-smart
           sparse-checkout: reference-docs
           path: sdu-smart
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
           cache: npm
@@ -61,7 +61,7 @@ jobs:
           touch browser/dist/.nojekyll
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: browser/dist
 
@@ -74,4 +74,4 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
