@@ -17,6 +17,36 @@ export function ttlObject(value: string): string {
   return `"${escapeTurtle(value)}"`
 }
 
+/**
+ * Format a record as a Turtle blank node in bracket notation.
+ *
+ * Each entry becomes a predicate-object pair. The `formatPredicate` callback
+ * handles any domain-specific key transformation (e.g. prefixing bare keys);
+ * values are formatted recursively via `formatValue` (defaults to `ttlObject`
+ * for strings and recurses into nested objects/arrays).
+ *
+ * The `@type` key is dropped from the output.
+ */
+export function ttlBlankNode(
+  obj: Record<string, unknown>,
+  formatPredicate: (key: string) => string,
+  formatValue?: (value: unknown) => string,
+): string {
+  const valueFormatter = formatValue ?? ((v: unknown): string => {
+    if (typeof v === 'string') return ttlObject(v)
+    if (Array.isArray(v)) return v.map(item => valueFormatter(item)).join(', ')
+    if (typeof v === 'object' && v !== null)
+      return ttlBlankNode(v as Record<string, unknown>, formatPredicate, valueFormatter)
+    return String(v)
+  })
+
+  const entries = Object.entries(obj)
+    .filter(([k]) => k !== '@type')
+    .map(([k, v]) => `${formatPredicate(k)} ${valueFormatter(v)}`)
+    .join(' ;\n    ')
+  return `[\n    ${entries}\n  ]`
+}
+
 export interface PrefixDecl {
   prefix: string
   uri: string

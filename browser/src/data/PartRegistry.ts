@@ -201,3 +201,37 @@ export function domainPath(domain: Domain): string {
 export function getSectionsForDocument(docKey: string): PartSection[] {
   return VISIBLE_SECTIONS.filter(s => s.parentDocument === docKey)
 }
+
+// ── Part summary helpers (read from generated metadata) ──
+
+import { partSummaries } from './generated/meta'
+import { sortPartKeys } from './partKey'
+
+function getSubKeys(partKey: string): string[] {
+  const prefix = partKey + '-'
+  return Object.keys(partSummaries).filter(k => k.startsWith(prefix))
+}
+
+export function getAvailableParts(): string[] {
+  return sortPartKeys(Object.keys(partSummaries))
+}
+
+export function getPartEntryCount(partKey: string): number {
+  const direct = partSummaries[partKey]?.count
+  if (direct != null) return direct
+  return getSubKeys(partKey).reduce((s, k) => s + (partSummaries[k]?.count ?? 0), 0)
+}
+
+export function isBilingual(partKey: string): boolean {
+  return partSummaries[partKey]?.bilingual ?? false
+}
+
+export function getPartEditions(partKey: string): string[] {
+  const direct = partSummaries[partKey]?.editions
+  if (direct?.length) return direct
+  const editions = new Set<string>()
+  for (const k of getSubKeys(partKey)) {
+    for (const e of partSummaries[k]?.editions ?? []) editions.add(e)
+  }
+  return [...editions]
+}

@@ -6,14 +6,15 @@ export {
   entryUnitName, entryUnitSymbols, entryHasFrench, entrySectionGroup,
   entryShortDef, entryPlainName,
 } from './EntryModel'
-export { DataLoader, getAvailableParts, getPartEntryCount, isBilingual, getPartEditions } from './DataLoader'
-export { getPartEntryCount as partEntryCount } from './DataLoader'
+export { DataLoader } from './DataLoader'
 
 export {
   getDomains, getDomain, getPartMeta, getPartsByDomain,
   getAllParts, partUrl, entryUrl, domainPath, publisherOf,
   getPartDocument, getAllDocuments, getSectionsForDocument,
+  getAvailableParts, getPartEntryCount, isBilingual, getPartEditions,
 } from './PartRegistry'
+export { getPartEntryCount as partEntryCount } from './PartRegistry'
 export type { PartDocument, PartSection } from './PartRegistry'
 
 export { partUrn, entryUrn, unitUrns, dimensionUrns, entryDualUrn } from './urn'

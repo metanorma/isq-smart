@@ -1,7 +1,7 @@
 import type { Entry, PartMeta, QuantityEntry } from './types'
 import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entryQname } from './ontologyConfig'
 import { partUrn, entryUrn } from './urn'
-import { escapeTurtle } from '../lib/turtle-writer'
+import { ttlObject as ttlString, ttlBlankNode, declarePrefixes } from '../lib/turtle-writer'
 
 const jsonLdContext = {
   [NS.core.prefix]: NS.core.uri,
@@ -28,14 +28,14 @@ const sharedFields = (entry: Entry): Record<string, unknown> => ({
   [ONTOLOGY_PROPERTIES.definition]: entry.def?.en ? { '@value': entry.def.en, '@language': 'en' } : undefined,
 })
 
-const quantitySerializer = (entry: Entry, partKey: string, edition: string): Record<string, unknown> => {
+const entrySerializer = (entry: Entry, partKey: string): Record<string, unknown> => {
   const r: Record<string, unknown> = {
     '@id': entryQname(entry.id),
     ...sharedFields(entry),
     [ONTOLOGY_PROPERTIES.hasBindingnessType]: 'bindingness-type:normative',
     [ONTOLOGY_PROPERTIES.isPartOf]: { '@id': partQname(partKey) },
   }
-  if ((entry as QuantityEntry).units?.length) {
+  if ('units' in entry && (entry as QuantityEntry).units?.length) {
     r[ONTOLOGY_PROPERTIES.hasUnit] = (entry as QuantityEntry).units!.map(u => ({
       '@type': ONTOLOGY_CLASSES.Unit,
       'skos:notation': u.symbol,
@@ -48,27 +48,8 @@ const quantitySerializer = (entry: Entry, partKey: string, edition: string): Rec
   return r
 }
 
-const mathSerializer = (entry: Entry, partKey: string, edition: string): Record<string, unknown> => {
-  const r: Record<string, unknown> = {
-    '@id': entryQname(entry.id),
-    ...sharedFields(entry),
-    [ONTOLOGY_PROPERTIES.hasBindingnessType]: 'bindingness-type:normative',
-    [ONTOLOGY_PROPERTIES.isPartOf]: { '@id': partQname(partKey) },
-  }
-  if (entry.remarks?.en) {
-    r[ONTOLOGY_PROPERTIES.note] = { '@value': entry.remarks.en, '@language': 'en' }
-  }
-  return r
-}
-
-const serializers: Record<string, (entry: Entry, partKey: string, edition: string) => Record<string, unknown>> = {
-  quantity: quantitySerializer,
-  math: mathSerializer,
-}
-
 export function generateEntryJsonLd(entry: Entry, meta: PartMeta, edition: string) {
-  const serializer = serializers[entry._tag]
-  const data = serializer(entry, meta.partKey, edition)
+  const data = entrySerializer(entry, meta.partKey)
   return {
     '@context': jsonLdContext,
     ...data,
@@ -102,34 +83,43 @@ function isKnownTtlPrefix(key: string): boolean {
   return TTL_KNOWN_PREFIXES.has(key.slice(0, colon))
 }
 
-function ttlObject(value: unknown): string {
+/**
+ * Format a JSON-LD value as a Turtle object.
+ *
+ * Strings are domain-aware: URIs and URNs get angle brackets, known
+ * JSON-LD context prefixes pass through unquoted, everything else is
+ * escaped and quoted via the shared `ttlString`. Arrays join elements
+ * with ", ". Objects become bracket-notation blank nodes via the shared
+ * `ttlBlankNode`.
+ */
+function ttlValue(value: unknown): string {
   if (typeof value === 'string') {
     if (value.startsWith('https://') || value.startsWith('urn:'))
       return `<${value}>`
     if (isKnownTtlPrefix(value))
       return value
-    return `"${escapeTurtle(value)}"`
+    return ttlString(value)
   }
-  if (Array.isArray(value)) return value.map(ttlObject).join(', ')
-  if (typeof value === 'object' && value !== null) {
-    const entries = Object.entries(value as Record<string, unknown>)
-      .filter(([k]) => k !== '@type')
-      .map(([k, v]) => `${isKnownTtlPrefix(k) ? k : `${NS.core.prefix}:${k}`} ${ttlObject(v)}`)
-      .join(' ;\n    ')
-    return `[\n    ${entries}\n  ]`
-  }
+  if (Array.isArray(value)) return value.map(ttlValue).join(', ')
+  if (typeof value === 'object' && value !== null)
+    return ttlBlankNode(
+      value as Record<string, unknown>,
+      (k: string) => (isKnownTtlPrefix(k) ? k : `${NS.core.prefix}:${k}`),
+      ttlValue,
+    )
   return String(value)
 }
 
 export function jsonLdToTurtle(data: Record<string, unknown>): string {
-  const lines: string[] = [
-    `@prefix isq:    <${NS.core.uri}> .`,
-    `@prefix smart:  <${NS.smart.uri}> .`,
-    '@prefix rdf:    <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .',
-    '@prefix dcterms: <http://purl.org/dc/terms/> .',
-    '@prefix skos:   <http://www.w3.org/2004/02/skos/core#> .',
-    '',
-  ]
+  const prefixLines = declarePrefixes([
+    { prefix: NS.core.prefix, uri: NS.core.uri },
+    { prefix: NS.smart.prefix, uri: NS.smart.uri },
+    { prefix: 'rdf', uri: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' },
+    { prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
+    { prefix: 'skos', uri: 'http://www.w3.org/2004/02/skos/core#' },
+  ])
+
+  const lines: string[] = [prefixLines, '']
 
   const subject = data['@id'] as string
   const types = data['@type'] as string | string[]
@@ -141,12 +131,10 @@ export function jsonLdToTurtle(data: Record<string, unknown>): string {
     if (skip.has(key)) continue
     if (Array.isArray(value)) {
       for (const item of value) {
-        triples.push(`  ${key} ${ttlObject(item)} ;`)
+        triples.push(`  ${key} ${ttlValue(item)} ;`)
       }
-    } else if (typeof value === 'object' && value !== null) {
-      triples.push(`  ${key} ${ttlObject(value)} ;`)
     } else {
-      triples.push(`  ${key} ${ttlObject(value)} ;`)
+      triples.push(`  ${key} ${ttlValue(value)} ;`)
     }
   }
 

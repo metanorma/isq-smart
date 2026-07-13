@@ -4,7 +4,7 @@ import {
   getPartEntryCount,
   isBilingual,
   getPartEditions,
-} from '../DataLoader'
+} from '../PartRegistry'
 
 describe('getAvailableParts', () => {
   it('returns a sorted list of part keys', () => {
