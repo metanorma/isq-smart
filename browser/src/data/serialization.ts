@@ -1,7 +1,7 @@
 import type { Entry, PartMeta, QuantityEntry } from './types'
 import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entryQname } from './ontologyConfig'
 import { partUrn, entryUrn } from './urn'
-import { ttlObject as ttlString, ttlBlankNode, declarePrefixes } from '../lib/turtle-writer'
+import { ttlObject as ttlString, ttlBlankNode, declarePrefixes, escapeTurtle } from '../lib/turtle-writer'
 
 const jsonLdContext = {
   [NS.core.prefix]: NS.core.uri,
@@ -101,12 +101,23 @@ function ttlValue(value: unknown): string {
     return ttlString(value)
   }
   if (Array.isArray(value)) return value.map(ttlValue).join(', ')
-  if (typeof value === 'object' && value !== null)
+  if (typeof value === 'object' && value !== null) {
+    const obj = value as Record<string, unknown>
+    if ('@value' in obj) {
+      const v = String(obj['@value'])
+      const lang = obj['@language'] as string | undefined
+      if (lang) return `"${escapeTurtle(v)}"@${lang}`
+      return ttlString(v)
+    }
+    if ('@id' in obj) {
+      return `<${obj['@id']}>`
+    }
     return ttlBlankNode(
-      value as Record<string, unknown>,
+      obj,
       (k: string) => (isKnownTtlPrefix(k) ? k : `${NS.core.prefix}:${k}`),
       ttlValue,
     )
+  }
   return String(value)
 }
 
