@@ -4,7 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro'
 import { publicationDocuments, clauses } from '../../data/generated/iso80000'
 import { termEntries } from '../../data/generated/iso80000-terms'
 import type { ClauseData, TermEntryData } from '../../data/types'
-import { getPartMeta, getPartDocument, partUrl, publisherOf, getAllDocuments } from '../../data/PartRegistry'
+import { getPartMeta, getPartDocument, partUrl, entryUrl, publisherOf, getAllDocuments } from '../../data/PartRegistry'
 import { asset } from '../../lib/asset'
 
 export function getStaticPaths() {
@@ -132,7 +132,7 @@ const isIEC = publisher === 'IEC'
             <div class="space-y-px">
               {docTerms.map((term: TermEntryData) => (
                 <a
-                  href={`/quantities/part-${term.partKey}/${term.id.replace('term-entry-', '')}`}
+                  href={entryUrl(term.partKey, term.id.replace('term-entry-', ''))}
                   class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent dark:border-transparent hover:bg-white dark:hover:bg-dark-800/80 transition-colors"
                 >
                   <span class="flex-shrink-0 w-16">
