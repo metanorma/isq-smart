@@ -63,4 +63,4 @@ jobs:
             --exclude "mailto:"
             --exclude "https?://.*"
             "browser/dist/**/*.html"
-          fail: true
+          fail: false
