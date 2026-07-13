@@ -10,29 +10,29 @@ jobs:
   link-check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
 
       - name: Checkout ISO/IEC 80000 source data
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: metanorma/iso-iec-80000
           path: iso-iec-80000
           token: ${{ secrets.METANORMA_CI_PAT_TOKEN }}
 
       - name: Checkout UnitsDB
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: unitsml/unitsdb
           path: unitsdb
 
       - name: Checkout SmartSDU reference docs
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: metanorma/sdu-smart
           sparse-checkout: reference-docs
           path: sdu-smart
 
-      - uses: actions/setup-node@v5
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
