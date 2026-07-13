@@ -64,6 +64,7 @@ jobs:
             --exclude "https://iso80000.org"
             --exclude "https://www.iso.org"
             --exclude "https://iec.ch"
+            --exclude "https://.*\.iec\.ch"
             --exclude "https://webstore.iec.ch"
             --exclude "https://www.bipm.org"
             --exclude "https://www.nist.gov"
@@ -73,5 +74,7 @@ jobs:
             --exclude "https://codata.org"
             --exclude "https://unitsml.org"
             --exclude "https://www.electropedia.org"
+            --exclude "http://si-digital-framework.org"
+            --exclude "https://si-digital-framework.org"
             "browser/dist/**/*.html"
           fail: true
