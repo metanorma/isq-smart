@@ -137,8 +137,8 @@ describe('OntologyBrowser', () => {
       const overviewSection = wrapper.find('[data-section="overview"]')
       // v-show uses display:none, so visible means no display:none style
       expect(overviewSection.exists()).toBe(true)
-      // The overview section should contain class hierarchy tree heading
-      expect(wrapper.text()).toContain('Class Hierarchy Tree')
+      // The overview section should contain class hierarchy heading
+      expect(wrapper.text()).toContain('Class Hierarchy')
     })
 
     it('renders all section tab buttons', () => {

@@ -154,6 +154,11 @@ const view = resolveEntryDetailView(
         <div class="mt-4 flex flex-wrap items-center gap-3">
           <ReferenceBadge client:idle part={partKey} edition={view.edition} entryNum={entry.num} bilingual={view.bilingual} />
           {view.jsonLd && <JsonLdActions client:idle data={view.jsonLd} filename={`iso80000-${entry.id}.jsonld`} />}
+          <div class="flex items-center gap-2 ml-auto text-xs">
+            <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Download RDF</span>
+            <a href={asset(`/quantities/part-${partKey}/${entry.id}.jsonld`)} class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-dark-800/50 border border-slate-200/60 dark:border-dark-600/60 hover:bg-slate-100 dark:hover:bg-dark-700 hover:text-slate-700 dark:hover:text-slate-300 transition-all">.jsonld</a>
+            <a href={asset(`/quantities/part-${partKey}/${entry.id}.ttl`)} class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-dark-800/50 border border-slate-200/60 dark:border-dark-600/60 hover:bg-slate-100 dark:hover:bg-dark-700 hover:text-slate-700 dark:hover:text-slate-300 transition-all">.ttl</a>
+          </div>
         </div>
 
         <!-- Citation builder -->
