@@ -1,0 +1,129 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { asset } from '../../lib/asset'
+import OntologyCharts from '../../components/OntologyCharts.vue'
+import { ontologyEntities, ontologyTypeMeta, ontologyPrefixes, ontologyNamespaces } from '../../data/generated/ontology'
+
+interface Entity {
+  uri: string
+  qname: string
+  slug: string
+  label: string
+  description: string
+  ontology: string
+  type: string
+}
+
+const allEntities = ontologyEntities as readonly Entity[]
+const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
+
+// Chart data (computed at build time)
+const chartTypes = Object.keys(ontologyTypeMeta).filter(t => allEntities.some(e => e.type === t))
+const chartTypeCounts = chartTypes.map(t => allEntities.filter(e => e.type === t).length)
+const chartTypeLabels = chartTypes.map(t => typeMeta[t]?.label || t)
+const chartColors: Record<string, string> = {
+  class: '#3b82f6',
+  objectProperty: '#22c55e',
+  datatypeProperty: '#84cc16',
+  annotationProperty: '#f59e0b',
+  shape: '#a855f7',
+  concept: '#14b8a6',
+  conceptScheme: '#06b6d4',
+  individual: '#f97316',
+  ontology: '#6366f1',
+  external: '#94a3b8',
+}
+const chartTypeColors = chartTypes.map(t => chartColors[t] || '#94a3b8')
+
+const ontoLabels = ['isq', 'smart', 'external'].filter(o => allEntities.some(e => e.ontology === o))
+const ontoCounts = ontoLabels.map(o => allEntities.filter(e => e.ontology === o).length)
+const ontoColors = ontoLabels.map(o => o === 'isq' ? '#3b82f6' : o === 'smart' ? '#10b981' : '#94a3b8')
+const ontoDisplayLabels = ontoLabels.map(o => o === 'isq' ? 'ISO & IEC 80000' : o === 'smart' ? 'SMART Core' : 'External')
+---
+
+<DefaultLayout title="Ontology Statistics — ISQ Browser" description="Entity counts, type distributions, and namespace breakdowns for the ISO & IEC 80000 and SMART Core ontologies.">
+  <div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-emerald-500/10"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="max-w-3xl page-enter">
+          <div class="flex items-center gap-2 text-xs text-emerald-300/60 mb-5">
+            <a href={asset("/")} class="hover:text-emerald-200 transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <a href={asset("/ontology")} class="hover:text-emerald-200 transition-colors">Ontology</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-emerald-200">Statistics</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Statistics</h1>
+          <p class="mt-2 text-sm leading-relaxed max-w-xl text-emerald-300/80">
+            Entity counts by type, namespace distribution, and summary metrics for the ontology.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+      <!-- Charts -->
+      <OntologyCharts
+        client:idle
+        typeLabels={chartTypeLabels}
+        typeCounts={chartTypeCounts}
+        typeColors={chartTypeColors}
+        ontoLabels={ontoDisplayLabels}
+        ontoCounts={ontoCounts}
+        ontoColors={ontoColors}
+      />
+
+      <!-- Type Breakdown -->
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Type Breakdown</h2>
+        <div class="grid sm:grid-cols-2 gap-3">
+          {Object.entries(typeMeta).map(([type, meta]) => (
+            <div class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+              <span class={`w-2.5 h-2.5 rounded-full flex-shrink-0 ${meta.colorDot}`}></span>
+              <span class="text-xs text-slate-700 dark:text-slate-300">{meta.label}</span>
+              <span class="ml-auto text-sm font-bold text-slate-900 dark:text-slate-100 tabular-nums">{allEntities.filter(e => e.type === type).length}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Summary by namespace -->
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">Summary by Namespace</h2>
+          <div class="space-y-3">
+            {ontologyNamespaces.map((onto) => (
+              <div class={`px-4 py-3 rounded-xl border ${onto.color === 'emerald' ? 'bg-emerald-50/50 border-emerald-200/40 dark:bg-emerald-950/20 dark:border-emerald-800/40' : 'bg-brand-50/50 border-brand-200/40 dark:bg-brand-950/20 dark:border-brand-800/40'}`}>
+                <div class={`text-2xl font-bold ${onto.color === 'emerald' ? 'text-emerald-700 dark:text-emerald-400' : 'text-brand-700 dark:text-brand-400'}`}>{allEntities.filter(e => e.ontology === onto.prefix).length}</div>
+                <div class={`text-[10px] font-semibold uppercase tracking-wider mt-1 ${onto.color === 'emerald' ? 'text-emerald-600 dark:text-emerald-500' : 'text-brand-600 dark:text-brand-500'}`}>{onto.title}</div>
+              </div>
+            ))}
+            <div class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{allEntities.length}</div>
+              <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Total Entities</div>
+            </div>
+          </div>
+        </div>
+
+        {/* All namespaces used */}
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200 mb-4">All Namespaces ({ontologyPrefixes.length})</h2>
+          <div class="space-y-1.5 max-h-80 overflow-y-auto">
+            {ontologyPrefixes.map((ns) => (
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
+                <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono flex-shrink-0">{ns.prefix || ':'}</span>
+                <span class="text-xs text-slate-500 font-mono truncate">{ns.uri}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</DefaultLayout>

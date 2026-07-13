@@ -1,0 +1,192 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { asset } from '../../lib/asset'
+import { ontologyEntities, ontologyTypeMeta } from '../../data/generated/ontology'
+
+interface Entity {
+  uri: string
+  qname: string
+  slug: string
+  label: string
+  description: string
+  ontology: string
+  type: string
+  domain?: string[]
+  range?: string[]
+  functional?: boolean
+}
+
+const allEntities = ontologyEntities as readonly Entity[]
+const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
+
+const objProps = allEntities.filter(e => e.type === 'objectProperty')
+const dtProps = allEntities.filter(e => e.type === 'datatypeProperty')
+const annProps = allEntities.filter(e => e.type === 'annotationProperty')
+
+function badgeColor(e: Entity) {
+  if (e.ontology === 'smart') return 'bg-emerald-50 text-emerald-600 dark:bg-emerald-900/40 dark:text-emerald-400'
+  if (e.ontology === 'isq') return 'bg-brand-50 text-brand-600 dark:bg-brand-900/40 dark:text-brand-400'
+  return 'bg-slate-100 text-slate-600 dark:bg-dark-700 dark:text-slate-400'
+}
+
+function entitySlug(qname: string | undefined) {
+  if (!qname) return undefined
+  return allEntities.find(e => e.qname === qname)?.slug
+}
+---
+
+<DefaultLayout title="Ontology Properties — ISQ Browser" description="Object, datatype, and annotation properties of the ISO & IEC 80000 and SMART Core ontologies.">
+  <div>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-emerald-500/10"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="max-w-3xl page-enter">
+          <!-- Breadcrumb -->
+          <div class="flex items-center gap-2 text-xs text-emerald-300/60 mb-5">
+            <a href={asset("/")} class="hover:text-emerald-200 transition-colors">Home</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <a href={asset("/ontology")} class="hover:text-emerald-200 transition-colors">Ontology</a>
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-emerald-200">Properties</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Properties</h1>
+          <p class="mt-2 text-sm leading-relaxed max-w-xl text-emerald-300/80">
+            Object, datatype, and annotation properties that connect classes and values across the ontology.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-6">
+      <!-- Object Properties -->
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-green-400"></span>
+          <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200">Object Properties</h2>
+          <span class="text-xs text-slate-400">({objProps.length})</span>
+        </div>
+        <p class="text-xs text-slate-500 mb-4">Properties that link individuals to other individuals (relations between classes).</p>
+        <div class="overflow-x-auto rounded-lg border border-slate-200/60 dark:border-dark-600/60">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Domain</th>
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Range</th>
+                <th class="text-center px-3 py-2 font-semibold text-slate-500">Ont.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {objProps.map((p) => (
+                <tr class="border-b border-slate-100/60 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                  <td class="px-3 py-2">
+                    <a href={asset(`/ontology/${p.slug}`)} class="text-green-700 dark:text-green-400 hover:underline font-medium">{p.qname}</a>
+                    {p.functional && <span class="ml-1 text-[8px] font-bold text-slate-400 uppercase">fn</span>}
+                  </td>
+                  <td class="px-3 py-2 text-slate-600 dark:text-slate-400 max-w-xs truncate">{p.description || '—'}</td>
+                  <td class="px-3 py-2">
+                    {p.domain?.length ? p.domain.map((d, i) => (
+                      <span>
+                        {i > 0 && ', '}
+                        {entitySlug(d) ? (
+                          <a href={asset(`/ontology/${entitySlug(d)}`)} class="text-blue-600 dark:text-blue-400 hover:underline">{d}</a>
+                        ) : d}
+                      </span>
+                    )) : <span class="text-slate-400">—</span>}
+                  </td>
+                  <td class="px-3 py-2">
+                    {p.range?.length ? p.range.map((r, i) => (
+                      <span>
+                        {i > 0 && ', '}
+                        {entitySlug(r) ? (
+                          <a href={asset(`/ontology/${entitySlug(r)}`)} class="text-blue-600 dark:text-blue-400 hover:underline">{r}</a>
+                        ) : r}
+                      </span>
+                    )) : <span class="text-slate-400">—</span>}
+                  </td>
+                  <td class="px-3 py-2 text-center">
+                    <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(p)}`}>{p.ontology}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Datatype Properties -->
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-lime-400"></span>
+          <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200">Datatype Properties</h2>
+          <span class="text-xs text-slate-400">({dtProps.length})</span>
+        </div>
+        <p class="text-xs text-slate-500 mb-4">Properties that link individuals to literal values (strings, numbers, dates, etc.).</p>
+        <div class="overflow-x-auto rounded-lg border border-slate-200/60 dark:border-dark-600/60">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="bg-slate-50/80 dark:bg-dark-800/80 border-b border-slate-200/60 dark:border-dark-600/60">
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Property</th>
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Description</th>
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Domain</th>
+                <th class="text-left px-3 py-2 font-semibold text-slate-500">Range</th>
+                <th class="text-center px-3 py-2 font-semibold text-slate-500">Ont.</th>
+              </tr>
+            </thead>
+            <tbody>
+              {dtProps.map((p) => (
+                <tr class="border-b border-slate-100/60 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
+                  <td class="px-3 py-2">
+                    <a href={asset(`/ontology/${p.slug}`)} class="text-lime-700 dark:text-lime-400 hover:underline font-medium">{p.qname}</a>
+                    {p.functional && <span class="ml-1 text-[8px] font-bold text-slate-400 uppercase">fn</span>}
+                  </td>
+                  <td class="px-3 py-2 text-slate-600 dark:text-slate-400 max-w-xs truncate">{p.description || '—'}</td>
+                  <td class="px-3 py-2">
+                    {p.domain?.length ? p.domain.map((d, i) => (
+                      <span>
+                        {i > 0 && ', '}
+                        {entitySlug(d) ? (
+                          <a href={asset(`/ontology/${entitySlug(d)}`)} class="text-blue-600 dark:text-blue-400 hover:underline">{d}</a>
+                        ) : d}
+                      </span>
+                    )) : <span class="text-slate-400">—</span>}
+                  </td>
+                  <td class="px-3 py-2 font-mono text-slate-500">{p.range?.join(', ') || '—'}</td>
+                  <td class="px-3 py-2 text-center">
+                    <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(p)}`}>{p.ontology}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Annotation Properties -->
+      <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+          <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200">Annotation Properties</h2>
+          <span class="text-xs text-slate-400">({annProps.length})</span>
+        </div>
+        <p class="text-xs text-slate-500 mb-4">Properties used for metadata and documentation — labels, descriptions, version info, etc.</p>
+        <div class="flex flex-wrap gap-1.5">
+          {annProps.map((p) => (
+            <a
+              href={asset(`/ontology/${p.slug}`)}
+              class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 dark:hover:text-amber-400 transition-colors inline-flex items-center gap-1"
+            >
+              {p.qname}
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</DefaultLayout>

@@ -1,8 +1,7 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import { asset } from '../../lib/asset'
-import OntologyBrowser from '../../components/OntologyBrowser.vue'
-import { ontologyEntities, ontologyPrefixes, ontologyTypeMeta, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
+import { ontologyEntities, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
 
 interface Entity {
   uri: string
@@ -12,89 +11,118 @@ interface Entity {
   description: string
   ontology: string
   type: string
-  scopeNote?: string
-  example?: string
-  altLabel?: string
-  seeAlso?: string[]
-  parent?: string
-  domain?: string[]
-  range?: string[]
-  functional?: boolean
-  targetClass?: string
-  targetSubjectsOf?: string
-  targetObjectsOf?: string
-  constraints?: { path: string; minCount?: number; maxCount?: number; datatype?: string; nodeKind?: string; classValue?: string; hasValue?: string; uniqueLang?: boolean }[]
-  scheme?: string
-  instanceOf?: string[]
-  topConcepts?: string[]
-  version?: string
-  imports?: string[]
-  isPartOf?: string[]
-  identifier?: string
 }
 
-
 const allEntities = ontologyEntities as readonly Entity[]
-const typeMeta = ontologyTypeMeta as Record<string, { label: string; color: string; colorDot: string }>
 
-// Ontology structure (data-driven)
+// Counts for navigation cards
+const classCount = allEntities.filter(e => e.type === 'class' && e.ontology !== 'external').length
+const objPropCount = allEntities.filter(e => e.type === 'objectProperty').length
+const dtPropCount = allEntities.filter(e => e.type === 'datatypeProperty').length
+const annPropCount = allEntities.filter(e => e.type === 'annotationProperty').length
+const totalPropCount = objPropCount + dtPropCount + annPropCount
+const conceptCount = allEntities.filter(e => e.type === 'concept').length
+const conceptSchemeCount = allEntities.filter(e => e.type === 'conceptScheme').length
+const shapeCount = allEntities.filter(e => e.type === 'shape').length
+const individualCount = allEntities.filter(e => e.type === 'individual').length
+const ontologyCount = allEntities.filter(e => e.type === 'ontology').length
+
+// Ontology structure
 const primaryQname = Object.keys(ontologyImportChain)[0]
 const primaryOntology = ontologyNamespaces.find(n => n.prefix === primaryQname?.split(':')[0])!
 const importedQnames: readonly string[] = (ontologyImportChain as unknown as Record<string, { imports: string[] }>)[primaryQname]?.imports ?? []
 const importedOntologies = importedQnames.map(iq => ontologyNamespaces.find(n => n.prefix === iq.split(':')[0])!).filter(Boolean)
 
-// Namespace grouping: group all entities by their prefix
-const namespaceGroups = (() => {
-  const groups = new Map<string, { prefix: string; uri: string; entities: Entity[] }>()
-  for (const ns of ontologyPrefixes) {
-    const pfx = ns.prefix
-    const entities = allEntities.filter(e => e.qname.startsWith(pfx + ':'))
-    if (entities.length > 0) {
-      groups.set(pfx, { prefix: pfx, uri: ns.uri, entities })
-    }
-  }
-  return [...groups.values()].sort((a, b) => b.entities.length - a.entities.length)
-})()
-
-// Entity lists
-const allClasses = allEntities.filter(e => e.type === 'class' && e.ontology !== 'external')
-const classes = allEntities.filter(e => e.type === 'class')
-const objProps = allEntities.filter(e => e.type === 'objectProperty')
-const dtProps = allEntities.filter(e => e.type === 'datatypeProperty')
-const annProps = allEntities.filter(e => e.type === 'annotationProperty')
-const shapes = allEntities.filter(e => e.type === 'shape')
-const concepts = allEntities.filter(e => e.type === 'concept')
-const conceptSchemes = allEntities.filter(e => e.type === 'conceptScheme')
-const individuals = allEntities.filter(e => e.type === 'individual')
-const ontologies = allEntities.filter(e => e.type === 'ontology')
-
-const rootClasses = allClasses.filter(c => !c.parent)
-
-// Chart data (computed at build time, passed to the Vue island)
-const chartTypes = Object.keys(ontologyTypeMeta).filter(t => allEntities.some(e => e.type === t))
-const chartTypeCounts = chartTypes.map(t => allEntities.filter(e => e.type === t).length)
-const chartTypeLabels = chartTypes.map(t => typeMeta[t]?.label || t)
-const chartColors: Record<string, string> = {
-  class: '#3b82f6',
-  objectProperty: '#22c55e',
-  datatypeProperty: '#84cc16',
-  annotationProperty: '#f59e0b',
-  shape: '#a855f7',
-  concept: '#14b8a6',
-  conceptScheme: '#06b6d4',
-  individual: '#f97316',
-  ontology: '#6366f1',
-  external: '#94a3b8',
+function ontologySlug(prefix: string) {
+  return allEntities.find(e => e.type === 'ontology' && e.ontology === prefix)?.slug
 }
-const chartTypeColors = chartTypes.map(t => chartColors[t] || '#94a3b8')
 
-const ontoLabels = ['isq', 'smart', 'external'].filter(o => allEntities.some(e => e.ontology === o))
-const ontoCounts = ontoLabels.map(o => allEntities.filter(e => e.ontology === o).length)
-const ontoColors = ontoLabels.map(o => o === 'isq' ? '#3b82f6' : o === 'smart' ? '#10b981' : '#94a3b8')
-const ontoDisplayLabels = ontoLabels.map(o => o === 'isq' ? 'ISO & IEC 80000' : o === 'smart' ? 'SMART Core' : 'External')
+const navCards = [
+  {
+    href: '/ontology/diagram',
+    title: 'Class Diagram',
+    count: `${classCount} classes`,
+    description: 'Visual class hierarchy tree — click nodes to expand and collapse subclasses.',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5M7.5 3v18m9-18v18"/></svg>`,
+    accent: 'brand',
+  },
+  {
+    href: '/ontology/properties',
+    title: 'Properties',
+    count: `${totalPropCount} properties`,
+    description: 'Object, datatype, and annotation properties connecting classes and values.',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011 2.998M15 14H5m0 0L3.75 12.75M5 14l-1.25 1.25M19 14h-4m0 0l-1.25-1.25M15 14l1.25 1.25M5 5h14M5 5l-1.25 1.25M5 5L3.75 3.75M19 5l1.25 1.25M19 5l1.25-1.25"/></svg>`,
+    accent: 'green',
+  },
+  {
+    href: '/ontology/concepts',
+    title: 'SKOS Concepts',
+    count: `${conceptCount} concepts`,
+    description: 'SKOS concepts and concept schemes — controlled vocabularies and taxonomies.',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/></svg>`,
+    accent: 'teal',
+  },
+  {
+    href: '/ontology/shapes',
+    title: 'SHACL Shapes',
+    count: `${shapeCount} shapes`,
+    description: 'SHACL validation shapes — constraints that enforce structural rules on data.',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
+    accent: 'purple',
+  },
+  {
+    href: '/ontology/individuals',
+    title: 'Named Individuals',
+    count: `${individualCount} individuals`,
+    description: 'Named individuals — concrete instances of ontology classes.',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>`,
+    accent: 'orange',
+  },
+  {
+    href: '/ontology/statistics',
+    title: 'Statistics',
+    count: `${allEntities.length} entities`,
+    description: 'Charts and summary metrics — entity counts by type, namespace distribution.',
+    icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>`,
+    accent: 'indigo',
+  },
+]
+
+const accentClasses: Record<string, { box: string; icon: string; hover: string }> = {
+  brand: {
+    box: 'border-brand-200/60 dark:border-brand-800/40 hover:border-brand-400 dark:hover:border-brand-600',
+    icon: 'bg-brand-50 text-brand-600 dark:bg-brand-950/40 dark:text-brand-400',
+    hover: 'group-hover:text-brand-600 dark:group-hover:text-brand-400',
+  },
+  green: {
+    box: 'border-emerald-200/60 dark:border-emerald-800/40 hover:border-emerald-400 dark:hover:border-emerald-600',
+    icon: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400',
+    hover: 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400',
+  },
+  teal: {
+    box: 'border-teal-200/60 dark:border-teal-800/40 hover:border-teal-400 dark:hover:border-teal-600',
+    icon: 'bg-teal-50 text-teal-600 dark:bg-teal-950/40 dark:text-teal-400',
+    hover: 'group-hover:text-teal-600 dark:group-hover:text-teal-400',
+  },
+  purple: {
+    box: 'border-purple-200/60 dark:border-purple-800/40 hover:border-purple-400 dark:hover:border-purple-600',
+    icon: 'bg-purple-50 text-purple-600 dark:bg-purple-950/40 dark:text-purple-400',
+    hover: 'group-hover:text-purple-600 dark:group-hover:text-purple-400',
+  },
+  orange: {
+    box: 'border-orange-200/60 dark:border-orange-800/40 hover:border-orange-400 dark:hover:border-orange-600',
+    icon: 'bg-orange-50 text-orange-600 dark:bg-orange-950/40 dark:text-orange-400',
+    hover: 'group-hover:text-orange-600 dark:group-hover:text-orange-400',
+  },
+  indigo: {
+    box: 'border-indigo-200/60 dark:border-indigo-800/40 hover:border-indigo-400 dark:hover:border-indigo-600',
+    icon: 'bg-indigo-50 text-indigo-600 dark:bg-indigo-950/40 dark:text-indigo-400',
+    hover: 'group-hover:text-indigo-600 dark:group-hover:text-indigo-400',
+  },
+}
 ---
 
-<DefaultLayout title="Ontology Browser — ISQ Browser" description="Explore the ISQ and SMART ontology classes, properties, and shapes.">
+<DefaultLayout title="Ontology Browser — ISQ Browser" description="Explore the ISO & IEC 80000 and SMART Core ontology classes, properties, shapes, and concepts.">
   <div>
     <!-- Hero -->
     <section class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950">
@@ -109,13 +137,14 @@ const ontoDisplayLabels = ontoLabels.map(o => o === 'isq' ? 'ISO & IEC 80000' : 
           <div class="flex items-center gap-2 text-xs text-emerald-300/60 mb-5">
             <a href={asset("/")} class="hover:text-emerald-200 transition-colors">Home</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            <span class="text-emerald-200">Ontology</span>
           </div>
           <div class="flex items-end gap-5 flex-wrap">
             <div>
-              <div class="text-3xl mb-2">🧬</div>
-              <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">ISO &amp; IEC 80000 Ontology</h1>
+              <div class="text-3xl mb-2">&#x1F9EC;</div>
+              <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Ontology Browser</h1>
               <p class="mt-2 text-sm leading-relaxed max-w-xl text-emerald-300/80">
-                The isq domain ontology extends the SMART Core Ontology with classes for quantities, units, and mathematical concepts per ISO &amp; IEC 80000.
+                The ISQ domain ontology extends the SMART Core Ontology with classes for quantities, units, and mathematical concepts per ISO &amp; IEC 80000.
               </p>
             </div>
             <div class="flex gap-2 ml-auto flex-shrink-0 mb-1">
@@ -128,7 +157,7 @@ const ontoDisplayLabels = ontoLabels.map(o => o === 'isq' ? 'ISO & IEC 80000' : 
                 <span class="text-xs ml-1 text-emerald-300/70">entities</span>
               </div>
               <div class="px-3 py-1.5 rounded-lg bg-white/[0.06] border border-white/[0.08]">
-                <span class="text-lg font-bold text-white heading-serif tabular-nums">{allClasses.length}</span>
+                <span class="text-lg font-bold text-white heading-serif tabular-nums">{classCount}</span>
                 <span class="text-xs ml-1 text-emerald-300/70">classes</span>
               </div>
             </div>
@@ -139,33 +168,101 @@ const ontoDisplayLabels = ontoLabels.map(o => o === 'isq' ? 'ISO & IEC 80000' : 
     </section>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <OntologyBrowser
-        client:idle
-        allEntities={allEntities}
-        allClasses={allClasses}
-        classes={classes}
-        objProps={objProps}
-        dtProps={dtProps}
-        annProps={annProps}
-        shapes={shapes}
-        concepts={concepts}
-        conceptSchemes={conceptSchemes}
-        individuals={individuals}
-        ontologies={ontologies}
-        rootClasses={rootClasses}
-        namespaceGroups={namespaceGroups}
-        ontologyPrefixes={ontologyPrefixes}
-        ontologyNamespaces={ontologyNamespaces}
-        typeMeta={typeMeta}
-        primaryOntology={primaryOntology}
-        importedOntologies={importedOntologies}
-        chartTypeLabels={chartTypeLabels}
-        chartTypeCounts={chartTypeCounts}
-        chartTypeColors={chartTypeColors}
-        ontoDisplayLabels={ontoDisplayLabels}
-        ontoCounts={ontoCounts}
-        ontoColors={ontoColors}
-      />
+      <!-- Navigation cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {navCards.map((card) => {
+          const accent = accentClasses[card.accent] || accentClasses.brand
+          return (
+            <a
+              href={asset(card.href)}
+              class={`group rounded-2xl border-2 bg-white dark:bg-dark-800 p-5 transition-all hover:shadow-lg dark:hover:shadow-none ${accent.box}`}
+            >
+              <div class="flex items-start gap-4">
+                <div class={`w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0 ${accent.icon}`}>
+                  <div class="w-5 h-5" set:html={card.icon} />
+                </div>
+                <div class="min-w-0 flex-1">
+                  <div class="flex items-center gap-2">
+                    <h3 class={`text-sm font-bold text-slate-900 dark:text-slate-100 transition-colors ${accent.hover}`}>{card.title}</h3>
+                  </div>
+                  <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-0.5">{card.count}</div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">{card.description}</p>
+                </div>
+                <svg class={`w-4 h-4 text-slate-300 dark:text-dark-500 transition-all flex-shrink-0 mt-1 group-hover:translate-x-0.5 ${accent.hover}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+              </div>
+            </a>
+          )
+        })}
+      </div>
+
+      <!-- Namespace cards -->
+      <div class="mt-8 grid sm:grid-cols-2 gap-4">
+        {/* Primary ontology */}
+        <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600 dark:bg-brand-950/40 dark:text-brand-400">isq</span>
+            <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">{primaryOntology.title}</h2>
+          </div>
+          <code class="text-[10px] text-slate-500 font-mono block mb-2 break-all">{primaryOntology.uri}</code>
+          <p class="text-xs text-slate-500 dark:text-slate-400">{primaryOntology.description}</p>
+          <div class="flex gap-4 mt-3 text-[10px] text-slate-400">
+            <span>v{primaryOntology.version}</span>
+            <span>{allEntities.filter(e => e.ontology === 'isq').length} entities</span>
+          </div>
+          {ontologySlug(primaryOntology.prefix) && (
+            <a href={asset(`/ontology/${ontologySlug(primaryOntology.prefix)}`)} class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-brand-600 dark:text-brand-400 hover:underline">
+              View ontology definition
+              <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+            </a>
+          )}
+        </div>
+
+        {/* Imported ontologies */}
+        {importedOntologies.map((imp) => (
+          <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400">{imp.prefix}</span>
+              <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">{imp.title}</h2>
+            </div>
+            <code class="text-[10px] text-slate-500 font-mono block mb-2 break-all">{imp.uri}</code>
+            <p class="text-xs text-slate-500 dark:text-slate-400">{imp.description}</p>
+            <div class="flex gap-4 mt-3 text-[10px] text-slate-400">
+              <span>v{imp.version}</span>
+              <span>{allEntities.filter(e => e.ontology === imp.prefix).length} entities</span>
+            </div>
+            {ontologySlug(imp.prefix) && (
+              <a href={asset(`/ontology/${ontologySlug(imp.prefix)}`)} class="mt-3 inline-flex items-center gap-1 text-xs font-medium text-emerald-600 dark:text-emerald-400 hover:underline">
+                View ontology definition
+                <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+              </a>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- Download links -->
+      <div class="mt-8 flex items-center gap-2 flex-wrap">
+        <a
+          href={asset("/ontology/full.ttl")}
+          class="inline-flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-200/60 hover:bg-emerald-100 hover:text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800/40 dark:hover:bg-emerald-950/60 transition-colors"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          Download complete ontology (Turtle)
+        </a>
+        <a
+          href={asset("/ontologies/isq.shacl.ttl")}
+          class="inline-flex items-center gap-2 text-xs font-medium px-3 py-2 rounded-lg bg-slate-50 text-slate-600 border border-slate-200/60 hover:bg-slate-100 hover:text-slate-700 dark:bg-dark-700 dark:text-slate-300 dark:border-dark-600 dark:hover:bg-dark-600 transition-colors"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3" />
+          </svg>
+          SHACL shapes (Turtle)
+        </a>
+      </div>
     </section>
   </div>
 </DefaultLayout>
