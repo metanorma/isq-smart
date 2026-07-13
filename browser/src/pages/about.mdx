@@ -6,7 +6,7 @@ description: "The international standard for quantities, units, and mathematical
 import IsqLogo from '../components/IsqLogo.vue'
 import Breadcrumb from '../components/Breadcrumb.astro'
 import SectionHead from '../components/SectionHead.astro'
-import { getPartsByDomain, publisherOf } from '../data/PartRegistry'
+import { getPartsByDomain, publisherOf, partUrl } from '../data/PartRegistry'
 import { partEntryCount } from '../data/index'
 import { asset } from '../lib/asset'
 
@@ -227,7 +227,7 @@ export const accentCardBg = (accent) => {
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2.5 mb-6">
       {[...qtyParts, ...mathParts].map((p) => (
-        <a href={`/quantities/part-${p.partKey}`} class={`group relative p-4 rounded-xl border transition-all hover:shadow-sm ${publisherOf(p.partKey) === 'IEC' ? 'bg-teal-50/30 dark:bg-teal-950/20 border-teal-200/50 dark:border-teal-800/40 hover:border-teal-300 dark:hover:border-teal-700' : 'bg-brand-50/30 dark:bg-brand-950/20 border-brand-200/50 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700'}`}>
+        <a href={partUrl(p.partKey)} class={`group relative p-4 rounded-xl border transition-all hover:shadow-sm ${publisherOf(p.partKey) === 'IEC' ? 'bg-teal-50/30 dark:bg-teal-950/20 border-teal-200/50 dark:border-teal-800/40 hover:border-teal-300 dark:hover:border-teal-700' : 'bg-brand-50/30 dark:bg-brand-950/20 border-brand-200/50 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700'}`}>
           <div class="text-lg mb-1.5">{p.icon}</div>
           <div class={`text-[10px] font-bold uppercase tracking-wider mb-1 ${publisherOf(p.partKey) === 'IEC' ? 'text-teal-500 dark:text-teal-400' : 'text-brand-500 dark:text-brand-400'}`}>{publisherOf(p.partKey)}</div>
           <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Part {p.partKey}</div>
