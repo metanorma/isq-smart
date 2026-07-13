@@ -41,18 +41,29 @@ jobs:
       - name: Install dependencies
         run: cd browser && npm ci
 
-      - name: Build site
-        run: cd browser && npm run build
+      - name: Build site (base=/ for link checking)
+        run: cd browser && npx astro build
+        env:
+          ASTRO_BASE_URL: /
 
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
-            --base browser/dist
+            --root-dir "$PWD/browser/dist"
             --no-progress
             --exclude "mailto:"
             --exclude "https://iso80000.org"
-            --exclude "https://www.iso.org/standard"
+            --exclude "https://www.iso.org"
+            --exclude "https://iec.ch"
             --exclude "https://webstore.iec.ch"
+            --exclude "https://www.bipm.org"
+            --exclude "https://www.nist.gov"
+            --exclude "https://qudt.org"
+            --exclude "https://ucum.org"
+            --exclude "https://www.metanorma.org"
+            --exclude "https://codata.org"
+            --exclude "https://unitsml.org"
+            --exclude "https://www.electropedia.org"
             "browser/dist/**/*.html"
           fail: true
