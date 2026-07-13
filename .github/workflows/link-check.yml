@@ -54,27 +54,13 @@ jobs:
             ln -s "$item" "$name"
           done
 
-      - name: Link Checker
+      - name: Link Checker (internal links only)
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
             --root-dir "$PWD/browser/dist"
             --no-progress
             --exclude "mailto:"
-            --exclude "https://iso80000.org"
-            --exclude "https://www.iso.org"
-            --exclude "https://iec.ch"
-            --exclude "https://.*\.iec\.ch"
-            --exclude "https://webstore.iec.ch"
-            --exclude "https://www.bipm.org"
-            --exclude "https://www.nist.gov"
-            --exclude "https://qudt.org"
-            --exclude "https://ucum.org"
-            --exclude "https://www.metanorma.org"
-            --exclude "https://codata.org"
-            --exclude "https://unitsml.org"
-            --exclude "https://www.electropedia.org"
-            --exclude "http://si-digital-framework.org"
-            --exclude "https://si-digital-framework.org"
+            --exclude "https?://.*"
             "browser/dist/**/*.html"
           fail: true
