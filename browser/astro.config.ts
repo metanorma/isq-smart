@@ -36,11 +36,8 @@ if (missingRepos.length) {
   process.exit(1)
 }
 
-const isDev = process.argv.slice(2).includes('dev')
-const baseUrl = process.env.ASTRO_BASE_URL ?? (isDev ? '/' : '/isq-smart/')
-
 export default defineConfig({
-  base: baseUrl,
+  base: '/isq-smart/',
   output: 'static',
   integrations: [vue(), mdx()],
   vite: {

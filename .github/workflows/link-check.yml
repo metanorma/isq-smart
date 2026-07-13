@@ -41,10 +41,11 @@ jobs:
       - name: Install dependencies
         run: cd browser && npm ci
 
-      - name: Build site (base=/ for link checking)
-        run: cd browser && npx astro build
-        env:
-          ASTRO_BASE_URL: /
+      - name: Build site
+        run: cd browser && npm run build
+
+      - name: Create base path symlink for link checking
+        run: cd browser/dist && ln -s . isq-smart
 
       - name: Link Checker
         uses: lycheeverse/lychee-action@v2
