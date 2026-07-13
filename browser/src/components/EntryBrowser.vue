@@ -3,6 +3,7 @@ import { asset } from '../lib/asset'
 import { computed, ref } from 'vue'
 import MathRenderer from './MathRenderer.vue'
 import { useLocalFilter } from '../composables/useLocalFilter'
+import { entryUrl } from '../data/PartRegistry'
 import { sectionLabel } from '../data/partKey'
 import type { PartMeta, DomainEntry } from '../data/types'
 
@@ -70,7 +71,7 @@ function showAll() {
       </div>
 
       <div v-else class="space-y-px">
-        <a v-for="item in visibleEntries" :key="item.i" :href="`/quantities/part-${item.p}/${item.i}`" class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent dark:border-transparent hover:bg-white dark:hover:bg-dark-800/80 transition-colors">
+        <a v-for="item in visibleEntries" :key="item.i" :href="entryUrl(item.p, item.i)" class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent dark:border-transparent hover:bg-white dark:hover:bg-dark-800/80 transition-colors">
           <div class="flex-shrink-0 w-16">
             <span class="font-mono text-[11px] font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded" v-html="hl(item.n)"></span>
           </div>
