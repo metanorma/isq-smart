@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import { computed } from 'vue'
 import { useClassHierarchy, findByQname, linkTo } from '../composables/useOntology'
 import type { PropertyRow } from '../composables/useOntology'
@@ -142,7 +143,7 @@ const related = computed(() => {
       <div class="flex items-center gap-1.5 ml-1 normal-case tracking-normal text-xs font-medium">
         <a
           v-if="classEntity"
-          :href="`/ontology/${classEntity.slug}`"
+          :href="asset(`/ontology/${classEntity.slug}`)"
           class="px-2 py-0.5 rounded bg-teal-50 dark:bg-teal-950/40 text-teal-700 dark:text-teal-400 border border-teal-100/60 dark:border-teal-800/40 hover:bg-teal-100 dark:hover:bg-teal-950/60 transition-colors"
         >{{ classQname }}</a>
       </div>

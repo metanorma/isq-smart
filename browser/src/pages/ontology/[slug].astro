@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { asset } from '../../lib/asset'
 import OntologyLink from '../../components/OntologyLink.astro'
 import { ontologyEntities, ontologyTypeMeta, ontologyPrefixes, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
 import { resolveOntologyEntityView, type OntologyEntityData } from '../../data/ontologyViewModel'
@@ -74,7 +75,7 @@ function truncate(s: string, n: number) {
       <div class="p-8 text-center text-gray-500">
         <p class="text-xl">Entity not found</p>
         <p class="mt-2">No entity with slug "{slug}"</p>
-        <a href="/ontology" class="text-blue-600 hover:underline mt-4 inline-block">
+        <a href={asset("/ontology")} class="text-blue-600 hover:underline mt-4 inline-block">
           Back to Ontology
         </a>
       </div>
@@ -83,7 +84,7 @@ function truncate(s: string, n: number) {
         <!-- Breadcrumb + prev/next -->
         <div class="flex items-center justify-between">
           <nav class="flex items-center gap-2 text-sm text-gray-500">
-            <a href="/ontology" class="hover:text-blue-600">Ontology</a>
+            <a href={asset("/ontology")} class="hover:text-blue-600">Ontology</a>
             <span>/</span>
             {parentOntologyEntity ? (
               <Fragment>

@@ -44,15 +44,15 @@ const featured: { type: string; badge: string; name: string; detail: string; lin
 const q1 = qtyById.get('t3-1.1')
 if (q1) featured.push({ type: 'quantity', badge: q1.n, name: q1.t, detail: q1.u[0] ?? '', link: entryUrl(q1.p, q1.i) })
 const u1 = unitBySlug.get('metre')
-if (u1) featured.push({ type: 'unit', badge: u1.symbols[0] ?? 'm', name: u1.name, detail: `${u1.quantityCount} quantities`, link: `/units/${u1.slug}` })
+if (u1) featured.push({ type: 'unit', badge: u1.symbols[0] ?? 'm', name: u1.name, detail: `${u1.quantityCount} quantities`, link: asset(`/units/${u1.slug}`) })
 const q2 = qtyById.get('t4-1')
 if (q2) featured.push({ type: 'quantity', badge: q2.n, name: q2.t, detail: q2.u[0] ?? '', link: entryUrl(q2.p, q2.i) })
 const u2 = unitBySlug.get('kelvin')
-if (u2) featured.push({ type: 'unit', badge: u2.symbols[0] ?? 'K', name: u2.name, detail: `${u2.quantityCount} quantities`, link: `/units/${u2.slug}` })
+if (u2) featured.push({ type: 'unit', badge: u2.symbols[0] ?? 'K', name: u2.name, detail: `${u2.quantityCount} quantities`, link: asset(`/units/${u2.slug}`) })
 const q3 = qtyById.get('t6-1')
 if (q3) featured.push({ type: 'quantity', badge: q3.n, name: q3.t, detail: q3.u[0] ?? '', link: entryUrl(q3.p, q3.i) })
 const u3 = unitBySlug.get('ampere')
-if (u3) featured.push({ type: 'unit', badge: u3.symbols[0] ?? 'A', name: u3.name, detail: `${u3.quantityCount} quantities`, link: `/units/${u3.slug}` })
+if (u3) featured.push({ type: 'unit', badge: u3.symbols[0] ?? 'A', name: u3.name, detail: `${u3.quantityCount} quantities`, link: asset(`/units/${u3.slug}`) })
 
 const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.s[0] }))
 ---
@@ -92,14 +92,14 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
             </p>
 
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="/quantities" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fff] text-brand-900 text-sm font-semibold hover:bg-brand-50 transition-colors shadow-lg shadow-black/10">
+              <a href={asset("/quantities")} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fff] text-brand-900 text-sm font-semibold hover:bg-brand-50 transition-colors shadow-lg shadow-black/10">
                 Browse Quantities
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
               </a>
-              <a href="/math" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.1] border border-white/[0.15] text-white text-sm font-medium hover:bg-white/[0.15] transition-colors">
+              <a href={asset("/math")} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.1] border border-white/[0.15] text-white text-sm font-medium hover:bg-white/[0.15] transition-colors">
                 Math Notation
               </a>
-              <a href="/units" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.08] text-white/70 text-sm font-medium hover:bg-white/[0.1] hover:text-white/90 transition-colors">
+              <a href={asset("/units")} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.08] text-white/70 text-sm font-medium hover:bg-white/[0.1] hover:text-white/90 transition-colors">
                 Units
               </a>
             </div>
@@ -127,9 +127,9 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
                 ))}
               </div>
               <div class="flex border-t border-white/[0.06] divide-x divide-white/[0.06]">
-                <a href="/quantities" class="flex-1 px-3 py-2 text-[10px] text-brand-300/50 hover:text-brand-200 transition-colors text-center">{quantitiesCount} quantities</a>
-                <a href="/units" class="flex-1 px-3 py-2 text-[10px] text-teal-300/50 hover:text-teal-200 transition-colors text-center">{totalUnits} units</a>
-                <a href="/dimensions" class="flex-1 px-3 py-2 text-[10px] text-amber-300/50 hover:text-amber-200 transition-colors text-center">{totalDims} dimensions</a>
+                <a href={asset("/quantities")} class="flex-1 px-3 py-2 text-[10px] text-brand-300/50 hover:text-brand-200 transition-colors text-center">{quantitiesCount} quantities</a>
+                <a href={asset("/units")} class="flex-1 px-3 py-2 text-[10px] text-teal-300/50 hover:text-teal-200 transition-colors text-center">{totalUnits} units</a>
+                <a href={asset("/dimensions")} class="flex-1 px-3 py-2 text-[10px] text-amber-300/50 hover:text-amber-200 transition-colors text-center">{totalDims} dimensions</a>
               </div>
             </div>
           </div>
@@ -233,7 +233,7 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
             </div>
             <p class="text-slate-500 dark:text-slate-400 text-xs">Parts 3–13 — physical quantities and their measurement units</p>
           </div>
-          <a href="/quantities" class="hidden sm:flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+          <a href={asset("/quantities")} class="hidden sm:flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
             Browse all
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
           </a>
@@ -302,7 +302,7 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
 
         <div class="lg:col-span-2 space-y-4">
           <h2 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em]">Semantic Layer</h2>
-          <a href="/documents" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+          <a href={asset("/documents")} class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-iec-100 dark:bg-iec-900/40 flex items-center justify-center text-iec-600 dark:text-iec-400 text-sm font-bold">{totalDocs}</div>
               <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Documents</h3>
@@ -310,7 +310,7 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
             <p class="text-sm text-slate-500 dark:text-slate-400">ISO & IEC 80000 publication structure with clauses and provisions.</p>
           </a>
 
-          <a href="/ontology" class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+          <a href={asset("/ontology")} class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 text-sm">OWL</div>
               <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Ontology</h3>
@@ -325,8 +325,8 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
             </div>
             <p class="text-sm text-slate-500 dark:text-slate-400">{totalUnits} measurement units and {totalDims} dimensions from UnitsML.</p>
             <div class="mt-3 flex gap-2">
-              <a href="/units" class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Browse units →</a>
-              <a href="/dimensions" class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Dimensions →</a>
+              <a href={asset("/units")} class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Browse units →</a>
+              <a href={asset("/dimensions")} class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Dimensions →</a>
             </div>
           </div>
         </div>

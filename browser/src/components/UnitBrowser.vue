@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import { ref, computed, toRef } from 'vue'
 import { partUrl, entryUrl, getPartMeta } from '../data/PartRegistry'
 import { symbolCache } from '../data/generated/domain-index'
@@ -106,7 +107,7 @@ const partGroups = computed<PartGroup[]>(() => {
             <a
               v-for="unit in group.units"
               :key="unit.slug"
-              :href="`/units/${unit.slug}`"
+              :href="asset(`/units/${unit.slug}`)"
               class="group block px-5 py-3 rounded-xl bg-white dark:bg-dark-900 border border-slate-200/70 dark:border-dark-600/60 hover:border-slate-300 dark:hover:border-dark-500 hover:shadow-sm transition-all"
             >
               <div class="flex items-start gap-4">
@@ -143,7 +144,7 @@ const partGroups = computed<PartGroup[]>(() => {
         <a
           v-for="unit in filtered"
           :key="unit.slug"
-          :href="`/units/${unit.slug}`"
+          :href="asset(`/units/${unit.slug}`)"
           class="group block px-5 py-3.5 rounded-xl bg-white dark:bg-dark-900 border border-slate-200/70 dark:border-dark-600/60 hover:border-slate-300 dark:hover:border-dark-500 hover:shadow-sm transition-all"
         >
           <div class="flex items-start gap-4">

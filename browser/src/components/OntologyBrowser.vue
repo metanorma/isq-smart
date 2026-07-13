@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import { ref, computed, watch, nextTick } from 'vue'
 import ClassTreeNode from './ClassTreeNode.vue'
 import OntologyCharts from './OntologyCharts.vue'
@@ -282,7 +283,7 @@ watch(treeExpanded, async () => {
                 <a
                   v-for="imp in importedOntologies"
                   :key="imp.prefix"
-                  :href="`/ontology/${ontologySlug(imp.prefix)}`"
+                  :href="asset(`/ontology/${ontologySlug(imp.prefix)}`)"
                   class="text-xs px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 font-mono hover:bg-emerald-100 hover:text-emerald-800 transition-colors"
                 >{{ imp.prefix }}</a>
               </div>
@@ -297,7 +298,7 @@ watch(treeExpanded, async () => {
             <a
               v-for="imp in importedOntologies"
               :key="imp.prefix"
-              :href="`/ontology/${ontologySlug(imp.prefix)}`"
+              :href="asset(`/ontology/${ontologySlug(imp.prefix)}`)"
               class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 hover:bg-slate-100/80 dark:hover:bg-dark-600 transition-colors"
             >
               <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600">{{ imp.prefix }}</span>
@@ -372,7 +373,7 @@ watch(treeExpanded, async () => {
           <a
             v-for="imp in importedOntologies"
             :key="imp.prefix"
-            :href="`/ontology/${ontologySlug(imp.prefix)}`"
+            :href="asset(`/ontology/${ontologySlug(imp.prefix)}`)"
             class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-emerald-50/40 border border-emerald-200/40 hover:bg-emerald-50/70 transition-colors"
           >
             <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 flex-shrink-0 mt-0.5">{{ imp.prefix }}</span>
@@ -432,7 +433,7 @@ watch(treeExpanded, async () => {
           <a
             v-for="e in ns.entities"
             :key="e.qname"
-            :href="`/ontology/${e.slug}`"
+            :href="asset(`/ontology/${e.slug}`)"
             class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
           >
             <span :class="['w-1.5 h-1.5 rounded-full', typeMeta[e.type]?.colorDot || 'bg-slate-300']"></span>
@@ -452,7 +453,7 @@ watch(treeExpanded, async () => {
           <a
             v-for="e in filteredAzEntities"
             :key="e.qname"
-            :href="`/ontology/${e.slug}`"
+            :href="asset(`/ontology/${e.slug}`)"
             class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
           >
             <span :class="['w-1.5 h-1.5 rounded-full', typeMeta[e.type]?.colorDot || 'bg-slate-300']"></span>
@@ -483,11 +484,11 @@ watch(treeExpanded, async () => {
               class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50"
             >
               <td class="px-4 py-2">
-                <a :href="`/ontology/${c.slug}`" class="text-brand-600 hover:underline font-medium">{{ c.qname }}</a>
+                <a :href="asset(`/ontology/${c.slug}`)" class="text-brand-600 hover:underline font-medium">{{ c.qname }}</a>
               </td>
               <td class="px-4 py-2 text-slate-600 max-w-md truncate">{{ c.description || '—' }}</td>
               <td class="px-4 py-2">
-                <a v-if="c.parent" :href="`/ontology/${entitySlug(c.parent)}`" class="text-blue-600 hover:underline text-xs">{{ c.parent }}</a>
+                <a v-if="c.parent" :href="asset(`/ontology/${entitySlug(c.parent)}`)" class="text-blue-600 hover:underline text-xs">{{ c.parent }}</a>
                 <span v-else class="text-slate-400">—</span>
               </td>
               <td class="px-4 py-2 text-center">
@@ -523,12 +524,12 @@ watch(treeExpanded, async () => {
                 :key="p.qname"
                 class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50"
               >
-                <td class="px-3 py-2"><a :href="`/ontology/${p.slug}`" class="text-green-700 hover:underline font-medium">{{ p.qname }}</a></td>
+                <td class="px-3 py-2"><a :href="asset(`/ontology/${p.slug}`)" class="text-green-700 hover:underline font-medium">{{ p.qname }}</a></td>
                 <td class="px-3 py-2 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
                 <td class="px-3 py-2">
                   <template v-if="p.domain?.length">
                     <template v-for="(d, i) in p.domain" :key="i">
-                      <a :href="`/ontology/${entitySlug(d)}`" class="text-blue-600 hover:underline">{{ d }}</a>
+                      <a :href="asset(`/ontology/${entitySlug(d)}`)" class="text-blue-600 hover:underline">{{ d }}</a>
                       <span v-if="i < p.domain.length - 1">, </span>
                     </template>
                   </template>
@@ -537,7 +538,7 @@ watch(treeExpanded, async () => {
                 <td class="px-3 py-2">
                   <template v-if="p.range?.length">
                     <template v-for="(r, i) in p.range" :key="i">
-                      <a :href="`/ontology/${entitySlug(r)}`" class="text-blue-600 hover:underline">{{ r }}</a>
+                      <a :href="asset(`/ontology/${entitySlug(r)}`)" class="text-blue-600 hover:underline">{{ r }}</a>
                       <span v-if="i < p.range.length - 1">, </span>
                     </template>
                   </template>
@@ -569,12 +570,12 @@ watch(treeExpanded, async () => {
                 :key="p.qname"
                 class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50"
               >
-                <td class="px-3 py-2"><a :href="`/ontology/${p.slug}`" class="text-lime-700 hover:underline font-medium">{{ p.qname }}</a></td>
+                <td class="px-3 py-2"><a :href="asset(`/ontology/${p.slug}`)" class="text-lime-700 hover:underline font-medium">{{ p.qname }}</a></td>
                 <td class="px-3 py-2 text-slate-600 max-w-xs truncate">{{ p.description || '—' }}</td>
                 <td class="px-3 py-2">
                   <template v-if="p.domain?.length">
                     <template v-for="(d, i) in p.domain" :key="i">
-                      <a :href="`/ontology/${entitySlug(d)}`" class="text-blue-600 hover:underline">{{ d }}</a>
+                      <a :href="asset(`/ontology/${entitySlug(d)}`)" class="text-blue-600 hover:underline">{{ d }}</a>
                       <span v-if="i < p.domain.length - 1">, </span>
                     </template>
                   </template>
@@ -594,7 +595,7 @@ watch(treeExpanded, async () => {
           <a
             v-for="p in annProps"
             :key="p.qname"
-            :href="`/ontology/${p.slug}`"
+            :href="asset(`/ontology/${p.slug}`)"
             class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors"
           >{{ p.qname }}</a>
         </div>
@@ -628,14 +629,14 @@ watch(treeExpanded, async () => {
                 v-show="isEntityVisible(c)"
               >
                 <td class="px-3 py-2">
-                  <a :href="`/ontology/${c.slug}`" class="text-teal-700 hover:underline font-medium">{{ c.label }}</a>
+                  <a :href="asset(`/ontology/${c.slug}`)" class="text-teal-700 hover:underline font-medium">{{ c.label }}</a>
                   <code class="ml-1 text-[9px] text-slate-400">{{ c.qname }}</code>
                 </td>
                 <td class="px-3 py-2 text-slate-600 max-w-sm">{{ c.description || '—' }}</td>
                 <td class="px-3 py-2">
                   <template v-if="c.instanceOf?.length">
                     <template v-for="(t, i) in c.instanceOf" :key="i">
-                      <a :href="`/ontology/${entitySlug(t)}`" class="text-blue-600 hover:underline">{{ t }}</a>
+                      <a :href="asset(`/ontology/${entitySlug(t)}`)" class="text-blue-600 hover:underline">{{ t }}</a>
                       <span v-if="i < c.instanceOf.length - 1">, </span>
                     </template>
                   </template>
@@ -658,12 +659,12 @@ watch(treeExpanded, async () => {
       >
         <div class="flex items-center gap-2 mb-2">
           <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-purple-50 text-purple-600">Shape</span>
-          <a :href="`/ontology/${s.slug}`" class="text-sm font-bold text-brand-600 hover:underline">{{ s.qname }}</a>
+          <a :href="asset(`/ontology/${s.slug}`)" class="text-sm font-bold text-brand-600 hover:underline">{{ s.qname }}</a>
           <span :class="['text-[9px] font-semibold px-1.5 py-0.5 rounded', badgeColor(s)]">{{ s.ontology }}</span>
         </div>
         <div class="text-xs text-slate-500 mb-3">
-          <span v-if="s.targetClass">Target: <a :href="`/ontology/${entitySlug(s.targetClass)}`" class="text-blue-600 hover:underline">{{ s.targetClass }}</a></span>
-          <span v-if="s.targetSubjectsOf">Subjects of: <a :href="`/ontology/${entitySlug(s.targetSubjectsOf)}`" class="text-blue-600 hover:underline">{{ s.targetSubjectsOf }}</a></span>
+          <span v-if="s.targetClass">Target: <a :href="asset(`/ontology/${entitySlug(s.targetClass)}`)" class="text-blue-600 hover:underline">{{ s.targetClass }}</a></span>
+          <span v-if="s.targetSubjectsOf">Subjects of: <a :href="asset(`/ontology/${entitySlug(s.targetSubjectsOf)}`)" class="text-blue-600 hover:underline">{{ s.targetSubjectsOf }}</a></span>
           <span v-if="s.targetObjectsOf">Objects of: {{ s.targetObjectsOf }}</span>
         </div>
         <div v-if="s.constraints?.length" class="overflow-x-auto rounded-lg border border-slate-200/60">
@@ -680,14 +681,14 @@ watch(treeExpanded, async () => {
             <tbody>
               <tr v-for="(c, i) in s.constraints" :key="i" class="border-b border-slate-100/60 last:border-0">
                 <td class="px-3 py-2">
-                  <a v-if="entitySlug(c.path)" :href="`/ontology/${entitySlug(c.path)}`" class="text-blue-600 hover:underline">{{ c.path }}</a>
+                  <a v-if="entitySlug(c.path)" :href="asset(`/ontology/${entitySlug(c.path)}`)" class="text-blue-600 hover:underline">{{ c.path }}</a>
                   <span v-else class="font-mono">{{ c.path }}</span>
                 </td>
                 <td class="px-3 py-2 text-center">{{ c.minCount ?? '—' }}</td>
                 <td class="px-3 py-2 text-center">{{ c.maxCount ?? '—' }}</td>
                 <td class="px-3 py-2">
                   <span v-if="c.datatype" class="italic">{{ c.datatype }}</span>
-                  <a v-if="!c.datatype && c.classValue" :href="`/ontology/${entitySlug(c.classValue)}`" class="text-blue-600 hover:underline">{{ c.classValue }}</a>
+                  <a v-if="!c.datatype && c.classValue" :href="asset(`/ontology/${entitySlug(c.classValue)}`)" class="text-blue-600 hover:underline">{{ c.classValue }}</a>
                   <span v-if="c.hasValue" class="text-slate-400 ml-1">= {{ c.hasValue }}</span>
                 </td>
                 <td class="px-3 py-2">{{ c.nodeKind || '—' }}</td>
@@ -718,13 +719,13 @@ watch(treeExpanded, async () => {
               class="border-b border-slate-100/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50"
             >
               <td class="px-4 py-2">
-                <a :href="`/ontology/${ind.slug}`" class="text-brand-600 hover:underline font-medium">{{ ind.label }}</a>
+                <a :href="asset(`/ontology/${ind.slug}`)" class="text-brand-600 hover:underline font-medium">{{ ind.label }}</a>
                 <code class="ml-1 text-[9px] text-slate-400">{{ ind.qname }}</code>
               </td>
               <td class="px-4 py-2">
                 <template v-if="ind.instanceOf?.length">
                   <template v-for="(t, i) in ind.instanceOf" :key="i">
-                    <a :href="`/ontology/${entitySlug(t)}`" class="text-blue-600 hover:underline">{{ t }}</a>
+                    <a :href="asset(`/ontology/${entitySlug(t)}`)" class="text-blue-600 hover:underline">{{ t }}</a>
                     <span v-if="i < ind.instanceOf.length - 1">, </span>
                   </template>
                 </template>

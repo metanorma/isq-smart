@@ -1,6 +1,7 @@
 import type { Domain, DomainInfo, PartMeta, PartKey } from './types'
 import { SiteConfig } from '../site.config'
 import { basePartKey as getBasePart } from './partKey'
+import { asset } from '../lib/asset'
 
 // ── Publisher determination (single source of truth) ──
 
@@ -45,14 +46,14 @@ const DOMAINS: readonly DomainInfo[] = [
     key: 'quantities',
     label: 'Quantities',
     description: 'Physical quantities, their definitions, symbols, and measurement units across Parts 3–13.',
-    path: '/quantities',
+    path: asset('/quantities'),
     icon: '📐',
   },
   {
     key: 'math',
     label: 'Mathematical Notation',
     description: 'Mathematical signs, symbols, and operators defined in Part 2.',
-    path: '/math',
+    path: asset('/math'),
     icon: '𝝨',
   },
 ]
@@ -187,7 +188,7 @@ export function getPartsByDomain(domain: Domain): PartMeta[] {
 export function partUrl(partKey: PartKey): string {
   const meta = getPartMeta(partKey)
   if (!meta) return '/'
-  return `${meta.domain === 'math' ? '/math' : '/quantities'}/part-${meta.partKey}`
+  return asset(`${meta.domain === 'math' ? '/math' : '/quantities'}/part-${meta.partKey}`)
 }
 
 export function entryUrl(partKey: PartKey, id: string): string {
@@ -195,7 +196,7 @@ export function entryUrl(partKey: PartKey, id: string): string {
 }
 
 export function domainPath(domain: Domain): string {
-  return domain === 'math' ? '/math' : '/quantities'
+  return asset(domain === 'math' ? '/math' : '/quantities')
 }
 
 export function getSectionsForDocument(docKey: string): PartSection[] {

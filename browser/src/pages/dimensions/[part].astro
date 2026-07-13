@@ -77,9 +77,9 @@ const isoEntries = dim ? dim.isoEntries.map(e => {
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
           <div class="max-w-3xl page-enter">
             <div class="flex items-center gap-2 text-xs text-indigo-300/60 mb-5">
-              <a href="/" class="hover:text-indigo-200 transition-colors">Home</a>
+              <a href={asset("/")} class="hover:text-indigo-200 transition-colors">Home</a>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-              <a href="/dimensions" class="hover:text-indigo-200 transition-colors">Dimensions</a>
+              <a href={asset("/dimensions")} class="hover:text-indigo-200 transition-colors">Dimensions</a>
               <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             </div>
 
@@ -251,7 +251,7 @@ const isoEntries = dim ? dim.isoEntries.map(e => {
       <div class="text-4xl mb-4">📐</div>
       <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 heading-serif">Dimension not found</h1>
       <p class="text-sm text-slate-500 dark:text-slate-400 mt-2">"{part}" is not a valid physical dimension.</p>
-      <a href="/dimensions" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
+      <a href={asset("/dimensions")} class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
         View all dimensions
       </a>
     </div>

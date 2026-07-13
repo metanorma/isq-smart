@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { asset } from '../../lib/asset'
 import UnitBrowser from '../../components/UnitBrowser.vue'
 import { units } from '../../data/generated/unitsdb'
 ---
@@ -17,7 +18,7 @@ import { units } from '../../data/generated/unitsdb'
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div class="max-w-3xl page-enter">
           <div class="flex items-center gap-2 text-xs text-teal-300/60 mb-5">
-            <a href="/" class="hover:text-teal-200 transition-colors">Home</a>
+            <a href={asset("/")} class="hover:text-teal-200 transition-colors">Home</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
           </div>
           <div class="flex items-end gap-5 flex-wrap">
