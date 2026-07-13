@@ -1,0 +1,21 @@
+---
+import { linkTo } from '../composables/useOntology'
+
+interface Props {
+  qname: string
+  label?: string
+  /** CSS classes for the fallback <span> when no link exists */
+  spanClass?: string
+}
+
+const { qname, label, spanClass } = Astro.props
+const href = linkTo(qname)
+const text = label ?? qname
+---
+{
+  href ? (
+    <a href={href} class="text-blue-600 hover:underline">{text}</a>
+  ) : (
+    <span class={spanClass}>{text}</span>
+  )
+}
