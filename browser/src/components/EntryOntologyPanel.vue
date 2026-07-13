@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import { computed } from 'vue'
 import { useClassHierarchy, findByQname, linkTo } from '../composables/useOntology'
 import type { PropertyRow } from '../composables/useOntology'
@@ -162,7 +163,7 @@ const headerBadges = computed(() => {
         <a
           v-for="badge in headerBadges"
           :key="badge.qname"
-          :href="`/ontology/${badge.slug}`"
+          :href="asset(`/ontology/${badge.slug}`)"
           class="px-2 py-0.5 rounded hover:opacity-80 transition-colors"
           :class="badge.colorClass"
         >{{ badge.qname }}</a>

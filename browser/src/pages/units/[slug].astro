@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { asset } from '../../lib/asset'
 import Breadcrumb from '../../components/Breadcrumb.astro'
 import MathRenderer from '../../components/MathRenderer.vue'
 import UnitOntologyPanel from '../../components/UnitOntologyPanel.vue'
@@ -175,7 +176,7 @@ const partGroups: PartGroup[] = unit ? (() => {
   ) : (
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
       <h1 class="text-2xl font-bold text-slate-900 dark:text-slate-100 heading-serif">Unit Not Found</h1>
-      <a href="/units" class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
+      <a href={asset("/units")} class="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-brand-600 text-white text-sm font-medium hover:bg-brand-700 transition-colors">
         Back to Units
       </a>
     </div>

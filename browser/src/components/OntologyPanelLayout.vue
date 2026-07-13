@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import type { OntEntity, PropertyRow } from '../composables/useOntology'
 import { relatedBadgeColor } from '../composables/useOntology'
 
@@ -33,7 +34,7 @@ defineProps<{
             <template v-for="(cls, i) in hierarchy" :key="cls.qname">
               <a
                 v-if="i < hierarchy.length - 1"
-                :href="`/ontology/${cls.slug}`"
+                :href="asset(`/ontology/${cls.slug}`)"
                 class="text-brand-600 dark:text-brand-400 hover:underline"
               >{{ cls.qname }}</a>
               <span v-else class="font-bold text-slate-900 dark:text-slate-100 px-1.5 py-0.5 rounded" :class="instanceColor">{{ cls.qname }}</span>
@@ -62,7 +63,7 @@ defineProps<{
           <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Properties</h3>
           <div class="flex items-center gap-1.5">
             <span v-for="shape in shapes" :key="shape.qname" class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 border border-purple-100/60 dark:border-purple-800/40">
-              <a :href="`/ontology/${shape.slug}`" class="hover:underline" @click.stop>{{ shape.qname }}</a>
+              <a :href="asset(`/ontology/${shape.slug}`)" class="hover:underline" @click.stop>{{ shape.qname }}</a>
             </span>
           </div>
         </div>
@@ -77,7 +78,7 @@ defineProps<{
             <tbody>
               <tr v-for="row in propertyTable" :key="row.path" class="border-b border-slate-100/60 dark:border-dark-700/40 last:border-0 hover:bg-slate-50/30 dark:hover:bg-dark-700/30 transition-colors">
                 <td class="px-4 py-2">
-                  <a v-if="row.pathSlug" :href="`/ontology/${row.pathSlug}`" class="font-mono text-brand-600 dark:text-brand-400 hover:underline">{{ row.path }}</a>
+                  <a v-if="row.pathSlug" :href="asset(`/ontology/${row.pathSlug}`)" class="font-mono text-brand-600 dark:text-brand-400 hover:underline">{{ row.path }}</a>
                   <span v-else class="font-mono text-slate-600 dark:text-slate-400">{{ row.path }}</span>
                 </td>
                 <td class="px-4 py-2">
@@ -112,7 +113,7 @@ defineProps<{
           <a
             v-for="shape in shapes"
             :key="shape.qname"
-            :href="`/ontology/${shape.slug}`"
+            :href="asset(`/ontology/${shape.slug}`)"
             class="text-xs font-medium px-2.5 py-1.5 rounded-lg border border-purple-300 dark:border-purple-700 bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/60 transition-colors inline-flex items-center gap-1.5"
           >
             <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span>

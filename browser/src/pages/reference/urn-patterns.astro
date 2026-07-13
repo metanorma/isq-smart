@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { asset } from '../../lib/asset'
 ---
 
 <DefaultLayout
@@ -7,7 +8,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
   description="ISO and IEC URN identifier patterns for quantities and units."
 >
   <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-    <a href="/reference" class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-brand-600 transition-colors mb-6">
+    <a href={asset("/reference")} class="inline-flex items-center gap-1.5 text-xs text-slate-400 hover:text-brand-600 transition-colors mb-6">
       <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M15 19l-7-7 7-7"/></svg>
       API &amp; Reference
     </a>

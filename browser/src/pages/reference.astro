@@ -21,7 +21,7 @@ import { asset } from '../lib/asset'
       <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div class="max-w-3xl page-enter">
           <div class="flex items-center gap-2 text-xs text-indigo-300/60 mb-5">
-            <a href="/" class="hover:text-indigo-200 transition-colors">Home</a>
+            <a href={asset("/")} class="hover:text-indigo-200 transition-colors">Home</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
           </div>
           <div class="text-3xl mb-2">📖</div>
@@ -88,7 +88,7 @@ import { asset } from '../lib/asset'
       <div>
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">URN Identifier Schemes</h2>
-          <a href="/reference/urn-patterns" class="inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
+          <a href={asset("/reference/urn-patterns")} class="inline-flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
             Full reference
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
           </a>

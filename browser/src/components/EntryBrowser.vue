@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import { computed, ref } from 'vue'
 import MathRenderer from './MathRenderer.vue'
 import { useLocalFilter } from '../composables/useLocalFilter'

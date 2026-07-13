@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { asset } from '../lib/asset'
 import { toRef } from 'vue'
 import { useLocalFilter } from '../composables/useLocalFilter'
 
@@ -46,7 +47,7 @@ const { searchQuery, filtered } = useLocalFilter(
         <a
           v-for="dim in filtered"
           :key="dim.nistId"
-          :href="`/dimensions/${dim.slug}`"
+          :href="asset(`/dimensions/${dim.slug}`)"
           class="group flex items-center gap-4 px-5 py-3.5 rounded-xl bg-white dark:bg-dark-900 border border-slate-200/70 dark:border-dark-600/60 hover:border-indigo-200 dark:hover:border-indigo-800 hover:shadow-sm transition-all"
         >
           <!-- Dimension vector -->
