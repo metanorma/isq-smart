@@ -50,7 +50,7 @@ const isActivePath = (path: string) => isActive(pathname, path)
 
             <ThemeToggle client:only="vue" />
 
-            <MobileNav client:load links={navLinks} activePath={pathname} />
+            <MobileNav client:only="vue" links={navLinks} activePath={pathname} />
           </div>
         </div>
       </div>
@@ -61,10 +61,10 @@ const isActivePath = (path: string) => isActive(pathname, path)
     </main>
 
     <SiteFooter />
-    <BackToTop client:visible />
-    <AppToast client:idle />
-    <GlobalSearch client:idle />
-    <SearchHint client:load />
+    <BackToTop client:only="vue" />
+    <AppToast client:only="vue" />
+    <GlobalSearch client:only="vue" />
+    <SearchHint client:only="vue" />
   </div>
 
   <script>
