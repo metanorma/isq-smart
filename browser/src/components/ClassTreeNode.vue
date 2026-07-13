@@ -32,7 +32,6 @@ const children = computed(() =>
 const hasChildren = computed(() => children.value.length > 0)
 const isExpanded = computed(() => internalExpanded.value.has(props.entity.qname))
 
-// Recursively count all descendants for the badge
 const descendantCount = computed(() => {
   let count = 0
   const stack = [...children.value]
@@ -53,35 +52,36 @@ function toggle() {
   internalExpanded.value = s
 }
 
-// Color coding by ontology — left border accent + badge tint
 const accentClasses = computed(() => {
   if (props.entity.ontology === 'isq') {
     return {
-      border: 'border-l-brand-400 dark:border-l-brand-500',
-      hoverBg: 'hover:bg-brand-50/50 dark:hover:bg-brand-950/20',
-      badge: 'bg-brand-50 text-brand-600 dark:bg-brand-950/40 dark:text-brand-400',
-      dot: 'bg-brand-400 dark:bg-brand-500',
+      box: 'bg-brand-50/60 dark:bg-brand-950/20 border-brand-200/70 dark:border-brand-800/40',
+      text: 'text-brand-700 dark:text-brand-300',
+      badge: 'bg-brand-100 text-brand-700 dark:bg-brand-900/40 dark:text-brand-400',
+      connector: 'border-brand-300/50 dark:border-brand-700/40',
+      hoverBorder: 'hover:border-brand-400 dark:hover:border-brand-600',
     }
   }
   if (props.entity.ontology === 'smart') {
     return {
-      border: 'border-l-emerald-400 dark:border-l-emerald-500',
-      hoverBg: 'hover:bg-emerald-50/50 dark:hover:bg-emerald-950/20',
-      badge: 'bg-emerald-50 text-emerald-600 dark:bg-emerald-950/40 dark:text-emerald-400',
-      dot: 'bg-emerald-400 dark:bg-emerald-500',
+      box: 'bg-emerald-50/60 dark:bg-emerald-950/20 border-emerald-200/70 dark:border-emerald-800/40',
+      text: 'text-emerald-700 dark:text-emerald-300',
+      badge: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-400',
+      connector: 'border-emerald-300/50 dark:border-emerald-700/40',
+      hoverBorder: 'hover:border-emerald-400 dark:hover:border-emerald-600',
     }
   }
   return {
-    border: 'border-l-slate-300 dark:border-l-dark-500',
-    hoverBg: 'hover:bg-slate-50/50 dark:hover:bg-dark-700/40',
+    box: 'bg-slate-50/60 dark:bg-dark-800/40 border-slate-200/70 dark:border-dark-600/40',
+    text: 'text-slate-600 dark:text-slate-400',
     badge: 'bg-slate-100 text-slate-600 dark:bg-dark-700 dark:text-slate-400',
-    dot: 'bg-slate-300 dark:bg-slate-500',
+    connector: 'border-slate-200/60 dark:border-dark-600/40',
+    hoverBorder: 'hover:border-slate-300 dark:hover:border-dark-500',
   }
 })
 
 const isRoot = computed(() => props.depth === 0)
 
-// Listen for expand-all / collapse-all events from parent
 function handleExpandAll() {
   const s = new Set<string>()
   for (const c of props.allClasses) {
@@ -109,64 +109,88 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div>
-    <div
-      class="group flex items-center gap-2 px-2.5 py-1.5 rounded-md border-l-2 transition-colors duration-100"
-      :class="[accentClasses.border, accentClasses.hoverBg]"
-    >
-      <!-- Expand/collapse chevron -->
-      <button
-        v-if="hasChildren"
-        @click="toggle"
-        class="w-4 h-4 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 flex-shrink-0 transition-transform"
-        :class="isExpanded ? 'rotate-90' : ''"
-        :aria-expanded="isExpanded"
-        :aria-label="isExpanded ? 'Collapse' : 'Expand'"
+  <div class="class-tree-node">
+    <!-- Node box -->
+    <div class="flex items-stretch">
+      <!-- Connector lines for non-root nodes -->
+      <template v-if="!isRoot">
+        <div class="w-6 flex items-start justify-center pt-3 flex-shrink-0">
+          <div class="w-full h-3 border-t-2" :class="accentClasses.connector"></div>
+        </div>
+      </template>
+
+      <!-- The actual node -->
+      <div
+        class="flex-1 min-w-0 rounded-lg border-2 px-3 py-2 transition-all duration-150 cursor-pointer group"
+        :class="[accentClasses.box, accentClasses.hoverBorder, hasChildren ? '' : 'cursor-default']"
+        @click="hasChildren && toggle()"
       >
-        <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-      <span v-else class="w-4 h-4 flex items-center justify-center flex-shrink-0">
-        <span class="w-1.5 h-1.5 rounded-full" :class="accentClasses.dot"></span>
-      </span>
+        <div class="flex items-center gap-2">
+          <!-- Expand/collapse chevron -->
+          <svg
+            v-if="hasChildren"
+            class="w-4 h-4 flex-shrink-0 transition-transform duration-200"
+            :class="[accentClasses.text, isExpanded ? 'rotate-90' : '']"
+            fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+          <span v-else class="w-4 h-4 flex items-center justify-center flex-shrink-0">
+            <span class="w-2 h-2 rounded-full" :class="accentClasses.badge"></span>
+          </span>
 
-      <!-- Label link -->
-      <a
-        :href="asset(`/ontology/${entity.slug}`)"
-        class="text-sm font-medium text-slate-700 dark:text-slate-200 hover:text-brand-600 dark:hover:text-brand-400 transition-colors truncate"
-      >{{ entity.label }}</a>
+          <!-- Label link -->
+          <a
+            :href="asset(`/ontology/${entity.slug}`)"
+            class="text-sm font-semibold hover:underline truncate"
+            :class="accentClasses.text"
+            @click.stop
+          >{{ entity.label }}</a>
 
-      <!-- QName badge -->
-      <code
-        class="text-[10px] font-mono px-1.5 py-0.5 rounded flex-shrink-0 hidden sm:inline-block"
-        :class="accentClasses.badge"
-      >{{ entity.qname }}</code>
+          <!-- QName badge -->
+          <code
+            class="text-[9px] font-mono px-1.5 py-0.5 rounded flex-shrink-0 hidden sm:inline-block"
+            :class="accentClasses.badge"
+          >{{ entity.qname }}</code>
 
-      <!-- Type badge for root nodes -->
-      <span
-        v-if="isRoot"
-        class="text-[9px] font-semibold uppercase tracking-wide px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 dark:bg-dark-700 dark:text-slate-400 flex-shrink-0"
-      >root</span>
+          <!-- Root badge -->
+          <span
+            v-if="isRoot"
+            class="text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded bg-slate-200 text-slate-600 dark:bg-dark-700 dark:text-slate-400 flex-shrink-0"
+          >ROOT</span>
 
-      <!-- Subclass count -->
-      <span
-        v-if="descendantCount > 0"
-        class="text-[10px] font-semibold text-slate-400 dark:text-slate-500 ml-auto flex-shrink-0 tabular-nums whitespace-nowrap"
-      >{{ children.length }} <span class="hidden sm:inline">sub{{ children.length > 1 ? 'classes' : 'class' }}</span><span v-if="descendantCount > children.length" class="text-slate-300 dark:text-dark-500"> ({{ descendantCount }} total)</span></span>
+          <!-- Subclass count -->
+          <span
+            v-if="descendantCount > 0"
+            class="text-[10px] font-semibold ml-auto flex-shrink-0 tabular-nums whitespace-nowrap px-1.5 py-0.5 rounded-full"
+            :class="accentClasses.badge"
+          >{{ children.length }} direct<span v-if="descendantCount > children.length" class="opacity-60"> / {{ descendantCount }} total</span></span>
+        </div>
+
+        <!-- Description (compact) -->
+        <p
+          v-if="entity.description && isRoot"
+          class="mt-1 text-[11px] text-slate-500 dark:text-slate-400 leading-snug line-clamp-1 pl-6"
+        >{{ entity.description }}</p>
+      </div>
     </div>
 
-    <!-- Children with left border indentation -->
-    <template v-if="isExpanded">
-      <div class="ml-2 border-l border-slate-200/60 dark:border-dark-600/60 pl-1">
-        <ClassTreeNode
-          v-for="child in children"
-          :key="child.qname"
-          :entity="child"
-          :depth="depth + 1"
-          :all-classes="allClasses"
-          :expanded-nodes="internalExpanded"
-        />
+    <!-- Children with vertical connector -->
+    <template v-if="isExpanded && children.length > 0">
+      <div class="flex">
+        <div class="w-6 flex justify-center flex-shrink-0" :class="isRoot ? '' : 'ml-6'">
+          <div class="w-0.5 bg-gradient-to-b from-transparent via-current to-transparent opacity-20" :class="accentClasses.text"></div>
+        </div>
+        <div class="flex-1 space-y-2 pt-2">
+          <ClassTreeNode
+            v-for="child in children"
+            :key="child.qname"
+            :entity="child"
+            :depth="depth + 1"
+            :all-classes="allClasses"
+            :expanded-nodes="internalExpanded"
+          />
+        </div>
       </div>
     </template>
   </div>
