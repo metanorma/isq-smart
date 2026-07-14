@@ -3,6 +3,8 @@ import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entry
 import { partUrn, entryUrn } from './urn'
 import { ttlObject as ttlString, ttlBlankNode, declarePrefixes, escapeTurtle } from '../lib/turtle-writer'
 
+const jsonLdContextUrl = 'https://w3id.org/standards/isq/ontologies/core/'
+
 const jsonLdContext = {
   [NS.core.prefix]: NS.core.uri,
   [NS.smart.prefix]: NS.smart.uri,
@@ -51,7 +53,7 @@ const entrySerializer = (entry: Entry, partKey: string): Record<string, unknown>
 export function generateEntryJsonLd(entry: Entry, meta: PartMeta, edition: string) {
   const data = entrySerializer(entry, meta.partKey)
   return {
-    '@context': jsonLdContext,
+    '@context': jsonLdContextUrl,
     ...data,
     'iso:urn': entryUrn(entry, meta.partKey, edition),
   }
@@ -59,7 +61,7 @@ export function generateEntryJsonLd(entry: Entry, meta: PartMeta, edition: strin
 
 export function generateIndexJsonLd(parts: PartMeta[]) {
   return {
-    '@context': jsonLdContext,
+    '@context': jsonLdContextUrl,
     '@type': 'skos:Collection',
     '@id': 'https://w3id.org/standards/isq/parts',
     'skos:member': parts.map(p => ({
