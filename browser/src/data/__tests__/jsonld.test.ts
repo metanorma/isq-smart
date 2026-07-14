@@ -13,7 +13,7 @@ import {
   partUrn,
   entryUrn,
 } from '../../data/urn'
-import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES } from '../../data/ontologyConfig'
+import { ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES } from '../../data/ontologyConfig'
 import type { Entry, QuantityEntry, PartMeta } from '../../data/types'
 
 // ── Test fixtures ──
@@ -128,7 +128,7 @@ describe('generateEntryJsonLd', () => {
     const result = generateEntryJsonLd(entry, isoPartMeta, '2019') as Record<string, unknown>
 
     expect(result['@context']).toBeDefined()
-    expect((result['@context'] as Record<string, string>)[NS.core.prefix]).toBe(NS.core.uri)
+    expect(typeof result['@context']).toBe('string')
     expect(result['@id']).toBe('isq:t4-1')
     expect(result[ONTOLOGY_PROPERTIES.rdfType]).toEqual([ONTOLOGY_CLASSES.Quantity, ONTOLOGY_CLASSES.TermEntry])
     expect(result[ONTOLOGY_PROPERTIES.identifier]).toBe('4-1')
