@@ -2,12 +2,12 @@ import { describe, it, expect } from 'vitest'
 import { coreLinks, secondaryLinks, navLinks, isActive } from '../nav'
 
 describe('nav link arrays', () => {
-  it('coreLinks contains quantities, math, units, dimensions', () => {
-    expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/math', '/units', '/dimensions'])
+  it('coreLinks contains quantities, kinds, math, units, dimensions', () => {
+    expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/kinds', '/math', '/units', '/dimensions'])
   })
 
-  it('secondaryLinks contains documents, ontology, reference, about', () => {
-    expect(secondaryLinks.map(l => l.to)).toEqual(['/documents', '/ontology', '/reference', '/about'])
+  it('secondaryLinks contains methodology, documents, ontology, reference, about', () => {
+    expect(secondaryLinks.map(l => l.to)).toEqual(['/methodology', '/documents', '/ontology', '/reference', '/about'])
   })
 
   it('navLinks is the concatenation of core + secondary', () => {
