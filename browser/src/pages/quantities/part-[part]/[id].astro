@@ -8,6 +8,8 @@ import JsonLdActions from '../../../components/JsonLdActions.vue'
 import CitationBuilder from '../../../components/CitationBuilder.vue'
 import PartIcon from '../../../components/PartIcon.vue'
 import EntryOntologyPanel from '../../../components/EntryOntologyPanel.vue'
+import BroaderNarrowerList from '../../../components/BroaderNarrowerList.vue'
+import EntityList from '../../../components/EntityList.vue'
 import {
   getPartsByDomain, getPartMeta, getPartEntryCount, isBilingual, getPartEditions,
   partUrl, EntryModel,
@@ -17,6 +19,9 @@ import {
   resolveEntryDetailView, stripStem, renderDesignationText, unitLink,
 } from '../../../data/entryViewModel'
 import type { Entry } from '../../../data/types'
+import { kindOfQuantities, quantityToKind } from '../../../data/generated/kinds'
+import { conceptHierarchy } from '../../../data/generated/hierarchy'
+import { entities as allEntities, entityKinds, quantityEntities } from '../../../data/generated/entities'
 
 interface Props {
   partKey: string
@@ -342,6 +347,41 @@ const view = resolveEntryDetailView(
           </div>
         </div>
       )}
+
+      <!-- Concept hierarchy context -->
+      {(() => {
+        const kindId = quantityToKind[entry.id]
+        const kind = kindId ? kindOfQuantities.find(k => k.id === kindId) : undefined
+        const entIds = quantityEntities[entry.id] ?? []
+        const hierarchyNode = conceptHierarchy[entry.id]
+        const resolveLabel = (id: string) => {
+          if (id.startsWith('kind-')) return kindOfQuantities.find(k => k.id === id)?.prefLabel.en
+          return entries.find(e => e.id === id)?.designations?.[0]?.designation?.en?.text ?? id
+        }
+        return (kind || entIds.length > 0 || hierarchyNode) ? (
+          <div class="mt-10 p-5 rounded-xl bg-gradient-to-br from-indigo-50/50 to-violet-50/30 dark:from-indigo-950/20 dark:to-violet-950/10 border border-indigo-200/40 dark:border-indigo-800/30">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Concept Hierarchy</span>
+              <span class="text-[9px] text-indigo-400/50">Pendrill (2024)</span>
+            </div>
+            {kind && (
+              <a href={asset(`/kinds/${kind.id.replace(/^kind-/, '')}`)} class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-medium hover:bg-indigo-200 dark:hover:bg-indigo-900/60 transition-colors mb-3">
+                <span class="font-mono font-bold">{kind.dimensionSymbol}</span>
+                <span>{kind.prefLabel.en}</span>
+                <span class="text-[9px] opacity-60">Level 0 · Kind</span>
+              </a>
+            )}
+            <div class="mt-2">
+              <BroaderNarrowerList client:idle entryId={entry.id} hierarchy={conceptHierarchy} resolveLabel={resolveLabel} />
+            </div>
+            {entIds.length > 0 && (
+              <div class="mt-3">
+                <EntityList client:idle entityIds={entIds} entities={allEntities} entityKinds={entityKinds} />
+              </div>
+            )}
+          </div>
+        ) : null
+      })()}
 
       <!-- Ontology -->
       <EntryOntologyPanel client:idle entry={entry} partParam={partKey} />

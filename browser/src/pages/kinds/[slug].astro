@@ -1,0 +1,116 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import { kindOfQuantities, quantityToKind } from '../../data/generated/kinds'
+import { conceptHierarchy } from '../../data/generated/hierarchy'
+import { quantityEntities } from '../../data/generated/entities'
+import { getAllParts, getPartMeta } from '../../data/PartRegistry'
+import { partSummaries } from '../../data/generated/meta'
+import { DataLoader } from '../../data/DataLoader'
+import { EntryModel } from '../../data/EntryModel'
+import { asset } from '../../lib/asset'
+import type { Entry } from '../../data/types'
+
+export async function getStaticPaths() {
+  return kindOfQuantities.map((kind) => ({
+    params: { slug: kind.id.replace(/^kind-/, '') },
+    props: { kind },
+  }))
+}
+
+const { kind } = Astro.props
+
+const allParts = getAllParts()
+const entriesByPart = new Map<string, { entry: Entry; partKey: string }[]>()
+
+for (const part of allParts) {
+  const data = await DataLoader.loadPart(part.partKey)
+  const partEntries = data.entries.filter((e) => kind.quantityIds.includes(e.id))
+  if (partEntries.length > 0) {
+    entriesByPart.set(part.partKey, partEntries.map((e) => ({ entry: e, partKey: part.partKey })))
+  }
+}
+
+const totalEntries = kind.quantityIds.length
+---
+
+<DefaultLayout title={`${kind.prefLabel.en} — Kind of Quantity — ISQ Browser`} description={`${totalEntries} quantities of dimension ${kind.dimensionSymbol}.`}>
+  <div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-indigo-500/10"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Kinds', href: '/kinds' }, { label: kind.dimensionSymbol }]} variant="dark" />
+          <div class="flex items-center gap-3 mb-2">
+            <span class="font-mono text-2xl sm:text-3xl font-bold text-indigo-300">{kind.dimensionSymbol}</span>
+            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-indigo-500/20 text-indigo-200">Level 0 · Kind of Quantity</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl font-bold text-white tracking-tight heading-serif">{kind.prefLabel.en}</h1>
+          {kind.prefLabel.fr && (
+            <p class="mt-1 text-sm text-indigo-300/70 italic">{kind.prefLabel.fr}</p>
+          )}
+          <p class="mt-3 text-sm text-indigo-300/80">
+            {totalEntries} {totalEntries === 1 ? 'quantity' : 'quantities'} of this kind. All share dimension <span class="font-mono">{kind.dimensionVector || 'dimensionless'}</span> and can be compared, added, and converted between units.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      {[...entriesByPart.entries()].map(([partKey, items]) => {
+        const meta = getPartMeta(partKey)
+        if (!meta) return null
+        const summary = partSummaries[partKey]
+        return (
+          <div class="mb-10">
+            <div class="flex items-center gap-2 mb-4">
+              <a href={asset(`/quantities/part-${partKey}`)} class="text-sm font-bold text-slate-900 dark:text-slate-100 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                Part {partKey}: {meta.title}
+              </a>
+              <span class="text-xs text-slate-400">{items.length} of {summary?.count ?? '?'} entries</span>
+            </div>
+            <div class="grid gap-2">
+              {items.map(({ entry }) => {
+                const entities = quantityEntities[entry.id] ?? []
+                const node = conceptHierarchy[entry.id]
+                const broaderCount = node?.broader.filter(id => id !== kind.id).length ?? 0
+                return (
+                  <a
+                    href={asset(`/quantities/part-${partKey}/${entry.id}`)}
+                    class="group flex items-start gap-3 p-3 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-indigo-200 dark:hover:border-indigo-700 hover:shadow-sm transition-all"
+                  >
+                    <div class="flex-shrink-0 w-12 text-xs font-mono text-slate-400 dark:text-slate-500 pt-0.5">{entry.num}</div>
+                    <div class="flex-1 min-w-0">
+                      <div class="flex items-center gap-2">
+                        <span class="font-bold text-sm text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{EntryModel.plainName(entry, 'en')}</span>
+                        {entry.symbols && entry.symbols.length > 0 && (
+                          <span class="font-mono text-xs text-slate-400">{entry.symbols[0]}</span>
+                        )}
+                      </div>
+                      {entry.def?.en && (
+                        <div class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 line-clamp-1">{EntryModel.shortDef(entry, 120)}</div>
+                      )}
+                      {(entities.length > 0 || broaderCount > 0) && (
+                        <div class="flex flex-wrap gap-1 mt-1">
+                          {broaderCount > 0 && (
+                            <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-500">↑ {broaderCount}</span>
+                          )}
+                          {entities.length > 0 && (
+                            <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400">ent</span>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </a>
+                )
+              })}
+            </div>
+          </div>
+        )
+      })}
+    </section>
+  </div>
+</DefaultLayout>

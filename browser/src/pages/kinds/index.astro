@@ -1,0 +1,61 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import { kindOfQuantities } from '../../data/generated/kinds'
+import { asset } from '../../lib/asset'
+
+const sorted = [...kindOfQuantities].sort((a, b) => a.dimensionVector.localeCompare(b.dimensionVector))
+---
+
+<DefaultLayout title="Kinds of Quantity — ISQ Browser" description="Browse quantities by their kind — grouped by dimension. Aligned with the Pendrill (2024) concept hierarchy.">
+  <div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-indigo-500/10"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Kinds of Quantity' }]} variant="dark" />
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Kinds of Quantity</h1>
+          <p class="mt-3 text-sm leading-relaxed max-w-2xl text-indigo-300/80">
+            {kindOfQuantities.length} kinds, grouping quantities by their dimension. A kind of quantity is the most abstract concept (Level 0) in the quantity hierarchy — all quantities sharing a dimension can be compared and converted.
+          </p>
+          <p class="mt-2 text-xs text-indigo-400/50">
+            Aligned with Pendrill (2024) concept system hierarchy. <a href={asset('/about')} class="underline hover:text-indigo-300">Learn more →</a>
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {sorted.map((kind) => {
+          const slug = kind.id.replace(/^kind-/, '')
+          const memberCount = kind.quantityIds.length
+          return (
+            <a
+              href={asset(`/kinds/${slug}`)}
+              class="group relative p-5 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-indigo-300 dark:hover:border-indigo-700 hover:shadow-sm transition-all"
+            >
+              <div class="flex items-start justify-between gap-3 mb-3">
+                <div class="font-mono text-lg font-bold text-indigo-600 dark:text-indigo-400">
+                  {kind.dimensionSymbol}
+                </div>
+                <div class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400">
+                  {memberCount} {memberCount === 1 ? 'entry' : 'entries'}
+                </div>
+              </div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors leading-snug">
+                {kind.prefLabel.en}
+              </div>
+              {kind.prefLabel.fr && (
+                <div class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 italic">{kind.prefLabel.fr}</div>
+              )}
+            </a>
+          )
+        })}
+      </div>
+    </section>
+  </div>
+</DefaultLayout>
