@@ -14,6 +14,7 @@ const _coreLinks = [
 ]
 
 const _secondaryLinks = [
+  { to: '/methodology', label: 'Methodology' },
   { to: '/documents', label: 'Publications' },
   { to: '/ontology', label: 'Ontology' },
   { to: '/reference', label: 'Reference' },

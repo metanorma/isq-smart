@@ -1,0 +1,805 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Breadcrumb from '../components/Breadcrumb.astro'
+import SectionHead from '../components/SectionHead.astro'
+import { asset } from '../lib/asset'
+
+const navModes = [
+  {
+    icon: '📚',
+    title: 'By Part',
+    href: '/quantities',
+    color: 'brand',
+    desc: 'Browse the traditional ISO 80000 & IEC 80000 structure — Part 3 (Space & Time), Part 4 (Mechanics), through Part 13 (Information Science). Each part is a published standard document.',
+    example: 'ISO 80000-3 → 42 entries on space and time',
+  },
+  {
+    icon: '📐',
+    title: 'By Kind',
+    href: '/kinds',
+    color: 'indigo',
+    desc: 'Browse quantities grouped by their physical dimension. All quantities sharing the same dimension vector (e.g., L for length-type) form a kind of quantity — they can be compared and converted.',
+    example: 'Kind L → length, width, height, wavelength, altitude',
+  },
+  {
+    icon: '🔤',
+    title: 'By Dimension',
+    href: '/dimensions',
+    color: 'indigo',
+    desc: 'Browse by dimensional composition — the fundamental building blocks L, M, T, I, Θ, N, J. Cross-referenced with the UnitsML database for machine-readable unit definitions.',
+    example: 'L T⁻¹ → all velocity-type quantities',
+  },
+  {
+    icon: '⚖️',
+    title: 'By Unit',
+    href: '/units',
+    color: 'teal',
+    desc: 'Browse the complete catalog of measurement units — SI base units, derived units, accepted non-SI units, and their symbols. Linked to UnitsDB for canonical definitions.',
+    example: 'metre (m) → used by 28+ quantities',
+  },
+  {
+    icon: '🔗',
+    title: 'By Concept',
+    href: '/ontology',
+    color: 'emerald',
+    desc: 'Browse the ontology — SKOS concept scheme with broader/narrower relationships, entity characterization, and RDF/JSON-LD exports for machine consumption.',
+    example: 'speed → broader → phase speed, group speed',
+  },
+]
+
+const levels = [
+  {
+    level: 0,
+    name: 'Kind of Quantity',
+    axis: 'quantity',
+    color: 'indigo',
+    icon: '◇',
+    quantity: { term: 'kind of quantity', example: 'space', note: 'Abstract category — all quantities of dimension L' },
+    entity: null,
+    measurement: null,
+    impl: 'Derived automatically from unit dimension analysis. Every quantity whose primary unit reduces to the same dimension vector belongs to the same kind.',
+  },
+  {
+    level: 1,
+    name: 'Quantity',
+    axis: 'quantity',
+    color: 'brand',
+    icon: '○',
+    quantity: { term: 'quantity, Q = X', example: 'length (X₁ − X₂)', note: 'Named, defined concept — this is what ISO 80000 defines' },
+    entity: { term: 'kind of entity', example: 'physical body', note: 'Category of thing being characterized' },
+    measurement: null,
+    impl: 'The primary content of the dataset. Each ISO 80000 entry (e.g., t3-1.1 "length") is a Level 1 quantity concept.',
+  },
+  {
+    level: 2,
+    name: 'Dedicated Quantity',
+    axis: 'quantity',
+    color: 'amber',
+    icon: '◆',
+    quantity: { term: 'entity quantity (Sachgrösse)', example: 'length of rod', note: 'Quantity bound to a specific kind of entity' },
+    entity: { term: 'entity', example: 'rod', note: 'A specific type of physical thing' },
+    measurement: null,
+    impl: 'Derived semi-automatically. The quantity "sound particle displacement" is the "displacement" quantity bound to the "particle" entity. Pattern matching on designations and definitions.',
+  },
+  {
+    level: 3,
+    name: 'Measured Quantity',
+    axis: 'measurement',
+    color: 'rose',
+    icon: '●',
+    quantity: { term: 'instantiation', example: 'length of rod AB, today at 09:15', note: 'A specific quantity of a specific entity instance' },
+    entity: { term: 'entity instance', example: 'rod AB, today at 09:15', note: 'A particular physical object at a particular time' },
+    measurement: { term: 'quantity as measured', example: '1.234 m', note: 'A measurement result with a value and unit' },
+    impl: 'Out of scope for a standards browser. This level belongs to measurement databases and laboratory information systems.',
+  },
+]
+
+const references = [
+  {
+    citation: 'Pendrill, L. R. (2024)',
+    title: 'Quantities and units: order amongst complexity',
+    source: 'Chapter 2 in Models, Measurement, and Metrology extending the SI — Trust and Quality Assured Knowledge Infrastructures (W. P. Fisher Jr. & L. R. Pendrill, eds.). De Gruyter.',
+    doi: '10.1515/9783111036496-002',
+    note: 'Source of the concept system hierarchy with four levels (0–3) across three axes (quantity, entity, measurement) implemented on this site.',
+  },
+  {
+    citation: 'Dybkaer, R. (2010)',
+    title: 'An ontology on property for physical, chemical, and biological quantities',
+    source: 'Metrologia, 47(3), 80–93.',
+    doi: '10.1088/0026-1394/47/3/001',
+    note: 'Foundation for the "systematic quantity term" column in Pendrill\'s hierarchy.',
+  },
+  {
+    citation: 'Fleischman, E. (1960)',
+    title: 'Sachgrösse und Grössenwert',
+    source: 'Zeitschrift für Physik, 159, 1–12. (In German)',
+    doi: null,
+    note: 'Origin of the "Sachgrösse" (entity quantity) concept at Level 2 — the binding between a quantity and the entity it characterizes.',
+  },
+  {
+    citation: 'Maxwell, J. C. (1873)',
+    title: 'A Treatise on Electricity and Magnetism',
+    source: 'Oxford: Clarendon Press. Vol. 1, §3.',
+    doi: null,
+    note: 'Established the quantity value equation Q = {Q} · [Q] — a quantity equals its numerical value times its unit.',
+  },
+  {
+    citation: 'ISO/IEC (2008)',
+    title: 'ISO/IEC Guide 99:2008 — International Vocabulary of Metrology (VIM)',
+    source: 'Geneva: ISO/IEC.',
+    doi: null,
+    note: 'Normative reference for the ISO 80000 & IEC 80000 series — defines core concepts including "kind of quantity," "quantity," and "measurement."',
+  },
+]
+
+const colorClasses: Record<string, { bg: string; text: string; border: string; dot: string }> = {
+  brand: { bg: 'bg-brand-50 dark:bg-brand-950/40', text: 'text-brand-700 dark:text-brand-400', border: 'border-brand-200/60 dark:border-brand-800/40', dot: 'bg-brand-500' },
+  indigo: { bg: 'bg-indigo-50 dark:bg-indigo-950/40', text: 'text-indigo-700 dark:text-indigo-400', border: 'border-indigo-200/60 dark:border-indigo-800/40', dot: 'bg-indigo-500' },
+  teal: { bg: 'bg-teal-50 dark:bg-teal-950/40', text: 'text-teal-700 dark:text-teal-400', border: 'border-teal-200/60 dark:border-teal-800/40', dot: 'bg-teal-500' },
+  amber: { bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-700 dark:text-amber-400', border: 'border-amber-200/60 dark:border-amber-800/40', dot: 'bg-amber-500' },
+  rose: { bg: 'bg-rose-50 dark:bg-rose-950/40', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-200/60 dark:border-rose-800/40', dot: 'bg-rose-500' },
+  emerald: { bg: 'bg-emerald-50 dark:bg-emerald-950/40', text: 'text-emerald-700 dark:text-emerald-400', border: 'border-emerald-200/60 dark:border-emerald-800/40', dot: 'bg-emerald-500' },
+}
+---
+
+<DefaultLayout title="Methodology — ISQ Browser" description="How the ISQ Browser works: concept system hierarchy, navigation modes, data pipeline, and methodology.">
+  <div>
+    {/* Hero */}
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-brand-950 to-indigo-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-indigo-500/10"></div>
+      <div class="absolute bottom-0 left-0 w-[600px] h-[600px] rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 bg-rose-500/5"></div>
+
+      <div class="hero-float-1 absolute top-[15%] right-[18%] w-3 h-3 rounded-full bg-indigo-400/20"></div>
+      <div class="hero-float-2 absolute top-[30%] right-[8%] w-2 h-2 rounded-full bg-white/10"></div>
+      <div class="hero-float-4 absolute top-[20%] left-[5%] w-16 h-16 rounded-full border border-white/[0.04]"></div>
+
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Methodology' }]} variant="dark" />
+          <div class="flex items-center gap-2 mb-4">
+            <span class="text-[10px] font-bold uppercase tracking-[0.15em] text-indigo-300/70">How this site works</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight heading-serif leading-[1.1]">Methodology</h1>
+          <p class="mt-4 text-lg text-slate-300/80 heading-serif leading-relaxed">
+            The concept system, data pipeline, and design principles behind the ISQ Browser.
+          </p>
+          <p class="mt-3 text-sm text-slate-400/60 leading-relaxed max-w-2xl">
+            Built on a four-level concept hierarchy adapted from Pendrill (2024), with automatic derivation of kinds, relationships, and entity bindings from the ISO 80000 & IEC 80000 dataset.
+          </p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#concept-system" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.06] border border-white/[0.08] text-xs font-medium text-white hover:bg-white/[0.1] transition-colors">
+              <span>Concept System</span>
+            </a>
+            <a href="#navigation" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.06] border border-white/[0.08] text-xs font-medium text-white hover:bg-white/[0.1] transition-colors">
+              <span>Navigation</span>
+            </a>
+            <a href="#pipeline" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.06] border border-white/[0.08] text-xs font-medium text-white hover:bg-white/[0.1] transition-colors">
+              <span>Data Pipeline</span>
+            </a>
+            <a href="#references" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/[0.06] border border-white/[0.08] text-xs font-medium text-white hover:bg-white/[0.1] transition-colors">
+              <span>References</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    {/* The Concept System */}
+    <section id="concept-system" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-12">
+        <SectionHead
+          eyebrow="Pendrill (2024)"
+          title="The Concept System"
+          subtitle="A four-level hierarchy across three parallel axes — quantity, entity, and measurement. Each cell below is illustrated with a concrete example."
+        />
+      </div>
+
+      {/* Matrix SVG */}
+      <div class="max-w-5xl mx-auto mb-10">
+        <div class="rounded-2xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 p-6 sm:p-8 shadow-sm">
+          <svg viewBox="0 0 800 520" class="w-full h-auto" role="img" aria-label="Concept hierarchy matrix">
+            <title>Concept Hierarchy Matrix — Pendrill (2024)</title>
+            <desc>A 4×3 grid showing four levels of abstraction (0=kind, 1=generic, 2=dedicated, 3=instance) across three axes (quantity, entity, measurement), each cell containing an example.</desc>
+
+            <defs>
+              <linearGradient id="qGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#6366f1" stop-opacity="0.12"/>
+                <stop offset="100%" stop-color="#6366f1" stop-opacity="0.04"/>
+              </linearGradient>
+              <linearGradient id="eGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#f43f5e" stop-opacity="0.03"/>
+              </linearGradient>
+              <linearGradient id="mGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.10"/>
+                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0.03"/>
+              </linearGradient>
+            </defs>
+
+            {/* Header row */}
+            <text x="20" y="30" font-size="11" font-weight="700" fill="#94a3b8" font-family="monospace" text-transform="uppercase" letter-spacing="0.1em">LEVEL</text>
+            <text x="200" y="30" font-size="13" font-weight="700" fill="#6366f1" font-family="sans-serif">QUANTITY AXIS</text>
+            <text x="460" y="30" font-size="13" font-weight="700" fill="#f43f5e" font-family="sans-serif">ENTITY AXIS</text>
+            <text x="660" y="30" font-size="13" font-weight="700" fill="#f59e0b" font-family="sans-serif">MEASUREMENT</text>
+
+            {/* Header underline */}
+            <line x1="20" y1="40" x2="780" y2="40" stroke="#cbd5e1" stroke-width="0.5"/>
+
+            {/* Column backgrounds */}
+            <rect x="180" y="45" width="260" height="420" fill="url(#qGrad)" rx="4"/>
+            <rect x="445" y="45" width="210" height="420" fill="url(#eGrad)" rx="4"/>
+            <rect x="660" y="45" width="120" height="420" fill="url(#mGrad)" rx="4"/>
+
+            {/* Level 0 */}
+            <text x="40" y="80" font-size="14" font-weight="700" fill="#6366f1" font-family="monospace">0</text>
+            <text x="70" y="80" font-size="9" fill="#94a3b8" font-family="monospace">KIND</text>
+            <text x="200" y="75" font-size="11" font-weight="600" fill="#1e293b">kind of quantity</text>
+            <text x="200" y="92" font-size="11" fill="#6366f1" font-style="italic">"space"</text>
+            <text x="460" y="84" font-size="11" fill="#cbd5e1">—</text>
+            <text x="665" y="84" font-size="11" fill="#cbd5e1">—</text>
+
+            <line x1="20" y1="105" x2="780" y2="105" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+            {/* Level 1 */}
+            <text x="40" y="145" font-size="14" font-weight="700" fill="#6366f1" font-family="monospace">1</text>
+            <text x="70" y="145" font-size="9" fill="#94a3b8" font-family="monospace">GENERIC</text>
+            <text x="200" y="135" font-size="11" font-weight="600" fill="#1e293b">quantity, Q = X</text>
+            <text x="200" y="152" font-size="11" fill="#6366f1" font-style="italic">"length" (X₁ − X₂)</text>
+            <text x="460" y="135" font-size="11" font-weight="600" fill="#1e293b">kind of entity</text>
+            <text x="460" y="152" font-size="11" fill="#f43f5e" font-style="italic">"physical body"</text>
+            <text x="665" y="145" font-size="11" fill="#cbd5e1">—</text>
+
+            <line x1="20" y1="170" x2="780" y2="170" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+            {/* Level 2 */}
+            <text x="40" y="215" font-size="14" font-weight="700" fill="#6366f1" font-family="monospace">2</text>
+            <text x="70" y="215" font-size="9" fill="#94a3b8" font-family="monospace">DEDICATED</text>
+            <text x="200" y="200" font-size="11" font-weight="600" fill="#1e293b">entity quantity</text>
+            <text x="200" y="215" font-size="9" fill="#94a3b8" font-family="monospace">[Sachgrösse]</text>
+            <text x="200" y="232" font-size="11" fill="#6366f1" font-style="italic">"length of rod"</text>
+            <text x="460" y="215" font-size="11" font-weight="600" fill="#1e293b">entity</text>
+            <text x="460" y="232" font-size="11" fill="#f43f5e" font-style="italic">"rod"</text>
+            <text x="665" y="222" font-size="11" fill="#cbd5e1">—</text>
+
+            <line x1="20" y1="255" x2="780" y2="255" stroke="#e2e8f0" stroke-width="0.5" stroke-dasharray="2 3"/>
+
+            {/* Level 3 */}
+            <text x="40" y="310" font-size="14" font-weight="700" fill="#6366f1" font-family="monospace">3</text>
+            <text x="70" y="310" font-size="9" fill="#94a3b8" font-family="monospace">INSTANCE</text>
+            <text x="200" y="290" font-size="11" font-weight="600" fill="#1e293b">instantiation</text>
+            <text x="200" y="307" font-size="11" fill="#6366f1" font-style="italic">"length of rod AB,"</text>
+            <text x="200" y="322" font-size="11" fill="#6366f1" font-style="italic">"today at 09:15"</text>
+            <text x="460" y="290" font-size="11" font-weight="600" fill="#1e293b">entity instance</text>
+            <text x="460" y="307" font-size="11" fill="#f43f5e" font-style="italic">"rod AB,"</text>
+            <text x="460" y="322" font-size="11" fill="#f43f5e" font-style="italic">"today at 09:15"</text>
+            <text x="660" y="290" font-size="11" font-weight="600" fill="#1e293b">measured</text>
+            <text x="660" y="307" font-size="11" fill="#f59e0b" font-style="italic">"1.234 m"</text>
+
+            {/* Bottom arrows: generic → specific */}
+            <line x1="100" y1="390" x2="700" y2="390" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4 4"/>
+            <polygon points="700,390 692,386 692,394" fill="#94a3b8"/>
+            <text x="100" y="410" font-size="10" fill="#94a3b8" font-family="monospace">GENERIC</text>
+            <text x="650" y="410" font-size="10" fill="#94a3b8" font-family="monospace" text-anchor="end">SPECIFIC</text>
+
+            {/* Legend */}
+            <rect x="180" y="445" width="14" height="14" fill="url(#qGrad)" stroke="#6366f1" stroke-width="0.5" rx="2"/>
+            <text x="200" y="456" font-size="10" fill="#64748b">Quantity — what is measured</text>
+            <rect x="445" y="445" width="14" height="14" fill="url(#eGrad)" stroke="#f43f5e" stroke-width="0.5" rx="2"/>
+            <text x="465" y="456" font-size="10" fill="#64748b">Entity — what is characterized</text>
+            <rect x="660" y="445" width="14" height="14" fill="url(#mGrad)" stroke="#f59e0b" stroke-width="0.5" rx="2"/>
+            <text x="680" y="456" font-size="10" fill="#64748b">Measurement — the result</text>
+
+            {/* Caption */}
+            <text x="400" y="500" font-size="10" fill="#94a3b8" font-family="sans-serif" text-anchor="middle" font-style="italic">
+              Adapted from Pendrill (2024), Table 1.1. Level numbers indicate abstraction: 0 = most generic, 3 = most specific.
+            </text>
+          </svg>
+        </div>
+      </div>
+
+      {/* Original table reproduction */}
+      <div class="max-w-5xl mx-auto mb-10">
+        <div class="text-center mb-4">
+          <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-1">Source table</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">Table 1.1 — Hierarchy of Quantity, Entity and Measurement concepts</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Reproduced from Pendrill (2024), Table 1.1. The original 7-column layout showing how each level of abstraction applies across the three concept axes.</p>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden overflow-x-auto shadow-sm">
+          <table class="w-full text-xs">
+            <thead>
+              <tr class="border-b-2 border-slate-300 dark:border-dark-500 bg-slate-50/50 dark:bg-dark-700/50">
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom w-12">Level</th>
+                <th class="py-3 px-3 text-left font-bold text-indigo-700 dark:text-indigo-400 align-bottom">Systematic (quantity) term<br/><span class="text-[9px] font-normal text-slate-400">adapted from Dybkaer (2010)</span></th>
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
+                <th class="py-3 px-3 text-left font-bold text-rose-700 dark:text-rose-400 align-bottom">Systematic (entity) term<br/><span class="text-[9px] font-normal text-slate-400">phenomena, bodies, substances</span></th>
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
+                <th class="py-3 px-3 text-left font-bold text-amber-700 dark:text-amber-400 align-bottom">Systematic (measurement) term<br/><span class="text-[9px] font-normal text-slate-400">Pendrill (2019)</span></th>
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-dark-600">
+              <tr class="hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20 transition-colors">
+                <td class="py-3 px-3 font-mono font-bold text-indigo-600 dark:text-indigo-400">0</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">kind of quantity</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">space</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+              </tr>
+              <tr class="hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20 transition-colors">
+                <td class="py-3 px-3 font-mono font-bold text-indigo-600 dark:text-indigo-400">1</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">quantity, Q = X</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">length (X₁ − X₂)</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">kind of entity</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">physical body</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+              </tr>
+              <tr class="hover:bg-amber-50/30 dark:hover:bg-amber-950/20 transition-colors">
+                <td class="py-3 px-3 font-mono font-bold text-amber-600 dark:text-amber-400">2</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">dedicated quantity = entity quantity<br/><span class="text-[9px] text-slate-400">[Sachgrösse, Fleischman 1960]</span></td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">length of rod</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">entity</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">rod</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+                <td class="py-3 px-3 text-slate-300 dark:text-slate-600">—</td>
+              </tr>
+              <tr class="hover:bg-rose-50/30 dark:hover:bg-rose-950/20 transition-colors">
+                <td class="py-3 px-3 font-mono font-bold text-rose-600 dark:text-rose-400">3</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">instantiation of an entity quantity</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">length of rod AB,<br/>today at 09:15</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">instantiation of an entity</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">rod AB,<br/>today at 09:15</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300">quantity as measured</td>
+                <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">measured length of rod AB,<br/>today at 09:15,<br/>1.234 m</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-3 text-center italic">
+          Source: Pendrill, L. R. (2024). "Quantities and units: order amongst complexity." Chapter 2 in <em>Models, Measurement, and Metrology extending the SI</em>, De Gruyter. <a href="https://doi.org/10.1515/9783111036496-002" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:underline">doi:10.1515/9783111036496-002</a>. Table 1.1, p. 22. Reproduced for educational commentary; all rights reserved by the publisher.
+        </p>
+      </div>
+
+      {/* Mapping: Table → ISQ Browser */}
+      <div class="max-w-5xl mx-auto mb-10">
+        <div class="text-center mb-6">
+          <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-brand-500 mb-1">Mapping</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">How the table maps to the ISQ Browser</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Each cell in the concept hierarchy informs a specific feature of this site.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          <div class="p-5 rounded-xl bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-200/50 dark:border-indigo-800/30">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-7 h-7 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center font-mono text-sm font-bold text-indigo-600 dark:text-indigo-400">0</div>
+              <span class="text-sm font-bold text-indigo-700 dark:text-indigo-400">Kind of Quantity → /kinds</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <strong>Why applied:</strong> ISO 80000 defines individual quantities but never groups them by kind. Without this level, "length" in Part 3 and "wavelength" in Part 7 appear unrelated — even though they share dimension L and can be converted. Grouping by kind reveals these cross-part connections automatically.
+            </p>
+            <div class="mt-2 text-[10px] font-mono text-indigo-600 dark:text-indigo-400">
+              kind-L → length, width, height, wavelength, altitude, distance…
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-brand-50/50 dark:bg-brand-950/20 border border-brand-200/50 dark:border-brand-800/30">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-7 h-7 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center font-mono text-sm font-bold text-brand-600 dark:text-brand-400">1</div>
+              <span class="text-sm font-bold text-brand-700 dark:text-brand-400">Quantity → /quantities</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <strong>Why applied:</strong> This is the authoritative level — what ISO/TC 12 and IEC/TC 25 actually define. Each entry has a normative name, symbol, definition, and units. The browser treats these as the primary content; all other levels are derived context.
+            </p>
+            <div class="mt-2 text-[10px] font-mono text-brand-600 dark:text-brand-400">
+              t3-1.1 → length | symbol: l, L | unit: metre (m)
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-7 h-7 rounded-lg bg-amber-100 dark:bg-amber-900/40 flex items-center justify-center font-mono text-sm font-bold text-amber-600 dark:text-amber-400">2</div>
+              <span class="text-sm font-bold text-amber-700 dark:text-amber-400">Entity Quantity → Entry context</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <strong>Why applied:</strong> Pendrill's insight is that quantities characterize entities — "length" is abstract, "length of a rod" is meaningful. ISO 80000 encodes these bindings implicitly in names like "sound particle displacement" (entity: particle). Extracting them enables entity-based navigation and makes the quantity's scope explicit.
+            </p>
+            <div class="mt-2 text-[10px] font-mono text-amber-600 dark:text-amber-400">
+              t8-3 → displacement + entity:particle → "particle displacement"
+            </div>
+          </div>
+
+          <div class="p-5 rounded-xl bg-rose-50/50 dark:bg-rose-950/20 border border-rose-200/50 dark:border-rose-800/30">
+            <div class="flex items-center gap-2 mb-2">
+              <div class="w-7 h-7 rounded-lg bg-rose-100 dark:bg-rose-900/40 flex items-center justify-center font-mono text-sm font-bold text-rose-600 dark:text-rose-400">3</div>
+              <span class="text-sm font-bold text-rose-700 dark:text-rose-400">Measured Quantity → Out of scope</span>
+            </div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+              <strong>Why not applied:</strong> Individual measurements ("1.234 m for rod AB at 09:15") are data points, not concepts. They belong to laboratory information systems and measurement databases — not a standards browser. Including them would require runtime data fetching, breaking the static-site principle and the conceptual clarity of the browser.
+            </p>
+            <div class="mt-2 text-[10px] font-mono text-rose-600 dark:text-rose-400">
+              Out of scope — handled by LIMS, measurement DBs
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Why this matters */}
+      <div class="max-w-3xl mx-auto mt-12 p-6 rounded-2xl bg-gradient-to-br from-brand-50/60 to-indigo-50/40 dark:from-brand-950/30 dark:to-indigo-950/20 border border-brand-200/40 dark:border-brand-800/30">
+        <h3 class="text-base font-bold text-brand-700 dark:text-brand-400 mb-3 heading-serif">Why a hierarchy matters</h3>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-3">
+          A flat list of 765 quantities is overwhelming. Without structure, a user looking for "all the ways to express length-type quantities" must manually scan every part. The Pendrill hierarchy provides three organizing dimensions:
+        </p>
+        <ul class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed space-y-2 ml-4">
+          <li class="list-disc"><strong>Generic to specific</strong> (Level 0→3): start from an abstract kind ("length-type") and drill down to a specific quantity ("wavelength"). Each level adds constraints.</li>
+          <li class="list-disc"><strong>Quantity vs entity</strong> (Axis): separate "what is measured" (quantity) from "what is characterized" (entity). This prevents the common confusion between a quantity and the thing it describes.</li>
+          <li class="list-disc"><strong>Concept vs measurement</strong> (Level 3): clearly delineate the standard's scope (what quantities ARE) from the application scope (what a specific measurement FOUND).</li>
+        </ul>
+        <p class="text-xs text-slate-500 dark:text-slate-500 italic mt-4 leading-relaxed">
+          The result: every entry page on this site shows not just the quantity definition, but its kind, its broader/narrower concepts, and the entities it characterizes — all derived automatically from the ISO 80000 source data.
+        </p>
+      </div>
+
+      {/* Level cards */}
+      <div class="space-y-6">
+        {levels.map((lvl) => {
+          const c = colorClasses[lvl.color]
+          return (
+            <div class={`relative p-6 rounded-2xl border ${c.border} ${c.bg} overflow-hidden`}>
+              <div class="flex items-start gap-4 flex-wrap">
+                <div class="flex items-center gap-3 flex-shrink-0">
+                  <div class={`w-12 h-12 rounded-xl ${c.bg} border ${c.border} flex items-center justify-center font-mono text-xl font-bold ${c.text}`}>
+                    {lvl.level}
+                  </div>
+                  <div>
+                    <div class="text-[9px] font-bold uppercase tracking-wider text-slate-400">Level {lvl.level}</div>
+                    <div class={`text-sm font-bold ${c.text}`}>{lvl.name}</div>
+                  </div>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="grid sm:grid-cols-3 gap-3 mb-3">
+                    {lvl.quantity && (
+                      <div class="p-3 rounded-lg bg-white/60 dark:bg-dark-800/40 border border-slate-200/40 dark:border-dark-600/40">
+                        <div class="text-[9px] font-bold uppercase tracking-wider text-indigo-500 mb-1">Quantity</div>
+                        <div class="text-xs font-semibold text-slate-700 dark:text-slate-200">{lvl.quantity.term}</div>
+                        <div class="text-xs italic text-indigo-600 dark:text-indigo-400 mt-0.5">{lvl.quantity.example}</div>
+                      </div>
+                    )}
+                    {lvl.entity && (
+                      <div class="p-3 rounded-lg bg-white/60 dark:bg-dark-800/40 border border-slate-200/40 dark:border-dark-600/40">
+                        <div class="text-[9px] font-bold uppercase tracking-wider text-rose-500 mb-1">Entity</div>
+                        <div class="text-xs font-semibold text-slate-700 dark:text-slate-200">{lvl.entity.term}</div>
+                        <div class="text-xs italic text-rose-600 dark:text-rose-400 mt-0.5">{lvl.entity.example}</div>
+                      </div>
+                    )}
+                    {lvl.measurement && (
+                      <div class="p-3 rounded-lg bg-white/60 dark:bg-dark-800/40 border border-slate-200/40 dark:border-dark-600/40">
+                        <div class="text-[9px] font-bold uppercase tracking-wider text-amber-500 mb-1">Measurement</div>
+                        <div class="text-xs font-semibold text-slate-700 dark:text-slate-200">{lvl.measurement.term}</div>
+                        <div class="text-xs italic text-amber-600 dark:text-amber-400 mt-0.5">{lvl.measurement.example}</div>
+                      </div>
+                    )}
+                  </div>
+                  <div class="flex items-start gap-2">
+                    <span class="text-[9px] font-bold uppercase tracking-wider text-slate-400 flex-shrink-0 mt-0.5">How derived</span>
+                    <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{lvl.impl}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+    </section>
+
+    {/* Derivation example */}
+    <section class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div class="text-center mb-12">
+          <SectionHead
+            eyebrow="Worked example"
+            title="From unit symbol to concept hierarchy"
+            subtitle="How a single ISO 80000 entry flows through the derivation pipeline to produce a fully contextualized concept node."
+          />
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="rounded-2xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 p-6 sm:p-8">
+            <svg viewBox="0 0 900 280" class="w-full h-auto" role="img" aria-label="Derivation pipeline example">
+              <title>Derivation Example — from "metre per second" to full concept node</title>
+
+              {/* Step 1: Source entry */}
+              <rect x="20" y="20" width="160" height="80" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1"/>
+              <text x="100" y="40" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle" letter-spacing="0.1em">SOURCE ENTRY</text>
+              <text x="100" y="62" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">t3-3 · speed</text>
+              <text x="100" y="78" font-size="10" fill="#64748b" text-anchor="middle">unit: m/s</text>
+              <text x="100" y="92" font-size="9" fill="#94a3b8" text-anchor="middle" font-style="italic">ISO 80000-3</text>
+
+              {/* Arrow 1 */}
+              <line x1="185" y1="60" x2="220" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="220,60 213,56 213,64" fill="#94a3b8"/>
+
+              {/* Step 2: Dimension analysis */}
+              <rect x="225" y="20" width="160" height="80" rx="8" fill="#eef2ff" stroke="#a5b4fc" stroke-width="1"/>
+              <text x="305" y="40" font-size="9" font-weight="700" fill="#4f46e5" text-anchor="middle" letter-spacing="0.1em">DIMENSION PARSE</text>
+              <text x="305" y="62" font-size="11" font-family="monospace" fill="#0f172a" text-anchor="middle">m → L</text>
+              <text x="305" y="76" font-size="11" font-family="monospace" fill="#0f172a" text-anchor="middle">s → T</text>
+              <text x="305" y="92" font-size="11" font-weight="600" fill="#4f46e5" text-anchor="middle">⇒ L T⁻¹</text>
+
+              {/* Arrow 2 */}
+              <line x1="390" y1="60" x2="425" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="425,60 418,56 418,64" fill="#94a3b8"/>
+
+              {/* Step 3: Kind assignment */}
+              <rect x="430" y="20" width="160" height="80" rx="8" fill="#eef2ff" stroke="#6366f1" stroke-width="1"/>
+              <text x="510" y="40" font-size="9" font-weight="700" fill="#4f46e5" text-anchor="middle" letter-spacing="0.1em">KIND GROUPING</text>
+              <text x="510" y="62" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">kind-L-T-1</text>
+              <text x="510" y="80" font-size="9" fill="#64748b" text-anchor="middle">"velocity-type"</text>
+              <text x="510" y="93" font-size="9" fill="#94a3b8" text-anchor="middle">28 members</text>
+
+              {/* Arrow 3 */}
+              <line x1="595" y1="60" x2="630" y2="60" stroke="#94a3b8" stroke-width="1.5"/>
+              <polygon points="630,60 623,56 623,64" fill="#94a3b8"/>
+
+              {/* Step 4: Hierarchy */}
+              <rect x="635" y="20" width="245" height="80" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1"/>
+              <text x="757" y="40" font-size="9" font-weight="700" fill="#16a34a" text-anchor="middle" letter-spacing="0.1em">HIERARCHY LINKS</text>
+              <text x="757" y="60" font-size="10" fill="#0f172a" text-anchor="middle">broader: kind-L-T-1</text>
+              <text x="757" y="74" font-size="10" fill="#0f172a" text-anchor="middle">narrower: phase speed,</text>
+              <text x="757" y="86" font-size="10" fill="#0f172a" text-anchor="middle">group speed</text>
+              <text x="757" y="98" font-size="9" fill="#94a3b8" text-anchor="middle" font-style="italic">via naming patterns</text>
+
+              {/* Output JSON-LD */}
+              <rect x="20" y="140" width="860" height="120" rx="8" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+              <text x="40" y="162" font-size="9" font-weight="700" fill="#64748b" letter-spacing="0.1em">OUTPUT — JSON-LD (simplified)</text>
+              <text x="40" y="180" font-size="10" font-family="monospace" fill="#e2e8f0">{'{'}</text>
+              <text x="55" y="194" font-size="10" font-family="monospace" fill="#93c5fd">"@id"</text><text x="95" y="194" font-size="10" font-family="monospace" fill="#e2e8f0">: </text><text x="110" y="194" font-size="10" font-family="monospace" fill="#86efac">"isq:t3-3"</text><text x="170" y="194" font-size="10" font-family="monospace" fill="#e2e8f0">,</text>
+              <text x="55" y="208" font-size="10" font-family="monospace" fill="#93c5fd">"@type"</text><text x="100" y="208" font-size="10" font-family="monospace" fill="#e2e8f0">: </text><text x="115" y="208" font-size="10" font-family="monospace" fill="#86efac">"isq:Quantity"</text><text x="180" y="208" font-size="10" font-family="monospace" fill="#e2e8f0">,</text>
+              <text x="55" y="222" font-size="10" font-family="monospace" fill="#93c5fd">"isq:hasKind"</text><text x="150" y="222" font-size="10" font-family="monospace" fill="#e2e8f0">: {'{'} </text><text x="175" y="222" font-size="10" font-family="monospace" fill="#93c5fd">"@id"</text><text x="200" y="222" font-size="10" font-family="monospace" fill="#e2e8f0">: </text><text x="215" y="222" font-size="10" font-family="monospace" fill="#86efac">"isq:kind-L-T-1"</text><text x="290" y="222" font-size="10" font-family="monospace" fill="#e2e8f0"> {'}'},</text>
+              <text x="55" y="236" font-size="10" font-family="monospace" fill="#93c5fd">"skos:broader"</text><text x="160" y="236" font-size="10" font-family="monospace" fill="#e2e8f0">: [{'{'} </text><text x="190" y="236" font-size="10" font-family="monospace" fill="#93c5fd">"@id"</text><text x="215" y="236" font-size="10" font-family="monospace" fill="#e2e8f0">: </text><text x="230" y="236" font-size="10" font-family="monospace" fill="#86efac">"isq:kind-L-T-1"</text><text x="305" y="236" font-size="10" font-family="monospace" fill="#e2e8f0"> {'}'}],</text>
+              <text x="55" y="250" font-size="10" font-family="monospace" fill="#93c5fd">"isq:hasUnit"</text><text x="140" y="250" font-size="10" font-family="monospace" fill="#e2e8f0">: [{'{'} </text><text x="165" y="250" font-size="10" font-family="monospace" fill="#93c5fd">"skos:notation"</text><text x="250" y="250" font-size="10" font-family="monospace" fill="#e2e8f0">: </text><text x="265" y="250" font-size="10" font-family="monospace" fill="#86efac">"m/s"</text><text x="295" y="250" font-size="10" font-family="monospace" fill="#e2e8f0"> {'}'}]</text>
+              <text x="40" y="262" font-size="10" font-family="monospace" fill="#e2e8f0">{'}'}</text>
+            </svg>
+          </div>
+
+          <div class="mt-6 grid sm:grid-cols-3 gap-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="text-[9px] font-bold uppercase tracking-wider text-indigo-500 mb-1">Step 1</div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Parse unit symbol</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Split compound expressions like <code class="font-mono text-indigo-600">m*s^(-1)</code> into base factors, look up each in the dimension table.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="text-[9px] font-bold uppercase tracking-wider text-indigo-500 mb-1">Step 2</div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Derive dimension vector</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Combine base dimensions: <code class="font-mono text-indigo-600">L · T⁻¹</code>. All quantities with this vector belong to the same kind.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="text-[9px] font-bold uppercase tracking-wider text-emerald-500 mb-1">Step 3</div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Emit SKOS triples</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Serialize as JSON-LD and Turtle with <code class="font-mono text-emerald-600">skos:broader</code>, <code class="font-mono text-emerald-600">isq:hasKind</code>, <code class="font-mono text-emerald-600">isq:hasUnit</code>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Navigation Modes */}
+    <section id="navigation" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-12">
+        <SectionHead
+          eyebrow="Information Architecture"
+          title="Five Ways to Browse"
+          subtitle="The same dataset can be navigated through different entry points — each reveals a different facet of the ISO 80000 & IEC 80000 series."
+        />
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {navModes.map((mode) => {
+          const c = colorClasses[mode.color]
+          return (
+            <a href={asset(mode.href)} class={`group relative p-6 rounded-2xl border ${c.border} bg-white dark:bg-dark-800 hover:shadow-lg hover:-translate-y-0.5 transition-all`}>
+              <div class="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl" style={`background: linear-gradient(to right, ${mode.color === 'brand' ? '#7c3aed' : mode.color === 'indigo' ? '#6366f1' : mode.color === 'teal' ? '#14b8a6' : mode.color === 'emerald' ? '#10b981' : '#f59e0b'}, transparent)`}></div>
+              <div class="text-3xl mb-3">{mode.icon}</div>
+              <h3 class={`text-base font-bold ${c.text} mb-2`}>{mode.title}</h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3">{mode.desc}</p>
+              <div class={`text-[10px] font-mono px-2 py-1 rounded ${c.bg} ${c.text} inline-block`}>
+                {mode.example}
+              </div>
+            </a>
+          )
+        })}
+      </div>
+    </section>
+
+    {/* Data Pipeline */}
+    <section id="pipeline" class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div class="text-center mb-12">
+          <SectionHead
+            eyebrow="Build-time"
+            title="Data Pipeline"
+            subtitle="YAML sources are processed at build time into typed TypeScript modules and static HTML pages. No runtime data fetching."
+          />
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <div class="rounded-2xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 p-6 sm:p-8 mb-6">
+            <svg viewBox="0 0 900 200" class="w-full h-auto" role="img" aria-label="Data pipeline flow">
+              <title>Data Pipeline — from YAML to static HTML</title>
+
+              {/* Stage 1: Sources */}
+              <rect x="20" y="30" width="180" height="140" rx="10" fill="#fffbeb" stroke="#fbbf24" stroke-width="1"/>
+              <text x="110" y="50" font-size="9" font-weight="700" fill="#92400e" text-anchor="middle" letter-spacing="0.1em">SOURCES</text>
+              <text x="110" y="75" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">ISO 80000 YAML</text>
+              <text x="110" y="89" font-size="9" fill="#64748b" text-anchor="middle">quantities.yaml</text>
+              <text x="110" y="103" font-size="9" fill="#64748b" text-anchor="middle">math.yaml</text>
+              <text x="110" y="122" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">UnitsDB</text>
+              <text x="110" y="136" font-size="9" fill="#64748b" text-anchor="middle">units + dimensions</text>
+              <text x="110" y="155" font-size="11" font-weight="600" fill="#0f172a" text-anchor="middle">SmartSDU</text>
+              <text x="110" y="169" font-size="9" fill="#64748b" text-anchor="middle">ontology TTL</text>
+
+              {/* Arrow */}
+              <line x1="205" y1="100" x2="240" y2="100" stroke="#94a3b8" stroke-width="2"/>
+              <polygon points="240,100 232,95 232,105" fill="#94a3b8"/>
+
+              {/* Stage 2: Build stages */}
+              <rect x="245" y="30" width="240" height="140" rx="10" fill="#eef2ff" stroke="#818cf8" stroke-width="1"/>
+              <text x="365" y="50" font-size="9" font-weight="700" fill="#4338ca" text-anchor="middle" letter-spacing="0.1em">BUILD STAGES (VITE)</text>
+              <text x="265" y="72" font-size="9" font-family="monospace" fill="#4f46e5">build-kinds.ts</text>
+              <text x="265" y="86" font-size="9" font-family="monospace" fill="#4f46e5">build-hierarchy.ts</text>
+              <text x="265" y="100" font-size="9" font-family="monospace" fill="#4f46e5">build-entities.ts</text>
+              <text x="265" y="114" font-size="9" font-family="monospace" fill="#4f46e5">build-units.ts</text>
+              <text x="265" y="128" font-size="9" font-family="monospace" fill="#4f46e5">build-dimensions.ts</text>
+              <text x="265" y="142" font-size="9" font-family="monospace" fill="#4f46e5">build-xrefs.ts</text>
+              <text x="265" y="156" font-size="9" font-family="monospace" fill="#94a3b8">+ 3 more stages</text>
+
+              {/* Arrow */}
+              <line x1="490" y1="100" x2="525" y2="100" stroke="#94a3b8" stroke-width="2"/>
+              <polygon points="525,100 517,95 517,105" fill="#94a3b8"/>
+
+              {/* Stage 3: Generated */}
+              <rect x="530" y="30" width="160" height="140" rx="10" fill="#f0fdf4" stroke="#4ade80" stroke-width="1"/>
+              <text x="610" y="50" font-size="9" font-weight="700" fill="#166534" text-anchor="middle" letter-spacing="0.1em">GENERATED TS</text>
+              <text x="610" y="75" font-size="9" font-family="monospace" fill="#16a34a" text-anchor="middle">kinds.ts</text>
+              <text x="610" y="89" font-size="9" font-family="monospace" fill="#16a34a" text-anchor="middle">hierarchy.ts</text>
+              <text x="610" y="103" font-size="9" font-family="monospace" fill="#16a34a" text-anchor="middle">entities.ts</text>
+              <text x="610" y="117" font-size="9" font-family="monospace" fill="#16a34a" text-anchor="middle">part-*.ts</text>
+              <text x="610" y="131" font-size="9" font-family="monospace" fill="#16a34a" text-anchor="middle">meta.ts</text>
+              <text x="610" y="155" font-size="9" fill="#64748b" text-anchor="middle">43 modules</text>
+
+              {/* Arrow */}
+              <line x1="695" y1="100" x2="730" y2="100" stroke="#94a3b8" stroke-width="2"/>
+              <polygon points="730,100 722,95 722,105" fill="#94a3b8"/>
+
+              {/* Stage 4: Pages */}
+              <rect x="735" y="30" width="145" height="140" rx="10" fill="#fdf2f8" stroke="#f472b6" stroke-width="1"/>
+              <text x="807" y="50" font-size="9" font-weight="700" fill="#9d174d" text-anchor="middle" letter-spacing="0.1em">STATIC PAGES</text>
+              <text x="807" y="75" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">/quantities/*</text>
+              <text x="807" y="91" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">/kinds/*</text>
+              <text x="807" y="107" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">/units/*</text>
+              <text x="807" y="123" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">/dimensions/*</text>
+              <text x="807" y="139" font-size="10" font-weight="600" fill="#0f172a" text-anchor="middle">/math/*</text>
+              <text x="807" y="155" font-size="9" fill="#64748b" text-anchor="middle">1,674 pages</text>
+            </svg>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-amber-600">Principle</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Zero runtime data fetching</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">All data processing happens at build time. The generated static site contains no server-side logic — just HTML, CSS, and pre-computed JSON-LD.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-center gap-2 mb-2">
+                <div class="w-2 h-2 rounded-full bg-indigo-400"></div>
+                <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-600">Principle</span>
+              </div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Derived data is disposable</div>
+              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Kinds, hierarchy, and entity links are derived from the YAML source — never hand-edited. Delete <code class="font-mono">generated/</code> and rebuild to refresh.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Design Principles */}
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-12">
+        <SectionHead
+          eyebrow="Engineering"
+          title="Design Principles"
+          subtitle="The architectural commitments that keep the codebase maintainable as the ontology evolves."
+        />
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+          <div class="text-2xl mb-2">🔓</div>
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Open / Closed</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Concept types are discriminated unions. Adding a new level (e.g., L3 measured quantity) extends the union without modifying existing concept code.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+          <div class="text-2xl mb-2">🎯</div>
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Single Responsibility</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Each build stage does one thing: <code class="font-mono text-[10px]">build-kinds</code> derives kinds, <code class="font-mono text-[10px]">build-hierarchy</code> derives broader/narrower. No overlap.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+          <div class="text-2xl mb-2">📦</div>
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Model-Driven</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Types in <code class="font-mono text-[10px]">ontology/concepts.ts</code> are the single source of truth. Serialization, UI, and build stages all consume the same types.</p>
+        </div>
+        <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+          <div class="text-2xl mb-2">⚡</div>
+          <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 mb-1">Performance</h4>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">Static generation — no runtime overhead. Vue islands hydrate lazily with <code class="font-mono text-[10px]">client:visible</code>. Pages load in under 100ms.</p>
+        </div>
+      </div>
+    </section>
+
+    {/* References */}
+    <section id="references" class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div class="text-center mb-12">
+          <SectionHead
+            eyebrow="Academic basis"
+            title="References"
+            subtitle="The concept system, terminology, and methodology implemented here draw on the following sources."
+          />
+        </div>
+
+        <div class="max-w-3xl mx-auto space-y-4">
+          {references.map((ref) => (
+            <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-start gap-3">
+                <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-950/40 border border-brand-100/60 dark:border-brand-800/40 flex items-center justify-center">
+                  <svg class="w-5 h-5 text-brand-600 dark:text-brand-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+                  </svg>
+                </div>
+                <div class="flex-1 min-w-0">
+                  <div class="text-[10px] font-bold uppercase tracking-wider text-brand-600 dark:text-brand-400 mb-0.5">{ref.citation}</div>
+                  <h4 class="text-sm font-bold text-slate-900 dark:text-slate-100 leading-snug mb-1">{ref.title}</h4>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-2">{ref.source}</p>
+                  {ref.doi && (
+                    <a href={`https://doi.org/${ref.doi}`} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-[11px] font-mono text-brand-600 dark:text-brand-400 hover:underline">
+                      doi:{ref.doi}
+                      <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
+                    </a>
+                  )}
+                  <p class="text-[11px] text-slate-400 dark:text-slate-500 italic leading-relaxed mt-2">{ref.note}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 max-w-3xl mx-auto p-5 rounded-xl bg-brand-50/40 dark:bg-brand-950/30 border border-brand-200/40 dark:border-brand-800/30 text-center">
+          <p class="text-xs text-brand-700 dark:text-brand-400 leading-relaxed">
+            Content copyright © ISO and IEC. All rights reserved. This site provides independently developed, machine-readable views of the published standard. The concept hierarchy implementation is original work by the ISQ Browser contributors.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    {/* CTA */}
+    <section class="border-t border-slate-200/60 dark:border-dark-600/60 bg-slate-50/30 dark:bg-dark-900/30">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-4">Explore the hierarchy</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Browse quantities by kind, dimension, or part — and see the concept hierarchy in action.</p>
+        <div class="flex flex-wrap justify-center gap-3">
+          <a href={asset('/kinds')} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors shadow-sm shadow-indigo-600/25">Browse by Kind<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg></a>
+          <a href={asset('/quantities')} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 transition-colors">Browse by Part</a>
+          <a href={asset('/about')} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 text-slate-700 dark:text-slate-200 text-sm font-medium hover:border-brand-200 dark:hover:border-brand-700 transition-colors">About ISO 80000</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</DefaultLayout>
