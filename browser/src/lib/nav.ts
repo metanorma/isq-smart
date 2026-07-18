@@ -7,6 +7,7 @@ export interface NavLink {
 
 const _coreLinks = [
   { to: '/quantities', label: 'Quantities' },
+  { to: '/kinds', label: 'Kinds' },
   { to: '/math', label: 'Math' },
   { to: '/units', label: 'Units' },
   { to: '/dimensions', label: 'Dimensions' },

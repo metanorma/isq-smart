@@ -11,6 +11,9 @@ import { buildUnits } from './stages/build-units'
 import { buildDimensions } from './stages/build-dimensions'
 import { buildDocuments } from './stages/build-documents'
 import { buildDomainIndex } from './stages/build-domain-index'
+import { buildKinds } from './stages/build-kinds'
+import { buildHierarchy } from './stages/build-hierarchy'
+import { buildEntities } from './stages/build-entities'
 
 export function yamlDataPlugin(paths: BuildPaths): Plugin {
   const { sourcesDir, generatedDir, unitsdbDir } = paths
@@ -26,6 +29,10 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
     if (!existsSync(generatedDir)) mkdirSync(generatedDir, { recursive: true })
 
     const { summaries } = buildParts(raw, globalMathCache, globalLatexCache, generatedDir, ctx)
+
+    const kindResult = buildKinds(raw.quantities, ctx, generatedDir)
+    buildHierarchy(raw.quantities, kindResult, ctx, generatedDir)
+    buildEntities(raw.quantities, ctx, generatedDir)
 
     buildDocuments(allEntries, sourcesDir, generatedDir, ctx)
 
