@@ -296,86 +296,21 @@ export const accentCardBg = (accent) => {
       <span class="font-mono text-sm text-brand-700 dark:text-brand-400">Q = {"{Q}"} · [Q]</span>
       <p class="text-[10px] text-brand-600/60 dark:text-brand-400/50 mt-1">A quantity equals its numerical value times its unit (Maxwell, 1873)</p>
     </div>
-  </section>
 
-  {/* Concept System Hierarchy */}
-  <section class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-      <div class="text-center mb-10">
-        <SectionHead
-          eyebrow="Concept System"
-          title="Hierarchy of Quantity, Entity, and Measurement"
-          subtitle="A concept system diagram relating generic to specific concepts of quantity, entity, and measurement — adapted from Pendrill (2024)."
-        />
-      </div>
-
-      <div class="max-w-5xl mx-auto overflow-x-auto">
-        <table class="w-full text-sm border-collapse">
-          <thead>
-            <tr class="border-b-2 border-slate-300 dark:border-dark-500">
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Level</th>
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Systematic (quantity) term<br/><span class="text-[10px] font-normal text-slate-400">adapted from Dybler (2010)</span></th>
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Systematic (entity) term<br/><span class="text-[10px] font-normal text-slate-400">phenomena, bodies, substances</span></th>
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Systematic (measurement) term<br/><span class="text-[10px] font-normal text-slate-400">Pendrill (2019)</span></th>
-              <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200 dark:divide-dark-600">
-            <tr class="hover:bg-slate-50 dark:hover:bg-dark-800/50 transition-colors">
-              <td class="py-3 px-3 font-mono font-bold text-brand-600 dark:text-brand-400">0</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">kind of quantity</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">space</td>
-              <td class="py-3 px-3"></td>
-              <td class="py-3 px-3"></td>
-              <td class="py-3 px-3"></td>
-              <td class="py-3 px-3"></td>
-            </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-dark-800/50 transition-colors">
-              <td class="py-3 px-3 font-mono font-bold text-brand-600 dark:text-brand-400">1</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">quantity, Q = X</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">length (X₁ – X₂)</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">kind of entity</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">physical body</td>
-              <td class="py-3 px-3"></td>
-              <td class="py-3 px-3"></td>
-            </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-dark-800/50 transition-colors">
-              <td class="py-3 px-3 font-mono font-bold text-brand-600 dark:text-brand-400">2</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">dedicated quantity = entity quantity<br/><span class="text-[10px] text-slate-400">[Sachgrösse, Fleischman 1960]</span></td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">length of rod</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">entity</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">rod</td>
-              <td class="py-3 px-3"></td>
-              <td class="py-3 px-3"></td>
-            </tr>
-            <tr class="hover:bg-slate-50 dark:hover:bg-dark-800/50 transition-colors">
-              <td class="py-3 px-3 font-mono font-bold text-brand-600 dark:text-brand-400">3</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">instantiation of an entity quantity</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">length of rod AB, today at 09:15</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">instantiation of an entity</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">rod AB, today at 09:15</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300">quantity as measured</td>
-              <td class="py-3 px-3 text-slate-600 dark:text-slate-300 italic">measured length of rod AB, today at 09:15, 1.234 m</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <p class="text-xs text-slate-400 dark:text-slate-500 text-center mt-4 italic">Table: Hierarchy (generic to specific) of Quantity, Entity, and Measurement concepts.</p>
-
-      <div class="mt-8 max-w-2xl mx-auto p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
-        <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-          This concept system diagram distinguishes four levels of abstraction — from the most generic (kind of quantity, e.g., "space") through the specific (quantity, e.g., "length") to the fully instantiated measurement result (e.g., "measured length of rod AB, today at 09:15, 1.234 m"). The three parallel hierarchies — quantity, entity, and measurement — clarify how abstract concepts relate to the physical objects being characterized and the practical act of measurement itself.
-        </p>
-        <p class="text-[11px] text-slate-400 dark:text-slate-500 mt-3">
-          Source: Pendrill, L. R. (2024). "Quantities and units: order amongst complexity." Chapter 2 in <em>Models, Measurement, and Metrology extending the SI — Trust and Quality Assured Knowledge Infrastructures</em>, W. P. Fisher Jr. & L. R. Pendrill (eds.), De Gruyter. <a href="https://doi.org/10.1515/9783111036496-002" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:underline">doi:10.1515/9783111036496-002</a>
-        </p>
-        <a href="/methodology" class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors">
-          Read the full methodology
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
-        </a>
+    {/* Concept system pointer */}
+    <div class="mt-10 max-w-2xl mx-auto p-6 rounded-2xl bg-gradient-to-br from-indigo-50/60 to-violet-50/40 dark:from-indigo-950/30 dark:to-violet-950/20 border border-indigo-200/50 dark:border-indigo-800/30">
+      <div class="flex items-start gap-4">
+        <div class="text-3xl flex-shrink-0">🗂️</div>
+        <div class="flex-1">
+          <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 heading-serif mb-1">Concept System Hierarchy</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-3">
+            The ISQ Browser organizes quantities using a four-level hierarchy (kind → quantity → dedicated → measured) across three parallel axes (quantity, entity, measurement), adapted from Pendrill (2024).
+          </p>
+          <a href="/methodology" class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-xs font-semibold hover:bg-indigo-700 transition-colors">
+            Read the full methodology
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
