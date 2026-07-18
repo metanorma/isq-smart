@@ -1,17 +1,37 @@
 import { describe, it, expect } from 'vitest'
-import { coreLinks, secondaryLinks, navLinks, isActive } from '../nav'
+import { coreLinks, secondaryEntries, navLinks, isActive, isNavGroup } from '../nav'
+import type { NavEntry, NavGroup, NavLink } from '../nav'
 
 describe('nav link arrays', () => {
   it('coreLinks contains quantities, kinds, math, units, dimensions', () => {
     expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/kinds', '/math', '/units', '/dimensions'])
   })
 
-  it('secondaryLinks contains methodology, documents, ontology, reference, about', () => {
-    expect(secondaryLinks.map(l => l.to)).toEqual(['/methodology', '/documents', '/ontology', '/reference', '/about'])
+  it('secondaryEntries groups Resources and keeps About separate', () => {
+    const labels = secondaryEntries.map(e => (isNavGroup(e) ? `${e.label} (group)` : e.label))
+    expect(labels).toEqual(['Resources (group)', 'About'])
   })
 
-  it('navLinks is the concatenation of core + secondary', () => {
-    expect(navLinks).toEqual([...coreLinks, ...secondaryLinks])
+  it('Resources group contains methodology, ontology, publications, reference', () => {
+    const resources = secondaryEntries.find(isNavGroup) as NavGroup | undefined
+    expect(resources).toBeDefined()
+    expect(resources!.label).toBe('Resources')
+    expect(resources!.items.map(i => i.to)).toEqual(['/methodology', '/ontology', '/documents', '/reference'])
+  })
+
+  it('About is a flat link, not part of any group', () => {
+    const about = secondaryEntries.find(e => !isNavGroup(e)) as NavLink | undefined
+    expect(about).toBeDefined()
+    expect(about!.to).toBe('/about')
+    expect(about!.label).toBe('About')
+  })
+
+  it('navLinks is the flattened concatenation of core + secondary', () => {
+    const expected = [
+      ...coreLinks,
+      ...secondaryEntries.flatMap(e => (isNavGroup(e) ? e.items : [e])),
+    ]
+    expect(navLinks).toEqual(expected)
   })
 
   it('every link has a label', () => {
@@ -19,6 +39,18 @@ describe('nav link arrays', () => {
       expect(link.label).toBeTruthy()
       expect(link.label.length).toBeGreaterThan(0)
     }
+  })
+})
+
+describe('isNavGroup type guard', () => {
+  it('identifies NavGroup entries', () => {
+    const group: NavEntry = { label: 'Test', items: [] }
+    expect(isNavGroup(group)).toBe(true)
+  })
+
+  it('rejects NavLink entries', () => {
+    const link: NavEntry = { to: '/test', label: 'Test' }
+    expect(isNavGroup(link)).toBe(false)
   })
 })
 

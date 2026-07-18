@@ -429,6 +429,128 @@ const colorClasses: Record<string, { bg: string; text: string; border: string; d
         </div>
       </div>
 
+      {/* Glossary: term-by-term definitions */}
+      <div class="max-w-5xl mx-auto mb-10">
+        <div class="text-center mb-6">
+          <p class="text-[10px] font-bold uppercase tracking-[0.15em] text-slate-400 mb-1">Glossary</p>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">What each term means</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Plain-language definitions for every concept in the table above, grouped by axis.</p>
+        </div>
+
+        {/* Quantity axis */}
+        <div class="mb-8">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-4 h-4 rounded bg-indigo-500"></div>
+            <h4 class="text-sm font-bold text-indigo-700 dark:text-indigo-400 heading-serif">Quantity axis — what is measured</h4>
+            <span class="text-[10px] text-slate-400">adapted from Dybkaer (2010)</span>
+          </div>
+          <div class="space-y-3">
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-indigo-600">L0</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">kind of quantity</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "space"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the <em>kind</em> to which length, width, height, wavelength, and altitude all belong. You cannot add a length to a time because they are different kinds. The VIM (ISO/IEC Guide 99 §1.2) defines this concept formally.
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-indigo-600">L1</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">quantity, Q = X</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "length (X₁ − X₂)"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                A named, defined concept that can be expressed as a numerical value times a unit: Q = {'{Q}'} · [Q] (Maxwell 1873). "Length" is a quantity — it has a symbol (l, L), a definition (the distance between two points), and coherent units (m, nm, km). <strong>This is the level ISO 80000 defines.</strong> Every entry in the standard is a Level 1 quantity.
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-amber-600">L2</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">dedicated quantity = entity quantity (Sachgrösse)</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "length of rod"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                A quantity bound to a specific kind of entity. "Length of rod" is not the abstract concept of length — it is length <em>as applied to rods</em>. The German term <em>Sachgrösse</em> (literally "property of a thing") was coined by Fleischman (1960) to capture this binding. ISO 80000 entries implicitly reference entities: "sound particle displacement" binds displacement to particles; "electron mass" binds mass to electrons.
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-rose-600">L3</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">instantiation of an entity quantity</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "length of rod AB, today at 09:15"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                A particular quantity value of a particular entity at a particular time. "Length of rod AB today at 09:15" is not a general truth about all rods — it is the length of <em>this</em> rod, <em>now</em>. This level exists in reality, not in standards. It is what measuring instruments produce and what databases store as rows.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Entity axis */}
+        <div class="mb-8">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-4 h-4 rounded bg-rose-500"></div>
+            <h4 class="text-sm font-bold text-rose-700 dark:text-rose-400 heading-serif">Entity axis — what is characterized</h4>
+            <span class="text-[10px] text-slate-400">phenomena, bodies, substances</span>
+          </div>
+          <div class="space-y-3">
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-rose-600">L1</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">kind of entity</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "physical body"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                The abstract category of things that quantities can characterize. "Physical body" is a kind — it encompasses rods, wires, blocks, planets, electrons (as bodies). Other kinds include "substance" (chemical matter), "field" (electromagnetic, acoustic), "wave", and "system". A kind of entity answers the question: <em>what type of thing are we measuring a property of?</em>
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-rose-600">L2</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">entity</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "rod"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                A specific type of physical thing. "Rod" is an entity — a cylindrical physical body. Other entities in ISO 80000 include "conductor" (in Part 6), "molecule" (Part 9), "crystal" (Part 12), and "photon" (Part 10). Entities are what the dedicated quantity (Level 2 quantity) is <em>about</em>. The quantity "mass of electron" characterizes the entity "electron".
+              </p>
+            </div>
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-rose-600">L3</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">instantiation of an entity</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "rod AB, today at 09:15"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                A particular physical object that exists in reality at a specific time and place. "Rod AB today at 09:15" is not the concept of a rod — it is <em>this specific rod</em>, identified by its label (AB), existing at this moment. This is the thing a metrologist actually picks up and measures.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Measurement axis */}
+        <div>
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-4 h-4 rounded bg-amber-500"></div>
+            <h4 class="text-sm font-bold text-amber-700 dark:text-amber-400 heading-serif">Measurement axis — the result</h4>
+            <span class="text-[10px] text-slate-400">Pendrill (2019)</span>
+          </div>
+          <div class="space-y-3">
+            <div class="p-4 rounded-lg bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex items-baseline gap-2 mb-1">
+                <span class="font-mono text-xs font-bold text-amber-600">L3</span>
+                <span class="text-sm font-bold text-slate-900 dark:text-slate-100">quantity as measured</span>
+                <span class="text-[10px] text-slate-400 italic">e.g., "1.234 m"</span>
+              </div>
+              <p class="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                The measurement result — a numerical value paired with a unit, obtained by a measuring instrument acting on an entity instance. "Measured length of rod AB = 1.234 m" combines a Level 3 quantity (length of rod AB at 09:15), a Level 3 entity (rod AB at 09:15), and a measured value (1.234) with a unit (metre). <strong>This is the only level that has a numerical value.</strong> It belongs to laboratory databases, calibration certificates, and measurement records — not to a standards browser.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Why this matters */}
       <div class="max-w-3xl mx-auto mt-12 p-6 rounded-2xl bg-gradient-to-br from-brand-50/60 to-indigo-50/40 dark:from-brand-950/30 dark:to-indigo-950/20 border border-brand-200/40 dark:border-brand-800/30">
         <h3 class="text-base font-bold text-brand-700 dark:text-brand-400 mb-3 heading-serif">Why a hierarchy matters</h3>
