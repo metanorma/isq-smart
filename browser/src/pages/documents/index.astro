@@ -146,7 +146,7 @@ const totalTerms = docs.reduce((s, d) => s + d.termCount, 0)
             <div class="flex-1 min-w-0">
               <div class="flex items-center gap-2">
                 {pubId(doc) && <span class="text-xs font-mono font-medium text-slate-500 dark:text-slate-400">{pubId(doc)}</span>}
-                <span class={`text-[10px] font-medium px-1.5 py-0.5 rounded ${doc.publisher === 'IEC'
+                <span class={`text-xs font-medium px-1.5 py-0.5 rounded ${doc.publisher === 'IEC'
                   ? 'text-iec-600 dark:text-iec-400 bg-iec-50 dark:bg-iec-950/40 border border-iec-200/60 dark:border-iec-800/40'
                   : 'text-slate-500 dark:text-slate-400 bg-slate-50 dark:bg-dark-700'}`}
                 >{doc.publisher}</span>

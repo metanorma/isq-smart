@@ -66,7 +66,7 @@ const { searchQuery, filtered } = useLocalFilter(
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2">
               <span class="text-sm font-semibold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{{ dim.name }}</span>
-              <span v-if="dim.dimensionless" class="text-[8px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-1.5 py-px rounded leading-none">dimensionless</span>
+              <span v-if="dim.dimensionless" class="text-xs font-bold text-emerald-700 bg-emerald-50 border border-emerald-200/60 px-1.5 py-px rounded leading-none">dimensionless</span>
             </div>
             <div class="flex items-center gap-2 mt-0.5 text-xs text-slate-400 dark:text-slate-500">
               <span class="font-mono">{{ dim.unitsmlId }}</span>
@@ -87,7 +87,7 @@ const { searchQuery, filtered } = useLocalFilter(
               class="inline-flex items-center justify-center w-7 h-7 rounded-md text-xs font-bold font-mono"
               :class="comp.power !== 0 ? 'bg-slate-100 dark:bg-dark-700 text-slate-700 dark:text-slate-300' : 'bg-slate-50 dark:bg-dark-800 text-slate-400 dark:text-slate-600'"
             >
-              {{ comp.base }}<sup class="text-[8px] -mt-1">{{ comp.power !== 1 ? comp.power : '' }}</sup>
+              {{ comp.base }}<sup class="text-xs -mt-1">{{ comp.power !== 1 ? comp.power : '' }}</sup>
             </span>
           </div>
 

@@ -32,8 +32,8 @@ function copyUrn() {
 <template>
   <div v-if="urn" class="flex items-center gap-2">
     <div class="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg bg-slate-50 dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 transition-colors" :class="{ 'bg-emerald-50 dark:bg-emerald-950/30 border-emerald-200/60 dark:border-emerald-700/60': copied }">
-      <span class="text-[10px] font-semibold uppercase tracking-wider transition-colors" :class="copied ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'">{{ copied ? 'Copied' : 'URN' }}</span>
-      <code class="text-[11px] font-mono select-all break-all transition-colors" :class="copied ? 'text-emerald-700 dark:text-emerald-300' : 'text-brand-700 dark:text-brand-400'">{{ urn }}</code>
+      <span class="text-xs font-semibold uppercase tracking-wider transition-colors" :class="copied ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-slate-500'">{{ copied ? 'Copied' : 'URN' }}</span>
+      <code class="text-xs font-mono select-all break-all transition-colors" :class="copied ? 'text-emerald-700 dark:text-emerald-300' : 'text-brand-700 dark:text-brand-400'">{{ urn }}</code>
       <a to="/reference/urn-patterns" class="ml-0.5 text-slate-300 dark:text-slate-600 hover:text-brand-500 dark:hover:text-brand-400 transition-colors" title="URN pattern documentation">
         <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><circle cx="12" cy="17" r="0.5"/></svg>
       </a>

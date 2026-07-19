@@ -149,20 +149,20 @@ onBeforeUnmount(() => {
 
           <!-- QName badge -->
           <code
-            class="text-[9px] font-mono px-1.5 py-0.5 rounded flex-shrink-0 hidden sm:inline-block"
+            class="text-xs font-mono px-1.5 py-0.5 rounded flex-shrink-0 hidden sm:inline-block"
             :class="accentClasses.badge"
           >{{ entity.qname }}</code>
 
           <!-- Root badge -->
           <span
             v-if="isRoot"
-            class="text-[9px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded bg-slate-200 text-slate-600 dark:bg-dark-700 dark:text-slate-400 flex-shrink-0"
+            class="text-xs font-bold uppercase tracking-wide px-1.5 py-0.5 rounded bg-slate-200 text-slate-600 dark:bg-dark-700 dark:text-slate-400 flex-shrink-0"
           >ROOT</span>
 
           <!-- Subclass count -->
           <span
             v-if="descendantCount > 0"
-            class="text-[10px] font-semibold ml-auto flex-shrink-0 tabular-nums whitespace-nowrap px-1.5 py-0.5 rounded-full"
+            class="text-xs font-semibold ml-auto flex-shrink-0 tabular-nums whitespace-nowrap px-1.5 py-0.5 rounded-full"
             :class="accentClasses.badge"
           >{{ children.length }} direct<span v-if="descendantCount > children.length" class="opacity-60"> / {{ descendantCount }} total</span></span>
         </div>
@@ -170,7 +170,7 @@ onBeforeUnmount(() => {
         <!-- Description (compact) -->
         <p
           v-if="entity.description && isRoot"
-          class="mt-1 text-[11px] text-slate-500 dark:text-slate-400 leading-snug line-clamp-1 pl-6"
+          class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-snug line-clamp-1 pl-6"
         >{{ entity.description }}</p>
       </div>
     </div>

@@ -86,7 +86,7 @@ const conceptsByScheme = (() => {
             return (
               <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
                 <div class="flex items-center gap-2 mb-3">
-                  <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-600 dark:bg-cyan-950/40 dark:text-cyan-400">Scheme</span>
+                  <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-600 dark:bg-cyan-950/40 dark:text-cyan-400">Scheme</span>
                   <a href={asset(`/ontology/${scheme.slug}`)} class="text-sm font-bold text-slate-800 dark:text-slate-200 hover:underline">{scheme.label}</a>
                   <span class="text-xs text-slate-400">({schemeConcepts.length} concepts)</span>
                 </div>
@@ -106,7 +106,7 @@ const conceptsByScheme = (() => {
                         <tr class="border-b border-slate-100/60 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                           <td class="px-3 py-2">
                             <a href={asset(`/ontology/${c.slug}`)} class="text-teal-700 dark:text-teal-400 hover:underline font-medium">{c.label}</a>
-                            <code class="ml-1 text-[9px] text-slate-400">{c.qname}</code>
+                            <code class="ml-1 text-xs text-slate-400">{c.qname}</code>
                           </td>
                           <td class="px-3 py-2 text-slate-600 dark:text-slate-400 max-w-sm">{c.description || '—'}</td>
                           <td class="px-3 py-2">
@@ -135,7 +135,7 @@ const conceptsByScheme = (() => {
             return (
               <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
                 <div class="flex items-center gap-2 mb-3">
-                  <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 dark:bg-dark-700 dark:text-slate-400">Unassigned</span>
+                  <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-slate-100 text-slate-500 dark:bg-dark-700 dark:text-slate-400">Unassigned</span>
                   <h2 class="text-sm font-bold text-slate-700 dark:text-slate-200">Concepts without a scheme</h2>
                   <span class="text-xs text-slate-400">({unassigned.length})</span>
                 </div>
@@ -143,7 +143,7 @@ const conceptsByScheme = (() => {
                   {unassigned.map((c) => (
                     <a
                       href={asset(`/ontology/${c.slug}`)}
-                      class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-teal-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
+                      class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-teal-200 hover:text-teal-600 dark:hover:text-teal-400 transition-colors"
                     >
                       {c.label}
                     </a>

@@ -47,7 +47,7 @@ const dimLink = kindToDimension[kind.id]
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Kinds', href: '/kinds' }, { label: kind.dimensionSymbol }]} variant="dark" />
           <div class="flex items-center gap-3 mb-2">
             <span class="font-mono text-2xl sm:text-3xl font-bold text-indigo-300">{kind.dimensionSymbol}</span>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded bg-indigo-500/20 text-indigo-200">Level 0 · Kind of Quantity</span>
+            <span class="text-xs font-bold uppercase tracking-wider px-2 py-1 rounded bg-indigo-500/20 text-indigo-200">Level 0 · Kind of Quantity</span>
           </div>
           <h1 class="text-2xl sm:text-3xl font-bold text-white tracking-tight heading-serif">{kind.prefLabel.en}</h1>
           {kind.prefLabel.fr && (
@@ -71,9 +71,9 @@ const dimLink = kindToDimension[kind.id]
             <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h10"/></svg>
           </div>
           <div class="flex-1 min-w-0">
-            <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 mb-0.5">Corresponding UnitsDB dimension</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 mb-0.5">Corresponding UnitsDB dimension</div>
             <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{dimLink.dimensionName}</div>
-            <div class="text-[10px] text-slate-400 mt-0.5 font-mono">
+            <div class="text-xs text-slate-400 mt-0.5 font-mono">
               {dimLink.dimensionNistId} · {dimLink.dimensionUnitsmlId}
             </div>
           </div>
@@ -119,10 +119,10 @@ const dimLink = kindToDimension[kind.id]
                       {(entities.length > 0 || broaderCount > 0) && (
                         <div class="flex flex-wrap gap-1 mt-1">
                           {broaderCount > 0 && (
-                            <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-500">↑ {broaderCount}</span>
+                            <span class="text-xs font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-500">↑ {broaderCount}</span>
                           )}
                           {entities.length > 0 && (
-                            <span class="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400">ent</span>
+                            <span class="text-xs font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400">ent</span>
                           )}
                         </div>
                       )}

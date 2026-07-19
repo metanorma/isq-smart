@@ -17,7 +17,7 @@ defineProps<{
 <template>
   <div class="mb-12">
     <!-- Header -->
-    <h2 class="flex items-center gap-2 text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em] mb-4">
+    <h2 class="flex items-center gap-2 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em] mb-4">
       <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
       Ontology
       <slot name="header-badges" />
@@ -27,7 +27,7 @@ defineProps<{
       <!-- Class hierarchy -->
       <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
         <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60">
-          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Class Hierarchy</h3>
+          <h3 class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Class Hierarchy</h3>
         </div>
         <div class="p-4">
           <div class="flex items-center gap-1.5 flex-wrap font-mono text-xs">
@@ -48,7 +48,7 @@ defineProps<{
       <!-- Instance IRI -->
       <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
         <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60">
-          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Instance IRI</h3>
+          <h3 class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Instance IRI</h3>
         </div>
         <div class="p-4">
           <slot name="instance-iri">
@@ -60,9 +60,9 @@ defineProps<{
       <!-- Properties table -->
       <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
         <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60 flex items-center justify-between">
-          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Properties</h3>
+          <h3 class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Properties</h3>
           <div class="flex items-center gap-1.5">
-            <span v-for="shape in shapes" :key="shape.qname" class="text-[9px] font-medium px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 border border-purple-100/60 dark:border-purple-800/40">
+            <span v-for="shape in shapes" :key="shape.qname" class="text-xs font-medium px-1.5 py-0.5 rounded bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 border border-purple-100/60 dark:border-purple-800/40">
               <a :href="asset(`/ontology/${shape.slug}`)" class="hover:underline" @click.stop>{{ shape.qname }}</a>
             </span>
           </div>
@@ -106,7 +106,7 @@ defineProps<{
       <!-- Related entities -->
       <div class="rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
         <div class="px-4 py-2.5 bg-slate-50/80 dark:bg-dark-700/80 border-b border-slate-200/60 dark:border-dark-600/60">
-          <h3 class="text-[10px] font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Related Entities</h3>
+          <h3 class="text-xs font-semibold text-slate-500 dark:text-slate-400 uppercase tracking-[0.12em]">Related Entities</h3>
         </div>
         <div class="p-4 flex flex-wrap gap-2">
           <!-- SHACL Shapes -->

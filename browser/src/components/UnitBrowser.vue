@@ -100,7 +100,7 @@ const partGroups = computed<PartGroup[]>(() => {
               <span class="text-base">{{ group.meta?.icon ?? '📐' }}</span>
               <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Part {{ group.partKey }}: {{ group.meta?.title }}</h3>
             </a>
-            <span class="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums">{{ group.units.length }} units</span>
+            <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ group.units.length }} units</span>
             <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
           </div>
           <div class="grid gap-2">
@@ -129,7 +129,7 @@ const partGroups = computed<PartGroup[]>(() => {
                       v-for="sq in unit.sampleQuantities"
                       :key="sq.num"
                       :href="entryUrl(sq.part, sq.id)"
-                      class="text-[10px] font-medium text-brand-600 dark:text-brand-400 bg-brand-50/60 dark:bg-brand-950/40 hover:bg-brand-100 dark:hover:bg-brand-950/60 px-1.5 py-0.5 rounded transition-colors"
+                      class="text-xs font-medium text-brand-600 dark:text-brand-400 bg-brand-50/60 dark:bg-brand-950/40 hover:bg-brand-100 dark:hover:bg-brand-950/60 px-1.5 py-0.5 rounded transition-colors"
                     >{{ sq.name }}</a>
                   </div>
                 </div>
@@ -166,7 +166,7 @@ const partGroups = computed<PartGroup[]>(() => {
                   v-for="sq in unit.sampleQuantities"
                   :key="sq.num"
                   :href="entryUrl(sq.part, sq.id)"
-                  class="text-[10px] font-medium text-brand-600 dark:text-brand-400 bg-brand-50/60 dark:bg-brand-950/40 hover:bg-brand-100 dark:hover:bg-brand-950/60 px-1.5 py-0.5 rounded transition-colors"
+                  class="text-xs font-medium text-brand-600 dark:text-brand-400 bg-brand-50/60 dark:bg-brand-950/40 hover:bg-brand-100 dark:hover:bg-brand-950/60 px-1.5 py-0.5 rounded transition-colors"
                 >{{ sq.name }}</a>
               </div>
             </div>

@@ -70,7 +70,7 @@ function getEntryName(r: SearchResult): string {
         <div class="flex items-center gap-3 px-5 py-4 border-b border-slate-100 dark:border-dark-600">
           <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
           <input ref="input" v-model="searchQuery" type="text" placeholder="Search quantities, symbols, definitions, units..." class="flex-1 text-sm bg-transparent outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-800 dark:text-slate-200" />
-          <kbd class="text-[10px] bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded-md text-slate-400 dark:text-slate-500 font-mono border border-slate-200 dark:border-dark-600 flex-shrink-0 hidden sm:inline">ESC</kbd>
+          <kbd class="text-xs bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded-md text-slate-400 dark:text-slate-500 font-mono border border-slate-200 dark:border-dark-600 flex-shrink-0 hidden sm:inline">ESC</kbd>
           <button @click="closeSearch" class="sm:hidden p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
@@ -100,18 +100,18 @@ function getEntryName(r: SearchResult): string {
           </div>
           <div v-for="(r, idx) in searchResults" :key="r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
             <a :href="entryUrl(r.partKey, r.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
-              <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-[11px] font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partDomain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.partKey }}</span>
+              <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partDomain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.partKey }}</span>
               <div class="min-w-0 flex-1">
                 <div class="text-sm font-medium text-slate-800 dark:text-slate-200 truncate" :class="{ 'text-brand-700 dark:text-brand-400': idx === activeIndex }" v-html="highlight(getEntryName(r), searchQuery)" />
                 <div class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
                   <span class="font-mono text-brand-600 dark:text-brand-400 font-medium" v-html="highlight(r.num, searchQuery)" />
                   <span class="text-slate-300 dark:text-slate-600">&middot;</span>
-                  <span class="text-[10px] font-semibold uppercase tracking-wider" :class="r.partDomain === 'math' ? 'text-violet-500 dark:text-violet-400' : 'text-brand-500 dark:text-brand-400'">{{ r.partDomain }}</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider" :class="r.partDomain === 'math' ? 'text-violet-500 dark:text-violet-400' : 'text-brand-500 dark:text-brand-400'">{{ r.partDomain }}</span>
                   <span class="text-slate-300 dark:text-slate-600">&middot;</span>
                   <span>{{ r.partTitle }}</span>
                   <template v-if="r.matchField">
                     <span class="text-slate-300 dark:text-slate-600">&middot;</span>
-                    <span class="text-[10px] font-medium text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 px-1.5 py-0.5 rounded border border-amber-200/60 dark:border-amber-700/40">in {{ matchLabel(r.matchField) }}</span>
+                    <span class="text-xs font-medium text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30 px-1.5 py-0.5 rounded border border-amber-200/60 dark:border-amber-700/40">in {{ matchLabel(r.matchField) }}</span>
                   </template>
                 </div>
               </div>
