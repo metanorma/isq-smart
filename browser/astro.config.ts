@@ -42,5 +42,11 @@ export default defineConfig({
   integrations: [vue(), mdx()],
   vite: {
     plugins: [tailwindcss(), yamlDataPlugin(paths), ontologyDataPlugin(paths)],
+    ssr: {
+      external: ['@plurimath/plurimath'],
+    },
+    optimizeDeps: {
+      exclude: ['@plurimath/plurimath'],
+    },
   },
 })

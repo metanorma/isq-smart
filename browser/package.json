@@ -4,8 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "test -d node_modules || { echo 'Run npm install first'; exit 1; }",
+    "predev": "node scripts/render-math.mjs",
     "dev": "astro dev",
+    "prebuild": "node scripts/render-math.mjs",
     "build": "astro build",
     "build:check": "astro build && astro check",
     "preview": "astro preview",

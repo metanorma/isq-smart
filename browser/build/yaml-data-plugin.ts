@@ -24,6 +24,7 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
     const ctx = createBuildContext(paths)
     const allEntries = filterEntries(raw, ctx)
 
+    MathCollector.generatedDir = generatedDir
     const allExprs = MathCollector.collect(allEntries)
     const { mathml: globalMathCache, latex: globalLatexCache } = await MathCollector.render(allExprs)
 

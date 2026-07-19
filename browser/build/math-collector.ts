@@ -1,3 +1,5 @@
+import { readFileSync, existsSync } from 'node:fs'
+import { resolve } from 'node:path'
 import type { RawEntry } from './types'
 
 const ASCIIMATH_KNOWN = new Set([
@@ -59,23 +61,20 @@ export const MathCollector = {
   },
 
   async render(exprs: Set<string>): Promise<{ mathml: Record<string, string>; latex: Record<string, string> }> {
+    const cachePath = resolve(this.generatedDir, 'math-cache.json')
+    if (!existsSync(cachePath)) {
+      console.warn('[math] No pre-rendered cache found at', cachePath)
+      return { mathml: {}, latex: {} }
+    }
+    const cache = JSON.parse(readFileSync(cachePath, 'utf-8')) as { mathml: Record<string, string>; latex: Record<string, string> }
     const mathml: Record<string, string> = {}
     const latex: Record<string, string> = {}
-
-    const decodeEntities = (s: string) => s.replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
-
-    try {
-      const { default: Plurimath } = await import('@plurimath/plurimath')
-      for (const expr of exprs) {
-        try {
-          const decoded = decodeEntities(expr)
-          const preprocessed = quoteMultiLetter(decoded)
-          const f = new Plurimath(preprocessed, 'asciimath')
-          mathml[expr] = f.toMathml().replace('display="block"', 'display="inline"')
-          latex[expr] = f.toLatex()
-        } catch { mathml[expr] = ''; latex[expr] = '' }
-      }
-    } catch { /* Plurimath unavailable */ }
+    for (const expr of exprs) {
+      if (cache.mathml?.[expr]) mathml[expr] = cache.mathml[expr]
+      if (cache.latex?.[expr]) latex[expr] = cache.latex[expr]
+    }
     return { mathml, latex }
   },
+
+  generatedDir: '' as string,
 }
