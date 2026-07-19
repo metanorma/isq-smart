@@ -4,6 +4,7 @@ import Breadcrumb from '../../components/Breadcrumb.astro'
 import { kindOfQuantities, quantityToKind } from '../../data/generated/kinds'
 import { conceptHierarchy } from '../../data/generated/hierarchy'
 import { quantityEntities } from '../../data/generated/entities'
+import { kindToDimension } from '../../data/generated/concept-links'
 import { getAllParts, getPartMeta } from '../../data/PartRegistry'
 import { partSummaries } from '../../data/generated/meta'
 import { DataLoader } from '../../data/DataLoader'
@@ -32,6 +33,7 @@ for (const part of allParts) {
 }
 
 const totalEntries = kind.quantityIds.length
+const dimLink = kindToDimension[kind.id]
 ---
 
 <DefaultLayout title={`${kind.prefLabel.en} — Kind of Quantity — ISQ Browser`} description={`${totalEntries} quantities of dimension ${kind.dimensionSymbol}.`}>
@@ -58,6 +60,27 @@ const totalEntries = kind.quantityIds.length
       </div>
       <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
     </section>
+
+    {dimLink?.dimensionSlug && (
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+        <a
+          href={asset(`/dimensions/${dimLink.dimensionSlug}`)}
+          class="group flex items-center gap-4 p-4 rounded-xl border border-indigo-200/50 dark:border-indigo-800/40 bg-gradient-to-r from-indigo-50/60 to-violet-50/40 dark:from-indigo-950/30 dark:to-violet-950/20 hover:shadow-sm transition-all"
+        >
+          <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+            <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h10"/></svg>
+          </div>
+          <div class="flex-1 min-w-0">
+            <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 mb-0.5">Corresponding UnitsDB dimension</div>
+            <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">{dimLink.dimensionName}</div>
+            <div class="text-[10px] text-slate-400 mt-0.5 font-mono">
+              {dimLink.dimensionNistId} · {dimLink.dimensionUnitsmlId}
+            </div>
+          </div>
+          <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    )}
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
       {[...entriesByPart.entries()].map(([partKey, items]) => {

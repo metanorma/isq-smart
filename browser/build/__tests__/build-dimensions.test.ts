@@ -341,7 +341,7 @@ describe('buildDimensions', () => {
       const result = buildDimensions(isoUnits, tmpDir, makeCtx(), tmpDir)
 
       // The returned array is the same enriched objects
-      const metre = result.find(u => u.slug === 'metre')!
+      const metre = result.isoUnits.find(u => u.slug === 'metre')!
       expect(metre.dimensionRef).toBe('d:length')
       expect(metre.dimensionSlug).toBe('length')
 

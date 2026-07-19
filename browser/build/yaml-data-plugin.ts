@@ -14,6 +14,7 @@ import { buildDomainIndex } from './stages/build-domain-index'
 import { buildKinds } from './stages/build-kinds'
 import { buildHierarchy } from './stages/build-hierarchy'
 import { buildEntities } from './stages/build-entities'
+import { buildConceptLinks } from './stages/build-concept-links'
 
 export function yamlDataPlugin(paths: BuildPaths): Plugin {
   const { sourcesDir, generatedDir, unitsdbDir } = paths
@@ -38,7 +39,9 @@ export function yamlDataPlugin(paths: BuildPaths): Plugin {
 
     const isoUnits = buildUnits(raw.quantities, unitsdbDir, ctx, generatedDir)
 
-    buildDimensions(isoUnits, unitsdbDir, ctx, generatedDir)
+    const dimsResult = buildDimensions(isoUnits, unitsdbDir, ctx, generatedDir)
+
+    buildConceptLinks(kindResult.kinds, dimsResult.physicalDimensions, generatedDir)
 
     writeFileSync(
       resolve(generatedDir, 'meta.ts'),

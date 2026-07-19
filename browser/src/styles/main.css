@@ -293,13 +293,21 @@ a.xref:hover {
   -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 50%, black 10%, transparent 70%);
 }
 
-/* Scroll reveal */
+/* Scroll reveal — progressive enhancement
+   Content is visible by default. The 'reveal-ready' class is added to
+   <html> synchronously by an inline script in <head>. Only then do
+   elements hide and animate. If JS fails or is slow, content stays
+   visible — no invisible content on mobile. */
 .scroll-reveal {
+  opacity: 1;
+  transform: none;
+}
+.reveal-ready .scroll-reveal {
   opacity: 0;
   transform: translateY(12px);
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
+.reveal-ready .scroll-reveal.revealed { opacity: 1; transform: translateY(0); }
 
 /* Section heading */
 .section-heading::after {
@@ -475,7 +483,7 @@ a.xref:hover {
 /* ─── Reduced motion ───────────────────────────────────────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .scroll-reveal { opacity: 1; transform: none; transition: none; }
+  .scroll-reveal, .reveal-ready .scroll-reveal { opacity: 1; transform: none; transition: none; }
   .card-lift { transition: none; }
   .entry-card { transition: none; }
   .entry-card::before { transition: none; }
