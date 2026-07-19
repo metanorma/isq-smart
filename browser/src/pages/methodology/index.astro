@@ -1,0 +1,90 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import MethodologyNav from '../../components/MethodologyNav.astro'
+import { asset } from '../../lib/asset'
+
+const pages = [
+  {
+    slug: '/concept-system',
+    icon: '🗂️',
+    eyebrow: 'Pendrill (2024)',
+    title: 'Concept System',
+    desc: 'The four-level hierarchy across three parallel axes — quantity, entity, and measurement. How ISO 80000 quantities are grouped into kinds, bound to entities, and instantiated as measurements.',
+    color: 'brand',
+  },
+  {
+    slug: '/pipeline',
+    icon: '⚙️',
+    eyebrow: 'Build-time',
+    title: 'Data Pipeline',
+    desc: 'How YAML source data flows through Vite build stages into typed TypeScript modules and static HTML pages. Zero runtime data fetching — everything is pre-computed.',
+    color: 'teal',
+  },
+  {
+    slug: '/navigation',
+    icon: '🧭',
+    eyebrow: 'Information Architecture',
+    title: 'Navigation',
+    desc: 'Five ways to browse the same dataset — by Part, by Kind, by Dimension, by Unit, or by Concept. Each reveals a different facet of the ISO 80000 & IEC 80000 series.',
+    color: 'indigo',
+  },
+  {
+    slug: '/references',
+    icon: '📚',
+    eyebrow: 'Academic basis',
+    title: 'References',
+    desc: 'The concept system, terminology, and methodology draw on Pendrill (2024), Dybkaer (2010), Fleischman (1960), Maxwell (1873), and the ISO/IEC Guide 99 (VIM).',
+    color: 'amber',
+  },
+]
+
+const colorMap: Record<string, string> = {
+  brand: 'from-brand-500/10 to-brand-600/5 text-brand-700 dark:text-brand-400 border-brand-200/50 dark:border-brand-800/30',
+  teal: 'from-teal-500/10 to-teal-600/5 text-teal-700 dark:text-teal-400 border-teal-200/50 dark:border-teal-800/30',
+  indigo: 'from-indigo-500/10 to-indigo-600/5 text-indigo-700 dark:text-indigo-400 border-indigo-200/50 dark:border-indigo-800/30',
+  amber: 'from-amber-500/10 to-amber-600/5 text-amber-700 dark:text-amber-400 border-amber-200/50 dark:border-amber-800/30',
+}
+---
+
+<DefaultLayout title="Methodology — ISQ Browser" description="How the ISQ Browser works: concept system, data pipeline, and navigation modes.">
+  <div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-brand-950 to-indigo-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="absolute top-0 right-0 w-[800px] h-[800px] rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 bg-indigo-500/10"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Methodology' }]} variant="dark" />
+          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif leading-tight">Methodology</h1>
+          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed">
+            The concept system, data pipeline, and design principles behind the ISQ Browser. Built on a four-level concept hierarchy adapted from Pendrill (2024).
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <MethodologyNav active="overview" />
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="grid sm:grid-cols-2 gap-5">
+        {pages.map((p) => (
+          <a
+            href={asset(`/methodology${p.slug}`)}
+            class={`group relative p-6 rounded-2xl border bg-gradient-to-br ${colorMap[p.color]} hover:shadow-lg hover:-translate-y-0.5 transition-all`}
+          >
+            <div class="text-3xl mb-3">{p.icon}</div>
+            <div class="text-xs font-bold uppercase tracking-wider opacity-70 mb-1">{p.eyebrow}</div>
+            <h3 class="text-xl font-bold heading-serif mb-2">{p.title}</h3>
+            <p class="text-sm opacity-80 leading-relaxed">{p.desc}</p>
+            <div class="mt-4 flex items-center gap-1 text-sm font-medium opacity-60 group-hover:opacity-100 transition-opacity">
+              <span>Read more</span>
+              <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
+</DefaultLayout>

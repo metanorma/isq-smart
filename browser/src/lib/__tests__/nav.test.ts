@@ -12,11 +12,11 @@ describe('nav link arrays', () => {
     expect(labels).toEqual(['Resources (group)', 'About'])
   })
 
-  it('Resources group contains methodology, ontology, publications, reference', () => {
+  it('Resources group contains methodology, terminology, ontology, publications, reference', () => {
     const resources = secondaryEntries.find(isNavGroup) as NavGroup | undefined
     expect(resources).toBeDefined()
     expect(resources!.label).toBe('Resources')
-    expect(resources!.items.map(i => i.to)).toEqual(['/methodology', '/ontology', '/documents', '/reference'])
+    expect(resources!.items.map(i => i.to)).toEqual(['/methodology', '/terminology', '/ontology', '/documents', '/reference'])
   })
 
   it('About is a flat link, not part of any group', () => {
