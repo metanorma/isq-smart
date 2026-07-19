@@ -1,0 +1,169 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import MethodologyNav from '../../components/MethodologyNav.astro'
+import { asset } from '../../lib/asset'
+
+const levels = [
+  {
+    level: 0,
+    name: 'Kind of Quantity',
+    color: 'indigo',
+    quantity: { term: 'kind of quantity', example: 'space' },
+    entity: null,
+    measurement: null,
+    impl: 'Derived automatically from unit dimension analysis. Every quantity whose primary unit reduces to the same dimension vector belongs to the same kind.',
+  },
+  {
+    level: 1,
+    name: 'Quantity',
+    color: 'brand',
+    quantity: { term: 'quantity, Q = X', example: 'length (X₁ − X₂)' },
+    entity: { term: 'kind of entity', example: 'physical body' },
+    measurement: null,
+    impl: 'The primary content of the dataset. Each ISO 80000 entry (e.g., t3-1.1 "length") is a Level 1 quantity concept.',
+  },
+  {
+    level: 2,
+    name: 'Dedicated Quantity',
+    color: 'amber',
+    quantity: { term: 'entity quantity (Sachgrösse)', example: 'length of rod' },
+    entity: { term: 'entity', example: 'rod' },
+    measurement: null,
+    impl: 'Derived semi-automatically. The quantity "sound particle displacement" is the "displacement" quantity bound to the "particle" entity.',
+  },
+  {
+    level: 3,
+    name: 'Measured Quantity',
+    color: 'rose',
+    quantity: { term: 'instantiation', example: 'length of rod AB, today at 09:15' },
+    entity: { term: 'entity instance', example: 'rod AB, today at 09:15' },
+    measurement: { term: 'quantity as measured', example: '1.234 m' },
+    impl: 'Out of scope for a standards browser. This level belongs to measurement databases and laboratory information systems.',
+  },
+]
+
+const glossary = [
+  { axis: 'quantity', level: 'L0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.' },
+  { axis: 'quantity', level: 'L1', term: 'quantity, Q = X', example: 'length', color: 'indigo', def: 'A named, defined concept expressed as Q = {Q} · [Q]. This is the level ISO 80000 defines. Every entry in the standard is a Level 1 quantity.' },
+  { axis: 'quantity', level: 'L2', term: 'dedicated quantity (Sachgrösse)', example: 'length of rod', color: 'amber', def: 'A quantity bound to a specific kind of entity. Coined by Fleischman (1960). "Length of rod" is not abstract length — it is length as applied to rods.' },
+  { axis: 'quantity', level: 'L3', term: 'instantiation', example: 'length of rod AB at 09:15', color: 'rose', def: 'A particular quantity value of a particular entity at a particular time. This level exists in reality, not in standards.' },
+  { axis: 'entity', level: 'L1', term: 'kind of entity', example: 'physical body', color: 'rose', def: 'The abstract category of things that quantities can characterize. Other kinds include substance, field, wave, system.' },
+  { axis: 'entity', level: 'L2', term: 'entity', example: 'rod', color: 'rose', def: 'A specific type of physical thing. Entities are what the dedicated quantity is about. "Mass of electron" characterizes the entity "electron".' },
+  { axis: 'entity', level: 'L3', term: 'entity instance', example: 'rod AB at 09:15', color: 'rose', def: 'A particular physical object that exists in reality at a specific time and place. This is what a metrologist actually picks up and measures.' },
+  { axis: 'measurement', level: 'L3', term: 'quantity as measured', example: '1.234 m', color: 'amber', def: 'The measurement result — a numerical value paired with a unit, obtained by a measuring instrument acting on an entity instance. This is the only level with a numerical value.' },
+]
+
+const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
+  indigo: { bg: 'bg-indigo-50 dark:bg-indigo-950/40', text: 'text-indigo-700 dark:text-indigo-400', border: 'border-indigo-200/60 dark:border-indigo-800/40' },
+  brand: { bg: 'bg-brand-50 dark:bg-brand-950/40', text: 'text-brand-700 dark:text-brand-400', border: 'border-brand-200/60 dark:border-brand-800/40' },
+  amber: { bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-700 dark:text-amber-400', border: 'border-amber-200/60 dark:border-amber-800/40' },
+  rose: { bg: 'bg-rose-50 dark:bg-rose-950/40', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-200/60 dark:border-rose-800/40' },
+}
+---
+
+<DefaultLayout title="Concept System — Methodology — ISQ Browser" description="The Pendrill (2024) concept hierarchy: four levels across three axes.">
+  <div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-indigo-950 via-indigo-900 to-violet-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Methodology', href: '/methodology' }, { label: 'Concept System' }]} variant="dark" />
+          <div class="flex items-center gap-2 mb-3">
+            <span class="text-xs font-bold uppercase tracking-wider text-indigo-300/70">Pendrill (2024)</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Concept System</h1>
+          <p class="mt-3 text-base text-indigo-200/70 leading-relaxed">
+            A four-level hierarchy across three parallel axes — quantity, entity, and measurement. Each level adds constraints, from abstract kind to specific measurement.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <MethodologyNav active="concept-system" />
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 space-y-16">
+
+      {/* Source Table */}
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">Source Table</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Reproduced from Pendrill (2024), Table 1.1 — the authoritative 7-column layout.</p>
+
+        <div class="rounded-2xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden overflow-x-auto shadow-sm">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b-2 border-slate-300 dark:border-dark-500 bg-slate-50/50 dark:bg-dark-700/50">
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Level</th>
+                <th class="py-3 px-3 text-left font-bold text-indigo-700 dark:text-indigo-400 align-bottom">Quantity term<br/><span class="text-xs font-normal text-slate-400">Dybkaer (2010)</span></th>
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
+                <th class="py-3 px-3 text-left font-bold text-rose-700 dark:text-rose-400 align-bottom">Entity term</th>
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
+                <th class="py-3 px-3 text-left font-bold text-amber-700 dark:text-amber-400 align-bottom">Measurement term<br/><span class="text-xs font-normal text-slate-400">Pendrill (2019)</span></th>
+                <th class="py-3 px-3 text-left font-bold text-slate-700 dark:text-slate-200 align-bottom">Example</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 dark:divide-dark-600">
+              <tr><td class="py-3 px-3 font-mono font-bold text-indigo-600">0</td><td class="py-3 px-3">kind of quantity</td><td class="py-3 px-3 italic">space</td><td class="py-3 px-3 text-slate-300">—</td><td class="py-3 px-3 text-slate-300">—</td><td class="py-3 px-3 text-slate-300">—</td><td class="py-3 px-3 text-slate-300">—</td></tr>
+              <tr><td class="py-3 px-3 font-mono font-bold text-indigo-600">1</td><td class="py-3 px-3">quantity, Q = X</td><td class="py-3 px-3 italic">length (X₁ − X₂)</td><td class="py-3 px-3">kind of entity</td><td class="py-3 px-3 italic">physical body</td><td class="py-3 px-3 text-slate-300">—</td><td class="py-3 px-3 text-slate-300">—</td></tr>
+              <tr><td class="py-3 px-3 font-mono font-bold text-amber-600">2</td><td class="py-3 px-3">entity quantity<br/><span class="text-xs text-slate-400">[Sachgrösse]</span></td><td class="py-3 px-3 italic">length of rod</td><td class="py-3 px-3">entity</td><td class="py-3 px-3 italic">rod</td><td class="py-3 px-3 text-slate-300">—</td><td class="py-3 px-3 text-slate-300">—</td></tr>
+              <tr><td class="py-3 px-3 font-mono font-bold text-rose-600">3</td><td class="py-3 px-3">instantiation</td><td class="py-3 px-3 italic">length of rod AB</td><td class="py-3 px-3">entity instance</td><td class="py-3 px-3 italic">rod AB</td><td class="py-3 px-3">quantity as measured</td><td class="py-3 px-3 italic">1.234 m</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="text-xs text-slate-400 dark:text-slate-500 mt-3 italic">
+          Pendrill, L. R. (2024). <em>Quantities and units: order amongst complexity</em>. De Gruyter. <a href="https://doi.org/10.1515/9783111036496-002" target="_blank" rel="noopener" class="text-brand-600 dark:text-brand-400 hover:underline">doi:10.1515/9783111036496-002</a>
+        </p>
+      </section>
+
+      {/* Glossary */}
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">What Each Term Means</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Plain-language definitions for every concept in the table, grouped by axis.</p>
+
+        <div class="space-y-3">
+          {glossary.map((item) => {
+            const c = colorClasses[item.color]
+            return (
+              <div class={`p-4 rounded-xl ${c.bg} border ${c.border}`}>
+                <div class="flex flex-wrap items-baseline gap-2 mb-1">
+                  <span class={`font-mono text-xs font-bold ${c.text}`}>{item.level}</span>
+                  <span class={`text-xs font-bold uppercase tracking-wider ${c.text}`}>{item.axis}</span>
+                  <span class="text-base font-bold text-slate-900 dark:text-slate-100">{item.term}</span>
+                  <span class="text-sm text-slate-400 italic">e.g., "{item.example}"</span>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.def}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+      {/* Implementation Mapping */}
+      <section>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">How the Table Maps to This Site</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Each cell in the concept hierarchy informs a specific feature of the ISQ Browser.</p>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          {levels.map((lvl) => {
+            const c = colorClasses[lvl.color]
+            const feature = lvl.level === 0 ? '/kinds' : lvl.level === 1 ? '/quantities' : lvl.level === 2 ? 'Entry context' : 'Out of scope'
+            return (
+              <div class={`p-5 rounded-xl ${c.bg} border ${c.border}`}>
+                <div class="flex items-center gap-2 mb-2">
+                  <div class={`w-8 h-8 rounded-lg ${c.bg} border ${c.border} flex items-center justify-center font-mono text-sm font-bold ${c.text}`}>{lvl.level}</div>
+                  <div>
+                    <div class="text-sm font-bold text-slate-900 dark:text-slate-100">{lvl.name}</div>
+                    <div class={`text-xs font-mono ${c.text}`}>{feature}</div>
+                  </div>
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{lvl.impl}</p>
+              </div>
+            )
+          })}
+        </div>
+      </section>
+
+    </div>
+  </div>
+</DefaultLayout>

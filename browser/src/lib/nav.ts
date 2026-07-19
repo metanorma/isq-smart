@@ -29,6 +29,7 @@ const _secondaryEntries: NavEntry[] = [
     label: 'Resources',
     items: [
       { to: '/methodology', label: 'Methodology' },
+      { to: '/terminology', label: 'Terminology' },
       { to: '/ontology', label: 'Ontology' },
       { to: '/documents', label: 'Publications' },
       { to: '/reference', label: 'Reference' },

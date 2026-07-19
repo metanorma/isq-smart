@@ -1,0 +1,153 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Breadcrumb from '../components/Breadcrumb.astro'
+import SectionHead from '../components/SectionHead.astro'
+import { asset } from '../lib/asset'
+
+const terms = [
+  {
+    term: 'Quantity',
+    symbol: 'Q',
+    def: 'A property of a phenomenon, body, or substance that can be expressed as a number multiplied by a unit. The fundamental concept of metrology — everything ISO 80000 defines is a quantity.',
+    example: 'length, mass, time, electric current, temperature',
+  },
+  {
+    term: 'Kind of quantity',
+    def: 'A grouping of quantities that can be compared, added, and subtracted because they share the same dimension. Length, width, and wavelength are all the same kind (dimension L).',
+    example: 'all length-type quantities share kind L',
+  },
+  {
+    term: 'Base quantity',
+    def: 'One of the seven quantities that form the foundation of the International System of Quantities (ISQ). All other quantities are derived from these.',
+    example: 'length, mass, time, electric current, temperature, amount of substance, luminous intensity',
+  },
+  {
+    term: 'Derived quantity',
+    def: 'A quantity defined in terms of base quantities via a system of equations. Most quantities in ISO 80000 are derived.',
+    example: 'velocity = length / time, density = mass / volume',
+  },
+  {
+    term: 'Dimension',
+    symbol: 'dim Q',
+    def: 'An expression of the dependence of a quantity on the base quantities as a product of powers of the base dimension symbols. Written as L, M, T, I, Θ, N, J.',
+    example: 'dim(velocity) = L T⁻¹, dim(force) = L M T⁻²',
+  },
+  {
+    term: 'Unit',
+    def: 'A particular quantity, defined and adopted by convention, used as a standard to express quantities of the same kind. The SI defines the coherent system of units.',
+    example: 'metre (m) for length, kilogram (kg) for mass, second (s) for time',
+  },
+  {
+    term: 'Quantity value',
+    symbol: '{Q}',
+    def: 'The number multiplying the unit in a quantity value expression. A quantity equals its value times its unit: Q = {Q} · [Q] (Maxwell, 1873).',
+    example: 'for "1.234 m", the value is 1.234 and the unit is metre',
+  },
+  {
+    term: 'Measurement',
+    def: 'The process of experimentally obtaining one or more quantity values that can reasonably be attributed to a quantity. Produces a Level 3 "quantity as measured."',
+    example: 'using a ruler to measure the length of a rod',
+  },
+  {
+    term: 'Entity',
+    def: 'A phenomenon, body, or substance to which a quantity can be attributed. Quantities do not exist in isolation — they characterize entities.',
+    example: 'a rod (entity) has length (quantity); an electron (entity) has mass (quantity)',
+  },
+  {
+    term: 'Ordinal quantity',
+    def: 'A quantity defined by a conventional measurement procedure for which the total ordering can be established, but for which no algebraic operations are defined.',
+    example: 'Rockwell C hardness, octane number — not covered by ISO 80000',
+  },
+]
+
+const baseQuantities = [
+  { symbol: 'L', name: 'length', unit: 'metre (m)', part: '3' },
+  { symbol: 'M', name: 'mass', unit: 'kilogram (kg)', part: '4' },
+  { symbol: 'T', name: 'time', unit: 'second (s)', part: '3' },
+  { symbol: 'I', name: 'electric current', unit: 'ampere (A)', part: '6' },
+  { symbol: 'Θ', name: 'thermodynamic temperature', unit: 'kelvin (K)', part: '5' },
+  { symbol: 'N', name: 'amount of substance', unit: 'mole (mol)', part: '9' },
+  { symbol: 'J', name: 'luminous intensity', unit: 'candela (cd)', part: '7' },
+]
+---
+
+<DefaultLayout title="Terminology — ISQ Browser" description="Glossary of metrology terms used in the ISO 80000 & IEC 80000 series.">
+  <div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-brand-950 to-iec-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Terminology' }]} variant="dark" />
+          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif">Terminology</h1>
+          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed">
+            Key terms and concepts from the International Vocabulary of Metrology (VIM) and the ISO 80000 & IEC 80000 series. Understanding these is essential for navigating the standard.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 space-y-12">
+
+      {/* The seven base quantities */}
+      <section>
+        <SectionHead eyebrow="Foundation" title="The Seven Base Quantities" subtitle="The ISQ is built on seven base quantities, each with its own dimension symbol and SI unit." />
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-3">
+          {baseQuantities.map((bq) => (
+            <a href={asset(`/quantities/part-${bq.part}`)} class="group p-4 rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all text-center">
+              <div class="text-2xl font-mono font-bold text-brand-600 dark:text-brand-400 mb-1">{bq.symbol}</div>
+              <div class="text-xs font-bold text-slate-900 dark:text-slate-100">{bq.name}</div>
+              <div class="text-[11px] text-slate-400 mt-0.5">{bq.unit}</div>
+            </a>
+          ))}
+        </div>
+        <p class="text-xs text-slate-400 mt-4 text-center italic">
+          Every quantity in ISO 80000 can be expressed as a product of powers of these seven base dimensions.
+        </p>
+      </section>
+
+      {/* The core equation */}
+      <section>
+        <SectionHead eyebrow="Maxwell (1873)" title="The Quantity Equation" />
+        <div class="mt-8 max-w-lg mx-auto p-6 rounded-2xl bg-gradient-to-br from-brand-50/60 to-indigo-50/40 dark:from-brand-950/30 dark:to-indigo-950/20 border border-brand-200/40 dark:border-brand-800/30 text-center">
+          <div class="font-mono text-2xl font-bold text-brand-700 dark:text-brand-400 mb-2">
+            Q = {'{Q}'} · [Q]
+          </div>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            A quantity equals its numerical value <span class="font-mono">{'{Q}'}</span> multiplied by its unit <span class="font-mono">[Q]</span>.
+          </p>
+          <p class="text-xs text-brand-600/60 dark:text-brand-400/50 mt-2">
+            Example: length of rod = 1.234 · metre
+          </p>
+        </div>
+      </section>
+
+      {/* Glossary */}
+      <section>
+        <SectionHead eyebrow="Glossary" title="Key Terms" subtitle="Definitions adapted from the VIM (ISO/IEC Guide 99) and ISO 80000-1." />
+        <div class="mt-8 space-y-3">
+          {terms.map((item) => (
+            <div class="p-5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60">
+              <div class="flex flex-wrap items-baseline gap-2 mb-1">
+                <h4 class="text-base font-bold text-slate-900 dark:text-slate-100">{item.term}</h4>
+                {item.symbol && <span class="font-mono text-sm text-brand-600 dark:text-brand-400">{item.symbol}</span>}
+              </div>
+              <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mb-2">{item.def}</p>
+              <p class="text-xs text-slate-400 italic">{item.example}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Cross-references */}
+      <section class="text-center">
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">For the full concept system hierarchy (kind → quantity → dedicated → measured), see:</p>
+        <a href={asset('/methodology/concept-system')} class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700 transition-colors">
+          Concept System
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+        </a>
+      </section>
+
+    </div>
+  </div>
+</DefaultLayout>
