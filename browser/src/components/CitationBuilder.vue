@@ -79,7 +79,7 @@ const tabs = [
         v-for="tab in tabs"
         :key="tab.key"
         @click="activeTab = tab.key; copied = false"
-        class="px-2.5 py-1.5 rounded-lg text-[11px] font-semibold transition-all whitespace-nowrap"
+        class="px-2.5 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap"
         :class="activeTab === tab.key
           ? 'bg-brand-600 text-white shadow-sm'
           : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-dark-700'"
@@ -94,7 +94,7 @@ const tabs = [
       </button>
     </div>
     <div class="px-3 pb-3">
-      <pre class="text-[11px] font-mono leading-relaxed text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-dark-800 rounded-lg p-3 overflow-x-auto whitespace-pre-wrap max-h-48 overflow-y-auto">{{ activeContent }}</pre>
+      <pre class="text-xs font-mono leading-relaxed text-slate-700 dark:text-slate-300 bg-slate-50 dark:bg-dark-800 rounded-lg p-3 overflow-x-auto whitespace-pre-wrap max-h-48 overflow-y-auto">{{ activeContent }}</pre>
     </div>
   </div>
 </template>

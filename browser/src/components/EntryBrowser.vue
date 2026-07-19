@@ -62,7 +62,7 @@ function showAll() {
       <div v-if="!searchQuery.trim() && !selectedPart" class="flex items-center gap-2 mb-3">
         <h3 class="text-xs font-bold text-slate-900 dark:text-slate-100 heading-serif">All entries</h3>
         <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60"></div>
-        <span class="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums">{{ filtered.length }}</span>
+        <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{{ filtered.length }}</span>
       </div>
 
       <div v-if="searchQuery.trim() && filtered.length === 0" class="py-16 text-center">
@@ -73,7 +73,7 @@ function showAll() {
       <div v-else class="space-y-px">
         <a v-for="item in visibleEntries" :key="item.i" :href="entryUrl(item.p, item.i)" class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent dark:border-transparent hover:bg-white dark:hover:bg-dark-800/80 transition-colors">
           <div class="flex-shrink-0 w-16">
-            <span class="font-mono text-[11px] font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded" v-html="hl(item.n)"></span>
+            <span class="font-mono text-xs font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded" v-html="hl(item.n)"></span>
           </div>
           <div class="flex-1 min-w-0 flex items-center gap-3">
             <span class="font-medium text-slate-800 dark:text-slate-200 text-sm group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors truncate" v-html="hl(item.t)"></span>
@@ -98,7 +98,7 @@ function showAll() {
               </span>
               <span class="text-slate-200">·</span>
             </template>
-            <span class="text-[10px] uppercase tracking-wider font-medium" :class="isMath ? 'text-violet-500/70' : 'text-brand-500/70'">{{ isMath ? sectionLabel(item.p) : item.p }}</span>
+            <span class="text-xs uppercase tracking-wider font-medium" :class="isMath ? 'text-violet-500/70' : 'text-brand-500/70'">{{ isMath ? sectionLabel(item.p) : item.p }}</span>
           </div>
           <svg class="w-3.5 h-3.5 text-slate-300 group-hover:text-brand-500 group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
         </a>

@@ -82,7 +82,7 @@ function entitySlug(qname: string | undefined) {
                 <tr class="border-b border-slate-100/60 dark:border-dark-700/60 last:border-0 hover:bg-slate-50/50 dark:hover:bg-dark-700/50">
                   <td class="px-4 py-2">
                     <a href={asset(`/ontology/${ind.slug}`)} class="text-brand-600 dark:text-brand-400 hover:underline font-medium">{ind.label}</a>
-                    <code class="ml-1 text-[9px] text-slate-400">{ind.qname}</code>
+                    <code class="ml-1 text-xs text-slate-400">{ind.qname}</code>
                   </td>
                   <td class="px-4 py-2">
                     {ind.instanceOf?.length ? ind.instanceOf.map((t, i) => (
@@ -96,7 +96,7 @@ function entitySlug(qname: string | undefined) {
                   </td>
                   <td class="px-4 py-2 text-slate-600 dark:text-slate-400 max-w-sm truncate">{ind.description || '—'}</td>
                   <td class="px-4 py-2 text-center">
-                    <span class={`text-[9px] font-semibold px-1.5 py-0.5 rounded ${badgeColor(ind)}`}>{ind.ontology}</span>
+                    <span class={`text-xs font-semibold px-1.5 py-0.5 rounded ${badgeColor(ind)}`}>{ind.ontology}</span>
                   </td>
                 </tr>
               ))}

@@ -217,7 +217,7 @@ watch(treeExpanded, async () => {
         <button
           @click="ontologyFilter = 'isq'"
           :class="[
-            'px-3 py-1.5 rounded-md text-[10px] font-medium transition-all',
+            'px-3 py-1.5 rounded-md text-xs font-medium transition-all',
             ontologyFilter === 'isq'
               ? 'bg-white dark:bg-dark-800 text-brand-700 dark:text-brand-400 shadow-sm dark:shadow-none'
               : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300',
@@ -226,7 +226,7 @@ watch(treeExpanded, async () => {
         <button
           @click="ontologyFilter = 'smart'"
           :class="[
-            'px-3 py-1.5 rounded-md text-[10px] font-medium transition-all',
+            'px-3 py-1.5 rounded-md text-xs font-medium transition-all',
             ontologyFilter === 'smart'
               ? 'bg-white dark:bg-dark-800 text-emerald-700 dark:text-emerald-400 shadow-sm dark:shadow-none'
               : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300',
@@ -235,7 +235,7 @@ watch(treeExpanded, async () => {
         <button
           @click="ontologyFilter = 'all'"
           :class="[
-            'px-3 py-1.5 rounded-md text-[10px] font-medium transition-all',
+            'px-3 py-1.5 rounded-md text-xs font-medium transition-all',
             ontologyFilter === 'all'
               ? 'bg-white dark:bg-dark-800 text-slate-800 dark:text-slate-100 shadow-sm dark:shadow-none'
               : 'text-slate-500 hover:text-slate-700 dark:hover:text-slate-300',
@@ -260,25 +260,25 @@ watch(treeExpanded, async () => {
       <!-- Primary ontology card -->
       <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600">isq</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded bg-brand-50 text-brand-600">isq</span>
           <h2 class="text-lg font-bold text-slate-900 dark:text-slate-100 heading-serif">{{ primaryOntology.title }}</h2>
         </div>
         <div class="space-y-2 text-sm">
           <div>
-            <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">URI</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">URI</span>
             <code class="block mt-0.5 text-xs text-slate-700 dark:text-slate-300 font-mono break-all">{{ primaryOntology.uri }}</code>
           </div>
           <div>
-            <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Description</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Description</span>
             <p class="mt-0.5 text-slate-600">{{ primaryOntology.description }}</p>
           </div>
           <div class="flex gap-6">
             <div>
-              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Version</span>
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Version</span>
               <code class="text-xs text-slate-700 dark:text-slate-300 font-mono">{{ primaryOntology.version }}</code>
             </div>
             <div v-if="importedOntologies.length > 0">
-              <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Imports</span>
+              <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Imports</span>
               <div class="flex gap-1.5 mt-0.5">
                 <a
                   v-for="imp in importedOntologies"
@@ -292,7 +292,7 @@ watch(treeExpanded, async () => {
         </div>
         <div v-if="importedOntologies.length > 0" class="mt-4 pt-4 border-t border-slate-100">
           <div class="flex items-center gap-2 mb-2">
-            <span class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">Imported Ontolog{{ importedOntologies.length > 1 ? 'ies' : 'y' }}</span>
+            <span class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Imported Ontolog{{ importedOntologies.length > 1 ? 'ies' : 'y' }}</span>
           </div>
           <div class="space-y-2">
             <a
@@ -301,7 +301,7 @@ watch(treeExpanded, async () => {
               :href="asset(`/ontology/${ontologySlug(imp.prefix)}`)"
               class="flex items-center gap-3 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 hover:bg-slate-100/80 dark:hover:bg-dark-600 transition-colors"
             >
-              <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600">{{ imp.prefix }}</span>
+              <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-50 text-emerald-600">{{ imp.prefix }}</span>
               <div>
                 <span class="text-sm text-slate-700 dark:text-slate-200">{{ imp.title }}</span>
                 <span class="text-xs text-slate-400 ml-2">v{{ imp.version }}</span>
@@ -317,7 +317,7 @@ watch(treeExpanded, async () => {
         <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-4">
           <div v-for="t in ['class', 'objectProperty', 'shape', 'concept']" :key="t" class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60 text-center">
             <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ countBy(t, 'all') }}</div>
-            <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">{{ typeMeta[t]?.label || t }}</div>
+            <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">{{ typeMeta[t]?.label || t }}</div>
           </div>
         </div>
         <div class="mt-4 grid sm:grid-cols-2 gap-4">
@@ -346,7 +346,7 @@ watch(treeExpanded, async () => {
 
       <!-- Namespaces -->
       <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
-        <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-4">Namespace Declarations</h3>
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Namespace Declarations</h3>
         <div class="overflow-x-auto rounded-lg border border-slate-200/60">
           <table class="w-full text-xs">
             <thead>
@@ -357,7 +357,7 @@ watch(treeExpanded, async () => {
             </thead>
             <tbody>
               <tr v-for="ns in ontologyPrefixes" :key="ns.prefix" class="border-b border-slate-100/60 last:border-0">
-                <td class="px-3 py-2"><span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix || ':' }}</span></td>
+                <td class="px-3 py-2"><span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix || ':' }}</span></td>
                 <td class="px-3 py-2 font-mono text-slate-600 break-all">{{ ns.uri }}</td>
               </tr>
             </tbody>
@@ -376,10 +376,10 @@ watch(treeExpanded, async () => {
             :href="asset(`/ontology/${ontologySlug(imp.prefix)}`)"
             class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-emerald-50/40 border border-emerald-200/40 hover:bg-emerald-50/70 transition-colors"
           >
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 flex-shrink-0 mt-0.5">{{ imp.prefix }}</span>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-100 text-emerald-700 flex-shrink-0 mt-0.5">{{ imp.prefix }}</span>
             <div class="min-w-0">
               <div class="text-sm font-medium text-slate-800 dark:text-slate-200">{{ imp.title }}</div>
-              <code class="text-[10px] text-slate-500 font-mono break-all">{{ imp.uri }}</code>
+              <code class="text-xs text-slate-500 font-mono break-all">{{ imp.uri }}</code>
               <p class="text-xs text-slate-500 mt-1">{{ imp.description }}</p>
             </div>
           </a>
@@ -388,10 +388,10 @@ watch(treeExpanded, async () => {
             :key="ns.prefix"
             class="flex items-start gap-3 px-3 py-2.5 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60"
           >
-            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 flex-shrink-0 mt-0.5 font-mono">{{ ns.prefix }}</span>
+            <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 flex-shrink-0 mt-0.5 font-mono">{{ ns.prefix }}</span>
             <div class="min-w-0">
               <div class="text-sm font-medium text-slate-800 dark:text-slate-200">{{ ns.prefix }} ({{ ns.entities.length }} entities)</div>
-              <code class="text-[10px] text-slate-500 font-mono break-all">{{ ns.uri }}</code>
+              <code class="text-xs text-slate-500 font-mono break-all">{{ ns.uri }}</code>
             </div>
           </div>
         </div>
@@ -414,20 +414,20 @@ watch(treeExpanded, async () => {
         <div class="flex flex-wrap items-center gap-4 mt-3 mb-4 pb-4 border-b border-slate-100 dark:border-dark-700">
           <div class="flex items-center gap-1.5">
             <span class="w-3 h-3 rounded-sm border-l-2 border-brand-400 dark:border-brand-500 bg-brand-50/50 dark:bg-brand-950/20"></span>
-            <span class="text-[11px] text-slate-500">ISO &amp; IEC 80000 (isq)</span>
+            <span class="text-xs text-slate-500">ISO &amp; IEC 80000 (isq)</span>
           </div>
           <div class="flex items-center gap-1.5">
             <span class="w-3 h-3 rounded-sm border-l-2 border-emerald-400 dark:border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20"></span>
-            <span class="text-[11px] text-slate-500">SMART Core (smart)</span>
+            <span class="text-xs text-slate-500">SMART Core (smart)</span>
           </div>
           <div class="flex items-center gap-1.5">
             <span class="w-3 h-3 rounded-sm border-l-2 border-slate-300 dark:border-dark-500 bg-slate-50/50 dark:bg-dark-700/40"></span>
-            <span class="text-[11px] text-slate-500">External</span>
+            <span class="text-xs text-slate-500">External</span>
           </div>
           <div class="flex items-center gap-1.5 ml-auto">
-            <span class="text-[11px] text-slate-400">{{ rootClasses.length }} root class{{ rootClasses.length > 1 ? 'es' : '' }}</span>
+            <span class="text-xs text-slate-400">{{ rootClasses.length }} root class{{ rootClasses.length > 1 ? 'es' : '' }}</span>
             <span class="text-slate-300 dark:text-dark-600">&middot;</span>
-            <span class="text-[11px] text-slate-400">{{ allClasses.length }} total</span>
+            <span class="text-xs text-slate-400">{{ allClasses.length }} total</span>
           </div>
         </div>
 
@@ -473,7 +473,7 @@ watch(treeExpanded, async () => {
     <div v-show="activeTab === 'namespaces'" data-section="namespaces" class="mt-8 space-y-4">
       <div v-for="ns in filteredNamespaceGroups" :key="ns.prefix" class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-3 mb-4">
-          <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix }}</span>
+          <span class="text-xs font-semibold px-2 py-0.5 rounded bg-slate-100 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix }}</span>
           <code class="text-xs text-slate-500 font-mono break-all">{{ ns.uri }}</code>
           <span class="ml-auto text-xs text-slate-400">{{ ns.entities.length }} entities</span>
         </div>
@@ -482,7 +482,7 @@ watch(treeExpanded, async () => {
             v-for="e in ns.entities"
             :key="e.qname"
             :href="asset(`/ontology/${e.slug}`)"
-            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
+            class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
           >
             <span :class="['w-1.5 h-1.5 rounded-full', typeMeta[e.type]?.colorDot || 'bg-slate-300']"></span>
             {{ e.label }}
@@ -496,13 +496,13 @@ watch(treeExpanded, async () => {
     <!-- ═══════════════════════════════════════════════════════════════════════ -->
     <div v-show="activeTab === 'az'" data-section="az" class="mt-8 space-y-6">
       <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
-        <h3 class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-4">All Entities ({{ allEntities.length }})</h3>
+        <h3 class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">All Entities ({{ allEntities.length }})</h3>
         <div class="flex flex-wrap gap-1.5">
           <a
             v-for="e in filteredAzEntities"
             :key="e.qname"
             :href="asset(`/ontology/${e.slug}`)"
-            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
+            class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-brand-200 hover:text-brand-600 transition-colors inline-flex items-center gap-1"
           >
             <span :class="['w-1.5 h-1.5 rounded-full', typeMeta[e.type]?.colorDot || 'bg-slate-300']"></span>
             {{ e.label }}
@@ -540,7 +540,7 @@ watch(treeExpanded, async () => {
                 <span v-else class="text-slate-400">—</span>
               </td>
               <td class="px-4 py-2 text-center">
-                <span :class="['text-[9px] font-semibold px-1.5 py-0.5 rounded', badgeColor(c)]">{{ c.ontology }}</span>
+                <span :class="['text-xs font-semibold px-1.5 py-0.5 rounded', badgeColor(c)]">{{ c.ontology }}</span>
               </td>
             </tr>
           </tbody>
@@ -592,7 +592,7 @@ watch(treeExpanded, async () => {
                   </template>
                   <span v-else class="text-slate-400">—</span>
                 </td>
-                <td class="px-3 py-2 text-center"><span :class="['text-[9px] font-semibold px-1.5 py-0.5 rounded', badgeColor(p)]">{{ p.ontology }}</span></td>
+                <td class="px-3 py-2 text-center"><span :class="['text-xs font-semibold px-1.5 py-0.5 rounded', badgeColor(p)]">{{ p.ontology }}</span></td>
               </tr>
             </tbody>
           </table>
@@ -644,7 +644,7 @@ watch(treeExpanded, async () => {
             v-for="p in annProps"
             :key="p.qname"
             :href="asset(`/ontology/${p.slug}`)"
-            class="text-[10px] font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors"
+            class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-400 hover:border-amber-200 hover:text-amber-600 transition-colors"
           >{{ p.qname }}</a>
         </div>
       </div>
@@ -656,7 +656,7 @@ watch(treeExpanded, async () => {
     <div v-show="activeTab === 'skos'" data-section="skos" class="mt-8 space-y-6">
       <div v-for="scheme in conceptSchemes" :key="scheme.qname" class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6">
         <div class="flex items-center gap-2 mb-3">
-          <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-600">Scheme</span>
+          <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-cyan-50 text-cyan-600">Scheme</span>
           <h3 class="text-sm font-bold text-slate-800 dark:text-slate-200">{{ scheme.label }}</h3>
         </div>
         <code class="text-xs text-slate-500 block mb-3">{{ scheme.uri }}</code>
@@ -678,7 +678,7 @@ watch(treeExpanded, async () => {
               >
                 <td class="px-3 py-2">
                   <a :href="asset(`/ontology/${c.slug}`)" class="text-teal-700 hover:underline font-medium">{{ c.label }}</a>
-                  <code class="ml-1 text-[9px] text-slate-400">{{ c.qname }}</code>
+                  <code class="ml-1 text-xs text-slate-400">{{ c.qname }}</code>
                 </td>
                 <td class="px-3 py-2 text-slate-600 max-w-sm">{{ c.description || '—' }}</td>
                 <td class="px-3 py-2">
@@ -706,9 +706,9 @@ watch(treeExpanded, async () => {
         class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-6"
       >
         <div class="flex items-center gap-2 mb-2">
-          <span class="text-[9px] font-semibold px-1.5 py-0.5 rounded bg-purple-50 text-purple-600">Shape</span>
+          <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-purple-50 text-purple-600">Shape</span>
           <a :href="asset(`/ontology/${s.slug}`)" class="text-sm font-bold text-brand-600 hover:underline">{{ s.qname }}</a>
-          <span :class="['text-[9px] font-semibold px-1.5 py-0.5 rounded', badgeColor(s)]">{{ s.ontology }}</span>
+          <span :class="['text-xs font-semibold px-1.5 py-0.5 rounded', badgeColor(s)]">{{ s.ontology }}</span>
         </div>
         <div class="text-xs text-slate-500 mb-3">
           <span v-if="s.targetClass">Target: <a :href="asset(`/ontology/${entitySlug(s.targetClass)}`)" class="text-blue-600 hover:underline">{{ s.targetClass }}</a></span>
@@ -768,7 +768,7 @@ watch(treeExpanded, async () => {
             >
               <td class="px-4 py-2">
                 <a :href="asset(`/ontology/${ind.slug}`)" class="text-brand-600 hover:underline font-medium">{{ ind.label }}</a>
-                <code class="ml-1 text-[9px] text-slate-400">{{ ind.qname }}</code>
+                <code class="ml-1 text-xs text-slate-400">{{ ind.qname }}</code>
               </td>
               <td class="px-4 py-2">
                 <template v-if="ind.instanceOf?.length">
@@ -779,7 +779,7 @@ watch(treeExpanded, async () => {
                 </template>
               </td>
               <td class="px-4 py-2 text-center">
-                <span :class="['text-[9px] font-semibold px-1.5 py-0.5 rounded', badgeColor(ind)]">{{ ind.ontology }}</span>
+                <span :class="['text-xs font-semibold px-1.5 py-0.5 rounded', badgeColor(ind)]">{{ ind.ontology }}</span>
               </td>
             </tr>
           </tbody>
@@ -828,11 +828,11 @@ watch(treeExpanded, async () => {
               :class="['px-4 py-3 rounded-xl border', onto.color === 'emerald' ? 'bg-emerald-50/50 border-emerald-200/40' : 'bg-brand-50/50 border-brand-200/40']"
             >
               <div :class="['text-2xl font-bold', onto.color === 'emerald' ? 'text-emerald-700' : 'text-brand-700']">{{ allEntities.filter(e => e.ontology === onto.prefix).length }}</div>
-              <div :class="['text-[10px] font-semibold uppercase tracking-wider mt-1', onto.color === 'emerald' ? 'text-emerald-600' : 'text-brand-600']">{{ onto.title }}</div>
+              <div :class="['text-xs font-semibold uppercase tracking-wider mt-1', onto.color === 'emerald' ? 'text-emerald-600' : 'text-brand-600']">{{ onto.title }}</div>
             </div>
             <div class="px-4 py-3 rounded-xl bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60">
               <div class="text-2xl font-bold text-slate-900 dark:text-slate-100">{{ allEntities.length }}</div>
-              <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mt-1">Total Entities</div>
+              <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-1">Total Entities</div>
             </div>
           </div>
         </div>
@@ -847,7 +847,7 @@ watch(treeExpanded, async () => {
             :key="ns.prefix"
             class="flex items-center gap-2 px-3 py-2 rounded-lg bg-slate-50 dark:bg-dark-700 border border-slate-200/60 dark:border-dark-600/60"
           >
-            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix || ':' }}</span>
+            <span class="text-xs font-semibold px-1.5 py-0.5 rounded bg-slate-200 dark:bg-dark-600 text-slate-700 dark:text-slate-300 font-mono">{{ ns.prefix || ':' }}</span>
             <span class="text-xs text-slate-500 font-mono truncate">{{ ns.uri }}</span>
           </div>
         </div>

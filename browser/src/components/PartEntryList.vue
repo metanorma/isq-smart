@@ -84,10 +84,10 @@ const hasSections = computed(() => sections.value.some(s => s.entries.length > 1
       <div v-else>
         <template v-for="(section, si) in sections" :key="section.prefix">
           <div v-if="hasSections" class="flex items-center gap-3 mt-6 mb-2" :class="si === 0 ? 'mt-0' : ''">
-            <span class="font-mono text-[11px] font-bold px-2.5 py-1 rounded-md text-white shadow-sm" :style="sectionAccentStyle">{{ section.prefix }}</span>
+            <span class="font-mono text-xs font-bold px-2.5 py-1 rounded-md text-white shadow-sm" :style="sectionAccentStyle">{{ section.prefix }}</span>
             <span class="text-xs text-slate-400 dark:text-slate-500 truncate">{{ EntryModel.name(section.entries[0], lang) }}</span>
             <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60" />
-            <span class="text-[10px] text-slate-400 dark:text-slate-500 tabular-nums font-medium">{{ section.entries.length }}</span>
+            <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums font-medium">{{ section.entries.length }}</span>
           </div>
           <div class="space-y-px">
             <a
@@ -98,7 +98,7 @@ const hasSections = computed(() => sections.value.some(s => s.entries.length > 1
             >
               <div class="flex items-center gap-3 sm:gap-4">
                 <div class="flex-shrink-0 w-16 sm:w-20">
-                  <span class="font-mono text-[11px] font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded" v-html="hl(entry.num)" />
+                  <span class="font-mono text-xs font-semibold text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40 px-2 py-0.5 rounded" v-html="hl(entry.num)" />
                 </div>
                 <div class="flex-1 min-w-0">
                   <div class="flex items-center gap-2 flex-wrap">

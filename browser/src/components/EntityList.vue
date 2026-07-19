@@ -29,7 +29,7 @@ const links = computed<EntityLink[]>(() => {
 
 <template>
   <div v-if="links.length > 0">
-    <h4 class="text-[10px] font-bold uppercase tracking-wider text-rose-500 dark:text-rose-400 mb-2">Characterizes</h4>
+    <h4 class="text-xs font-bold uppercase tracking-wider text-rose-500 dark:text-rose-400 mb-2">Characterizes</h4>
     <div class="flex flex-wrap gap-1.5">
       <span
         v-for="link in links"
@@ -37,7 +37,7 @@ const links = computed<EntityLink[]>(() => {
         class="inline-flex items-center gap-1.5 px-2 py-1 rounded text-xs font-medium bg-rose-50 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400 border border-rose-100/60 dark:border-rose-800/40"
         :title="link.kind ? `Kind: ${link.kind.prefLabel.en}` : undefined"
       >
-        <span class="text-[9px]">●</span>
+        <span class="text-xs">●</span>
         {{ link.entity.prefLabel.en }}
       </span>
     </div>

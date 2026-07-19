@@ -114,7 +114,7 @@ const isIEC = publisher === 'IEC'
                     ? 'text-iec-600 dark:text-iec-400 bg-iec-50 dark:bg-iec-950/40'
                     : 'text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40'}`}>{clause.sectionNumber}</span>
                   <span class={`text-sm text-slate-700 dark:text-slate-300 transition-colors ${isIEC ? 'group-hover:text-iec-600 dark:group-hover:text-iec-400' : 'group-hover:text-emerald-600 dark:group-hover:text-emerald-400'}`}>{clause.title}</span>
-                  <span class="ml-auto text-[10px] text-slate-400 dark:text-slate-500 capitalize px-2 py-0.5 bg-slate-50 dark:bg-dark-700 rounded">{clause.bindingnessType}</span>
+                  <span class="ml-auto text-xs text-slate-400 dark:text-slate-500 capitalize px-2 py-0.5 bg-slate-50 dark:bg-dark-700 rounded">{clause.bindingnessType}</span>
                   <svg class={`w-3.5 h-3.5 text-slate-300 dark:text-slate-600 transition-all flex-shrink-0 ${isIEC ? 'group-hover:text-iec-500 dark:group-hover:text-iec-400' : 'group-hover:text-emerald-500 dark:group-hover:text-emerald-400'}`}
                     fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
                 </a>
@@ -136,7 +136,7 @@ const isIEC = publisher === 'IEC'
                   class="group flex items-center gap-3 px-4 py-2.5 rounded-lg border border-transparent dark:border-transparent hover:bg-white dark:hover:bg-dark-800/80 transition-colors"
                 >
                   <span class="flex-shrink-0 w-16">
-                    <span class={`font-mono text-[11px] font-semibold px-2 py-0.5 rounded ${isIEC
+                    <span class={`font-mono text-xs font-semibold px-2 py-0.5 rounded ${isIEC
                       ? 'text-iec-700 dark:text-iec-400 bg-iec-50/80 dark:bg-iec-950/40'
                       : 'text-brand-700 dark:text-brand-400 bg-brand-50/80 dark:bg-brand-950/40'}`}>{term.num}</span>
                   </span>
@@ -151,7 +151,7 @@ const isIEC = publisher === 'IEC'
                       </>
                     )}
                   </div>
-                  <span class="text-[10px] text-slate-400 dark:text-slate-500 capitalize px-2 py-0.5 bg-slate-50 dark:bg-dark-700 rounded">{term.bindingnessType}</span>
+                  <span class="text-xs text-slate-400 dark:text-slate-500 capitalize px-2 py-0.5 bg-slate-50 dark:bg-dark-700 rounded">{term.bindingnessType}</span>
                 </a>
               ))}
             </div>
