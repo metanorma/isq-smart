@@ -7,6 +7,13 @@ describe('nav link arrays', () => {
     expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/kinds', '/math', '/units', '/dimensions'])
   })
 
+  it('every nav link has an i18nKey', () => {
+    for (const link of navLinks) {
+      expect(link.i18nKey).toBeTruthy()
+      expect(link.i18nKey.length).toBeGreaterThan(0)
+    }
+  })
+
   it('secondaryEntries groups About and Resources', () => {
     const labels = secondaryEntries.map(e => (isNavGroup(e) ? `${e.label} (group)` : e.label))
     expect(labels).toEqual(['About (group)', 'Resources (group)'])
@@ -42,12 +49,12 @@ describe('nav link arrays', () => {
 
 describe('isNavGroup type guard', () => {
   it('identifies NavGroup entries', () => {
-    const group: NavEntry = { label: 'Test', items: [] }
+    const group: NavEntry = { label: 'Test', i18nKey: 'test', items: [] }
     expect(isNavGroup(group)).toBe(true)
   })
 
   it('rejects NavLink entries', () => {
-    const link: NavEntry = { to: '/test', label: 'Test' }
+    const link: NavEntry = { to: '/test', label: 'Test', i18nKey: 'test' }
     expect(isNavGroup(link)).toBe(false)
   })
 })

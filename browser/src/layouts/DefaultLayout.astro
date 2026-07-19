@@ -8,6 +8,7 @@ import AppToast from '../components/AppToast.vue'
 import GlobalSearch from '../components/GlobalSearch.vue'
 import SearchHint from '../components/SearchHint.vue'
 import ThemeToggle from '../components/ThemeToggle.vue'
+import LanguageSwitcher from '../components/LanguageSwitcher.vue'
 import MobileNav from '../components/MobileNav.vue'
 import { coreLinks, secondaryEntries, navLinks, isActive, isNavGroup } from '../lib/nav'
 import type { NavEntry } from '../lib/nav'
@@ -33,13 +34,13 @@ const isActivePath = (path: string) => isActive(pathname, path)
             </button>
             <button id="search-trigger" class="hidden lg:flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl border border-slate-200 dark:border-dark-600 bg-slate-50/50 dark:bg-dark-800/50 text-slate-400 dark:text-slate-500 text-sm hover:border-slate-300 dark:hover:border-dark-500 hover:text-slate-500 dark:hover:text-slate-400 transition-all min-w-[200px]">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-              <span class="flex-1 text-left">Search entries…</span>
+              <span class="flex-1 text-left" data-i18n="action.search">Search entries…</span>
               <kbd class="text-xs bg-white dark:bg-dark-700 px-1.5 py-0.5 rounded-md text-slate-400 dark:text-slate-500 font-mono border border-slate-200 dark:border-dark-500">/</kbd>
             </button>
 
             <nav class="hidden md:flex items-center gap-1">
               {coreLinks.map((link) => (
-                <a href={link.to} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActivePath(link.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{link.label}</a>
+                <a href={link.to} data-i18n={link.i18nKey} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActivePath(link.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{link.label}</a>
               ))}
             </nav>
 
@@ -49,6 +50,7 @@ const isActivePath = (path: string) => isActive(pathname, path)
                   <div class="relative group">
                     <button
                       type="button"
+                      data-i18n={entry.i18nKey}
                       class="flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs transition-colors text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium"
                     >
                       {entry.label}
@@ -59,6 +61,7 @@ const isActivePath = (path: string) => isActive(pathname, path)
                         {entry.items.map((item) => (
                           <a
                             href={item.to}
+                            data-i18n={item.i18nKey}
                             class={`block px-3 py-2 rounded-lg text-xs transition-colors ${isActivePath(item.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-500 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}
                           >
                             {item.label}
@@ -68,10 +71,12 @@ const isActivePath = (path: string) => isActive(pathname, path)
                     </div>
                   </div>
                 ) : (
-                  <a href={entry.to} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActivePath(entry.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{entry.label}</a>
+                  <a href={entry.to} data-i18n={entry.i18nKey} class={`px-3 py-1.5 rounded-lg text-xs transition-colors ${isActivePath(entry.to) ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400 font-medium' : 'text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-slate-50 dark:hover:bg-dark-700 font-medium'}`}>{entry.label}</a>
                 )
               ))}
             </nav>
+
+            <LanguageSwitcher client:idle />
 
             <ThemeToggle client:only="vue" />
 
