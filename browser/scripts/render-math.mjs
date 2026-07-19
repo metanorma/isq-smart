@@ -4,7 +4,7 @@
 // system to avoid "Vite module runner has been closed" errors.
 
 import { createRequire } from 'node:module'
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs'
+import { readFileSync, writeFileSync, existsSync, mkdirSync, statSync } from 'node:fs'
 import { resolve, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -72,6 +72,16 @@ const quantitiesPath = resolve(datasetDir, 'quantities.yaml')
 const mathPath = resolve(datasetDir, 'math.yaml')
 const cachePath = resolve(generatedDir, 'math-cache.json')
 
+// Skip rendering if cache is newer than both source files
+if (existsSync(cachePath) && existsSync(quantitiesPath)) {
+  const cacheMtime = statSync(cachePath).mtimeMs
+  const yamlMtime = existsSync(mathPath) ? Math.max(statSync(quantitiesPath).mtimeMs, statSync(mathPath).mtimeMs) : statSync(quantitiesPath).mtimeMs
+  if (cacheMtime > yamlMtime) {
+    console.log('[math] Cache is up to date, skipping render')
+    process.exit(0)
+  }
+}
+
 const exprs = new Set()
 
 for (const path of [quantitiesPath, mathPath]) {
@@ -85,8 +95,11 @@ console.log(`[math] Collected ${exprs.size} unique expressions`)
 const mathml = {}
 const latex = {}
 let ok = 0
+let i = 0
 
 for (const expr of exprs) {
+  i++
+  if (i % 500 === 0) console.log(`[math] Progress: ${i}/${exprs.size}`)
   try {
     const preprocessed = quoteMultiLetter(decodeEntities(expr))
     const f = new Plurimath(preprocessed, 'asciimath')
