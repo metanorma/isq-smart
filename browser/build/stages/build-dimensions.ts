@@ -17,12 +17,32 @@ function superscript(n: number): string {
   return sign + String(Math.abs(n)).split('').map(c => sup[parseInt(c)]).join('')
 }
 
+export interface PhysicalDimension {
+  nistId: string
+  unitsmlId: string
+  slug: string
+  name: string
+  shortName: string
+  dimensionless: boolean
+  vector: { base: string; power: number }[]
+  vectorNotation: string
+  linkedQuantities: string[]
+  isoEntries: { id: string; num: string; name: string; part: string; unitSlugs: string[] }[]
+  isoUnitSlugs: string[]
+  qudtUri?: string
+}
+
+export interface DimensionsBuildResult {
+  isoUnits: IsoUnit[]
+  physicalDimensions: PhysicalDimension[]
+}
+
 export function buildDimensions(
   isoUnits: IsoUnit[],
   unitsdbDir: string,
   ctx: BuildContext,
   generatedDir: string,
-): IsoUnit[] {
+): DimensionsBuildResult {
   const unitsmlDimsPath = resolve(unitsdbDir, 'dimensions.yaml')
   const unitsmlQuantitiesPath = resolve(unitsdbDir, 'quantities.yaml')
 
@@ -147,5 +167,5 @@ export function buildDimensions(
     `export const physicalDimensions = ${JSON.stringify(physicalDimensions)}\n`,
   )
 
-  return isoUnits
+  return { isoUnits, physicalDimensions }
 }

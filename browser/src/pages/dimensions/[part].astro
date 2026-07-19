@@ -3,6 +3,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import MathRenderer from '../../components/MathRenderer.vue'
 import DimensionOntologyPanel from '../../components/DimensionOntologyPanel.vue'
 import { physicalDimensions } from '../../data/generated/physical-dimensions'
+import { dimensionToKind } from '../../data/generated/concept-links'
 import { entryUrl } from '../../data/PartRegistry'
 import { quantitiesIndex, symbolCache } from '../../data/generated/domain-index'
 import { dimensionUrns } from '../../data/urn'
@@ -22,6 +23,7 @@ const { part } = Astro.props
 
 const dim = physicalDimensions.find(d => d.slug === part)
 const urns = dim ? dimensionUrns(dim.unitsmlId) : null
+const kindLink = dim ? dimensionToKind[dim.slug] : null
 
 const BASE_DIM_META: Record<string, { name: string; color: string }> = {
   L: { name: 'Length', color: 'sky' },
@@ -131,6 +133,29 @@ const isoEntries = dim ? dim.isoEntries.map(e => {
         </div>
         <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10" />
       </section>
+
+      {kindLink?.kindId && (
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-2 mb-6 relative z-20">
+          <a
+            href={asset(`/kinds/${kindLink.kindId.replace(/^kind-/, '')}`)}
+            class="group flex items-center gap-4 p-4 rounded-xl border border-indigo-200/50 dark:border-indigo-800/40 bg-gradient-to-r from-indigo-50/60 to-violet-50/40 dark:from-indigo-950/30 dark:to-violet-950/20 hover:shadow-sm transition-all"
+          >
+            <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-100 dark:bg-indigo-900/40 flex items-center justify-center">
+              <svg class="w-5 h-5 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25a2.25 2.25 0 01-2.25-2.25v-2.25z"/></svg>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="text-[10px] font-bold uppercase tracking-wider text-indigo-500 dark:text-indigo-400 mb-0.5">Corresponding kind of quantity</div>
+              <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                {kindLink.kindMemberCount} {kindLink.kindMemberCount === 1 ? 'quantity' : 'quantities'} of this kind
+                {kindLink.kindOnlyQuantityIds.length > 0 && (
+                  <span class="text-[10px] font-normal text-slate-400 ml-1">({kindLink.kindOnlyQuantityIds.length} additional from unit analysis)</span>
+                )}
+              </div>
+            </div>
+            <svg class="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-indigo-500 dark:group-hover:text-indigo-400 group-hover:translate-x-0.5 transition-all flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      )}
 
       <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 relative z-20 mb-6">
         {dim.vector.length > 0 && (

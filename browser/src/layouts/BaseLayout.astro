@@ -41,6 +41,10 @@ const ogTitle = title.split('—')[0].trim()
     const _d = localStorage.theme === 'dark' || (!localStorage.theme && matchMedia('(prefers-color-scheme:dark)').matches);
     document.documentElement.classList.toggle('dark', _d);
     document.querySelector('meta[name="theme-color"]').content = _d ? '#160a12' : '#E30613';
+    // Progressive enhancement: opt in to scroll-reveal animations.
+    // Added synchronously before paint to avoid FOUC. If JS is disabled,
+    // the class is never added and content stays visible (no hidden content).
+    document.documentElement.classList.add('reveal-ready');
   </script>
 </head>
 <body class="antialiased">
