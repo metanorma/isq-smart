@@ -42,12 +42,17 @@ const ogTitle = title.split('—')[0].trim()
     document.documentElement.classList.toggle('dark', _d);
     document.querySelector('meta[name="theme-color"]').content = _d ? '#160a12' : '#E30613';
     // Progressive enhancement: opt in to scroll-reveal animations.
-    // Added synchronously before paint to avoid FOUC. If JS is disabled,
-    // the class is never added and content stays visible (no hidden content).
     document.documentElement.classList.add('reveal-ready');
+    // Apply saved language preference before paint to avoid FOUC
+    var _lang = localStorage.getItem('isq-lang');
+    if (_lang === 'fr' || _lang === 'en') document.documentElement.lang = _lang;
   </script>
 </head>
 <body class="antialiased">
   <slot />
+  <script>
+    import { initLanguage } from '../i18n/client'
+    initLanguage()
+  </script>
 </body>
 </html>
