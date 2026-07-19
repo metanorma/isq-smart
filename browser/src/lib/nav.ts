@@ -26,16 +26,21 @@ const _coreLinks: NavLink[] = [
 
 const _secondaryEntries: NavEntry[] = [
   {
-    label: 'Resources',
+    label: 'About',
     items: [
+      { to: '/about', label: 'About ISO 80000' },
       { to: '/methodology', label: 'Methodology' },
       { to: '/terminology', label: 'Terminology' },
+    ],
+  },
+  {
+    label: 'Resources',
+    items: [
       { to: '/ontology', label: 'Ontology' },
       { to: '/documents', label: 'Publications' },
       { to: '/reference', label: 'Reference' },
     ],
   },
-  { to: '/about', label: 'About' },
 ]
 
 function applyAsset(entry: NavEntry): NavEntry {

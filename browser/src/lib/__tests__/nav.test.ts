@@ -7,23 +7,21 @@ describe('nav link arrays', () => {
     expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/kinds', '/math', '/units', '/dimensions'])
   })
 
-  it('secondaryEntries groups Resources and keeps About separate', () => {
+  it('secondaryEntries groups About and Resources', () => {
     const labels = secondaryEntries.map(e => (isNavGroup(e) ? `${e.label} (group)` : e.label))
-    expect(labels).toEqual(['Resources (group)', 'About'])
+    expect(labels).toEqual(['About (group)', 'Resources (group)'])
   })
 
-  it('Resources group contains methodology, terminology, ontology, publications, reference', () => {
-    const resources = secondaryEntries.find(isNavGroup) as NavGroup | undefined
-    expect(resources).toBeDefined()
-    expect(resources!.label).toBe('Resources')
-    expect(resources!.items.map(i => i.to)).toEqual(['/methodology', '/terminology', '/ontology', '/documents', '/reference'])
-  })
-
-  it('About is a flat link, not part of any group', () => {
-    const about = secondaryEntries.find(e => !isNavGroup(e)) as NavLink | undefined
+  it('About group contains about, methodology, terminology', () => {
+    const about = secondaryEntries.find(e => isNavGroup(e) && e.label === 'About') as NavGroup | undefined
     expect(about).toBeDefined()
-    expect(about!.to).toBe('/about')
-    expect(about!.label).toBe('About')
+    expect(about!.items.map(i => i.to)).toEqual(['/about', '/methodology', '/terminology'])
+  })
+
+  it('Resources group contains ontology, publications, reference', () => {
+    const resources = secondaryEntries.find(e => isNavGroup(e) && e.label === 'Resources') as NavGroup | undefined
+    expect(resources).toBeDefined()
+    expect(resources!.items.map(i => i.to)).toEqual(['/ontology', '/documents', '/reference'])
   })
 
   it('navLinks is the flattened concatenation of core + secondary', () => {
