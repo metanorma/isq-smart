@@ -16,8 +16,8 @@ function toggle() {
 function select(lang: Lang) {
   current.value = lang
   setStoredLang(lang)
-  applyLanguage(lang)
-  open.value = false
+  // Reload for reliable text-matching translation across the whole page
+  window.location.reload()
 }
 
 const langs: { code: Lang; label: string; flag: string }[] = [
