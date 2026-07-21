@@ -24,19 +24,82 @@ function lookup(lang: Lang, key: string): string {
   return typeof result === 'string' ? result : key
 }
 
-export function applyLanguage(lang: Lang): void {
-  document.documentElement.lang = lang
-  const elements = document.querySelectorAll<HTMLElement>('[data-i18n]')
-  elements.forEach((el) => {
+const enFlat = new Map<string, string>()
+const frFlat = new Map<string, string>()
+
+function flatten(obj: Record<string, unknown>, prefix = '') {
+  for (const [k, v] of Object.entries(obj)) {
+    const full = prefix ? `${prefix}.${k}` : k
+    if (typeof v === 'object' && v !== null) flatten(v as Record<string, unknown>, full)
+    else if (typeof v === 'string') {
+      if (prefix.startsWith('en')) enFlat.set(v, full)
+      else if (prefix.startsWith('fr')) frFlat.set(full, v)
+    }
+  }
+}
+flatten(messages.en as unknown as Record<string, unknown>, 'en')
+flatten(messages.fr as unknown as Record<string, unknown>, 'fr')
+
+const enToFr = new Map<string, string>()
+for (const [enText, key] of enFlat) {
+  const frText = frFlat.get(key)
+  if (frText && frText !== enText) enToFr.set(enText, frText)
+}
+
+function applyDataI18n(lang: Lang): void {
+  document.querySelectorAll<HTMLElement>('[data-i18n]').forEach((el) => {
     const key = el.dataset.i18n
     if (!key) return
-    el.textContent = lookup(lang, key)
+    const translated = lookup(lang, key)
+    if (translated !== key) el.textContent = translated
   })
+}
+
+function applyTextMatching(lang: Lang): void {
+  if (lang === 'en') return
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+    acceptNode(node) {
+      const text = node.textContent?.trim()
+      if (!text || text.length < 2) return NodeFilter.FILTER_REJECT
+      if (node.parentElement?.closest('script, style, code, pre, kbd, input, textarea'))
+        return NodeFilter.FILTER_REJECT
+      return NodeFilter.FILTER_ACCEPT
+    },
+  })
+  const nodes: Text[] = []
+  while (walker.nextNode()) nodes.push(walker.currentNode as Text)
+  for (const node of nodes) {
+    const original = node.textContent?.trim()
+    if (!original) continue
+    const translated = enToFr.get(original)
+    if (translated) {
+      const leading = node.textContent?.match(/^\s*/)?.[0] ?? ''
+      const trailing = node.textContent?.match(/\s*$/)?.[0] ?? ''
+      node.textContent = leading + translated + trailing
+    }
+  }
+}
+
+export function applyLanguage(lang: Lang, reload = false): void {
+  if (reload) {
+    setStoredLang(lang)
+    window.location.reload()
+    return
+  }
+  document.documentElement.lang = lang
+  applyDataI18n(lang)
+  applyTextMatching(lang)
   document.dispatchEvent(new CustomEvent('language-change', { detail: { lang } }))
 }
 
 export function initLanguage(): Lang {
   const lang = getStoredLang()
-  applyLanguage(lang)
+  if (lang !== DEFAULT_LANG) {
+    document.documentElement.lang = lang
+    requestAnimationFrame(() => {
+      applyDataI18n(lang)
+      applyTextMatching(lang)
+    })
+  }
   return lang
 }
