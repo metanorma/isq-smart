@@ -1,15 +1,33 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import type { OntologyGroup } from '../data/ontology/OntologyTree'
 import { asset } from '../lib/asset'
 
 const props = defineProps<{
   tree: OntologyGroup[]
-  activeSlug?: string
 }>()
 
 const expanded = ref<Set<string>>(new Set())
 const search = ref('')
+const activeSlug = ref<string>('')
+
+function deriveActiveSlug() {
+  const match = window.location.pathname.match(/\/ontology\/([^/?#]+)/)
+  activeSlug.value = match ? decodeURIComponent(match[1]) : ''
+}
+
+function onAfterSwap() {
+  deriveActiveSlug()
+}
+
+onMounted(() => {
+  deriveActiveSlug()
+  document.addEventListener('astro:after-swap', onAfterSwap)
+})
+
+onBeforeUnmount(() => {
+  document.removeEventListener('astro:after-swap', onAfterSwap)
+})
 
 function toggle(key: string) {
   if (expanded.value.has(key)) expanded.value.delete(key)
@@ -41,7 +59,7 @@ const filteredTree = computed(() => {
 })
 
 function isActive(slug: string): boolean {
-  return props.activeSlug === slug
+  return activeSlug.value === slug
 }
 </script>
 

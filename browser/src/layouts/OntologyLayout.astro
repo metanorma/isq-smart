@@ -8,10 +8,9 @@ import { asset } from '../lib/asset'
 interface Props {
   title: string
   description?: string
-  activeSlug?: string
 }
 
-const { title, description, activeSlug } = Astro.props
+const { title, description } = Astro.props
 const tree = buildOntologyTree(ontologyEntities as any)
 const pathname = Astro.url.pathname
 ---
@@ -19,10 +18,10 @@ const pathname = Astro.url.pathname
 <DefaultLayout title={title} description={description}>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
     <div class="flex gap-6">
-      <!-- Sidebar (desktop) -->
+      <!-- Sidebar (desktop) — persists across page transitions -->
       <aside class="hidden lg:block w-72 flex-shrink-0">
-        <div class="sticky top-20 h-[calc(100vh-6rem)] rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
-          <OntologySidebar client:load tree={tree} activeSlug={activeSlug} />
+        <div transition:persist="ontology-sidebar" class="sticky top-20 h-[calc(100vh-6rem)] rounded-xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden">
+          <OntologySidebar client:load tree={tree} />
         </div>
       </aside>
 
@@ -48,7 +47,7 @@ const pathname = Astro.url.pathname
             </button>
           </div>
           <div class="h-[calc(100%-3rem)]">
-            <OntologySidebar client:load tree={tree} activeSlug={activeSlug} />
+            <OntologySidebar client:load tree={tree} />
           </div>
         </div>
       </div>
