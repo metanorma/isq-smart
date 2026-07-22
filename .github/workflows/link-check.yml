@@ -44,16 +44,6 @@ jobs:
       - name: Build site
         run: cd browser && npm run build
 
-      - name: Create symlinks for link checking
-        run: |
-          cd browser/dist/isq-smart
-          for item in ../*; do
-            name=$(basename "$item")
-            [ "$name" = "isq-smart" ] && continue
-            [ -e "$name" ] && continue
-            ln -s "$item" "$name"
-          done
-
       - name: Link Checker (internal links only)
         uses: lycheeverse/lychee-action@v2
         with:
