@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import OntologyLayout from '../../layouts/OntologyLayout.astro'
 import { asset } from '../../lib/asset'
 import OntologyLink from '../../components/OntologyLink.astro'
 import { ontologyEntities, ontologyTypeMeta, ontologyPrefixes, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
@@ -69,7 +69,7 @@ function truncate(s: string, n: number) {
 }
 ---
 
-<DefaultLayout title={`Ontology: ${slug} | ISQ Browser`}>
+<OntologyLayout title={`Ontology: ${slug} | ISQ Browser`} activeSlug={slug}>
   <div>
     {!entity ? (
       <div class="p-8 text-center text-gray-500">
@@ -1019,4 +1019,4 @@ function truncate(s: string, n: number) {
       URL.revokeObjectURL(url)
     })
   </script>
-</DefaultLayout>
+</OntologyLayout>

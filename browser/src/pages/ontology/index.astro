@@ -1,5 +1,5 @@
 ---
-import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import OntologyLayout from '../../layouts/OntologyLayout.astro'
 import { asset } from '../../lib/asset'
 import { ontologyEntities, ontologyNamespaces, ontologyImportChain } from '../../data/generated/ontology'
 
@@ -122,7 +122,7 @@ const accentClasses: Record<string, { box: string; icon: string; hover: string }
 }
 ---
 
-<DefaultLayout title="Ontology Browser — ISQ Browser" description="Explore the ISO & IEC 80000 and SMART Core ontology classes, properties, shapes, and concepts.">
+<OntologyLayout title="Ontology Browser — ISQ Browser" description="Explore the ISO & IEC 80000 and SMART Core ontology classes, properties, shapes, and concepts.">
   <div>
     <!-- Hero -->
     <section class="relative overflow-hidden bg-gradient-to-br from-emerald-950 via-emerald-900 to-teal-950">
@@ -265,4 +265,4 @@ const accentClasses: Record<string, { box: string; icon: string; hover: string }
       </div>
     </section>
   </div>
-</DefaultLayout>
+</OntologyLayout>
