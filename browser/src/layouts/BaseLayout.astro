@@ -1,6 +1,7 @@
 ---
 import '../styles/main.css'
 import { asset } from '../lib/asset'
+import { ClientRouter } from 'astro:transitions'
 
 interface Props {
   title?: string
@@ -20,6 +21,7 @@ const ogTitle = title.split('—')[0].trim()
 <!doctype html>
 <html lang="en">
 <head>
+  <ClientRouter />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="icon" type="image/png" href={asset('/favicon-96x96.png')} sizes="96x96" />
