@@ -119,7 +119,7 @@ const view = resolveEntryDetailView(
 
       <!-- Top bar -->
       <div class="flex items-center gap-3 mb-8">
-        {view.bilingual && <LanguageToggle client:idle />}
+        {view.bilingual && <LanguageToggle client:only="vue" />}
         <span class="text-xs text-slate-400 dark:text-slate-500 ml-auto font-mono tabular-nums">{view.siblings.idx} / {view.siblings.total}</span>
       </div>
 
@@ -240,11 +240,11 @@ const view = resolveEntryDetailView(
             <!-- Notation systems -->
             {entry.symbols.length > 0 && (
               <div class="mt-3">
-                <div class="text-xs font-semibold text-slate-400 uppercase tracking-[0.15em] mb-3">Notation systems</div>
+                <div class="text-xs font-semibold text-slate-400 uppercase tracking-[0.15em] mb-3"data-i18n="label.notation_systems">Notation systems</div>
                 <div class="grid gap-2">
                   {entry.symbols.map((sym) => (
                     <div class="flex items-baseline gap-4 px-4 py-2 rounded-lg bg-slate-50/70 dark:bg-dark-800/70 border border-slate-200/50 dark:border-dark-600/50 text-sm">
-                      <div class="flex-shrink-0 w-20 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider">Rendered</div>
+                      <div class="flex-shrink-0 w-20 text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider" data-i18n="label.rendered">Rendered</div>
                       <MathRenderer client:visible expression={sym} cache={mathCache} />
                     </div>
                   ))}
@@ -276,7 +276,18 @@ const view = resolveEntryDetailView(
         <div class="relative rounded-2xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 overflow-hidden shadow-sm group/def">
           <div class="absolute left-0 inset-y-0 w-1.5 transition-all duration-300 group-hover/def:w-2" style={view.accent.defAccentStyle} />
           <div class="p-6 sm:p-8 pl-7 sm:pl-9">
+            <div class="flex items-baseline gap-2 mb-2">
+              <span class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase bg-brand-50 dark:bg-brand-950/40 px-1.5 py-0.5 rounded flex-shrink-0">EN</span>
+            </div>
             <div class="text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-base" set:html={view.defHtml} />
+            {view.defHtmlFr && (
+              <div class="mt-4 pt-4 border-t border-slate-200/60 dark:border-dark-700/60">
+                <div class="flex items-baseline gap-2 mb-2">
+                  <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase bg-amber-50 dark:bg-amber-950/40 px-1.5 py-0.5 rounded flex-shrink-0">FR</span>
+                </div>
+                <div class="text-slate-700 dark:text-slate-300 leading-relaxed text-base sm:text-base" set:html={view.defHtmlFr} />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -319,7 +330,7 @@ const view = resolveEntryDetailView(
       )}
 
       <!-- Remarks -->
-      {view.remHtml && (
+      {(view.remHtml || view.remHtmlFr) && (
         <div class="mb-12">
           <h2 class="flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-[0.15em] mb-4">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z"/></svg>
@@ -328,7 +339,22 @@ const view = resolveEntryDetailView(
           <div class="relative rounded-2xl bg-amber-50/60 dark:bg-amber-950/30 border border-amber-200/50 dark:border-amber-700/30 overflow-hidden">
             <div class="absolute left-0 inset-y-0 w-1.5 bg-gradient-to-b from-amber-400 to-amber-600 dark:from-amber-500 dark:to-amber-700" />
             <div class="p-6 sm:p-8 pl-7 sm:pl-9">
-              <div class="text-slate-700 dark:text-slate-200 leading-relaxed text-base sm:text-base" set:html={view.remHtml} />
+              {view.remHtml && (
+                <>
+                  <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-xs font-semibold text-brand-600 dark:text-brand-400 uppercase bg-brand-50 dark:bg-brand-950/40 px-1.5 py-0.5 rounded flex-shrink-0">EN</span>
+                  </div>
+                  <div class="text-slate-700 dark:text-slate-200 leading-relaxed text-base sm:text-base" set:html={view.remHtml} />
+                </>
+              )}
+              {view.remHtmlFr && (
+                <div class={view.remHtml ? 'mt-4 pt-4 border-t border-amber-200/50 dark:border-amber-800/40' : ''}>
+                  <div class="flex items-baseline gap-2 mb-2">
+                    <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase bg-amber-100 dark:bg-amber-950/40 px-1.5 py-0.5 rounded flex-shrink-0">FR</span>
+                  </div>
+                  <div class="text-slate-700 dark:text-slate-200 leading-relaxed text-base sm:text-base" set:html={view.remHtmlFr} />
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -367,7 +393,7 @@ const view = resolveEntryDetailView(
         return (kind || entIds.length > 0 || hierarchyNode) ? (
           <div class="mt-10 p-5 rounded-xl bg-gradient-to-br from-indigo-50/50 to-violet-50/30 dark:from-indigo-950/20 dark:to-violet-950/10 border border-indigo-200/40 dark:border-indigo-800/30">
             <div class="flex items-center gap-2 mb-4">
-              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">Concept Hierarchy</span>
+              <span class="text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400"data-i18n="label.concept_hierarchy">Concept Hierarchy</span>
               <span class="text-xs text-indigo-400/50">Pendrill (2024)</span>
             </div>
             {kind && (
