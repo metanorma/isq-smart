@@ -254,6 +254,29 @@ describe('resolveEntryDetailView', () => {
       )
       expect(view.renderedNameHtml).toContain('length')
     })
+
+    it('renders French definition and remarks when bilingual', () => {
+      const entry = makeQuantity({
+        def: { en: 'A simple definition', fr: 'Une définition simple' },
+        remarks: { en: 'Some remark', fr: 'Une remarque' },
+      })
+      const view = resolveEntryDetailView(
+        entry, '3', meta, 'quantities', ['2019'], true, [entry], emptyCaches,
+      )
+      expect(view.defHtmlFr).toContain('Une définition simple')
+      expect(view.remHtmlFr).toContain('Une remarque')
+    })
+
+    it('leaves French fields empty when not bilingual', () => {
+      const entry = makeQuantity({
+        def: { en: 'A simple definition', fr: 'Une définition simple' },
+      })
+      const view = resolveEntryDetailView(
+        entry, '3', meta, 'quantities', ['2019'], false, [entry], emptyCaches,
+      )
+      expect(view.defHtmlFr).toBe('')
+      expect(view.remHtmlFr).toBe('')
+    })
   })
 
   describe('referencedBy', () => {

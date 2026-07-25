@@ -60,7 +60,9 @@ export interface EntryDetailView {
   jsonLd: ReturnType<typeof generateEntryJsonLd>
   dualUrn: { iso: string; iec: string }
   defHtml: string
+  defHtmlFr: string
   remHtml: string
+  remHtmlFr: string
   renderedNameHtml: string
   accent: EntryAccentStyle
 }
@@ -117,7 +119,9 @@ export function resolveEntryDetailView(
 
   // Rendered content
   const defHtml = EntryModel.definition(entry, 'en', caches.mathCache)
+  const defHtmlFr = bilingual ? EntryModel.definition(entry, 'fr', caches.mathCache) : ''
   const remHtml = EntryModel.remarks(entry, 'en', caches.mathCache)
+  const remHtmlFr = bilingual ? EntryModel.remarks(entry, 'fr', caches.mathCache) : ''
   const renderedNameHtml = EntryModel.renderedName(entry, 'en', caches.mathCache)
 
   // Accent styles
@@ -156,7 +160,9 @@ export function resolveEntryDetailView(
     jsonLd,
     dualUrn,
     defHtml,
+    defHtmlFr,
     remHtml,
+    remHtmlFr,
     renderedNameHtml,
     accent,
   }

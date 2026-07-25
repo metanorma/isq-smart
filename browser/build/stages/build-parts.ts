@@ -40,7 +40,7 @@ function writePart(
   })
 
   const editions = [...new Set(rawEntries.map(e => e.edition?.toString()).filter((v): v is string => Boolean(v)))]
-  const bilingual = domain === 'quantities' && rawEntries.some(e => e.def?.fr || e.remarks?.fr)
+  const bilingual = rawEntries.some(e => e.def?.fr || e.remarks?.fr || e.designations?.some(d => d.designation.fr?.text))
 
   const partMathCache: Record<string, string> = {}
   const partLatexCache: Record<string, string> = {}
