@@ -19,9 +19,9 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 }
 
 const _coreLinks: NavLink[] = [
+  { to: '/math', label: 'Math', i18nKey: 'nav.math' },
   { to: '/quantities', label: 'Quantities', i18nKey: 'nav.quantities' },
   { to: '/kinds', label: 'Kinds', i18nKey: 'nav.kinds' },
-  { to: '/math', label: 'Math', i18nKey: 'nav.math' },
   { to: '/units', label: 'Units', i18nKey: 'nav.units' },
   { to: '/dimensions', label: 'Dimensions', i18nKey: 'nav.dimensions' },
 ]

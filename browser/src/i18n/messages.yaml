@@ -33,7 +33,7 @@ en:
     part: "Part"
     section: Section
     definition: Definition
-    remarks: Remarks
+    remarks: Notes
     unit: Unit
     units: Units
     symbol: Symbol
@@ -173,6 +173,59 @@ en:
     reference: Reference
   footer:
     content: Content copyright © ISO and IEC. All rights reserved.
+    brand_desc: "ISO 80000 & IEC 80000 — the international standards for quantities, units, and mathematical notation."
+    browse: Browse
+    linked_data: Linked Data
+    vocabulary: Vocabulary
+    quantities_units: Quantities and Units
+    math_notation: Mathematical Notation
+    units_db: Units Database
+    dimensions: Dimensions
+    about_standard: About the Standard
+    api_reference: API & Reference
+    urn_identifiers: ISO-IEC URN identifiers
+    jsonld_rdf: JSON-LD + RDF/Turtle vocabulary
+    info_service: "An information service of ISO/TC 12 & IEC/TC 25, developed by Ribose."
+  home:
+    hero_title: International System of Quantities
+    hero_subtitle: Quantities and Units
+    hero_description: The joint ISO and IEC international standard defining quantities, units, and mathematical notation used in science and engineering.
+    hero_browse_quantities: Browse Quantities
+    hero_math: Math Notation
+    hero_units: Units
+    stat_quantities: quantities
+    stat_math: math terms
+    stat_parts: parts
+    explore: Explore
+    what_is_it: What is it?
+    what_is_it_desc: "ISO 80000 & IEC 80000 are the international standards that define quantities, units of measurement, and mathematical notation used across science, engineering, and commerce worldwide."
+    how_to_use: How to use
+    how_to_use_desc: "Browse by domain or part, search across all entries with /, navigate entries with arrow keys. Every entry has exportable citations and linked data."
+    linked_data: Linked data
+    linked_data_desc: Each entry includes JSON-LD structured data, RFC 5141 URN identifiers, and machine-readable exports in BibTeX, RIS, and RDF Turtle formats.
+    domain_quantities_label: Quantities & Units
+    domain_quantities_desc: Physical quantities, their definitions, symbols, and measurement units across Parts 3–13.
+    domain_math_label: Mathematical Notation
+    domain_math_desc: Mathematical signs, symbols, and operators defined in Part 2.
+    parts_label: parts
+    subparts_label: subparts
+    entries_label: entries
+    qty_section_title: Quantities & Units
+    qty_section_desc: Parts 3–13 — physical quantities and their measurement units
+    browse_all: Browse all
+    entry_distribution: Entry Distribution
+    math_section_title: Mathematical Notation
+    semantic_layer: Semantic Layer
+    documents: Documents
+    documents_desc: ISO & IEC 80000 publication structure with clauses and provisions.
+    ontology: Ontology
+    ontology_desc: OWL classes, SHACL shapes, and SKOS concepts for the ISQ domain.
+    units_dims: Units & Dimensions
+    units_dims_desc: measurement units and
+    dimensions_word: dimensions
+    from_unitsml: from UnitsML.
+    browse_units: "Browse units →"
+    browse_dimensions: "Dimensions →"
 
 fr:
   nav:
@@ -209,7 +262,7 @@ fr:
     part: Partie
     section: Section
     definition: Définition
-    remarks: Remarques
+    remarks: Notes
     unit: Unité
     units: Unités
     symbol: Symbole
@@ -349,3 +402,56 @@ fr:
     reference: Référence
   footer:
     content: Contenu copyright © ISO et CEI. Tous droits réservés.
+    brand_desc: "ISO 80000 & CEI 80000 — les normes internationales pour les grandeurs, unités et notation mathématique."
+    browse: Parcourir
+    linked_data: Données liées
+    vocabulary: Vocabulaire
+    quantities_units: Grandeurs et unités
+    math_notation: Notation mathématique
+    units_db: Base de données des unités
+    dimensions: Dimensions
+    about_standard: À propos de la norme
+    api_reference: API et référence
+    urn_identifiers: Identifiants URN ISO-CEI
+    jsonld_rdf: Vocabulaire JSON-LD + RDF/Turtle
+    info_service: "Un service d'information de l'ISO/TC 12 et de la CEI/TC 25, développé par Ribose."
+  home:
+    hero_title: Système international des grandeurs
+    hero_subtitle: Grandeurs et unités
+    hero_description: La norme internationale conjointe de l'ISO et de la CEI définissant les grandeurs, unités et notation mathématique utilisées en science et en ingénierie.
+    hero_browse_quantities: Parcourir les grandeurs
+    hero_math: Notation mathématique
+    hero_units: Unités
+    stat_quantities: grandeurs
+    stat_math: termes mathématiques
+    stat_parts: parties
+    explore: Explorer
+    what_is_it: Qu'est-ce que c'est ?
+    what_is_it_desc: "ISO 80000 & CEI 80000 sont les normes internationales qui définissent les grandeurs, unités de mesure et notation mathématique utilisées dans le monde scientifique, industriel et commercial."
+    how_to_use: Comment utiliser
+    how_to_use_desc: "Parcourez par domaine ou partie, recherchez dans toutes les entrées avec /, naviguez avec les flèches. Chaque entrée propose des citations exportables et des données liées."
+    linked_data: Données liées
+    linked_data_desc: Chaque entrée inclut des données structurées JSON-LD, des identifiants URN RFC 5141, et des exportations machine-readable en BibTeX, RIS et RDF Turtle.
+    domain_quantities_label: Grandeurs et unités
+    domain_quantities_desc: Grandeurs physiques, leurs définitions, symboles et unités de mesure des Parties 3 à 13.
+    domain_math_label: Notation mathématique
+    domain_math_desc: Signes, symboles et opérateurs mathématiques définis dans la Partie 2.
+    parts_label: parties
+    subparts_label: sous-parties
+    entries_label: entrées
+    qty_section_title: Grandeurs et unités
+    qty_section_desc: Parties 3 à 13 — grandeurs physiques et leurs unités de mesure
+    browse_all: Tout parcourir
+    entry_distribution: Distribution des entrées
+    math_section_title: Notation mathématique
+    semantic_layer: Couche sémantique
+    documents: Documents
+    documents_desc: Structure des publications ISO & CEI 80000 avec clauses et dispositions.
+    ontology: Ontologie
+    ontology_desc: Classes OWL, formes SHACL et concepts SKOS pour le domaine ISQ.
+    units_dims: Unités et dimensions
+    units_dims_desc: unités de mesure et
+    dimensions_word: dimensions
+    from_unitsml: de UnitsML.
+    browse_units: "Parcourir les unités →"
+    browse_dimensions: "Dimensions →"

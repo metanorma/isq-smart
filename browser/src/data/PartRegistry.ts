@@ -224,7 +224,9 @@ export function getPartEntryCount(partKey: string): number {
 }
 
 export function isBilingual(partKey: string): boolean {
-  return partSummaries[partKey]?.bilingual ?? false
+  const direct = partSummaries[partKey]?.bilingual
+  if (direct != null) return direct
+  return getSubKeys(partKey).some(k => partSummaries[k]?.bilingual)
 }
 
 export function getPartEditions(partKey: string): string[] {

@@ -83,31 +83,31 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
               <img src={asset('/img/logo-iec.svg')} alt="IEC" class="h-7 w-auto rounded opacity-90" />
             </div>
 
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] heading-serif">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-[1.1] heading-serif" data-i18n="home.hero_title">
               International System of Quantities
             </h1>
-            <p class="mt-2 text-xl text-brand-200/90 font-medium heading-serif">Quantities and Units</p>
-            <p class="mt-3 text-sm sm:text-base text-brand-300/60 leading-relaxed max-w-xl">
+            <p class="mt-2 text-xl text-brand-200/90 font-medium heading-serif" data-i18n="home.hero_subtitle">Quantities and Units</p>
+            <p class="mt-3 text-sm sm:text-base text-brand-300/60 leading-relaxed max-w-xl" data-i18n="home.hero_description">
               The joint ISO and IEC international standard defining quantities, units, and mathematical notation used in science and engineering.
             </p>
 
             <div class="mt-6 flex flex-wrap gap-3">
               <a href={asset("/quantities")} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#fff] text-brand-900 text-sm font-semibold hover:bg-brand-50 transition-colors shadow-lg shadow-black/10">
-                Browse Quantities
+                <span data-i18n="home.hero_browse_quantities">Browse Quantities</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
               </a>
               <a href={asset("/math")} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.1] border border-white/[0.15] text-white text-sm font-medium hover:bg-white/[0.15] transition-colors">
-                Math Notation
+                <span data-i18n="home.hero_math">Math Notation</span>
               </a>
               <a href={asset("/units")} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/[0.08] text-white/70 text-sm font-medium hover:bg-white/[0.1] hover:text-white/90 transition-colors">
-                Units
+                <span data-i18n="home.hero_units">Units</span>
               </a>
             </div>
 
             <div id="stats" class="mt-6 flex flex-wrap gap-4 text-sm text-brand-300/50">
-              <span><span class="text-white font-semibold tabular-nums" data-count={quantitiesCount}>{quantitiesCount.toLocaleString()}</span> quantities</span>
-              <span><span class="text-white font-semibold tabular-nums" data-count={mathCount}>{mathCount.toLocaleString()}</span> math terms</span>
-              <span><span class="text-white font-semibold tabular-nums" data-count={totalParts}>{totalParts}</span> parts</span>
+              <span><span class="text-white font-semibold tabular-nums" data-count={quantitiesCount}>{quantitiesCount.toLocaleString()}</span> <span data-i18n="home.stat_quantities">quantities</span></span>
+              <span><span class="text-white font-semibold tabular-nums" data-count={mathCount}>{mathCount.toLocaleString()}</span> <span data-i18n="home.stat_math">math terms</span></span>
+              <span><span class="text-white font-semibold tabular-nums" data-count={totalParts}>{totalParts}</span> <span data-i18n="home.stat_parts">parts</span></span>
             </div>
           </div>
 
@@ -115,7 +115,7 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
           <div class="lg:col-span-2 page-enter" style="animation-delay: 0.1s">
             <div class="rounded-2xl bg-white/[0.06] border border-white/[0.08] backdrop-blur-sm overflow-hidden">
               <div class="px-4 py-3 border-b border-white/[0.06]">
-                <span class="text-xs font-semibold text-white/40 uppercase tracking-wider">Explore</span>
+                <span class="text-xs font-semibold text-white/40 uppercase tracking-wider" data-i18n="home.explore">Explore</span>
               </div>
               <div class="divide-y divide-white/[0.04]">
                 {featured.map((item) => (
@@ -164,9 +164,9 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
               <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
               </div>
-              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">What is it?</h3>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif" data-i18n="home.what_is_it">What is it?</h3>
             </div>
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="home.what_is_it_desc" data-i18n-html>
               ISO 80000 & IEC 80000 are the international standards that define <strong class="text-slate-800 dark:text-slate-100">quantities</strong>, <strong class="text-slate-800 dark:text-slate-100">units of measurement</strong>, and <strong class="text-slate-800 dark:text-slate-100">mathematical notation</strong> used across science, engineering, and commerce worldwide.
             </p>
           </div>
@@ -175,9 +175,9 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
               <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z"/></svg>
               </div>
-              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">How to use</h3>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif" data-i18n="home.how_to_use">How to use</h3>
             </div>
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="home.how_to_use_desc" data-i18n-html>
               Browse by domain or part, search across all entries with <kbd class="text-xs bg-slate-200 dark:bg-dark-700 px-1 py-0.5 rounded font-mono">/</kbd>, navigate entries with arrow keys. Every entry has exportable citations and linked data.
             </p>
           </div>
@@ -186,9 +186,9 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
               <div class="w-8 h-8 rounded-lg bg-iec-100 dark:bg-iec-900/40 flex items-center justify-center text-iec-600 dark:text-iec-400">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"/></svg>
               </div>
-              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif">Linked data</h3>
+              <h3 class="text-sm font-bold text-slate-900 dark:text-slate-100 heading-serif" data-i18n="home.linked_data">Linked data</h3>
             </div>
-            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed" data-i18n="home.linked_data_desc" data-i18n-html>
               Each entry includes <strong class="text-slate-800 dark:text-slate-100">JSON-LD</strong> structured data, RFC 5141 URN identifiers, and machine-readable exports in BibTeX, RIS, and RDF Turtle formats.
             </p>
           </div>
@@ -207,12 +207,12 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
               <div class="flex items-center gap-4">
                 <div class="text-3xl">{d.icon}</div>
                 <div class="min-w-0">
-                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">{d.label}</h3>
-                  <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2">{d.description}</p>
+                  <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif" data-i18n={`home.domain_${d.key}_label`}>{d.label}</h3>
+                  <p class="mt-1 text-xs text-slate-500 dark:text-slate-400 leading-relaxed line-clamp-2" data-i18n={`home.domain_${d.key}_desc`}>{d.description}</p>
                   <div class="mt-2 flex items-center gap-3 text-xs">
-                    <span class="text-slate-600 dark:text-slate-300 font-semibold">{d.key === 'quantities' ? `${parts.length} parts` : `${mathParts.length} subparts`}</span>
+                    <span class="text-slate-600 dark:text-slate-300 font-semibold"><span class="tabular-nums">{d.key === 'quantities' ? parts.length : mathParts.length}</span> <span data-i18n={`home.${d.key === 'quantities' ? 'parts_label' : 'subparts_label'}`}>{d.key === 'quantities' ? 'parts' : 'subparts'}</span></span>
                     <span class="text-slate-300">·</span>
-                    <span class="text-slate-600 dark:text-slate-300 font-semibold tabular-nums">{(d.key === 'quantities' ? quantitiesCount : mathCount).toLocaleString()} entries</span>
+                    <span class="text-slate-600 dark:text-slate-300 font-semibold tabular-nums">{(d.key === 'quantities' ? quantitiesCount : mathCount).toLocaleString()} <span data-i18n="home.entries_label">entries</span></span>
                   </div>
                 </div>
               </div>
@@ -229,12 +229,12 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
           <div>
             <div class="flex items-center gap-2.5 mb-1">
               <span class="text-lg">📐</span>
-              <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Quantities & Units</h2>
+              <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif" data-i18n="home.qty_section_title">Quantities & Units</h2>
             </div>
-            <p class="text-slate-500 dark:text-slate-400 text-xs">Parts 3–13 — physical quantities and their measurement units</p>
+            <p class="text-slate-500 dark:text-slate-400 text-xs" data-i18n="home.qty_section_desc">Parts 3–13 — physical quantities and their measurement units</p>
           </div>
           <a href={asset("/quantities")} class="hidden sm:flex items-center gap-1.5 text-xs text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 font-medium transition-colors">
-            Browse all
+            <span data-i18n="home.browse_all">Browse all</span>
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
           </a>
         </div>
@@ -256,7 +256,7 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
         <!-- Entry distribution -->
         <div class="mt-6 space-y-1.5">
           <div class="flex items-center gap-2 mb-2">
-            <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.12em]">Entry Distribution</span>
+            <span class="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.12em]" data-i18n="home.entry_distribution">Entry Distribution</span>
           </div>
           {mainQtyParts.map((part) => {
             const count = partEntryCount(part.partKey)
@@ -287,8 +287,8 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
         <div class="lg:col-span-3">
           <div class="flex items-center gap-2 mb-4">
             <span class="text-lg">∑</span>
-            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">Mathematical Notation</h2>
-            <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{mathParts.length} subparts</span>
+            <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif" data-i18n="home.math_section_title">Mathematical Notation</h2>
+            <span class="text-xs text-slate-400 dark:text-slate-500 tabular-nums"><span class="tabular-nums">{mathParts.length}</span> <span data-i18n="home.subparts_label">subparts</span></span>
           </div>
           <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
             {mathParts.map((part) => (
@@ -301,32 +301,32 @@ const marqueeItems = quantitiesIndex.slice(0, 80).map(e => ({ text: e.t, sym: e.
         </div>
 
         <div class="lg:col-span-2 space-y-4">
-          <h2 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em]">Semantic Layer</h2>
+          <h2 class="text-sm font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-[0.15em]" data-i18n="home.semantic_layer">Semantic Layer</h2>
           <a href={asset("/documents")} class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-iec-100 dark:bg-iec-900/40 flex items-center justify-center text-iec-600 dark:text-iec-400 text-sm font-bold">{totalDocs}</div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Documents</h3>
+              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif" data-i18n="home.documents">Documents</h3>
             </div>
-            <p class="text-sm text-slate-500 dark:text-slate-400">ISO & IEC 80000 publication structure with clauses and provisions.</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="home.documents_desc">ISO & IEC 80000 publication structure with clauses and provisions.</p>
           </a>
 
           <a href={asset("/ontology")} class="group block rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-brand-100 dark:bg-brand-900/40 flex items-center justify-center text-brand-600 dark:text-brand-400 text-sm">OWL</div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif">Ontology</h3>
+              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors heading-serif" data-i18n="home.ontology">Ontology</h3>
             </div>
-            <p class="text-sm text-slate-500 dark:text-slate-400">OWL classes, SHACL shapes, and SKOS concepts for the ISQ domain.</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="home.ontology_desc">OWL classes, SHACL shapes, and SKOS concepts for the ISQ domain.</p>
           </a>
 
           <div class="rounded-2xl border border-slate-200/80 dark:border-dark-600/80 bg-white dark:bg-dark-800 p-5">
             <div class="flex items-center gap-3 mb-2">
               <div class="w-8 h-8 rounded-lg bg-emerald-100 dark:bg-emerald-900/40 flex items-center justify-center text-emerald-600 dark:text-emerald-400 text-sm font-bold">{totalUnits}</div>
-              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 heading-serif">Units & Dimensions</h3>
+              <h3 class="text-base font-bold text-slate-900 dark:text-slate-100 heading-serif" data-i18n="home.units_dims">Units & Dimensions</h3>
             </div>
-            <p class="text-sm text-slate-500 dark:text-slate-400">{totalUnits} measurement units and {totalDims} dimensions from UnitsML.</p>
+            <p class="text-sm text-slate-500 dark:text-slate-400"><span class="tabular-nums">{totalUnits}</span> <span data-i18n="home.units_dims_desc">measurement units and</span> <span class="tabular-nums">{totalDims}</span> <span data-i18n="home.dimensions_word">dimensions</span> <span data-i18n="home.from_unitsml">from UnitsML.</span></p>
             <div class="mt-3 flex gap-2">
-              <a href={asset("/units")} class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Browse units →</a>
-              <a href={asset("/dimensions")} class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors">Dimensions →</a>
+              <a href={asset("/units")} class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors" data-i18n="home.browse_units">Browse units →</a>
+              <a href={asset("/dimensions")} class="text-xs font-medium text-brand-600 dark:text-brand-400 hover:text-brand-700 dark:hover:text-brand-300 transition-colors" data-i18n="home.browse_dimensions">Dimensions →</a>
             </div>
           </div>
         </div>
