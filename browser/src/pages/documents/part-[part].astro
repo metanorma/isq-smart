@@ -1,7 +1,7 @@
 ---
 import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import Breadcrumb from '../../components/Breadcrumb.astro'
-import { getPartDocument, getAllDocuments, publisherOf, getPartMeta, getSectionsForDocument } from '../../data/PartRegistry'
+import { getPartDocument, getAllDocuments, publisherOf, getPartMeta, getSectionsForDocument, isBilingual } from '../../data/PartRegistry'
 import { partUrl, partEntryCount } from '../../data/index'
 import type { PartMeta } from '../../data/types'
 import { asset } from '../../lib/asset'
@@ -91,7 +91,7 @@ const allDocs = getAllDocuments()
               </div>
               <p class="mt-3 text-sm text-brand-200/60 leading-relaxed">
                 {publisher === 'IEC' ? 'IEC' : 'ISO'} 80000-{doc.partKey}
-                {doc.bilingual && ' · Bilingual EN/FR'}
+                {isBilingual(doc.partKey) && ' · Bilingual EN/FR'}
               </p>
             </div>
           </div>
