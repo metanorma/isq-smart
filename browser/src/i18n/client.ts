@@ -51,7 +51,10 @@ function applyDataI18n(lang: Lang): void {
     const key = el.dataset.i18n
     if (!key) return
     const translated = lookup(lang, key)
-    if (translated !== key) el.textContent = translated
+    if (translated !== key) {
+      if (el.dataset.i18nHtml !== undefined) el.innerHTML = translated
+      else el.textContent = translated
+    }
   })
 }
 

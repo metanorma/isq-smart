@@ -24,7 +24,7 @@ export function render(text: string, mathCache: Record<string, string>, xrefs?: 
   // 2. Inline stems
   result = result.replace(new RegExp(INLINE_STEM.source, INLINE_STEM.flags), (_, expr) => {
     const mathml = mathCache[expr]
-    if (mathml) return mathml
+    if (mathml) return mathml.replace(/displaystyle="true"/g, 'displaystyle="false"')
     return `<code class="math-inline">${esc(expr)}</code>`
   })
 
@@ -51,7 +51,7 @@ export function renderInline(text: string, mathCache: Record<string, string>): s
   if (!text) return ''
   return text.replace(new RegExp(INLINE_STEM.source, INLINE_STEM.flags), (_, expr) => {
     const mathml = mathCache[expr]
-    if (mathml) return mathml
+    if (mathml) return mathml.replace(/displaystyle="true"/g, 'displaystyle="false"')
     return `<code class="math-inline">${esc(expr)}</code>`
   })
 }

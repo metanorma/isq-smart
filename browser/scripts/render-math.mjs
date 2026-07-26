@@ -18,27 +18,6 @@ const repoRoot = resolve(__dirname, '..')
 const datasetDir = resolve(repoRoot, '../iso-iec-80000/sources/dataset')
 const generatedDir = resolve(__dirname, '../src/data/generated')
 
-const ASCIIMATH_KNOWN = new Set([
-  'sin', 'cos', 'tan', 'csc', 'sec', 'cot', 'sinh', 'cosh', 'tanh',
-  'log', 'ln', 'exp', 'det', 'mod', 'gcd', 'lcm', 'min', 'max',
-  'abs', 'ceil', 'floor', 'norm', 'sqrt', 'root', 'sum', 'prod', 'int', 'oint',
-  'del', 'grad', 'sub', 'sup', 'deg', 'oo',
-  'alpha', 'beta', 'gamma', 'delta', 'epsilon', 'varepsilon', 'zeta', 'eta',
-  'theta', 'vartheta', 'iota', 'kappa', 'lambda', 'mu', 'nu', 'xi',
-  'omicron', 'pi', 'rho', 'sigma', 'tau', 'upsilon', 'phi', 'varphi',
-  'chi', 'psi', 'omega', 'Gamma', 'Delta', 'Theta', 'Lambda', 'Xi',
-  'Pi', 'Sigma', 'Upsilon', 'Phi', 'Psi', 'Omega',
-  'bb', 'ii', 'sf', 'tt', 'fr', 'cc', 'hat', 'bar', 'vec', 'dot', 'ddot', 'tilde', 'ul', 'rm',
-])
-
-function quoteMultiLetter(expr) {
-  const quoted = []
-  let result = expr.replace(/"([^"]*)"/g, (m) => { quoted.push(m); return `\x00${quoted.length - 1}\x00` })
-  result = result.replace(/([a-zA-Z]{2,})/g, (m) => ASCIIMATH_KNOWN.has(m) ? m : `"${m}"`)
-  result = result.replace(/\x00(\d+)\x00/g, (_, i) => quoted[parseInt(i)])
-  return result
-}
-
 function decodeEntities(s) {
   return s.replace(/&#x([0-9A-Fa-f]+);/g, (_, hex) => String.fromCodePoint(parseInt(hex, 16)))
 }
@@ -101,8 +80,8 @@ for (const expr of exprs) {
   i++
   if (i % 500 === 0) console.log(`[math] Progress: ${i}/${exprs.size}`)
   try {
-    const preprocessed = quoteMultiLetter(decodeEntities(expr))
-    const f = new Plurimath(preprocessed, 'asciimath')
+    const raw = decodeEntities(expr)
+    const f = new Plurimath(raw, 'asciimath')
     mathml[expr] = f.toMathml().replace('display="block"', 'display="inline"')
     latex[expr] = f.toLatex()
     ok++

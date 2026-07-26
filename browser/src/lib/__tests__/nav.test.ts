@@ -3,8 +3,8 @@ import { coreLinks, secondaryEntries, navLinks, isActive, isNavGroup } from '../
 import type { NavEntry, NavGroup, NavLink } from '../nav'
 
 describe('nav link arrays', () => {
-  it('coreLinks contains quantities, kinds, math, units, dimensions', () => {
-    expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/kinds', '/math', '/units', '/dimensions'])
+  it('coreLinks contains math, quantities, kinds, units, dimensions', () => {
+    expect(coreLinks.map(l => l.to)).toEqual(['/math', '/quantities', '/kinds', '/units', '/dimensions'])
   })
 
   it('every nav link has an i18nKey', () => {
