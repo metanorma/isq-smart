@@ -9,19 +9,18 @@ import type { Entry, PartMeta, Domain } from './types'
 import { EntryModel } from './EntryModel'
 import { generateEntryJsonLd } from './serialization'
 import { entryDualUrn } from './urn'
-import { renderInline } from './asciidoc'
 import { sectionLabel as formatSectionLabel } from './partKey'
 import { reverseXref } from './generated/reverse-xref'
 import { xrefMap } from './generated/xref-map'
 import { units } from './generated/unitsdb'
-import {
-  accentGlow,
-  accentGradient,
-  accentColors,
-  accentHeaderBg,
-} from '../composables/useAccent'
+import { EntryContentRenderer, type EntryViewCaches } from './EntryContentRenderer'
+import { EntryAccentResolver, type EntryAccentStyle } from './EntryAccentResolver'
+import { renderInline } from './asciidoc'
 
 const unitSlugMap = new Map(units.map(u => [u.name, u.slug]))
+
+export type { EntryViewCaches, EntryAccentStyle }
+export { EntryContentRenderer, EntryAccentResolver }
 
 export interface ReferencedBy {
   id: string
@@ -34,15 +33,6 @@ export interface SiblingNav {
   next: Entry | null
   idx: number
   total: number
-}
-
-export interface EntryAccentStyle {
-  symbolGlow: { boxShadow: string }
-  heroGlow: Record<string, string>
-  defAccentStyle: { background: string }
-  showcasePattern: { backgroundImage: string; backgroundSize: string }
-  headerBg: Record<string, string>
-  accentFrom: string
 }
 
 export interface EntryDetailView {
@@ -67,11 +57,6 @@ export interface EntryDetailView {
   accent: EntryAccentStyle
 }
 
-export interface EntryViewCaches {
-  mathCache: Record<string, string>
-  latexCache: Record<string, string>
-}
-
 /**
  * Resolve all derived data for an entry detail page.
  *
@@ -89,7 +74,6 @@ export function resolveEntryDetailView(
 ): EntryDetailView {
   const edition = editions.join(', ')
 
-  // Siblings
   const idx = entries.findIndex(e => e.id === entry.id)
   const siblings: SiblingNav = {
     prev: idx > 0 ? entries[idx - 1] : null,
@@ -98,11 +82,9 @@ export function resolveEntryDetailView(
     total: entries.length,
   }
 
-  // Section entries
   const sectionGroup = EntryModel.sectionGroup(entry)
   const sectionEntries = entries.filter(e => EntryModel.sectionGroup(e) === sectionGroup)
 
-  // Referenced by
   const refIds = reverseXref[entry.id] ?? []
   const referencedBy: ReferencedBy[] = refIds
     .map((id: string) => {
@@ -111,36 +93,18 @@ export function resolveEntryDetailView(
     })
     .filter(Boolean) as ReferencedBy[]
 
-  // JSON-LD
   const jsonLd = generateEntryJsonLd(entry, meta, edition)
-
-  // Dual URN
   const dualUrn = entryDualUrn(entry, partKey, edition)
 
-  // Rendered content
-  const defHtml = EntryModel.definition(entry, 'en', caches.mathCache)
-  const defHtmlFr = bilingual ? EntryModel.definition(entry, 'fr', caches.mathCache) : ''
-  const remHtml = EntryModel.remarks(entry, 'en', caches.mathCache)
-  const remHtmlFr = bilingual ? EntryModel.remarks(entry, 'fr', caches.mathCache) : ''
-  const renderedNameHtml = EntryModel.renderedName(entry, 'en', caches.mathCache)
+  const renderer = new EntryContentRenderer(caches)
+  const defHtml = renderer.definition(entry, 'en')
+  const defHtmlFr = bilingual ? renderer.definition(entry, 'fr') : ''
+  const remHtml = renderer.remarks(entry, 'en')
+  const remHtmlFr = bilingual ? renderer.remarks(entry, 'fr') : ''
+  const renderedNameHtml = renderer.renderedName(entry, 'en')
 
-  // Accent styles
-  const accentFrom = accentColors(meta).from
-  const accent: EntryAccentStyle = {
-    symbolGlow: {
-      boxShadow: `0 0 32px ${accentFrom}18, 0 0 64px ${accentFrom}0a`,
-    },
-    heroGlow: accentGlow(meta, 0.05, 180),
-    defAccentStyle: { background: accentGradient(meta, 160) },
-    showcasePattern: {
-      backgroundImage: `radial-gradient(circle 1px at center, ${accentFrom}08 1px, transparent 1px)`,
-      backgroundSize: '24px 24px',
-    },
-    headerBg: accentHeaderBg(meta),
-    accentFrom,
-  }
+  const accent = new EntryAccentResolver().resolve(meta)
 
-  // Part label
   const partLabel = meta.parentPart
     ? `Part ${meta.parentPart} ${formatSectionLabel(partKey)}`
     : `Part ${partKey}`
