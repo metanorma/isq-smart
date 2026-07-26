@@ -31,8 +31,9 @@ describe('MessageLookup', () => {
     expect(lookup.resolve({ htmlLang: 'en' }, 'nav')).toBe('nav')
   })
 
-  it('returns the key when language is missing', () => {
-    expect(lookup.resolve({ htmlLang: 'de' }, 'nav.quantities')).toBe('nav.quantities')
+  it('returns the key for an empty message map', () => {
+    const sparse = new MessageLookup({ en: {}, fr: {} })
+    expect(sparse.resolve({ htmlLang: 'en' }, 'anything')).toBe('anything')
   })
 
   it('has() returns true for existing keys', () => {
