@@ -31,6 +31,7 @@ export function applyLanguage(lang: Lang, reload = false): void {
   }
   const language = byHtmlLang[lang]
   document.documentElement.lang = lang
+  translator.translate(document.head, language)
   translator.translate(document.body, language)
   document.dispatchEvent(new CustomEvent('language-change', { detail: { lang } }))
 }
@@ -40,6 +41,7 @@ export function initLanguage(): Lang {
   if (lang !== ENG) {
     document.documentElement.lang = lang.htmlLang
     requestAnimationFrame(() => {
+      translator.translate(document.head, lang)
       translator.translate(document.body, lang)
     })
   }
