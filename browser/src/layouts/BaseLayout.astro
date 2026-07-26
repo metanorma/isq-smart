@@ -5,17 +5,21 @@ import { ClientRouter } from 'astro:transitions'
 
 interface Props {
   title?: string
+  titleKey?: string
   description?: string
   pathname?: string
 }
 
 const {
-  title = 'ISQ Browser — ISO 80000 & IEC 80000 Quantities and Units',
-  description = 'Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser.',
+  title,
+  titleKey,
+  description,
   pathname = Astro.url.pathname,
 } = Astro.props
 
-const ogTitle = title.split('—')[0].trim()
+const resolvedTitle = title ?? 'ISQ Browser — ISO 80000 & IEC 80000 Quantities and Units'
+const resolvedDesc = description ?? 'Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser.'
+const ogTitle = resolvedTitle.split('—')[0].trim()
 ---
 
 <!doctype html>
@@ -29,8 +33,8 @@ const ogTitle = title.split('—')[0].trim()
   <link rel="shortcut icon" href={asset('/favicon.ico')} />
   <link rel="apple-touch-icon" sizes="180x180" href={asset('/apple-touch-icon.png')} />
   <link rel="manifest" href={asset('/site.webmanifest')} />
-  <title>{title}</title>
-  <meta name="description" content={description} />
+  <title data-i18n={titleKey}>{resolvedTitle}</title>
+  <meta name="description" content={resolvedDesc} />
   <meta property="og:title" content={ogTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />

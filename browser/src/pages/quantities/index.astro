@@ -12,7 +12,7 @@ const parts = getPartsByDomain(domainKey)
 const totalEntries = parts.reduce((sum, p) => sum + getPartEntryCount(p.partKey), 0)
 ---
 
-<DefaultLayout title="Quantities — ISO 80000 & IEC 80000" description="Browse all quantities defined in the ISO 80000 & IEC 80000 series.">
+<DefaultLayout titleKey="page.quantities.browser_title" description="Browse all quantities defined in the ISO 80000 & IEC 80000 series.">
   <div>
     <!-- Domain hero -->
     <PageHero
