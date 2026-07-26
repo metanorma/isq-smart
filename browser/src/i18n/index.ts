@@ -1,15 +1,25 @@
 import { messages } from './messages'
+import { MessageLookup } from './MessageLookup'
+import { buildTextMatcher, TextMatcher } from './TextMatcher'
+import { LanguageStore } from './LanguageStore'
+import { createI18nService, I18nService } from './I18nService'
+import { ENG, FRA, defaultLanguage, languageFromCode } from './Language'
+import type { Language } from './Language'
 
 export type Lang = 'en' | 'fr'
 
+const messageLookup = new MessageLookup(messages as unknown as Record<'en' | 'fr', Record<string, unknown>>)
+const textMatcher = buildTextMatcher(messages as unknown as Record<string, unknown>)
+const languageStore = new LanguageStore()
+
+export function createService(): I18nService {
+  return createI18nService(languageStore, messageLookup, textMatcher)
+}
+
 function lookup(lang: Lang, key: string): string | undefined {
-  const parts = key.split('.')
-  let result: unknown = (messages as Record<string, unknown>)[lang]
-  for (const part of parts) {
-    if (typeof result !== 'object' || result === null) return undefined
-    result = (result as Record<string, unknown>)[part]
-  }
-  return typeof result === 'string' ? result : undefined
+  const language = lang === 'fr' ? FRA : ENG
+  const result = messageLookup.resolve(language, key)
+  return result === key ? undefined : result
 }
 
 export function t(key: string, lang: Lang = 'en'): string {
@@ -23,7 +33,9 @@ export function tMap(key: string): Record<Lang, string> {
   }
 }
 
-export { messages }
+export { messages, MessageLookup, TextMatcher, LanguageStore, I18nService }
+export { ENG, FRA, defaultLanguage, languageFromCode }
+export type { Language }
 
 export function getLangFromPath(pathname: string): Lang {
   return pathname.includes('/fr/') || pathname.startsWith('/fr') ? 'fr' : 'en'
