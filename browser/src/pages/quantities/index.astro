@@ -17,12 +17,17 @@ const totalEntries = parts.reduce((sum, p) => sum + getPartEntryCount(p.partKey)
     <!-- Domain hero -->
     <PageHero
       variant="brand"
-      crumbs={[{ label: 'Home', href: '/' }, { label: 'Quantities' }]}
+      crumbs={[
+        { label: 'Home', href: '/', i18nKey: 'label.home_breadcrumb' },
+        { label: 'Quantities', i18nKey: 'nav.quantities' },
+      ]}
       title={domain.label}
+      titleKey="text.quantities_and_units"
       description={domain.description}
+      descriptionKey="text.browse_quantities_desc"
       stats={[
-        { value: parts.length, label: 'parts' },
-        { value: totalEntries.toLocaleString(), label: 'entries' },
+        { value: parts.length, label: 'parts', labelKey: 'home.parts_label' },
+        { value: totalEntries.toLocaleString(), label: 'entries', labelKey: 'home.entries_label' },
       ]}
     />
 
