@@ -142,45 +142,61 @@ export const messages = {
     "page": {
       "home": {
         "title": "ISQ Browser",
+        "browser_title": "ISQ Browser — ISO 80000 & IEC 80000 Quantities and Units",
         "subtitle": "The International System of Quantities"
       },
       "quantities": {
         "title": "Quantities",
+        "browser_title": "Quantities — ISO 80000 & IEC 80000",
         "description": "Browse all quantities defined in the ISO 80000 & IEC 80000 series."
       },
       "kinds": {
         "title": "Kinds of Quantity",
+        "browser_title": "Kinds of Quantity — ISQ Browser",
         "description": "Browse quantities by their kind — grouped by dimension."
       },
       "math": {
         "title": "Mathematical Notation",
+        "browser_title": "Mathematical Notation — ISO 80000 & IEC 80000",
         "description": "Mathematical signs, symbols, and operators defined in Part 2."
       },
       "units": {
         "title": "Units",
+        "browser_title": "Units Database — ISQ Browser",
         "description": "Browse all measurement units."
       },
       "dimensions": {
         "title": "Dimensions",
+        "browser_title": "Dimensions — ISQ Browser",
         "description": "Browse all dimensions defined in the ISO 80000 & IEC 80000 series."
       },
       "about": {
-        "title": "About ISO 80000 & IEC 80000"
+        "title": "About ISO 80000 & IEC 80000",
+        "browser_title": "About ISO 80000 & IEC 80000 — ISQ Browser"
       },
       "methodology": {
-        "title": "Methodology"
+        "title": "Methodology",
+        "browser_title": "Methodology — ISQ Browser"
       },
       "terminology": {
-        "title": "Terminology"
+        "title": "Terminology",
+        "browser_title": "Terminology — ISQ Browser"
       },
       "ontology": {
-        "title": "Ontology"
+        "title": "Ontology",
+        "browser_title": "Ontology Browser — ISQ Browser"
       },
       "documents": {
-        "title": "Publications"
+        "title": "Publications",
+        "browser_title": "Documents — ISQ Browser"
       },
       "reference": {
-        "title": "Reference"
+        "title": "Reference",
+        "browser_title": "Reference — ISQ Browser"
+      },
+      "not_found": {
+        "title": "Not Found",
+        "browser_title": "Not Found — ISQ Browser"
       }
     },
     "badge": {
@@ -394,45 +410,61 @@ export const messages = {
     "page": {
       "home": {
         "title": "Navigateur ISQ",
+        "browser_title": "Navigateur ISQ — ISO 80000 & CEI 80000 Grandeurs et unités",
         "subtitle": "Le Système international des grandeurs"
       },
       "quantities": {
         "title": "Grandeurs",
+        "browser_title": "Grandeurs — ISO 80000 & CEI 80000",
         "description": "Parcourir toutes les grandeurs définies dans la série ISO 80000 & CEI 80000."
       },
       "kinds": {
         "title": "Types de grandeurs",
+        "browser_title": "Types de grandeurs — Navigateur ISQ",
         "description": "Parcourir les grandeurs par type — regroupées par dimension."
       },
       "math": {
         "title": "Notation mathématique",
+        "browser_title": "Notation mathématique — ISO 80000 & CEI 80000",
         "description": "Signes et symboles mathématiques définis dans la Partie 2."
       },
       "units": {
         "title": "Unités",
+        "browser_title": "Base de données des unités — Navigateur ISQ",
         "description": "Parcourir toutes les unités de mesure."
       },
       "dimensions": {
         "title": "Dimensions",
+        "browser_title": "Dimensions — Navigateur ISQ",
         "description": "Parcourir toutes les dimensions définies dans la série ISO 80000 & CEI 80000."
       },
       "about": {
-        "title": "À propos d'ISO 80000 & CEI 80000"
+        "title": "À propos d'ISO 80000 & CEI 80000",
+        "browser_title": "À propos d'ISO 80000 & CEI 80000 — Navigateur ISQ"
       },
       "methodology": {
-        "title": "Méthodologie"
+        "title": "Méthodologie",
+        "browser_title": "Méthodologie — Navigateur ISQ"
       },
       "terminology": {
-        "title": "Terminologie"
+        "title": "Terminologie",
+        "browser_title": "Terminologie — Navigateur ISQ"
       },
       "ontology": {
-        "title": "Ontologie"
+        "title": "Ontologie",
+        "browser_title": "Navigateur d'ontologie — Navigateur ISQ"
       },
       "documents": {
-        "title": "Publications"
+        "title": "Publications",
+        "browser_title": "Documents — Navigateur ISQ"
       },
       "reference": {
-        "title": "Référence"
+        "title": "Référence",
+        "browser_title": "Référence — Navigateur ISQ"
+      },
+      "not_found": {
+        "title": "Non trouvé",
+        "browser_title": "Non trouvé — Navigateur ISQ"
       }
     },
     "badge": {

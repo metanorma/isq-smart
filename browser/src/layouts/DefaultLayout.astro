@@ -17,7 +17,7 @@ const pathname = Astro.url.pathname
 const isActivePath = (path: string) => isActive(pathname, path)
 ---
 
-<BaseLayout title={Astro.props.title} description={Astro.props.description}>
+<BaseLayout title={Astro.props.title} titleKey={Astro.props.titleKey} description={Astro.props.description}>
   <div class="min-h-screen flex flex-col bg-slate-50 dark:bg-dark-950 transition-colors">
     <header class="sticky top-0 z-40 border-b bg-white dark:bg-dark-900 border-slate-200/60 dark:border-dark-600/60">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
