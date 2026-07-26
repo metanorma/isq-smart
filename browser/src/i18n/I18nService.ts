@@ -15,9 +15,7 @@ export class I18nService {
     const lang = this.store.get()
     if (typeof document !== 'undefined') {
       document.documentElement.lang = lang.htmlLang
-      requestAnimationFrame(() => {
-        this.translator.translate(document.body, lang)
-      })
+      requestAnimationFrame(() => this.applyTranslations(lang))
     }
     return lang
   }
@@ -26,14 +24,19 @@ export class I18nService {
     this.store.set(lang)
     if (typeof document !== 'undefined') {
       document.documentElement.lang = lang.htmlLang
-      this.translator.translate(document.body, lang)
+      this.applyTranslations(lang)
       document.dispatchEvent(new CustomEvent('language-change', { detail: { lang: lang.htmlLang } }))
     }
   }
 
   apply(root: HTMLElement): void {
-    const lang = this.store.get()
-    this.translator.translate(root, lang)
+    this.translator.translate(root, this.store.get())
+  }
+
+  private applyTranslations(lang: Language): void {
+    if (typeof document === 'undefined') return
+    this.translator.translate(document.head, lang)
+    this.translator.translate(document.body, lang)
   }
 }
 
@@ -42,8 +45,7 @@ export function createI18nService(
   lookup: MessageLookup,
   textMatcher: TextMatcher,
 ): I18nService {
-  const translator = new DomTranslator(lookup, textMatcher)
-  return new I18nService(store, translator)
+  return new I18nService(store, new DomTranslator(lookup, textMatcher))
 }
 
 export { ENG }
