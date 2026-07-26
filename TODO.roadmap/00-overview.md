@@ -10,14 +10,14 @@
 
 | # | Title | Priority | Status |
 |---|-------|----------|--------|
-| 01 | [eng/fra first-class language architecture](01-eng-fra-first-class.md) | P0 | pending |
-| 02 | [Deepen i18n module: split store, lookup, DOM translator](02-i18n-module-deepening.md) | P0 | pending |
-| 03 | [Deepen entryViewModel into composed resolvers](03-entry-view-model-deepening.md) | P1 | pending |
-| 04 | [Deepen PartRegistry into catalog + router + summary](04-part-registry-deepening.md) | P1 | pending |
+| 01 | [eng/fra first-class language architecture](01-eng-fra-first-class.md) | P0 | done (Language.ts) |
+| 02 | [Deepen i18n module: split store, lookup, DOM translator](02-i18n-module-deepening.md) | P0 | done |
+| 03 | [Deepen entryViewModel into composed resolvers](03-entry-view-model-deepening.md) | P1 | done (EntryContentRenderer, EntryAccentResolver) |
+| 04 | [Deepen PartRegistry into catalog + router + summary](04-part-registry-deepening.md) | P1 | done |
 | 05 | [Unify math/quantities detail page templates](05-unified-detail-page.md) | P1 | pending |
 | 06 | [MDX content collections per locale for long-form pages](06-mdx-content-collections.md) | P2 | pending |
-| 07 | [Full data-i18n coverage on all 33 pages](07-full-i18n-page-coverage.md) | P2 | pending |
-| 08 | [Specs: comprehensive test coverage for new modules](08-specs-coverage.md) | P1 | pending |
+| 07 | [Full data-i18n coverage on all 33 pages](07-full-i18n-page-coverage.md) | P2 | in progress |
+| 08 | [Specs: comprehensive test coverage for new modules](08-specs-coverage.md) | P1 | done (554 tests) |
 
 ## Principles Applied
 - **OCP**: New languages/pages/features added by extension, not modification
