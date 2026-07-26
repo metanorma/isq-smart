@@ -14,10 +14,14 @@
 | 02 | [Deepen i18n module: split store, lookup, DOM translator](02-i18n-module-deepening.md) | P0 | done |
 | 03 | [Deepen entryViewModel into composed resolvers](03-entry-view-model-deepening.md) | P1 | done (EntryContentRenderer, EntryAccentResolver) |
 | 04 | [Deepen PartRegistry into catalog + router + summary](04-part-registry-deepening.md) | P1 | done |
-| 05 | [Unify math/quantities detail page templates](05-unified-detail-page.md) | P1 | pending |
+| 05 | [Unify math/quantities detail page templates](05-unified-detail-page.md) | P1 | done (via 11: component extraction) |
 | 06 | [MDX content collections per locale for long-form pages](06-mdx-content-collections.md) | P2 | pending |
 | 07 | [Full data-i18n coverage on all 33 pages](07-full-i18n-page-coverage.md) | P2 | in progress |
-| 08 | [Specs: comprehensive test coverage for new modules](08-specs-coverage.md) | P1 | done (554 tests) |
+| 08 | [Specs: comprehensive test coverage for new modules](08-specs-coverage.md) | P1 | done (562 tests) |
+| 09 | [Component-level i18n: PageHero, Breadcrumb](09-component-i18n.md) | P2 | pending |
+| 10 | [Serialization deepening: JSON-LD vs Turtle](10-serialization-deepening.md) | P1 | done |
+| 11 | [Entry detail shared components](11-entry-detail-components.md) | P1 | done |
+| 12 | [PathResolver centralized URL construction](12-path-resolver.md) | P1 | done |
 
 ## Principles Applied
 - **OCP**: New languages/pages/features added by extension, not modification
