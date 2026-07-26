@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "predev": "node scripts/render-math.mjs",
+    "predev": "node scripts/generate-messages.mjs && node scripts/render-math.mjs",
     "dev": "astro dev",
-    "prebuild": "node scripts/render-math.mjs",
+    "prebuild": "node scripts/generate-messages.mjs && node scripts/render-math.mjs",
     "build": "astro build",
     "build:check": "astro build && astro check",
     "preview": "astro preview",

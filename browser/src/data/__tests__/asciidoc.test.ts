@@ -64,6 +64,13 @@ describe('render', () => {
     const result = render('[stem%unnumbered]\n++++\nx\n++++', cache)
     expect(result).not.toContain('<p><div')
   })
+
+  it('sets displaystyle=false on inline math (prevents line breaks)', () => {
+    const cache = { 'x': '<math display="inline"><mstyle displaystyle="true"><mi>x</mi></mstyle></math>' }
+    const result = render('Value stem:[x] here', cache)
+    expect(result).toContain('displaystyle="false"')
+    expect(result).not.toContain('displaystyle="true"')
+  })
 })
 
 describe('renderInline', () => {
