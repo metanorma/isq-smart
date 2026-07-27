@@ -1,0 +1,30 @@
+---
+title: Reference
+locale: en
+order: 1
+---
+
+## API & Linked Data Reference
+
+The ISQ Browser exposes structured data for each entry, both as inline JSON-LD (in the page) and as downloadable `.jsonld` / `.ttl` files.
+
+### Inline JSON-LD
+
+Every entry page embeds a `<script type="application/ld+json">` block containing the same structured data as the downloadable files.
+
+### Downloadable Formats
+
+- **`.jsonld`** — JSON-LD document, suitable for any JSON-LD processor
+- **`.ttl`** — RDF Turtle, the standard RDF exchange format
+
+### Identifiers
+
+Each entry has stable identifiers:
+
+- **ISQ qname** — `isq:{part-key}-{entry-num}` (e.g., `isq:4-1`)
+- **ISO/IEC URN** — RFC 5141 conformant (`urn:iso:std:iso-iec:80000:...`)
+- **Part URN** — Identifies the ISO/IEC document part
+
+### Search
+
+The global search bar (press `/`) searches across all entries by number, name, symbol, definition, and unit. Filtering by domain is supported via the domain tabs.
