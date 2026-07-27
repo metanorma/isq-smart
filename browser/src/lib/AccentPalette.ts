@@ -1,0 +1,89 @@
+import type { PartMeta } from '../data/types'
+
+const palettes: Record<string, { from: string; to: string }> = {
+  violet:  { from: '#7c3aed', to: '#5b21b6' },
+  sky:     { from: '#0284c7', to: '#0369a1' },
+  slate:   { from: '#475569', to: '#334155' },
+  orange:  { from: '#ea580c', to: '#c2410c' },
+  amber:   { from: '#d97706', to: '#b45309' },
+  yellow:  { from: '#ca8a04', to: '#a16207' },
+  teal:    { from: '#0d9488', to: '#0f766e' },
+  emerald: { from: '#059669', to: '#047857' },
+  cyan:    { from: '#0891b2', to: '#0e7490' },
+  indigo:  { from: '#6366f1', to: '#4f46e5' },
+  rose:    { from: '#e11d48', to: '#be123c' },
+  blue:    { from: '#2563eb', to: '#1d4ed8' },
+}
+
+const DEFAULT = palettes.blue
+
+const neonPalettes: Record<string, { from: string; to: string }> = {
+  violet:  { from: '#a78bfa', to: '#8b5cf6' },
+  sky:     { from: '#38bdf8', to: '#0ea5e9' },
+  slate:   { from: '#94a3b8', to: '#64748b' },
+  orange:  { from: '#fb923c', to: '#f97316' },
+  amber:   { from: '#fbbf24', to: '#f59e0b' },
+  yellow:  { from: '#facc15', to: '#eab308' },
+  teal:    { from: '#2dd4bf', to: '#14b8a6' },
+  emerald: { from: '#34d399', to: '#10b981' },
+  cyan:    { from: '#22d3ee', to: '#06b6d4' },
+  indigo:  { from: '#818cf8', to: '#6366f1' },
+  rose:    { from: '#fb7185', to: '#f43f5e' },
+  blue:    { from: '#60a5fa', to: '#3b82f6' },
+}
+
+function resolve(part: PartMeta) {
+  return palettes[part.accent ?? 'blue'] ?? DEFAULT
+}
+
+function hexToRgba(hex: string, alpha: number): string {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
+function hexOpacity(opacity: number): string {
+  return Math.round(opacity * 255).toString(16).padStart(2, '0')
+}
+
+export class AccentPalette {
+  static colors(part: PartMeta): { from: string; to: string } {
+    const p = resolve(part)
+    return { from: p.from, to: p.to }
+  }
+
+  static gradient(part: PartMeta, deg = 135): string {
+    const { from, to } = this.colors(part)
+    return `linear-gradient(${deg}deg, ${from}, ${to})`
+  }
+
+  static shadow(part: PartMeta, opacity = 0.25): string {
+    const { from } = this.colors(part)
+    return `0 8px 24px -4px ${from}${hexOpacity(opacity)}`
+  }
+
+  static rgba(part: PartMeta, alpha: number): string {
+    return hexToRgba(this.colors(part).from, alpha)
+  }
+
+  static hoverTint(part: PartMeta): string {
+    return `${this.colors(part).from}08`
+  }
+
+  static glow(part: PartMeta, opacity = 0.08, blur = 100): Record<string, string> {
+    const { from } = this.colors(part)
+    return {
+      background: `radial-gradient(circle at 70% 30%, ${hexToRgba(from, opacity)}, transparent ${blur}px)`,
+    }
+  }
+
+  static headerBg(part: PartMeta): Record<string, string> {
+    const { from } = this.colors(part)
+    return { background: `linear-gradient(135deg, ${from}06, transparent 60%)` }
+  }
+
+  static neon(part: PartMeta): { from: string; to: string } {
+    return neonPalettes[part.accent ?? 'blue'] ?? neonPalettes.blue
+  }
+}
