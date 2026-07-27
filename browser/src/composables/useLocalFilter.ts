@@ -1,18 +1,9 @@
-/**
- * Shared composable for local search/filter/highlight in browser components.
- * Eliminates duplicated search input + filter + highlight logic across
- * EntryBrowser, PartEntryList, UnitBrowser, and DimensionBrowser.
- */
-
 import { ref, computed, type Ref } from 'vue'
+import { LocalFilter } from '../lib/LocalFilter'
 import { highlightText } from '../lib/text'
 
-export interface FilterableItem {
-  [key: string]: unknown
-}
-
 export function useLocalFilter<
-  T extends FilterableItem,
+  T,
   Fields extends keyof T & string,
 >(
   items: Ref<T[]> | T[],
@@ -21,26 +12,17 @@ export function useLocalFilter<
 ) {
   const searchQuery = ref('')
   const showCount = ref(options?.pageSize ?? 60)
-
   const sourceItems = 'value' in items ? items : { value: items }
 
   const filtered = computed(() => {
-    const q = searchQuery.value.toLowerCase().trim()
-    if (!q) return sourceItems.value
-
-    return sourceItems.value.filter(item =>
-      searchFields.some(field => {
-        const val = item[field]
-        if (val == null) return false
-        if (Array.isArray(val)) return val.some(v => String(v).toLowerCase().includes(q))
-        return String(val).toLowerCase().includes(q)
-      }),
-    )
+    const all = sourceItems.value
+    const q = searchQuery.value
+    if (!q.trim()) return all
+    return new LocalFilter(all, searchFields).filter(q)
   })
 
   const visibleItems = computed(() => filtered.value.slice(0, showCount.value))
   const hasMore = computed(() => showCount.value < filtered.value.length)
-
   const isBrowsing = computed(() => !searchQuery.value.trim())
 
   function showMore() {
