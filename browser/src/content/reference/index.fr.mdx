@@ -1,0 +1,30 @@
+---
+title: Référence
+locale: fr
+order: 1
+---
+
+## Référence API et données liées
+
+Le Navigateur ISQ expose des données structurées pour chaque entrée, à la fois en JSON-LD inline (dans la page) et en fichiers téléchargeables `.jsonld` / `.ttl`.
+
+### JSON-LD inline
+
+Chaque page d'entrée intègre un bloc `<script type="application/ld+json">` contenant les mêmes données structurées que les fichiers téléchargeables.
+
+### Formats téléchargeables
+
+- **`.jsonld`** — Document JSON-LD, compatible avec tout processeur JSON-LD
+- **`.ttl`** — RDF Turtle, le format standard d'échange RDF
+
+### Identifiants
+
+Chaque entrée a des identifiants stables :
+
+- **qname ISQ** — `isq:{clé-partie}-{num-entrée}` (par ex. `isq:4-1`)
+- **URN ISO/CEI** — Conforme à la RFC 5141 (`urn:iso:std:iso-iec:80000:...`)
+- **URN de partie** — Identifie la partie du document ISO/CEI
+
+### Recherche
+
+La barre de recherche globale (appuyez sur `/`) cherche dans toutes les entrées par numéro, nom, symbole, définition et unité. Le filtrage par domaine est possible via les onglets de domaine.
