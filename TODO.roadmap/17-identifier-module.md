@@ -1,6 +1,12 @@
 # 17 — Identifier module: consolidate URN and qname generation
 
-## Problem
+## Status: Evaluated — current separation is sufficient
+
+The current modules (urn.ts, ontologyConfig.ts) are already well-organized
+with clear MECE boundaries. A barrel Identifier module would add indirection
+without improving depth or locality.
+
+Deferred unless a new identifier type emerges that doesn't fit either module.
 URN and qname generation is scattered across:
 - `src/data/urn.ts` — `partUrn()`, `entryUrn()`, `unitUrns()`, `dimensionUrns()`, `entryDualUrn()`
 - `src/data/ontologyConfig.ts` — `partQname()`, `entryQname()`
