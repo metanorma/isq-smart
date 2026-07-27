@@ -17,7 +17,7 @@
 | 05 | [Unify math/quantities detail page templates](05-unified-detail-page.md) | P1 | done (via 11: component extraction) |
 | 06 | [MDX content collections per locale for long-form pages](06-mdx-content-collections.md) | P2 | infrastructure done |
 | 07 | [Full data-i18n coverage on all 33 pages](07-full-i18n-page-coverage.md) | P2 | in progress |
-| 08 | [Specs: comprehensive test coverage for new modules](08-specs-coverage.md) | P1 | done (576 tests) |
+| 08 | [Specs: comprehensive test coverage for new modules](08-specs-coverage.md) | P1 | done (586 tests) |
 | 09 | [Component-level i18n: PageHero, Breadcrumb](09-component-i18n.md) | P2 | done |
 | 10 | [Serialization deepening: JSON-LD vs Turtle](10-serialization-deepening.md) | P1 | done |
 | 11 | [Entry detail shared components](11-entry-detail-components.md) | P1 | done |
@@ -25,7 +25,7 @@
 | 13 | [EntryModel deepening](13-entry-model-deepening.md) | P1 | done |
 | 14 | [AccentPalette purification](14-accent-palette-purification.md) | P1 | done |
 | 15 | [Build pipeline formalization](15-build-pipeline-formalization.md) | P2 | pending |
-| 16 | [Search system purification](16-search-purification.md) | P2 | pending |
+| 16 | [Search system purification](16-search-purification.md) | P2 | done |
 
 ## Principles Applied
 - **OCP**: New languages/pages/features added by extension, not modification
