@@ -1,24 +1,26 @@
 # 15 — Build pipeline formalization
 
-## Problem
-`build/stages/` has 10+ loosely organized functions. Each stage takes
-different parameters — there's no uniform interface. The orchestrator
-(`yaml-data-plugin.ts`) calls them in sequence with ad-hoc wiring.
+## Status: Evaluated — current approach is sufficient
 
-## Solution
-Define a `BuildStage` interface:
-```ts
-export interface BuildStage {
-  readonly name: string
-  execute(ctx: BuildContext): Promise<StageResult>
-}
-```
+## Analysis
+The build pipeline stages are already well-separated functions with explicit
+inputs/outputs:
+- `loadEntries(paths)` → `{ quantities, math }`
+- `filterEntries(raw, ctx)` → filtered entries
+- `MathCollector.collect/render` → caches
+- `buildParts(raw, caches, ctx)` → TS files
+- etc.
 
-Each stage becomes a class implementing `BuildStage`. The orchestrator
-runs stages in declared order, passing the shared `BuildContext`.
+Each function is independently testable and the orchestrator threads data
+explicitly between stages. The BuildContext already centralizes paths,
+exclusion checks, and route accumulation.
 
-## Benefits
-- **Uniform interface**: every stage looks the same to the orchestrator
-- **Testable in isolation**: each stage takes a context, returns a result
-- **Composable**: stages can be reordered or skipped without ad-hoc wiring
-- **Observable**: stage name, duration, and result are loggable uniformly
+## Decision
+Adding a `BuildStage` class interface would wrap each function in a class
+with a `run(ctx)` method, but:
+- **Deletion test**: deleting the class wrapper doesn't scatter complexity
+- The functions already have the right depth (small interface, significant behavior)
+- The orchestrator is the only caller — no polymorphism benefit
+
+Formalization deferred. If stages need polymorphic dispatch (e.g.,
+conditional stages, parallel execution), revisit this decision.
