@@ -26,10 +26,10 @@
 | 14 | [AccentPalette purification](14-accent-palette-purification.md) | P1 | done |
 | 15 | [Build pipeline formalization](15-build-pipeline-formalization.md) | P2 | evaluated — sufficient |
 | 16 | [Search system purification](16-search-purification.md) | P2 | done |
-| 17 | [Identifier module](17-identifier-module.md) | P2 | pending |
-| 18 | [DataProvider pattern](18-data-provider.md) | P2 | pending |
+| 17 | [Identifier module](17-identifier-module.md) | P2 | evaluated — sufficient |
+| 18 | [DataProvider pattern](18-data-provider.md) | P2 | done |
 | 19 | [LocalFilter purification](19-local-filter-purification.md) | P2 | done |
-| 20 | [PartKey class](20-part-key-class.md) | P3 | pending |
+| 20 | [PartKey class](20-part-key-class.md) | P3 | evaluated — sufficient |
 
 ## Principles Applied
 - **OCP**: New languages/pages/features added by extension, not modification
