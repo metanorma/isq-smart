@@ -30,6 +30,7 @@
 | 18 | [DataProvider pattern](18-data-provider.md) | P2 | done |
 | 19 | [LocalFilter purification](19-local-filter-purification.md) | P2 | done |
 | 20 | [PartKey class](20-part-key-class.md) | P3 | evaluated — sufficient |
+| 21 | [Remaining page data-i18n coverage](21-remaining-page-i18n.md) | P2 | in progress (mechanical) |
 
 ## Principles Applied
 - **OCP**: New languages/pages/features added by extension, not modification
