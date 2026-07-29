@@ -41,48 +41,66 @@ const navCards = [
   {
     href: '/ontology/diagram',
     title: 'Class Diagram',
+    titleKey: 'ontology.class_diagram',
     count: `${classCount} classes`,
+    countKey: 'ontology.classes',
     description: 'Visual class hierarchy tree — click nodes to expand and collapse subclasses.',
+    descriptionKey: 'ontology.class_diagram_desc',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5M7.5 3v18m9-18v18"/></svg>`,
     accent: 'brand',
   },
   {
     href: '/ontology/properties',
     title: 'Properties',
+    titleKey: 'ontology.properties',
     count: `${totalPropCount} properties`,
+    countKey: 'ontology.properties_count',
     description: 'Object, datatype, and annotation properties connecting classes and values.',
+    descriptionKey: 'ontology.properties_desc',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011 2.998M15 14H5m0 0L3.75 12.75M5 14l-1.25 1.25M19 14h-4m0 0l-1.25-1.25M15 14l1.25 1.25M5 5h14M5 5l-1.25 1.25M5 5L3.75 3.75M19 5l1.25 1.25M19 5l1.25-1.25"/></svg>`,
     accent: 'green',
   },
   {
     href: '/ontology/concepts',
     title: 'SKOS Concepts',
+    titleKey: 'ontology.concepts',
     count: `${conceptCount} concepts`,
+    countKey: 'ontology.concepts_count',
     description: 'SKOS concepts and concept schemes — controlled vocabularies and taxonomies.',
+    descriptionKey: 'ontology.concepts_desc',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z"/><path stroke-linecap="round" stroke-linejoin="round" d="M6 6h.008v.008H6V6z"/></svg>`,
     accent: 'teal',
   },
   {
     href: '/ontology/shapes',
     title: 'SHACL Shapes',
+    titleKey: 'ontology.shapes',
     count: `${shapeCount} shapes`,
+    countKey: 'ontology.shapes_count',
     description: 'SHACL validation shapes — constraints that enforce structural rules on data.',
+    descriptionKey: 'ontology.shapes_desc',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`,
     accent: 'purple',
   },
   {
     href: '/ontology/individuals',
     title: 'Named Individuals',
+    titleKey: 'ontology.individuals',
     count: `${individualCount} individuals`,
+    countKey: 'ontology.individuals_count',
     description: 'Named individuals — concrete instances of ontology classes.',
+    descriptionKey: 'ontology.individuals_desc',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>`,
     accent: 'orange',
   },
   {
     href: '/ontology/statistics',
     title: 'Statistics',
+    titleKey: 'ontology.statistics',
     count: `${allEntities.length} entities`,
+    countKey: 'ontology.entities',
     description: 'Charts and summary metrics — entity counts by type, namespace distribution.',
+    descriptionKey: 'ontology.statistics_desc',
     icon: `<svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>`,
     accent: 'indigo',
   },
@@ -183,10 +201,10 @@ const accentClasses: Record<string, { box: string; icon: string; hover: string }
                 </div>
                 <div class="min-w-0 flex-1">
                   <div class="flex items-center gap-2">
-                    <h3 class={`text-sm font-bold text-slate-900 dark:text-slate-100 transition-colors ${accent.hover}`}>{card.title}</h3>
+                    <h3 class={`text-sm font-bold text-slate-900 dark:text-slate-100 transition-colors ${accent.hover}`} data-i18n={card.titleKey}>{card.title}</h3>
                   </div>
-                  <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-0.5">{card.count}</div>
-                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed">{card.description}</p>
+                  <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider mt-0.5"><span class="tabular-nums">{card.count.split(' ')[0]}</span> <span data-i18n={card.countKey}>{card.count.split(' ')[1]}</span></div>
+                  <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 leading-relaxed" data-i18n={card.descriptionKey}>{card.description}</p>
                 </div>
                 <svg class={`w-4 h-4 text-slate-300 dark:text-dark-500 transition-all flex-shrink-0 mt-1 group-hover:translate-x-0.5 ${accent.hover}`} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
