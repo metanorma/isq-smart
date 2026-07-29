@@ -18,6 +18,13 @@ en:
   action:
     search: Search entries…
     search_short: Search
+    search_placeholder: "Search quantities, symbols, definitions, units..."
+    search_no_results: 'No results found'
+    search_try: Try searching for a quantity name, symbol, or unit
+    search_navigate: Navigate
+    search_open: Open
+    search_close: Close
+    search_type_hint: Type to search across all entries
     previous: Previous
     next: Next
     back_to_part: Back to part
@@ -265,6 +272,13 @@ fr:
   action:
     search: Rechercher des entrées…
     search_short: Rechercher
+    search_placeholder: "Rechercher des grandeurs, symboles, définitions, unités..."
+    search_no_results: Aucun résultat trouvé
+    search_try: Essayez de rechercher un nom de grandeur, un symbole ou une unité
+    search_navigate: Naviguer
+    search_open: Ouvrir
+    search_close: Fermer
+    search_type_hint: Tapez pour rechercher dans toutes les entrées
     previous: Précédent
     next: Suivant
     back_to_part: Retour à la partie

@@ -31,6 +31,13 @@ export class DomTranslator {
         el.textContent = translated
       }
     })
+
+    root.querySelectorAll<HTMLElement>('[data-i18n-placeholder]').forEach((el) => {
+      const key = el.dataset.i18nPlaceholder
+      if (!key) return
+      const translated = this.lookup.resolve(lang, key)
+      if (translated !== key) el.setAttribute('placeholder', translated)
+    })
   }
 
   private translateTextNodes(root: HTMLElement, lang: Language): void {

@@ -69,7 +69,7 @@ function getEntryName(r: SearchResult): string {
       <div class="search-modal relative max-w-2xl mx-auto bg-white dark:bg-dark-900 rounded-2xl shadow-2xl shadow-brand-950/20 overflow-hidden border border-slate-200/50 dark:border-dark-600/50 sm:mt-[10vh] sm:mx-4 fixed sm:relative inset-0 sm:inset-auto rounded-none sm:rounded-2xl">
         <div class="flex items-center gap-3 px-5 py-4 border-b border-slate-100 dark:border-dark-600">
           <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input ref="input" v-model="searchQuery" type="text" placeholder="Search quantities, symbols, definitions, units..." class="flex-1 text-sm bg-transparent outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-800 dark:text-slate-200" />
+          <input ref="input" v-model="searchQuery" type="text" data-i18n-placeholder="action.search_placeholder" placeholder="Search quantities, symbols, definitions, units..." class="flex-1 text-sm bg-transparent outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-800 dark:text-slate-200" />
           <kbd class="text-xs bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded-md text-slate-400 dark:text-slate-500 font-mono border border-slate-200 dark:border-dark-600 flex-shrink-0 hidden sm:inline">ESC</kbd>
           <button @click="closeSearch" class="sm:hidden p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
@@ -87,16 +87,16 @@ function getEntryName(r: SearchResult): string {
             >{{ d.label }}</button>
           </div>
           <div v-if="searchQuery && searchResults.length === 0" class="px-5 py-12 text-center text-slate-400 dark:text-slate-500 text-sm">
-            <p>No results found for "{{ searchQuery }}"</p>
-            <p class="mt-1 text-xs text-slate-300 dark:text-slate-600">Try searching for a quantity name, symbol, or unit</p>
+            <p><span data-i18n="action.search_no_results">No results found</span> for "{{ searchQuery }}"</p>
+            <p class="mt-1 text-xs text-slate-300 dark:text-slate-600" data-i18n="action.search_try">Try searching for a quantity name, symbol, or unit</p>
           </div>
           <div v-if="!searchQuery" class="px-5 py-8 text-center text-slate-400 dark:text-slate-500 text-sm">
             <div class="hidden sm:flex items-center justify-center gap-4 text-xs">
-              <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-dark-600">↑↓</kbd> Navigate</span>
-              <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-dark-600">↵</kbd> Open</span>
-              <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-dark-600">esc</kbd> Close</span>
+              <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-dark-600">↑↓</kbd> <span data-i18n="action.search_navigate">Navigate</span></span>
+              <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-dark-600">↵</kbd> <span data-i18n="action.search_open">Open</span></span>
+              <span class="flex items-center gap-1"><kbd class="bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded text-slate-500 dark:text-slate-400 font-mono border border-slate-200 dark:border-dark-600">esc</kbd> <span data-i18n="action.search_close">Close</span></span>
             </div>
-            <p class="sm:hidden text-xs">Type to search across all entries</p>
+            <p class="sm:hidden text-xs" data-i18n="action.search_type_hint">Type to search across all entries</p>
           </div>
           <div v-for="(r, idx) in searchResults" :key="r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
             <a :href="entryUrl(r.partKey, r.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
