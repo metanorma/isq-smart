@@ -196,7 +196,10 @@ export const messages = {
       },
       "not_found": {
         "title": "Not Found",
-        "browser_title": "Not Found — ISQ Browser"
+        "browser_title": "Not Found — ISQ Browser",
+        "heading": "Page not found",
+        "description": "The page you are looking for does not exist or has been moved.",
+        "back_home": "Back to Home"
       }
     },
     "badge": {
@@ -464,7 +467,10 @@ export const messages = {
       },
       "not_found": {
         "title": "Non trouvé",
-        "browser_title": "Non trouvé — Navigateur ISQ"
+        "browser_title": "Non trouvé — Navigateur ISQ",
+        "heading": "Page introuvable",
+        "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+        "back_home": "Retour à l'accueil"
       }
     },
     "badge": {
