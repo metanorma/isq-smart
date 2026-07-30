@@ -191,6 +191,25 @@ en:
       heading: Page not found
       description: The page you are looking for does not exist or has been moved.
       back_home: Back to Home
+  ontology:
+    class_diagram: Class Diagram
+    class_diagram_desc: Visual class hierarchy tree — click nodes to expand and collapse subclasses.
+    properties: Properties
+    properties_desc: Object, datatype, and annotation properties connecting classes and values.
+    concepts: SKOS Concepts
+    concepts_desc: SKOS concepts and concept schemes — controlled vocabularies and taxonomies.
+    shapes: SHACL Shapes
+    shapes_desc: SHACL validation shapes — constraints that enforce structural rules on data.
+    individuals: Named Individuals
+    individuals_desc: Named individuals — concrete instances of ontology classes.
+    statistics: Statistics
+    statistics_desc: Charts and summary metrics — entity counts by type, namespace distribution.
+    classes: classes
+    properties_count: properties
+    concepts_count: concepts
+    shapes_count: shapes
+    individuals_count: individuals
+    entities: entities
   badge:
     fr: FR
     bilingual: Bilingual EN/FR
