@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest'
 import { findByQname, linkTo, useClassHierarchy, relatedBadgeColor } from '../../composables/useOntology'
-import { ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES } from '../../data/ontologyConfig'
-import { ref, computed } from 'vue'
+import { ONTOLOGY_CLASSES } from '../../data/ontologyConfig'
+import { ref } from 'vue'
 
 describe('findByQname', () => {
   it('finds known entities', () => {

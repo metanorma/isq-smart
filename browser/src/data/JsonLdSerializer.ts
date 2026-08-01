@@ -1,5 +1,5 @@
 import type { Entry, PartMeta, QuantityEntry } from './types'
-import { NS, ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entryQname } from './ontologyConfig'
+import { ONTOLOGY_CLASSES, ONTOLOGY_PROPERTIES, tagToClass, partQname, entryQname } from './ontologyConfig'
 import type { KindOfQuantity, EntityConcept, ConceptHierarchy } from './ontology'
 import { partUrn, entryUrn } from './urn'
 import { jsonLdContextUrl } from './RdfContext'

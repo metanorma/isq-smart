@@ -1,6 +1,5 @@
 import { ontologyPrefixes } from '../data/generated/ontology'
 import { escapeTurtle, declareStandardPrefixes } from './turtle-writer'
-import { downloadFile } from './download'
 
 interface Entity {
   uri: string

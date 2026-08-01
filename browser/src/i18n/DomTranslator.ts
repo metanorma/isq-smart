@@ -3,7 +3,6 @@ import type { Language } from './Language'
 import type { MessageLookup } from './MessageLookup'
 import type { TextMatcher } from './TextMatcher'
 
-const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'CODE', 'PRE', 'KBD', 'INPUT', 'TEXTAREA'])
 
 export class DomTranslator {
   constructor(
