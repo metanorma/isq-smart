@@ -1,5 +1,4 @@
 import type { PartKey, PartData, Entry } from './types'
-import { partSummaries } from './generated/meta'
 
 interface PartModule {
   default: Entry[]
