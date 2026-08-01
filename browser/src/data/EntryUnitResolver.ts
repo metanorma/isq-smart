@@ -1,13 +1,11 @@
 import type { Entry, Lang } from './types'
+import { langValue } from './langValue'
 
 export class EntryUnitResolver {
   static name(entry: Entry, lang: Lang | 'both'): string {
     if (entry._tag !== 'quantity') return ''
-    const l = lang === 'both' ? 'en' : lang
-    return entry.units?.map(u => {
-      const um = u as unknown as Record<string, string>
-      return um[l] ?? um.en ?? u.en
-    }).join(', ') ?? ''
+    const l: Lang = lang === 'both' ? 'en' : lang
+    return entry.units?.map(u => langValue(u, l)).join(', ') ?? ''
   }
 
   static symbols(entry: Entry): string[] {
