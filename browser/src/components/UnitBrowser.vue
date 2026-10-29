@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { asset } from '../lib/asset'
-import { ref, computed, toRef } from 'vue'
+import { ref, computed, toRef, onMounted } from 'vue'
 import { partUrl, entryUrl, getPartMeta } from '../data/PartRegistry'
 import { symbolCache } from '../data/generated/domain-index'
 import { useLocalFilter } from '../composables/useLocalFilter'
@@ -32,6 +32,11 @@ const { searchQuery, filtered } = useLocalFilter(
   ['name', 'symbols', 'slug'],
 )
 searchQuery.value = props.initialQuery ?? ''
+
+onMounted(() => {
+  const q = new URLSearchParams(window.location.search).get('q')
+  if (q) searchQuery.value = q
+})
 
 const groupByPart = ref(false)
 

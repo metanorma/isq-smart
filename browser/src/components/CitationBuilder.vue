@@ -9,6 +9,7 @@ import { generateEntryJsonLd, jsonLdToTurtle } from '../data/serialization'
 import { entryUrl } from '../data'
 import { downloadFile } from '../lib/download'
 import { useToast } from '../composables/useToast'
+import { SITE_URL } from '../site.config'
 
 const toast = useToast()
 
@@ -22,7 +23,7 @@ const activeTab = ref<'url' | 'bibtex' | 'chicago' | 'ris' | 'turtle'>('url')
 const copied = ref(false)
 
 const urn = computed(() => entryUrn(props.entry, props.meta.partKey, props.edition))
-const url = computed(() => `https://iso80000.org${entryUrl(props.entry.partKey, props.entry.id)}`)
+const url = computed(() => `${SITE_URL}${entryUrl(props.entry.partKey, props.entry.id)}`)
 
 const bibtex = computed(() => generateBibTeX(props.entry, props.meta, props.edition))
 const chicago = computed(() => generateChicago(props.entry, props.meta, props.edition))

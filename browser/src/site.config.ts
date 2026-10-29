@@ -10,6 +10,9 @@ const EXCLUDED_PARTS: readonly string[] = []
 
 const excluded = new Set(EXCLUDED_PARTS)
 
+/** Canonical deployment origin (no base path — see astro.config `base`). */
+export const SITE_URL = 'https://metanorma.github.io'
+
 export const SiteConfig = {
   excludedParts: excluded,
 

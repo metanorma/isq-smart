@@ -1,6 +1,7 @@
 ---
 import '../styles/main.css'
 import { asset } from '../lib/asset'
+import { SITE_URL } from '../site.config'
 import { ClientRouter } from 'astro:transitions'
 
 interface Props {
@@ -8,18 +9,23 @@ interface Props {
   titleKey?: string
   description?: string
   pathname?: string
+  isErrorPage?: boolean
 }
 
 const {
   title,
   titleKey,
   description,
+  isErrorPage = false,
 
 } = Astro.props
 
 const resolvedTitle = title ?? 'ISQ Browser — ISO 80000 & IEC 80000 Quantities and Units'
 const resolvedDesc = description ?? 'Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser.'
 const ogTitle = resolvedTitle.split('—')[0].trim()
+const canonicalUrl = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site).href
+const ogImageUrl = `${SITE_URL}${asset('/apple-touch-icon.png')}`
+const seoUrlTags = isErrorPage ? null : { canonicalUrl, ogImageUrl }
 ---
 
 <!doctype html>
@@ -35,9 +41,13 @@ const ogTitle = resolvedTitle.split('—')[0].trim()
   <link rel="manifest" href={asset('/site.webmanifest')} />
   <title data-i18n={titleKey}>{resolvedTitle}</title>
   <meta name="description" content={resolvedDesc} />
+  {seoUrlTags && <link rel="canonical" href={seoUrlTags.canonicalUrl} />}
+  {isErrorPage && <meta name="robots" content="noindex" />}
   <meta property="og:title" content={ogTitle} />
-  <meta property="og:description" content={description} />
+  <meta property="og:description" content={resolvedDesc} />
   <meta property="og:type" content="website" />
+  {seoUrlTags && <meta property="og:url" content={seoUrlTags.canonicalUrl} />}
+  {seoUrlTags && <meta property="og:image" content={seoUrlTags.ogImageUrl} />}
   <meta name="twitter:card" content="summary" />
   <meta name="theme-color" content="#E30613" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />

@@ -38,7 +38,7 @@ import { asset } from '../lib/asset'
           <h3 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-3" data-i18n="footer.linked_data">Linked Data</h3>
           <ul class="space-y-2 text-xs">
             <li><a href="https://unitsml.org" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsML.org</a></li>
-            <li><a href="https://unitsml.org/schemas/" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsDB Schemas</a></li>
+            <li><a href="https://unitsml.org/unitsdb" class="text-white/50 hover:text-brand-300 transition-colors" target="_blank" rel="noopener">UnitsDB</a></li>
             <li><a :href="asset('/reference/urn-patterns')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.urn_identifiers">ISO-IEC URN identifiers</a></li>
             <li><a :href="asset('/ontology')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.jsonld_rdf">JSON-LD + RDF/Turtle vocabulary</a></li>
           </ul>

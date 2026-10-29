@@ -1,11 +1,13 @@
 import { defineConfig } from 'astro/config'
 import vue from '@astrojs/vue'
 import mdx from '@astrojs/mdx'
+import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import { existsSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { yamlDataPlugin } from './build/yaml-data-plugin'
 import { ontologyDataPlugin } from './build/ontology-data-plugin'
+import { SITE_URL } from './src/site.config'
 import type { BuildPaths } from './build/types'
 
 const here = import.meta.dirname
@@ -37,9 +39,10 @@ if (missingRepos.length) {
 }
 
 export default defineConfig({
+  site: SITE_URL,
   base: '/isq-smart/',
   output: 'static',
-  integrations: [vue(), mdx()],
+  integrations: [vue(), mdx(), sitemap()],
   vite: {
     plugins: [tailwindcss(), yamlDataPlugin(paths), ontologyDataPlugin(paths)],
     ssr: {
