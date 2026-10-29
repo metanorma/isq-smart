@@ -64,6 +64,7 @@ jobs:
             --offline
             --no-progress
             'linkcheck/isq-smart/**/*.html'
+            'linkcheck/isq-smart/*.xml'
           fail: true
 
   # External links are checked weekly and on demand; failures are
@@ -111,6 +112,7 @@ jobs:
           mkdir -p linkcheck
           cp -R browser/dist linkcheck/isq-smart
 
+      # --exclude: iec.ch, iso.org, electropedia.org return 403 to non-browser agents
       - name: Link Checker (external links)
         uses: lycheeverse/lychee-action@v2
         with:
@@ -120,8 +122,11 @@ jobs:
             --max-concurrency 8
             --timeout 20
             --max-retries 2
-            --include 'https?://.*'
+            --exclude 'https://(www\.)?iec\.ch/.*'
+            --exclude 'https://(www\.)?iso\.org/.*'
+            --exclude 'https://(www\.)?electropedia\.org/.*'
             'linkcheck/isq-smart/**/*.html'
+            'linkcheck/isq-smart/*.xml'
           fail: false
           output: lychee-report-external.md
 

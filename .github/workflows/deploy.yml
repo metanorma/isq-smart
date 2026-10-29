@@ -55,10 +55,8 @@ jobs:
       - name: Build
         run: cd browser && npm run build
 
-      - name: SPA fallback & .nojekyll
-        run: |
-          cp browser/dist/index.html browser/dist/404.html
-          touch browser/dist/.nojekyll
+      - name: .nojekyll
+        run: touch browser/dist/.nojekyll
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5

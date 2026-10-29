@@ -2,6 +2,10 @@ import { describe, it, expect } from 'vitest'
 import { generateBibTeX, generateChicago, generateRis } from '../citation'
 import type { Entry, PartMeta } from '../types'
 
+// Match the deployed base path so asset()-derived URLs in citations
+// resolve like they do in the production build.
+import.meta.env.BASE_URL = '/isq-smart/'
+
 function mkEntry(opts: { id: string; num: string; text?: string }): Entry {
   const text = opts.text ?? `Entry ${opts.num}`
   return {
@@ -42,7 +46,7 @@ describe('generateBibTeX', () => {
     expect(out).toContain('entry = {4-1 length}')
     expect(out).toContain('organization = {International Organization for Standardization}')
     expect(out).toContain('year = {2019}')
-    expect(out).toContain('url = {https://iso80000.org/quantities/part-3/4-1}')
+    expect(out).toContain('url = {https://metanorma.github.io/isq-smart/quantities/part-3/4-1}')
   })
 
   it('uses IEC publisher name and prefix for IEC parts', () => {
@@ -106,6 +110,6 @@ describe('generateRis', () => {
     const out = generateRis(e, isoMeta, '2019')
     expect(out).toContain('PB  - International Organization for Standardization')
     expect(out).toContain('PY  - 2019')
-    expect(out).toContain('UR  - https://iso80000.org/quantities/part-3/4-1')
+    expect(out).toContain('UR  - https://metanorma.github.io/isq-smart/quantities/part-3/4-1')
   })
 })

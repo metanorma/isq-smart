@@ -1,5 +1,6 @@
 import type { Entry, PartMeta } from './types'
-import { publisherOf } from './PartRegistry'
+import { publisherOf, entryUrl } from './PartRegistry'
+import { SITE_URL } from '../site.config'
 
 export type CitationFormat = 'bibtex' | 'chicago' | 'ris'
 
@@ -32,7 +33,7 @@ function buildContext(entry: Entry, meta: PartMeta, edition: string): CitationCo
   const prefix = pub === 'IEC' ? 'IEC' : 'ISO'
   const publisherFull = PUBLISHER_NAMES[pub] ?? PUBLISHER_NAMES.ISO
   const key = `iso80000-${meta.partKey}-${edNum}-${entry.num.replace(/[^a-zA-Z0-9]/g, '-')}`
-  const url = `https://iso80000.org/quantities/part-${meta.partKey}/${entry.id}`
+  const url = `${SITE_URL}${entryUrl(meta.partKey, entry.id)}`
   return { entry, meta, edition, edNum, name, publisher: prefix, publisherFull, prefix, key, url }
 }
 

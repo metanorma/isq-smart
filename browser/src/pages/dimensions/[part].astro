@@ -107,7 +107,7 @@ const isoEntries = dim ? dim.isoEntries.map(e => {
                   <span class="mx-1.5 text-indigo-400/30">&middot;</span>
                   <span class="font-mono">{dim.unitsmlId}</span>
                   <span class="mx-1.5 text-indigo-400/30">&middot;</span>
-                  <a href={`https://unitsml.org/unitsdb/dimensions/${dim.unitsmlId}`} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-200 transition-colors">
+                  <a href={`https://unitsml.org/unitsdb/dimensions/${dim.unitsmlId.replace(/:/g, '_')}/`} target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-indigo-300 hover:text-indigo-200 transition-colors">
                     <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
                     UnitsML
                   </a>
