@@ -3,6 +3,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import MermaidDiagram from '../../components/MermaidDiagram.vue'
 import { ontologyEntities } from '../../data/generated/ontology'
 import { generateOntologyDiagrams } from '../../lib/mermaidDiagram'
+import { asset } from '../../lib/asset'
 import type { OntologyEntityData } from '../../data/ontologyViewModel'
 
 const allEntities = ontologyEntities as unknown as readonly OntologyEntityData[]
@@ -22,7 +23,7 @@ const propertyCount = definedEntities.filter(e => e.type === 'objectProperty' ||
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
         <div class="max-w-3xl page-enter">
           <div class="flex items-center gap-2 text-xs text-emerald-300/60 mb-4">
-            <a href="/isq-smart/ontology" class="hover:text-emerald-200 transition-colors">Ontology</a>
+            <a href={asset('/ontology')} class="hover:text-emerald-200 transition-colors">Ontology</a>
             <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
             <span>Diagrams</span>
           </div>
@@ -65,7 +66,7 @@ const propertyCount = definedEntities.filter(e => e.type === 'objectProperty' ||
     ))}
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
-      <a href="/isq-smart/ontology/full.ttl" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-800/40 text-emerald-700 dark:text-emerald-400 text-sm font-medium hover:bg-emerald-100 dark:hover:bg-emerald-950/50 transition-colors">
+      <a href={asset('/ontology/full.ttl')} class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-800/40 text-emerald-700 dark:text-emerald-400 text-sm font-medium hover:bg-emerald-100 dark:hover:bg-emerald-950/50 transition-colors">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
         Download full ontology (Turtle)
       </a>

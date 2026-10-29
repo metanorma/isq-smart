@@ -5,6 +5,8 @@
  * Handles: block math, inline math, cross-references, paragraph breaks.
  */
 
+import { asset } from '../lib/asset'
+
 const BLOCK_STEM = /\[stem%unnumbered\]\n\+{4}\n([\s\S]*?)\n\+{4}/g
 const INLINE_STEM = /stem:\[([^\]]+)\]/g
 const ANY_XREF = /<<([^>]+)>>/g
@@ -32,7 +34,7 @@ export function render(text: string, mathCache: Record<string, string>, xrefs?: 
   result = result.replace(new RegExp(ANY_XREF.source, ANY_XREF.flags), (_, id) => {
     const ref = xrefs?.[id]
     if (ref?.href) {
-      return `<a class="xref" href="${ref.href}">${esc(ref.name)}</a>`
+      return `<a class="xref" href="${asset(ref.href)}">${esc(ref.name)}</a>`
     }
     return `<span class="xref-std">${esc(formatExternalRef(id))}</span>`
   })

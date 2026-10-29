@@ -123,7 +123,7 @@ defineProps<{
           <a
             v-for="rel in related"
             :key="rel.qname"
-            :href="rel.link ?? `/ontology/${rel.slug}`"
+            :href="rel.link ?? asset(`/ontology/${rel.slug}`)"
             class="text-xs font-medium px-2.5 py-1.5 rounded-lg border transition-colors inline-flex items-center gap-1.5"
             :class="[relatedBadgeColor(rel.qname).border, relatedBadgeColor(rel.qname).bg, relatedBadgeColor(rel.qname).text, 'hover:opacity-80']"
           >

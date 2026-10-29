@@ -128,7 +128,7 @@ const totalTerms = docs.reduce((s, d) => s + d.termCount, 0)
       <div class="grid gap-3">
         {docs.map((doc) => (
           <a
-            href={doc.link}
+            href={asset(doc.link)}
             class={`group flex items-center gap-5 px-5 py-4 rounded-xl border bg-white dark:bg-dark-800 hover:shadow-sm transition-all ${doc.publisher === 'IEC'
               ? 'border-iec-200/60 dark:border-iec-800/40 hover:border-iec-300 dark:hover:border-iec-700'
               : 'border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700'}`}

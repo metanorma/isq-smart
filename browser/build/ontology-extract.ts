@@ -434,6 +434,9 @@ export function generateExternalStubs(
   for (const qname of referencedQnames) {
     if (definedQnames.has(qname)) continue
     if (!qname.includes(':')) continue
+    // SHACL sequence/alternative paths (e.g. "a:b / c:d") are path expressions,
+    // not entity qnames — qnames never contain whitespace.
+    if (/\s/.test(qname)) continue
 
     const localName = qname.split(':').pop() || ''
     const meta = externalMeta[qname]

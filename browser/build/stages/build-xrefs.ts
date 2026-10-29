@@ -2,21 +2,28 @@ import { writeFileSync } from 'node:fs'
 import { resolve } from 'node:path'
 import type { RawEntry } from '../types'
 import { PART_TITLES } from '../shared'
+import { PartCatalog } from '../../src/data/PartCatalog'
+import { basePartKey } from '../../src/data/partKey'
 
 export function buildXrefs(
   allEntries: RawEntry[],
   generatedDir: string,
 ): { xrefMap: Record<string, { href?: string; name: string }>; reverseXref: Record<string, string[]> } {
   const xrefMap: Record<string, { href?: string; name: string }> = {}
+  const routablePartKeys = new Set(PartCatalog.getAllParts().map(p => p.partKey))
+  const documentPartKeys = new Set(PartCatalog.getAllDocuments().map(d => d.partKey))
   for (const entry of allEntries) {
     const pk = entry.part.toString()
-    const prefix = pk.startsWith('2-') ? '/math' : '/quantities'
+    const routePart = routablePartKeys.has(pk) ? pk : basePartKey(pk)
+    const meta = PartCatalog.getPartMeta(routePart)
+    const prefix = meta ? (meta.domain === 'math' ? '/math' : '/quantities') : (pk.startsWith('2-') ? '/math' : '/quantities')
     xrefMap[entry.id] = {
-      href: `${prefix}/part-${pk}/${entry.id}`,
+      href: `${prefix}/part-${routePart}/${entry.id}`,
       name: entry.designations[0]?.designation.en?.text ?? entry.id,
     }
   }
   for (const [num, title] of Object.entries(PART_TITLES)) {
+    if (!documentPartKeys.has(num)) continue
     xrefMap[`iso80000-${num}`] = { href: `/documents/part-${num}`, name: `ISO 80000-${num}: ${title}` }
     xrefMap[`iec80000-${num}`] = { href: `/documents/part-${num}`, name: `IEC 80000-${num}: ${title}` }
   }

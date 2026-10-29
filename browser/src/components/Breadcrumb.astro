@@ -1,4 +1,6 @@
 ---
+import { asset } from '../lib/asset'
+
 interface Crumb {
   label: string
   href?: string
@@ -17,7 +19,7 @@ const color = variant === 'light' ? 'text-slate-400 dark:text-slate-500' : 'text
     {items.map((item, i) => (
       <>
         {item.href ? (
-          <a href={item.href} data-i18n={item.i18nKey} class="hover:text-brand-200 transition-colors">{item.label}</a>
+          <a href={asset(item.href)} data-i18n={item.i18nKey} class="hover:text-brand-200 transition-colors">{item.label}</a>
         ) : (
           <span data-i18n={item.i18nKey}>{item.label}</span>
         )}
