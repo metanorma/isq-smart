@@ -4,10 +4,17 @@ on:
   push:
     branches: [main]
   pull_request:
+  schedule:
+    # Weekly, Mondays 06:00 UTC — external link check
+    - cron: '0 6 * * 1'
   workflow_dispatch:
 
 jobs:
-  link-check:
+  # Internal links must always resolve. The built site is staged under
+  # linkcheck/isq-smart/ to mirror the GitHub Pages project-site layout
+  # (https://metanorma.github.io/isq-smart/) — this catches links that
+  # miss the base path and only break after deployment.
+  internal-links:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -44,13 +51,83 @@ jobs:
       - name: Build site
         run: cd browser && npm run build
 
-      - name: Link Checker (internal links only)
+      - name: Stage dist as GitHub Pages layout
+        run: |
+          mkdir -p linkcheck
+          cp -R browser/dist linkcheck/isq-smart
+
+      - name: Link Checker (internal links)
         uses: lycheeverse/lychee-action@v2
         with:
           args: >-
-            --root-dir "$PWD/browser/dist"
+            --root-dir "$PWD/linkcheck"
+            --offline
             --no-progress
-            --exclude "mailto:"
-            --exclude "https?://.*"
-            "browser/dist/**/*.html"
+            'linkcheck/isq-smart/**/*.html'
+          fail: true
+
+  # External links are checked weekly and on demand; failures are
+  # reported but do not block CI (third-party availability is flaky).
+  external-links:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Checkout ISO/IEC 80000 source data
+        uses: actions/checkout@v7
+        with:
+          repository: metanorma/iso-iec-80000
+          path: iso-iec-80000
+          token: ${{ secrets.METANORMA_CI_PAT_TOKEN }}
+
+      - name: Checkout UnitsDB
+        uses: actions/checkout@v7
+        with:
+          repository: unitsml/unitsdb
+          path: unitsdb
+
+      - name: Checkout SmartSDU reference docs
+        uses: actions/checkout@v7
+        with:
+          repository: metanorma/sdu-smart
+          sparse-checkout: reference-docs
+          path: sdu-smart
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: browser/package-lock.json
+
+      - name: Install dependencies
+        run: cd browser && npm ci
+
+      - name: Build site
+        run: cd browser && npm run build
+
+      - name: Stage dist as GitHub Pages layout
+        run: |
+          mkdir -p linkcheck
+          cp -R browser/dist linkcheck/isq-smart
+
+      - name: Link Checker (external links)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --root-dir "$PWD/linkcheck"
+            --no-progress
+            --max-concurrency 8
+            --timeout 20
+            --max-retries 2
+            --include 'https?://.*'
+            'linkcheck/isq-smart/**/*.html'
           fail: false
+          output: lychee-report-external.md
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lychee-external-report
+          path: lychee-report-external.md

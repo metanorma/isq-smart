@@ -51,20 +51,33 @@ describe('buildXrefs', () => {
 
   it('routes math entries (part 2-x) to /math prefix', () => {
     const entries = [
-      makeEntry('math-thing', '2-1', 'math thing'),
+      makeEntry('math-thing', '2-10', 'math thing'),
     ]
 
     const { xrefMap } = buildXrefs(entries, tmpDir)
 
-    expect(xrefMap['math-thing'].href).toBe('/math/part-2-1/math-thing')
+    expect(xrefMap['math-thing'].href).toBe('/math/part-2-10/math-thing')
   })
 
-  it('creates document xref entries for all parts', () => {
+  it('routes unregistered sub-parts to their base part route', () => {
+    const entries = [
+      makeEntry('reynolds', '11-4', 'Reynolds number'),
+    ]
+
+    const { xrefMap } = buildXrefs(entries, tmpDir)
+
+    expect(xrefMap['reynolds'].href).toBe('/quantities/part-11/reynolds')
+  })
+
+  it('creates document xref entries only for parts with document pages', () => {
     const { xrefMap } = buildXrefs([], tmpDir)
 
-    expect(xrefMap['iso80000-1']).toEqual({
-      href: '/documents/part-1',
-      name: 'ISO 80000-1: General',
+    // Part 1 (General) has no document page in the dataset — must not link to it.
+    expect(xrefMap['iso80000-1']).toBeUndefined()
+    expect(xrefMap['iec80000-1']).toBeUndefined()
+    expect(xrefMap['iso80000-3']).toEqual({
+      href: '/documents/part-3',
+      name: 'ISO 80000-3: Space and time',
     })
     expect(xrefMap['iec80000-6']).toEqual({
       href: '/documents/part-6',

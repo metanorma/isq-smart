@@ -122,7 +122,7 @@ const related = computed(() => {
     items.push({
       qname: `Dimension: ${props.unit.dimensionRef}`,
       slug: '',
-      link: `/dimensions/${props.unit.dimensionSlug}`,
+      link: asset(`/dimensions/${props.unit.dimensionSlug}`),
     })
   }
   return items

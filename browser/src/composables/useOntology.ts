@@ -1,5 +1,6 @@
 import { computed, type MaybeRef, unref } from 'vue'
 import { ontologyEntities } from '../data/generated/ontology'
+import { asset } from '../lib/asset'
 import {
   ONTOLOGY_CLASSES,
   CLASS_BADGE_COLORS,
@@ -63,7 +64,7 @@ export function findByQname(qname: string): OntEntity | undefined {
 
 export function linkTo(qname: string): string {
   const e = entityMap.get(qname)
-  return e ? `/ontology/${e.slug}` : ''
+  return e ? asset(`/ontology/${e.slug}`) : ''
 }
 
 // ── Class hierarchy composable ──

@@ -16,6 +16,7 @@ import { units } from './generated/unitsdb'
 import { EntryContentRenderer, type EntryViewCaches } from './EntryContentRenderer'
 import { EntryAccentResolver, type EntryAccentStyle } from './EntryAccentResolver'
 import { renderInline } from './asciidoc'
+import { asset } from '../lib/asset'
 
 const unitSlugMap = new Map(units.map(u => [u.name, u.slug]))
 
@@ -151,5 +152,5 @@ export function renderDesignationText(text: string, mathCache: Record<string, st
  */
 export function unitLink(name: string): string {
   const slug = unitSlugMap.get(name)
-  return slug ? `/units/${slug}` : `/units?q=${encodeURIComponent(name)}`
+  return slug ? asset(`/units/${slug}`) : `${asset('/units')}?q=${encodeURIComponent(name)}`
 }
