@@ -63,6 +63,9 @@ const STANDARD_PREFIXES: PrefixDecl[] = [
   { prefix: 'rdf', uri: 'http://www.w3.org/1999/02/22-rdf-syntax-ns#' },
   { prefix: 'owl', uri: 'http://www.w3.org/2002/07/owl#' },
   { prefix: 'skos', uri: 'http://www.w3.org/2004/02/skos/core#' },
+  { prefix: 'sh', uri: 'http://www.w3.org/ns/shacl#' },
+  { prefix: 'dcterms', uri: 'http://purl.org/dc/terms/' },
+  { prefix: 'xsd', uri: 'http://www.w3.org/2001/XMLSchema#' },
 ]
 
 export function declareStandardPrefixes(): string {
