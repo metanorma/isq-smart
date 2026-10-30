@@ -22,7 +22,7 @@ export interface SearchResult {
   matchField: string
 }
 
-export type SearchDomain = 'all' | Domain
+export type SearchDomain = 'all' | Domain | 'ontology'
 
 const MATCH_FIELDS = ['number', 'name', 'symbol', 'definition', 'unit'] as const
 export type MatchField = typeof MATCH_FIELDS[number]

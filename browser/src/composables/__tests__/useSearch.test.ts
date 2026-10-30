@@ -29,6 +29,23 @@ describe('performSearch', () => {
     }
     searchDomain.value = 'all'
   })
+
+  it('appends ontology entities in the all domain', async () => {
+    await performSearch('MeasuredQuantity')
+    const ontology = searchResults.value.filter(r => r.kind === 'ontology')
+    expect(ontology.length).toBeGreaterThan(0)
+    expect(ontology[0]!.qname).toBe('isq:MeasuredQuantity')
+  })
+
+  it('returns only ontology results in the ontology domain', async () => {
+    searchDomain.value = 'ontology'
+    await performSearch('rod')
+    expect(searchResults.value.length).toBeGreaterThan(0)
+    for (const r of searchResults.value) {
+      expect(r.kind).toBe('ontology')
+    }
+    searchDomain.value = 'all'
+  })
 })
 
 describe('closeSearch', () => {
