@@ -97,6 +97,10 @@ export interface OntologyBuildEntity {
   // Individual-specific
   identifier?: string
   isPartOf?: string[]
+  /** Object-property assertions of an individual, e.g. dedicatedTo/characterizes */
+  assertions?: { predicate: string; objects: string[] }[]
+  /** Datatype-property values of an individual, e.g. hasValue/uncertainty */
+  literals?: { predicate: string; value: string }[]
 }
 
 /** Metadata for display rendering of each entity type */
@@ -383,6 +387,30 @@ export function classifyEntities(
         if (identifier) baseEntity.identifier = identifier
         const isPartOf = getObjects(subjectUri, 'http://purl.org/dc/terms/isPartOf')
         if (isPartOf.length) baseEntity.isPartOf = isPartOf.map(compact).filter((q) => q.includes(':'))
+
+        // Domain assertions: object properties within our namespaces become
+        // links; datatype properties become values.
+        const KNOWN = new Set(['rdf:type', 'dcterms:title', 'dcterms:identifier', 'dcterms:isPartOf'])
+        const assertionMap = new Map<string, string[]>()
+        const literalList: { predicate: string; value: string }[] = []
+        for (const { predicate, object } of subjects.get(subjectUri) ?? []) {
+          const pq = compact(predicate)
+          if (KNOWN.has(pq)) continue
+          if (!/^(isq|smart|ex):/.test(pq)) continue
+          if (object.termType === 'NamedNode') {
+            const oq = compact(object.value)
+            if (!oq.includes(':')) continue
+            const list = assertionMap.get(pq) ?? []
+            list.push(oq)
+            assertionMap.set(pq, list)
+          } else if (object.termType === 'Literal') {
+            literalList.push({ predicate: pq, value: object.value })
+          }
+        }
+        if (assertionMap.size) {
+          baseEntity.assertions = [...assertionMap].map(([predicate, objects]) => ({ predicate, objects }))
+        }
+        if (literalList.length) baseEntity.literals = literalList
         entities.push(baseEntity)
       }
     }
