@@ -6,42 +6,48 @@ import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
 import type { IsoUnit, UnitsmlYaml, UnitsmlUnit } from './types'
 
+function unitSlug(name: string): string {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+}
+
 export function buildUnits(
   qData: RawEntry[],
   unitsdbDir: string,
   ctx: BuildContext,
   generatedDir: string,
 ): IsoUnit[] {
-  const unitsByName = new Map<string, { name: string; symbols: Set<string>; quantities: { id: string; num: string; name: string; part: string }[]; parts: Set<string> }>()
+  // Key by slug, not raw name: the same unit can appear under name variants
+  // that differ only in line breaks, which must map to a single route.
+  const unitsBySlug = new Map<string, { name: string; symbols: Set<string>; quantities: { id: string; num: string; name: string; part: string }[]; parts: Set<string> }>()
   for (const e of qData) {
     for (const u of (e.units ?? [])) {
-      if (!unitsByName.has(u.en)) {
-        unitsByName.set(u.en, { name: u.en, symbols: new Set(), quantities: [], parts: new Set() })
+      const slug = unitSlug(u.en)
+      if (!unitsBySlug.has(slug)) {
+        unitsBySlug.set(slug, { name: u.en, symbols: new Set(), quantities: [], parts: new Set() })
       }
-      const entry = unitsByName.get(u.en)!
+      const entry = unitsBySlug.get(slug)!
       for (const s of (u.symbol ?? [])) entry.symbols.add(s)
-      entry.quantities.push({
-        id: e.id,
-        num: e.num,
-        name: e.designations[0]?.designation.en?.text ?? '',
-        part: e.part.toString(),
-      })
-      entry.parts.add(e.part.toString())
+      if (!entry.quantities.some(q => q.id === e.id)) {
+        entry.quantities.push({
+          id: e.id,
+          num: e.num,
+          name: e.designations[0]?.designation.en?.text ?? '',
+          part: e.part.toString(),
+        })
+        entry.parts.add(e.part.toString())
+      }
     }
   }
 
-  const isoUnits: IsoUnit[] = Array.from(unitsByName.values()).map(u => {
-    const slug = u.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
-    return {
-      slug,
-      name: u.name,
-      symbols: Array.from(u.symbols),
-      quantityCount: u.quantities.length,
-      parts: Array.from(u.parts).sort(comparePartKeys),
-      sampleQuantities: u.quantities.slice(0, 3),
-      quantities: u.quantities,
-    }
-  })
+  const isoUnits: IsoUnit[] = Array.from(unitsBySlug.values()).map(u => ({
+    slug: unitSlug(u.name),
+    name: u.name,
+    symbols: Array.from(u.symbols),
+    quantityCount: u.quantities.length,
+    parts: Array.from(u.parts).sort(comparePartKeys),
+    sampleQuantities: u.quantities.slice(0, 3),
+    quantities: u.quantities,
+  }))
 
   for (const u of isoUnits) ctx.routes.add(`/units/${u.slug}`)
 
