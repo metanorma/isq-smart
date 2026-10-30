@@ -32,6 +32,8 @@ export interface OntologyEntityData {
   imports?: string[]
   isPartOf?: string[]
   identifier?: string
+  assertions?: { predicate: string; objects: string[] }[]
+  literals?: { predicate: string; value: string }[]
 }
 
 /**
