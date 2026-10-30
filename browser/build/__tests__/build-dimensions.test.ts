@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { mkdtempSync, writeFileSync, readFileSync, rmSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { tmpdir } from 'node:os'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 import { buildDimensions } from '../stages/build-dimensions'
 import type { BuildContext } from '../buildContext'
 import type { IsoUnit, DimensionsYaml, QuantitiesYaml } from '../stages/types'
@@ -67,8 +67,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       const isoUnits: IsoUnit[] = [
         makeIsoUnit('metre', 'metre', [
@@ -116,8 +116,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       buildDimensions([], tmpDir, makeCtx(), tmpDir)
 
@@ -155,8 +155,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       buildDimensions([], tmpDir, makeCtx(), tmpDir)
 
@@ -195,8 +195,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       buildDimensions([], tmpDir, makeCtx(), tmpDir)
 
@@ -238,8 +238,8 @@ describe('buildDimensions', () => {
 
       const quants: QuantitiesYaml = { quantities: [] }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       buildDimensions([], tmpDir, makeCtx(), tmpDir)
 
@@ -282,8 +282,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       const isoUnits: IsoUnit[] = [
         makeIsoUnit('metre', 'metre', [
@@ -329,8 +329,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       const isoUnits: IsoUnit[] = [
         makeIsoUnit('metre', 'metre', [
@@ -373,8 +373,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       const isoUnits: IsoUnit[] = [
         makeIsoUnit('metre', 'metre', [
@@ -415,8 +415,8 @@ describe('buildDimensions', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       const isoUnits: IsoUnit[] = [
         makeIsoUnit('metre', 'metre', [
@@ -472,8 +472,8 @@ describe('buildDimensions', () => {
 
       const quants: QuantitiesYaml = { quantities: [] }
 
-      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yaml.dump(dims))
-      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quants))
+      writeFileSync(resolve(tmpDir, 'dimensions.yaml'), yamlDump(dims))
+      writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quants))
 
       const ctx = makeCtx()
       buildDimensions([], tmpDir, ctx, tmpDir)

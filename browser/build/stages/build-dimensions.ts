@@ -1,6 +1,6 @@
 import { writeFileSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
 import type { IsoUnit, DimensionsYaml, QuantitiesYaml, UnitsmlDimension } from './types'
@@ -51,8 +51,8 @@ export function buildDimensions(
     return isoUnits
   }
 
-  const dimsData = yaml.load(readFileSync(unitsmlDimsPath, 'utf-8')) as DimensionsYaml
-  const quantsData = yaml.load(readFileSync(unitsmlQuantitiesPath, 'utf-8')) as QuantitiesYaml
+  const dimsData = yamlLoad(readFileSync(unitsmlDimsPath, 'utf-8')) as DimensionsYaml
+  const quantsData = yamlLoad(readFileSync(unitsmlQuantitiesPath, 'utf-8')) as QuantitiesYaml
   const rawDims = dimsData.dimensions
   const rawQuants = quantsData.quantities
 

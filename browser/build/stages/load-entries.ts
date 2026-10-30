@@ -1,12 +1,12 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
 
 export function loadEntries(datasetDir: string): { quantities: RawEntry[]; math: RawEntry[] } {
   const load = (file: string) =>
-    yaml.load(readFileSync(resolve(datasetDir, file), 'utf-8')) as RawEntry[]
+    yamlLoad(readFileSync(resolve(datasetDir, file), 'utf-8')) as RawEntry[]
   return { quantities: load('quantities.yaml'), math: load('math.yaml') }
 }
 
