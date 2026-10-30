@@ -94,6 +94,21 @@ describe('buildUnits', () => {
       expect(metre.parts).toEqual(['3', '4'])
     })
 
+    it('merges units whose names normalize to the same slug', () => {
+      const qData: RawEntry[] = [
+        makeEntry('t13-7', 13, 'call intensity', [{ en: 'second to the\npower of\nminus one', symbol: ['s^-1'] }]),
+        makeEntry('t13-11', 13, 'transfer rate', [{ en: 'second to the power of minus one', symbol: ['s^-1'] }]),
+      ]
+
+      const units = buildUnits(qData, tmpDir, makeCtx(), tmpDir)
+
+      // Name variants that differ only in whitespace share one route.
+      expect(units).toHaveLength(1)
+      expect(units[0]!.slug).toBe('second-to-the-power-of-minus-one')
+      expect(units[0]!.quantityCount).toBe(2)
+      expect(units[0]!.quantities.map(q => q.id)).toEqual(['t13-7', 't13-11'])
+    })
+
     it('generates correct slugs from unit names', () => {
       const qData: RawEntry[] = [
         makeEntry('q1', 3, 'q1', [{ en: 'Metre per Second!', symbol: ['m/s'] }]),
