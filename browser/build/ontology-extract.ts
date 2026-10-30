@@ -199,9 +199,9 @@ export function createCompactor(allPrefixes: Record<string, string>): (uri: stri
   }
 }
 
-/** Convert a qname to a URL-safe slug by replacing colons with hyphens */
+/** Convert a qname to a URL-safe slug by replacing colons and dots with hyphens */
 export function slugFromQname(qname: string): string {
-  return qname.replace(/:/g, '-')
+  return qname.replace(/[:.]/g, '-')
 }
 
 // ── Entity classification ──

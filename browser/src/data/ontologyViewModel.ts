@@ -306,6 +306,10 @@ function resolveWhereUsed(
     if (e.scheme === qn) results.push({ entity: e, context: 'inScheme' })
     if (e.instanceOf?.includes(qn)) results.push({ entity: e, context: 'type' })
     if (e.isPartOf?.includes(qn)) results.push({ entity: e, context: 'isPartOf' })
+    for (const a of e.assertions || []) {
+      if (a.predicate === qn) results.push({ entity: e, context: 'asserts' })
+      if (a.objects.includes(qn)) results.push({ entity: e, context: a.predicate })
+    }
     for (const c of (e.constraints || [])) {
       if (c.classValue === qn) results.push({ entity: e, context: 'shape constraint class' })
       if (c.hasValue === qn) results.push({ entity: e, context: 'shape constraint hasValue' })
