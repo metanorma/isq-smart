@@ -1,15 +1,17 @@
 <script setup lang="ts">
 import { watch, nextTick, ref, onMounted, onUnmounted } from 'vue'
 import { searchOpen, searchQuery, searchDomain, searchResults, performSearch, closeSearch, matchLabel, openSearch } from '../composables/useSearch'
-import type { SearchResult } from '../composables/useSearch'
+import type { CombinedSearchResult } from '../composables/useSearch'
 import { entryUrl } from '../data'
+import { asset } from '../lib/asset'
 
 const input = ref<HTMLInputElement>()
 
-const domainOpts: { key: 'all' | 'quantities' | 'math'; label: string }[] = [
+const domainOpts: { key: 'all' | 'quantities' | 'math' | 'ontology'; label: string }[] = [
   { key: 'all', label: 'All' },
   { key: 'quantities', label: 'Quantities' },
   { key: 'math', label: 'Math' },
+  { key: 'ontology', label: 'Ontology' },
 ]
 const activeIndex = ref(-1)
 
@@ -31,6 +33,10 @@ watch(searchQuery, (q) => {
   performSearch(q)
 })
 
+function resultHref(r: CombinedSearchResult): string {
+  return r.kind === 'ontology' ? asset(`/ontology/${r.slug}`) : entryUrl(r.partKey, r.id)
+}
+
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape') { closeSearch(); return }
   if (e.key === 'ArrowDown') {
@@ -42,7 +48,7 @@ function onKey(e: KeyboardEvent) {
   } else if (e.key === 'Enter' && activeIndex.value >= 0 && searchResults.value[activeIndex.value]) {
     e.preventDefault()
     const r = searchResults.value[activeIndex.value]
-    window.location.href = entryUrl(r.partKey, r.id)
+    window.location.href = resultHref(r)
     closeSearch()
   }
 }
@@ -56,8 +62,8 @@ function highlight(text: string, query: string): string {
   return text.replace(re, '<mark class="bg-amber-200/80 dark:bg-amber-700/50 text-amber-900 dark:text-amber-200 rounded-sm px-0.5 -mx-0.5">$1</mark>')
 }
 
-function getEntryName(r: SearchResult): string {
-  return r.name || r.num
+function getEntryName(r: CombinedSearchResult): string {
+  return r.kind === 'ontology' ? r.label : (r.name || r.num)
 }
 </script>
 
@@ -98,12 +104,23 @@ function getEntryName(r: SearchResult): string {
             </div>
             <p class="sm:hidden text-xs" data-i18n="action.search_type_hint">Type to search across all entries</p>
           </div>
-          <div v-for="(r, idx) in searchResults" :key="r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
-            <a :href="entryUrl(r.partKey, r.id)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
-              <span class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partDomain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.partKey }}</span>
+          <div v-for="(r, idx) in searchResults" :key="r.kind === 'ontology' ? r.slug : r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
+            <a :href="resultHref(r)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
+              <span v-if="r.kind === 'ontology'" class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : 'bg-cyan-50 dark:bg-cyan-950/30 text-cyan-700 dark:text-cyan-400 border-cyan-100 dark:border-cyan-800'">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h10M7 19h10M5 7v10M19 7v10"/></svg>
+              </span>
+              <span v-else class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : r.partDomain === 'math' ? 'bg-violet-50 dark:bg-violet-950/30 text-violet-700 dark:text-violet-400 border-violet-100 dark:border-violet-800' : 'bg-brand-50 dark:bg-brand-950/30 text-brand-700 dark:text-brand-400 border-brand-100 dark:border-brand-800'">{{ r.partKey }}</span>
               <div class="min-w-0 flex-1">
                 <div class="text-sm font-medium text-slate-800 dark:text-slate-200 truncate" :class="{ 'text-brand-700 dark:text-brand-400': idx === activeIndex }" v-html="highlight(getEntryName(r), searchQuery)" />
-                <div class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
+                <div v-if="r.kind === 'ontology'" class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
+                  <span class="font-mono text-cyan-600 dark:text-cyan-400 font-medium" v-html="highlight(r.qname, searchQuery)" />
+                  <span class="text-slate-300 dark:text-slate-600">&middot;</span>
+                  <span class="text-xs font-semibold uppercase tracking-wider text-cyan-500 dark:text-cyan-400">ontology</span>
+                  <span class="text-slate-300 dark:text-slate-600">&middot;</span>
+                  <span>{{ r.type }}</span>
+                  <span v-if="r.description" class="truncate max-w-[24rem] text-slate-300 dark:text-slate-600">{{ r.description }}</span>
+                </div>
+                <div v-else class="text-xs text-slate-400 dark:text-slate-500 mt-0.5 flex items-center gap-1.5 flex-wrap">
                   <span class="font-mono text-brand-600 dark:text-brand-400 font-medium" v-html="highlight(r.num, searchQuery)" />
                   <span class="text-slate-300 dark:text-slate-600">&middot;</span>
                   <span class="text-xs font-semibold uppercase tracking-wider" :class="r.partDomain === 'math' ? 'text-violet-500 dark:text-violet-400' : 'text-brand-500 dark:text-brand-400'">{{ r.partDomain }}</span>
