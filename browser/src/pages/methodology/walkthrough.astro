@@ -3,6 +3,9 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import Breadcrumb from '../../components/Breadcrumb.astro'
 import MethodologyNav from '../../components/MethodologyNav.astro'
 import { asset } from '../../lib/asset'
+import { kindOfQuantities } from '../../data/generated/kinds'
+
+const kindsCount = kindOfQuantities.length
 
 interface Cell {
   term: string
@@ -25,7 +28,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
       def: 'The most abstract grouping — quantities sharing a dimension, comparable and addable.',
       links: [
         { label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' },
-        { label: '89 live kinds →', href: '/kinds' },
+        { label: `${kindsCount} live kinds →`, href: '/kinds' },
       ],
     },
     entity: null,
