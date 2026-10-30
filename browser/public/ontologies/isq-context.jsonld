@@ -39,6 +39,17 @@
     "smart:isSuccessorOf": { "@type": "@id" },
 
     "isq:hasUnit": { "@type": "@id", "@container": "@set" },
-    "isq:hasDimension": { "@type": "@id" }
+    "isq:hasDimension": { "@type": "@id" },
+    "isq:hasKind": { "@type": "@id" },
+    "isq:hasMember": { "@type": "@id", "@container": "@set" },
+    "isq:dedicatedTo": { "@type": "@id" },
+    "isq:characterizes": { "@type": "@id", "@container": "@set" },
+    "isq:instantiationOf": { "@type": "@id" },
+    "isq:instantiates": { "@type": "@id", "@container": "@set" },
+    "isq:instantiatedAt": { "@type": "xsd:dateTime" },
+    "isq:measurementOf": { "@type": "@id" },
+    "isq:measuredAt": { "@type": "xsd:dateTime" },
+    "isq:hasValue": { "@type": "xsd:decimal" },
+    "isq:uncertainty": { "@type": "xsd:decimal" }
   }
 }

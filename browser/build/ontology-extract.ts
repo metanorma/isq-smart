@@ -132,6 +132,7 @@ const SKOS = 'http://www.w3.org/2004/02/skos/core#'
 const SH = 'http://www.w3.org/ns/shacl#'
 const SMART = 'https://w3id.org/standards/smart/ontologies/core/'
 const ISO = 'https://w3id.org/standards/isq/ontologies/core/'
+const EXAMPLES = 'https://w3id.org/standards/isq/examples'
 
 // ── Prefix extraction ──
 
@@ -244,7 +245,7 @@ export function classifyEntities(
     if (subjectUri.startsWith('_:')) continue
     if (!qname.includes(':')) continue
 
-    const ontology: OntologyBuildEntity['ontology'] = subjectUri.startsWith(ISO)
+    const ontology: OntologyBuildEntity['ontology'] = subjectUri.startsWith(ISO) || subjectUri.startsWith(EXAMPLES)
       ? 'isq'
       : subjectUri.startsWith(SMART)
         ? 'smart'
@@ -366,15 +367,16 @@ export function classifyEntities(
       entities.push(baseEntity)
     } else {
       const smartTypes = types.filter((t) => t.startsWith(SMART)).map(compact)
+      const isqTypes = types.filter((t) => t.startsWith(ISO) || t.startsWith(EXAMPLES)).map(compact)
       if (
-        smartTypes.length &&
+        (smartTypes.length || isqTypes.length) &&
         !qname.startsWith('rdf:') &&
         !qname.startsWith('owl:') &&
         !qname.startsWith('rdfs:') &&
         !qname.startsWith('xsd:')
       ) {
         baseEntity.type = 'individual'
-        baseEntity.instanceOf = smartTypes
+        baseEntity.instanceOf = [...smartTypes, ...isqTypes]
         const title = getFirst(subjectUri, 'http://purl.org/dc/terms/title')
         if (title) baseEntity.label = title
         const identifier = getFirst(subjectUri, 'http://purl.org/dc/terms/identifier')

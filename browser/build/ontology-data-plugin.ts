@@ -31,6 +31,7 @@ export function ontologyDataPlugin(paths: BuildPaths): Plugin {
         .map((f) => resolve(refDir, 'taxonomies', f)),
       resolve(ontoDir, 'isq.ttl'),
       resolve(ontoDir, 'isq.shacl.ttl'),
+      resolve(ontoDir, 'isq-examples.ttl'),
     ]
 
     // ── Read files, extract prefixes, build RDF store ──

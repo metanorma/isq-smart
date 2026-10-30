@@ -1,0 +1,59 @@
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:    <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix smart:   <https://w3id.org/standards/smart/ontologies/core/> .
+@prefix isq:     <https://w3id.org/standards/isq/ontologies/core/> .
+@prefix ex:      <https://w3id.org/standards/isq/examples#> .
+
+<https://w3id.org/standards/isq/examples#> rdf:type owl:Ontology ;
+  owl:imports <https://w3id.org/standards/isq/ontologies/core/> ;
+  dcterms:title "ISO/IEC 80000 Worked Examples"@en ;
+  dcterms:description "The Pendrill (2024) Table 1.1 worked example — the length of a rod traversed across all levels of the quantity, entity, and measurement axes. Reference data only; not part of the normative ontology."@en ;
+  dcterms:publisher <https://www.iso.org> , <https://www.iec.ch> ;
+  rdfs:label "ISO/IEC 80000 Worked Examples"@en ;
+  owl:versionInfo "1.0.0" .
+
+#################################################################
+#    Entity axis (L2 entity, L3 entity instance)
+#################################################################
+
+ex:rod rdf:type isq:EntityConcept ;
+  skos:prefLabel "rod"@en ;
+  skos:definition "A slender physical body — the level-2 entity of the worked example (Pendrill 2024, Table 1.1)."@en .
+
+ex:rodAB rdf:type smart:Entity ;
+  skos:prefLabel "rod AB, today at 09:15"@en ;
+  skos:definition "The particular rod AB as it exists today at 09:15 — the level-3 entity instance of the worked example (Pendrill 2024, Table 1.1)."@en .
+
+#################################################################
+#    Quantity axis (L2 dedicated quantity, L3 instantiation)
+#################################################################
+
+ex:lengthOfRod rdf:type isq:DedicatedQuantity ;
+  isq:dedicatedTo isq:t3-1 ;
+  isq:characterizes ex:rod ;
+  skos:prefLabel "length of rod"@en ;
+  skos:definition "Length as applied to rods — a dedicated quantity (Sachgrösse) specializing ISO/IEC 80000-3 'length' (isq:t3-1) and characterizing the entity 'rod' (Pendrill 2024, Table 1.1)."@en .
+
+ex:lengthOfRodAB rdf:type isq:QuantityInstantiation ;
+  isq:instantiationOf ex:lengthOfRod ;
+  isq:instantiates ex:rodAB ;
+  isq:instantiatedAt "2024-01-01T09:15:00Z"^^xsd:dateTime ;
+  skos:prefLabel "length of rod AB, today at 09:15"@en ;
+  skos:definition "The instantiation of the quantity 'length of rod' on the entity instance 'rod AB' at 09:15 — level L3 of the quantity axis (Pendrill 2024, Table 1.1)."@en .
+
+#################################################################
+#    Measurement axis (L3 quantity as measured, Qm = {Q}·[Q])
+#################################################################
+
+ex:measuredLengthOfRodAB rdf:type isq:MeasuredQuantity ;
+  isq:measurementOf ex:lengthOfRodAB ;
+  isq:hasUnit isq:unit:metre ;
+  isq:hasValue 1.234 ;
+  isq:uncertainty 0.001 ;
+  isq:measuredAt "2024-01-01T09:15:00Z"^^xsd:dateTime ;
+  skos:prefLabel "measured length of rod AB, today at 09:15"@en ;
+  skos:definition "The measurement result — Qm = {Q}·[Q] = 1.234 m, with expanded uncertainty 0.001 m — for the length of rod AB at 09:15 (Pendrill 2024, Table 1.1)."@en .
