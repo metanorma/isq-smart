@@ -2,7 +2,7 @@
 import { asset } from '../lib/asset'
 
 interface Props {
-  active?: 'overview' | 'concept-system' | 'walkthrough' | 'pipeline' | 'navigation' | 'references'
+  active?: 'overview' | 'concept-system' | 'walkthrough' | 'measurements' | 'pipeline' | 'navigation' | 'references'
 }
 const { active } = Astro.props
 
@@ -10,6 +10,7 @@ const items = [
   { slug: '', label: 'Overview', key: 'overview' as const },
   { slug: '/concept-system', label: 'Concept System', key: 'concept-system' as const },
   { slug: '/walkthrough', label: 'Walkthrough', key: 'walkthrough' as const },
+  { slug: '/measurements', label: 'Measurements', key: 'measurements' as const },
   { slug: '/navigation', label: 'Navigation', key: 'navigation' as const },
   { slug: '/references', label: 'References', key: 'references' as const },
 ]
