@@ -226,7 +226,9 @@ describe('resolveOntologyEntityView', () => {
     })
 
     it('returns empty for a class with no instances', () => {
-      const entity = findBySlug('smart-Entity')
+      // isq:Quantity has no ontology-level individuals — dataset entries are
+      // serialized at runtime and never extracted as ontology instances.
+      const entity = findBySlug('isq-Quantity')
       const view = resolveOntologyEntityView(entity, allEntities)
       expect(view.instances).toEqual([])
     })
@@ -351,9 +353,9 @@ describe('resolveOntologyEntityView', () => {
     it('lists isq ontology entities', () => {
       const entity = findBySlug('isq-')
       const view = resolveOntologyEntityView(entity, allEntities)
-      expect(view.ontologyScoped.classes.length).toBe(4) // Quantity, Unit, MathConcept, Dimension
-      expect(view.ontologyScoped.objectProperties.length).toBe(2) // hasUnit, hasDimension
-      expect(view.ontologyScoped.individuals.length).toBeGreaterThan(10) // parts
+      expect(view.ontologyScoped.classes.length).toBe(10) // Quantity, Unit, MathConcept, Dimension, KindOfQuantity, EntityKind, EntityConcept, DedicatedQuantity, QuantityInstantiation, MeasuredQuantity
+      expect(view.ontologyScoped.objectProperties.length).toBe(9) // hasUnit, hasDimension, hasKind, hasMember, dedicatedTo, characterizes, instantiationOf, instantiates, measurementOf
+      expect(view.ontologyScoped.individuals.length).toBeGreaterThan(10) // parts + worked examples
       expect(view.ontologyScoped.shapes.length).toBeGreaterThan(5)
     })
 

@@ -260,3 +260,181 @@ isq:HasDimensionShape
     sh:nodeKind sh:IRI ;
     sh:class isq:Dimension ;
 .
+
+# KindOfQuantity: level-0 grouping of same-dimension quantities
+
+isq:KindOfQuantityShape
+    a sh:NodeShape ;
+    sh:targetClass isq:KindOfQuantity ;
+    sh:property [
+        sh:path isq:hasMember ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:Quantity ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# EntityKind: level-1 category of entities that quantities characterize
+
+isq:EntityKindShape
+    a sh:NodeShape ;
+    sh:targetClass isq:EntityKind ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# EntityConcept: level-2 entity type (e.g. rod)
+
+isq:EntityConceptShape
+    a sh:NodeShape ;
+    sh:targetClass isq:EntityConcept ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# DedicatedQuantity: level-2 Sachgrösse — specializes a quantity, characterizes an entity
+
+isq:DedicatedQuantityShape
+    a sh:NodeShape ;
+    sh:targetClass isq:DedicatedQuantity ;
+    sh:property [
+        sh:path isq:dedicatedTo ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:Quantity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:characterizes ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:EntityConcept ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+    sh:property [
+        sh:path skos:definition ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# QuantityInstantiation: level-3 particular of an entity instance at a time
+
+isq:QuantityInstantiationShape
+    a sh:NodeShape ;
+    sh:targetClass isq:QuantityInstantiation ;
+    sh:property [
+        sh:path isq:instantiationOf ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:DedicatedQuantity ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:instantiates ;
+        sh:nodeKind sh:IRI ;
+        sh:class smart:Entity ;
+        sh:minCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:instantiatedAt ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# MeasuredQuantity: quantity as measured, Qm = {Q}·[Q]
+
+isq:MeasuredQuantityShape
+    a sh:NodeShape ;
+    sh:targetClass isq:MeasuredQuantity ;
+    sh:property [
+        sh:path isq:measurementOf ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:QuantityInstantiation ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:hasValue ;
+        sh:datatype xsd:decimal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:hasUnit ;
+        sh:nodeKind sh:IRI ;
+        sh:class isq:Unit ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:uncertainty ;
+        sh:datatype xsd:decimal ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path isq:measuredAt ;
+        sh:datatype xsd:dateTime ;
+        sh:maxCount 1 ;
+    ] ;
+    sh:property [
+        sh:path skos:prefLabel ;
+        sh:datatype rdf:langString ;
+        sh:minCount 1 ;
+        sh:uniqueLang true ;
+    ] ;
+.
+
+# hasKind property constraint (must point to a KindOfQuantity)
+
+isq:HasKindShape
+    a sh:PropertyShape ;
+    sh:targetSubjectsOf isq:hasKind ;
+    sh:path isq:hasKind ;
+    sh:nodeKind sh:IRI ;
+    sh:class isq:KindOfQuantity ;
+.

@@ -4,6 +4,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix smart: <https://w3id.org/standards/smart/ontologies/core/> .
 @prefix isq: <https://w3id.org/standards/isq/ontologies/core/> .
 @base <https://w3id.org/standards/isq/ontologies/core/> .
@@ -11,10 +12,10 @@
 <https://w3id.org/standards/isq/ontologies/core/> rdf:type owl:Ontology ;
   owl:imports <https://w3id.org/standards/smart/ontologies/core/> ;
   dcterms:title "ISO/IEC 80000 Domain Ontology"@en ;
-  dcterms:description "Extends the SmartSDU Core Ontology with domain classes for ISO/IEC 80000 quantities, units, and mathematical concepts."@en ;
+  dcterms:description "Extends the SmartSDU Core Ontology with domain classes for ISO/IEC 80000 quantities, units, and mathematical concepts, and models the full quantity–entity–measurement hierarchy of Pendrill (2024)."@en ;
   dcterms:publisher <https://www.iso.org> , <https://www.iec.ch> ;
   rdfs:label "ISO/IEC 80000 Domain Ontology"@en ;
-  owl:versionInfo "1.0.0" .
+  owl:versionInfo "1.1.0" .
 
 #################################################################
 #    Classes
@@ -49,6 +50,51 @@ isq:Dimension rdf:type owl:Class ;
   skos:prefLabel "Dimension"@en ;
   skos:scopeNote "Each part of ISO/IEC 80000 defines quantities in a distinct dimensional domain. Quantities with the same dimension are of the same kind and can be meaningfully compared."@en .
 
+### KindOfQuantity
+isq:KindOfQuantity rdf:type owl:Class ;
+  rdfs:subClassOf skos:Concept ;
+  rdfs:label "Kind of quantity"@en ;
+  skos:definition "A grouping of quantities that share the same dimension and can therefore be compared, ordered, and added — the most abstract level (L0) of the quantity hierarchy (Dybkaer 2010; Pendrill 2024, Table 1.1)."@en ;
+  skos:prefLabel "Kind of quantity"@en ;
+  skos:scopeNote "Only the quantity axis reaches level 0. Examples: space, time, temperature. Kinds are assembled from the ISO/IEC 80000 dataset by shared dimension vector."@en .
+
+### EntityKind
+isq:EntityKind rdf:type owl:Class ;
+  rdfs:subClassOf smart:Entity ;
+  rdfs:label "Kind of entity"@en ;
+  skos:definition "The abstract category of things that quantities can characterize — phenomena, bodies, substances — level L1 of the entity axis (Pendrill 2024, Table 1.1). Examples: physical body, substance, field, wave, system."@en ;
+  skos:prefLabel "Kind of entity"@en .
+
+### EntityConcept
+isq:EntityConcept rdf:type owl:Class ;
+  rdfs:subClassOf isq:EntityKind ;
+  rdfs:label "Entity"@en ;
+  skos:definition "A specific type of entity that quantities of the corresponding dedicated quantity are about — level L2 of the entity axis (Pendrill 2024, Table 1.1). Example: rod."@en ;
+  skos:prefLabel "Entity"@en .
+
+### DedicatedQuantity
+isq:DedicatedQuantity rdf:type owl:Class ;
+  rdfs:subClassOf isq:Quantity ;
+  rdfs:label "Dedicated quantity"@en ;
+  skos:definition "A quantity bound to a kind of entity — a Sachgrösse (Fleischman 1960) — such as 'length of rod'; level L2 of the quantity axis (Pendrill 2024, Table 1.1)."@en ;
+  skos:prefLabel "Dedicated quantity"@en ;
+  skos:scopeNote "A dedicated quantity specializes a generic quantity (isq:dedicatedTo) and characterizes a kind of entity (isq:characterizes) — the level-2 quantity–entity binding."@en .
+
+### QuantityInstantiation
+isq:QuantityInstantiation rdf:type owl:Class ;
+  rdfs:subClassOf isq:Quantity ;
+  rdfs:label "Quantity instantiation"@en ;
+  skos:definition "A particular quantity of a particular entity instance at a particular time — 'length of rod AB, today at 09:15'; level L3 of the quantity axis (Pendrill 2024, Table 1.1)."@en ;
+  skos:prefLabel "Quantity instantiation"@en .
+
+### MeasuredQuantity
+isq:MeasuredQuantity rdf:type owl:Class ;
+  rdfs:subClassOf isq:QuantityInstantiation ;
+  rdfs:label "Measured quantity"@en ;
+  skos:definition "The quantity as measured — the measurement result Qm = {Q}·[Q]: a numerical value paired with a unit, obtained by measurement, optionally with its uncertainty (Pendrill 2019; JCGM 200:2012, VIM)."@en ;
+  skos:prefLabel "Measured quantity"@en ;
+  skos:scopeNote "The only level of the hierarchy that carries a numerical value. ISO/IEC 80000 itself publishes no instances at this level; measured quantities arise in application and registry contexts."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -68,6 +114,98 @@ isq:hasDimension rdf:type owl:ObjectProperty ;
   rdfs:label "has dimension"@en ;
   skos:definition "Relates a quantity to its dimensional domain."@en ;
   skos:prefLabel "has dimension"@en .
+
+### hasKind
+isq:hasKind rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:Quantity ;
+  rdfs:range isq:KindOfQuantity ;
+  rdfs:label "is of kind"@en ;
+  skos:definition "Relates a quantity to the kind of quantity it belongs to (L1 → L0)."@en ;
+  skos:prefLabel "is of kind"@en .
+
+### hasMember
+isq:hasMember rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:KindOfQuantity ;
+  rdfs:range isq:Quantity ;
+  rdfs:label "has member"@en ;
+  skos:definition "Relates a kind of quantity to a quantity that belongs to it (L0 → L1); inverse of isq:hasKind."@en ;
+  skos:prefLabel "has member"@en .
+
+### dedicatedTo
+isq:dedicatedTo rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:DedicatedQuantity ;
+  rdfs:range isq:Quantity ;
+  rdfs:label "is dedicated to"@en ;
+  skos:definition "Relates a dedicated quantity (Sachgrösse) to the generic quantity it specializes (L2 → L1)."@en ;
+  skos:prefLabel "is dedicated to"@en .
+
+### characterizes
+isq:characterizes rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:DedicatedQuantity ;
+  rdfs:range isq:EntityConcept ;
+  rdfs:label "characterizes"@en ;
+  skos:definition "Relates a dedicated quantity to the entity it characterizes — the level-2 quantity–entity binding (L2 ↔ L2) of Pendrill (2024)."@en ;
+  skos:prefLabel "characterizes"@en .
+
+### instantiationOf
+isq:instantiationOf rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:QuantityInstantiation ;
+  rdfs:range isq:DedicatedQuantity ;
+  rdfs:label "is instantiation of"@en ;
+  skos:definition "Relates a quantity instantiation to the dedicated quantity it instantiates (L3 → L2)."@en ;
+  skos:prefLabel "is instantiation of"@en .
+
+### instantiates
+isq:instantiates rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:QuantityInstantiation ;
+  rdfs:range smart:Entity ;
+  rdfs:label "instantiates"@en ;
+  skos:definition "Relates a quantity instantiation to the entity instance it is observed on (L3 quantity ↔ L3 entity)."@en ;
+  skos:prefLabel "instantiates"@en .
+
+### measurementOf
+isq:measurementOf rdf:type owl:ObjectProperty ;
+  rdfs:domain isq:MeasuredQuantity ;
+  rdfs:range isq:QuantityInstantiation ;
+  rdfs:label "is measurement of"@en ;
+  skos:definition "Relates the quantity as measured to the quantity instantiation that was measured."@en ;
+  skos:prefLabel "is measurement of"@en .
+
+#################################################################
+#    Datatype Properties
+#################################################################
+
+### instantiatedAt
+isq:instantiatedAt rdf:type owl:DatatypeProperty ;
+  rdfs:domain isq:QuantityInstantiation ;
+  rdfs:range xsd:dateTime ;
+  rdfs:label "instantiated at"@en ;
+  skos:definition "The point in time at which a quantity instantiation exists."@en ;
+  skos:prefLabel "instantiated at"@en .
+
+### measuredAt
+isq:measuredAt rdf:type owl:DatatypeProperty ;
+  rdfs:domain isq:MeasuredQuantity ;
+  rdfs:range xsd:dateTime ;
+  rdfs:label "measured at"@en ;
+  skos:definition "The point in time at which the measurement was performed."@en ;
+  skos:prefLabel "measured at"@en .
+
+### hasValue
+isq:hasValue rdf:type owl:DatatypeProperty ;
+  rdfs:domain isq:MeasuredQuantity ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "has numerical value"@en ;
+  skos:definition "The numerical value {Q} of the quantity as measured, Qm = {Q}·[Q]."@en ;
+  skos:prefLabel "has numerical value"@en .
+
+### uncertainty
+isq:uncertainty rdf:type owl:DatatypeProperty ;
+  rdfs:domain isq:MeasuredQuantity ;
+  rdfs:range xsd:decimal ;
+  rdfs:label "has uncertainty"@en ;
+  skos:definition "The expanded measurement uncertainty U associated with the measured quantity (JCGM 100:2008, GUM)."@en ;
+  skos:prefLabel "has uncertainty"@en .
 
 #################################################################
 #    Publication Document Instances

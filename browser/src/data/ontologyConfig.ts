@@ -27,6 +27,8 @@ export const ONTOLOGY_CLASSES = {
   EntityKind: `${NS.core.prefix}:EntityKind`,
   EntityConcept: `${NS.core.prefix}:EntityConcept`,
   DedicatedQuantity: `${NS.core.prefix}:DedicatedQuantity`,
+  QuantityInstantiation: `${NS.core.prefix}:QuantityInstantiation`,
+  MeasuredQuantity: `${NS.core.prefix}:MeasuredQuantity`,
 } as const
 
 // ── Property qnames ──
@@ -49,6 +51,14 @@ export const ONTOLOGY_PROPERTIES = {
   characterizes: `${NS.core.prefix}:characterizes`,
   definedByEquation: `${NS.core.prefix}:definedByEquation`,
   hasMember: `${NS.core.prefix}:hasMember`,
+  dedicatedTo: `${NS.core.prefix}:dedicatedTo`,
+  instantiationOf: `${NS.core.prefix}:instantiationOf`,
+  instantiates: `${NS.core.prefix}:instantiates`,
+  instantiatedAt: `${NS.core.prefix}:instantiatedAt`,
+  measurementOf: `${NS.core.prefix}:measurementOf`,
+  measuredAt: `${NS.core.prefix}:measuredAt`,
+  hasValue: `${NS.core.prefix}:hasValue`,
+  uncertainty: `${NS.core.prefix}:uncertainty`,
 } as const
 
 // ── Tag → class mapping ──
@@ -83,4 +93,6 @@ export const CLASS_BADGE_COLORS: Record<string, { bg: string; text: string; bord
   [ONTOLOGY_CLASSES.EntityKind]: { bg: 'bg-rose-50 dark:bg-rose-950/40', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-100/60 dark:border-rose-800/40' },
   [ONTOLOGY_CLASSES.EntityConcept]: { bg: 'bg-rose-50 dark:bg-rose-950/40', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-100/60 dark:border-rose-800/40' },
   [ONTOLOGY_CLASSES.DedicatedQuantity]: { bg: 'bg-amber-50 dark:bg-amber-950/40', text: 'text-amber-700 dark:text-amber-400', border: 'border-amber-100/60 dark:border-amber-800/40' },
+  [ONTOLOGY_CLASSES.QuantityInstantiation]: { bg: 'bg-rose-50 dark:bg-rose-950/40', text: 'text-rose-700 dark:text-rose-400', border: 'border-rose-100/60 dark:border-rose-800/40' },
+  [ONTOLOGY_CLASSES.MeasuredQuantity]: { bg: 'bg-cyan-50 dark:bg-cyan-950/40', text: 'text-cyan-700 dark:text-cyan-400', border: 'border-cyan-100/60 dark:border-cyan-800/40' },
 }
