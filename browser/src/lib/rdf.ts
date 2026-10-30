@@ -27,7 +27,7 @@ interface Entity {
   isPartOf?: string[]
   identifier?: string
   assertions?: { predicate: string; objects: string[] }[]
-  literals?: { predicate: string; value: string }[]
+  literals?: { predicate: string; value: string; datatype?: string }[]
 }
 
 function prefixFor(qname: string): string {
@@ -184,7 +184,10 @@ export function toTurtle(entity: Entity): string {
 
   if (entity.literals?.length) {
     for (const l of entity.literals) {
-      const value = /^-?\d+(\.\d+)?$/.test(l.value) ? l.value : `"${escapeTurtle(l.value)}"`
+      const numeric = /^-?\d+(\.\d+)?$/.test(l.value)
+      const value = l.datatype && /^xsd:(decimal|integer|double|float)$/.test(l.datatype) && numeric
+        ? l.value
+        : `"${escapeTurtle(l.value)}"${l.datatype ? `^^${l.datatype}` : ''}`
       predicates.push(`  ${l.predicate} ${value}`)
     }
   }
@@ -261,7 +264,6 @@ export function toJsonLd(entity: Entity): string {
       obj[l.predicate] = l.value.trim() !== '' && !Number.isNaN(num) ? num : l.value
     }
   }
-
   if (entity.constraints?.length) {
     obj['sh:property'] = entity.constraints.map(c => {
       const prop: Record<string, any> = { 'sh:path': c.path }

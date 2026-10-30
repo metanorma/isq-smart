@@ -624,6 +624,7 @@ function truncate(s: string, n: number) {
                       <li>
                         <code class="text-xs font-mono text-slate-500 dark:text-slate-400 mr-2">{l.predicate}</code>
                         <code class="text-sm">{l.value}</code>
+                        {l.datatype && <span class="ml-1.5 text-xs font-mono text-slate-400 dark:text-slate-500">{l.datatype}</span>}
                       </li>
                     ))}
                   </ul>

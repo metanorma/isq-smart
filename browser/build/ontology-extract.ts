@@ -10,6 +10,8 @@ import type { ExternalMetaEntry } from './external-vocabulary'
 export interface RdfTerm {
   termType: 'NamedNode' | 'Literal' | 'BlankNode' | 'Variable' | 'DefaultGraph'
   value: string
+  /** Present on Literal terms — the literal's datatype IRI */
+  datatype?: { value: string } | null
 }
 
 /** Minimal RDF quad interface matching n3/lib/Quad.js */
@@ -100,7 +102,7 @@ export interface OntologyBuildEntity {
   /** Object-property assertions of an individual, e.g. dedicatedTo/characterizes */
   assertions?: { predicate: string; objects: string[] }[]
   /** Datatype-property values of an individual, e.g. hasValue/uncertainty */
-  literals?: { predicate: string; value: string }[]
+  literals?: { predicate: string; value: string; datatype?: string }[]
 }
 
 /** Metadata for display rendering of each entity type */
@@ -392,7 +394,7 @@ export function classifyEntities(
         // links; datatype properties become values.
         const KNOWN = new Set(['rdf:type', 'dcterms:title', 'dcterms:identifier', 'dcterms:isPartOf'])
         const assertionMap = new Map<string, string[]>()
-        const literalList: { predicate: string; value: string }[] = []
+        const literalList: { predicate: string; value: string; datatype?: string }[] = []
         for (const { predicate, object } of subjects.get(subjectUri) ?? []) {
           const pq = compact(predicate)
           if (KNOWN.has(pq)) continue
@@ -404,7 +406,12 @@ export function classifyEntities(
             list.push(oq)
             assertionMap.set(pq, list)
           } else if (object.termType === 'Literal') {
-            literalList.push({ predicate: pq, value: object.value })
+            const dt = object.datatype ? compact(object.datatype.value) : ''
+            literalList.push({
+              predicate: pq,
+              value: object.value,
+              datatype: dt && dt !== 'xsd:string' ? dt : undefined,
+            })
           }
         }
         if (assertionMap.size) {
