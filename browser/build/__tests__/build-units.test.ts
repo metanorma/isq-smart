@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { mkdtempSync, writeFileSync, readFileSync, rmSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { tmpdir } from 'node:os'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 import { buildUnits } from '../stages/build-units'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
@@ -168,7 +168,7 @@ describe('buildUnits', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'units.yaml'), yaml.dump(unitsml))
+      writeFileSync(resolve(tmpDir, 'units.yaml'), yamlDump(unitsml))
 
       const units = buildUnits(qData, tmpDir, makeCtx(), tmpDir)
       const metre = units.find(u => u.name === 'metre')!
@@ -197,7 +197,7 @@ describe('buildUnits', () => {
         }],
       }
 
-      writeFileSync(resolve(tmpDir, 'units.yaml'), yaml.dump(unitsml))
+      writeFileSync(resolve(tmpDir, 'units.yaml'), yamlDump(unitsml))
 
       const units = buildUnits(qData, tmpDir, makeCtx(), tmpDir)
       const exotic = units.find(u => u.name === 'exotic unit')!

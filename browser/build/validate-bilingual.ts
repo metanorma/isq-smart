@@ -1,11 +1,11 @@
 import { readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 
 const datasetDir = resolve(process.env.ISO_80000_DIR || '../../iso-iec-80000', 'sources/dataset')
 
 function load(file: string) {
-  return yaml.load(readFileSync(resolve(datasetDir, file), 'utf-8')) as any[]
+  return yamlLoad(readFileSync(resolve(datasetDir, file), 'utf-8')) as any[]
 }
 
 interface Issue {

@@ -2,7 +2,7 @@ import { describe, it, expect, beforeAll, afterAll } from 'vitest'
 import { mkdtempSync, writeFileSync, rmSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { tmpdir } from 'node:os'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 import { loadEntries, filterEntries } from '../stages/load-entries'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
@@ -35,8 +35,8 @@ describe('loadEntries', () => {
       { part: '2-1', id: 'math-1', num: '2-1.1', designations: [{ designation: { en: { text: 'set' } } }], def: { en: 'a collection' } },
     ]
 
-    writeFileSync(resolve(tmpDir, 'quantities.yaml'), yaml.dump(quantities))
-    writeFileSync(resolve(tmpDir, 'math.yaml'), yaml.dump(math))
+    writeFileSync(resolve(tmpDir, 'quantities.yaml'), yamlDump(quantities))
+    writeFileSync(resolve(tmpDir, 'math.yaml'), yamlDump(math))
 
     const result = loadEntries(tmpDir)
 

@@ -11,7 +11,7 @@ import { fileURLToPath } from 'node:url'
 const require = createRequire(import.meta.url)
 const PlurimathModule = require('@plurimath/plurimath')
 const Plurimath = PlurimathModule.default ?? PlurimathModule
-const yaml = require('js-yaml')
+import { load as yamlLoad } from 'js-yaml'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const repoRoot = resolve(__dirname, '..')
@@ -65,7 +65,7 @@ const exprs = new Set()
 
 for (const path of [quantitiesPath, mathPath]) {
   if (!existsSync(path)) continue
-  const data = yaml.load(readFileSync(path, 'utf-8'))
+  const data = yamlLoad(readFileSync(path, 'utf-8'))
   for (const entry of data) collectFromEntry(entry, exprs)
 }
 

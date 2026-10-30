@@ -1,6 +1,6 @@
 import { writeFileSync, existsSync, readFileSync } from 'node:fs'
 import { resolve } from 'node:path'
-import yaml from 'js-yaml'
+import { load as yamlLoad, dump as yamlDump } from 'js-yaml'
 import { comparePartKeys } from '../../src/data/partKey'
 import type { RawEntry } from '../types'
 import type { BuildContext } from '../buildContext'
@@ -53,7 +53,7 @@ export function buildUnits(
 
   const unitsmlUnitsPath = resolve(unitsdbDir, 'units.yaml')
   if (existsSync(unitsmlUnitsPath)) {
-    const unitsmlData = yaml.load(readFileSync(unitsmlUnitsPath, 'utf-8')) as UnitsmlYaml
+    const unitsmlData = yamlLoad(readFileSync(unitsmlUnitsPath, 'utf-8')) as UnitsmlYaml
     const rawUnitsmlUnits = unitsmlData.units
     const unitsByNameKey = new Map<string, UnitsmlUnit>()
     for (const u of rawUnitsmlUnits) {
