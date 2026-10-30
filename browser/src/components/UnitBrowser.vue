@@ -2,7 +2,7 @@
 import { asset } from '../lib/asset'
 import { ref, computed, toRef, onMounted } from 'vue'
 import { partUrl, entryUrl, getPartMeta } from '../data/PartRegistry'
-import { symbolCache } from '../data/generated/domain-index'
+import { symbolCache } from '../data/generated/symbol-cache'
 import { useLocalFilter } from '../composables/useLocalFilter'
 import MathRenderer from './MathRenderer.vue'
 

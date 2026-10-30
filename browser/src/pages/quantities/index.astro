@@ -4,7 +4,8 @@ import { asset } from '../../lib/asset'
 import EntryBrowser from '../../components/EntryBrowser.vue'
 import PageHero from '../../components/PageHero.astro'
 import { getDomain, getPartsByDomain, getPartEntryCount, isBilingual, partUrl, sectionLabel } from '../../data/index'
-import { quantitiesIndex, symbolCache } from '../../data/generated/domain-index'
+import { quantitiesIndex } from '../../data/generated/domain-index'
+import { symbolCache } from '../../data/generated/symbol-cache'
 
 const domainKey = 'quantities' as const
 const domain = getDomain(domainKey)!

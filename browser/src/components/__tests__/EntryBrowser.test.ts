@@ -1,7 +1,8 @@
 import { mount } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import EntryBrowser from '../EntryBrowser.vue'
-import { quantitiesIndex, symbolCache } from '../../data/generated/domain-index'
+import { quantitiesIndex } from '../../data/generated/domain-index'
+import { symbolCache } from '../../data/generated/symbol-cache'
 import { getPartsByDomain } from '../../data/PartRegistry'
 import type { DomainEntry, PartMeta } from '../../data/types'
 

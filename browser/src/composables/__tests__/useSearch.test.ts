@@ -6,24 +6,24 @@ beforeEach(() => {
 })
 
 describe('performSearch', () => {
-  it('returns empty results for empty query', () => {
-    performSearch('')
+  it('returns empty results for empty query', async () => {
+    await performSearch('')
     expect(searchResults.value).toHaveLength(0)
   })
 
-  it('returns results for "length"', () => {
-    performSearch('length')
+  it('returns results for "length"', async () => {
+    await performSearch('length')
     expect(searchResults.value.length).toBeGreaterThan(0)
   })
 
-  it('limits results to 30', () => {
-    performSearch('a')
+  it('limits results to 30', async () => {
+    await performSearch('a')
     expect(searchResults.value.length).toBeLessThanOrEqual(30)
   })
 
-  it('filters by domain', () => {
+  it('filters by domain', async () => {
     searchDomain.value = 'quantities'
-    performSearch('length')
+    await performSearch('length')
     for (const r of searchResults.value) {
       expect(r.partDomain).toBe('quantities')
     }
