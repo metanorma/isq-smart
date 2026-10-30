@@ -437,6 +437,10 @@ export function collectReferencedQnames(entities: OntologyBuildEntity[]): Set<st
     if (e.targetObjectsOf) referenced.add(e.targetObjectsOf)
     if (e.scheme) referenced.add(e.scheme)
     for (const t of e.instanceOf || []) referenced.add(t)
+    for (const a of e.assertions || []) {
+      referenced.add(a.predicate)
+      for (const o of a.objects) referenced.add(o)
+    }
     for (const c of e.constraints || []) {
       if (c.path) referenced.add(c.path)
       if (c.datatype) referenced.add(c.datatype)
