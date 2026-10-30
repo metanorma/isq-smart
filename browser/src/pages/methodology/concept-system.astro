@@ -39,19 +39,19 @@ const levels = [
     quantity: { term: 'instantiation', example: 'length of rod AB, today at 09:15' },
     entity: { term: 'entity instance', example: 'rod AB, today at 09:15' },
     measurement: { term: 'quantity as measured', example: '1.234 m' },
-    impl: 'Out of scope for a standards browser. This level belongs to measurement databases and laboratory information systems.',
+    impl: 'Modeled in the ontology: isq:QuantityInstantiation and isq:MeasuredQuantity (Qm = {Q}·[Q], with GUM uncertainty), realized by the worked example. Real measurement data belongs to measurement databases and laboratory information systems.',
   },
 ]
 
 const glossary = [
-  { axis: 'quantity', level: 'L0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.' },
-  { axis: 'quantity', level: 'L1', term: 'quantity, Q = X', example: 'length', color: 'indigo', def: 'A named, defined concept expressed as Q = {Q} · [Q]. This is the level ISO 80000 defines. Every entry in the standard is a Level 1 quantity.' },
-  { axis: 'quantity', level: 'L2', term: 'dedicated quantity (Sachgrösse)', example: 'length of rod', color: 'amber', def: 'A quantity bound to a specific kind of entity. Coined by Fleischman (1960). "Length of rod" is not abstract length — it is length as applied to rods.' },
-  { axis: 'quantity', level: 'L3', term: 'instantiation', example: 'length of rod AB at 09:15', color: 'rose', def: 'A particular quantity value of a particular entity at a particular time. This level exists in reality, not in standards.' },
-  { axis: 'entity', level: 'L1', term: 'kind of entity', example: 'physical body', color: 'rose', def: 'The abstract category of things that quantities can characterize. Other kinds include substance, field, wave, system.' },
-  { axis: 'entity', level: 'L2', term: 'entity', example: 'rod', color: 'rose', def: 'A specific type of physical thing. Entities are what the dedicated quantity is about. "Mass of electron" characterizes the entity "electron".' },
-  { axis: 'entity', level: 'L3', term: 'entity instance', example: 'rod AB at 09:15', color: 'rose', def: 'A particular physical object that exists in reality at a specific time and place. This is what a metrologist actually picks up and measures.' },
-  { axis: 'measurement', level: 'L3', term: 'quantity as measured', example: '1.234 m', color: 'amber', def: 'The measurement result — a numerical value paired with a unit, obtained by a measuring instrument acting on an entity instance. This is the only level with a numerical value.' },
+  { axis: 'quantity', level: 'L0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.', hrefs: [{ label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' }, { label: 'Browse the 89 live kinds →', href: '/kinds' }] },
+  { axis: 'quantity', level: 'L1', term: 'quantity, Q = X', example: 'length', color: 'indigo', def: 'A named, defined concept expressed as Q = {Q} · [Q]. This is the level ISO 80000 defines. Every entry in the standard is a Level 1 quantity.', hrefs: [{ label: 'isq:Quantity', href: '/ontology/isq-Quantity' }, { label: 'ISO 80000-3 "length" →', href: '/quantities/part-3/t3-1.1' }] },
+  { axis: 'quantity', level: 'L2', term: 'dedicated quantity (Sachgrösse)', example: 'length of rod', color: 'amber', def: 'A quantity bound to a specific kind of entity. Coined by Fleischman (1960). "Length of rod" is not abstract length — it is length as applied to rods.', hrefs: [{ label: 'isq:DedicatedQuantity', href: '/ontology/isq-DedicatedQuantity' }, { label: 'ex:lengthOfRod →', href: '/ontology/ex-lengthOfRod' }] },
+  { axis: 'quantity', level: 'L3', term: 'instantiation', example: 'length of rod AB at 09:15', color: 'rose', def: 'A particular quantity value of a particular entity at a particular time. This level exists in reality, not in standards.', hrefs: [{ label: 'isq:QuantityInstantiation', href: '/ontology/isq-QuantityInstantiation' }, { label: 'ex:lengthOfRodAB →', href: '/ontology/ex-lengthOfRodAB' }] },
+  { axis: 'entity', level: 'L1', term: 'kind of entity', example: 'physical body', color: 'rose', def: 'The abstract category of things that quantities can characterize. Other kinds include substance, field, wave, system.', hrefs: [{ label: 'isq:EntityKind', href: '/ontology/isq-EntityKind' }, { label: 'isq:PhysicalBody →', href: '/ontology/isq-PhysicalBody' }] },
+  { axis: 'entity', level: 'L2', term: 'entity', example: 'rod', color: 'rose', def: 'A specific type of physical thing. Entities are what the dedicated quantity is about. "Mass of electron" characterizes the entity "electron".', hrefs: [{ label: 'isq:EntityConcept', href: '/ontology/isq-EntityConcept' }, { label: 'ex:rod →', href: '/ontology/ex-rod' }] },
+  { axis: 'entity', level: 'L3', term: 'entity instance', example: 'rod AB at 09:15', color: 'rose', def: 'A particular physical object that exists in reality at a specific time and place. This is what a metrologist actually picks up and measures.', hrefs: [{ label: 'ex:rodAB →', href: '/ontology/ex-rodAB' }] },
+  { axis: 'measurement', level: 'L3', term: 'quantity as measured', example: '1.234 m', color: 'amber', def: 'The measurement result — a numerical value paired with a unit, obtained by a measuring instrument acting on an entity instance. This is the only level with a numerical value.', hrefs: [{ label: 'isq:MeasuredQuantity', href: '/ontology/isq-MeasuredQuantity' }, { label: 'ex:measuredLengthOfRodAB →', href: '/ontology/ex-measuredLengthOfRodAB' }] },
 ]
 
 const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
@@ -76,6 +76,9 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
           <p class="mt-3 text-base text-indigo-200/70 leading-relaxed">
             A four-level hierarchy across three parallel axes — quantity, entity, and measurement. Each level adds constraints, from abstract kind to specific measurement.
           </p>
+          <a href={asset('/methodology/walkthrough')} class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-sm font-medium text-white hover:bg-white/15 transition-colors">
+            See it live — follow the rod measurement →
+          </a>
         </div>
       </div>
       <div class="absolute bottom-0 inset-x-0 h-12 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
@@ -133,6 +136,13 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
                   <span class="text-sm text-slate-400 italic">e.g., "{item.example}"</span>
                 </div>
                 <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.def}</p>
+                <div class="mt-2 flex flex-wrap gap-1.5">
+                  {item.hrefs.map((link) => (
+                    <a href={asset(link.href)} class="text-xs font-medium px-2 py-0.5 rounded-lg bg-white/70 dark:bg-dark-800/70 border border-slate-200/60 dark:border-dark-600/40 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-200 dark:hover:border-brand-700 transition-colors">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
               </div>
             )
           })}

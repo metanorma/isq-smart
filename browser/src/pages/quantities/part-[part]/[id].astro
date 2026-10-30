@@ -13,6 +13,7 @@ import EntityList from '../../../components/EntityList.vue'
 import EntryDefinition from '../../../components/entry/EntryDefinition.astro'
 import EntryNotes from '../../../components/entry/EntryNotes.astro'
 import EntryReferencedBy from '../../../components/entry/EntryReferencedBy.astro'
+import EntryDedicatedQuantities from '../../../components/entry/EntryDedicatedQuantities.astro'
 import {
   getPartsByDomain, getPartMeta, getPartEntryCount, isBilingual, getPartEditions,
   partUrl, EntryModel,
@@ -312,6 +313,8 @@ const view = resolveEntryDetailView(
       <EntryNotes view={view} />
 
       <EntryReferencedBy view={view} />
+
+      <EntryDedicatedQuantities qname={`isq:${entry.id}`} />
 
       <!-- Concept hierarchy context -->
       {(() => {

@@ -72,6 +72,41 @@ isq:EntityConcept rdf:type owl:Class ;
   skos:definition "A specific type of entity that quantities of the corresponding dedicated quantity are about — level L2 of the entity axis (Pendrill 2024, Table 1.1). Example: rod."@en ;
   skos:prefLabel "Entity"@en .
 
+### PhysicalBody
+isq:PhysicalBody rdf:type owl:Class ;
+  rdfs:subClassOf isq:EntityKind ;
+  rdfs:label "Physical body"@en ;
+  skos:definition "A material entity with a well-defined extent in space — solid bodies, fluids, and structures; the canonical L1 entity kind of Pendrill (2024). Quantities such as length, mass, and temperature characterize physical bodies."@en ;
+  skos:prefLabel "Physical body"@en .
+
+### Substance
+isq:Substance rdf:type owl:Class ;
+  rdfs:subClassOf isq:EntityKind ;
+  rdfs:label "Substance"@en ;
+  skos:definition "A material of given composition — chemical elements, compounds, mixtures, and solutions. Quantities such as amount of substance, concentration, and density characterize substances."@en ;
+  skos:prefLabel "Substance"@en .
+
+### Field
+isq:Field rdf:type owl:Class ;
+  rdfs:subClassOf isq:EntityKind ;
+  rdfs:label "Field"@en ;
+  skos:definition "A physical field — a region of space in which each point is associated with a physical quantity value, such as electromagnetic, gravitational, or temperature fields. Quantities such as electric field strength and magnetic flux density characterize fields."@en ;
+  skos:prefLabel "Field"@en .
+
+### Wave
+isq:Wave rdf:type owl:Class ;
+  rdfs:subClassOf isq:EntityKind ;
+  rdfs:label "Wave"@en ;
+  skos:definition "A propagating oscillation of a physical quantity — electromagnetic, acoustic, and mechanical waves. Quantities such as wavelength, frequency, and sound pressure level characterize waves."@en ;
+  skos:prefLabel "Wave"@en .
+
+### System
+isq:System rdf:type owl:Class ;
+  rdfs:subClassOf isq:EntityKind ;
+  rdfs:label "System"@en ;
+  skos:definition "An organized assembly of interacting entities considered as a whole — technical systems, biological systems, and thermodynamic systems. Quantities such as power, efficiency, and entropy characterize systems."@en ;
+  skos:prefLabel "System"@en .
+
 ### DedicatedQuantity
 isq:DedicatedQuantity rdf:type owl:Class ;
   rdfs:subClassOf isq:Quantity ;

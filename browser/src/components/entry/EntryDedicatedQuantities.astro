@@ -1,0 +1,39 @@
+---
+import { ontologyEntities } from '../../data/generated/ontology'
+import { asset } from '../../lib/asset'
+import type { OntologyEntityData } from '../../data/ontologyViewModel'
+
+interface Props {
+  /** qname of the ISO/IEC 80000 entry, e.g. "isq:t3-1" */
+  qname: string
+}
+
+const { qname } = Astro.props
+const all = ontologyEntities as readonly OntologyEntityData[]
+const dedicated = all.filter((e) =>
+  e.assertions?.some((a) => a.predicate === 'isq:dedicatedTo' && a.objects.includes(qname)),
+)
+---
+
+{dedicated.length > 0 && (
+  <div class="mb-12">
+    <h2 class="flex items-center gap-2 text-xs font-semibold text-slate-400 uppercase tracking-[0.15em] mb-4">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m9.86-2.06a4.5 4.5 0 00-1.242-7.244l-4.5-4.5a4.5 4.5 0 00-6.364 6.364L4.34 8.374"/></svg>
+      <span>Dedicated quantities</span>
+      <span class="text-slate-300 dark:text-slate-600 normal-case tracking-normal font-normal">— Pendrill (2024) level 2</span>
+    </h2>
+    <div class="flex flex-wrap gap-2">
+      {dedicated.map((d) => (
+        <a
+          href={asset(`/ontology/${d.slug}`)}
+          class="group flex items-center gap-2 px-3 py-2 rounded-lg border border-amber-200/60 dark:border-amber-800/40 bg-amber-50/50 dark:bg-amber-950/30 hover:border-amber-300 dark:hover:border-amber-700 hover:shadow-sm transition-all text-sm"
+        >
+          <span class="font-medium text-amber-800 dark:text-amber-300">{d.label}</span>
+          {d.assertions?.filter((a) => a.predicate === 'isq:characterizes').flatMap((a) => a.objects).map((o) => (
+            <span class="text-xs font-mono text-slate-400 dark:text-slate-500">{o}</span>
+          ))}
+        </a>
+      ))}
+    </div>
+  </div>
+)}

@@ -33,10 +33,10 @@ ex:rodAB rdf:type smart:Entity ;
 #################################################################
 
 ex:lengthOfRod rdf:type isq:DedicatedQuantity ;
-  isq:dedicatedTo isq:t3-1 ;
+  isq:dedicatedTo isq:t3-1.1 ;
   isq:characterizes ex:rod ;
   skos:prefLabel "length of rod"@en ;
-  skos:definition "Length as applied to rods — a dedicated quantity (Sachgrösse) specializing ISO/IEC 80000-3 'length' (isq:t3-1) and characterizing the entity 'rod' (Pendrill 2024, Table 1.1)."@en .
+  skos:definition "Length as applied to rods — a dedicated quantity (Sachgrösse) specializing ISO/IEC 80000-3 'length' (isq:t3-1.1) and characterizing the entity 'rod' (Pendrill 2024, Table 1.1)."@en .
 
 ex:lengthOfRodAB rdf:type isq:QuantityInstantiation ;
   isq:instantiationOf ex:lengthOfRod ;

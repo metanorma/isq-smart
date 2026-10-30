@@ -1,0 +1,212 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import MethodologyNav from '../../components/MethodologyNav.astro'
+import { asset } from '../../lib/asset'
+
+interface Cell {
+  term: string
+  example: string
+  def?: string
+  links: { label: string; href: string }[]
+}
+
+const axes: { key: string; label: string; note: string; accent: string }[] = [
+  { key: 'quantity', label: 'Quantity', note: 'Dybkaer (2010)', accent: 'text-indigo-600 dark:text-indigo-400' },
+  { key: 'entity', label: 'Entity', note: 'phenomena, bodies, substances', accent: 'text-rose-600 dark:text-rose-400' },
+  { key: 'measurement', label: 'Measurement', note: 'Pendrill (2019)', accent: 'text-amber-600 dark:text-amber-400' },
+]
+
+const grid: Record<string, Record<string, Cell | null>> = {
+  '0': {
+    quantity: {
+      term: 'kind of quantity',
+      example: 'space',
+      def: 'The most abstract grouping — quantities sharing a dimension, comparable and addable.',
+      links: [
+        { label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' },
+        { label: '89 live kinds →', href: '/kinds' },
+      ],
+    },
+    entity: null,
+    measurement: null,
+  },
+  '1': {
+    quantity: {
+      term: 'quantity, Q = X',
+      example: 'length',
+      def: 'A named, defined concept — the level ISO/IEC 80000 publishes.',
+      links: [
+        { label: 'isq:Quantity', href: '/ontology/isq-Quantity' },
+        { label: 'ISO 80000-3 "length" →', href: '/quantities/part-3/t3-1.1' },
+      ],
+    },
+    entity: {
+      term: 'kind of entity',
+      example: 'physical body',
+      def: 'The abstract category of things quantities can characterize.',
+      links: [
+        { label: 'isq:EntityKind', href: '/ontology/isq-EntityKind' },
+        { label: 'isq:PhysicalBody', href: '/ontology/isq-PhysicalBody' },
+      ],
+    },
+    measurement: null,
+  },
+  '2': {
+    quantity: {
+      term: 'dedicated quantity (Sachgrösse)',
+      example: 'length of rod',
+      def: 'A quantity bound to an entity — coined by Fleischman (1960).',
+      links: [
+        { label: 'isq:DedicatedQuantity', href: '/ontology/isq-DedicatedQuantity' },
+        { label: 'ex:lengthOfRod →', href: '/ontology/ex-lengthOfRod' },
+      ],
+    },
+    entity: {
+      term: 'entity',
+      example: 'rod',
+      def: 'A specific type of physical thing the dedicated quantity is about.',
+      links: [
+        { label: 'isq:EntityConcept', href: '/ontology/isq-EntityConcept' },
+        { label: 'ex:rod →', href: '/ontology/ex-rod' },
+      ],
+    },
+    measurement: null,
+  },
+  '3': {
+    quantity: {
+      term: 'instantiation of an entity quantity',
+      example: 'length of rod AB, today at 09:15',
+      def: 'A particular quantity of a particular entity instance at a particular time.',
+      links: [
+        { label: 'isq:QuantityInstantiation', href: '/ontology/isq-QuantityInstantiation' },
+        { label: 'ex:lengthOfRodAB →', href: '/ontology/ex-lengthOfRodAB' },
+      ],
+    },
+    entity: {
+      term: 'instantiation of an entity',
+      example: 'rod AB, today at 09:15',
+      def: 'The particular physical object that exists in reality.',
+      links: [{ label: 'ex:rodAB →', href: '/ontology/ex-rodAB' }],
+    },
+    measurement: {
+      term: 'quantity as measured, Qm = {Q}·[Q]',
+      example: '1.234 m ± 0.001',
+      def: 'The measurement result — numerical value × unit, with uncertainty (GUM).',
+      links: [
+        { label: 'isq:MeasuredQuantity', href: '/ontology/isq-MeasuredQuantity' },
+        { label: 'ex:measuredLengthOfRodAB →', href: '/ontology/ex-measuredLengthOfRodAB' },
+      ],
+    },
+  },
+}
+
+const levels = ['0', '1', '2', '3']
+
+const story = [
+  { label: 'length', sub: 'L1 · ISO 80000-3 t3-1.1', href: '/quantities/part-3/t3-1.1' },
+  { label: 'length of rod', sub: 'L2 · dedicated quantity', href: '/ontology/ex-lengthOfRod' },
+  { label: 'length of rod AB, 09:15', sub: 'L3 · instantiation', href: '/ontology/ex-lengthOfRodAB' },
+  { label: '1.234 m ± 0.001', sub: 'L3 · measured', href: '/ontology/ex-measuredLengthOfRodAB' },
+]
+---
+
+<DefaultLayout titleKey="page.methodology.browser_title" description="Follow one measurement through Pendrill's full hierarchy — every cell links to live data in the ISQ Browser.">
+  <div>
+    <section class="relative overflow-hidden bg-gradient-to-br from-slate-950 via-amber-950/60 to-brand-950">
+      <div class="absolute inset-0 hero-pattern"></div>
+      <div class="grain-overlay absolute inset-0"></div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="max-w-3xl page-enter">
+          <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Methodology', href: '/methodology' }, { label: 'Walkthrough' }]} variant="dark" />
+          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif leading-tight">One measurement, end to end</h1>
+          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed">
+            Pendrill's Table 1.1 describes a four-level hierarchy across three parallel axes. This walkthrough makes every cell clickable — the classes that model it, and the worked example instance that realizes it: the length of a rod, measured.
+          </p>
+        </div>
+      </div>
+      <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+    </section>
+
+    <MethodologyNav active="walkthrough" />
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="overflow-x-auto -mx-4 px-4">
+        <table class="w-full min-w-[880px] border-separate border-spacing-2">
+          <thead>
+            <tr>
+              <th class="text-left text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-2 w-20">Level</th>
+              {axes.map((axis) => (
+                <th class="text-left px-3 py-2">
+                  <span class={`text-sm font-bold ${axis.accent}`}>{axis.label}</span>
+                  <span class="text-xs text-slate-400 ml-2">{axis.note}</span>
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {levels.map((level) => (
+              <tr>
+                <td class="align-top px-3 py-2">
+                  <span class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-slate-100 dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 text-sm font-bold text-slate-600 dark:text-slate-300 tabular-nums">{level}</span>
+                </td>
+                {axes.map((axis) => {
+                  const cell = grid[level]![axis.key]
+                  return cell ? (
+                    <td class="align-top w-1/3">
+                      <div class="h-full p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:shadow-md transition-shadow">
+                        <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">{cell.term}</div>
+                        <div class="mt-0.5 text-sm text-brand-600 dark:text-brand-400 font-mono">{cell.example}</div>
+                        {cell.def && <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{cell.def}</p>}
+                        <div class="mt-3 flex flex-wrap gap-1.5">
+                          {cell.links.map((link) => (
+                            <a href={asset(link.href)} class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-300 hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
+                              {link.label}
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    </td>
+                  ) : (
+                    <td class="align-top w-1/3">
+                      <div class="h-full p-4 rounded-xl border border-dashed border-slate-200/60 dark:border-dark-600/40 text-center">
+                        <span class="text-sm text-slate-300 dark:text-slate-600">—</span>
+                      </div>
+                    </td>
+                  )
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="mt-4 text-xs text-slate-400 dark:text-slate-500">
+        Empty cells are Pendrill's own: only the quantity axis reaches level 0, and the measurement axis exists only at level 3.
+      </p>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-2">Follow the measurement</h2>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">The same chain the table describes, as data — each step is a live page.</p>
+      <div class="flex flex-wrap items-stretch gap-3">
+        {story.map((step, i) => (
+          <>
+            <a href={asset(step.href)} class="group flex-1 min-w-[200px] p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+              <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1 tabular-nums">Step {i + 1}</div>
+              <div class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors font-mono">{step.label}</div>
+              <div class="text-xs text-slate-400 mt-0.5">{step.sub}</div>
+            </a>
+            {i < story.length - 1 && (
+              <div class="flex items-center text-slate-300 dark:text-slate-600">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
+              </div>
+            )}
+          </>
+        ))}
+      </div>
+      <div class="mt-6 p-5 rounded-xl bg-brand-50/40 dark:bg-brand-950/30 border border-brand-200/40 dark:border-brand-800/30 text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+        The entity axis runs in parallel: <a href={asset('/ontology/ex-rod')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">ex:rod</a> is the entity the dedicated quantity characterizes, and <a href={asset('/ontology/ex-rodAB')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">ex:rodAB</a> is the instance the measurement was performed on. The RDF source for the whole example is downloadable at <a href={asset('/ontologies/isq-examples.ttl')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">isq-examples.ttl</a>.
+      </div>
+    </section>
+  </div>
+</DefaultLayout>
