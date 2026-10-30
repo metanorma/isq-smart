@@ -3,6 +3,7 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import Breadcrumb from '../../components/Breadcrumb.astro'
 import MethodologyNav from '../../components/MethodologyNav.astro'
 import { asset } from '../../lib/asset'
+import { kindOfQuantities } from '../../data/generated/kinds'
 
 const levels = [
   {
@@ -44,7 +45,7 @@ const levels = [
 ]
 
 const glossary = [
-  { axis: 'quantity', level: 'L0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.', hrefs: [{ label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' }, { label: 'Browse the 89 live kinds →', href: '/kinds' }] },
+  { axis: 'quantity', level: 'L0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.', hrefs: [{ label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' }, { label: `Browse all ${kindOfQuantities.length} live kinds →`, href: '/kinds' }] },
   { axis: 'quantity', level: 'L1', term: 'quantity, Q = X', example: 'length', color: 'indigo', def: 'A named, defined concept expressed as Q = {Q} · [Q]. This is the level ISO 80000 defines. Every entry in the standard is a Level 1 quantity.', hrefs: [{ label: 'isq:Quantity', href: '/ontology/isq-Quantity' }, { label: 'ISO 80000-3 "length" →', href: '/quantities/part-3/t3-1.1' }] },
   { axis: 'quantity', level: 'L2', term: 'dedicated quantity (Sachgrösse)', example: 'length of rod', color: 'amber', def: 'A quantity bound to a specific kind of entity. Coined by Fleischman (1960). "Length of rod" is not abstract length — it is length as applied to rods.', hrefs: [{ label: 'isq:DedicatedQuantity', href: '/ontology/isq-DedicatedQuantity' }, { label: 'ex:lengthOfRod →', href: '/ontology/ex-lengthOfRod' }] },
   { axis: 'quantity', level: 'L3', term: 'instantiation', example: 'length of rod AB at 09:15', color: 'rose', def: 'A particular quantity value of a particular entity at a particular time. This level exists in reality, not in standards.', hrefs: [{ label: 'isq:QuantityInstantiation', href: '/ontology/isq-QuantityInstantiation' }, { label: 'ex:lengthOfRodAB →', href: '/ontology/ex-lengthOfRodAB' }] },

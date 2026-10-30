@@ -360,8 +360,16 @@ function resolveSiblings(
   entity: OntologyEntityData,
   index: EntityIndex,
 ): { prev: OntologyEntityData | undefined; next: OntologyEntityData | undefined } {
+  // Individuals are scoped to their class (instanceOf[0]) so part-document
+  // instances and worked-example instances don't appear as each other's
+  // prev/next; everything else is scoped to entity type.
   const sameType = (index.byType.get(entity.type) || [])
     .filter(e => e.ontology !== 'external')
+    .filter(e =>
+      entity.type !== 'individual'
+        ? true
+        : (e.instanceOf?.[0] ?? '_') === (entity.instanceOf?.[0] ?? '_'),
+    )
     .sort((a, b) => a.label.localeCompare(b.label))
   const idx = sameType.findIndex(e => e.qname === entity.qname)
   return {

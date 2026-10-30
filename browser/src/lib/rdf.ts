@@ -24,6 +24,10 @@ interface Entity {
   scopeNote?: string
   example?: string
   altLabel?: string
+  isPartOf?: string[]
+  identifier?: string
+  assertions?: { predicate: string; objects: string[] }[]
+  literals?: { predicate: string; value: string }[]
 }
 
 function prefixFor(qname: string): string {
@@ -52,7 +56,10 @@ export function toTurtle(entity: Entity): string {
     }
   }
 
-  collectRefs(entity.parent, entity.domain, entity.range, entity.targetClass, entity.targetSubjectsOf, entity.targetObjectsOf, entity.scheme, entity.instanceOf)
+  collectRefs(entity.parent, entity.domain, entity.range, entity.targetClass, entity.targetSubjectsOf, entity.targetObjectsOf, entity.scheme, entity.instanceOf, entity.isPartOf)
+  if (entity.assertions) {
+    for (const a of entity.assertions) collectRefs(a.predicate, a.objects)
+  }
   if (entity.constraints) {
     for (const c of entity.constraints) {
       collectRefs(c.path, c.datatype, c.classValue, c.nodeKind, c.hasValue)
@@ -159,6 +166,29 @@ export function toTurtle(entity: Entity): string {
     }
   }
 
+  if (entity.identifier) {
+    predicates.push(`  dcterms:identifier "${escapeTurtle(entity.identifier)}"`)
+  }
+
+  if (entity.isPartOf?.length) {
+    for (const p of entity.isPartOf) {
+      predicates.push(`  dcterms:isPartOf ${p}`)
+    }
+  }
+
+  if (entity.assertions?.length) {
+    for (const a of entity.assertions) {
+      predicates.push(`  ${a.predicate} ${a.objects.join(',\n    ')}`)
+    }
+  }
+
+  if (entity.literals?.length) {
+    for (const l of entity.literals) {
+      const value = /^-?\d+(\.\d+)?$/.test(l.value) ? l.value : `"${escapeTurtle(l.value)}"`
+      predicates.push(`  ${l.predicate} ${value}`)
+    }
+  }
+
   if (entity.constraints?.length) {
     for (const c of entity.constraints) {
       const parts = [`sh:path ${c.path}`]
@@ -218,6 +248,19 @@ export function toJsonLd(entity: Entity): string {
   if (entity.scopeNote) obj['skos:scopeNote'] = entity.scopeNote
   if (entity.version) obj['owl:versionInfo'] = entity.version
   if (entity.imports?.length) obj['owl:imports'] = entity.imports
+  if (entity.identifier) obj['dcterms:identifier'] = entity.identifier
+  if (entity.isPartOf?.length) obj['dcterms:isPartOf'] = entity.isPartOf.length === 1 ? entity.isPartOf[0] : entity.isPartOf
+  if (entity.assertions?.length) {
+    for (const a of entity.assertions) {
+      obj[a.predicate] = a.objects.length === 1 ? a.objects[0] : a.objects
+    }
+  }
+  if (entity.literals?.length) {
+    for (const l of entity.literals) {
+      const num = Number(l.value)
+      obj[l.predicate] = l.value.trim() !== '' && !Number.isNaN(num) ? num : l.value
+    }
+  }
 
   if (entity.constraints?.length) {
     obj['sh:property'] = entity.constraints.map(c => {
