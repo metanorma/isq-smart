@@ -43,7 +43,13 @@ export function buildDomainIndex(
   writeFileSync(
     resolve(generatedDir, 'domain-index.ts'),
     `export const quantitiesIndex = ${JSON.stringify(qIndex)}\n`
-    + `export const mathIndex = ${JSON.stringify(mIndex)}\n`
-    + `export const symbolCache = ${JSON.stringify(symbolCache)} as Record<string, string>\n`,
+    + `export const mathIndex = ${JSON.stringify(mIndex)}\n`,
+  )
+
+  // Separate module so consumers needing only the MathML cache do not
+  // download the search indexes (and vice versa).
+  writeFileSync(
+    resolve(generatedDir, 'symbol-cache.ts'),
+    `export const symbolCache = ${JSON.stringify(symbolCache)} as Record<string, string>\n`,
   )
 }

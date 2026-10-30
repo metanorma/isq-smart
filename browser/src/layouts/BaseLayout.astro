@@ -24,7 +24,7 @@ const resolvedTitle = title ?? 'ISQ Browser — ISO 80000 & IEC 80000 Quantities
 const resolvedDesc = description ?? 'Browse ISO 80000 and IEC 80000 quantities, units, mathematical notation, and linked data. The International System of Quantities in an interactive web browser.'
 const ogTitle = resolvedTitle.split('—')[0].trim()
 const canonicalUrl = new URL(Astro.url.pathname.replace(/index\.html$/, ''), Astro.site).href
-const ogImageUrl = `${SITE_URL}${asset('/apple-touch-icon.png')}`
+const ogImageUrl = `${SITE_URL}${asset('/og-image.png')}`
 const seoUrlTags = isErrorPage ? null : { canonicalUrl, ogImageUrl }
 ---
 

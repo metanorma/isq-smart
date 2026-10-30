@@ -3,7 +3,8 @@ import DefaultLayout from '../../layouts/DefaultLayout.astro'
 import EntryBrowser from '../../components/EntryBrowser.vue'
 import PageHero from '../../components/PageHero.astro'
 import { getDomain, getPartsByDomain, getPartEntryCount, isBilingual, partUrl, sectionLabel } from '../../data/index'
-import { mathIndex, symbolCache } from '../../data/generated/domain-index'
+import { mathIndex } from '../../data/generated/domain-index'
+import { symbolCache } from '../../data/generated/symbol-cache'
 
 const domainKey = 'math' as const
 const domain = getDomain(domainKey)!
