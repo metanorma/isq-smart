@@ -7,12 +7,12 @@ interface Props {
 const { active } = Astro.props
 
 const items = [
-  { slug: '', label: 'Overview', key: 'overview' as const },
-  { slug: '/concept-system', label: 'Concept System', key: 'concept-system' as const },
-  { slug: '/walkthrough', label: 'Walkthrough', key: 'walkthrough' as const },
-  { slug: '/measurements', label: 'Measurements', key: 'measurements' as const },
-  { slug: '/navigation', label: 'Navigation', key: 'navigation' as const },
-  { slug: '/references', label: 'References', key: 'references' as const },
+  { slug: '', label: 'Overview', key: 'overview' as const, i18nKey: 'page.methodology.nav.overview' },
+  { slug: '/concept-system', label: 'Concept System', key: 'concept-system' as const, i18nKey: 'page.methodology.nav.concept_system' },
+  { slug: '/walkthrough', label: 'Walkthrough', key: 'walkthrough' as const, i18nKey: 'page.methodology.nav.walkthrough' },
+  { slug: '/measurements', label: 'Measurements', key: 'measurements' as const, i18nKey: 'page.methodology.nav.measurements' },
+  { slug: '/navigation', label: 'Navigation', key: 'navigation' as const, i18nKey: 'page.methodology.nav.navigation' },
+  { slug: '/references', label: 'References', key: 'references' as const, i18nKey: 'page.methodology.nav.references' },
 ]
 ---
 
@@ -22,6 +22,7 @@ const items = [
       {items.map((item) => (
         <a
           href={asset(`/methodology${item.slug}`)}
+          data-i18n={item.i18nKey}
           class={`flex-shrink-0 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
             active === item.key
               ? 'bg-brand-50 dark:bg-brand-950/50 text-brand-700 dark:text-brand-400'

@@ -190,7 +190,102 @@ export const messages = {
       },
       "methodology": {
         "title": "Methodology",
-        "browser_title": "Methodology — ISQ Browser"
+        "browser_title": "Methodology — ISQ Browser",
+        "nav": {
+          "overview": "Overview",
+          "concept_system": "Concept System",
+          "walkthrough": "Walkthrough",
+          "measurements": "Measurements",
+          "navigation": "Navigation",
+          "references": "References"
+        },
+        "cards": {
+          "concept_system": {
+            "eyebrow": "Pendrill (2024)",
+            "title": "Concept System",
+            "desc": "The four-level hierarchy across three parallel axes — quantity, entity, and measurement. How ISO 80000 quantities are grouped into kinds, bound to entities, and instantiated as measurements."
+          },
+          "walkthrough": {
+            "eyebrow": "Table 1.1, live",
+            "title": "Walkthrough",
+            "desc": "Follow one measurement — the length of a rod — through every level of the hierarchy, from abstract kind to 1.234 m ± 0.001. Each cell links to the live data in the browser."
+          },
+          "navigation": {
+            "eyebrow": "Information Architecture",
+            "title": "Navigation",
+            "desc": "Five ways to browse the same dataset — by Part, by Kind, by Dimension, by Unit, or by Concept. Each reveals a different facet of the ISO 80000 & IEC 80000 series."
+          },
+          "references": {
+            "eyebrow": "Academic basis",
+            "title": "References",
+            "desc": "The concept system, terminology, and methodology draw on Pendrill (2024), Dybkaer (2010), Fleischman (1960), Maxwell (1873), and the ISO/IEC Guide 99 (VIM)."
+          }
+        },
+        "walkthrough": {
+          "title": "One measurement, end to end",
+          "intro": "Pendrill's Table 1.1 describes a four-level hierarchy across three parallel axes. This walkthrough makes every cell clickable — the classes that model it, and the worked example instance that realizes it: the length of a rod, measured.",
+          "level": "Level",
+          "axis_quantity": "Quantity",
+          "axis_quantity_note": "Dybkaer (2010)",
+          "axis_entity": "Entity",
+          "axis_entity_note": "phenomena, bodies, substances",
+          "axis_measurement": "Measurement",
+          "axis_measurement_note": "Pendrill (2019)",
+          "empty_cell": "—",
+          "q0_term": "kind of quantity",
+          "q0_example": "space",
+          "q0_def": "The most abstract grouping — quantities sharing a dimension, comparable and addable.",
+          "q1_term": "quantity, Q = X",
+          "q1_example": "length",
+          "q1_def": "A named, defined concept — the level ISO/IEC 80000 publishes.",
+          "q1_entity_term": "kind of entity",
+          "q1_entity_example": "physical body",
+          "q1_entity_def": "The abstract category of things quantities can characterize.",
+          "q2_term": "dedicated quantity (Sachgrösse)",
+          "q2_example": "length of rod",
+          "q2_def": "A quantity bound to an entity — coined by Fleischman (1960).",
+          "q2_entity_term": "entity",
+          "q2_entity_example": "rod",
+          "q2_entity_def": "A specific type of physical thing the dedicated quantity is about.",
+          "q3_term": "instantiation of an entity quantity",
+          "q3_example": "length of rod AB, today at 09:15",
+          "q3_def": "A particular quantity of a particular entity instance at a particular time.",
+          "q3_entity_term": "instantiation of an entity",
+          "q3_entity_example": "rod AB, today at 09:15",
+          "q3_entity_def": "The particular physical object that exists in reality.",
+          "m3_term": "quantity as measured, Qm = {Q}·[Q]",
+          "m3_example": "1.234 m ± 0.001",
+          "m3_def": "The measurement result — numerical value × unit, with uncertainty (GUM).",
+          "cells_note": "Empty cells are Pendrill's own: only the quantity axis reaches level 0, and the measurement axis exists only at level 3.",
+          "story_title": "Follow the measurement",
+          "story_intro": "The same chain the table describes, as data — each step is a live page.",
+          "story_1_label": "length",
+          "story_2_label": "length of rod",
+          "story_3_label": "length of rod AB, 09:15",
+          "entity_note": "The entity axis runs in parallel: <a href='/isq-smart/ontology/ex-rod' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>ex:rod</a> is the entity the dedicated quantity characterizes, and <a href='/isq-smart/ontology/ex-rodAB' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>ex:rodAB</a> is the instance the measurement was performed on. The RDF source for the whole example is downloadable at <a href='/isq-smart/ontologies/isq-examples.ttl' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>isq-examples.ttl</a> — and the same intake path lets you supply <a href='/isq-smart/methodology/measurements' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>your own measurements</a>."
+        },
+        "measurements": {
+          "title": "Bring your own measurements",
+          "intro": "The ISQ Browser is a standards browser — it publishes the ISO 80000 & IEC 80000 vocabulary and the measurement model, never measurement data itself. Organisations that hold measurements supply them through a simple RDF intake contract, and this site renders them.",
+          "contract_title": "The contract",
+          "contract_intro": "A measurement record is a small RDF graph using the ISQ ontology terms. One file, no API, no schema of our invention — the ontology is the format.",
+          "th_predicate": "Predicate",
+          "th_object": "Object",
+          "th_meaning": "Meaning",
+          "intake_title": "The intake path",
+          "intake_1": "Provide a Turtle file using the isq: terms above — see the <a href='/isq-smart/ontologies/isq-examples.ttl' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>worked example</a> for a complete graph (rod, length of rod, instantiation, measured result with uncertainty).",
+          "intake_2": "Extend browser/public/ontologies/ with the file (a downstream deployment can add it at build time; no code changes are needed).",
+          "intake_3": "The ontology plugin extracts every new individual automatically: it gets a detail page with its Assertions and Values, RDF exports, and appears in the <a href='/isq-smart/ontology/measurements' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>measurements index</a>.",
+          "governance_note": "Note: the browser does not validate measurement quality or provenance — that remains the data provider's responsibility (instrument, procedure, and operator metadata can be attached using the same RDF approach, e.g. prov: or smart:Activity).",
+          "why_title": "Why a contract, not content",
+          "why_body": "Measurement data is inherently third-party: it belongs to laboratories, registries, and industry. Bundling measurements here would blur the line between the standard and its application — precisely the boundary Pendrill (2024) draws at level 3. The contract keeps that boundary clean: the standard defines the quantities, the ontology defines the measurement structure, and whoever measures owns the results."
+        },
+        "measurements_index": {
+          "title": "Measurements",
+          "intro_1": "Measurement records are <strong>not published by the ISQ Browser</strong>. This page renders <code>isq:MeasuredQuantity</code> individuals supplied by an ontology intake file using the Pendrill measurement model. The bundled rod example is reference data for the model itself.",
+          "intro_2": "To supply your own measurements, see the <a href='/isq-smart/methodology/measurements' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>intake contract</a> — a single Turtle file using the <code>isq:</code> terms is all that is required.",
+          "empty": "No measurement records are loaded."
+        }
       },
       "terminology": {
         "title": "Terminology",
@@ -495,7 +590,102 @@ export const messages = {
       },
       "methodology": {
         "title": "Méthodologie",
-        "browser_title": "Méthodologie — Navigateur ISQ"
+        "browser_title": "Méthodologie — Navigateur ISQ",
+        "nav": {
+          "overview": "Aperçu",
+          "concept_system": "Système de concepts",
+          "walkthrough": "Parcours guidé",
+          "measurements": "Mesures",
+          "navigation": "Navigation",
+          "references": "Références"
+        },
+        "cards": {
+          "concept_system": {
+            "eyebrow": "Pendrill (2024)",
+            "title": "Système de concepts",
+            "desc": "La hiérarchie à quatre niveaux selon trois axes parallèles — grandeur, entité et mesure. Comment les grandeurs ISO 80000 sont regroupées en genres, liées à des entités et instanciées en mesures."
+          },
+          "walkthrough": {
+            "eyebrow": "Tableau 1.1, en direct",
+            "title": "Parcours guidé",
+            "desc": "Suivez une mesure — la longueur d'une tige — à travers chaque niveau de la hiérarchie, du genre abstrait à 1,234 m ± 0,001. Chaque cellule renvoie aux données réelles du navigateur."
+          },
+          "navigation": {
+            "eyebrow": "Architecture de l'information",
+            "title": "Navigation",
+            "desc": "Cinq façons de parcourir le même jeu de données — par partie, par genre, par dimension, par unité ou par concept. Chacune révèle une facette différente de la série ISO 80000 & CEI 80000."
+          },
+          "references": {
+            "eyebrow": "Base académique",
+            "title": "Références",
+            "desc": "Le système de concepts, la terminologie et la méthodologie s'appuient sur Pendrill (2024), Dybkaer (2010), Fleischman (1960), Maxwell (1873) et le Guide ISO/CEI 99 (VIM)."
+          }
+        },
+        "walkthrough": {
+          "title": "Une mesure, de bout en bout",
+          "intro": "Le tableau 1.1 de Pendrill décrit une hiérarchie à quatre niveaux selon trois axes parallèles. Ce parcours rend chaque cellule cliquable — les classes qui la modélisent et l'instance d'exemple qui la réalise : la longueur d'une tige, mesurée.",
+          "level": "Niveau",
+          "axis_quantity": "Grandeur",
+          "axis_quantity_note": "Dybkaer (2010)",
+          "axis_entity": "Entité",
+          "axis_entity_note": "phénomènes, corps, substances",
+          "axis_measurement": "Mesure",
+          "axis_measurement_note": "Pendrill (2019)",
+          "empty_cell": "—",
+          "q0_term": "genre de grandeur",
+          "q0_example": "espace",
+          "q0_def": "Le regroupement le plus abstrait — des grandeurs partageant une même dimension, comparables et additibles.",
+          "q1_term": "grandeur, Q = X",
+          "q1_example": "longueur",
+          "q1_def": "Un concept nommé et défini — le niveau publié par l'ISO/CEI 80000.",
+          "q1_entity_term": "genre d'entité",
+          "q1_entity_example": "corps physique",
+          "q1_entity_def": "La catégorie abstraite des choses que les grandeurs caractérisent.",
+          "q2_term": "grandeur dédiée (Sachgrösse)",
+          "q2_example": "longueur de tige",
+          "q2_def": "Une grandeur liée à une entité — forgé par Fleischman (1960).",
+          "q2_entity_term": "entité",
+          "q2_entity_example": "tige",
+          "q2_entity_def": "Un type spécifique d'objet physique auquel la grandeur dédiée se rapporte.",
+          "q3_term": "instanciation d'une grandeur d'entité",
+          "q3_example": "longueur de la tige AB, aujourd'hui à 09:15",
+          "q3_def": "Une grandeur particulière d'une instance d'entité particulière à un instant particulier.",
+          "q3_entity_term": "instanciation d'une entité",
+          "q3_entity_example": "tige AB, aujourd'hui à 09:15",
+          "q3_entity_def": "L'objet physique particulier qui existe réellement.",
+          "m3_term": "grandeur mesurée, Qm = {Q}·[Q]",
+          "m3_example": "1,234 m ± 0,001",
+          "m3_def": "Le résultat de la mesure — valeur numérique × unité, avec incertitude (GUM).",
+          "cells_note": "Les cellules vides sont celles de Pendrill : seul l'axe des grandeurs atteint le niveau 0, et l'axe des mesures n'existe qu'au niveau 3.",
+          "story_title": "Suivre la mesure",
+          "story_intro": "La même chaîne que décrit le tableau, sous forme de données — chaque étape est une page réelle.",
+          "story_1_label": "longueur",
+          "story_2_label": "longueur de tige",
+          "story_3_label": "longueur de la tige AB, 09:15",
+          "entity_note": "L'axe des entités est parallèle : <a href='/isq-smart/ontology/ex-rod' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>ex:rod</a> est l'entité que la grandeur dédiée caractérise, et <a href='/isq-smart/ontology/ex-rodAB' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>ex:rodAB</a> est l'instance sur laquelle la mesure a été effectuée. La source RDF de l'exemple complet est téléchargeable dans <a href='/isq-smart/ontologies/isq-examples.ttl' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>isq-examples.ttl</a> — et le même chemin d'apport permet de fournir <a href='/isq-smart/methodology/measurements' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>vos propres mesures</a>."
+        },
+        "measurements": {
+          "title": "Apportez vos propres mesures",
+          "intro": "Le navigateur ISQ est un navigateur de normes — il publie le vocabulaire ISO 80000 & CEI 80000 et le modèle de mesure, jamais les données de mesure elles-mêmes. Les organisations qui détiennent des mesures les fournissent via un simple contrat d'apport RDF, et ce site les restitue.",
+          "contract_title": "Le contrat",
+          "contract_intro": "Un enregistrement de mesure est un petit graphe RDF utilisant les termes de l'ontologie ISQ. Un fichier, pas d'API, aucun schéma de notre invention — l'ontologie est le format.",
+          "th_predicate": "Prédicat",
+          "th_object": "Objet",
+          "th_meaning": "Signification",
+          "intake_title": "Le chemin d'apport",
+          "intake_1": "Fournir un fichier Turtle utilisant les termes isq: ci-dessus — voir l'<a href='/isq-smart/ontologies/isq-examples.ttl' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>exemple guidé</a> pour un graphe complet (tige, longueur de tige, instanciation, résultat mesuré avec incertitude).",
+          "intake_2": "Ajouter le fichier dans browser/public/ontologies/ (un déploiement aval peut l'ajouter au moment de la compilation ; aucune modification de code n'est nécessaire).",
+          "intake_3": "Le plugin d'ontologie extrait automatiquement chaque nouvel individu : il obtient une page de détail avec ses assertions et ses valeurs, des exports RDF, et apparaît dans l'<a href='/isq-smart/ontology/measurements' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>index des mesures</a>.",
+          "governance_note": "Note : le navigateur ne valide ni la qualité ni la provenance des mesures — cela reste la responsabilité du fournisseur de données (métadonnées d'instrument, de procédure et d'opérateur annexables selon la même approche RDF, p. ex. prov: ou smart:Activity).",
+          "why_title": "Pourquoi un contrat, pas du contenu",
+          "why_body": "Les données de mesure sont par nature tierces : elles appartiennent aux laboratoires, aux registres et à l'industrie. Regrouper des mesures ici brouillerait la frontière entre la norme et son application — précisément la limite que Pendrill (2024) trace au niveau 3. Le contrat garde cette frontière nette : la norme définit les grandeurs, l'ontologie définit la structure de mesure, et qui mesure possède les résultats."
+        },
+        "measurements_index": {
+          "title": "Mesures",
+          "intro_1": "Les enregistrements de mesure ne sont <strong>pas publiés par le navigateur ISQ</strong>. Cette page restitue les individus <code>isq:MeasuredQuantity</code> fournis par un fichier d'apport d'ontologie selon le modèle de mesure de Pendrill. L'exemple de la tige fourni avec le site est une donnée de référence pour le modèle lui-même.",
+          "intro_2": "Pour fournir vos propres mesures, voir le <a href='/isq-smart/methodology/measurements' class='text-brand-600 dark:text-brand-400 font-medium hover:underline'>contrat d'apport</a> — un seul fichier Turtle utilisant les termes <code>isq:</code> suffit.",
+          "empty": "Aucun enregistrement de mesure chargé."
+        }
       },
       "terminology": {
         "title": "Terminologie",

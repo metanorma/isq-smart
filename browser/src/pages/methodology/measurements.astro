@@ -4,6 +4,8 @@ import Breadcrumb from '../../components/Breadcrumb.astro'
 import MethodologyNav from '../../components/MethodologyNav.astro'
 import { asset } from '../../lib/asset'
 
+const K = 'page.methodology.measurements.'
+
 const predicates = [
   { term: 'a', iri: 'isq:MeasuredQuantity', def: 'The measurement result — Qm = {Q}·[Q]; subclass of isq:QuantityInstantiation.' },
   { term: 'isq:measurementOf', iri: '→ isq:QuantityInstantiation', def: 'The particular quantity that was measured (required, exactly one).' },
@@ -22,8 +24,8 @@ const predicates = [
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div class="max-w-3xl page-enter">
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Methodology', href: '/methodology' }, { label: 'Measurements' }]} variant="dark" />
-          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif leading-tight">Bring your own measurements</h1>
-          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed">
+          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif leading-tight" data-i18n={K + 'title'}>Bring your own measurements</h1>
+          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed" data-i18n={K + 'intro'}>
             The ISQ Browser is a standards browser — it publishes the ISO 80000 &amp; IEC 80000 vocabulary and the measurement model, never measurement data itself.
             Organisations that hold measurements supply them through a simple RDF intake contract, and this site renders them.
           </p>
@@ -36,17 +38,17 @@ const predicates = [
 
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
       <section>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">The contract</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2" data-i18n={K + 'contract_title'}>The contract</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-5" data-i18n={K + 'contract_intro'}>
           A measurement record is a small RDF graph using the ISQ ontology terms. One file, no API, no schema of our invention — the ontology <em>is</em> the format.
         </p>
         <div class="overflow-x-auto">
           <table class="w-full text-sm border-separate border-spacing-y-1">
             <thead>
               <tr class="text-left text-xs text-slate-400 uppercase tracking-wider">
-                <th class="px-3 py-1.5">Predicate</th>
-                <th class="px-3 py-1.5">Object</th>
-                <th class="px-3 py-1.5">Meaning</th>
+                <th class="px-3 py-1.5" data-i18n={K + 'th_predicate'}>Predicate</th>
+                <th class="px-3 py-1.5" data-i18n={K + 'th_object'}>Object</th>
+                <th class="px-3 py-1.5" data-i18n={K + 'th_meaning'}>Meaning</th>
               </tr>
             </thead>
             <tbody>
@@ -63,20 +65,20 @@ const predicates = [
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">The intake path</h2>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2" data-i18n={K + 'intake_title'}>The intake path</h2>
         <ol class="list-decimal list-inside space-y-2 text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
-          <li>Provide a Turtle file using the <code class="text-xs font-mono">isq:</code> terms above — see the <a href={asset('/ontologies/isq-examples.ttl')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">worked example</a> for a complete graph (rod, length of rod, instantiation, measured result with uncertainty).</li>
-          <li>Extend <code class="text-xs font-mono">browser/public/ontologies/</code> with the file (a downstream deployment can add it at build time; no code changes are needed).</li>
-          <li>The ontology plugin extracts every new individual automatically: it gets a detail page with its Assertions and Values, RDF exports, and appears in <a href={asset('/ontology/measurements')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">the measurements index</a>.</li>
+          <li data-i18n-html={K + 'intake_1'}>Provide a Turtle file using the <code class="text-xs font-mono">isq:</code> terms above — see the <a href={asset('/ontologies/isq-examples.ttl')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">worked example</a> for a complete graph (rod, length of rod, instantiation, measured result with uncertainty).</li>
+          <li data-i18n={K + 'intake_2'}>Extend <code class="text-xs font-mono">browser/public/ontologies/</code> with the file (a downstream deployment can add it at build time; no code changes are needed).</li>
+          <li data-i18n-html={K + 'intake_3'}>The ontology plugin extracts every new individual automatically: it gets a detail page with its Assertions and Values, RDF exports, and appears in <a href={asset('/ontology/measurements')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">the measurements index</a>.</li>
         </ol>
-        <div class="mt-5 p-4 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30 text-xs text-amber-800 dark:text-amber-300 leading-relaxed max-w-3xl">
+        <div class="mt-5 p-4 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30 text-xs text-amber-800 dark:text-amber-300 leading-relaxed max-w-3xl" data-i18n={K + 'governance_note'}>
           Note: the browser does not validate measurement quality or provenance — that remains the data provider's responsibility (instrument, procedure, and operator metadata can be attached using the same RDF approach, e.g. <code class="font-mono">prov:</code> or <code class="font-mono">smart:Activity</code>).
         </div>
       </section>
 
       <section>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">Why a contract, not content</h2>
-        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl">
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2" data-i18n={K + 'why_title'}>Why a contract, not content</h2>
+        <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed max-w-3xl" data-i18n={K + 'why_body'}>
           Measurement data is inherently third-party: it belongs to laboratories, registries, and industry. Bundling measurements here would blur the line between the standard and its application — precisely the boundary Pendrill (2024) draws at level 3. The contract keeps that boundary clean: the standard defines the quantities, the ontology defines the measurement structure, and whoever measures owns the results.
         </p>
       </section>
