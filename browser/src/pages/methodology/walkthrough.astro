@@ -24,6 +24,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
   '0': {
     quantity: {
       term: 'kind of quantity',
+      i18n: 'q0',
       example: 'space',
       def: 'The most abstract grouping — quantities sharing a dimension, comparable and addable.',
       links: [
@@ -37,6 +38,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
   '1': {
     quantity: {
       term: 'quantity, Q = X',
+      i18n: 'q1',
       example: 'length',
       def: 'A named, defined concept — the level ISO/IEC 80000 publishes.',
       links: [
@@ -46,6 +48,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
     },
     entity: {
       term: 'kind of entity',
+      i18n: 'q1_entity',
       example: 'physical body',
       def: 'The abstract category of things quantities can characterize.',
       links: [
@@ -58,6 +61,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
   '2': {
     quantity: {
       term: 'dedicated quantity (Sachgrösse)',
+      i18n: 'q2',
       example: 'length of rod',
       def: 'A quantity bound to an entity — coined by Fleischman (1960).',
       links: [
@@ -67,6 +71,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
     },
     entity: {
       term: 'entity',
+      i18n: 'q2_entity',
       example: 'rod',
       def: 'A specific type of physical thing the dedicated quantity is about.',
       links: [
@@ -79,6 +84,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
   '3': {
     quantity: {
       term: 'instantiation of an entity quantity',
+      i18n: 'q3',
       example: 'length of rod AB, today at 09:15',
       def: 'A particular quantity of a particular entity instance at a particular time.',
       links: [
@@ -88,12 +94,14 @@ const grid: Record<string, Record<string, Cell | null>> = {
     },
     entity: {
       term: 'instantiation of an entity',
+      i18n: 'q3_entity',
       example: 'rod AB, today at 09:15',
       def: 'The particular physical object that exists in reality.',
       links: [{ label: 'ex:rodAB →', href: '/ontology/ex-rodAB' }],
     },
     measurement: {
       term: 'quantity as measured, Qm = {Q}·[Q]',
+      i18n: 'm3',
       example: '1.234 m ± 0.001',
       def: 'The measurement result — numerical value × unit, with uncertainty (GUM).',
       links: [
@@ -105,6 +113,7 @@ const grid: Record<string, Record<string, Cell | null>> = {
 }
 
 const levels = ['0', '1', '2', '3']
+const K = 'page.methodology.walkthrough.'
 
 const story = [
   { label: 'length', sub: 'L1 · ISO 80000-3 t3-1.1', href: '/quantities/part-3/t3-1.1' },
@@ -122,8 +131,8 @@ const story = [
       <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div class="max-w-3xl page-enter">
           <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Methodology', href: '/methodology' }, { label: 'Walkthrough' }]} variant="dark" />
-          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif leading-tight">One measurement, end to end</h1>
-          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed">
+          <h1 class="text-4xl font-bold text-white tracking-tight heading-serif leading-tight" data-i18n={K + 'title'}>One measurement, end to end</h1>
+          <p class="mt-4 text-lg text-slate-300/80 leading-relaxed" data-i18n={K + 'intro'}>
             Pendrill's Table 1.1 describes a four-level hierarchy across three parallel axes. This walkthrough makes every cell clickable — the classes that model it, and the worked example instance that realizes it: the length of a rod, measured.
           </p>
         </div>
@@ -138,11 +147,11 @@ const story = [
         <table class="w-full min-w-[880px] border-separate border-spacing-2">
           <thead>
             <tr>
-              <th class="text-left text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-2 w-20">Level</th>
+              <th class="text-left text-xs font-semibold text-slate-400 uppercase tracking-wider px-3 py-2 w-20" data-i18n={K + 'level'}>Level</th>
               {axes.map((axis) => (
                 <th class="text-left px-3 py-2">
-                  <span class={`text-sm font-bold ${axis.accent}`}>{axis.label}</span>
-                  <span class="text-xs text-slate-400 ml-2">{axis.note}</span>
+                  <span class={`text-sm font-bold ${axis.accent}`} data-i18n={K + 'axis_' + axis.key}>{axis.label}</span>
+                  <span class="text-xs text-slate-400 ml-2" data-i18n={K + 'axis_' + axis.key + '_note'}>{axis.note}</span>
                 </th>
               ))}
             </tr>
@@ -158,9 +167,9 @@ const story = [
                   return cell ? (
                     <td class="align-top w-1/3">
                       <div class="h-full p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:shadow-md transition-shadow">
-                        <div class="text-sm font-semibold text-slate-800 dark:text-slate-200">{cell.term}</div>
-                        <div class="mt-0.5 text-sm text-brand-600 dark:text-brand-400 font-mono">{cell.example}</div>
-                        {cell.def && <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{cell.def}</p>}
+                        <div class="text-sm font-semibold text-slate-800 dark:text-slate-200" data-i18n={K + cell.i18n + '_term'}>{cell.term}</div>
+                        <div class="mt-0.5 text-sm text-brand-600 dark:text-brand-400 font-mono" data-i18n={K + cell.i18n + '_example'}>{cell.example}</div>
+                        {cell.def && <p class="mt-2 text-xs text-slate-500 dark:text-slate-400 leading-relaxed" data-i18n={K + cell.i18n + '_def'}>{cell.def}</p>}
                         <div class="mt-3 flex flex-wrap gap-1.5">
                           {cell.links.map((link) => (
                             <a href={asset(link.href)} class="text-xs font-medium px-2 py-1 rounded-lg border border-slate-200/60 dark:border-dark-600/60 bg-slate-50/50 dark:bg-dark-700/50 text-slate-600 dark:text-slate-300 hover:border-brand-200 dark:hover:border-brand-700 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
@@ -183,20 +192,20 @@ const story = [
           </tbody>
         </table>
       </div>
-      <p class="mt-4 text-xs text-slate-400 dark:text-slate-500">
+      <p class="mt-4 text-xs text-slate-400 dark:text-slate-500" data-i18n={K + 'cells_note'}>
         Empty cells are Pendrill's own: only the quantity axis reaches level 0, and the measurement axis exists only at level 3.
       </p>
     </section>
 
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-2">Follow the measurement</h2>
-      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">The same chain the table describes, as data — each step is a live page.</p>
+      <h2 class="text-2xl font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif mb-2" data-i18n={K + 'story_title'}>Follow the measurement</h2>
+      <p class="text-sm text-slate-500 dark:text-slate-400 mb-6" data-i18n={K + 'story_intro'}>The same chain the table describes, as data — each step is a live page.</p>
       <div class="flex flex-wrap items-stretch gap-3">
         {story.map((step, i) => (
           <>
             <a href={asset(step.href)} class="group flex-1 min-w-[200px] p-4 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
               <div class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1 tabular-nums">Step {i + 1}</div>
-              <div class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors font-mono">{step.label}</div>
+              <div class="text-sm font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors font-mono" data-i18n={K + 'story_' + (i + 1) + '_label'}>{step.label}</div>
               <div class="text-xs text-slate-400 mt-0.5">{step.sub}</div>
             </a>
             {i < story.length - 1 && (
@@ -207,7 +216,7 @@ const story = [
           </>
         ))}
       </div>
-      <div class="mt-6 p-5 rounded-xl bg-brand-50/40 dark:bg-brand-950/30 border border-brand-200/40 dark:border-brand-800/30 text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+      <div class="mt-6 p-5 rounded-xl bg-brand-50/40 dark:bg-brand-950/30 border border-brand-200/40 dark:border-brand-800/30 text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl" data-i18n-html={K + 'entity_note'}>
         The entity axis runs in parallel: <a href={asset('/ontology/ex-rod')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">ex:rod</a> is the entity the dedicated quantity characterizes, and <a href={asset('/ontology/ex-rodAB')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">ex:rodAB</a> is the instance the measurement was performed on. The RDF source for the whole example is downloadable at <a href={asset('/ontologies/isq-examples.ttl')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">isq-examples.ttl</a> — and the same intake path lets you supply <a href={asset('/methodology/measurements')} class="text-brand-600 dark:text-brand-400 font-medium hover:underline">your own measurements</a>.
       </div>
     </section>

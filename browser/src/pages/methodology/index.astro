@@ -7,6 +7,7 @@ import { asset } from '../../lib/asset'
 const pages = [
   {
     slug: '/concept-system',
+    cardKey: 'concept_system',
     icon: '🗂️',
     eyebrow: 'Pendrill (2024)',
     title: 'Concept System',
@@ -15,6 +16,7 @@ const pages = [
   },
   {
     slug: '/walkthrough',
+    cardKey: 'walkthrough',
     icon: '📐',
     eyebrow: 'Table 1.1, live',
     title: 'Walkthrough',
@@ -23,6 +25,7 @@ const pages = [
   },
   {
     slug: '/navigation',
+    cardKey: 'navigation',
     icon: '🧭',
     eyebrow: 'Information Architecture',
     title: 'Navigation',
@@ -31,6 +34,7 @@ const pages = [
   },
   {
     slug: '/references',
+    cardKey: 'references',
     icon: '📚',
     eyebrow: 'Academic basis',
     title: 'References',
@@ -38,6 +42,8 @@ const pages = [
     color: 'amber',
   },
 ]
+
+const K = 'page.methodology.cards.'
 
 const colorMap: Record<string, string> = {
   brand: 'from-brand-500/10 to-brand-600/5 text-brand-700 dark:text-brand-400 border-brand-200/50 dark:border-brand-800/30',
@@ -74,9 +80,9 @@ const colorMap: Record<string, string> = {
             class={`group relative p-6 rounded-2xl border bg-gradient-to-br ${colorMap[p.color]} hover:shadow-lg hover:-translate-y-0.5 transition-all`}
           >
             <div class="text-3xl mb-3">{p.icon}</div>
-            <div class="text-xs font-bold uppercase tracking-wider opacity-70 mb-1">{p.eyebrow}</div>
-            <h3 class="text-xl font-bold heading-serif mb-2">{p.title}</h3>
-            <p class="text-sm opacity-80 leading-relaxed">{p.desc}</p>
+            <div class="text-xs font-bold uppercase tracking-wider opacity-70 mb-1" data-i18n={K + p.cardKey + '.eyebrow'}>{p.eyebrow}</div>
+            <h3 class="text-xl font-bold heading-serif mb-2" data-i18n={K + p.cardKey + '.title'}>{p.title}</h3>
+            <p class="text-sm opacity-80 leading-relaxed" data-i18n={K + p.cardKey + '.desc'}>{p.desc}</p>
             <div class="mt-4 flex items-center gap-1 text-sm font-medium opacity-60 group-hover:opacity-100 transition-opacity">
               <span>Read more</span>
               <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M9 5l7 7-7 7"/></svg>
