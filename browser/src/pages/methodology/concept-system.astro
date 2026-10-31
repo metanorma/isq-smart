@@ -45,15 +45,17 @@ const levels = [
 ]
 
 const glossary = [
-  { axis: 'quantity', level: 'L0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.', hrefs: [{ label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' }, { label: `Browse all ${kindOfQuantities.length} live kinds →`, href: '/kinds' }] },
-  { axis: 'quantity', level: 'L1', term: 'quantity, Q = X', example: 'length', color: 'indigo', def: 'A named, defined concept expressed as Q = {Q} · [Q]. This is the level ISO 80000 defines. Every entry in the standard is a Level 1 quantity.', hrefs: [{ label: 'isq:Quantity', href: '/ontology/isq-Quantity' }, { label: 'ISO 80000-3 "length" →', href: '/quantities/part-3/t3-1.1' }] },
-  { axis: 'quantity', level: 'L2', term: 'dedicated quantity (Sachgrösse)', example: 'length of rod', color: 'amber', def: 'A quantity bound to a specific kind of entity. Coined by Fleischman (1960). "Length of rod" is not abstract length — it is length as applied to rods.', hrefs: [{ label: 'isq:DedicatedQuantity', href: '/ontology/isq-DedicatedQuantity' }, { label: 'ex:lengthOfRod →', href: '/ontology/ex-lengthOfRod' }] },
-  { axis: 'quantity', level: 'L3', term: 'instantiation', example: 'length of rod AB at 09:15', color: 'rose', def: 'A particular quantity value of a particular entity at a particular time. This level exists in reality, not in standards.', hrefs: [{ label: 'isq:QuantityInstantiation', href: '/ontology/isq-QuantityInstantiation' }, { label: 'ex:lengthOfRodAB →', href: '/ontology/ex-lengthOfRodAB' }] },
-  { axis: 'entity', level: 'L1', term: 'kind of entity', example: 'physical body', color: 'rose', def: 'The abstract category of things that quantities can characterize. Other kinds include substance, field, wave, system.', hrefs: [{ label: 'isq:EntityKind', href: '/ontology/isq-EntityKind' }, { label: 'isq:PhysicalBody →', href: '/ontology/isq-PhysicalBody' }] },
-  { axis: 'entity', level: 'L2', term: 'entity', example: 'rod', color: 'rose', def: 'A specific type of physical thing. Entities are what the dedicated quantity is about. "Mass of electron" characterizes the entity "electron".', hrefs: [{ label: 'isq:EntityConcept', href: '/ontology/isq-EntityConcept' }, { label: 'ex:rod →', href: '/ontology/ex-rod' }] },
-  { axis: 'entity', level: 'L3', term: 'entity instance', example: 'rod AB at 09:15', color: 'rose', def: 'A particular physical object that exists in reality at a specific time and place. This is what a metrologist actually picks up and measures.', hrefs: [{ label: 'ex:rodAB →', href: '/ontology/ex-rodAB' }] },
-  { axis: 'measurement', level: 'L3', term: 'quantity as measured', example: '1.234 m', color: 'amber', def: 'The measurement result — a numerical value paired with a unit, obtained by a measuring instrument acting on an entity instance. This is the only level with a numerical value.', hrefs: [{ label: 'isq:MeasuredQuantity', href: '/ontology/isq-MeasuredQuantity' }, { label: 'ex:measuredLengthOfRodAB →', href: '/ontology/ex-measuredLengthOfRodAB' }] },
+  { axis: 'quantity', level: 'L0', key: 'g0', term: 'kind of quantity', example: 'space', color: 'indigo', def: 'The most abstract category — a grouping of quantities that can be compared, added, and subtracted because they share the same dimension. "Space" is not a quantity itself; it is the kind to which length, width, wavelength all belong.', hrefs: [{ label: 'isq:KindOfQuantity', href: '/ontology/isq-KindOfQuantity' }, { label: `Browse all ${kindOfQuantities.length} live kinds →`, href: '/kinds' }] },
+  { axis: 'quantity', level: 'L1', key: 'g1', term: 'quantity, Q = X', example: 'length', color: 'indigo', def: 'A named, defined concept expressed as Q = {Q} · [Q]. This is the level ISO 80000 defines. Every entry in the standard is a Level 1 quantity.', hrefs: [{ label: 'isq:Quantity', href: '/ontology/isq-Quantity' }, { label: 'ISO 80000-3 "length" →', href: '/quantities/part-3/t3-1.1' }] },
+  { axis: 'quantity', level: 'L2', key: 'g2', term: 'dedicated quantity (Sachgrösse)', example: 'length of rod', color: 'amber', def: 'A quantity bound to a specific kind of entity. Coined by Fleischman (1960). "Length of rod" is not abstract length — it is length as applied to rods.', hrefs: [{ label: 'isq:DedicatedQuantity', href: '/ontology/isq-DedicatedQuantity' }, { label: 'ex:lengthOfRod →', href: '/ontology/ex-lengthOfRod' }] },
+  { axis: 'quantity', level: 'L3', key: 'g3', term: 'instantiation', example: 'length of rod AB at 09:15', color: 'rose', def: 'A particular quantity value of a particular entity at a particular time. This level exists in reality, not in standards.', hrefs: [{ label: 'isq:QuantityInstantiation', href: '/ontology/isq-QuantityInstantiation' }, { label: 'ex:lengthOfRodAB →', href: '/ontology/ex-lengthOfRodAB' }] },
+  { axis: 'entity', level: 'L1', key: 'g1e', term: 'kind of entity', example: 'physical body', color: 'rose', def: 'The abstract category of things that quantities can characterize. Other kinds include substance, field, wave, system.', hrefs: [{ label: 'isq:EntityKind', href: '/ontology/isq-EntityKind' }, { label: 'isq:PhysicalBody →', href: '/ontology/isq-PhysicalBody' }] },
+  { axis: 'entity', level: 'L2', key: 'g2e', term: 'entity', example: 'rod', color: 'rose', def: 'A specific type of physical thing. Entities are what the dedicated quantity is about. "Mass of electron" characterizes the entity "electron".', hrefs: [{ label: 'isq:EntityConcept', href: '/ontology/isq-EntityConcept' }, { label: 'ex:rod →', href: '/ontology/ex-rod' }] },
+  { axis: 'entity', level: 'L3', key: 'g3e', term: 'entity instance', example: 'rod AB at 09:15', color: 'rose', def: 'A particular physical object that exists in reality at a specific time and place. This is what a metrologist actually picks up and measures.', hrefs: [{ label: 'ex:rodAB →', href: '/ontology/ex-rodAB' }] },
+  { axis: 'measurement', level: 'L3', key: 'gm3', term: 'quantity as measured', example: '1.234 m', color: 'amber', def: 'The measurement result — a numerical value paired with a unit, obtained by a measuring instrument acting on an entity instance. This is the only level with a numerical value.', hrefs: [{ label: 'isq:MeasuredQuantity', href: '/ontology/isq-MeasuredQuantity' }, { label: 'ex:measuredLengthOfRodAB →', href: '/ontology/ex-measuredLengthOfRodAB' }] },
 ]
+
+const K = 'page.concept_system.'
 
 const colorClasses: Record<string, { bg: string; text: string; border: string }> = {
   indigo: { bg: 'bg-indigo-50 dark:bg-indigo-950/40', text: 'text-indigo-700 dark:text-indigo-400', border: 'border-indigo-200/60 dark:border-indigo-800/40' },
@@ -73,11 +75,11 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
           <div class="flex items-center gap-2 mb-3">
             <span class="text-xs font-bold uppercase tracking-wider text-indigo-300/70">Pendrill (2024)</span>
           </div>
-          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif">Concept System</h1>
-          <p class="mt-3 text-base text-indigo-200/70 leading-relaxed">
+          <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif" data-i18n={K + 'title'}>Concept System</h1>
+          <p class="mt-3 text-base text-indigo-200/70 leading-relaxed" data-i18n={K + 'intro'}>
             A four-level hierarchy across three parallel axes — quantity, entity, and measurement. Each level adds constraints, from abstract kind to specific measurement.
           </p>
-          <a href={asset('/methodology/walkthrough')} class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-sm font-medium text-white hover:bg-white/15 transition-colors">
+          <a href={asset('/methodology/walkthrough')} class="mt-4 inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-white/10 border border-white/15 text-sm font-medium text-white hover:bg-white/15 transition-colors" data-i18n={K + 'cta'}>
             See it live — follow the rod measurement →
           </a>
         </div>
@@ -91,8 +93,8 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
 
       {/* Source Table */}
       <section>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">Source Table</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Reproduced from Pendrill (2024), Table 1.1 — the authoritative 7-column layout.</p>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2" data-i18n={K + 'source_title'}>Source Table</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6" data-i18n={K + 'source_intro'}>Reproduced from Pendrill (2024), Table 1.1 — the authoritative 7-column layout.</p>
 
         <div class="rounded-2xl border border-slate-200/60 dark:border-dark-600/60 bg-white dark:bg-dark-800 overflow-hidden overflow-x-auto shadow-sm">
           <table class="w-full text-sm">
@@ -122,8 +124,8 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
 
       {/* Glossary */}
       <section>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">What Each Term Means</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Plain-language definitions for every concept in the table, grouped by axis.</p>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2" data-i18n={K + 'glossary_title'}>What Each Term Means</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6" data-i18n={K + 'glossary_intro'}>Plain-language definitions for every concept in the table, grouped by axis.</p>
 
         <div class="space-y-3">
           {glossary.map((item) => {
@@ -132,11 +134,11 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
               <div class={`p-4 rounded-xl ${c.bg} border ${c.border}`}>
                 <div class="flex flex-wrap items-baseline gap-2 mb-1">
                   <span class={`font-mono text-xs font-bold ${c.text}`}>{item.level}</span>
-                  <span class={`text-xs font-bold uppercase tracking-wider ${c.text}`}>{item.axis}</span>
-                  <span class="text-base font-bold text-slate-900 dark:text-slate-100">{item.term}</span>
-                  <span class="text-sm text-slate-400 italic">e.g., "{item.example}"</span>
+                  <span class={`text-xs font-bold uppercase tracking-wider ${c.text}`} data-i18n={`page.methodology.walkthrough.axis_${item.axis}`}>{item.axis}</span>
+                  <span class="text-base font-bold text-slate-900 dark:text-slate-100" data-i18n={K + item.key + '_term'}>{item.term}</span>
+                  <span class="text-sm text-slate-400 italic" data-i18n={K + item.key + '_example'}>e.g., "{item.example}"</span>
                 </div>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{item.def}</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n={K + item.key + '_def'}>{item.def}</p>
                 <div class="mt-2 flex flex-wrap gap-1.5">
                   {item.hrefs.map((link) => (
                     <a href={asset(link.href)} class="text-xs font-medium px-2 py-0.5 rounded-lg bg-white/70 dark:bg-dark-800/70 border border-slate-200/60 dark:border-dark-600/40 text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:border-brand-200 dark:hover:border-brand-700 transition-colors">
@@ -152,23 +154,24 @@ const colorClasses: Record<string, { bg: string; text: string; border: string }>
 
       {/* Implementation Mapping */}
       <section>
-        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2">How the Table Maps to This Site</h2>
-        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">Each cell in the concept hierarchy informs a specific feature of the ISQ Browser.</p>
+        <h2 class="text-xl font-bold text-slate-900 dark:text-slate-100 heading-serif mb-2" data-i18n={K + 'impl_title'}>How the Table Maps to This Site</h2>
+        <p class="text-sm text-slate-500 dark:text-slate-400 mb-6" data-i18n={K + 'impl_intro'}>Each cell in the concept hierarchy informs a specific feature of the ISQ Browser.</p>
 
         <div class="grid sm:grid-cols-2 gap-4">
           {levels.map((lvl) => {
             const c = colorClasses[lvl.color]
             const feature = lvl.level === 0 ? '/kinds' : lvl.level === 1 ? '/quantities' : lvl.level === 2 ? 'Entry context' : 'Out of scope'
+            const featureKey = lvl.level === 2 ? K + 'feature_entry_context' : lvl.level === 3 ? K + 'feature_out_of_scope' : undefined
             return (
               <div class={`p-5 rounded-xl ${c.bg} border ${c.border}`}>
                 <div class="flex items-center gap-2 mb-2">
                   <div class={`w-8 h-8 rounded-lg ${c.bg} border ${c.border} flex items-center justify-center font-mono text-sm font-bold ${c.text}`}>{lvl.level}</div>
                   <div>
-                    <div class="text-sm font-bold text-slate-900 dark:text-slate-100">{lvl.name}</div>
-                    <div class={`text-xs font-mono ${c.text}`}>{feature}</div>
+                    <div class="text-sm font-bold text-slate-900 dark:text-slate-100" data-i18n={K + 'l' + lvl.level + '_name'}>{lvl.name}</div>
+                    <div class={`text-xs font-mono ${c.text}`} data-i18n={featureKey}>{feature}</div>
                   </div>
                 </div>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{lvl.impl}</p>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed" data-i18n={K + 'l' + lvl.level + '_impl'}>{lvl.impl}</p>
               </div>
             )
           })}
