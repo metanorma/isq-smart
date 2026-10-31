@@ -24,7 +24,9 @@ describe('performSearch', () => {
   it('filters by domain', async () => {
     searchDomain.value = 'quantities'
     await performSearch('length')
-    for (const r of searchResults.value) {
+    const entries = searchResults.value.filter(r => r.kind === 'entry')
+    expect(entries.length).toBeGreaterThan(0)
+    for (const r of entries) {
       expect(r.partDomain).toBe('quantities')
     }
     searchDomain.value = 'all'
