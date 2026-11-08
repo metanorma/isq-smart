@@ -18,22 +18,22 @@
     "@plurimath/plurimath": "^0.2.2",
     "chart.js": "^4.5.1",
     "js-yaml": "^5.5.0",
-    "vue": "^3.5.32"
+    "vue": "^3.5.45"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@astrojs/vue": "^7.0.1",
-    "@tailwindcss/vite": "^4.2.4",
+    "@tailwindcss/vite": "^4.3.4",
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^24.12.2",
     "@vue/test-utils": "^2.4.11",
-    "astro": "^7.0.7",
+    "astro": "^7.4.5",
     "happy-dom": "^21.0.4",
-    "mermaid": "^12.2.0",
+    "mermaid": "^12.3.0",
     "n3": "^2.0.3",
     "tailwindcss": "^4.2.4",
     "typescript": "~6.0.2",
-    "vite": "^8.0.10",
-    "vitest": "^5.0.5"
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
   }
 }
