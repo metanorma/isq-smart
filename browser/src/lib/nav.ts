@@ -23,7 +23,6 @@ const _coreLinks: NavLink[] = [
   { to: '/quantities', label: 'Quantities', i18nKey: 'nav.quantities' },
   { to: '/math', label: 'Math', i18nKey: 'nav.math' },
   { to: '/units', label: 'Units', i18nKey: 'nav.units' },
-  { to: '/ontology', label: 'Ontology', i18nKey: 'nav_item.ontology' },
 ]
 
 const learnItems: NavLink[] = [
@@ -35,6 +34,7 @@ const learnItems: NavLink[] = [
 ]
 
 const serviceItems: NavLink[] = [
+  { to: '/ontology', label: 'Ontology', i18nKey: 'nav_item.ontology' },
   { to: '/documents', label: 'Publications', i18nKey: 'nav_item.publications' },
   { to: '/presentations', label: 'Presentations', i18nKey: 'nav_item.presentations' },
   { to: '/reference', label: 'Reference', i18nKey: 'nav_item.reference' },
