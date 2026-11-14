@@ -12,7 +12,12 @@ export const messages = {
     },
     "nav_group": {
       "about": "About",
-      "resources": "Resources"
+      "resources": "Resources",
+      "explore": "Explore"
+    },
+    "nav_section": {
+      "learn": "Learn",
+      "services": "Services"
     },
     "nav_item": {
       "about": "About ISO 80000",
@@ -504,7 +509,12 @@ export const messages = {
     },
     "nav_group": {
       "about": "À propos",
-      "resources": "Ressources"
+      "resources": "Ressources",
+      "explore": "Explorer"
+    },
+    "nav_section": {
+      "learn": "Découvrir",
+      "services": "Services"
     },
     "nav_item": {
       "about": "À propos d'ISO 80000",
