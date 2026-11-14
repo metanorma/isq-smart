@@ -83,6 +83,7 @@ en:
     browse_quantities: Browse Quantities
     browse_by_part: Browse by Part
     view_by_dimension: View by dimension
+    view_by_kind: View by kind
     all_parts: All parts
     quantity: Quantity
     quantities_lower: quantities
@@ -535,6 +536,7 @@ fr:
     browse_quantities: Parcourir les grandeurs
     browse_by_part: Parcourir par partie
     view_by_dimension: Voir par dimension
+    view_by_kind: Voir par genre
     all_parts: Toutes les parties
     quantity: Grandeur
     quantities_lower: grandeurs
