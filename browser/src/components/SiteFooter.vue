@@ -48,8 +48,8 @@ import { asset } from '../lib/asset'
         <!-- Vocabulary preview -->
         <div>
           <h3 class="text-xs font-semibold text-white/50 uppercase tracking-wider mb-3" data-i18n="footer.vocabulary">Vocabulary</h3>
-          <div class="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] font-mono text-xs leading-relaxed text-white/40">
-            <pre>@context: isq/ontologies/core
+          <div class="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] font-mono text-xs leading-relaxed text-white/40 overflow-hidden">
+            <pre class="overflow-x-auto">@context: isq/ontologies/core
 @type:   isq:Quantity
 @id:     isq:{id}
 dcterms: urn:iso:std:iso:80000:...</pre>

@@ -6,12 +6,33 @@ description: "The international standard for quantities, units, and mathematical
 import IsqLogo from '../components/IsqLogo.vue'
 import Breadcrumb from '../components/Breadcrumb.astro'
 import SectionHead from '../components/SectionHead.astro'
-import { getPartsByDomain, publisherOf, partUrl } from '../data/PartRegistry'
-import { partEntryCount } from '../data/index'
+import { getPartsByDomain, getPartMeta, publisherOf, partUrl } from '../data/PartRegistry'
+import { partEntryCount, basePartKey } from '../data/index'
 import { asset } from '../lib/asset'
 
 export const qtyParts = getPartsByDomain('quantities')
 export const mathParts = getPartsByDomain('math')
+
+export const knownTitle = (base) => base === '2' ? 'Mathematical Notation' : base === '11' ? 'Characteristic Numbers' : undefined
+
+export function groupScopeParts(parts) {
+  const groups = new Map()
+  for (const p of parts) {
+    const base = basePartKey(p.partKey)
+    const meta = getPartMeta(base)
+    const g = groups.get(base)
+    if (g) {
+      g.entries = g.entries + partEntryCount(p.partKey)
+    } else {
+      const title = (meta && meta.title) || knownTitle(base) || p.title
+      const icon = (meta && meta.icon) || p.icon
+      groups.set(base, { partKey: base, title: title, icon: icon, entries: partEntryCount(p.partKey) })
+    }
+  }
+  return Array.from(groups.values()).sort((a, b) => parseInt(a.partKey, 10) - parseInt(b.partKey, 10))
+}
+
+export const scopeParts = groupScopeParts([...qtyParts, ...mathParts])
 
 export const audiences = [
   { icon: '🔬', title: 'Scientists & Researchers', desc: 'Canonical definitions for publishing unambiguous results and peer-reviewed papers.' },
@@ -226,13 +247,13 @@ export const accentCardBg = (accent) => {
     </div>
 
     <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2.5 mb-6">
-      {[...qtyParts, ...mathParts].map((p) => (
+      {scopeParts.map((p) => (
         <a href={partUrl(p.partKey)} class={`group relative p-4 rounded-xl border transition-all hover:shadow-sm ${publisherOf(p.partKey) === 'IEC' ? 'bg-teal-50/30 dark:bg-teal-950/20 border-teal-200/50 dark:border-teal-800/40 hover:border-teal-300 dark:hover:border-teal-700' : 'bg-brand-50/30 dark:bg-brand-950/20 border-brand-200/50 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700'}`}>
           <div class="text-lg mb-1.5">{p.icon}</div>
           <div class={`text-xs font-bold uppercase tracking-wider mb-1 ${publisherOf(p.partKey) === 'IEC' ? 'text-teal-500 dark:text-teal-400' : 'text-brand-500 dark:text-brand-400'}`}>{publisherOf(p.partKey)}</div>
           <div class="text-sm font-bold text-slate-900 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">Part {p.partKey}</div>
           <div class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 line-clamp-2">{p.title}</div>
-          <div class="text-xs text-slate-400 dark:text-slate-500 mt-1.5">{partEntryCount(p.partKey)} entries</div>
+          <div class="text-xs text-slate-400 dark:text-slate-500 mt-1.5">{p.entries} entries</div>
         </a>
       ))}
     </div>
