@@ -1,30 +1,55 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ISQ in SMART — ISO + IEC 80000 as an information service</title>
+<title>ISQ in SMART — a service contributed to ISO/TC 12</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+/* ── theme tokens ────────────────────────────────────────────── */
 :root {
-  --paper: #FCFCFB;
-  --ink: #211319;
-  --iso: #E30613;
-  --iec: #0061A9;
-  --ont: #8A4E6D;
-  --graphite: #6F6772;
-  --line: #E5E0DC;
-  --ghost: rgba(33, 19, 25, 0.05);
   --serif: "Source Serif 4", Georgia, serif;
   --sans: "DM Sans", system-ui, sans-serif;
   --mono: "JetBrains Mono", ui-monospace, monospace;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-snap-type: y mandatory; }
+:root, :root[data-theme="dark"] {
+  --bg: #160A12;            /* plum-black — the site's dark surface */
+  --surface: #1E0F18;
+  --ink: #F3E8EE;
+  --muted: #B9A9B1;
+  --line: rgba(243, 232, 238, 0.16);
+  --red: #F5454F;           /* ISO red, text-safe on plum */
+  --red-fill: #E30613;
+  --blue: #5FA8E8;          /* IEC blue, text-safe on plum */
+  --plum: #D093BC;          /* ontology layer accent */
+  --ghost: rgba(243, 232, 238, 0.055);
+  --ghost-red: rgba(245, 69, 79, 0.22);
+  --card: #1E0F18;
+  --chip-bg: #241320;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #FCFCFB;
+  --surface: #F1EDEA;
+  --ink: #211319;
+  --muted: #6F6772;
+  --line: #E5E0DC;
+  --red: #C2050F;
+  --red-fill: #E30613;
+  --blue: #0061A9;
+  --plum: #8A4E6D;
+  --ghost: rgba(33, 19, 25, 0.05);
+  --ghost-red: rgba(227, 6, 19, 0.12);
+  --card: #FFFFFF;
+  --chip-bg: #FFFFFF;
+  color-scheme: light;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html { scroll-snap-type: y mandatory; scroll-behavior: smooth; }
 body {
-  background: #47404A;
+  background: #0D0609;
   font-family: var(--sans);
   color: var(--ink);
   -webkit-font-smoothing: antialiased;
@@ -33,14 +58,16 @@ body {
 .slide {
   position: relative;
   width: 1280px; height: 720px;
-  background: var(--paper);
+  background: var(--bg);
+  color: var(--ink);
   overflow: hidden;
   scroll-snap-align: start;
   display: flex; flex-direction: column;
+  transition: background 0.25s ease, color 0.25s ease;
 }
-.slide + .slide { border-top: 1px solid #2a232e; }
+.slide + .slide { border-top: 1px solid rgba(0,0,0,0.55); }
 
-/* ── chrome: eyebrow, footer ─────────────────────────────── */
+/* ── chrome ──────────────────────────────────────────────────── */
 .eyebrow {
   font-family: var(--mono);
   font-size: 12px; font-weight: 500;
@@ -48,95 +75,100 @@ body {
   display: flex; align-items: center; gap: 10px;
 }
 .eyebrow::before { content: ""; width: 26px; height: 3px; background: currentColor; }
-.eyebrow.iso { color: var(--iso); }
-.eyebrow.iec { color: var(--iec); }
-.eyebrow.ont { color: var(--ont); }
+.eyebrow.iso { color: var(--red); }
+.eyebrow.iec { color: var(--blue); }
+.eyebrow.ont { color: var(--plum); }
 .eyebrow.ink { color: var(--ink); }
 .footer {
   position: absolute; left: 64px; right: 64px; bottom: 28px;
   display: flex; justify-content: space-between; align-items: baseline;
-  font-family: var(--mono); font-size: 11px; color: var(--graphite);
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
   border-top: 1px solid var(--line); padding-top: 12px;
 }
 .footer .pg b { color: var(--ink); font-weight: 700; }
-.qr-hint { letter-spacing: 0.08em; }
 
-/* ── shared content bits ─────────────────────────────────── */
+/* ── shared ──────────────────────────────────────────────────── */
 .pad { padding: 64px 64px 84px; flex: 1; display: flex; flex-direction: column; }
 h2.stitle {
   font-family: var(--serif); font-weight: 700;
   font-size: 44px; line-height: 1.08; letter-spacing: -0.015em;
   margin: 18px 0 10px;
 }
-.lede { font-size: 18px; line-height: 1.55; color: var(--graphite); max-width: 62ch; }
+.lede { font-size: 18px; line-height: 1.55; color: var(--muted); max-width: 62ch; }
 .lede b, .li b { color: var(--ink); font-weight: 600; }
-.li { font-size: 17px; line-height: 1.5; color: var(--graphite); }
+.li { font-size: 17px; line-height: 1.5; color: var(--muted); }
 ul.list { list-style: none; margin-top: 22px; display: grid; gap: 13px; }
 ul.list li { padding-left: 22px; position: relative; }
 ul.list li::before {
   content: ""; position: absolute; left: 0; top: 0.62em;
-  width: 9px; height: 2px; background: var(--iso);
+  width: 9px; height: 2px; background: var(--red);
 }
-ul.list.blue li::before { background: var(--iec); }
-ul.list.plum li::before { background: var(--ont); }
+ul.list.blue li::before { background: var(--blue); }
+ul.list.plum li::before { background: var(--plum); }
 .sym { font-family: var(--serif); font-style: italic; }
-code, .mono { font-family: var(--mono); font-size: 0.92em; color: var(--ink); }
-.qname { font-family: var(--mono); font-size: 0.88em; padding: 2px 8px; border: 1px solid var(--line); border-radius: 5px; background: #fff; white-space: nowrap; }
-.qname.iso { color: var(--iso); border-color: #F6C9CB; }
-.qname.ont { color: var(--ont); border-color: #E3D2DC; }
-.url { font-family: var(--mono); font-size: 14px; color: var(--iec); }
+.mono { font-family: var(--mono); font-size: 0.92em; color: var(--ink); }
+.qname { font-family: var(--mono); font-size: 0.88em; padding: 2px 8px; border: 1px solid var(--line); border-radius: 5px; background: var(--chip-bg); white-space: nowrap; }
+.qname.iso { color: var(--red); border-color: var(--line); }
+.qname.ont { color: var(--plum); border-color: var(--line); }
+.url { font-family: var(--mono); font-size: 14px; color: var(--blue); }
 
-/* screenshot frame */
+/* screenshot frame — full image, never cropped */
 .frame {
   border: 1px solid var(--line); border-radius: 12px; overflow: hidden;
-  background: #fff; box-shadow: 0 14px 40px -18px rgba(33,19,25,0.35);
+  background: var(--card); box-shadow: 0 14px 44px -16px rgba(0,0,0,0.5);
 }
-.frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+.frame .shot { aspect-ratio: 1440 / 900; }
+.frame img { display: block; width: 100%; height: 100%; object-fit: contain; background: #0D0609; }
 .frame .bar {
-  height: 26px; background: #F1EDEA; border-bottom: 1px solid var(--line);
+  height: 26px; background: var(--surface); border-bottom: 1px solid var(--line);
   display: flex; align-items: center; gap: 6px; padding: 0 12px;
 }
-.frame .bar i { width: 9px; height: 9px; border-radius: 50%; background: #DDD5D0; }
+.frame .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
 .frame .bar .addr {
-  margin-left: 8px; flex: 1; height: 15px; border-radius: 8px; background: #fff;
+  margin-left: 8px; flex: 1; height: 15px; border-radius: 8px; background: var(--bg);
   border: 1px solid var(--line); font-family: var(--mono); font-size: 9.5px;
-  color: var(--graphite); display: flex; align-items: center; padding: 0 10px; letter-spacing: 0.02em;
+  color: var(--muted); display: flex; align-items: center; padding: 0 10px; letter-spacing: 0.02em;
 }
-.caption { font-family: var(--mono); font-size: 11.5px; color: var(--graphite); margin-top: 12px; display: flex; gap: 8px; align-items: baseline; }
-.caption::before { content: "▸"; color: var(--iso); font-size: 10px; }
+.caption { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-top: 12px; display: flex; gap: 8px; align-items: baseline; }
+.caption::before { content: "▸"; color: var(--red); font-size: 10px; }
 
-/* ── title slide ─────────────────────────────────────────── */
+/* ── title ───────────────────────────────────────────────────── */
 .s-title .pad { justify-content: center; }
-.logos { display: flex; gap: 10px; margin-bottom: 34px; }
-.logos span {
-  font-family: var(--mono); font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
-  padding: 5px 10px; border-radius: 6px; color: #fff;
+.brand { display: flex; align-items: center; gap: 18px; margin-bottom: 30px; }
+.brand svg { height: 64px; width: auto; display: block; }
+.brand .series {
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
+  color: var(--muted); text-transform: uppercase; line-height: 1.8;
 }
-.logos .l-iso { background: var(--iso); }
-.logos .l-iec { background: var(--iec); }
+.brand .series b { color: var(--red); font-weight: 700; }
 h1.big {
   font-family: var(--serif); font-weight: 900;
   font-size: 86px; line-height: 1.02; letter-spacing: -0.02em;
   max-width: 11ch;
 }
-.subtitle { font-family: var(--serif); font-style: italic; font-size: 27px; color: var(--ont); margin-top: 18px; }
-.byline { margin-top: 44px; font-size: 16px; color: var(--graphite); line-height: 1.7; }
+.subtitle { font-family: var(--serif); font-style: italic; font-size: 27px; color: var(--plum); margin-top: 18px; }
+.byline { margin-top: 44px; font-size: 16px; color: var(--muted); line-height: 1.7; }
 .byline b { color: var(--ink); font-weight: 600; }
+.contributed {
+  display: inline-block; align-self: flex-start; margin-top: 14px;
+  font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--red); border: 1px solid var(--red); border-radius: 999px; padding: 7px 16px;
+}
 .ghost-measure {
   position: absolute; right: 48px; bottom: 60px;
   font-family: var(--serif); font-weight: 300;
   font-size: 112px; letter-spacing: -0.02em; color: var(--ghost);
   white-space: nowrap; user-select: none;
 }
-.ghost-measure .pm { color: rgba(227, 6, 19, 0.12); font-weight: 600; }
+.ghost-measure .pm { color: var(--ghost-red); font-weight: 600; }
 .ladder-mini {
   position: absolute; right: 64px; top: 64px;
-  font-family: var(--mono); font-size: 11px; color: var(--graphite);
+  font-family: var(--mono); font-size: 11px; color: var(--muted);
   text-align: right; line-height: 2.1;
 }
-.ladder-mini b { color: var(--iso); font-weight: 700; }
+.ladder-mini b { color: var(--red); font-weight: 700; }
 
-/* ── section dividers: the measurement ladder ────────────── */
+/* ── section dividers: the measurement ladder ────────────────── */
 .s-section { flex-direction: row; }
 .rail {
   width: 300px; height: 100%; flex-shrink: 0;
@@ -151,126 +183,133 @@ h1.big {
 .tick i {
   position: absolute; left: 6px; top: 4px;
   width: 14px; height: 14px; border-radius: 50%;
-  border: 2px solid var(--line); background: var(--paper);
+  border: 2px solid var(--line); background: var(--bg);
 }
-.tick .lv { font-family: var(--mono); font-size: 11px; color: var(--graphite); letter-spacing: 0.1em; }
-.tick .what { font-family: var(--serif); font-style: italic; font-size: 16.5px; color: var(--graphite); margin-top: 1px; }
-.tick.on i { border-color: var(--iso); background: var(--iso); }
-.tick.on .lv { color: var(--iso); font-weight: 700; }
+.tick .lv { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: 0.1em; }
+.tick .what { font-family: var(--serif); font-style: italic; font-size: 16.5px; color: var(--muted); margin-top: 1px; }
+.tick.on i { border-color: var(--red-fill); background: var(--red-fill); }
+.tick.on .lv { color: var(--red); font-weight: 700; }
 .tick.on .what { color: var(--ink); }
 .s-section .pad { justify-content: center; }
-.snum {
-  font-family: var(--mono); font-size: 13px; color: var(--graphite); letter-spacing: 0.2em;
-}
+.snum { font-family: var(--mono); font-size: 13px; color: var(--muted); letter-spacing: 0.2em; }
 h2.stitle-big {
   font-family: var(--serif); font-weight: 900;
   font-size: 64px; line-height: 1.05; letter-spacing: -0.018em;
   margin: 16px 0 14px; max-width: 15ch;
 }
 
-/* ── two-col split ───────────────────────────────────────── */
+/* ── splits ──────────────────────────────────────────────────── */
 .split { flex-direction: row; }
 .split .pad { flex: 1.02; }
 .split .visual { flex: 1; padding: 56px 64px 84px 0; display: flex; flex-direction: column; justify-content: center; }
 .chips { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
 .chip {
   font-family: var(--mono); font-size: 12px; padding: 5px 11px;
-  border: 1px solid var(--line); border-radius: 999px; color: var(--graphite); background: #fff;
+  border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--chip-bg);
 }
-.chip.red { color: var(--iso); border-color: #F6C9CB; }
-.chip.blue { color: var(--iec); border-color: #C9DCEF; }
-.chip.plum { color: var(--ont); border-color: #E3D2DC; }
+.chip.red { color: var(--red); }
+.chip.blue { color: var(--blue); }
+.chip.plum { color: var(--plum); }
 
-/* Pendrill table */
+/* hierarchy table */
 .ptable { margin-top: 26px; border-collapse: collapse; width: 100%; }
 .ptable th {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
   text-align: left; padding: 10px 14px; border-bottom: 2px solid var(--ink);
 }
-.ptable th.ax-q { color: var(--ont); } .ptable th.ax-e { color: var(--iso); } .ptable th.ax-m { color: var(--iec); }
+.ptable th.ax-q { color: var(--plum); } .ptable th.ax-e { color: var(--red); } .ptable th.ax-m { color: var(--blue); }
 .ptable td { padding: 13px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
-.ptable td.lv { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--graphite); }
+.ptable td.lv { font-family: var(--mono); font-size: 15px; font-weight: 700; color: var(--muted); }
 .ptable .t { font-weight: 600; font-size: 15.5px; color: var(--ink); }
-.ptable .x { font-family: var(--serif); font-style: italic; font-size: 14.5px; color: var(--ont); margin-top: 2px; }
-.ptable td.empty { text-align: center; color: #C9C2BD; }
-.ptable .axis-q .t { color: var(--ont); } .ptable .axis-e .t { color: var(--iso); } .ptable .axis-m .t { color: var(--iec); }
+.ptable .x { font-family: var(--serif); font-style: italic; font-size: 14.5px; color: var(--plum); margin-top: 2px; }
+.ptable td.empty { text-align: center; color: var(--muted); opacity: 0.55; }
+.ptable .axis-q .t { color: var(--plum); } .ptable .axis-e .t { color: var(--red); } .ptable .axis-m .t { color: var(--blue); }
 
 /* timeline */
-.tline { margin-top: 30px; display: grid; gap: 0; }
+.tline { margin-top: 30px; }
 .trow { display: grid; grid-template-columns: 120px 26px 1fr; gap: 14px; }
 .trow .yr { font-family: var(--mono); font-size: 14px; font-weight: 700; text-align: right; color: var(--ink); padding-top: 1px; }
 .trow .node { position: relative; }
-.trow .node::before { content: ""; position: absolute; left: 50%; top: 8px; transform: translateX(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--iso); }
+.trow .node::before { content: ""; position: absolute; left: 50%; top: 8px; transform: translateX(-50%); width: 10px; height: 10px; border-radius: 50%; background: var(--red-fill); }
 .trow .node::after { content: ""; position: absolute; left: 50%; top: 22px; bottom: -14px; transform: translateX(-50%); width: 1.5px; background: var(--line); }
 .trow:last-child .node::after { display: none; }
 .trow .tx { padding-bottom: 22px; }
 .trow .tx b { display: block; font-size: 16.5px; font-weight: 600; }
-.trow .tx span { font-size: 14.5px; color: var(--graphite); line-height: 1.45; display: block; margin-top: 2px; }
+.trow .tx span { font-size: 14.5px; color: var(--muted); line-height: 1.45; display: block; margin-top: 2px; }
 
-/* class-property grid (ontology layer) */
+/* cards */
 .cgrid { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.ccard { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: #fff; }
-.ccard .qn { font-family: var(--mono); font-size: 13.5px; font-weight: 700; color: var(--ont); }
-.ccard .d { font-size: 13.5px; color: var(--graphite); margin-top: 4px; line-height: 1.4; }
+.ccard { border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; background: var(--card); }
+.ccard .qn { font-family: var(--mono); font-size: 13.5px; font-weight: 700; color: var(--plum); }
+.ccard .d { font-size: 13.5px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
 
-/* worked example ladder — horizontal */
-.flow { margin-top: 34px; display: flex; align-items: stretch; gap: 0; }
-.fstep { flex: 1; border: 1px solid var(--line); border-radius: 12px; background: #fff; padding: 16px 18px 14px; position: relative; }
-.fstep .fl { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--iso); font-weight: 700; }
+/* worked example flow */
+.flow { margin-top: 34px; display: flex; align-items: stretch; }
+.fstep { flex: 1; border: 1px solid var(--line); border-radius: 12px; background: var(--card); padding: 16px 18px 14px; }
+.fstep .fl { font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.14em; color: var(--red); font-weight: 700; }
 .fstep .qn2 { font-family: var(--mono); font-size: 13px; margin-top: 6px; color: var(--ink); }
-.fstep .v { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--ont); margin-top: 3px; }
-.fstep .d { font-size: 12.5px; color: var(--graphite); margin-top: 5px; line-height: 1.35; }
-.fjoin { width: 34px; display: flex; align-items: center; justify-content: center; color: #C9C2BD; font-size: 18px; flex-shrink: 0; }
-.fstep.final { background: var(--ink); border-color: var(--ink); }
-.fstep.final .fl { color: #F5A9AE; }
+.fstep .v { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--plum); margin-top: 3px; }
+.fstep .d { font-size: 12.5px; color: var(--muted); margin-top: 5px; line-height: 1.35; }
+.fjoin { width: 34px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 18px; flex-shrink: 0; opacity: 0.6; }
+.fstep.final { background: var(--red-fill); border-color: var(--red-fill); }
+.fstep.final .fl { color: #FFD7DA; }
 .fstep.final .qn2 { color: #fff; }
-.fstep.final .v { color: #F0D9DC; font-style: normal; font-family: var(--mono); font-size: 15px; }
-.fstep.final .d { color: #B9A9B1; }
+.fstep.final .v { color: #FFE9EB; font-style: normal; font-family: var(--mono); font-size: 15px; }
+.fstep.final .d { color: #FFC9CD; }
 
-/* big-stat rows */
+/* stats */
 .statrow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 30px; }
 .stat { border-top: 2px solid var(--ink); padding-top: 12px; }
 .stat .n { font-family: var(--serif); font-weight: 800; font-size: 40px; letter-spacing: -0.01em; }
-.stat .n em { font-style: normal; color: var(--iso); }
-.stat .l { font-family: var(--mono); font-size: 11.5px; color: var(--graphite); letter-spacing: 0.06em; margin-top: 4px; line-height: 1.5; }
+.stat .n em { font-style: normal; color: var(--red); }
+.stat .l { font-family: var(--mono); font-size: 11.5px; color: var(--muted); letter-spacing: 0.06em; margin-top: 4px; line-height: 1.5; }
 
-/* two-up screenshots */
+/* two-up */
 .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 8px; }
-.duo .frame .frameimg { height: 300px; }
 
-/* end slide */
+/* end */
 .s-end .pad { justify-content: center; align-items: flex-start; }
 .endurls { margin-top: 36px; display: grid; gap: 14px; }
 .endurls .u { display: flex; gap: 14px; align-items: baseline; }
-.endurls .u i { font-family: var(--mono); font-style: normal; font-size: 11px; letter-spacing: 0.12em; color: var(--graphite); width: 88px; flex-shrink: 0; }
-.endurls .u a { font-family: var(--mono); font-size: 16px; color: var(--iec); text-decoration: none; }
+.endurls .u i { font-family: var(--mono); font-style: normal; font-size: 11px; letter-spacing: 0.12em; color: var(--muted); width: 88px; flex-shrink: 0; }
+.endurls .u a { font-family: var(--mono); font-size: 16px; color: var(--blue); text-decoration: none; }
 .thanks { font-family: var(--serif); font-weight: 900; font-size: 72px; letter-spacing: -0.02em; }
-.thanks-sub { font-size: 19px; color: var(--graphite); margin-top: 14px; }
+.thanks-sub { font-size: 19px; color: var(--muted); margin-top: 14px; }
+.s-end .brand { margin-bottom: 24px; }
+.s-end .brand svg { height: 52px; }
 
 /* screen-only UI */
-.fit {
+.hud {
   position: fixed; top: 14px; right: 16px; z-index: 50;
-  font-family: var(--mono); font-size: 11px; color: #B9AEB6;
-  background: rgba(33,19,25,0.82); padding: 6px 12px; border-radius: 999px;
-  letter-spacing: 0.06em; user-select: none;
+  display: flex; gap: 8px;
 }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-html { scroll-behavior: smooth; }
+.hud > * {
+  font-family: var(--mono); font-size: 11px; color: #D8C9D2;
+  background: rgba(13, 6, 9, 0.85); padding: 6px 12px; border-radius: 999px;
+  letter-spacing: 0.06em; user-select: none; border: 1px solid rgba(216, 201, 210, 0.18);
+}
+.hud button {
+  cursor: pointer; color: #F3E8EE; font-family: var(--mono); font-size: 12px;
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .slide { transition: none; } }
 
-/* ── print → PDF ─────────────────────────────────────────── */
+/* ── print → PDF (renders in the active theme) ───────────────── */
 @media print {
   @page { size: 1280px 720px; margin: 0; }
   html { scroll-snap-type: none; scroll-behavior: auto; }
-  body { background: #fff; }
+  body { background: var(--bg); }
   .deck { width: 1280px; margin: 0; }
   .slide { page-break-after: always; break-inside: avoid; border-top: none; }
-  .fit { display: none; }
+  .hud { display: none; }
   a { color: inherit; text-decoration: none; }
 }
 </style>
 </head>
 <body>
-<div class="fit" aria-hidden="true">ISQ · TC 12 · ←/→ to navigate</div>
+<div class="hud" aria-hidden="true">
+  <span id="hud-page">ISQ · TC 12</span>
+  <button id="hud-theme" type="button" title="Toggle theme (t)">◐ dark</button>
+</div>
 <div class="deck">
 
 <!-- 1 · TITLE -->
@@ -278,10 +317,14 @@ html { scroll-behavior: smooth; }
   <div class="ghost-measure" aria-hidden="true">1.234&nbsp;m <span class="pm">±</span> 0.001</div>
   <div class="ladder-mini" aria-hidden="true">L0 space<br>L1 length<br>L2 length of rod<br><b>L3 1.234 m ± 0.001</b></div>
   <div class="pad">
-    <div class="logos"><span class="l-iso">ISO</span><span class="l-iec">IEC</span></div>
+    <div class="brand">
+      <img src="img/isq-logo.svg" alt="ISQ" style="height:64px;width:auto;display:block">
+      <div class="series">ISO 80000 &amp; IEC 80000<br><b>quantities · units · measurement</b></div>
+    </div>
     <h1 class="big">ISQ in SMART</h1>
-    <p class="subtitle">ISO 80000 &amp; IEC 80000 as an information service</p>
-    <div class="byline"><b>Ronald Tse</b><br>ISO/TC 12 · November 2026</div>
+    <p class="subtitle">The International System of Quantities as an information service</p>
+    <div class="byline"><b>Ronald Tse</b> — Ribose<br>November 2026</div>
+    <div class="contributed">A service contributed to ISO/TC 12</div>
   </div>
 </section>
 
@@ -297,7 +340,7 @@ html { scroll-behavior: smooth; }
       <div class="trow"><div class="yr">2026</div><div class="node"></div><div class="tx"><b>From dataset to information service — and to ontology</b><span>The ISQ Browser publishes the series as linked data; a measurement layer models quantities in the real world</span></div></div>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>02</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>02</b> / 25</span></div>
 </section>
 
 <!-- 3 · TWO PARTS -->
@@ -312,7 +355,7 @@ html { scroll-behavior: smooth; }
         <p class="d mono" style="margin-top: 12px;">m2-1.1&nbsp;&nbsp;± plus-minus</p>
       </div>
       <div class="ccard" style="padding: 24px 26px;">
-        <div class="qn" style="color: var(--iso); font-size: 17px;">Quantities and units</div>
+        <div class="qn" style="color: var(--red); font-size: 17px;">Quantities and units</div>
         <p class="d" style="font-size: 15px; margin-top: 10px;">Parts 3–13 — every quantity with ID, name, symbol, definition, unit and notes.</p>
         <p class="d mono" style="margin-top: 12px;">t3-1.1&nbsp;&nbsp;length&nbsp;&nbsp;<span class="sym">l</span></p>
       </div>
@@ -322,7 +365,7 @@ html { scroll-behavior: smooth; }
       <li class="li">Cross-references between parts resolve as data, not prose</li>
     </ul>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>03</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>03</b> / 25</span></div>
 </section>
 
 <!-- 4 · SOURCE OF TRUTH -->
@@ -338,7 +381,7 @@ html { scroll-behavior: smooth; }
       <div class="stat"><div class="n">82</div><div class="l">units<br>sourced from UnitsDB</div></div>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>04</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>04</b> / 25</span></div>
 </section>
 
 <!-- 5 · NATURE OF CONTENT -->
@@ -348,11 +391,11 @@ html { scroll-behavior: smooth; }
     <h2 class="stitle">Two kinds of content in the 80000 series</h2>
     <div class="cgrid" style="margin-top: 34px;">
       <div class="ccard" style="padding: 24px 26px;">
-        <div class="qn" style="color: var(--iec); font-size: 16px;">Informative — Terms</div>
+        <div class="qn" style="color: var(--blue); font-size: 16px;">Informative — Terms</div>
         <p class="d" style="font-size: 15px; margin-top: 10px;">Published on the OBP. Definitions and term entries, publicly browsable.</p>
       </div>
       <div class="ccard" style="padding: 24px 26px;">
-        <div class="qn" style="color: var(--iso); font-size: 16px;">Normative — Quantities + Units</div>
+        <div class="qn" style="color: var(--red); font-size: 16px;">Normative — Quantities + Units</div>
         <p class="d" style="font-size: 15px; margin-top: 10px;">The “ID / Quantity / Unit” tables and their notes. Not public — but machine-readable in the dataset.</p>
       </div>
     </div>
@@ -361,7 +404,7 @@ html { scroll-behavior: smooth; }
       <li class="li">Other unit datasets reference ISQ: <b>UnitsML and IEC CDD</b></li>
     </ul>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>05</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>05</b> / 25</span></div>
 </section>
 
 <!-- 6 · THE ASK -->
@@ -377,7 +420,7 @@ html { scroll-behavior: smooth; }
     </ul>
     <p class="lede" style="margin-top: 34px;">The answer is access: a stable, versioned, machine-readable service that any committee can build on — <b>without touching the standards themselves</b>.</p>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>06</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>06</b> / 25</span></div>
 </section>
 
 <!-- 7 · SECTION: ENTERING SMART -->
@@ -412,7 +455,7 @@ html { scroll-behavior: smooth; }
       <span class="chip">SKOS concepts</span>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>08</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>08</b> / 25</span></div>
 </section>
 
 <!-- 9 · ISOIEC80000 ONTOLOGY -->
@@ -423,15 +466,15 @@ html { scroll-behavior: smooth; }
     <p class="lede" style="margin-top: 8px;">“isoiec80000” models what the series actually publishes — four domain classes over the SMART core:</p>
     <div class="cgrid">
       <div class="ccard"><div class="qn" style="color: var(--ink);">Math notation</div><div class="d">Signs and symbols of ISO 80000-2</div></div>
-      <div class="ccard"><div class="qn" style="color: var(--iso);">Quantity</div><div class="d">Quantities of Parts 3–13</div></div>
-      <div class="ccard"><div class="qn" style="color: var(--iec);">Unit of measurement</div><div class="d">Units with UnitsML identity</div></div>
-      <div class="ccard"><div class="qn" style="color: var(--iec);">Dimension</div><div class="d">Quantity dimensions from UnitsDB</div></div>
+      <div class="ccard"><div class="qn" style="color: var(--red);">Quantity</div><div class="d">Quantities of Parts 3–13</div></div>
+      <div class="ccard"><div class="qn" style="color: var(--blue);">Unit of measurement</div><div class="d">Units with UnitsML identity</div></div>
+      <div class="ccard"><div class="qn" style="color: var(--blue);">Dimension</div><div class="d">Quantity dimensions from UnitsDB</div></div>
     </div>
     <ul class="list plum" style="margin-top: 26px;">
       <li class="li">Sample instances published for each class — math, quantities, units, dimensions</li>
     </ul>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>09</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>09</b> / 25</span></div>
 </section>
 
 <!-- 10 · SECTION: MODELLING MEASUREMENT -->
@@ -445,11 +488,11 @@ html { scroll-behavior: smooth; }
   <div class="pad">
     <div class="snum">PART THREE</div>
     <h2 class="stitle-big">Modelling measurement itself</h2>
-    <p class="lede">The ISQ extension — Pendrill’s four-level hierarchy, implemented as linked data.</p>
+    <p class="lede">A four-level measurement hierarchy, implemented as linked data.</p>
   </div>
 </section>
 
-<!-- 11 · THE PROBLEM -->
+<!-- 11 · THE PROBLEM (single scholarly attribution lives here) -->
 <section class="slide" id="s11">
   <div class="pad">
     <div class="eyebrow ont">Why an extension</div>
@@ -461,12 +504,11 @@ html { scroll-behavior: smooth; }
       <li class="li">The published series stays untouched: the extension sits <b>beside</b> ISO 80000, pointing at it</li>
     </ul>
     <div class="chips">
-      <span class="chip">Pendrill, <i>Measurement outliers</i> · 2024</span>
       <span class="chip">Dybkaer (2010) · quantity axis</span>
       <span class="chip">Fleischman (1960) · Sachgrösse</span>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>11</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>11</b> / 25</span></div>
 </section>
 
 <!-- 12 · FOUR LEVELS × THREE AXES -->
@@ -479,7 +521,7 @@ html { scroll-behavior: smooth; }
         <th style="width:70px;">Level</th>
         <th class="ax-q">Quantity · Dybkaer</th>
         <th class="ax-e">Entity</th>
-        <th class="ax-m">Measurement · Pendrill</th>
+        <th class="ax-m">Measurement</th>
       </tr></thead>
       <tbody>
         <tr><td class="lv">0</td><td class="axis-q"><div class="t">kind of quantity</div><div class="x">space</div></td><td class="empty">—</td><td class="empty">—</td></tr>
@@ -488,9 +530,9 @@ html { scroll-behavior: smooth; }
         <tr><td class="lv">3</td><td class="axis-q"><div class="t">quantity instantiation</div><div class="x">length of rod AB, 09:15</div></td><td class="axis-e"><div class="t">entity instantiation</div><div class="x">rod AB</div></td><td class="axis-m"><div class="t">quantity as measured</div><div class="x">1.234 m ± 0.001</div></td></tr>
       </tbody>
     </table>
-    <p class="li" style="margin-top: 18px;">Empty cells are Pendrill’s own — only the quantity axis reaches level 0; the measurement axis exists only at level 3. <b>Every cell is live in the browser’s walkthrough.</b></p>
+    <p class="li" style="margin-top: 18px;">Empty cells are part of the model — only the quantity axis reaches level 0; the measurement axis exists only at level 3. <b>Every cell is live in the browser’s walkthrough.</b></p>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>12</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>12</b> / 25</span></div>
 </section>
 
 <!-- 13 · THE ISQ EXTENSION -->
@@ -529,7 +571,7 @@ html { scroll-behavior: smooth; }
       </div>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>13</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>13</b> / 25</span></div>
 </section>
 
 <!-- 14 · WORKED EXAMPLE -->
@@ -540,15 +582,15 @@ html { scroll-behavior: smooth; }
     <div class="flow">
       <div class="fstep"><div class="fl">L1 · SERIES</div><div class="qn2">t3-1.1 “length”</div><div class="v">l</div><div class="d">The published quantity — ISO 80000-3</div></div>
       <div class="fjoin">→</div>
-      <div class="fstep"><div class="fl">L2 · DEDICATED</div><div class="qn2">ex:lengthOfRod</div><div class="v">length of rod</div><div class="d">dedicatedTo t3-1.1; characterizes ex:rod</div></div>
+      <div class="fstep"><div class="fl">L2 · DEDICATED</div><div class="qn2">ex:lengthOfRod</div><div class="v">length of rod</div><div class="d">dedicatedTo t3-1.1 · characterizes ex:rod</div></div>
       <div class="fjoin">→</div>
-      <div class="fstep"><div class="fl">L3 · INSTANTIATION</div><div class="qn2">ex:lengthOfRodAB</div><div class="v">rod AB, 09:15</div><div class="d">instantiationOf ex:lengthOfRod; instantiates ex:rodAB</div></div>
+      <div class="fstep"><div class="fl">L3 · INSTANTIATION</div><div class="qn2">ex:lengthOfRodAB</div><div class="v">rod AB, 09:15</div><div class="d">instantiationOf ex:lengthOfRod · instantiates ex:rodAB</div></div>
       <div class="fjoin">→</div>
       <div class="fstep final"><div class="fl">L3 · MEASURED</div><div class="qn2">ex:measuredLengthOfRodAB</div><div class="v">1.234 m ± 0.001</div><div class="d">measurementOf · measuredAt · hasValue · uncertainty</div></div>
     </div>
     <p class="li" style="margin-top: 24px;">Each step is a <b>live page</b> in the browser — and the same chain is downloadable as <span class="qname">isq-examples.ttl</span>.</p>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>14</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>14</b> / 25</span></div>
 </section>
 
 <!-- 15 · WHERE IT LIVES -->
@@ -576,7 +618,7 @@ html { scroll-behavior: smooth; }
     </div>
     <p class="lede" style="margin-top: 36px;">All ISQ-specific modelling stays in <b>our namespace</b>. Upgrades to upstream sources flow in; nothing flows back that could destabilise them.</p>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>15</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>15</b> / 25</span></div>
 </section>
 
 <!-- 16 · INTAKE CONTRACT -->
@@ -593,7 +635,7 @@ html { scroll-behavior: smooth; }
     <p class="li" style="margin-top: 26px;">The intake path is documented at <span class="url">…/methodology/measurements</span>.</p>
   </div>
   <div class="visual">
-    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">metanorma.github.io/isq-smart/methodology/measurements</span></div><div class="frameimg" style="height: 420px;"><img src="img/measurements.png" alt="Measurement intake page"></div></div>
+    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">metanorma.github.io/isq-smart/methodology/measurements</span></div><div class="shot"><img src="img/measurements.png" alt="Measurement intake page"></div></div>
     <div class="caption">The measurement intake contract — framework, not data</div>
   </div>
 </section>
@@ -631,7 +673,7 @@ html { scroll-behavior: smooth; }
     <p class="li" style="margin-top: 26px;"><span class="url">metanorma.github.io/isq-smart</span></p>
   </div>
   <div class="visual">
-    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">metanorma.github.io/isq-smart</span></div><div class="frameimg" style="height: 420px;"><img src="img/home.png" alt="ISQ Browser home page"></div></div>
+    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">metanorma.github.io/isq-smart</span></div><div class="shot"><img src="img/home.png" alt="ISQ Browser home page"></div></div>
     <div class="caption">The ISQ Browser home</div>
   </div>
 </section>
@@ -649,7 +691,7 @@ html { scroll-behavior: smooth; }
     </ul>
   </div>
   <div class="visual">
-    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/quantities/part-3/t3-1.1</span></div><div class="frameimg" style="height: 420px;"><img src="img/quantity.png" alt="Quantity detail page for length"></div></div>
+    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/quantities/part-3/t3-1.1</span></div><div class="shot"><img src="img/quantity.png" alt="Quantity detail page for length"></div></div>
     <div class="caption">t3-1.1 “length” — with its ontology attachments</div>
   </div>
 </section>
@@ -661,16 +703,16 @@ html { scroll-behavior: smooth; }
     <h2 class="stitle">Units and dimensions, from UnitsDB</h2>
     <div class="duo">
       <div>
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/units/metre</span></div><div class="frameimg"><img src="img/unit.png" alt="Unit detail page for metre"></div></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/units/metre</span></div><div class="shot"><img src="img/unit.png" alt="Unit detail page for metre"></div></div>
         <div class="caption">82 units with UnitsML identity and URNs</div>
       </div>
       <div>
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/dimensions</span></div><div class="frameimg"><img src="img/dimensions.png" alt="Dimensions browser page"></div></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/dimensions</span></div><div class="shot"><img src="img/dimensions.png" alt="Dimensions browser page"></div></div>
         <div class="caption">18 dimensions, sourced from UnitsML</div>
       </div>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>20</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>20</b> / 25</span></div>
 </section>
 
 <!-- 21 · ONTOLOGY BROWSER -->
@@ -680,32 +722,32 @@ html { scroll-behavior: smooth; }
     <h2 class="stitle">The ontology, browsable</h2>
     <div class="duo">
       <div>
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/ontology</span></div><div class="frameimg"><img src="img/ontology.png" alt="Ontology browser page"></div></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/ontology</span></div><div class="shot"><img src="img/ontology.png" alt="Ontology browser page"></div></div>
         <div class="caption">242 entities · 41 relations · SHACL shapes</div>
       </div>
       <div>
-        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/ontology/isq-MeasuredQuantity</span></div><div class="frameimg"><img src="img/entity.png" alt="MeasuredQuantity entity page"></div></div>
+        <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/ontology/isq-MeasuredQuantity</span></div><div class="shot"><img src="img/entity.png" alt="MeasuredQuantity entity page"></div></div>
         <div class="caption">Each class and individual gets a page — with RDF downloads</div>
       </div>
     </div>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>21</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>21</b> / 25</span></div>
 </section>
 
 <!-- 22 · WALKTHROUGH -->
 <section class="slide split" id="s22">
   <div class="pad">
     <div class="eyebrow ont">Methodology</div>
-    <h2 class="stitle">The walkthrough — Pendrill’s table, live</h2>
+    <h2 class="stitle">The walkthrough — the hierarchy, live</h2>
     <ul class="list plum" style="margin-top: 26px;">
-      <li class="li">Every cell of Table 1.1 is <b>clickable</b> — classes and worked-example instances</li>
+      <li class="li">Every cell of the level table is <b>clickable</b> — classes and worked-example instances</li>
       <li class="li">The four-step chain from “length” to <b>1.234 m ± 0.001</b>, as live pages</li>
       <li class="li">Bilingual — the methodology reads in French too</li>
     </ul>
     <p class="li" style="margin-top: 26px;"><span class="url">…/methodology/walkthrough</span></p>
   </div>
   <div class="visual">
-    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/methodology/walkthrough</span></div><div class="frameimg" style="height: 420px;"><img src="img/walkthrough.png" alt="Pendrill walkthrough page"></div></div>
+    <div class="frame"><div class="bar"><i></i><i></i><i></i><span class="addr">…/methodology/walkthrough</span></div><div class="shot"><img src="img/walkthrough.png" alt="Measurement walkthrough page"></div></div>
     <div class="caption">The measurement walkthrough — the ontology, demonstrated</div>
   </div>
 </section>
@@ -735,7 +777,7 @@ html { scroll-behavior: smooth; }
     </div>
     <p class="lede" style="margin-top: 40px;">And everything is data: <b>RDF exports per entity, per part, and for the whole ontology</b> — Turtle and JSON-LD.</p>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>23</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>23</b> / 25</span></div>
 </section>
 
 <!-- 24 · QUALITY -->
@@ -755,37 +797,59 @@ html { scroll-behavior: smooth; }
       <li class="li">Open source — <span class="url">github.com/metanorma/isq-smart</span></li>
     </ul>
   </div>
-  <div class="footer"><span>ISQ in SMART · ISO/TC 12</span><span class="pg"><b>24</b> / 25</span></div>
+  <div class="footer"><span>ISQ Browser · contributed to ISO/TC 12</span><span class="pg"><b>24</b> / 25</span></div>
 </section>
 
 <!-- 25 · END -->
 <section class="slide s-end" id="s25">
   <div class="ghost-measure" aria-hidden="true" style="bottom: 40px;">1.234&nbsp;m <span class="pm">±</span> 0.001</div>
   <div class="pad">
+    <div class="brand">
+      <img src="img/isq-logo.svg" alt="ISQ" style="height:52px;width:auto;display:block">
+    </div>
     <div class="thanks">Thank you.</div>
     <p class="thanks-sub">Questions welcome — and the ladder is open for your data.</p>
     <div class="endurls">
       <div class="u"><i>BROWSER</i><a href="https://metanorma.github.io/isq-smart/">metanorma.github.io/isq-smart</a></div>
+      <div class="u"><i>DECK</i><a href="https://metanorma.github.io/isq-smart/deck/isq-tc12.html">…/isq-smart/deck/isq-tc12.html</a></div>
       <div class="u"><i>WALKTHROUGH</i><a href="https://metanorma.github.io/isq-smart/methodology/walkthrough/">…/methodology/walkthrough</a></div>
-      <div class="u"><i>ONTOLOGY</i><a href="https://metanorma.github.io/isq-smart/ontology/">…/ontology</a></div>
       <div class="u"><i>SOURCE</i><a href="https://github.com/metanorma/isq-smart">github.com/metanorma/isq-smart</a></div>
     </div>
-    <div class="byline" style="margin-top: 44px;"><b>Ronald Tse</b> · ISO/TC 12 · November 2026</div>
+    <div class="byline" style="margin-top: 44px;"><b>Ronald Tse</b> — Ribose · A service contributed to ISO/TC 12 · November 2026</div>
   </div>
 </section>
 
 </div>
 <script>
+  // Theme: URL ?theme= > saved choice > OS preference > dark (the deck's identity)
+  const root = document.documentElement;
+  const btn = document.getElementById('hud-theme');
+  function applyTheme(t) {
+    root.setAttribute('data-theme', t);
+    btn.textContent = t === 'dark' ? '◐ dark' : '◑ light';
+  }
+  const saved = localStorage.getItem('isq-deck-theme');
+  const param = new URLSearchParams(location.search).get('theme');
+  const initial = param || saved || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  applyTheme(initial === 'light' ? 'light' : 'dark');
+  function toggleTheme() {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('isq-deck-theme', next);
+    applyTheme(next);
+  }
+  btn.addEventListener('click', toggleTheme);
+
   const slides = [...document.querySelectorAll('.slide')];
-  const fit = document.querySelector('.fit');
+  const hudPage = document.getElementById('hud-page');
   let cur = 0;
   function show(i) {
     cur = Math.max(0, Math.min(slides.length - 1, i));
     slides[cur].scrollIntoView({ behavior: 'smooth' });
-    fit.textContent = `ISQ · TC 12 · ${cur + 1} / ${slides.length}`;
+    hudPage.textContent = `ISQ · TC 12 · ${cur + 1} / ${slides.length}`;
     history.replaceState(null, '', '#s' + (cur + 1));
   }
   window.addEventListener('keydown', (e) => {
+    if (e.key === 't' || e.key === 'T') { toggleTheme(); return; }
     if (['ArrowRight', 'ArrowDown', 'PageDown', ' '].includes(e.key)) { e.preventDefault(); show(cur + 1); }
     else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); show(cur - 1); }
     else if (e.key === 'Home') { e.preventDefault(); show(0); }
