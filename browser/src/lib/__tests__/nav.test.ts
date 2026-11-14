@@ -4,7 +4,7 @@ import type { NavEntry, NavGroup, NavLink } from '../nav'
 
 describe('nav link arrays', () => {
   it('coreLinks contains math, quantities, kinds, units, dimensions', () => {
-    expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/math', '/units', '/ontology'])
+    expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/math', '/units'])
   })
 
   it('every nav link has an i18nKey', () => {
@@ -19,8 +19,10 @@ describe('nav link arrays', () => {
     expect(labels).toEqual(['Explore (group)'])
   })
 
-  it('Ontology is promoted to the primary data nav', () => {
-    expect(coreLinks.map(l => l.to)).toContain('/ontology')
+  it('Ontology lives in Explore Services', () => {
+    const explore = secondaryEntries.find(e => isNavGroup(e)) as NavGroup | undefined
+    expect(explore!.sections![1].items[0].to).toBe('/ontology')
+    expect(coreLinks.map(l => l.to)).not.toContain('/ontology')
   })
 
   it('Explore dropdown groups Learn and Services sections', () => {
@@ -28,7 +30,7 @@ describe('nav link arrays', () => {
     expect(explore).toBeDefined()
     expect(explore!.sections!.map(sec => sec.label)).toEqual(['Learn', 'Services'])
     expect(explore!.sections![0].items.map(i => i.to)).toEqual(['/about', '/about/emblem', '/about/history', '/about/ecosystem', '/methodology'])
-    expect(explore!.sections![1].items.map(i => i.to)).toEqual(['/documents', '/presentations', '/reference'])
+    expect(explore!.sections![1].items.map(i => i.to)).toEqual(['/ontology', '/documents', '/presentations', '/reference'])
   })
 
   it('kinds and dimensions are hub views, not header items', () => {

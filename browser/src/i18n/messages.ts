@@ -49,6 +49,7 @@ export const messages = {
     },
     "label": {
       "entries": "entries",
+      "dimensions": "dimensions",
       "entry": "entry",
       "entries_count": "entries",
       "part": "Part",
@@ -546,6 +547,7 @@ export const messages = {
     },
     "label": {
       "entries": "entrées",
+      "dimensions": "dimensions",
       "entry": "entrée",
       "entries_count": "entrées",
       "part": "Partie",

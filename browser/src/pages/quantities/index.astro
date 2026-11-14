@@ -6,6 +6,8 @@ import PageHero from '../../components/PageHero.astro'
 import { getDomain, getPartsByDomain, getPartEntryCount, isBilingual, partUrl, sectionLabel } from '../../data/index'
 import { quantitiesIndex } from '../../data/generated/domain-index'
 import { symbolCache } from '../../data/generated/symbol-cache'
+import { kindOfQuantities } from '../../data/generated/kinds'
+import { physicalDimensions } from '../../data/generated/physical-dimensions'
 
 const domainKey = 'quantities' as const
 const domain = getDomain(domainKey)!
@@ -34,20 +36,23 @@ const totalEntries = parts.reduce((sum, p) => sum + getPartEntryCount(p.partKey)
 
     <!-- Part navigation strip -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 relative z-10 mb-6">
-      <div class="flex items-center gap-2 mb-3">
-        <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60"></div>
-        <a href={asset("/kinds")} class="text-xs font-medium text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors inline-flex items-center gap-1">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/></svg>
-          <span data-i18n="label.view_by_kind">View by kind</span>
-        </a>
-        <span class="text-slate-200 dark:text-dark-600 text-xs">·</span>
-        <a href={asset("/dimensions")} class="text-xs font-medium text-slate-400 dark:text-slate-500 hover:text-brand-600 dark:hover:text-brand-400 transition-colors inline-flex items-center gap-1">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
-          <span data-i18n="label.view_by_dimension">View by dimension</span>
-        </a>
-        <div class="flex-1 h-px bg-slate-200/60 dark:bg-dark-700/60"></div>
-      </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-2">
+        <a href={asset("/kinds")} class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-brand-50/60 dark:bg-brand-950/30 border border-brand-200/60 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+          <span class="text-lg font-serif italic text-brand-600 dark:text-brand-400 w-6 text-center flex-shrink-0">k</span>
+          <div class="min-w-0">
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" data-i18n="page.kinds.title">Kinds of Quantity</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 truncate" data-i18n="page.kinds.description">Browse quantities by their kind — grouped by dimension.</div>
+            <div class="text-xs text-slate-400 dark:text-slate-500 tabular-nums">{kindOfQuantities.length} <span data-i18n="label.entries">entries</span></div>
+          </div>
+        </a>
+        <a href={asset("/dimensions")} class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-brand-50/60 dark:bg-brand-950/30 border border-brand-200/60 dark:border-brand-800/40 hover:border-brand-300 dark:hover:border-brand-700 hover:shadow-sm transition-all">
+          <span class="text-sm font-mono font-bold text-brand-600 dark:text-brand-400 w-6 text-center flex-shrink-0">Lᴹ</span>
+          <div class="min-w-0">
+            <div class="text-xs font-semibold text-slate-800 dark:text-slate-200 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors" data-i18n="page.dimensions.title">Dimensions</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400 truncate" data-i18n="page.dimensions.description">Browse all dimensions defined in the ISO 80000 & IEC 80000 series.</div>
+            <div class="text-xs text-slate-400 dark:text-slate-500 tabular-nums"><span class="tabular-nums">{physicalDimensions.length}</span> <span data-i18n="label.dimensions">dimensions</span></div>
+          </div>
+        </a>
         {parts.map((part) => (
           <a href={partUrl(part.partKey)} class="group flex items-center gap-2.5 px-3 py-2.5 rounded-xl bg-white dark:bg-dark-800 border border-slate-200/60 dark:border-dark-600/60 hover:border-brand-200 dark:hover:border-brand-700 hover:shadow-sm transition-all">
             <span class="text-base">{part.icon}</span>
