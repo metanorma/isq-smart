@@ -429,6 +429,7 @@ export const messages = {
       "dimensions": "Dimensions",
       "about_standard": "About the Standard",
       "api_reference": "API & Reference",
+      "presentation": "Presentation (Nov 2026)",
       "urn_identifiers": "ISO-IEC URN identifiers",
       "jsonld_rdf": "JSON-LD + RDF/Turtle vocabulary",
       "info_service": "An information service of ISO/TC 12 & IEC/TC 25, developed by Ribose."
@@ -882,6 +883,7 @@ export const messages = {
       "dimensions": "Dimensions",
       "about_standard": "À propos de la norme",
       "api_reference": "API et référence",
+      "presentation": "Présentation (nov. 2026)",
       "urn_identifiers": "Identifiants URN ISO-CEI",
       "jsonld_rdf": "Vocabulaire JSON-LD + RDF/Turtle",
       "info_service": "Un service d'information de l'ISO/TC 12 et de la CEI/TC 25, développé par Ribose."
