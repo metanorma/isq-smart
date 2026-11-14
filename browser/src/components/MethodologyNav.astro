@@ -9,8 +9,9 @@ const { active } = Astro.props
 const items = [
   { slug: '', label: 'Overview', key: 'overview' as const, i18nKey: 'page.methodology.nav.overview' },
   { slug: '/concept-system', label: 'Concept System', key: 'concept-system' as const, i18nKey: 'page.methodology.nav.concept_system' },
+  { slug: '/terminology', label: 'Terminology', key: 'terminology' as const, i18nKey: 'nav_item.terminology', abs: true },
   { slug: '/walkthrough', label: 'Walkthrough', key: 'walkthrough' as const, i18nKey: 'page.methodology.nav.walkthrough' },
-  { slug: '/measurements', label: 'Measurements', key: 'measurements' as const, i18nKey: 'page.methodology.nav.measurements' },
+  { slug: '/measurements', label: 'Measurement intake', key: 'measurements' as const, i18nKey: 'page.methodology.nav.measurements' },
   { slug: '/navigation', label: 'Navigation', key: 'navigation' as const, i18nKey: 'page.methodology.nav.navigation' },
   { slug: '/references', label: 'References', key: 'references' as const, i18nKey: 'page.methodology.nav.references' },
 ]
@@ -21,7 +22,7 @@ const items = [
     <div class="flex items-center gap-1 overflow-x-auto no-scrollbar h-11">
       {items.map((item) => (
         <a
-          href={asset(`/methodology${item.slug}`)}
+          href={asset('abs' in item && item.abs ? item.slug : `/methodology${item.slug}`)}
           data-i18n={item.i18nKey}
           class={`flex-shrink-0 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
             active === item.key

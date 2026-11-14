@@ -1,0 +1,74 @@
+---
+layout: ../../layouts/MdxLayout.astro
+title: "History of ISO 80000 & IEC 80000 — ISQ Browser"
+description: "From the ISO 31 and IEC 60027 predecessors to today's harmonized series and the SMART dataset era."
+---
+import Breadcrumb from '../../components/Breadcrumb.astro'
+import SectionHead from '../../components/SectionHead.astro'
+import AboutNav from '../../components/AboutNav.astro'
+import { asset } from '../../lib/asset'
+
+export const timeline = [
+  { year: '1950s', label: 'IEC 60027 series begins — letter symbols for electrical technology', publisher: 'IEC', era: 'predecessor' },
+  { year: '1960s', label: 'ISO 31 series begins — 14 parts covering quantities and units across the physical sciences', publisher: 'ISO', era: 'predecessor' },
+  { year: '2006', label: 'First ISO 80000 & IEC 80000 parts published, harmonizing ISO 31 and IEC 60027 into one series', publisher: 'ISO & IEC', era: 'launch' },
+  { year: '2009', label: 'Part 1 (General) first edition — formally establishes ISQ terminology', publisher: 'ISO' },
+  { year: '2019', label: 'SI redefinition — kilogram, ampere, kelvin, mole defined by fundamental constants', publisher: 'BIPM', highlight: true },
+  { year: '2019', label: 'Parts 2–5, 7, 9–10 revised — updated definitions aligned with the new SI', publisher: 'ISO' },
+  { year: '2022', label: 'Part 1 second edition — restructured around concepts and terminology for the new SI', publisher: 'ISO' },
+  { year: '2022', label: 'Part 6 second edition — adds elementary charge and induced voltage, aligned with redefined SI', publisher: 'IEC' },
+  { year: '2025', label: 'Part 13 second edition — new binary prefix definitions (robi, quebi) matching SI prefixes', publisher: 'IEC' },
+]
+export const publisherLogo = (pub) => {
+  if (pub === 'BIPM') return asset('/img/logo-bipm.svg')
+  if (pub === 'IEC') return asset('/img/logo-iec.svg')
+  return asset('/img/logo-iso.svg')
+}
+
+<div>
+  {/* Hero */}
+  <section class="relative overflow-hidden bg-gradient-to-br from-brand-950 via-[#351a38] to-iec-900">
+    <div class="absolute inset-0 hero-pattern"></div>
+    <div class="grain-overlay absolute inset-0"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div class="max-w-3xl page-enter">
+        <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'About', href: '/about' }, { label: 'History' }]} variant="dark" />
+        <h1 class="text-3xl sm:text-4xl font-bold text-white tracking-tight heading-serif leading-tight">Evolution</h1>
+        <p class="mt-3 text-sm text-brand-200/70 leading-relaxed max-w-2xl">From the ISO 31 and IEC 60027 predecessors, through the SI redefinition, to the SMART dataset era.</p>
+      </div>
+    </div>
+    <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
+  </section>
+
+  <AboutNav active="history" />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div class="text-center mb-12">
+        <SectionHead eyebrow="History" title="Evolution" />
+      </div>
+      <div class="relative max-w-2xl mx-auto">
+        <div class="absolute left-[23px] top-0 bottom-0 w-px bg-slate-200 dark:bg-dark-700"></div>
+        <div class="space-y-0">
+          {timeline.map((t, i) => (
+            <div class={`relative flex gap-5 ${i === 0 ? 'pb-6' : 'py-6'}`}>
+              <div class="relative z-10 flex-shrink-0">
+                <div class={`w-12 h-12 rounded-full border-2 flex items-center justify-center overflow-hidden ${t.highlight ? 'bg-amber-50 dark:bg-amber-950/60 border-amber-300 dark:border-amber-700' : t.era === 'predecessor' ? 'bg-slate-50 dark:bg-dark-700 border-slate-200 dark:border-dark-600' : t.publisher === 'BIPM' ? 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800' : t.publisher === 'IEC' ? 'bg-teal-50 dark:bg-teal-950/40 border-teal-200 dark:border-teal-800' : 'bg-brand-50 dark:bg-brand-950/40 border-brand-200 dark:border-brand-800'}`}>
+                  <img src={publisherLogo(t.publisher)} alt={t.publisher} class={`w-6 h-6 object-contain ${t.era === 'predecessor' ? 'opacity-40' : ''}`} />
+                </div>
+              </div>
+              <div class={`flex-1 pt-1 min-w-0 ${t.era === 'predecessor' ? 'opacity-50' : ''}`}>
+                <div class="flex items-center gap-2 mb-1 flex-wrap">
+                  <span class="text-sm font-mono font-bold text-slate-900 dark:text-slate-100">{t.year}</span>
+                  <span class={`text-xs font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${t.publisher === 'BIPM' ? 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400' : t.publisher === 'IEC' ? 'bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400' : 'bg-brand-50 dark:bg-brand-950/40 text-brand-600 dark:text-brand-400'}`}>{t.publisher}</span>
+                  {t.highlight && <span class="text-xs font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400">Milestone</span>}
+                  {t.era === 'predecessor' && <span class="text-xs font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-slate-100 dark:bg-dark-700 text-slate-400 dark:text-slate-500">Predecessor</span>}
+                  {t.era === 'launch' && <span class="text-xs font-bold uppercase tracking-wider px-1.5 py-0.5 rounded bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400">Harmonization</span>}
+                </div>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">{t.label}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+</div>

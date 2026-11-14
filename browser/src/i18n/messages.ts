@@ -5,7 +5,7 @@ export const messages = {
   "en": {
     "nav": {
       "quantities": "Quantities",
-      "kinds": "Kinds",
+      "kinds": "Quantity Kinds",
       "math": "Math",
       "units": "Units",
       "dimensions": "Dimensions"
@@ -20,6 +20,7 @@ export const messages = {
       "terminology": "Terminology",
       "ontology": "Ontology",
       "publications": "Publications",
+      "presentations": "Presentations",
       "reference": "Reference"
     },
     "action": {
@@ -186,7 +187,20 @@ export const messages = {
       },
       "about": {
         "title": "About ISO 80000 & IEC 80000",
+        "nav": {
+          "overview": "Overview",
+          "emblem": "Emblem",
+          "history": "History",
+          "ecosystem": "Ecosystem"
+        },
         "browser_title": "About ISO 80000 & IEC 80000 — ISQ Browser"
+      },
+      "presentations": {
+        "browser_title": "Presentations — ISQ Browser",
+        "title": "Presentations",
+        "intro": "Talks about the ISQ Browser and the ISO 80000 & IEC 80000 information service — slides you can open right here, and downloadable PDFs. Feel free to reuse them.",
+        "open_slides": "Open slides",
+        "download_pdf": "Download PDF"
       },
       "methodology": {
         "title": "Methodology",
@@ -195,7 +209,7 @@ export const messages = {
           "overview": "Overview",
           "concept_system": "Concept System",
           "walkthrough": "Walkthrough",
-          "measurements": "Measurements",
+          "measurements": "Measurement intake",
           "navigation": "Navigation",
           "references": "References"
         },
@@ -395,6 +409,9 @@ export const messages = {
       "shapes_desc": "SHACL validation shapes — constraints that enforce structural rules on data.",
       "individuals": "Named Individuals",
       "individuals_desc": "Named individuals — concrete instances of ontology classes.",
+      "measured_instances": "Measured Instances",
+      "measured_instances_count": "example",
+      "measured_instances_desc": "Concrete measurement results — the rod worked example with value and uncertainty.",
       "statistics": "Statistics",
       "statistics_desc": "Charts and summary metrics — entity counts by type, namespace distribution.",
       "classes": "classes",
@@ -429,7 +446,7 @@ export const messages = {
       "dimensions": "Dimensions",
       "about_standard": "About the Standard",
       "api_reference": "API & Reference",
-      "presentation": "Presentation (Nov 2026)",
+      "presentations": "Presentations",
       "urn_identifiers": "ISO-IEC URN identifiers",
       "jsonld_rdf": "JSON-LD + RDF/Turtle vocabulary",
       "info_service": "An information service of ISO/TC 12 & IEC/TC 25, developed by Ribose."
@@ -479,7 +496,7 @@ export const messages = {
   "fr": {
     "nav": {
       "quantities": "Grandeurs",
-      "kinds": "Types",
+      "kinds": "Espèces de grandeurs",
       "math": "Mathématiques",
       "units": "Unités",
       "dimensions": "Dimensions"
@@ -494,6 +511,7 @@ export const messages = {
       "terminology": "Terminologie",
       "ontology": "Ontologie",
       "publications": "Publications",
+      "presentations": "Présentations",
       "reference": "Référence"
     },
     "action": {
@@ -660,7 +678,20 @@ export const messages = {
       },
       "about": {
         "title": "À propos d'ISO 80000 & CEI 80000",
-        "browser_title": "À propos d'ISO 80000 & CEI 80000 — Navigateur ISQ"
+        "browser_title": "À propos d'ISO 80000 & CEI 80000 — Navigateur ISQ",
+        "nav": {
+          "overview": "Aperçu",
+          "emblem": "Emblème",
+          "history": "Histoire",
+          "ecosystem": "Écosystème"
+        }
+      },
+      "presentations": {
+        "browser_title": "Présentations — Navigateur ISQ",
+        "title": "Présentations",
+        "intro": "Présentations sur le Navigateur ISQ et le service d'information ISO 80000 et CEI 80000 — diapositives ouvrables ici même, et PDF téléchargeables. Libres à réutiliser.",
+        "open_slides": "Ouvrir les diapositives",
+        "download_pdf": "Télécharger le PDF"
       },
       "methodology": {
         "title": "Méthodologie",
@@ -669,7 +700,7 @@ export const messages = {
           "overview": "Aperçu",
           "concept_system": "Système de concepts",
           "walkthrough": "Parcours guidé",
-          "measurements": "Mesures",
+          "measurements": "Dépôt de mesures",
           "navigation": "Navigation",
           "references": "Références"
         },
@@ -883,7 +914,7 @@ export const messages = {
       "dimensions": "Dimensions",
       "about_standard": "À propos de la norme",
       "api_reference": "API et référence",
-      "presentation": "Présentation (nov. 2026)",
+      "presentations": "Présentations",
       "urn_identifiers": "Identifiants URN ISO-CEI",
       "jsonld_rdf": "Vocabulaire JSON-LD + RDF/Turtle",
       "info_service": "Un service d'information de l'ISO/TC 12 et de la CEI/TC 25, développé par Ribose."
@@ -940,6 +971,9 @@ export const messages = {
       "shapes_desc": "Formes de validation SHACL — contraintes qui appliquent des règles structurelles sur les données.",
       "individuals": "Individus nommés",
       "individuals_desc": "Individus nommés — instances concrètes des classes d'ontologie.",
+      "measured_instances": "Instances mesurées",
+      "measured_instances_count": "exemple",
+      "measured_instances_desc": "Résultats de mesure concrets — l'exemple de la tige avec valeur et incertitude.",
       "statistics": "Statistiques",
       "statistics_desc": "Graphiques et métriques sommaires — comptages d'entités par type, distribution par namespace.",
       "classes": "classes",
