@@ -32,10 +32,24 @@ const _secondaryEntries: NavEntry[] = [
     i18nKey: 'nav_group.about',
     items: [
       { to: '/about', label: 'About ISO 80000', i18nKey: 'nav_item.about' },
-      { to: '/terminology', label: 'Terminology', i18nKey: 'nav_item.terminology' },
+      { to: '/about/emblem', label: 'Emblem', i18nKey: 'page.about.nav.emblem' },
+      { to: '/about/history', label: 'History', i18nKey: 'page.about.nav.history' },
+      { to: '/about/ecosystem', label: 'Ecosystem', i18nKey: 'page.about.nav.ecosystem' },
     ],
   },
-  { to: '/methodology', label: 'Methodology', i18nKey: 'nav_item.methodology' },
+  {
+    label: 'Methodology',
+    i18nKey: 'nav_item.methodology',
+    items: [
+      { to: '/methodology', label: 'Overview', i18nKey: 'page.methodology.nav.overview' },
+      { to: '/methodology/concept-system', label: 'Concept System', i18nKey: 'page.methodology.nav.concept_system' },
+      { to: '/methodology/terminology', label: 'Terminology', i18nKey: 'nav_item.terminology' },
+      { to: '/methodology/walkthrough', label: 'Walkthrough', i18nKey: 'page.methodology.nav.walkthrough' },
+      { to: '/methodology/measurements', label: 'Measurement intake', i18nKey: 'page.methodology.nav.measurements' },
+      { to: '/methodology/navigation', label: 'Navigation', i18nKey: 'page.methodology.nav.navigation' },
+      { to: '/methodology/references', label: 'References', i18nKey: 'page.methodology.nav.references' },
+    ],
+  },
   {
     label: 'Resources',
     i18nKey: 'nav_group.resources',

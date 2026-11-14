@@ -82,37 +82,20 @@ export const concepts = [
         <p class="mt-3 text-sm text-brand-300/50 leading-relaxed max-w-2xl">Jointly published by ISO and IEC, this series defines the International System of Quantities (ISQ) — the universal language of measurement used across science, engineering, and commerce worldwide.</p>
       </div>
     </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8 -mt-2">
+        <div class="flex flex-wrap gap-2 page-enter">
+          <span class="px-3 py-1.5 rounded-lg bg-white/[0.07] border border-white/[0.1] text-xs text-white/80"><b class="text-white font-bold tabular-nums">765</b> quantities</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/[0.07] border border-white/[0.1] text-xs text-white/80"><b class="text-white font-bold tabular-nums">230</b> math entries</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/[0.07] border border-white/[0.1] text-xs text-white/80"><b class="text-white font-bold tabular-nums">82</b> units</span>
+          <span class="px-3 py-1.5 rounded-lg bg-white/[0.07] border border-white/[0.1] text-xs text-white/80"><b class="text-white font-bold tabular-nums">242</b> ontology entities</span>
+        </div>
+      </div>
     <div class="absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-slate-50 dark:from-dark-950 to-transparent z-10"></div>
   </section>
 
   <AboutNav />
 
-  {/* The Need */}
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-    <div class="text-center mb-10">
-      <SectionHead eyebrow="Why it exists" title="The Need for a Universal Standard" />
-    </div>
-    <div class="grid sm:grid-cols-2 gap-8 sm:gap-12">
-      <div class="p-6 rounded-2xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30">
-        <div class="flex items-center gap-2.5 mb-4">
-          <div class="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/40 border border-amber-200/60 dark:border-amber-800/40 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg></div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The Problem</h3>
-        </div>
-        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">Across scientific and engineering disciplines, quantities and units are expressed in many different ways. Different symbols for the same quantity, inconsistent unit choices, and varying notation habits create friction in communication, data exchange, and collaboration. Systems of quantities can be defined in multiple self-consistent ways — which treatment to adopt is partly convention.</p>
-      </div>
-      <div class="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/50 dark:border-emerald-800/30">
-        <div class="flex items-center gap-2.5 mb-4">
-          <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 border border-emerald-200/60 dark:border-emerald-800/40 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
-          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The Standard</h3>
-        </div>
-        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">ISO 80000 & IEC 80000 codify the treatment that has become nearly universally accepted across the physical sciences — the one found in most textbooks and familiar to scientists and technologists worldwide. They provide unambiguous definitions, symbols, and units so that any measurement, equation, or specification is interpreted identically regardless of who reads it.</p>
-      </div>
-    </div>
-    <div class="mt-8 rounded-2xl bg-slate-50 dark:bg-dark-800/50 border border-slate-200/60 dark:border-dark-600/60 p-6 sm:p-8">
-      <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed italic">The set of all quantities and their interrelationships is effectively infinite and constantly expanding as new fields of science and technology emerge. The ISO 80000 & IEC 80000 series provides a curated selection of the most commonly used quantities — and any quantity not listed can still be handled correctly as long as it relates to those that are.</p>
-    </div>
-  </section>
-
+  
   {/* What It Is */}
   <section class="bg-slate-50/50 dark:bg-dark-900/30 border-y border-slate-200/50 dark:border-dark-600/50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
@@ -139,6 +122,32 @@ export const concepts = [
           <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Replaces ISO 31 (14 parts) and portions of IEC 60027</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  {/* The Need */}
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+    <div class="text-center mb-10">
+      <SectionHead eyebrow="Why it exists" title="The Need for a Universal Standard" />
+    </div>
+    <div class="grid sm:grid-cols-2 gap-8 sm:gap-12">
+      <div class="p-6 rounded-2xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/50 dark:border-amber-800/30">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/40 border border-amber-200/60 dark:border-amber-800/40 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-amber-600 dark:text-amber-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z"/></svg></div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The Problem</h3>
+        </div>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">Across scientific and engineering disciplines, quantities and units are expressed in many different ways. Different symbols for the same quantity, inconsistent unit choices, and varying notation habits create friction in communication, data exchange, and collaboration. Systems of quantities can be defined in multiple self-consistent ways — which treatment to adopt is partly convention.</p>
+      </div>
+      <div class="p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-950/20 border border-emerald-200/50 dark:border-emerald-800/30">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-9 h-9 rounded-xl bg-emerald-100 dark:bg-emerald-900/40 border border-emerald-200/60 dark:border-emerald-800/40 flex items-center justify-center"><svg class="w-4.5 h-4.5 text-emerald-600 dark:text-emerald-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+          <h3 class="text-lg font-bold text-slate-900 dark:text-slate-100 tracking-tight heading-serif">The Standard</h3>
+        </div>
+        <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-base">ISO 80000 & IEC 80000 codify the treatment that has become nearly universally accepted across the physical sciences — the one found in most textbooks and familiar to scientists and technologists worldwide. They provide unambiguous definitions, symbols, and units so that any measurement, equation, or specification is interpreted identically regardless of who reads it.</p>
+      </div>
+    </div>
+    <div class="mt-8 rounded-2xl bg-slate-50 dark:bg-dark-800/50 border border-slate-200/60 dark:border-dark-600/60 p-6 sm:p-8">
+      <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed italic">The set of all quantities and their interrelationships is effectively infinite and constantly expanding as new fields of science and technology emerge. The ISO 80000 & IEC 80000 series provides a curated selection of the most commonly used quantities — and any quantity not listed can still be handled correctly as long as it relates to those that are.</p>
     </div>
   </section>
 

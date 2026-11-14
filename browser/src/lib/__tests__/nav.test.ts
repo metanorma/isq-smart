@@ -14,26 +14,27 @@ describe('nav link arrays', () => {
     }
   })
 
-  it('secondaryEntries: About group, Methodology link, Resources group', () => {
+  it('secondaryEntries: three consistent groups', () => {
     const labels = secondaryEntries.map(e => (isNavGroup(e) ? `${e.label} (group)` : e.label))
-    expect(labels).toEqual(['About (group)', 'Methodology', 'Resources (group)'])
+    expect(labels).toEqual(['About (group)', 'Methodology (group)', 'Resources (group)'])
   })
 
-  it('About group contains about and terminology', () => {
+  it('About group contains the four About pages', () => {
     const about = secondaryEntries.find(e => isNavGroup(e) && e.label === 'About') as NavGroup | undefined
     expect(about).toBeDefined()
-    expect(about!.items.map(i => i.to)).toEqual(['/about', '/terminology'])
-  })
-
-  it('Methodology is promoted to a top-level secondary link', () => {
-    const methodology = secondaryEntries.find(e => !isNavGroup(e) && e.to === '/methodology')
-    expect(methodology).toBeDefined()
+    expect(about!.items.map(i => i.to)).toEqual(['/about', '/about/emblem', '/about/history', '/about/ecosystem'])
   })
 
   it('Resources group contains ontology, publications, presentations, reference', () => {
     const resources = secondaryEntries.find(e => isNavGroup(e) && e.label === 'Resources') as NavGroup | undefined
     expect(resources).toBeDefined()
     expect(resources!.items.map(i => i.to)).toEqual(['/ontology', '/documents', '/presentations', '/reference'])
+  })
+
+  it('Methodology group stays inside its own route hierarchy', () => {
+    const methodology = secondaryEntries.find(e => isNavGroup(e) && e.label === 'Methodology') as NavGroup | undefined
+    expect(methodology).toBeDefined()
+    for (const item of methodology!.items) expect(item.to.startsWith('/methodology')).toBe(true)
   })
 
   it('navLinks is the flattened concatenation of core + secondary', () => {
