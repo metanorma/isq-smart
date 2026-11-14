@@ -43,7 +43,7 @@ function showAll() {
         <div class="flex items-center gap-3 py-3 flex-wrap">
           <div class="relative flex-1 min-w-[180px] max-w-md">
             <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-            <input v-model="searchQuery" type="text" placeholder="Search by name, symbol, unit..." class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-slate-50/50 dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 focus:bg-white dark:focus:bg-dark-700 transition-all" />
+            <input v-model="searchQuery" type="text" aria-label="Search entries" autocomplete="off" spellcheck="false" placeholder="Search by name, symbol, unit…" class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-slate-50/50 dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 focus:bg-white dark:focus:bg-dark-700 transition-all" />
           </div>
           <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar flex-shrink-0 max-sm:w-full max-sm:overflow-x-scroll max-sm:-mx-4 max-sm:px-4">
             <button @click="selectedPart = ''" :class="!selectedPart ? 'bg-brand-600 text-white border-brand-500' : 'bg-white dark:bg-dark-800 text-slate-500 dark:text-slate-400 border-slate-200 dark:border-dark-600 hover:border-brand-200 dark:hover:border-brand-700'" class="px-2.5 py-1 text-xs font-medium rounded-lg border transition-all">All</button>

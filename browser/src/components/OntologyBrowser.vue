@@ -247,7 +247,10 @@ watch(treeExpanded, async () => {
         <input
           v-model="searchQuery"
           type="text"
-          placeholder="Filter entities..."
+          aria-label="Filter entities"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="Filter entities…"
           class="w-full pl-9 pr-3 py-2 text-sm rounded-lg border border-slate-200 dark:border-dark-600 bg-white dark:bg-dark-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 transition-all"
         />
       </div>

@@ -4,6 +4,7 @@ import { useTheme } from '../composables/useTheme'
 
 const props = defineProps<{
   chart: string
+  label?: string
 }>()
 
 const container = ref<HTMLDivElement>()
@@ -47,9 +48,9 @@ watch(isDark, async () => {
 </script>
 
 <template>
-  <div class="mermaid-container w-full overflow-x-auto">
+  <div class="mermaid-container w-full overflow-x-auto" role="img" :aria-label="label || 'Diagram'">
     <div v-if="!rendered" class="flex items-center justify-center py-12">
-      <div class="animate-pulse text-sm text-slate-400">Rendering diagram...</div>
+      <div class="animate-pulse text-sm text-slate-400">Rendering diagram…</div>
     </div>
     <div ref="container" class="mermaid-output flex justify-center" v-show="rendered"></div>
   </div>
