@@ -30,6 +30,7 @@ import { asset } from '../lib/asset'
             <li><a :href="asset('/dimensions')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.dimensions">Dimensions</a></li>
             <li><a :href="asset('/about')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.about_standard">About the Standard</a></li>
             <li><a :href="asset('/reference')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.api_reference">API &amp; Reference</a></li>
+            <li><a :href="asset('/deck/isq-tc12.html')" target="_blank" rel="noopener" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.presentation">Presentation (Nov 2026)</a></li>
           </ul>
         </div>
 
