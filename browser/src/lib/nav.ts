@@ -21,7 +21,7 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 const _coreLinks: NavLink[] = [
   { to: '/math', label: 'Math', i18nKey: 'nav.math' },
   { to: '/quantities', label: 'Quantities', i18nKey: 'nav.quantities' },
-  { to: '/kinds', label: 'Kinds', i18nKey: 'nav.kinds' },
+  { to: '/kinds', label: 'Quantity Kinds', i18nKey: 'nav.kinds' },
   { to: '/units', label: 'Units', i18nKey: 'nav.units' },
   { to: '/dimensions', label: 'Dimensions', i18nKey: 'nav.dimensions' },
 ]
@@ -32,16 +32,17 @@ const _secondaryEntries: NavEntry[] = [
     i18nKey: 'nav_group.about',
     items: [
       { to: '/about', label: 'About ISO 80000', i18nKey: 'nav_item.about' },
-      { to: '/methodology', label: 'Methodology', i18nKey: 'nav_item.methodology' },
       { to: '/terminology', label: 'Terminology', i18nKey: 'nav_item.terminology' },
     ],
   },
+  { to: '/methodology', label: 'Methodology', i18nKey: 'nav_item.methodology' },
   {
     label: 'Resources',
     i18nKey: 'nav_group.resources',
     items: [
       { to: '/ontology', label: 'Ontology', i18nKey: 'nav_item.ontology' },
       { to: '/documents', label: 'Publications', i18nKey: 'nav_item.publications' },
+      { to: '/presentations', label: 'Presentations', i18nKey: 'nav_item.presentations' },
       { to: '/reference', label: 'Reference', i18nKey: 'nav_item.reference' },
     ],
   },
