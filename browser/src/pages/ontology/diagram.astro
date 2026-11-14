@@ -59,7 +59,7 @@ const propertyCount = definedEntities.filter(e => e.type === 'objectProperty' ||
             <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{diagram.description}</p>
           </div>
           <div class="p-4 sm:p-6">
-            <MermaidDiagram client:visible chart={diagram.chart} />
+            <MermaidDiagram client:visible chart={diagram.chart} label={diagram.title} />
           </div>
         </div>
       </section>

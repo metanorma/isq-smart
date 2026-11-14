@@ -2,6 +2,10 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Native UI (scrollbars, form controls) follows the active theme */
+:root { color-scheme: light; }
+html.dark { color-scheme: dark; }
+
 @theme {
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
@@ -508,7 +512,19 @@ a.xref:hover {
   .symbol-card { transition: none; }
   .hero-float-1, .hero-float-2, .hero-float-3, .hero-float-4, .hero-float-5 { animation: none; }
   .page-enter { animation: none; }
+  .shimmer, .hero-marquee-track, .accent-orb { animation: none; }
 }
+
+/* ─── Interaction polish ───────────────────────────────────────────────── */
+
+/* Remove the iOS/Android double-tap-zoom delay on controls */
+a, button, [role='button'], input, select, textarea, label, summary { touch-action: manipulation; }
+
+/* Keep anchor targets clear of the sticky header (h-14) when deep-linked */
+[id] { scroll-margin-top: 4.5rem; }
+
+/* Search results scroll independently of the page (no scroll chaining) */
+.search-results-scroll { overscroll-behavior: contain; }
 
 /* ─── Mobile touch ─────────────────────────────────────────────────────── */
 

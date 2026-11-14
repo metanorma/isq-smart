@@ -195,7 +195,7 @@ describe('OntologyBrowser', () => {
 
       // Overview tab: filter wrapper is hidden (v-show=false => display:none)
       await findTabBtn(wrapper, 'Overview')!.trigger('click')
-      const filterInputOverview = wrapper.find('input[placeholder="Filter entities..."]')
+      const filterInputOverview = wrapper.find('input[placeholder="Filter entities…"]')
       // The input exists in DOM (v-show keeps it) but its parent should be hidden
       const filterWrapper = filterInputOverview.element.closest('.relative.max-w-xs')
       expect(filterWrapper).toBeTruthy()
@@ -204,7 +204,7 @@ describe('OntologyBrowser', () => {
 
       // Classes tab: filter wrapper visible
       await findTabBtn(wrapper, 'Classes')!.trigger('click')
-      const filterInputClasses = wrapper.find('input[placeholder="Filter entities..."]')
+      const filterInputClasses = wrapper.find('input[placeholder="Filter entities…"]')
       const filterWrapperClasses = filterInputClasses.element.closest('.relative.max-w-xs')
       // Should NOT have display:none
       const styleClasses = filterWrapperClasses!.getAttribute('style') || ''
@@ -239,7 +239,7 @@ describe('OntologyBrowser', () => {
       expect(beforeRows).toBeGreaterThan(0)
 
       // Search for a specific isq class label (isq is the default ontology filter)
-      const searchInput = wrapper.find('input[placeholder="Filter entities..."]')
+      const searchInput = wrapper.find('input[placeholder="Filter entities…"]')
       const targetClass = classes.find(c => c.ontology === 'isq' && c.label.length > 0)!
       await searchInput.setValue(targetClass.label)
 
@@ -258,7 +258,7 @@ describe('OntologyBrowser', () => {
       const targetClass = classes.find(c => c.ontology === 'isq')!
       // Search by qname local part
       const qnamePart = targetClass.qname.split(':')[1] ?? targetClass.qname
-      const searchInput = wrapper.find('input[placeholder="Filter entities..."]')
+      const searchInput = wrapper.find('input[placeholder="Filter entities…"]')
       await searchInput.setValue(qnamePart.toLowerCase())
 
       // The target class should still be visible in the classes section
@@ -269,7 +269,7 @@ describe('OntologyBrowser', () => {
       const wrapper = mountBrowser()
       await findTabBtn(wrapper, 'Classes')!.trigger('click')
 
-      const searchInput = wrapper.find('input[placeholder="Filter entities..."]')
+      const searchInput = wrapper.find('input[placeholder="Filter entities…"]')
       await searchInput.setValue('zzzzzz_no_match_anywhere')
 
       const classesSection = wrapper.find('[data-section="classes"]')
@@ -288,7 +288,7 @@ describe('OntologyBrowser', () => {
 
       // Search for a known isq entity (default ontology filter is 'isq')
       const targetEntity = allEntities.find(e => e.ontology === 'isq')!
-      const searchInput = wrapper.find('input[placeholder="Filter entities..."]')
+      const searchInput = wrapper.find('input[placeholder="Filter entities…"]')
       await searchInput.setValue(targetEntity.label)
 
       const afterLinks = azSection.findAll('a').length
@@ -359,7 +359,7 @@ describe('OntologyBrowser', () => {
 
       // Also search for something
       const smartClass = classes.find(c => c.ontology === 'smart')!
-      const searchInput = wrapper.find('input[placeholder="Filter entities..."]')
+      const searchInput = wrapper.find('input[placeholder="Filter entities…"]')
       await searchInput.setValue(smartClass.label)
 
       const classesSection = wrapper.find('[data-section="classes"]')

@@ -39,6 +39,17 @@ function resultHref(r: CombinedSearchResult): string {
 
 function onKey(e: KeyboardEvent) {
   if (e.key === 'Escape') { closeSearch(); return }
+  if (e.key === 'Tab') {
+    const modal = input.value?.closest('.search-modal')
+    if (!modal) return
+    const focusables = modal.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])')
+    if (focusables.length === 0) return
+    const first = focusables[0]!
+    const last = focusables[focusables.length - 1]!
+    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus() }
+    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus() }
+    return
+  }
   if (e.key === 'ArrowDown') {
     e.preventDefault()
     activeIndex.value = Math.min(activeIndex.value + 1, searchResults.value.length - 1)
@@ -72,12 +83,12 @@ function getEntryName(r: CombinedSearchResult): string {
     <div v-if="searchOpen" class="search-overlay fixed inset-0 z-50" @keydown="onKey" @click.self="closeSearch">
       <div class="absolute inset-0 bg-slate-900/50 dark:bg-black/70 backdrop-blur-md" @click="closeSearch" />
 
-      <div class="search-modal relative max-w-2xl mx-auto bg-white dark:bg-dark-900 rounded-2xl shadow-2xl shadow-brand-950/20 overflow-hidden border border-slate-200/50 dark:border-dark-600/50 sm:mt-[10vh] sm:mx-4 fixed sm:relative inset-0 sm:inset-auto rounded-none sm:rounded-2xl">
+      <div class="search-modal relative max-w-2xl mx-auto bg-white dark:bg-dark-900 rounded-2xl shadow-2xl shadow-brand-950/20 overflow-hidden border border-slate-200/50 dark:border-dark-600/50 sm:mt-[10vh] sm:mx-4 fixed sm:relative inset-0 sm:inset-auto rounded-none sm:rounded-2xl" role="dialog" aria-modal="true" aria-label="Search">
         <div class="flex items-center gap-3 px-5 py-4 border-b border-slate-100 dark:border-dark-600">
           <svg class="w-5 h-5 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
-          <input ref="input" v-model="searchQuery" type="text" data-i18n-placeholder="action.search_placeholder" placeholder="Search quantities, symbols, definitions, units..." class="flex-1 text-sm bg-transparent outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-800 dark:text-slate-200" />
+          <input ref="input" v-model="searchQuery" type="text" role="combobox" aria-expanded="true" aria-controls="search-listbox" :aria-activedescendant="activeIndex >= 0 ? 'search-opt-' + activeIndex : undefined" aria-label="Search" data-i18n-placeholder="action.search_placeholder" placeholder="Search quantities, symbols, definitions, units…" autocomplete="off" autocapitalize="off" spellcheck="false" class="flex-1 text-sm bg-transparent outline-none placeholder:text-slate-400 dark:placeholder:text-slate-500 text-slate-800 dark:text-slate-200" />
           <kbd class="text-xs bg-slate-100 dark:bg-dark-800 px-1.5 py-0.5 rounded-md text-slate-400 dark:text-slate-500 font-mono border border-slate-200 dark:border-dark-600 flex-shrink-0 hidden sm:inline">ESC</kbd>
-          <button @click="closeSearch" class="sm:hidden p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+          <button @click="closeSearch" aria-label="Close search" class="sm:hidden p-1 rounded-lg text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
           </button>
         </div>
@@ -89,11 +100,12 @@ function getEntryName(r: CombinedSearchResult): string {
               v-for="d in domainOpts"
               :key="d.key"
               @click="searchDomain = d.key; performSearch(searchQuery)"
+              :aria-pressed="searchDomain === d.key"
               :class="['px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200', searchDomain === d.key ? 'bg-white dark:bg-dark-700 text-slate-800 dark:text-slate-200 shadow-sm border border-slate-200/80 dark:border-dark-500' : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300']"
             >{{ d.label }}</button>
           </div>
-          <div v-if="searchQuery && searchResults.length === 0" class="px-5 py-12 text-center text-slate-400 dark:text-slate-500 text-sm">
-            <p><span data-i18n="action.search_no_results">No results found</span> for "{{ searchQuery }}"</p>
+          <div v-if="searchQuery && searchResults.length === 0" role="status" class="px-5 py-12 text-center text-slate-400 dark:text-slate-500 text-sm">
+            <p><span data-i18n="action.search_no_results">No results found</span> for “{{ searchQuery }}”</p>
             <p class="mt-1 text-xs text-slate-300 dark:text-slate-600" data-i18n="action.search_try">Try searching for a quantity name, symbol, or unit</p>
           </div>
           <div v-if="!searchQuery" class="px-5 py-8 text-center text-slate-400 dark:text-slate-500 text-sm">
@@ -104,7 +116,8 @@ function getEntryName(r: CombinedSearchResult): string {
             </div>
             <p class="sm:hidden text-xs" data-i18n="action.search_type_hint">Type to search across all entries</p>
           </div>
-          <div v-for="(r, idx) in searchResults" :key="r.kind === 'ontology' ? r.slug : r.id" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
+          <div id="search-listbox" role="listbox" aria-label="Search results">
+            <div v-for="(r, idx) in searchResults" :key="r.kind === 'ontology' ? r.slug : r.id" role="option" :id="'search-opt-' + idx" :aria-selected="idx === activeIndex" class="entry-link" :class="{ 'bg-brand-50/70 dark:bg-brand-950/30': idx === activeIndex }">
             <a :href="resultHref(r)" @click="go" class="flex items-start gap-3.5 px-5 py-3.5 transition-colors">
               <span v-if="r.kind === 'ontology'" class="flex-shrink-0 mt-0.5 inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-mono font-semibold border transition-colors" :class="idx === activeIndex ? 'bg-brand-600 text-white border-brand-500' : 'bg-cyan-50 dark:bg-cyan-950/30 text-cyan-700 dark:text-cyan-400 border-cyan-100 dark:border-cyan-800'">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="5" cy="5" r="2"/><circle cx="19" cy="5" r="2"/><circle cx="5" cy="19" r="2"/><circle cx="19" cy="19" r="2"/><path d="M7 5h10M7 19h10M5 7v10M19 7v10"/></svg>
@@ -134,6 +147,8 @@ function getEntryName(r: CombinedSearchResult): string {
               </div>
             </a>
           </div>
+          </div>
+          <p class="sr-only" aria-live="polite" role="status">{{ searchResults.length }} {{ searchResults.length === 1 ? 'result' : 'results' }}</p>
         </div>
       </div>
     </div>
