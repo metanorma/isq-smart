@@ -135,7 +135,7 @@ ul.list.plum li::before { background: var(--plum); }
 /* ── title ───────────────────────────────────────────────────── */
 .s-title .pad { justify-content: center; }
 .brand { display: flex; align-items: center; gap: 18px; margin-bottom: 30px; }
-.brand svg { height: 64px; width: auto; display: block; }
+.brand img { height: 64px; width: auto; display: block; }
 .brand .series {
   font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em;
   color: var(--muted); text-transform: uppercase; line-height: 1.8;
@@ -276,7 +276,9 @@ h2.stitle-big {
 .thanks { font-family: var(--serif); font-weight: 900; font-size: 72px; letter-spacing: -0.02em; }
 .thanks-sub { font-size: 19px; color: var(--muted); margin-top: 14px; }
 .s-end .brand { margin-bottom: 24px; }
-.s-end .brand svg { height: 52px; }
+.s-end .brand img { height: 52px; }
+[data-theme="dark"] .logo-light { display: none; }
+[data-theme="light"] .logo-dark { display: none; }
 
 /* screen-only UI */
 .hud {
@@ -297,7 +299,7 @@ h2.stitle-big {
 @media print {
   @page { size: 1280px 720px; margin: 0; }
   html { scroll-snap-type: none; scroll-behavior: auto; }
-  body { background: var(--bg); }
+  body { background: var(--bg); zoom: 1 !important; }
   .deck { width: 1280px; margin: 0; }
   .slide { page-break-after: always; break-inside: avoid; border-top: none; }
   .hud { display: none; }
@@ -318,7 +320,8 @@ h2.stitle-big {
   <div class="ladder-mini" aria-hidden="true">L0 space<br>L1 length<br>L2 length of rod<br><b>L3 1.234 m ± 0.001</b></div>
   <div class="pad">
     <div class="brand">
-      <img src="img/isq-logo.svg" alt="ISQ" style="height:64px;width:auto;display:block">
+      <img class="logo-dark" src="img/isq-logo-dark.svg" alt="ISQ">
+      <img class="logo-light" src="img/isq-logo-light.svg" alt="ISQ">
       <div class="series">ISO 80000 &amp; IEC 80000<br><b>quantities · units · measurement</b></div>
     </div>
     <h1 class="big">ISQ in SMART</h1>
@@ -805,7 +808,8 @@ h2.stitle-big {
   <div class="ghost-measure" aria-hidden="true" style="bottom: 40px;">1.234&nbsp;m <span class="pm">±</span> 0.001</div>
   <div class="pad">
     <div class="brand">
-      <img src="img/isq-logo.svg" alt="ISQ" style="height:52px;width:auto;display:block">
+      <img class="logo-dark" src="img/isq-logo-dark.svg" alt="ISQ">
+      <img class="logo-light" src="img/isq-logo-light.svg" alt="ISQ">
     </div>
     <div class="thanks">Thank you.</div>
     <p class="thanks-sub">Questions welcome — and the ladder is open for your data.</p>
@@ -855,6 +859,13 @@ h2.stitle-big {
     else if (e.key === 'Home') { e.preventDefault(); show(0); }
     else if (e.key === 'End') { e.preventDefault(); show(slides.length - 1); }
   });
+  function fitDeck() {
+    const z = document.documentElement.clientWidth / 1280;
+    document.body.style.zoom = z > 0 && Math.abs(z - 1) > 0.01 ? z : '';
+  }
+  window.addEventListener('resize', fitDeck);
+  fitDeck();
+
   const obs = new IntersectionObserver((es) => {
     es.forEach((en) => { if (en.isIntersecting) cur = slides.indexOf(en.target); });
   }, { threshold: 0.6 });
