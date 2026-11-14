@@ -4,7 +4,7 @@ import type { NavEntry, NavGroup, NavLink } from '../nav'
 
 describe('nav link arrays', () => {
   it('coreLinks contains math, quantities, kinds, units, dimensions', () => {
-    expect(coreLinks.map(l => l.to)).toEqual(['/math', '/quantities', '/kinds', '/units', '/dimensions'])
+    expect(coreLinks.map(l => l.to)).toEqual(['/quantities', '/math', '/units', '/ontology'])
   })
 
   it('every nav link has an i18nKey', () => {
@@ -16,25 +16,41 @@ describe('nav link arrays', () => {
 
   it('secondaryEntries: three consistent groups', () => {
     const labels = secondaryEntries.map(e => (isNavGroup(e) ? `${e.label} (group)` : e.label))
-    expect(labels).toEqual(['About (group)', 'Methodology (group)', 'Resources (group)'])
+    expect(labels).toEqual(['About (group)', 'Resources (group)'])
   })
 
   it('About group contains the four About pages', () => {
     const about = secondaryEntries.find(e => isNavGroup(e) && e.label === 'About') as NavGroup | undefined
     expect(about).toBeDefined()
     expect(about!.items.map(i => i.to)).toEqual(['/about', '/about/emblem', '/about/history', '/about/ecosystem'])
+    for (const item of about!.items) expect(item.to.startsWith('/about')).toBe(true)
   })
 
-  it('Resources group contains ontology, publications, presentations, reference', () => {
+  it('Resources group contains publications, presentations, reference', () => {
     const resources = secondaryEntries.find(e => isNavGroup(e) && e.label === 'Resources') as NavGroup | undefined
     expect(resources).toBeDefined()
-    expect(resources!.items.map(i => i.to)).toEqual(['/ontology', '/documents', '/presentations', '/reference'])
+    expect(resources!.items.map(i => i.to)).toEqual(['/documents', '/presentations', '/reference'])
   })
 
-  it('Methodology group stays inside its own route hierarchy', () => {
-    const methodology = secondaryEntries.find(e => isNavGroup(e) && e.label === 'Methodology') as NavGroup | undefined
-    expect(methodology).toBeDefined()
-    for (const item of methodology!.items) expect(item.to.startsWith('/methodology')).toBe(true)
+  it('Ontology is promoted to the primary data nav', () => {
+    expect(coreLinks.map(l => l.to)).toContain('/ontology')
+  })
+
+  it('every group stays inside its own route hierarchy', () => {
+    const prefixes: Record<string, string> = { About: '/about', Resources: '/resources' }
+    for (const entry of secondaryEntries) {
+      if (!isNavGroup(entry)) continue
+      const prefix = entry.label === 'About' ? '/about' : entry.label === 'Methodology' ? '/methodology' : null
+      if (!prefix) continue
+      for (const item of entry.items) expect(item.to.startsWith(prefix)).toBe(true)
+    }
+  })
+
+  it('methodology and kinds live outside the header, reachable from hub pages', () => {
+    const all = navLinks.map(l => l.to)
+    expect(all).not.toContain('/methodology')
+    expect(all).not.toContain('/kinds')
+    expect(all).not.toContain('/dimensions')
   })
 
   it('navLinks is the flattened concatenation of core + secondary', () => {

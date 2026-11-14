@@ -19,11 +19,10 @@ export function isNavGroup(entry: NavEntry): entry is NavGroup {
 }
 
 const _coreLinks: NavLink[] = [
-  { to: '/math', label: 'Math', i18nKey: 'nav.math' },
   { to: '/quantities', label: 'Quantities', i18nKey: 'nav.quantities' },
-  { to: '/kinds', label: 'Quantity Kinds', i18nKey: 'nav.kinds' },
+  { to: '/math', label: 'Math', i18nKey: 'nav.math' },
   { to: '/units', label: 'Units', i18nKey: 'nav.units' },
-  { to: '/dimensions', label: 'Dimensions', i18nKey: 'nav.dimensions' },
+  { to: '/ontology', label: 'Ontology', i18nKey: 'nav_item.ontology' },
 ]
 
 const _secondaryEntries: NavEntry[] = [
@@ -38,23 +37,9 @@ const _secondaryEntries: NavEntry[] = [
     ],
   },
   {
-    label: 'Methodology',
-    i18nKey: 'nav_item.methodology',
-    items: [
-      { to: '/methodology', label: 'Overview', i18nKey: 'page.methodology.nav.overview' },
-      { to: '/methodology/concept-system', label: 'Concept System', i18nKey: 'page.methodology.nav.concept_system' },
-      { to: '/methodology/terminology', label: 'Terminology', i18nKey: 'nav_item.terminology' },
-      { to: '/methodology/walkthrough', label: 'Walkthrough', i18nKey: 'page.methodology.nav.walkthrough' },
-      { to: '/methodology/measurements', label: 'Measurement intake', i18nKey: 'page.methodology.nav.measurements' },
-      { to: '/methodology/navigation', label: 'Navigation', i18nKey: 'page.methodology.nav.navigation' },
-      { to: '/methodology/references', label: 'References', i18nKey: 'page.methodology.nav.references' },
-    ],
-  },
-  {
     label: 'Resources',
     i18nKey: 'nav_group.resources',
     items: [
-      { to: '/ontology', label: 'Ontology', i18nKey: 'nav_item.ontology' },
       { to: '/documents', label: 'Publications', i18nKey: 'nav_item.publications' },
       { to: '/presentations', label: 'Presentations', i18nKey: 'nav_item.presentations' },
       { to: '/reference', label: 'Reference', i18nKey: 'nav_item.reference' },

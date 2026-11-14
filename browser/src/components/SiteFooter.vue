@@ -29,6 +29,7 @@ import { asset } from '../lib/asset'
             <li><a :href="asset('/units')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.units_db">Units Database</a></li>
             <li><a :href="asset('/dimensions')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.dimensions">Dimensions</a></li>
             <li><a :href="asset('/about')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.about_standard">About the Standard</a></li>
+            <li><a :href="asset('/methodology')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="nav_item.methodology">Methodology</a></li>
             <li><a :href="asset('/reference')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.api_reference">API &amp; Reference</a></li>
             <li><a :href="asset('/presentations')" class="text-white/50 hover:text-brand-300 transition-colors" data-i18n="footer.presentations">Presentations</a></li>
           </ul>
